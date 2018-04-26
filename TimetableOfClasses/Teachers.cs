@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class Start : Form
+    public partial class Teachers : Form
     {
-        public Start()
+        public Teachers()
         {
             InitializeComponent();
-        }
-
-        private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Teachers t = new Teachers();
-            t.ShowDialog();
         }
     }
 }
