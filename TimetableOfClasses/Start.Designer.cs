@@ -71,6 +71,7 @@
             this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
             this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.преподавателиToolStripMenuItem.Text = "Преподаватели";
+            this.преподавателиToolStripMenuItem.Click += new System.EventHandler(this.преподавателиToolStripMenuItem_Click);
             // 
             // дисциплиныToolStripMenuItem
             // 
