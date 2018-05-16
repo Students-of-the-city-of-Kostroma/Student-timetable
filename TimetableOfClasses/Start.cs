@@ -22,5 +22,17 @@ namespace TimetableOfClasses
             Teachers t = new Teachers();
             t.ShowDialog();
         }
+
+        private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditor a = new Auditor();
+            a.ShowDialog();
+        }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Group g = new Group();
+            g.ShowDialog();
+        }
     }
 }
