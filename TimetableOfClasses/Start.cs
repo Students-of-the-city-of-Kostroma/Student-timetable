@@ -22,14 +22,11 @@ namespace TimetableOfClasses
             Teachers t = new Teachers();
             t.ShowDialog();
         }
-<<<<<<< HEAD
 
         private void дисциплиныToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Discipline d = new Discipline();
             d.ShowDialog();
         }
-=======
->>>>>>> Create form
     }
 }
