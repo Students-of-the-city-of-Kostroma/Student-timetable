@@ -64,9 +64,12 @@
     <Compile Include="Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="Discipline.resx">
       <DependentUpon>Discipline.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> Create form
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
