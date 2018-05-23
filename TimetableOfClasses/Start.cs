@@ -23,7 +23,7 @@ namespace TimetableOfClasses
             t.ShowDialog();
         }
 
-        private void дисциплиныToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void дисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Discipline d = new Discipline();
             d.ShowDialog();
