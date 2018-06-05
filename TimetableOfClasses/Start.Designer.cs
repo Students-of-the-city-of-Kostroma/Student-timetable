@@ -85,6 +85,7 @@
             this.группыToolStripMenuItem.Name = "группыToolStripMenuItem";
             this.группыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.группыToolStripMenuItem.Text = "Группы";
+            this.группыToolStripMenuItem.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
             // 
             // аудиторииToolStripMenuItem
             // 
