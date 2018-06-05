@@ -22,5 +22,11 @@ namespace TimetableOfClasses
             Teachers t = new Teachers();
             t.ShowDialog();
         }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Groups group = new Groups();
+            group.ShowDialog();
+        }
     }
 }
