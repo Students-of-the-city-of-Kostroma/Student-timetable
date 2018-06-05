@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     <Compile Include="Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
