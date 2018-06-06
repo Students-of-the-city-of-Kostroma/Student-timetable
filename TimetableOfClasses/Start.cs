@@ -34,5 +34,11 @@ namespace TimetableOfClasses
             Discipline d = new Discipline();
             d.ShowDialog();
         }
+        
+        private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditor a = new Auditor();
+            a.ShowDialog();
+        }
     }
 }

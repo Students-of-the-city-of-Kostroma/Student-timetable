@@ -92,6 +92,7 @@
             this.аудиторииToolStripMenuItem.Name = "аудиторииToolStripMenuItem";
             this.аудиторииToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.аудиторииToolStripMenuItem.Text = "Аудитории";
+            this.аудиторииToolStripMenuItem.Click += new System.EventHandler(this.аудиторииToolStripMenuItem_Click);
             // 
             // Start
             // 
