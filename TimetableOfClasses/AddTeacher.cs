@@ -27,7 +27,13 @@ namespace TimetableOfClasses
 
         private void AddTeacher_Load(object sender, EventArgs e)
         {
-            
+            comboBox1.Text = "0";
+            textBox1.Text = "Jonh";
+            textBox2.Text = "Smith";
+            textBox3.Text = "Hoerq";
+            textBox4.Text = "First";
+            textBox5.Text = "Docent";
+
             for(int i = 0;i<61;i++) comboBox1.Items.Add(i);
            
         }
