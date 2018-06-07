@@ -44,17 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTeacher.cs">
+    <Compile Include="Groups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTeacher.Designer.cs">
-      <DependentUpon>AddTeacher.cs</DependentUpon>
+    <Compile Include="Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
     </Compile>
     <Compile Include="Discipline.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Discipline.Designer.cs">
       <DependentUpon>Discipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditor.Designer.cs">
+      <DependentUpon>Auditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -70,11 +76,14 @@
     <Compile Include="Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddTeacher.resx">
-      <DependentUpon>AddTeacher.cs</DependentUpon>
+    <EmbeddedResource Include="Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Discipline.resx">
       <DependentUpon>Discipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditor.resx">
+      <DependentUpon>Auditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
