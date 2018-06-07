@@ -62,7 +62,6 @@
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="MTeacher.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
