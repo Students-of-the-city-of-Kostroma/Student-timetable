@@ -1,0 +1,12 @@
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe.config
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.csprojResolveAssemblyReference.cache
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.AddTeacher.resources
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.Discipline.resources
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.Start.resources
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.Properties.Resources.resources
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.Teachers.resources
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.csproj.GenerateResource.Cache
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\bin\Debug\TimetableOfClasses.pdb
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.exe
+C:\Users\Danil\Desktop\Student-timetable-issue-19\TimetableOfClasses\obj\Debug\TimetableOfClasses.pdb

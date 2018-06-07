@@ -16,5 +16,11 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddTeacher t = new AddTeacher();
+            t.ShowDialog();
+        }
     }
 }
