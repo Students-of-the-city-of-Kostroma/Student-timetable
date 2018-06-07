@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.DG = new System.Windows.Forms.DataGridView();
-            this.ColFam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAcademicRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTheSizeOfTeachingExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcademicRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheSizeOfTeachingExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,60 +47,72 @@
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColFam,
-            this.ColName,
-            this.ColSurName,
-            this.ColAcademicDegree,
-            this.ColAcademicRank,
-            this.ColTheSizeOfTeachingExperience});
+            this.Fam,
+            this.Name,
+            this.SurName,
+            this.AcademicDegree,
+            this.AcademicRank,
+            this.TheSizeOfTeachingExperience});
             this.DG.Location = new System.Drawing.Point(12, 12);
-            this.DG.Name = "Teacher";
-            this.DG.Size = new System.Drawing.Size(904, 307);
+            this.DG.Name = "DG";
+            this.DG.Size = new System.Drawing.Size(690, 287);
             this.DG.TabIndex = 0;
             // 
             // Fam
             // 
-            this.ColFam.HeaderText = "Фамилия";
-            this.ColFam.Name = "Fam";
-            this.ColFam.Width = 81;
+            this.Fam.HeaderText = "Фамилия";
+            this.Fam.Name = "Fam";
+            this.Fam.Width = 81;
             // 
             // Name
             // 
-            this.ColName.HeaderText = "Имя";
-            this.ColName.Name = "Name";
-            this.ColName.Width = 54;
+            this.Name.HeaderText = "Имя";
+            this.Name.Name = "Name";
+            this.Name.Width = 54;
             // 
             // SurName
             // 
-            this.ColSurName.HeaderText = "Отчество";
-            this.ColSurName.Name = "SurName";
-            this.ColSurName.Width = 79;
+            this.SurName.HeaderText = "Отчество";
+            this.SurName.Name = "SurName";
+            this.SurName.Width = 79;
             // 
             // AcademicDegree
             // 
-            this.ColAcademicDegree.HeaderText = "Ученая степень";
-            this.ColAcademicDegree.Name = "AcademicDegree";
-            this.ColAcademicDegree.Width = 104;
+            this.AcademicDegree.HeaderText = "Ученая степень";
+            this.AcademicDegree.Name = "AcademicDegree";
+            this.AcademicDegree.Width = 104;
             // 
             // AcademicRank
             // 
-            this.ColAcademicRank.HeaderText = "Ученое звание";
-            this.ColAcademicRank.Name = "AcademicRank";
-            this.ColAcademicRank.Width = 99;
+            this.AcademicRank.HeaderText = "Ученое звание";
+            this.AcademicRank.Name = "AcademicRank";
+            this.AcademicRank.Width = 99;
             // 
             // TheSizeOfTeachingExperience
             // 
-            this.ColTheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
-            this.ColTheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
-            this.ColTheSizeOfTeachingExperience.Width = 149;
+            this.TheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
+            this.TheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
+            this.TheSizeOfTeachingExperience.Width = 177;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(608, 305);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 36);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Teachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 331);
+            this.ClientSize = new System.Drawing.Size(714, 343);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DG);
-            this.Name = "Teachers";
+           
             this.Text = "Teachers";
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);
@@ -115,5 +128,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTheSizeOfTeachingExperience;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TheSizeOfTeachingExperience;
+        private System.Windows.Forms.Button button1;
     }
 }
