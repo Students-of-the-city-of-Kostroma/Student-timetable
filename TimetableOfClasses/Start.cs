@@ -37,8 +37,8 @@ namespace TimetableOfClasses
         
         private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Auditor a = new Auditor();
-            a.ShowDialog();
+            Auditor audit = new Auditor();
+            audit.ShowDialog();
         }
     }
 }
