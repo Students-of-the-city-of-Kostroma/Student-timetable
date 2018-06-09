@@ -19,8 +19,8 @@ namespace TimetableOfClasses
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //AddTeacher t = new AddTeacher();
-            //t.ShowDialog();
+            AddTeacher t = new AddTeacher();
+            t.ShowDialog();
         }
     }
 }
