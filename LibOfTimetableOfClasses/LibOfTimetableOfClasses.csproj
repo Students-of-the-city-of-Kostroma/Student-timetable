@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CTeacher.cs" />
+    <Compile Include="MDiscipline.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
