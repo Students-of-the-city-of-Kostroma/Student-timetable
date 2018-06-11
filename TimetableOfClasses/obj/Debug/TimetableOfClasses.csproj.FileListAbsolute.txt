@@ -36,3 +36,6 @@ D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.St
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.Properties.Resources.resources
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.Teachers.resources
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.csproj.GenerateResource.Cache
+C:\Users\ПК\Desktop\ТРПО\Student-timetable\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe.config
+C:\Users\ПК\Desktop\ТРПО\Student-timetable\TimetableOfClasses\obj\Debug\TimetableOfClasses.exe
+C:\Users\ПК\Desktop\ТРПО\Student-timetable\TimetableOfClasses\obj\Debug\TimetableOfClasses.pdb
