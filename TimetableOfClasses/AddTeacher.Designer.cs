@@ -73,6 +73,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Leave += new System.EventHandler(this.SelectionOfLetters1);
             // 
             // textBox2
             // 
@@ -82,6 +83,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(179, 22);
             this.textBox2.TabIndex = 4;
+            this.textBox2.Leave += new System.EventHandler(this.SelectionOfLetters1);
             // 
             // label2
             // 
@@ -102,6 +104,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(179, 22);
             this.textBox3.TabIndex = 6;
+            this.textBox3.Leave += new System.EventHandler(this.SelectionOfLetters1);
             // 
             // label3
             // 
@@ -122,6 +125,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(160, 22);
             this.textBox4.TabIndex = 8;
+            this.textBox4.Leave += new System.EventHandler(this.SelectionOfLetters2);
             // 
             // label4
             // 
@@ -142,6 +146,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(160, 22);
             this.textBox5.TabIndex = 10;
+            this.textBox5.Leave += new System.EventHandler(this.SelectionOfLetters1);
             // 
             // label5
             // 
@@ -178,6 +183,7 @@
             this.comboBox1.TabIndex = 13;
             this.comboBox1.Text = "Выберите стаж!";
             this.comboBox1.ValueMember = "60";
+            this.comboBox1.Leave += new System.EventHandler(this.SelectionOfNumber);
             // 
             // AddTeacher
             // 
