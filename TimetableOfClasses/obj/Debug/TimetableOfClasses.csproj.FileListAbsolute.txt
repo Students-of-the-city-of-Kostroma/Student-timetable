@@ -36,3 +36,17 @@ D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.St
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.Properties.Resources.resources
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.Teachers.resources
 D:\Student-timetable-issue-42\TimetableOfClasses\obj\Debug\TimetableOfClasses.csproj.GenerateResource.Cache
+D:\Student-timetable-issue-56\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe.config
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.exe
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.pdb
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.csprojResolveAssemblyReference.cache
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Groups.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Discipline.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Auditor.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Start.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Properties.Resources.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.Teachers.resources
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.csproj.GenerateResource.Cache
+D:\Student-timetable-issue-56\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe
+D:\Student-timetable-issue-56\TimetableOfClasses\bin\Debug\TimetableOfClasses.pdb
+D:\Student-timetable-issue-56\TimetableOfClasses\obj\Debug\TimetableOfClasses.AddTeacher.resources
