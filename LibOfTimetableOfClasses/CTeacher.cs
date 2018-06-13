@@ -10,15 +10,15 @@ namespace LibOfTimetableOfClasses
     {
         List <MTeacher> teacherList = new List <MTeacher>();
 
-        public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
-        {
+        //public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        //{
 
-        }
+        //}
 
-        public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
-        {
+        //public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        //{
 
-        }
+        //}
 
         public bool DeleteTeacher(Guid ID)
         {
@@ -36,14 +36,14 @@ namespace LibOfTimetableOfClasses
             else return false;
         }
 
-        public string[,] GetData()
-        {
+        //public string[,] GetData()
+        //{
 
-        }
+        //}
 
-        public string[,] GetSortedData(string columnName, bool order)
-        {
+        //public string[,] GetSortedData(string columnName, bool order)
+        //{
 
-        }
+        //}
     }
 }
