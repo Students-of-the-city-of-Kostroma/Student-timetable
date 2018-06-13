@@ -12,7 +12,13 @@ namespace LibOfTimetableOfClasses
 
         public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
         {
-
+            try
+            {
+                MTeacher ETeacher = new MTeacher(surname, name, middleName, academicDegree, AcademicRank, SizeOfTeachingExperience);
+                teacherList.Add(ETeacher);
+                return true;
+            }
+            catch { return false; }
         }
 
         public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)

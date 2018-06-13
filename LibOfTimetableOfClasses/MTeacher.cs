@@ -106,5 +106,15 @@ namespace LibOfTimetableOfClasses
                 sizeOfTeachingExperience = value;
             }
         }
+
+        public MTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        {
+            this.surname = surname;
+            this.name = name;
+            this.middleName = middleName;
+            this.academicDegree = academicDegree;
+            this.academicRank = AcademicRank;
+            this.sizeOfTeachingExperience = SizeOfTeachingExperience;
+        }
     }
 }
