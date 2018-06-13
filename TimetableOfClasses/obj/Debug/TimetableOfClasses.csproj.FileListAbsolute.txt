@@ -64,3 +64,6 @@ D:\Student-timetable-issue-72\TimetableOfClasses\obj\Debug\TimetableOfClasses.Te
 D:\Student-timetable-issue-72\TimetableOfClasses\obj\Debug\TimetableOfClasses.csproj.GenerateResource.Cache
 D:\Student-timetable-issue-72\TimetableOfClasses\obj\Debug\TimetableOfClasses.exe
 D:\Student-timetable-issue-72\TimetableOfClasses\obj\Debug\TimetableOfClasses.pdb
+C:\Users\Admin\Desktop\ST\TimetableOfClasses\bin\Debug\TimetableOfClasses.exe.config
+C:\Users\Admin\Desktop\ST\TimetableOfClasses\obj\Debug\TimetableOfClasses.exe
+C:\Users\Admin\Desktop\ST\TimetableOfClasses\obj\Debug\TimetableOfClasses.pdb
