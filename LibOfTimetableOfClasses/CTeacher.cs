@@ -9,10 +9,20 @@ namespace LibOfTimetableOfClasses
     public class CTeacher
     {
         List <MTeacher> teacherList = new List <MTeacher>();
+        MTeacher T;
 
         public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
         {
-            throw new Exception();
+            T = new MTeacher();
+            T.Id = Guid.NewGuid();
+            T.Name = name;
+            T.MiddleName = middleName;
+            T.Surname = surname;
+            T.SizeOfTeachingExperience = SizeOfTeachingExperience;
+            T.AcademicDegree = academicDegree;
+            T.AcademicRank = AcademicRank;
+            teacherList.Add(T);
+            return true;
         }
 
         public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
@@ -25,7 +35,7 @@ namespace LibOfTimetableOfClasses
             if (teacherList.Count > 0)
             {
                 int i = 0;
-                while (!ID.Equals(teacherList[i].Id) || i < teacherList.Count) i++;
+                while (!ID.Equals(teacherList[i].Id) && i < teacherList.Count-1) i++;
                 if ((i == teacherList.Count - 1) && (!ID.Equals(teacherList[i].Id))) return false;
                 else
                 {
@@ -45,7 +55,7 @@ namespace LibOfTimetableOfClasses
                     switch (j)
                     {
                         case 0:
-                            DataTeachers[i, j] = teacherList[i].Id;
+                            DataTeachers[i, j] = teacherList[i].Id.ToString();
                             break;
 
                         case 1:
