@@ -10,11 +10,11 @@ namespace LibOfTimetableOfClasses
     {
         List <MTeacher> teacherList = new List <MTeacher>();
 
-        public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
             try
             {
-                MTeacher ETeacher = new MTeacher(surname, name, middleName, academicDegree, AcademicRank, SizeOfTeachingExperience);
+                MTeacher ETeacher = new MTeacher(surname, name, middleName, academicDegree, academicRank, sizeOfTeachingExperience);
                 teacherList.Add(ETeacher);
                 return true;
             }
