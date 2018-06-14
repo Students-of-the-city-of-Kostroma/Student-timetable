@@ -49,6 +49,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestsOfLib.cs" />
     <Compile Include="UTofStory_2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
+      <Project>{93A4D5CC-B39E-480D-9A5E-9F7BB97FF8A5}</Project>
+      <Name>LibOfTimetableOfClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimetableOfClasses\TimetableOfClasses.csproj">
       <Project>{8e04a57b-7c6f-436c-b9f7-40b669ddd55a}</Project>
       <Name>TimetableOfClasses</Name>
