@@ -84,7 +84,7 @@
             this.ClientSize = new System.Drawing.Size(491, 261);
             this.Controls.Add(this.DataGridAuditor);
             this.Name = "Auditor";
-            this.Text = "Auditor";
+            this.Text = "Аудитории";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();
             this.ResumeLayout(false);
 
