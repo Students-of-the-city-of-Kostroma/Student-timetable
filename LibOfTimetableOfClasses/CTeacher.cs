@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
 
         }
 
-        public bool SaveTeacher(Guid ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        public bool SaveTeacher(Guid ID, string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
             if (teacherList.Count > 0)
             {
@@ -28,8 +28,8 @@ namespace LibOfTimetableOfClasses
                     teacherList[i].Name = name;
                     teacherList[i].MiddleName = middleName;
                     teacherList[i].AcademicDegree = academicDegree;
-                    teacherList[i].AcademicRank = AcademicRank;
-                    teacherList[i].SizeOfTeachingExperience = SizeOfTeachingExperience;
+                    teacherList[i].AcademicRank = academicRank;
+                    teacherList[i].SizeOfTeachingExperience = sizeOfTeachingExperience;
                     return true;
                 }
             }
