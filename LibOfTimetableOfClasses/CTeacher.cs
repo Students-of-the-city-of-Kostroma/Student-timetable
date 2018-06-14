@@ -12,12 +12,12 @@ namespace LibOfTimetableOfClasses
 
         public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
         {
-
+            throw new Exception();
         }
 
         public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
         {
-
+            throw new Exception();
         }
 
         public bool DeleteTeacher(Guid ID)
@@ -78,7 +78,7 @@ namespace LibOfTimetableOfClasses
 
         public string[,] GetSortedData(string columnName, bool order)
         {
-
+            throw new Exception();
         }
     }
 }
