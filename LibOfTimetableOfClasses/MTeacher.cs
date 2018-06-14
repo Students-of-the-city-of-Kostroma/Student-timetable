@@ -15,15 +15,7 @@ namespace LibOfTimetableOfClasses
         string academicDegree;
         string academicRank;
         byte sizeOfTeachingExperience;
-        public MTeacher()
-        {
-            surname = "";
-            name = "";
-            middleName = "";
-            academicDegree = "";
-            academicRank = "";
-            sizeOfTeachingExperience = 0;
-        }
+   
         public Guid Id
         {
             get
