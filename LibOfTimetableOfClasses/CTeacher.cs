@@ -9,20 +9,23 @@ namespace LibOfTimetableOfClasses
     public class CTeacher
     {
         List <MTeacher> teacherList = new List <MTeacher>();
-        MTeacher T;
 
-        public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
-            T = new MTeacher();
-            T.Id = Guid.NewGuid();
-            T.Name = name;
-            T.MiddleName = middleName;
-            T.Surname = surname;
-            T.SizeOfTeachingExperience = SizeOfTeachingExperience;
-            T.AcademicDegree = academicDegree;
-            T.AcademicRank = AcademicRank;
-            teacherList.Add(T);
-            return true;
+            try
+            {
+                  MTeacher T = new MTeacher();
+                  T.Id = Guid.NewGuid();
+                  T.Name = name;
+                  T.MiddleName = middleName;
+                  T.Surname = surname;
+                  T.SizeOfTeachingExperience = SizeOfTeachingExperience;
+                  T.AcademicDegree = academicDegree;
+                  T.AcademicRank = AcademicRank;
+                  teacherList.Add(T);
+                  return true;
+            }
+            catch { return false; }
         }
 
         public bool SaveTeacher(Guid ID, string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
