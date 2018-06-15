@@ -9,7 +9,7 @@ namespace LibOfTimetableOfClasses
     public class MTeacher
     {
         public enum Keys { Id = 0, Surname = 1, Name = 2, MiddleName = 3, AcademicDegree = 4, AcademicRank = 5, SizeOfTeachingExperience = 6}
-        string id;
+        Guid id;
         string surname;
         string name;
         string middleName;
@@ -35,7 +35,8 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        public string Id
+
+        public Guid Id
         {
             get
             {
@@ -124,6 +125,16 @@ namespace LibOfTimetableOfClasses
             {
                 sizeOfTeachingExperience = value;
             }
+        }
+
+        public MTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
+        {
+            this.surname = surname;
+            this.name = name;
+            this.middleName = middleName;
+            this.academicDegree = academicDegree;
+            this.academicRank = academicRank;
+            this.sizeOfTeachingExperience = sizeOfTeachingExperience;
         }
     }
 }
