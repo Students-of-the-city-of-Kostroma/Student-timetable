@@ -8,15 +8,15 @@ namespace LibOfTimetableOfClasses
 {
     public class MTeacher
     {
-        string id;
+        Guid id;
         string surname;
         string name;
         string middleName;
         string academicDegree;
         string academicRank;
         byte sizeOfTeachingExperience;
-
-        public string Id
+   
+        public Guid Id
         {
             get
             {
