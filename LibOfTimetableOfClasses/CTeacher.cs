@@ -38,41 +38,13 @@ namespace LibOfTimetableOfClasses
 
         public string[,] GetData()
         {
-            string[,] DataTeachers = new string[teacherList.Count, 7];
-            for (int i =0; i < teacherList.Count; i++)
-                for (int j = 0; j < 7; j++)
-                {
-                    switch (j)
-                    {
-                        case 0:
-                            DataTeachers[i, j] = teacherList[i].Id;
-                            break;
+            string[,] DataTeachers = new string[teacherList.Count + 1, sizeof(MTeacher.Keys)];
 
-                        case 1:
-                            DataTeachers[i, j] = teacherList[i].Surname;
-                            break;
-
-                        case 2:
-                            DataTeachers[i, j] = teacherList[i].Name;
-                            break;
-
-                        case 3:
-                            DataTeachers[i, j] = teacherList[i].MiddleName;
-                            break;
-
-                        case 4:
-                            DataTeachers[i, j] = teacherList[i].AcademicDegree;
-                            break;
-
-                        case 5:
-                            DataTeachers[i, j] = teacherList[i].AcademicRank;
-                            break;
-
-                        case 6:
-                            DataTeachers[i, j] = teacherList[i].SizeOfTeachingExperience.ToString();
-                            break;
-                    }
-                }
+            for (int j = 0; j < DataTeachers.GetLength(1); j++)
+                DataTeachers[0, j] = ((MTeacher.Keys)j).ToString();
+            for (int i = 1; i < DataTeachers.GetLength(0); i++)
+                for (int j = 0; j < DataTeachers.GetLength(1); j++)
+                    DataTeachers[i, j] = teacherList[i - 1][(MTeacher.Keys)j].ToString();
             return DataTeachers;
         }
 
