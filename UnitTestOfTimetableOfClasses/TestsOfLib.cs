@@ -33,5 +33,6 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.AreEqual(typeof(String), mT.AcademicRank.GetType(), "Тип поля AcademicRank не совпадает с диаграммой");
                 Assert.AreEqual(typeof(Byte), mT.SizeOfTeachingExperience.GetType(), "Тип поля SizeOfTeachingExperience не совпадает с диаграммой");
         }
+
     }
 }
