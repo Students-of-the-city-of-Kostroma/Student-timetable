@@ -8,7 +8,7 @@ namespace LibOfTimetableOfClasses
 {
     public class MTeacher
     {
-        public enum Keys { Id=0, Surname=1, Name=2, MiddleName=3, AcademicDegree=4, AcademicRank=5, SizeOfTeachingExperience=6 }
+        public enum Keys { Id = 0, Surname = 1, Name = 2, MiddleName = 3, AcademicDegree = 4, AcademicRank = 5, SizeOfTeachingExperience = 6}
         Guid id;
         string surname;
         string name;
@@ -34,6 +34,7 @@ namespace LibOfTimetableOfClasses
                 }
             }
         }
+
 
         public Guid Id
         {
