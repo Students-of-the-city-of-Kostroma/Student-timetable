@@ -25,9 +25,25 @@ namespace LibOfTimetableOfClasses
             return true;
         }
 
-        public bool SaveTeacher(string ID, string surname, string name, string middleName, string academicDegree, string AcademicRank, byte SizeOfTeachingExperience)
+        public bool SaveTeacher(Guid ID, string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
-            throw new Exception();
+            if (teacherList.Count > 0)
+            {
+                int i = 0;
+                while (!ID.Equals(teacherList[i].Id) || i < teacherList.Count) i++;
+                if ((i == teacherList.Count - 1) && (!ID.Equals(teacherList[i].Id))) return false;
+                else
+                {
+                    teacherList[i].Surname = surname;
+                    teacherList[i].Name = name;
+                    teacherList[i].MiddleName = middleName;
+                    teacherList[i].AcademicDegree = academicDegree;
+                    teacherList[i].AcademicRank = academicRank;
+                    teacherList[i].SizeOfTeachingExperience = sizeOfTeachingExperience;
+                    return true;
+                }
+            }
+            else return false;
         }
 
         public bool DeleteTeacher(Guid ID)
@@ -48,41 +64,14 @@ namespace LibOfTimetableOfClasses
 
         public string[,] GetData()
         {
-            string[,] DataTeachers = new string[teacherList.Count, 7];
-            for (int i =0; i < teacherList.Count; i++)
-                for (int j = 0; j < 7; j++)
-                {
-                    switch (j)
-                    {
-                        case 0:
-                            DataTeachers[i, j] = teacherList[i].Id.ToString();
-                            break;
-
-                        case 1:
-                            DataTeachers[i, j] = teacherList[i].Surname;
-                            break;
-
-                        case 2:
-                            DataTeachers[i, j] = teacherList[i].Name;
-                            break;
-
-                        case 3:
-                            DataTeachers[i, j] = teacherList[i].MiddleName;
-                            break;
-
-                        case 4:
-                            DataTeachers[i, j] = teacherList[i].AcademicDegree;
-                            break;
-
-                        case 5:
-                            DataTeachers[i, j] = teacherList[i].AcademicRank;
-                            break;
-
-                        case 6:
-                            DataTeachers[i, j] = teacherList[i].SizeOfTeachingExperience.ToString();
-                            break;
-                    }
-                }
+            string[,] DataTeachers = new string[teacherList.Count + 1, sizeof(MTeacher.Keys)];
+            //формируем заголовок таблицы
+            for (int j = 0; j < DataTeachers.GetLength(1); j++)
+                DataTeachers[0, j] = ((MTeacher.Keys)j).ToString();
+            //заполняем таблицу
+            for (int i = 1; i < DataTeachers.GetLength(0); i++)
+                for (int j = 0; j < DataTeachers.GetLength(1); j++)
+                    DataTeachers[i, j] = teacherList[i - 1][(MTeacher.Keys)j].ToString();
             return DataTeachers;
         }
 
