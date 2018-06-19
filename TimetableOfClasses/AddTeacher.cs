@@ -115,6 +115,6 @@ namespace TimetableOfClasses
             if ((e.KeyCode == Keys.CapsLock))
                 caps.Visible = Console.CapsLock;
         }
-
+       
     }
 }
