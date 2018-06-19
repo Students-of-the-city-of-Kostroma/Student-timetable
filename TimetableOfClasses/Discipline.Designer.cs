@@ -76,7 +76,7 @@
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.DG_Disc);
             this.Name = "Discipline";
-            this.Text = "Disciplines";
+            this.Text = "Дисциплины";
             ((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).EndInit();
             this.ResumeLayout(false);
 
