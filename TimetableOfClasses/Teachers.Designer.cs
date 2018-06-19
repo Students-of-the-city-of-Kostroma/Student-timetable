@@ -36,6 +36,7 @@
             this.AcademicRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TheSizeOfTeachingExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.DG.Name = "DG";
             this.DG.Size = new System.Drawing.Size(690, 287);
             this.DG.TabIndex = 0;
+            this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
             // 
             // Fam
             // 
@@ -105,11 +107,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(508, 305);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 36);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Удалить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Teachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 343);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DG);
            
@@ -135,5 +149,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheSizeOfTeachingExperience;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
