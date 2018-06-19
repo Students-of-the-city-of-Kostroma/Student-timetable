@@ -78,6 +78,79 @@ namespace LibOfTimetableOfClasses
             return DataTeachers;
         }
 
+        /// <summary>
+        /// Возвращает отсортированный двумерный массив строк, содержащий данные из teacherlist
+        /// </summary>
+        /// <param name="columnName">Сортируемая колонка</param>
+        /// <param name="order">true => сортировка по возрастанию, false => сортировка по убыванию </param>
+        /// <returns>Двумерный массив строк</returns>
+        public string[,] GetData(string columnName, bool order)
+        {
+            columnName = columnName.ToLower(); // Для удобного сравнения ***
+            if (teacherList.Count != 0)
+            {
+                string[,] s = new string[teacherList.Count, 6];
+                int count = 0;
+                foreach (MTeacher m in teacherList)  //Заполняем двумерный массив строк
+                {
+                    s[count, 0] = m.Surname;
+                    s[count, 1] = m.Name;
+                    s[count, 2] = m.MiddleName;
+                    s[count, 3] = m.AcademicDegree;
+                    s[count, 4] = m.AcademicRank;
+                    s[count, 5] = Convert.ToString(m.SizeOfTeachingExperience);
+                    count++;
+                }
+
+                for (int i = 0; i < 6; i++)  // Бежим по столбцам (неважно какой строки) и находим нужный столбец
+                {
+                    if (columnName == s[0, i].ToLower()) // ***
+                        count = i; // count = *номер_нужного_столбца*
+                }
+
+                if (order)
+                {
+                    for (int j = 0; j < s.GetLength(0); j++)
+                    {
+                        for (int i = 0; i < s.GetLength(0) - 1; i++)
+                        {
+                            int rez = String.Compare(s[i, count], s[i + 1, count]);
+                            if (rez < 0) // Если ... , то сверху вниз в порядке убывания
+                            {
+                                string peremen = s[i, count];
+                                s[i, count] = s[i + 1, count]; // Меняем текущий с последующим
+                                s[i + 1, count] = peremen;
+                            }
+                        }
+                    }
+                    
+                    return s;
+                }
+                else
+                {
+                    for (int j = 0; j < s.GetLength(0); j++)
+                    {
+                        for (int i = 0; i < s.GetLength(0); i++)
+                        {
+                            int rez = String.Compare(s[i, count], s[i + 1, count]);
+                            if (rez > 0) // Если ... , то сверху вниз в порядке возрастания
+                            {
+                                string peremen = s[i, count];
+                                s[i, count] = s[i + 1, count]; // Меняем текущий с последующим
+                                s[i + 1, count] = peremen;
+                            }
+                        }
+                    }
+                    return s;
+                }
+            }
+            else // Если techearlist пуст
+            {
+                string[,] s = new string[,] { };
+                return s; // Вернём пустой массив
+            }
+        }
+
         public string[,] GetSortedData(string columnName, bool order)
         {
             throw new Exception();
