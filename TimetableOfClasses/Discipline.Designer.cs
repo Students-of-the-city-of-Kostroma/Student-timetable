@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.DG_Disc = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.Button();
             this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,16 +47,6 @@
             this.DG_Disc.TabIndex = 0;
             this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
             // 
-            // Kod
-            // 
-            this.Kod.HeaderText = "Код";
-            this.Kod.Name = "Kod";
-            // 
-            // Naim
-            // 
-            this.Naim.HeaderText = "Наименование";
-            this.Naim.Name = "Naim";
-            // 
             // Delete
             // 
             this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -67,6 +57,20 @@
             this.Delete.Text = "Удалить";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // Kod
+            // 
+            this.Kod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Kod.HeaderText = "Код";
+            this.Kod.Name = "Kod";
+            this.Kod.Width = 51;
+            // 
+            // Naim
+            // 
+            this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Naim.HeaderText = "Наименование";
+            this.Naim.Name = "Naim";
+            this.Naim.Width = 108;
             // 
             // Discipline
             // 
@@ -85,8 +89,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DG_Disc;
+        private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
-        private System.Windows.Forms.Button Delete;
     }
 }
