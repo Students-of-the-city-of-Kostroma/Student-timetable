@@ -9,11 +9,26 @@ namespace LibOfTimetableOfClasses
     public class MAuditor
     {
         Guid id;
-        string number;    // номер аудитории
-        byte floor;       // этаж
-        string building;  // корпус
-        int spacious;     // вместительность
+        /// <summary>
+        /// номер аудитории
+        /// </summary>
+        string number; 
+        /// <summary>
+        /// этаж
+        /// </summary>     
+        byte floor;
+        /// <summary>
+             /// корпус
+             /// </summary>                 
+        string building;
+        /// <summary>
+        /// вместительность аудитории
+        /// </summary>
+        int spacious;     
 
+        /// <summary>
+        /// Возвращает или задает идентификатор id
+        /// </summary>
         public Guid Id
         {
             get
@@ -27,6 +42,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает number - номер аудитории
+        /// </summary>
         public string Number
         {
             get
@@ -40,6 +58,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает floor - этаж
+        /// </summary>
         public byte Floor
         {
             get
@@ -53,6 +74,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает building - корпус
+        /// </summary>
         public string Building
         {
             get
@@ -66,6 +90,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает spacious - вместительность
+        /// </summary>
         public int Spacious
         {
             get
