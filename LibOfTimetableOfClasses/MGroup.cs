@@ -9,8 +9,17 @@ namespace LibOfTimetableOfClasses
     public class MGroup
     {
         Guid id;
+        /// <summary>
+        /// шифр
+        /// </summary>
         string cipher;
+        /// <summary>
+        /// численность
+        /// </summary>
         byte population;
+        /// <summary>
+        /// Возвращает или задает идентификатор id
+        /// </summary>
         public Guid Id
         {
             get
@@ -23,6 +32,9 @@ namespace LibOfTimetableOfClasses
                 id = value;
             }
         }
+        /// <summary>
+        /// Возвращает или задает cipher
+        /// </summary>
         public string Сipher
         {
             get
@@ -35,6 +47,9 @@ namespace LibOfTimetableOfClasses
                 cipher = value;
             }
         }
+        /// <summary>
+        /// Возвращает или задает population
+        /// </summary>
         public byte Population
         {
             get
