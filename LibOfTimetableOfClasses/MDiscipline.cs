@@ -8,11 +8,11 @@ namespace LibOfTimetableOfClasses
 {
      public class MDiscipline
     {
-        string id;
+        Guid id;
         string name;
         string code;
 
-        public string Id
+        public Guid Id
         {
             get
             {
@@ -50,5 +50,7 @@ namespace LibOfTimetableOfClasses
                 code = value;
             }
         }
+
+        
     }
 }
