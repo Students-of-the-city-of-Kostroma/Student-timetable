@@ -86,6 +86,7 @@ namespace LibOfTimetableOfClasses
         /// <returns>Двумерный массив строк</returns>
         public string[,] GetData(string columnName, bool order)
         {
+            
             if (teacherList.Count != 0)
             {
                 string[,] s = new string[teacherList.Count + 1, sizeof(MTeacher.Keys)];
@@ -96,13 +97,33 @@ namespace LibOfTimetableOfClasses
                 int count = 1;
                 foreach (MTeacher m in teacherList)  //Заполняем двумерный массив строк
                 {
-                    s[count, 0] = (m.Id).ToString();
-                    s[count, 1] = m.Surname;
-                    s[count, 2] = m.Name;
-                    s[count, 3] = m.MiddleName;
-                    s[count, 4] = m.AcademicDegree;
-                    s[count, 5] = m.AcademicRank;
-                    s[count, 6] = Convert.ToString(m.SizeOfTeachingExperience);
+                    for (int j = 0; j < s.GetLength(1); j++)
+                    {
+                        switch(j)
+                        {
+                            case 0:
+                                s[count, j] = m.Id.ToString();
+                                break;
+                            case 1:
+                                s[count, j] = m.Surname;
+                                break;
+                            case 2:
+                                s[count, j] = m.Name;
+                                break;
+                            case 3:
+                                s[count, j] = m.MiddleName;
+                                break;
+                            case 4:
+                                s[count, j] = m.AcademicDegree;
+                                break;
+                            case 5:
+                                s[count, j] = m.AcademicRank;
+                                break;
+                            case 6:
+                                s[count, j] = m.SizeOfTeachingExperience.ToString();
+                                break;
+                        }
+                    }
                     count++;
                 }
 
