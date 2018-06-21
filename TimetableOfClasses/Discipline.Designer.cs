@@ -37,6 +37,9 @@
             // 
             // DG_Disc
             // 
+            this.DG_Disc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DG_Disc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG_Disc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Kod,
