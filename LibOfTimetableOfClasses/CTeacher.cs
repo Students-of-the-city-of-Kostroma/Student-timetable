@@ -86,33 +86,37 @@ namespace LibOfTimetableOfClasses
         /// <returns>Двумерный массив строк</returns>
         public string[,] GetData(string columnName, bool order)
         {
-            columnName = columnName.ToLower(); // Для удобного сравнения ***
             if (teacherList.Count != 0)
             {
-                string[,] s = new string[teacherList.Count, 6];
-                int count = 0;
+                string[,] s = new string[teacherList.Count + 1, sizeof(MTeacher.Keys)];
+                
+                for (int j = 0; j < s.GetLength(1); j++) // Заполнение первой строки заголовками
+                    s[0, j] = ((MTeacher.Keys)j).ToString();
+
+                int count = 1;
                 foreach (MTeacher m in teacherList)  //Заполняем двумерный массив строк
                 {
-                    s[count, 0] = m.Surname;
-                    s[count, 1] = m.Name;
-                    s[count, 2] = m.MiddleName;
-                    s[count, 3] = m.AcademicDegree;
-                    s[count, 4] = m.AcademicRank;
-                    s[count, 5] = Convert.ToString(m.SizeOfTeachingExperience);
+                    s[count, 0] = (m.Id).ToString();
+                    s[count, 1] = m.Surname;
+                    s[count, 2] = m.Name;
+                    s[count, 3] = m.MiddleName;
+                    s[count, 4] = m.AcademicDegree;
+                    s[count, 5] = m.AcademicRank;
+                    s[count, 6] = Convert.ToString(m.SizeOfTeachingExperience);
                     count++;
                 }
 
-                for (int i = 0; i < 6; i++)  // Бежим по столбцам (неважно какой строки) и находим нужный столбец
+                for (int j = 0; j < s.GetLength(1); j++)
                 {
-                    if (columnName == s[0, i].ToLower()) // ***
-                        count = i; // count = *номер_нужного_столбца*
+                    if (columnName == s[0, j]) //Находим и запоминаем сортируемый столбец
+                        count = j;
                 }
 
                 if (order)
                 {
-                    for (int j = 0; j < s.GetLength(0); j++)
+                    for (int j = 1; j < s.GetLength(0); j++)
                     {
-                        for (int i = 0; i < s.GetLength(0) - 1; i++)
+                        for (int i = 1; i < s.GetLength(0) - 1; i++)
                         {
                             int rez = String.Compare(s[i, count], s[i + 1, count]);
                             if (rez < 0) // Если ... , то сверху вниз в порядке убывания
@@ -128,9 +132,9 @@ namespace LibOfTimetableOfClasses
                 }
                 else
                 {
-                    for (int j = 0; j < s.GetLength(0); j++)
+                    for (int j = 1; j < s.GetLength(0); j++)
                     {
-                        for (int i = 0; i < s.GetLength(0); i++)
+                        for (int i = 1; i < s.GetLength(0); i++)
                         {
                             int rez = String.Compare(s[i, count], s[i + 1, count]);
                             if (rez > 0) // Если ... , то сверху вниз в порядке возрастания
@@ -149,11 +153,6 @@ namespace LibOfTimetableOfClasses
                 string[,] s = new string[,] { };
                 return s; // Вернём пустой массив
             }
-        }
-
-        public string[,] GetSortedData(string columnName, bool order)
-        {
-            throw new Exception();
         }
     }
 }
