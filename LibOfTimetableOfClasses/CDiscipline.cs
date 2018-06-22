@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Контроллер для объекта Дисциплина 
+    /// </summary>
     public class CDiscipline
     {
+        /// <summary>
+        /// Список объектов Дисциплина
+        /// </summary>
         List<MDiscipline> disciplineList = new List<MDiscipline>();
 
         /// <summary>
@@ -19,20 +25,16 @@ namespace LibOfTimetableOfClasses
         /// <returns></returns>
         public bool SaveDiscipline(Guid ID, string name, string code)
         {
-            bool result = false;
-            if (disciplineList.Count > 0)
-            {
-                foreach (MDiscipline D in disciplineList)
+            foreach (MDiscipline D in disciplineList)
                 {
                     if (ID.Equals(D.Id))
                     {
                         D.Name = name;
                         D.Code = code;
-                        result = true;
+                        return true;
                     }
                 }
-             }
-            return result;
+            return false;
         }
     }
 }
