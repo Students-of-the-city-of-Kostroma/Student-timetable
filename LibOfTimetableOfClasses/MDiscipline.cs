@@ -50,5 +50,7 @@ namespace LibOfTimetableOfClasses
                 code = value;
             }
         }
+
+        
     }
 }
