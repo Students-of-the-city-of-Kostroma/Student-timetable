@@ -8,9 +8,24 @@ namespace LibOfTimetableOfClasses
 {
      public class MDiscipline
     {
+        public enum Keys { Id = 0, Name = 1, Code = 2 }
         Guid id;
         string name;
         string code;
+
+        public object this[Keys key]
+        {
+            get
+            {
+                switch (key)
+                {
+                    case Keys.Id: return Id;
+                    case Keys.Name: return Name;
+                    case Keys.Code: return Code;
+                    default: return null;
+                }
+            }
+        }
 
         public Guid Id
         {
