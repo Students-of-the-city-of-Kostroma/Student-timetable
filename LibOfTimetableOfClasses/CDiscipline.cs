@@ -8,7 +8,7 @@ namespace LibOfTimetableOfClasses
 {
     class CDiscipline
     {
-        List<MDiscipline> disciplineList = new List<MDiscipline>();
+        protected List<MDiscipline> disciplineList = new List<MDiscipline>();
 
         public bool DeleteDiscipline(Guid ID)
         {
