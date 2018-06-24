@@ -59,6 +59,7 @@
             this.DG.Size = new System.Drawing.Size(690, 287);
             this.DG.TabIndex = 0;
             this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
+           
             // 
             // Fam
             // 
@@ -126,7 +127,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DG);
-           
+          //  this.Name = "Teachers";
             this.Text = "Teachers";
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);

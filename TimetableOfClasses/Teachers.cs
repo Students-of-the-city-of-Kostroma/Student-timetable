@@ -33,9 +33,5 @@ namespace TimetableOfClasses
             button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }
 
-        private void DG_SizeChanged(object sender, EventArgs e)
-        {
-           
-        }
     }
 }
