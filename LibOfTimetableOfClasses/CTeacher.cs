@@ -86,94 +86,64 @@ namespace LibOfTimetableOfClasses
         /// <returns>Двумерный массив строк</returns>
         public string[,] GetData(string columnName, bool order)
         {
-            
+            int count = -1;
+            string[,] DataTechers = GetData();
+
             if (teacherList.Count != 0)
             {
-                string[,] s = new string[teacherList.Count + 1, sizeof(MTeacher.Keys)];
-                
-                for (int j = 0; j < s.GetLength(1); j++) // Заполнение первой строки заголовками
-                    s[0, j] = ((MTeacher.Keys)j).ToString();
 
-                int count = 1;
-                foreach (MTeacher m in teacherList)  //Заполняем двумерный массив строк
+                for (int j = 0; j < DataTechers.GetLength(1); j++)
                 {
-                    for (int j = 0; j < s.GetLength(1); j++)
-                    {
-                        switch(j)
-                        {
-                            case 0:
-                                s[count, j] = m.Id.ToString();
-                                break;
-                            case 1:
-                                s[count, j] = m.Surname;
-                                break;
-                            case 2:
-                                s[count, j] = m.Name;
-                                break;
-                            case 3:
-                                s[count, j] = m.MiddleName;
-                                break;
-                            case 4:
-                                s[count, j] = m.AcademicDegree;
-                                break;
-                            case 5:
-                                s[count, j] = m.AcademicRank;
-                                break;
-                            case 6:
-                                s[count, j] = m.SizeOfTeachingExperience.ToString();
-                                break;
-                        }
-                    }
-                    count++;
+                    if (columnName == DataTechers[0, j]) //Находим и запоминаем сортируемый столбец
+                    { count = j; break; }
                 }
 
-                for (int j = 0; j < s.GetLength(1); j++)
+                if (count != -1) // Если столбец найден
                 {
-                    if (columnName == s[0, j]) //Находим и запоминаем сортируемый столбец
-                        count = j;
-                }
-
-                if (order)
-                {
-                    for (int j = 1; j < s.GetLength(0); j++)
+                    if (order)
                     {
-                        for (int i = 1; i < s.GetLength(0) - 1; i++)
+                        for (int i = 1; i < DataTechers.GetLength(0); i++)
                         {
-                            int rez = String.Compare(s[i, count], s[i + 1, count]);
-                            if (rez < 0) // Если ... , то сверху вниз в порядке убывания
+                            for (int j = i + 1; j < DataTechers.GetLength(0); j++)
                             {
-                                string peremen = s[i, count];
-                                s[i, count] = s[i + 1, count]; // Меняем текущий с последующим
-                                s[i + 1, count] = peremen;
+                                int rez = String.Compare(DataTechers[i, count], DataTechers[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    temp = DataTechers[i, count];
+                                    DataTechers[i, count] = DataTechers[j, count];
+                                    DataTechers[j, count] = temp;
+                                }
                             }
                         }
+
+                        return DataTechers;
                     }
-                    
-                    return s;
-                }
-                else
-                {
-                    for (int j = 1; j < s.GetLength(0); j++)
+                    else
                     {
-                        for (int i = 1; i < s.GetLength(0); i++)
+                        for (int i = 1; i < DataTechers.GetLength(0); i++)
                         {
-                            int rez = String.Compare(s[i, count], s[i + 1, count]);
-                            if (rez > 0) // Если ... , то сверху вниз в порядке возрастания
+                            for (int j = i + 1; j < DataTechers.GetLength(0); j++)
                             {
-                                string peremen = s[i, count];
-                                s[i, count] = s[i + 1, count]; // Меняем текущий с последующим
-                                s[i + 1, count] = peremen;
+                                int rez = String.Compare(DataTechers[i, count], DataTechers[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    temp = DataTechers[i, count];
+                                    DataTechers[i, count] = DataTechers[j, count];
+                                    DataTechers[j, count] = temp;
+                                }
                             }
                         }
+
+                        return DataTechers;
                     }
-                    return s;
                 }
+                else // Если techearlist пуст
+                    return DataTechers;
             }
-            else // Если techearlist пуст
-            {
-                string[,] s = new string[,] { };
-                return s; // Вернём пустой массив
-            }
+            else
+                return DataTechers;
         }
     }
 }
