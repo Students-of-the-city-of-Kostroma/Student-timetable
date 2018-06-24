@@ -14,7 +14,28 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Список объектов Дисциплина
         /// </summary>
-        List<MDiscipline> disciplineList = new List<MDiscipline>();
+        protected List<MDiscipline> disciplineList = new List<MDiscipline>();
+
+        /// <summary>
+        /// Метод изменения объекта дисциплины
+        /// </summary>
+        /// <param идентификатор="ID"></param>
+        /// <param название="name"></param>
+        /// <param код="code"></param>
+        /// <returns></returns>
+        public bool SaveDiscipline(Guid ID, string name, string code)
+        {
+            foreach (MDiscipline D in disciplineList)
+                {
+                    if (ID.Equals(D.Id))
+                    {
+                        D.Name = name;
+                        D.Code = code;
+                        return true;
+                    }
+                }
+            return false;
+        }
 
         /// <summary>
         /// Метод добавить дисциплину

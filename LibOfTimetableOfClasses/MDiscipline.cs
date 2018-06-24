@@ -8,11 +8,28 @@ namespace LibOfTimetableOfClasses
 {
      public class MDiscipline
     {
+        /// <summary>
+        /// Перечисление полей объекта модели Дисциплина
+        /// </summary>
         public enum Keys { Id = 0, Name = 1, Code = 2 }
+        /// <summary>
+        /// Идентификатор ID
+        /// </summary>
         Guid id;
+        /// <summary>
+        /// Название дисциплины
+        /// </summary>
         string name;
+        /// <summary>
+        /// Код дисциплины
+        /// </summary>
         string code;
 
+        /// <summary>
+        /// Возвращает значение перечисления
+        /// </summary>
+        /// <param ключ="key"></param>
+        /// <returns></returns>
         public object this[Keys key]
         {
             get
@@ -27,6 +44,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает значение ID
+        /// </summary>
         public Guid Id
         {
             get
@@ -40,6 +60,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает значение Name - название
+        /// </summary>
         public string Name
         {
             get
@@ -53,6 +76,9 @@ namespace LibOfTimetableOfClasses
             }
         }
 
+        /// <summary>
+        /// Возвращает или задает значение Code - код
+        /// </summary>
         public string Code
         {
             get
