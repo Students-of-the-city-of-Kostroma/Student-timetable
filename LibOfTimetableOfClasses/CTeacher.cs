@@ -102,7 +102,7 @@ namespace LibOfTimetableOfClasses
                 {
                     if (order)
                     {
-                        for (int i = 1; i < DataTechers.GetLength(0); i++)
+                        for (int i = 1; i < DataTechers.GetLength(0) - 1; i++)
                         {
                             for (int j = i + 1; j < DataTechers.GetLength(0); j++)
                             {
@@ -110,9 +110,12 @@ namespace LibOfTimetableOfClasses
                                 if (rez < 0)
                                 {
                                     string temp;
-                                    temp = DataTechers[i, count];
-                                    DataTechers[i, count] = DataTechers[j, count];
-                                    DataTechers[j, count] = temp;
+                                    for (int p = 0; p < DataTechers.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataTechers[i, p];
+                                        DataTechers[i, p] = DataTechers[j, p];
+                                        DataTechers[j, p] = temp;
+                                    }
                                 }
                             }
                         }
@@ -121,7 +124,7 @@ namespace LibOfTimetableOfClasses
                     }
                     else
                     {
-                        for (int i = 1; i < DataTechers.GetLength(0); i++)
+                        for (int i = 1; i < DataTechers.GetLength(0) - 1; i++)
                         {
                             for (int j = i + 1; j < DataTechers.GetLength(0); j++)
                             {
@@ -129,9 +132,12 @@ namespace LibOfTimetableOfClasses
                                 if (rez < 0)
                                 {
                                     string temp;
-                                    temp = DataTechers[i, count];
-                                    DataTechers[i, count] = DataTechers[j, count];
-                                    DataTechers[j, count] = temp;
+                                    for (int p = 0; p < DataTechers.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataTechers[i, p];
+                                        DataTechers[i, p] = DataTechers[j, p];
+                                        DataTechers[j, p] = temp;
+                                    }
                                 }
                             }
                         }
@@ -139,8 +145,8 @@ namespace LibOfTimetableOfClasses
                         return DataTechers;
                     }
                 }
-                else // Если techearlist пуст
-                    return DataTechers;
+                else
+                    throw new Exception("Сортируемый столбец указан неверно!");
             }
             else
                 return DataTechers;
