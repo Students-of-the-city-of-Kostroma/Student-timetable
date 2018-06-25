@@ -39,5 +39,22 @@ namespace LibOfTimetableOfClasses
             }
             catch { return false; }
         }
+
+        /// <summary>
+        /// Метод получения данных о списке объектов Аудитория
+        /// </summary>
+        /// <returns></returns>
+        public string[,] GetData()
+        {
+            string[,] DataAuditors = new string[auditorList.Count + 1, sizeof(MAuditor.Keys)];
+
+            for (int j = 0; j < DataAuditors.GetLength(1); j++)
+                DataAuditors[0, j] = ((MAuditor.Keys)j).ToString();
+
+            for (int i = 1; i < DataAuditors.GetLength(0); i++)
+                for (int j = 0; j < DataAuditors.GetLength(1); j++)
+                    DataAuditors[i, j] = auditorList[i - 1][(MAuditor.Keys)j].ToString();
+            return DataAuditors;
+        }
     }
 }
