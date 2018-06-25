@@ -39,5 +39,30 @@ namespace LibOfTimetableOfClasses
             }
             catch { return false; }
         }
+
+        /// <summary>
+        /// Метод изменения объекта Аудитория в списке
+        /// </summary>
+        /// <param идентификатор="ID"></param>
+        /// <param номер="number"></param>
+        /// <param этаж="floor"></param>
+        /// <param корпус="building"></param>
+        /// <param вместительность="spacious"></param>
+        /// <returns></returns>
+        public bool SaveAuditor(Guid ID, string number, byte floor, string building, int spacious)
+        {
+            foreach (MAuditor A in auditorList)
+            {
+                if (ID.Equals(A.Id))
+                {
+                    A.Number = number;
+                    A.Floor = floor;
+                    A.Building = building;
+                    A.Spacious = spacious;
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
