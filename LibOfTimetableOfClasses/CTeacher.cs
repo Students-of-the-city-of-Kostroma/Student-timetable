@@ -78,9 +78,78 @@ namespace LibOfTimetableOfClasses
             return DataTeachers;
         }
 
-        public string[,] GetSortedData(string columnName, bool order)
+        /// <summary>
+        /// Возвращает отсортированный двумерный массив строк, содержащий данные из teacherlist
+        /// </summary>
+        /// <param name="columnName">Сортируемая колонка</param>
+        /// <param name="order">true => сортировка по возрастанию, false => сортировка по убыванию </param>
+        /// <returns>Двумерный массив строк</returns>
+        public string[,] GetData(string columnName, bool order)
         {
-            throw new Exception();
+            int count = -1;
+            string[,] DataTechers = GetData();
+
+            if (teacherList.Count != 0)
+            {
+
+                for (int j = 0; j < DataTechers.GetLength(1); j++)
+                {
+                    if (columnName == DataTechers[0, j]) //Находим и запоминаем сортируемый столбец
+                    { count = j; break; }
+                }
+
+                if (count != -1) // Если столбец найден
+                {
+                    if (order)
+                    {
+                        for (int i = 1; i < DataTechers.GetLength(0) - 1; i++)
+                        {
+                            for (int j = i + 1; j < DataTechers.GetLength(0); j++)
+                            {
+                                int rez = String.Compare(DataTechers[i, count], DataTechers[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    for (int p = 0; p < DataTechers.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataTechers[i, p];
+                                        DataTechers[i, p] = DataTechers[j, p];
+                                        DataTechers[j, p] = temp;
+                                    }
+                                }
+                            }
+                        }
+
+                        return DataTechers;
+                    }
+                    else
+                    {
+                        for (int i = 1; i < DataTechers.GetLength(0) - 1; i++)
+                        {
+                            for (int j = i + 1; j < DataTechers.GetLength(0); j++)
+                            {
+                                int rez = String.Compare(DataTechers[i, count], DataTechers[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    for (int p = 0; p < DataTechers.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataTechers[i, p];
+                                        DataTechers[i, p] = DataTechers[j, p];
+                                        DataTechers[j, p] = temp;
+                                    }
+                                }
+                            }
+                        }
+
+                        return DataTechers;
+                    }
+                }
+                else
+                    throw new Exception("Сортируемый столбец указан неверно!");
+            }
+            else
+                return DataTechers;
         }
     }
 }
