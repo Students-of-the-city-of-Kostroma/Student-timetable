@@ -17,6 +17,19 @@ namespace LibOfTimetableOfClasses
         protected List<MDiscipline> disciplineList = new List<MDiscipline>();
 
         /// <summary>
+        /// Метод удаления дисциплин
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public bool DeleteDiscipline(Guid ID)
+        {
+            try
+            {
+                int i = disciplineList.FindIndex(x => x.Id.ToString() == ID.ToString());
+                disciplineList.Remove(disciplineList[i]);
+            }
+        }
+        /// <summary>
         /// Метод изменения объекта дисциплины
         /// </summary>
         /// <param идентификатор="ID"></param>
@@ -56,7 +69,6 @@ namespace LibOfTimetableOfClasses
             }
             catch { return false; }
         }
-
         /// <summary>
         /// Метод вернуть данные
         /// </summary>
