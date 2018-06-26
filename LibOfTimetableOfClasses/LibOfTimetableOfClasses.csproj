@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAuditor.cs" />
+    <Compile Include="CDiscipline.cs" />
     <Compile Include="CTeacher.cs" />
+    <Compile Include="MAuditor.cs" />
+    <Compile Include="MDiscipline.cs" />
+    <Compile Include="MGroup.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

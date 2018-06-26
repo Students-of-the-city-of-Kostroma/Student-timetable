@@ -16,6 +16,7 @@ namespace TimetableOfClasses
         public AddTeacher()
         {
             InitializeComponent();
+            caps.Visible = Console.CapsLock;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,7 +26,11 @@ namespace TimetableOfClasses
             else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
 
         }
-
+        /// <summary>
+        /// Здесь должны быть комментарии
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTeacher_Load(object sender, EventArgs e)
         {
             comboBox1.Text = "0";
@@ -131,5 +136,6 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
+       
     }
 }
