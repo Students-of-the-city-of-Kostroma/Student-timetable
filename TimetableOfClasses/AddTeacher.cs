@@ -76,9 +76,9 @@ namespace TimetableOfClasses
             R.Text = Regex.Replace(R.Text, "[-]+", "-");
             if (R.Text.IndexOf("-") == 0)
                 R.Text = R.Text.Substring(1);
-            if (R.Text.LastIndexOf("-") == R.Text.Length-1)
-                R.Text = R.Text.Remove(R.Text.Length-1);
-            R.Text=R.Text.ToLower();
+            if (R.Text.LastIndexOf("-") == R.Text.Length - 1)
+                R.Text = R.Text.Remove(R.Text.Length - 1);
+            R.Text = R.Text.ToLower();
             R.Text = FirstLetterToUpper(R.Text);
 
         }
@@ -102,18 +102,39 @@ namespace TimetableOfClasses
             {
                 if (str.IndexOf("-") > 0)
                 {
-                    return Char.ToUpper(str[0]) + str.Substring(1, str.IndexOf("-")) +Char.ToUpper(str[str.IndexOf("-") + 1]) + str.Substring(str.IndexOf("-") + 2);
+                    return Char.ToUpper(str[0]) + str.Substring(1, str.IndexOf("-")) + Char.ToUpper(str[str.IndexOf("-") + 1]) + str.Substring(str.IndexOf("-") + 2);
                 }
                 else
-                return Char.ToUpper(str[0]) + str.Substring(1);
-            }         
+                    return Char.ToUpper(str[0]) + str.Substring(1);
+            }
             return "";
         }
 
-        private void AddTeacher_KeyUp(object sender, KeyEventArgs e)
+
+        private void KeyPress1(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyCode == Keys.CapsLock))
-                caps.Visible = Console.CapsLock;
+            char l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != '-')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void KeyPress2(object sender, KeyPressEventArgs e)
+        {
+            char l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void KeyPressNumber(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
         }
        
     }
