@@ -14,16 +14,10 @@ namespace LibOfTimetableOfClasses
         {
             try
             {
-                  MTeacher T = new MTeacher();
-                  T.Id = Guid.NewGuid();
-                  T.Name = name;
-                  T.MiddleName = middleName;
-                  T.Surname = surname;
-                  T.SizeOfTeachingExperience = SizeOfTeachingExperience;
-                  T.AcademicDegree = academicDegree;
-                  T.AcademicRank = AcademicRank;
-                  teacherList.Add(T);
-                  return true;
+                MTeacher T = new MTeacher(surname, name, middleName, academicDegree, academicRank, sizeOfTeachingExperience);
+
+                teacherList.Add(T);
+                return true;
             }
             catch { return false; }
         }

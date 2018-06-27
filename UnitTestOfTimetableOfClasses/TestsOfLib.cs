@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TimetableOfClasses;
-using System.Windows.Forms;
 using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
@@ -9,22 +7,11 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     class TestsOfLib
     {
-        private static MTeacher mT;
-        [TestInitialize]
-        public void ClassInitialize()
-        {
-            mT = new MTeacher();
-            mT.Name = "";
-            mT.Surname = "";
-            mT.MiddleName = "";
-            mT.SizeOfTeachingExperience = 0;
-            mT.AcademicDegree = "";
-            mT.AcademicRank = "";
-            
-        }
+        
         [TestMethod]
         public void MTeacherTest_1()
         {
+                MTeacher mT = new MTeacher("", "", "", "", "", 0); 
                 Assert.AreEqual(typeof(Guid), mT.Id.GetType(),"Тип поля ID не совпадает с диаграммой");
                 Assert.AreEqual(typeof(String), mT.Surname.GetType(), "Тип поля Surname не совпадает с диаграммой");
                 Assert.AreEqual(typeof(String), mT.Name.GetType(), "Тип поля Name не совпадает с диаграммой");

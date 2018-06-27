@@ -259,7 +259,6 @@
             this.Name = "AddTeacher";
             this.Text = "Добавить преподавателя";
             this.Load += new System.EventHandler(this.AddTeacher_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AddTeacher_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

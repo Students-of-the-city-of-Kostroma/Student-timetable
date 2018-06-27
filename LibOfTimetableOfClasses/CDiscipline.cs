@@ -27,7 +27,9 @@ namespace LibOfTimetableOfClasses
             {
                 int i = disciplineList.FindIndex(x => x.Id.ToString() == ID.ToString());
                 disciplineList.Remove(disciplineList[i]);
+                return true;
             }
+            catch { return false; }
         }
         /// <summary>
         /// Метод изменения объекта дисциплины
