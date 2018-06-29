@@ -5,7 +5,7 @@ using LibOfTimetableOfClasses;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    class TestsOfLib
+    public class TestsOfLib
     {
         
         [TestMethod]
