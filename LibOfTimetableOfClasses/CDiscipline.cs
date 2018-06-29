@@ -87,5 +87,79 @@ namespace LibOfTimetableOfClasses
                     DataDisciplines[i, j] = disciplineList[i - 1][(MDiscipline.Keys)j].ToString();
             return DataDisciplines;
         }
+
+        /// <summary>
+        /// Метод возвращающий отсортированные данные
+        /// </summary>
+        /// <param название строки="columnName"></param>
+        /// <param способ="order"></param>
+        /// <returns></returns>
+        public string[,] GetData(string columnName, bool order)
+        {
+            int count = -1;
+            string[,] DataDisciplines = GetData();
+
+            if (disciplineList.Count != 0)
+            {
+
+                for (int j = 0; j < DataDisciplines.GetLength(1); j++)
+                {
+                    if (columnName == DataDisciplines[0, j]) //Находим и запоминаем сортируемый столбец
+                    { count = j; break; }
+                }
+
+                if (count != -1) // Если столбец найден
+                {
+                    if (order)
+                    {
+                        for (int i = 1; i < DataDisciplines.GetLength(0) - 1; i++)
+                        {
+                            for (int j = i + 1; j < DataDisciplines.GetLength(0); j++)
+                            {
+                                int rez = String.Compare(DataDisciplines[i, count], DataDisciplines[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    for (int p = 0; p < DataDisciplines.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataDisciplines[i, p];
+                                        DataDisciplines[i, p] = DataDisciplines[j, p];
+                                        DataDisciplines[j, p] = temp;
+                                    }
+                                }
+                            }
+                        }
+
+                        return DataDisciplines;
+                    }
+                    else
+                    {
+                        for (int i = 1; i < DataDisciplines.GetLength(0) - 1; i++)
+                        {
+                            for (int j = i + 1; j < DataDisciplines.GetLength(0); j++)
+                            {
+                                int rez = String.Compare(DataDisciplines[i, count], DataDisciplines[j, count]);
+                                if (rez < 0)
+                                {
+                                    string temp;
+                                    for (int p = 0; p < DataDisciplines.GetLength(1); p++) // Меняем строки местами
+                                    {
+                                        temp = DataDisciplines[i, p];
+                                        DataDisciplines[i, p] = DataDisciplines[j, p];
+                                        DataDisciplines[j, p] = temp;
+                                    }
+                                }
+                            }
+                        }
+
+                        return DataDisciplines;
+                    }
+                }
+                else
+                    throw new Exception("Сортируемый столбец указан неверно!");
+            }
+            else
+                return DataDisciplines;
+        }
     }
 }
