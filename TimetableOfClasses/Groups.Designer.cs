@@ -65,7 +65,7 @@
             this.ClientSize = new System.Drawing.Size(352, 389);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Groups";
-            this.Text = "Groups";
+            this.Text = "Группы";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
