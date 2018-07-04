@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
         }
 
         /// <summary>
-        /// Возвращает отсортированный двумерный массив строк, содержащий данные из teacherlist
+        /// Возвращает отсортированный двумерный массив объектов, содержащий данные из teacherlist
         /// </summary>
         /// <param name="columnName">Сортируемая колонка</param>
         /// <param name="order">true => сортировка по возрастанию, false => сортировка по убыванию </param>
