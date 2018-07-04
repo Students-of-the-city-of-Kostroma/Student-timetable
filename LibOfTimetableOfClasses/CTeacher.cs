@@ -10,6 +10,14 @@ namespace LibOfTimetableOfClasses
     {
         List <MTeacher> teacherList = new List <MTeacher>();
 
+        public int Count
+        {
+            get
+            {
+                return teacherList.Count;
+            }
+        }
+
         public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
             try
