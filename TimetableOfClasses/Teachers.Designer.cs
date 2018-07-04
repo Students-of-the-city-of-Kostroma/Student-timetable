@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.DG = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameOfHuman = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TheSizeOfTeachingExperience = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fam,
-            this.Name,
+            this.NameOfHuman,
             this.SurName,
             this.AcademicDegree,
             this.AcademicRank,
@@ -58,44 +58,8 @@
             this.DG.Name = "DG";
             this.DG.Size = new System.Drawing.Size(690, 287);
             this.DG.TabIndex = 0;
+            this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
             this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
-           
-            // 
-            // Fam
-            // 
-            this.Fam.HeaderText = "Фамилия";
-            this.Fam.Name = "Fam";
-            this.Fam.Width = 81;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Имя";
-            this.Name.Name = "Name";
-            this.Name.Width = 54;
-            // 
-            // SurName
-            // 
-            this.SurName.HeaderText = "Отчество";
-            this.SurName.Name = "SurName";
-            this.SurName.Width = 79;
-            // 
-            // AcademicDegree
-            // 
-            this.AcademicDegree.HeaderText = "Ученая степень";
-            this.AcademicDegree.Name = "AcademicDegree";
-            this.AcademicDegree.Width = 104;
-            // 
-            // AcademicRank
-            // 
-            this.AcademicRank.HeaderText = "Ученое звание";
-            this.AcademicRank.Name = "AcademicRank";
-            this.AcademicRank.Width = 99;
-            // 
-            // TheSizeOfTeachingExperience
-            // 
-            this.TheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
-            this.TheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
-            this.TheSizeOfTeachingExperience.Width = 177;
             // 
             // button1
             // 
@@ -119,6 +83,48 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Fam
+            // 
+            this.Fam.HeaderText = "Фамилия";
+            this.Fam.Name = "Fam";
+            this.Fam.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Fam.Width = 81;
+            // 
+            // NameOfHuman
+            // 
+            this.NameOfHuman.HeaderText = "Имя";
+            this.NameOfHuman.Name = "NameOfHuman";
+            this.NameOfHuman.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NameOfHuman.Width = 54;
+            // 
+            // SurName
+            // 
+            this.SurName.HeaderText = "Отчество";
+            this.SurName.Name = "SurName";
+            this.SurName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.SurName.Width = 79;
+            // 
+            // AcademicDegree
+            // 
+            this.AcademicDegree.HeaderText = "Ученая степень";
+            this.AcademicDegree.Name = "AcademicDegree";
+            this.AcademicDegree.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.AcademicDegree.Width = 104;
+            // 
+            // AcademicRank
+            // 
+            this.AcademicRank.HeaderText = "Ученое звание";
+            this.AcademicRank.Name = "AcademicRank";
+            this.AcademicRank.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.AcademicRank.Width = 99;
+            // 
+            // TheSizeOfTeachingExperience
+            // 
+            this.TheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
+            this.TheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
+            this.TheSizeOfTeachingExperience.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.TheSizeOfTeachingExperience.Width = 177;
+            // 
             // Teachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,7 +133,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DG);
-          //  this.Name = "Teachers";
+            this.Name = "Teachers";
             this.Text = "Teachers";
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);
@@ -143,13 +149,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTheSizeOfTeachingExperience;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfHuman;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheSizeOfTeachingExperience;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
