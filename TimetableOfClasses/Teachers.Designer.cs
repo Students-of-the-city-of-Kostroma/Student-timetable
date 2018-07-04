@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameOfHuman = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fam,
-            this.Name,
+            this.NameOfHuman,
             this.SurName,
             this.AcademicDegree,
             this.AcademicRank,
@@ -90,12 +90,12 @@
             this.Fam.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Fam.Width = 81;
             // 
-            // Name
+            // NameOfHuman
             // 
-            this.Name.HeaderText = "Имя";
-            this.Name.Name = "Name";
-            this.Name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Name.Width = 54;
+            this.NameOfHuman.HeaderText = "Имя";
+            this.NameOfHuman.Name = "NameOfHuman";
+            this.NameOfHuman.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NameOfHuman.Width = 54;
             // 
             // SurName
             // 
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfHuman;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
