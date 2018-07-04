@@ -23,27 +23,27 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void MAudior_ID()
         {
-            Assert.AreEqual(typeof(Guid), A.Id.GetType(), "Тип поля ID не совпадает с диаграммой");
+            Assert.AreEqual(typeof(Guid), A.Id.GetType(), "Ожидался тип поля Guid");
         }
 
         public void MAudior_Number()
         {
-            Assert.AreEqual(typeof(String), A.Number.GetType(), "Тип поля Number не совпадает с диаграммой");
+            Assert.AreEqual(typeof(String), A.Number.GetType(), "Ожидался тип поля string");
         }
 
         public void MAudior_Floor()
         {
-            Assert.AreEqual(typeof(Byte), A.Floor.GetType(), "Тип поля Floor не совпадает с диаграммой");
+            Assert.AreEqual(typeof(Byte), A.Floor.GetType(), "Ожидался тип поля byte");
         }
 
         public void MAudior_Building()
         {
-            Assert.AreEqual(typeof(String), A.Building.GetType(), "Тип поля Building не совпадает с диаграммой");
+            Assert.AreEqual(typeof(String), A.Building.GetType(), "Ожидался тип поля string");
         }
 
         public void MAudior_Spacious()
         {
-            Assert.AreEqual(typeof(int), A.Spacious.GetType(), "Тип поля Spacious не совпадает с диаграммой");
+            Assert.AreEqual(typeof(int), A.Spacious.GetType(), "Ожидался тип поля int");
         }
     }
 }
