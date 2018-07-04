@@ -53,9 +53,10 @@ namespace LibOfTimetableOfClasses
                     if (ID.Equals(auditorList[i].Id))
                     {
                         auditorList.RemoveAt(i);
+                        return true;
                     }
                 }
-                return true;
+                return false;
             }
             catch { return false; }
         }
