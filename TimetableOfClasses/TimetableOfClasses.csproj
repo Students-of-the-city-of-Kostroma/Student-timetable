@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TimetableOfClasses</RootNamespace>
     <AssemblyName>TimetableOfClasses</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAuditor.cs" />
+    <Compile Include="CDiscipline.cs" />
+    <Compile Include="CGroups.cs" />
+    <Compile Include="CObject.cs" />
+    <Compile Include="CTeacher.cs" />
+    <Compile Include="ICObject.cs" />
+    <Compile Include="MAuditor.cs" />
+    <Compile Include="MDiscipline.cs" />
+    <Compile Include="MGroups.cs" />
+    <Compile Include="MObject.cs" />
+    <Compile Include="MTeacher.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
