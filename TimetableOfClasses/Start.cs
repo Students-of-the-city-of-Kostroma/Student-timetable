@@ -16,5 +16,29 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
         }
+
+        private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Teachers t = new Teachers();
+            t.ShowDialog();
+        }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Groups group = new Groups();
+            group.ShowDialog();
+        }
+        
+        private void дисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Discipline d = new Discipline();
+            d.ShowDialog();
+        }
+        
+        private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditor audit = new Auditor();
+            audit.ShowDialog();
+        }
     }
 }
