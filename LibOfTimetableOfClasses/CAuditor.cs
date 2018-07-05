@@ -39,6 +39,27 @@ namespace LibOfTimetableOfClasses
             }
             catch { return false; }
         }
+        /// <summary>
+        /// Метод удаления объекта Аудитория из списка
+        /// </summary>
+        /// <param идентификатор="ID"></param>
+        /// <returns></returns>
+        public bool DeleteAutidor(Guid ID)
+        {
+            try
+            {
+                for (int i = 0; i < auditorList.Count; i++)
+                {
+                    if (ID.Equals(auditorList[i].Id))
+                    {
+                        auditorList.RemoveAt(i);
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch { return false; }
+        }
 
         /// <summary>
         /// Метод изменения объекта Аудитория в списке

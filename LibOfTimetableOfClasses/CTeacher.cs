@@ -10,20 +10,22 @@ namespace LibOfTimetableOfClasses
     {
         List <MTeacher> teacherList = new List <MTeacher>();
 
+        public int Count
+        {
+            get
+            {
+                return teacherList.Count;
+            }
+        }
+
         public bool AddTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
             try
             {
-                  MTeacher T = new MTeacher();
-                  T.Id = Guid.NewGuid();
-                  T.Name = name;
-                  T.MiddleName = middleName;
-                  T.Surname = surname;
-                  T.SizeOfTeachingExperience = SizeOfTeachingExperience;
-                  T.AcademicDegree = academicDegree;
-                  T.AcademicRank = AcademicRank;
-                  teacherList.Add(T);
-                  return true;
+                MTeacher T = new MTeacher(surname, name, middleName, academicDegree, academicRank, sizeOfTeachingExperience);
+
+                teacherList.Add(T);
+                return true;
             }
             catch { return false; }
         }
@@ -79,7 +81,7 @@ namespace LibOfTimetableOfClasses
         }
 
         /// <summary>
-        /// Возвращает отсортированный двумерный массив строк, содержащий данные из teacherlist
+        /// Возвращает отсортированный двумерный массив объектов, содержащий данные из teacherlist
         /// </summary>
         /// <param name="columnName">Сортируемая колонка</param>
         /// <param name="order">true => сортировка по возрастанию, false => сортировка по убыванию </param>

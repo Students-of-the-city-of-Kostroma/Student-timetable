@@ -68,6 +68,7 @@
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="RefData.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
+      <Project>{93a4d5cc-b39e-480d-9a5e-9f7bb97ff8a5}</Project>
+      <Name>LibOfTimetableOfClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
