@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TimetableOfClasses;
-using System.Windows.Forms;
 using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
@@ -13,11 +12,13 @@ namespace UnitTestOfTimetableOfClasses
         [TestInitialize]
         public void ClassInitialize()
         {
-            A = new MAuditor();
-            A.Number = "";
-            A.Floor = 0;
-            A.Building = "";
-            A.Spacious = 0;
+            A = new MAuditor
+            {
+                Number = "",
+                Floor = 0,
+                Building = "",
+                Spacious = 0
+            };
         }
 
         [TestMethod]
@@ -25,22 +26,22 @@ namespace UnitTestOfTimetableOfClasses
         {
             Assert.AreEqual(typeof(Guid), A.Id.GetType(), "Ожидался тип поля Guid");
         }
-
+        [TestMethod]
         public void Issue_98_2()
         {
             Assert.AreEqual(typeof(String), A.Number.GetType(), "Ожидался тип поля string");
         }
-
+        [TestMethod]
         public void Issue_98_3()
         {
             Assert.AreEqual(typeof(Byte), A.Floor.GetType(), "Ожидался тип поля byte");
         }
-
+        [TestMethod]
         public void Issue_98_4()
         {
             Assert.AreEqual(typeof(String), A.Building.GetType(), "Ожидался тип поля string");
         }
-
+        [TestMethod]
         public void Issue_98_5()
         {
             Assert.AreEqual(typeof(int), A.Spacious.GetType(), "Ожидался тип поля int");
