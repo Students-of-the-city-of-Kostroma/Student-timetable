@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Дисциплина
+    /// </summary>
      public class MDiscipline
     {
         /// <summary>
@@ -24,6 +27,17 @@ namespace LibOfTimetableOfClasses
         /// Код дисциплины
         /// </summary>
         string code;
+        /// <summary>
+        /// Создает экземпляр дисциплины
+        /// </summary>
+        /// <param name="name">Название дисциплины</param>
+        /// <param name="code">Код дисциплины</param>
+        public MDiscipline(string name, string code)
+        {
+            id = Guid.NewGuid();
+            Name = name;
+            Code = code;
+        }
 
         /// <summary>
         /// Возвращает значение перечисления

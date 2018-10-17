@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Преподаватель
+    /// </summary>
     public class MTeacher
     {
         public enum Keys { Id = 0, Surname = 1, Name = 2, MiddleName = 3, AcademicDegree = 4, AcademicRank = 5, SizeOfTeachingExperience = 6}
@@ -129,12 +132,13 @@ namespace LibOfTimetableOfClasses
 
         public MTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
         {
-            this.surname = surname;
-            this.name = name;
-            this.middleName = middleName;
-            this.academicDegree = academicDegree;
-            this.academicRank = academicRank;
-            this.sizeOfTeachingExperience = sizeOfTeachingExperience;
+            id = Guid.NewGuid();
+            Surname = surname;
+            Name = name;
+            MiddleName = middleName;
+            AcademicDegree = academicDegree;
+            AcademicRank = academicRank;
+            SizeOfTeachingExperience = sizeOfTeachingExperience;
         }
     }
 }

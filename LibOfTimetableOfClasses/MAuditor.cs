@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Аудитория
+    /// </summary>
     public class MAuditor
     {
         /// <summary>
@@ -22,13 +25,29 @@ namespace LibOfTimetableOfClasses
         /// </summary>     
         byte floor;
         /// <summary>
-             /// корпус
-             /// </summary>                 
+        /// корпус
+        /// </summary>                 
         string building;
         /// <summary>
         /// вместительность аудитории
         /// </summary>
         int spacious;
+
+        /// <summary>
+        /// Конструктор иницциализирующий экземпляр объекта Аудитория
+        /// </summary>
+        /// <param name="number">номер аудитории</param>
+        /// <param name="floor">этаж</param>
+        /// <param name="building">корпус</param>
+        /// <param name="spacious">вместительность аудитории</param>
+        public MAuditor(string number, byte floor, string building, int spacious)
+        {
+            id = Guid.NewGuid();
+            Number = number;
+            Floor = floor;
+            Building = building;
+            Spacious = spacious;
+        }
 
         /// <summary>
         /// Возвращает значение перечисления

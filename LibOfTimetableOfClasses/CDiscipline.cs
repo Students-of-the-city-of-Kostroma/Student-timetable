@@ -62,10 +62,7 @@ namespace LibOfTimetableOfClasses
         {
             try
             {
-                MDiscipline D = new MDiscipline();
-                D.Id = Guid.NewGuid();
-                D.Name = name;
-                D.Code = code;
+                MDiscipline D = new MDiscipline(name, code);
                 disciplineList.Add(D);
                 return true;
             }

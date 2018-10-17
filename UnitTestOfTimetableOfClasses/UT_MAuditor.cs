@@ -12,13 +12,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestInitialize]
         public void ClassInitialize()
         {
-            A = new MAuditor
-            {
-                Number = "",
-                Floor = 0,
-                Building = "",
-                Spacious = 0
-            };
+            A = new MAuditor("", 0, "", 0);
         }
 
         [TestMethod]

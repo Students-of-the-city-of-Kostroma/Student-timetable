@@ -28,12 +28,7 @@ namespace LibOfTimetableOfClasses
         {
             try
             {
-                MAuditor A = new MAuditor();
-                A.Id = Guid.NewGuid();
-                A.Number = number;
-                A.Floor = floor;
-                A.Building = building;
-                A.Spacious = spacious;
+                MAuditor A = new MAuditor(number, floor, building, spacious);
                 auditorList.Add(A);
                 return true;
             }
