@@ -9,10 +9,9 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Преподаватель
     /// </summary>
-    public class MTeacher
+    public class MTeacher : Model
     {
         public enum Keys { Id = 0, Surname = 1, Name = 2, MiddleName = 3, AcademicDegree = 4, AcademicRank = 5, SizeOfTeachingExperience = 6}
-        Guid id;
         string surname;
         string name;
         string middleName;
@@ -39,18 +38,6 @@ namespace LibOfTimetableOfClasses
         }
 
 
-        public Guid Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
 
         public string Surname
         {
@@ -130,9 +117,8 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        public MTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience)
+        public MTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience):base()
         {
-            id = Guid.NewGuid();
             Surname = surname;
             Name = name;
             MiddleName = middleName;

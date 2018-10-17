@@ -43,10 +43,12 @@
     <Compile Include="CAuditor.cs" />
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CGroup.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MGroup.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

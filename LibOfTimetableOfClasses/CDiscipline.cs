@@ -14,7 +14,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Список объектов Дисциплина
         /// </summary>
-        protected List<MDiscipline> disciplineList = new List<MDiscipline>();
+        protected static List<MDiscipline> disciplineList = new List<MDiscipline>();
 
         /// <summary>
         /// Метод удаления дисциплин
@@ -41,14 +41,14 @@ namespace LibOfTimetableOfClasses
         public bool SaveDiscipline(Guid ID, string name, string code)
         {
             foreach (MDiscipline D in disciplineList)
+            {
+                if (ID.Equals(D.Id))
                 {
-                    if (ID.Equals(D.Id))
-                    {
-                        D.Name = name;
-                        D.Code = code;
-                        return true;
-                    }
+                    D.Name = name;
+                    D.Code = code;
+                    return true;
                 }
+            }
             return false;
         }
 

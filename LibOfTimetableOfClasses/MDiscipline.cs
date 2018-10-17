@@ -9,16 +9,13 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Дисциплина
     /// </summary>
-     public class MDiscipline
+     public class MDiscipline : Model
     {
         /// <summary>
         /// Перечисление полей объекта модели Дисциплина
         /// </summary>
         public enum Keys { Id = 0, Name = 1, Code = 2 }
-        /// <summary>
-        /// Идентификатор ID
-        /// </summary>
-        Guid id;
+
         /// <summary>
         /// Название дисциплины
         /// </summary>
@@ -32,9 +29,8 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         /// <param name="name">Название дисциплины</param>
         /// <param name="code">Код дисциплины</param>
-        public MDiscipline(string name, string code)
+        public MDiscipline(string name, string code):base()
         {
-            id = Guid.NewGuid();
             Name = name;
             Code = code;
         }
@@ -58,21 +54,7 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        /// <summary>
-        /// Возвращает или задает значение ID
-        /// </summary>
-        public Guid Id
-        {
-            get
-            {
-                return id;
-            }
 
-            set
-            {
-                id = value;
-            }
-        }
 
         /// <summary>
         /// Возвращает или задает значение Name - название

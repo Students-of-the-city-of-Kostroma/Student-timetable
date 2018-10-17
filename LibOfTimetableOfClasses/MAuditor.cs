@@ -9,13 +9,12 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Аудитория
     /// </summary>
-    public class MAuditor
+    public class MAuditor : Model
     {
         /// <summary>
         /// Перечисление полей объекта модели Аудитория
         /// </summary>
         public enum Keys { Id = 0, Number = 1, Floor = 2, Building = 3, Spacious = 4 }
-        Guid id;
         /// <summary>
         /// номер аудитории
         /// </summary>
@@ -40,9 +39,8 @@ namespace LibOfTimetableOfClasses
         /// <param name="floor">этаж</param>
         /// <param name="building">корпус</param>
         /// <param name="spacious">вместительность аудитории</param>
-        public MAuditor(string number, byte floor, string building, int spacious)
+        public MAuditor(string number, byte floor, string building, int spacious):base()
         {
-            id = Guid.NewGuid();
             Number = number;
             Floor = floor;
             Building = building;
@@ -67,22 +65,6 @@ namespace LibOfTimetableOfClasses
                     case Keys.Spacious: return Spacious;
                     default: return null;
                 }
-            }
-        }
-
-        /// <summary>
-        /// Возвращает или задает идентификатор id
-        /// </summary>
-        public Guid Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
             }
         }
 

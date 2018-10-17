@@ -9,44 +9,25 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Группа
     /// </summary>
-    public class MGroup
+    public class MGroup : Model
     {
         /// <summary>
         /// Перечисление полей объекта модели Группа
         /// </summary>
         public enum Keys { Id = 0, Cipher = 1, Population = 2 }
-        Guid id;
-        /// <summary>
-        /// шифр
-        /// </summary>
+
         string cipher;
         /// <summary>
         /// численность
         /// </summary>
         byte population;
         /// <summary>
-        /// Возвращает или задает идентификатор id
-        /// </summary>
-        public Guid Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-        /// <summary>
         /// Создает экземпляр
         /// </summary>
         /// <param name="cipher">шифр</param>
         /// <param name="population">численность</param>
-        public MGroup(string cipher, byte population)
+        public MGroup(string cipher, byte population):base()
         {
-            id = Guid.NewGuid();
             Cipher = cipher;
             Population = population;
         }
