@@ -14,7 +14,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Список объектов Дисциплина
         /// </summary>
-        protected static List<MDiscipline> disciplineList = new List<MDiscipline>();
+        protected List<MDiscipline> disciplineList = new List<MDiscipline>();
 
         /// <summary>
         /// Метод удаления дисциплин
