@@ -12,15 +12,14 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public abstract class Controller
     {
-        public static DataSet dataSet = new DataSet();
+        /// <summary>
+        /// Общий ресурс для хранения таблиц
+        /// </summary>
+        public static DataSet DataSet = new DataSet();
         /// <summary>
         /// Таблица с данными
         /// </summary>
         protected DataTable table;
-        /// <summary>
-        /// Общий ресурс для хранения таблиц
-        /// </summary>
-        protected static DataSet DataSet { get => dataSet; set => dataSet = value; }
         /// <summary>
         /// Создает таблицу с указаным именем
         /// </summary>
@@ -34,7 +33,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            dataSet.Tables.Add(table);
+            DataSet.Tables.Add(table);
         }
         /// <summary>
         /// Добавление данных в таблицу
