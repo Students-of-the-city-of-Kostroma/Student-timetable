@@ -57,7 +57,7 @@ namespace LibOfTimetableOfClasses
         /// <param name="columnName">Имя столбца</param>
         /// <param name="order">порядок сортировки true-ASC false-DESC</param>
         /// <returns></returns>
-        public DataTable GetData(string columnName, bool order)
+        public DataTable Select(string columnName, bool order)
         {
             table.DefaultView.Sort = columnName + " " + ((order)?"ASC":"DESC");
             return table;
