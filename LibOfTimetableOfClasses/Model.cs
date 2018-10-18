@@ -1,21 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Хранит только идентификатор
+    /// </summary>
     public abstract class Model
     {
-        private Guid id;
         /// <summary>
-        /// Возвращает или задает значение ID
+        /// Идентификатор
         /// </summary>
-        public Guid Id { get => id; set => id = value; }
+        protected Guid id;
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public Guid Id { get => id; }
+        /// <summary>
+        /// Инициализирует идентификатор
+        /// </summary>
         public Model()
         {
-            Id = Guid.NewGuid();
+            id = Guid.NewGuid();
         }
     }
 }

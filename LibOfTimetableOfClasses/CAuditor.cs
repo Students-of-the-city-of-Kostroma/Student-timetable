@@ -19,10 +19,10 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Метод добавления объекта Аудитория в список
         /// </summary>
-        /// <param номер="number"></param>
-        /// <param этаж="floor"></param>
-        /// <param корпус="building"></param>
-        /// <param вместительность="spacious"></param>
+        /// <param name="number">номер</param>
+        /// <param name="floor">этаж</param>
+        /// <param name="building">корпус</param>
+        /// <param name="spacious">вместительность</param>
         /// <returns></returns>
         public bool AddAuditor(string number, byte floor, string building, int spacious)
         {
@@ -37,7 +37,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Метод удаления объекта Аудитория из списка
         /// </summary>
-        /// <param идентификатор="ID"></param>
+        /// <param name="ID">идентификатор</param>
         /// <returns></returns>
         public bool DeleteAutidor(Guid ID)
         {
@@ -59,11 +59,11 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Метод изменения объекта Аудитория в списке
         /// </summary>
-        /// <param идентификатор="ID"></param>
-        /// <param номер="number"></param>
-        /// <param этаж="floor"></param>
-        /// <param корпус="building"></param>
-        /// <param вместительность="spacious"></param>
+        /// <param name="ID">идентификатор</param>
+        /// <param name="number">номер</param>
+        /// <param name="floor">этаж</param>
+        /// <param name="building">корпус</param>
+        /// <param name="spacious">вместительность</param>
         /// <returns></returns>
         public bool SaveAuditor(Guid ID, string number, byte floor, string building, int spacious)
         {
@@ -80,6 +80,7 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
+        /// <summary>
         /// Метод получения данных о списке объектов Аудитория
         /// </summary>
         /// <returns></returns>
