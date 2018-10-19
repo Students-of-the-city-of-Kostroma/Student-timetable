@@ -28,6 +28,11 @@ namespace LibOfTimetableOfClasses
             table.Columns.Add(column);
         }
 
+        public override bool Delete(Model model)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool Insert(Model model)
         {
             try
@@ -45,6 +50,11 @@ namespace LibOfTimetableOfClasses
                 Debug.WriteLine(ex.Source);
                 return false;
             }
+        }
+
+        public override bool Update(Model model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

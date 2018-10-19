@@ -41,8 +41,12 @@ namespace LibOfTimetableOfClasses
         /// <param name="model"></param>
         /// <returns></returns>
         public abstract bool Insert(Model model);
-        //public abstract bool Update(Model model);
-        //public abstract bool Delete(Model model);
+        
+        public abstract bool Update(Model model);
+        
+        public abstract bool Delete(Model model);
+        
+            
         /// <summary>
         /// Возвращает таблицу
         /// </summary>
