@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
     /// <summary>
-    /// Контроллер объекта Аудитория
+    /// Контроллер объекта Аудитория.
     /// </summary>
     public class CAuditor : Controller
     {
