@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace LibOfTimetableOfClasses
 {
     public class CGroup : Controller
     {
-        List<MGroup> groupList = new List<MGroup>();
+        //List<MGroup> groupList = new List<MGroup>();
 
         public CGroup() : base("Группа")
         {
@@ -16,11 +17,13 @@ namespace LibOfTimetableOfClasses
         }
         public override bool Delete(Model model)
         {
-            foreach (MGroup m in groupList)
+            DataTable table = Select();
+
+            for (int i = 0; i < table.Rows.Count; i++)
             {
-                if(m.Id == model.Id)
+                if ((Guid)table.Rows[i][0] == model.Id)
                 {
-                    groupList.Remove(m);
+                    table.Rows[i].Delete();
                     return true;
                 }
             }
