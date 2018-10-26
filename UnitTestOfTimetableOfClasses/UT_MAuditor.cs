@@ -7,37 +7,70 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAuditor
     {
-        private static MAuditor A;
-        [TestInitialize]
-        public void ClassInitialize()
-        {
-            A = new MAuditor("", 0, "", 0);
-        }
-
         [TestMethod]
         public void Issue_98_1()
         {
-            Assert.AreEqual(typeof(Guid), A.Id.GetType(), "Ожидался тип поля Guid");
+            try
+            {
+                MAuditor A = new MAuditor("", 0, "", 0);
+                Assert.AreEqual(typeof(Guid), A.Id.GetType(), "Ожидался тип поля Guid");
+            }
+            catch(Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
         [TestMethod]
         public void Issue_98_2()
         {
-            Assert.AreEqual(typeof(String), A.Number.GetType(), "Ожидался тип поля string");
+            try
+            {
+                MAuditor A = new MAuditor("", 0, "", 0);
+                Assert.AreEqual(typeof(String), A.Number.GetType(), "Ожидался тип поля string");
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
         [TestMethod]
         public void Issue_98_3()
         {
-            Assert.AreEqual(typeof(Byte), A.Floor.GetType(), "Ожидался тип поля byte");
+            try
+            {
+                MAuditor A = new MAuditor("", 0, "", 0);
+                Assert.AreEqual(typeof(Byte), A.Floor.GetType(), "Ожидался тип поля byte");
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
         [TestMethod]
         public void Issue_98_4()
         {
-            Assert.AreEqual(typeof(String), A.Building.GetType(), "Ожидался тип поля string");
+            try
+            {
+                MAuditor A = new MAuditor("", 0, "", 0);
+                Assert.AreEqual(typeof(String), A.Building.GetType(), "Ожидался тип поля string");
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
         [TestMethod]
         public void Issue_98_5()
         {
-            Assert.AreEqual(typeof(int), A.Spacious.GetType(), "Ожидался тип поля int");
+            try
+            {
+                MAuditor A = new MAuditor("", 0, "", 0);
+                Assert.AreEqual(typeof(int), A.Spacious.GetType(), "Ожидался тип поля int");
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
         }
     }
 }
