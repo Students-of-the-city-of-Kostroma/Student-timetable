@@ -36,17 +36,23 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(table);
         }
         /// <summary>
-        /// Добавление данных в таблицу
+        /// Добавление экземпляра в таблицу
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        /// <param name="model">Добавляемый экземпляр</param>
+        /// <returns>Вернет истину если удалось добавить экземпляр</returns>
         public abstract bool Insert(Model model);
-        
+        /// <summary>
+        /// Изменение экземпляра в таблице
+        /// </summary>
+        /// <param name="model">Изменяемый экземпляр</param>
+        /// <returns>Вернет истину если удалось изменить экземпляр</returns>
         public abstract bool Update(Model model);
-        
+        /// <summary>
+        /// Удаление экземпляра из таблицы
+        /// </summary>
+        /// <param name="model">Удаляемый экземпляр</param>
+        /// <returns>Вернет истину если удалось изменить экземпляр</returns>
         public abstract bool Delete(Model model);
-        
-            
         /// <summary>
         /// Возвращает таблицу
         /// </summary>
