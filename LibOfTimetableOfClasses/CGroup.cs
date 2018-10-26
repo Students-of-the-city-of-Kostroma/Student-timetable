@@ -8,13 +8,23 @@ namespace LibOfTimetableOfClasses
 {
     public class CGroup : Controller
     {
+        List<MGroup> groupList = new List<MGroup>();
+
         public CGroup() : base("Группа")
         {
             throw new NotImplementedException();
         }
         public override bool Delete(Model model)
         {
-            throw new NotImplementedException();
+            foreach (MGroup m in groupList)
+            {
+                if(m.Id == model.Id)
+                {
+                    groupList.Remove(m);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override bool Insert(Model model)
