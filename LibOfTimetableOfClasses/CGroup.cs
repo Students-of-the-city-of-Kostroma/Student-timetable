@@ -17,7 +17,7 @@ namespace LibOfTimetableOfClasses
         {
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i][0] == model.Id)
+                if ((Guid)table.Rows[i]["ID"] == model.Id && this.cipher == table.Rows[i]["cipher"])
                 {
                     table.Rows[i].Delete();
                     return true;
