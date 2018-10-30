@@ -12,7 +12,7 @@ namespace LibOfTimetableOfClasses
     public class MGroup : Model
     {
         /// <summary>
-        /// Перечисление полей объекта модели Группа
+        /// Перечисление полей объекта модели Группа. Это перечисление будет удалено.
         /// </summary>
         public enum Keys { Id = 0, Cipher = 1, Population = 2 }
 
