@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +16,29 @@ namespace LibOfTimetableOfClasses
 
         public CAuditor() : base("Аудитория")
         {
-            throw new NotImplementedException();
+            DataColumn column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "number";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(byte);
+            column.ColumnName = "floor";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "building";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(int);
+            column.ColumnName = "spacious";
+            column.ReadOnly = true;
+            table.Columns.Add(column);
         }
 
         public override bool Insert(Model model)
