@@ -20,24 +20,28 @@ namespace LibOfTimetableOfClasses
             column.DataType = typeof(string);
             column.ColumnName = "number";
             column.ReadOnly = true;
+            column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
             column.DataType = typeof(byte);
             column.ColumnName = "floor";
             column.ReadOnly = true;
+            column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "building";
             column.ReadOnly = true;
+            column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
             column.DataType = typeof(int);
             column.ColumnName = "spacious";
             column.ReadOnly = true;
+            column.Unique = true;
             table.Columns.Add(column);
         }
 
