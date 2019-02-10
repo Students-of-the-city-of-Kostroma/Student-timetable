@@ -16,12 +16,14 @@ namespace LibOfTimetableOfClasses
 
         public CAuditor() : base("Аудитория")
         {
+            DataColumn[] keys = new DataColumn[4];
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "number";
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
+            keys[0] = column;
 
             column = new DataColumn();
             column.DataType = typeof(byte);
@@ -29,6 +31,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
+            keys[1] = column;
 
             column = new DataColumn();
             column.DataType = typeof(string);
@@ -36,6 +39,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
+            keys[2] = column;
 
             column = new DataColumn();
             column.DataType = typeof(int);
@@ -43,6 +47,8 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
+            keys[3] = column;
+            table.PrimaryKey = keys;
         }
 
         public override bool Insert(Model model)
