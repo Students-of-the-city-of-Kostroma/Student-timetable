@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
@@ -54,7 +55,25 @@ namespace LibOfTimetableOfClasses
         }
         public override bool Insert(Model model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                MTeacher mTeacher = (MTeacher)model;
+                DataRow newRow = table.NewRow();
+                newRow["ID"] = Guid.NewGuid();
+                newRow["Surname"] = mTeacher.Surname;
+                newRow["Name"] = mTeacher.Name;
+                newRow["MiddleName"] = mTeacher.MiddleName;
+                newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+                newRow["AcademicRank"] = mTeacher.AcademicRank;
+                newRow["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
+                table.Rows.Add(newRow);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Source);
+                return false;
+            }
         }
 
         public override bool Update(Model model)
