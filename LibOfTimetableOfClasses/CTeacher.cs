@@ -83,7 +83,16 @@ namespace LibOfTimetableOfClasses
 
         public override bool Delete(Model model)
         {
-            throw new NotImplementedException();
+            MTeacher mTeacher = (MTeacher)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((Guid)table.Rows[i]["ID"] == model.Id && mTeacher.Surname == (string)table.Rows[i]["Surname"] && mTeacher.Name == (string)table.Rows[i]["Name"] && mTeacher.MiddleName == (string)table.Rows[i]["MiddleName"])
+                {
+                    table.Rows[i].Delete();
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
