@@ -11,7 +11,22 @@ namespace LibOfTimetableOfClasses
     {
         public CGroup() : base("Группа")
         {
-            throw new NotImplementedException();
+            DataColumn[] keys = new DataColumn[4];
+            DataColumn column = new DataColumn();
+            column.DataType = typeof(byte);
+            column.ColumnName = "population";
+            column.ReadOnly = true;
+            column.Unique = true;
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "cipher";
+            column.ReadOnly = true;
+            column.Unique = true;
+            table.Columns.Add(column);
+            keys[0] = column;
+            table.PrimaryKey = keys;
         }
         public override bool Delete(Model model)
         {
