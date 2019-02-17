@@ -11,14 +11,13 @@ namespace LibOfTimetableOfClasses
     {
         public CGroup() : base("Группа")
         {
-            DataColumn[] keys = new DataColumn[4];
+            DataColumn[] keys = new DataColumn[1];
             DataColumn column = new DataColumn();
             column.DataType = typeof(byte);
             column.ColumnName = "population";
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[0] = column;
 
             column = new DataColumn();
             column.DataType = typeof(string);
@@ -26,7 +25,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[1] = column;
+            keys[0] = column;
             table.PrimaryKey = keys;
         }
         public override bool Delete(Model model)
