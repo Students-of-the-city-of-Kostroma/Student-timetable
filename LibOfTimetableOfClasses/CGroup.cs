@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,29 @@ namespace LibOfTimetableOfClasses
 
         public override bool Update(Model model)
         {
-            throw new NotImplementedException();
+            MGroup mGroup = (MGroup)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((Guid)table.Rows[i]["ID"] == model.Id && mGroup.Cipher != null)
+                {
+                    try
+                    {
+                        table.Rows[i].BeginEdit();
+                        table.Rows[i]["ID"] = mGroup.Id;
+                        table.Rows[i]["cipher"] = mGroup.Cipher;
+                        table.Rows[i]["population"] = mGroup.Population;
+                        table.Rows[i].EndEdit();
+                        table.Rows[i].AcceptChanges();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Source);
+                        return false;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
