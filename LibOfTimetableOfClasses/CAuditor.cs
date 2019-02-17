@@ -61,7 +61,7 @@ namespace LibOfTimetableOfClasses
             MAuditor mAuditor = (MAuditor)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number == (string)table.Rows[i]["Number"] && mAuditor.Building == (string)table.Rows[i]["Building"])
+                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number != null && mAuditor.Building != null)
                 {
                     try
                     {
