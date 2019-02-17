@@ -78,7 +78,32 @@ namespace LibOfTimetableOfClasses
 
         public override bool Update(Model model)
         {
-            throw new NotImplementedException();
+            MTeacher mTeacher = (MTeacher)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((Guid)table.Rows[i]["ID"] == model.Id && mTeacher.MiddleName != null && mTeacher.Name != null && mTeacher.Surname != null && mTeacher.AcademicDegree != null && mTeacher.AcademicRank != null)
+                {
+                    try
+                    {
+                        table.Rows[i].BeginEdit();
+                        table.Rows[i]["Surname"] = mTeacher.Surname;
+                        table.Rows[i]["Name"] = mTeacher.Name;
+                        table.Rows[i]["MiddleName"] = mTeacher.MiddleName;
+                        table.Rows[i]["AcademicDegree"] = mTeacher.AcademicDegree;
+                        table.Rows[i]["AcademicRank"] = mTeacher.AcademicRank;
+                        table.Rows[i]["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
+                        table.Rows[i].EndEdit();
+                        table.Rows[i].AcceptChanges();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Source);
+                        return false;
+                    }
+                }
+            }
+            return false;
         }
 
         public override bool Delete(Model model)
