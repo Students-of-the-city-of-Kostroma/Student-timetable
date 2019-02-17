@@ -23,7 +23,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[0] = column;
+            keys[1] = column;
 
             column = new DataColumn();
             column.DataType = typeof(byte);
