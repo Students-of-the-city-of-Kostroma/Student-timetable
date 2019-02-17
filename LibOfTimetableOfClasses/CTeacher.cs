@@ -86,7 +86,6 @@ namespace LibOfTimetableOfClasses
                     try
                     {
                         table.Rows[i].BeginEdit();
-                        table.Rows[i]["ID"] = mTeacher.Id;
                         table.Rows[i]["Surname"] = mTeacher.Surname;
                         table.Rows[i]["Name"] = mTeacher.Name;
                         table.Rows[i]["MiddleName"] = mTeacher.MiddleName;
