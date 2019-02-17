@@ -59,7 +59,6 @@ namespace LibOfTimetableOfClasses
                     try
                     {
                         table.Rows[i].BeginEdit();
-                        table.Rows[i]["ID"] = mGroup.Id;
                         table.Rows[i]["cipher"] = mGroup.Cipher;
                         table.Rows[i]["population"] = mGroup.Population;
                         table.Rows[i].EndEdit();
