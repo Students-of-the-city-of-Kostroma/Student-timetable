@@ -16,7 +16,7 @@ namespace LibOfTimetableOfClasses
 
         public CAuditor() : base("Аудитория")
         {
-            DataColumn[] keys = new DataColumn[4];
+            DataColumn[] keys = new DataColumn[2];
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "number";
@@ -31,7 +31,6 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[1] = column;
 
             column = new DataColumn();
             column.DataType = typeof(string);
@@ -39,7 +38,7 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[2] = column;
+            keys[1] = column;
 
             column = new DataColumn();
             column.DataType = typeof(int);
@@ -47,7 +46,6 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[3] = column;
             table.PrimaryKey = keys;
         }
 
