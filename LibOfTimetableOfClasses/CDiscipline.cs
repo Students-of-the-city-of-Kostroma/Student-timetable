@@ -19,6 +19,7 @@ namespace LibOfTimetableOfClasses
             column.DataType = typeof(string);
             column.ColumnName = "Name";
             column.ReadOnly = true;
+            column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
