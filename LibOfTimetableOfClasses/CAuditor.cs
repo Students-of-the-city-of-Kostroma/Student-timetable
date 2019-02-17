@@ -71,6 +71,8 @@ namespace LibOfTimetableOfClasses
                         table.Rows[i]["Floor"] = mAuditor.Floor;
                         table.Rows[i]["Building"] = mAuditor.Building;
                         table.Rows[i]["Spacious"] = mAuditor.Spacious;
+                        table.Rows[i].EndEdit();
+                        table.Rows[i].AcceptChanges();
                         return true;
                     }
                     catch (Exception ex)
