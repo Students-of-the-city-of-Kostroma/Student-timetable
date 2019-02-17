@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     {
         public CGroup() : base("Группа")
         {
-            DataColumn[] keys = new DataColumn[4];
+            DataColumn[] keys = new DataColumn[1];
             DataColumn column = new DataColumn();
             column.DataType = typeof(byte);
             column.ColumnName = "population";
