@@ -58,7 +58,29 @@ namespace LibOfTimetableOfClasses
 
         public override bool Update(Model model)
         {
-            throw new NotImplementedException();
+            MAuditor mAuditor = (MAuditor)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number == (string)table.Rows[i]["Number"] && mAuditor.Building == (string)table.Rows[i]["Building"])
+                {
+                    try
+                    {
+                        table.Rows[i].BeginEdit();
+                        table.Rows[i]["ID"] = mAuditor.Id;
+                        table.Rows[i]["Number"] = mAuditor.Number;
+                        table.Rows[i]["Floor"] = mAuditor.Floor;
+                        table.Rows[i]["Building"] = mAuditor.Building;
+                        table.Rows[i]["Spacious"] = mAuditor.Spacious;
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Source);
+                        return false;
+                    }
+                }
+            }
+            return false;
         }
 
         public override bool Delete(Model model)
