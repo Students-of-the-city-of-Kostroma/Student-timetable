@@ -55,19 +55,19 @@ namespace LibOfTimetableOfClasses
 
         public override bool Update(Model model)
         {
-            MGroup mDiscipline = (MGroup)model;
+            MDiscipline mDiscipline = (MDiscipline)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
                 {
-                    if ((mDiscipline.Population != 0 && mDiscipline.Cipher != null ))
+                    if ((mDiscipline.Name != null && mDiscipline.Code != null ))
                     {
                         try
                         {
                             table.Rows[i].BeginEdit();
                             table.Rows[i]["ID"] = mDiscipline.Id;
-                            table.Rows[i]["Population"] = mDiscipline.Population;
-                            table.Rows[i]["Cipher"] = mDiscipline.Cipher;
+                            table.Rows[i]["Name"] = mDiscipline.Name;
+                            table.Rows[i]["Code"] = mDiscipline.Code;
                             table.Rows[i].EndEdit();
                             table.Rows[i].AcceptChanges();
                             return true;
