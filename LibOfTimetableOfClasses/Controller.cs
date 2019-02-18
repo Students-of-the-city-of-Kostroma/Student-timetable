@@ -26,7 +26,7 @@ namespace LibOfTimetableOfClasses
         /// <param name="tableName">Имя таблицы</param>
         public Controller(string tableName="Controller")
         {
-            table = new DataTable("tableName");
+            table = new DataTable(tableName);
             DataColumn column = new DataColumn();
             column.DataType = typeof(Guid);
             column.ColumnName = "ID";
