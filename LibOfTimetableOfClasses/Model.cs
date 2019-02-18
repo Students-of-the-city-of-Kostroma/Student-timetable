@@ -19,7 +19,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Идентификатор
         /// </summary>
-        public Guid Id { get => id; }
+        public Guid Id { get { return id; } }
         /// <summary>
         /// Инициализирует идентификатор
         /// </summary>
