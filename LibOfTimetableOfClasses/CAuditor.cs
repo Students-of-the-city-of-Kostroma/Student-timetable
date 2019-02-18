@@ -50,24 +50,31 @@ namespace LibOfTimetableOfClasses
         }
 
         public override bool Insert(Model model)
-        {                     
-            try
+        {
+            MAuditor mAuditor = (MAuditor)model;
+            if (mAuditor.Number != null && mAuditor.Building != null)
             {
-                MAuditor mAuditor = (MAuditor)model;
-                DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
-                newRow["Number"] = mAuditor.Number;
-                newRow["Building"] = mAuditor.Building;
-                newRow["Floor"] = mAuditor.Floor;
-                newRow["Spacious"] = mAuditor.Spacious;
-                table.Rows.Add(newRow);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Source);
-                return false;
-            }
+                for (int i = 0; i < table.Rows.Count; i++)
+                if (table.Rows[i]["Number"] != mAuditor.Number && table.Rows[i]["Number"] != mAuditor.Building)
+                {
+                    try
+                    {
+                         DataRow newRow = table.NewRow();
+                         newRow["ID"] = Guid.NewGuid();
+                         newRow["Number"] = mAuditor.Number;
+                         newRow["Building"] = mAuditor.Building;
+                         newRow["Floor"] = mAuditor.Floor;
+                         newRow["Spacious"] = mAuditor.Spacious;
+                         table.Rows.Add(newRow);
+                         return true;
+                    }
+                    catch (Exception ex)
+                    {
+                            Debug.WriteLine(ex.Source);
+                            return false;
+                    }
+                }return false;
+            }return false;
         }
 
         public override bool Update(Model model)
