@@ -31,7 +31,16 @@ namespace LibOfTimetableOfClasses
 
         public override bool Delete(Model model)
         {
-            throw new NotImplementedException();
+            MDiscipline mDiscipline = (MDiscipline)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((string)table.Rows[i]["Name"] == mDiscipline.Name && (string)table.Rows[i]["Code"] == mDiscipline.Code)
+                {
+                    table.Rows[i].Delete();
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override bool Insert(Model model)
