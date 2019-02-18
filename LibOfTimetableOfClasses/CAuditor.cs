@@ -50,8 +50,24 @@ namespace LibOfTimetableOfClasses
         }
 
         public override bool Insert(Model model)
-        {
-            throw new NotImplementedException();
+        {                     
+            try
+            {
+                MAuditor mAuditor = (MAuditor)model;
+                DataRow newRow = table.NewRow();
+                newRow["ID"] = Guid.NewGuid();
+                newRow["Number"] = mAuditor.Number;
+                newRow["Building"] = mAuditor.Building;
+                newRow["Floor"] = mAuditor.Floor;
+                newRow["Spacious"] = mAuditor.Spacious;
+                table.Rows.Add(newRow);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Source);
+                return false;
+            }
         }
 
         public override bool Update(Model model)
