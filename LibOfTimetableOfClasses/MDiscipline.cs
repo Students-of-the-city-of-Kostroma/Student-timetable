@@ -33,11 +33,11 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Возвращает или задает значение Name - название
         /// </summary>
-        public string Name { set => name = value; get => name; }
+        public string Name { set { name = value; }  get { return name; } }
 
         /// <summary>
         /// Возвращает или задает значение Code - код
         /// </summary>
-        public string Code { set => code = value; get => code; }
+        public string Code { set { code = value; } get { return code; } }
     }
 }
