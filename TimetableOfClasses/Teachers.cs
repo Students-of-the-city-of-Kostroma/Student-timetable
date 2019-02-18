@@ -39,22 +39,6 @@ namespace TimetableOfClasses
 
         }
 
-        private CTeacher CreateCTeacherEx()
-        {
-            CTeacher CTeacher1 = new CTeacher();
-
-            //for (int i = 0; i < DG.RowCount; i++)
-            //{
-            //    CTeacher1.AddTeacher(DG.Rows[i].Cells[0].Value.ToString(),
-            //                         DG.Rows[i].Cells[1].Value.ToString(),
-            //                         DG.Rows[i].Cells[2].Value.ToString(),
-            //                         DG.Rows[i].Cells[3].Value.ToString(),
-            //                         DG.Rows[i].Cells[4].Value.ToString(),
-            //                         (byte)DG.Rows[i].Cells[5].Value);
-            //}
-            return CTeacher1;
-        }
-
         private void SortCollection(object[,] sortedTable)
         {
             for (int i = 0; i < DG.RowCount; i++)
