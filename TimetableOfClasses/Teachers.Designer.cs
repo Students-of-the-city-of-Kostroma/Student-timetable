@@ -42,6 +42,8 @@
             // 
             // DG
             // 
+            this.DG.AllowUserToAddRows = false;
+            this.DG.AllowUserToDeleteRows = false;
             this.DG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -56,9 +58,9 @@
             this.TheSizeOfTeachingExperience});
             this.DG.Location = new System.Drawing.Point(12, 12);
             this.DG.Name = "DG";
+            this.DG.ReadOnly = true;
             this.DG.Size = new System.Drawing.Size(690, 287);
             this.DG.TabIndex = 0;
-            this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
             this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
             // 
             // button1
@@ -70,7 +72,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.AddTeacher);
             // 
             // button2
             // 
@@ -81,12 +83,13 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Удалить";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.RemoveTeacher);
             // 
             // Fam
             // 
             this.Fam.HeaderText = "Фамилия";
             this.Fam.Name = "Fam";
+            this.Fam.ReadOnly = true;
             this.Fam.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Fam.Width = 81;
             // 
@@ -94,6 +97,7 @@
             // 
             this.NameOfHuman.HeaderText = "Имя";
             this.NameOfHuman.Name = "NameOfHuman";
+            this.NameOfHuman.ReadOnly = true;
             this.NameOfHuman.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.NameOfHuman.Width = 54;
             // 
@@ -101,6 +105,7 @@
             // 
             this.SurName.HeaderText = "Отчество";
             this.SurName.Name = "SurName";
+            this.SurName.ReadOnly = true;
             this.SurName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.SurName.Width = 79;
             // 
@@ -108,6 +113,7 @@
             // 
             this.AcademicDegree.HeaderText = "Ученая степень";
             this.AcademicDegree.Name = "AcademicDegree";
+            this.AcademicDegree.ReadOnly = true;
             this.AcademicDegree.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.AcademicDegree.Width = 104;
             // 
@@ -115,15 +121,17 @@
             // 
             this.AcademicRank.HeaderText = "Ученое звание";
             this.AcademicRank.Name = "AcademicRank";
+            this.AcademicRank.ReadOnly = true;
             this.AcademicRank.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.AcademicRank.Width = 99;
             // 
             // TheSizeOfTeachingExperience
             // 
+            this.TheSizeOfTeachingExperience.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
             this.TheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
+            this.TheSizeOfTeachingExperience.ReadOnly = true;
             this.TheSizeOfTeachingExperience.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.TheSizeOfTeachingExperience.Width = 177;
             // 
             // Teachers
             // 

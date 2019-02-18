@@ -18,13 +18,13 @@ namespace TimetableOfClasses
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddTeacher(object sender, EventArgs e)
         {
              AddTeacher t = new AddTeacher();
              t.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RemoveTeacher(object sender, EventArgs e)
         {
             DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
         }
@@ -34,18 +34,5 @@ namespace TimetableOfClasses
             button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }
 
-        private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
-        private void SortCollection(object[,] sortedTable)
-        {
-            for (int i = 0; i < DG.RowCount; i++)
-            {
-                for (int j = 0; j < DG.ColumnCount; j++)
-                    DG.Rows[i].Cells[j].Value = sortedTable[i + 1, j];
-            }
-        }
     }
 }
