@@ -16,6 +16,8 @@ namespace TimetableOfClasses
         public Teachers()
         {
             InitializeComponent();
+            //привязываем таблицу контроллера CTeacher
+            DG.DataSource = CTeacher.DataSet;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace TimetableOfClasses
 
         private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+           
         }
 
         private void SortCollection(object[,] sortedTable)
