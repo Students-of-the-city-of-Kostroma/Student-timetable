@@ -55,7 +55,7 @@ namespace LibOfTimetableOfClasses
             if (mAuditor.Number != null && mAuditor.Building != null)
             {
                 for (int i = 0; i < table.Rows.Count; i++)
-                if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Number"] != mAuditor.Building)
+                if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Building"] != mAuditor.Building)
                 {
                     try
                     {
