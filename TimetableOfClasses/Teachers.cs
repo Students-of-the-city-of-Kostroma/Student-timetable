@@ -16,6 +16,8 @@ namespace TimetableOfClasses
         public Teachers()
         {
             InitializeComponent();
+            //привязываем таблицу контроллера CTeacher
+            DG.DataSource = Controllers.CTeacher.Select();
         }
 
         private void AddTeacher(object sender, EventArgs e)
