@@ -45,7 +45,28 @@ namespace LibOfTimetableOfClasses
 
         public override bool Insert(Model model)
         {
-            throw new NotImplementedException();
+            MGroup mGroup = (MGroup)model;
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (mGroup.Cipher != (string)table.Rows[i]["chipher"] && mGroup.Cipher != null)
+                {
+                    try {
+                        DataRow newRow = table.NewRow();
+                        newRow["chipher"] = mGroup.Cipher;
+                        newRow["population"] = mGroup.Population;
+                        table.Rows.Add(newRow);
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Source);
+                        return false;
+                    }
+
+                }
+            }
+            return false;
         }
 
         public override bool Update(Model model)
