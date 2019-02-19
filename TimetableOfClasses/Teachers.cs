@@ -38,7 +38,7 @@ namespace TimetableOfClasses
 
         private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           
+
         }
 
         private void SortCollection(object[,] sortedTable)
