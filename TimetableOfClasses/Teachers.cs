@@ -34,5 +34,9 @@ namespace TimetableOfClasses
             button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }
 
+        private void DG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

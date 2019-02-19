@@ -24,7 +24,11 @@ namespace TimetableOfClasses
             int a;
             if (int.TryParse(comboBox1.Text, out a)) { this.Close(); }
             else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
-
+            LibOfTimetableOfClasses.MTeacher Prepodavatel = new LibOfTimetableOfClasses.MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, 
+                                                                                                 textBox5.Text, byte.Parse(comboBox1.Text));
+            LibOfTimetableOfClasses.CTeacher Con = new LibOfTimetableOfClasses.CTeacher();
+            Con.Insert(Prepodavatel);
+            AddTeacher.ActiveForm.Close();
         }
         /// <summary>
         /// Здесь должны быть комментарии
@@ -136,6 +140,15 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
-       
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
