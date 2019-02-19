@@ -55,7 +55,7 @@ namespace LibOfTimetableOfClasses
                 table.Rows.Add(newRow);
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Source);
                 return false;
@@ -64,7 +64,31 @@ namespace LibOfTimetableOfClasses
 
         public override bool Update(Model model)
         {
-            throw new NotImplementedException();
+            MDiscipline mDiscipline = (MDiscipline)model;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
+                {
+                    if ((mDiscipline.Name != null && mDiscipline.Code != null ))
+                    {
+                        try
+                        {
+                            table.Rows[i].BeginEdit();
+                            table.Rows[i]["Name"] = mDiscipline.Name;
+                            table.Rows[i]["Code"] = mDiscipline.Code;
+                            table.Rows[i].EndEdit();
+                            table.Rows[i].AcceptChanges();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine(ex.Source);
+                            return false;
+                        }
+                    }
+                }
+            }
+            return false;
         }
     }
 }

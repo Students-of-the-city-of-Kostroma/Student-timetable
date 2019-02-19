@@ -37,6 +37,8 @@
             // 
             // DG_Disc
             // 
+            this.DG_Disc.AllowUserToAddRows = false;
+            this.DG_Disc.AllowUserToDeleteRows = false;
             this.DG_Disc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -46,6 +48,7 @@
             this.Naim});
             this.DG_Disc.Location = new System.Drawing.Point(12, 12);
             this.DG_Disc.Name = "DG_Disc";
+            this.DG_Disc.ReadOnly = true;
             this.DG_Disc.Size = new System.Drawing.Size(394, 156);
             this.DG_Disc.TabIndex = 0;
             this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
@@ -66,14 +69,15 @@
             this.Kod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Kod.HeaderText = "Код";
             this.Kod.Name = "Kod";
+            this.Kod.ReadOnly = true;
             this.Kod.Width = 51;
             // 
             // Naim
             // 
-            this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Naim.HeaderText = "Наименование";
             this.Naim.Name = "Naim";
-            this.Naim.Width = 108;
+            this.Naim.ReadOnly = true;
             // 
             // Discipline
             // 

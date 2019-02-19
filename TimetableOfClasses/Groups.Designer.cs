@@ -36,6 +36,8 @@
             // 
             // DG_Group
             // 
+            this.DG_Group.AllowUserToAddRows = false;
+            this.DG_Group.AllowUserToDeleteRows = false;
             this.DG_Group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -45,26 +47,29 @@
             this.Численность});
             this.DG_Group.Location = new System.Drawing.Point(12, 12);
             this.DG_Group.Name = "DG_Group";
-            this.DG_Group.Size = new System.Drawing.Size(284, 365);
+            this.DG_Group.ReadOnly = true;
+            this.DG_Group.Size = new System.Drawing.Size(375, 365);
             this.DG_Group.TabIndex = 0;
             // 
             // Шифр
             // 
             this.Шифр.HeaderText = "Шифр";
             this.Шифр.Name = "Шифр";
+            this.Шифр.ReadOnly = true;
             this.Шифр.Width = 61;
             // 
             // Численность
             // 
+            this.Численность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Численность.HeaderText = "Численность";
             this.Численность.Name = "Численность";
-            this.Численность.Width = 99;
+            this.Численность.ReadOnly = true;
             // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 389);
+            this.ClientSize = new System.Drawing.Size(399, 389);
             this.Controls.Add(this.DG_Group);
             this.Name = "Groups";
             this.Text = "Группы";
