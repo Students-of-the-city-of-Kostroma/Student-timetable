@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -22,13 +23,15 @@ namespace TimetableOfClasses
         private void button1_Click(object sender, EventArgs e)
         {
             int a;
-            if (int.TryParse(comboBox1.Text, out a)) { this.Close(); }
+            if (int.TryParse(comboBox1.Text, out a)) {
+              MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, byte.Parse(comboBox1.Text));
+              Controllers.CTeacher.Insert(Prepodavatel);
+              this.Close(); }
             else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
-            LibOfTimetableOfClasses.MTeacher Prepodavatel = new LibOfTimetableOfClasses.MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, 
-                                                                                                 textBox5.Text, byte.Parse(comboBox1.Text));
-            LibOfTimetableOfClasses.CTeacher Con = new LibOfTimetableOfClasses.CTeacher();
-            Con.Insert(Prepodavatel);
-            AddTeacher.ActiveForm.Close();
+            
+            //MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, byte.Parse(comboBox1.Text));
+            //Controllers.CTeacher.Insert(Prepodavatel);
+            //AddTeacher.ActiveForm.Close();
         }
         /// <summary>
         /// Здесь должны быть комментарии
