@@ -23,7 +23,7 @@ namespace TimetableOfClasses
         private void button1_Click(object sender, EventArgs e)
         {
             byte a;
-            if (byte.TryParse(comboBox1.Text, out a)) {
+            if (byte.TryParse(numericUpDown1.Value.ToString(), out a)) {
               MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
               Controllers.CTeacher.Insert(Prepodavatel);
               this.Close(); }
