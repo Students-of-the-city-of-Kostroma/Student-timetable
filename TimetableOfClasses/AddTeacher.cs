@@ -30,7 +30,6 @@ namespace TimetableOfClasses
         /// <param name="e"></param>
         private void AddTeacher_Load(object sender, EventArgs e)
         {
-            numericUpDown1.Text = "0";
             textBox1.Text = "Иван";
             textBox2.Text = "Иванов";
             textBox3.Text = "Иванович";
