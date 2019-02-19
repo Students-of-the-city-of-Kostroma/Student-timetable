@@ -117,7 +117,7 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(37, 145);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(656, 22);
+            this.textBox3.Size = new System.Drawing.Size(690, 22);
             this.textBox3.TabIndex = 6;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox3.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -169,7 +169,7 @@
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(37, 258);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(656, 22);
+            this.textBox5.Size = new System.Drawing.Size(690, 22);
             this.textBox5.TabIndex = 10;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox5.Leave += new System.EventHandler(this.SelectionOfLetters1);
