@@ -28,7 +28,6 @@ namespace TimetableOfClasses
               Controllers.CTeacher.Insert(Prepodavatel);
               this.Close(); }
             else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
-             
         }
         /// <summary>
         /// Здесь должны быть комментарии
@@ -140,6 +139,5 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
-
     }
 }
