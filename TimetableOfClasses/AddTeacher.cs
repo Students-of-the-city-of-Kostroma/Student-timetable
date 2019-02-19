@@ -22,9 +22,9 @@ namespace TimetableOfClasses
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a;
-            if (int.TryParse(comboBox1.Text, out a)) {
-              MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, byte.Parse(comboBox1.Text));
+            byte a;
+            if (byte.TryParse(comboBox1.Text, out a)) {
+              MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
               Controllers.CTeacher.Insert(Prepodavatel);
               this.Close(); }
             else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
