@@ -17,7 +17,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             //привязываем таблицу контроллера CTeacher
-            DG.DataSource = CTeacher.DataSet;
+            DG.DataSource = Controllers.CTeacher.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
