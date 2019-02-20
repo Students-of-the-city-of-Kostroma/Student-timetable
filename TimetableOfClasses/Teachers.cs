@@ -33,7 +33,7 @@ namespace TimetableOfClasses
 
         private void DG_SelectionChanged(object sender, EventArgs e)
         {
-            button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
+            //button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }
 
     }
