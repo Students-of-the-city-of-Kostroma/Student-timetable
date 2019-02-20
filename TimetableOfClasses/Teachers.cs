@@ -17,7 +17,16 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             //привязываем таблицу контроллера CTeacher
-            DG.DataSource = Controllers.CTeacher.Select();
+            DG.AutoGenerateColumns = false;
+            BindingSource BS = new BindingSource();
+            BS.DataSource = Controllers.CTeacher.Select();
+            DG.Columns["Fam"].DataPropertyName = "Surname";
+            DG.Columns["NameOfHuman"].DataPropertyName = "Name";
+            DG.Columns["SurName"].DataPropertyName = "MiddleName";
+            DG.Columns["AcademicDegree"].DataPropertyName = "AcademicDegree";
+            DG.Columns["AcademicRank"].DataPropertyName = "AcademicRank";
+            DG.Columns["TheSizeOfTeachingExperience"].DataPropertyName = "SizeOfTeachingExperience";
+            DG.DataSource = BS;
         }
 
         private void AddTeacher(object sender, EventArgs e)
