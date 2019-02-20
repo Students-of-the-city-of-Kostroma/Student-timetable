@@ -34,6 +34,12 @@ namespace TimetableOfClasses
         {
            DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex);
         }
-    }
+
+		private void btAddDiscipline_Click(object sender, EventArgs e)
+		{
+			AddDiscipline addDiscipline = new AddDiscipline();
+			addDiscipline.ShowDialog();
+		}
+	}
 }
 
