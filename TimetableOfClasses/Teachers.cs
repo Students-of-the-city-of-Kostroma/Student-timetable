@@ -17,6 +17,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             //привязываем таблицу контроллера CTeacher
+            DG.AutoGenerateColumns = false;
             DG.DataSource = Controllers.CTeacher.Select();
         }
 

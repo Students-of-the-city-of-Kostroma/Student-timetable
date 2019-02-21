@@ -87,6 +87,7 @@
             // 
             // Fam
             // 
+            this.Fam.DataPropertyName = "Surname";
             this.Fam.HeaderText = "Фамилия";
             this.Fam.Name = "Fam";
             this.Fam.ReadOnly = true;
@@ -95,6 +96,7 @@
             // 
             // NameOfHuman
             // 
+            this.NameOfHuman.DataPropertyName = "Name";
             this.NameOfHuman.HeaderText = "Имя";
             this.NameOfHuman.Name = "NameOfHuman";
             this.NameOfHuman.ReadOnly = true;
@@ -103,6 +105,7 @@
             // 
             // SurName
             // 
+            this.SurName.DataPropertyName = "MiddleName";
             this.SurName.HeaderText = "Отчество";
             this.SurName.Name = "SurName";
             this.SurName.ReadOnly = true;
@@ -111,6 +114,7 @@
             // 
             // AcademicDegree
             // 
+            this.AcademicDegree.DataPropertyName = "AcademicDegree";
             this.AcademicDegree.HeaderText = "Ученая степень";
             this.AcademicDegree.Name = "AcademicDegree";
             this.AcademicDegree.ReadOnly = true;
@@ -119,6 +123,7 @@
             // 
             // AcademicRank
             // 
+            this.AcademicRank.DataPropertyName = "AcademicRank";
             this.AcademicRank.HeaderText = "Ученое звание";
             this.AcademicRank.Name = "AcademicRank";
             this.AcademicRank.ReadOnly = true;
@@ -128,6 +133,7 @@
             // TheSizeOfTeachingExperience
             // 
             this.TheSizeOfTeachingExperience.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TheSizeOfTeachingExperience.DataPropertyName = "SizeOfTeachingExperience";
             this.TheSizeOfTeachingExperience.HeaderText = "Размер педагогического стажа";
             this.TheSizeOfTeachingExperience.Name = "TheSizeOfTeachingExperience";
             this.TheSizeOfTeachingExperience.ReadOnly = true;
