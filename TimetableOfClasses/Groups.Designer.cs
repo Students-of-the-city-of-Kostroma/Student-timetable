@@ -50,6 +50,7 @@
             this.DG_Group.ReadOnly = true;
             this.DG_Group.Size = new System.Drawing.Size(375, 365);
             this.DG_Group.TabIndex = 0;
+            this.DG_Group.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Group_CellContentClick);
             // 
             // Шифр
             // 
@@ -73,6 +74,7 @@
             this.Controls.Add(this.DG_Group);
             this.Name = "Groups";
             this.Text = "Группы";
+            this.Load += new System.EventHandler(this.Groups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DG_Group)).EndInit();
             this.ResumeLayout(false);
 
