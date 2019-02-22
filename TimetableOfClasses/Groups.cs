@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -16,16 +15,6 @@ namespace TimetableOfClasses
         public Groups()
         {
             InitializeComponent();
-        }
-
-        private void Groups_Load(object sender, EventArgs e)
-        {
-            DG_Group.DataSource = Controllers.CGroup.Select();
-        }
-
-        private void DG_Group_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
     }
 }
