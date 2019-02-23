@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibOfTimetableOfClasses;
+
 
 namespace TimetableOfClasses
 {
@@ -15,6 +17,19 @@ namespace TimetableOfClasses
         public Auditor()
         {
             InitializeComponent();
+            DataGridAuditor.AutoGenerateColumns = false;
+            DataGridAuditor.DataSource = Controllers.CAuditor.Select();
+        }
+
+        private void DataGridAuditor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) // кнопка "Добавить"
+        {
+            AddAuditor k = new AddAuditor();
+            k.ShowDialog();
         }
     }
 }

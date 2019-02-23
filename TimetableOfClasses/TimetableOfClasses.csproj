@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAuditor.Designer.cs">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAuditor.resx">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>

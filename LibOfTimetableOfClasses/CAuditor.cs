@@ -55,26 +55,28 @@ namespace LibOfTimetableOfClasses
             if (mAuditor.Number != null && mAuditor.Building != null)
             {
                 for (int i = 0; i < table.Rows.Count; i++)
-                if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Building"] != mAuditor.Building)
-                {
-                    try
+                    if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Building"] != mAuditor.Building)
                     {
-                         DataRow newRow = table.NewRow();
-                         newRow["ID"] = Guid.NewGuid();
-                         newRow["Number"] = mAuditor.Number;
-                         newRow["Building"] = mAuditor.Building;
-                         newRow["Floor"] = mAuditor.Floor;
-                         newRow["Spacious"] = mAuditor.Spacious;
-                         table.Rows.Add(newRow);
-                         return true;
-                    }
-                    catch (Exception ex)
-                    {
+                        try
+                        {
+                            DataRow newRow = table.NewRow();
+                            newRow["ID"] = Guid.NewGuid();
+                            newRow["Number"] = mAuditor.Number;
+                            newRow["Building"] = mAuditor.Building;
+                            newRow["Floor"] = mAuditor.Floor;
+                            newRow["Spacious"] = mAuditor.Spacious;
+                            table.Rows.Add(newRow);
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
                             Debug.WriteLine(ex.Source);
                             return false;
+                        }
                     }
-                }return false;
-            }return false;
+                return false;
+            }
+            return false;
         }
 
         public override bool Update(Model model)

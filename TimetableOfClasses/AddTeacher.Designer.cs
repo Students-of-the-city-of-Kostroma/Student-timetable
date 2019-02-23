@@ -52,7 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(316, 396);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 42);
+            this.button1.Size = new System.Drawing.Size(47, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "Создать";
             this.button1.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(37, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(673, 22);
+            this.textBox1.Size = new System.Drawing.Size(656, 22);
             this.textBox1.TabIndex = 2;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox1.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -92,7 +92,7 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(37, 92);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(673, 22);
+            this.textBox2.Size = new System.Drawing.Size(656, 22);
             this.textBox2.TabIndex = 4;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox2.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -118,7 +118,7 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(37, 145);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(673, 22);
+            this.textBox3.Size = new System.Drawing.Size(656, 22);
             this.textBox3.TabIndex = 6;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox3.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -144,7 +144,7 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(37, 201);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(673, 22);
+            this.textBox4.Size = new System.Drawing.Size(656, 22);
             this.textBox4.TabIndex = 8;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
             this.textBox4.Leave += new System.EventHandler(this.SelectionOfLetters2);
@@ -170,7 +170,7 @@
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(37, 258);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(673, 22);
+            this.textBox5.Size = new System.Drawing.Size(656, 22);
             this.textBox5.TabIndex = 10;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
             this.textBox5.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -211,7 +211,7 @@
             this.caps.ForeColor = System.Drawing.Color.Red;
             this.caps.Location = new System.Drawing.Point(173, 356);
             this.caps.Name = "caps";
-            this.caps.Size = new System.Drawing.Size(287, 37);
+            this.caps.Size = new System.Drawing.Size(270, 66);
             this.caps.TabIndex = 14;
             this.caps.Text = "*нажата клавиша *CapsLock, буквы будут изменять свой регистр в соотвествии с уста" +
     "новленным образцом";
@@ -229,7 +229,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(673, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(656, 20);
             this.numericUpDown1.TabIndex = 15;
             // 
             // AddTeacher
@@ -238,7 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(699, 453);
-            this.ClientSize = new System.Drawing.Size(773, 448);
+            this.ClientSize = new System.Drawing.Size(773, 482);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.caps);
             this.Controls.Add(this.label6);
