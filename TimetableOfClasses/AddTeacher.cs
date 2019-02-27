@@ -111,5 +111,5 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
-    }
+	}
 }
