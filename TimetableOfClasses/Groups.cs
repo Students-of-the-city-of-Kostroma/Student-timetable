@@ -11,21 +11,25 @@ using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
-    public partial class Groups : Form
-    {
-        public Groups()
-        {
-            InitializeComponent();
-        }
+	public partial class Groups : Form
+	{
+		public Groups()
+		{
+			InitializeComponent();
+			DG_Group.DataSource = Controllers.CGroup.Select();
+		}
 
-        private void Groups_Load(object sender, EventArgs e)
-        {
-            DG_Group.DataSource = Controllers.CGroup.Select();
-        }
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if (DG_Group.SelectedRows.Count > 0)
+			{
+				DG_Group.Rows.RemoveAt(DG_Group.SelectedCells[0].RowIndex);
+			}
+		}
 
-        private void DG_Group_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-    }
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

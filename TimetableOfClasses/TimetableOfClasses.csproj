@@ -50,6 +50,12 @@
     <Compile Include="AddAuditor.Designer.cs">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiscipline.Designer.cs">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="AddAuditor.resx">
       <DependentUpon>AddAuditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDiscipline.resx">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>

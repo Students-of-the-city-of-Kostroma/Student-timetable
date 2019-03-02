@@ -17,7 +17,6 @@ namespace TimetableOfClasses
         public AddTeacher()
         {
             InitializeComponent();
-            caps.Visible = Console.CapsLock;
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -111,5 +110,5 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
-    }
+	}
 }
