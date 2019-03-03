@@ -10,14 +10,14 @@ namespace LibOfTimetableOfClasses
     /// Преподаватель
     /// </summary>
     public class MTeacher : Model
-    {      
+    {
         string surname;
         string name;
         string middleName;
         string academicDegree;
         string academicRank;
         byte sizeOfTeachingExperience;
-		
+
         public string Surname
         {
             get
