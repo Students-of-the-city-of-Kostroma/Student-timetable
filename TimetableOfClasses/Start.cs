@@ -46,5 +46,11 @@ namespace TimetableOfClasses
             Timetable tt = new Timetable();
             tt.Show();
         }
-    }
+
+		private void вУЗыToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			University university = new University();
+			university.Show();
+		}
+	}
 }
