@@ -46,5 +46,13 @@ namespace TimetableOfClasses
             Timetable tt = new Timetable();
             tt.Show();
         }
-    }
+
+		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Ministry ministry = new Ministry();
+			ministry.Show();
+		}
+
+		
+	}
 }

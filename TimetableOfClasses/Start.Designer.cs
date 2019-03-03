@@ -35,12 +35,12 @@
 			this.дисциплиныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.аудиторииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.вУЗыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.министерстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -105,6 +105,25 @@
 			this.аудиторииToolStripMenuItem.Text = "Аудитории";
 			this.аудиторииToolStripMenuItem.Click += new System.EventHandler(this.аудиторииToolStripMenuItem_Click);
 			// 
+			// вУЗыToolStripMenuItem
+			// 
+			this.вУЗыToolStripMenuItem.Name = "вУЗыToolStripMenuItem";
+			this.вУЗыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.вУЗыToolStripMenuItem.Text = "ВУЗы";
+			// 
+			// министерстваToolStripMenuItem
+			// 
+			this.министерстваToolStripMenuItem.Name = "министерстваToolStripMenuItem";
+			this.министерстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.министерстваToolStripMenuItem.Text = "Министерства";
+			this.министерстваToolStripMenuItem.Click += new System.EventHandler(this.министерстваToolStripMenuItem_Click);
+			// 
+			// справочникиToolStripMenuItem1
+			// 
+			this.справочникиToolStripMenuItem1.Name = "справочникиToolStripMenuItem1";
+			this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+			this.справочникиToolStripMenuItem1.Text = "Справочники";
+			// 
 			// расписаниеToolStripMenuItem
 			// 
 			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
@@ -125,24 +144,6 @@
 			this.рабочийToolStripMenuItem.Name = "рабочийToolStripMenuItem";
 			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
 			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
-			// 
-			// вУЗыToolStripMenuItem
-			// 
-			this.вУЗыToolStripMenuItem.Name = "вУЗыToolStripMenuItem";
-			this.вУЗыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.вУЗыToolStripMenuItem.Text = "ВУЗы";
-			// 
-			// министерстваToolStripMenuItem
-			// 
-			this.министерстваToolStripMenuItem.Name = "министерстваToolStripMenuItem";
-			this.министерстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.министерстваToolStripMenuItem.Text = "Министерства";
-			// 
-			// справочникиToolStripMenuItem1
-			// 
-			this.справочникиToolStripMenuItem1.Name = "справочникиToolStripMenuItem1";
-			this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.справочникиToolStripMenuItem1.Text = "Справочники";
 			// 
 			// Start
 			// 

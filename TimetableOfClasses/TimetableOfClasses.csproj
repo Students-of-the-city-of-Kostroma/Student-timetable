@@ -74,6 +74,12 @@
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ministry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ministry.Designer.cs">
+      <DependentUpon>Ministry.cs</DependentUpon>
+    </Compile>
     <Compile Include="RefData.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auditor.resx">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ministry.resx">
+      <DependentUpon>Ministry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
