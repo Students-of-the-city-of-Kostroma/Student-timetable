@@ -53,6 +53,10 @@ namespace TimetableOfClasses
 			ministry.Show();
 		}
 
-		
+		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicTitle academicTitle = new AcademicTitle();
+			academicTitle.Show();
+		}
 	}
 }
