@@ -46,5 +46,21 @@ namespace TimetableOfClasses
             Timetable tt = new Timetable();
             tt.Show();
         }
+
+        private void рабочийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Rup g = new Rup();
+           g.Show();
+        }
+
+        private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void нагрузкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
