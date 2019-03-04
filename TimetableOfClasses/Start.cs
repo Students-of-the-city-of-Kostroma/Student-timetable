@@ -57,6 +57,7 @@ namespace TimetableOfClasses
 		{
 			AcademicTitle academicTitle = new AcademicTitle();
 			academicTitle.Show();
+
 		}
 	}
 }
