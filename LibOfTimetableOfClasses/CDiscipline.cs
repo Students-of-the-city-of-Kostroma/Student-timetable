@@ -11,11 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер для объекта Дисциплина
     /// </summary>
-<<<<<<< HEAD
     public class CDiscipline : Controller,IController
-=======
-    public class CDiscipline : Controller, IController
->>>>>>> 7cfba3521db057e2d1e3a122a08edf676d6b74a9
     {
         public CDiscipline() : base("Дисциплина")
         {
