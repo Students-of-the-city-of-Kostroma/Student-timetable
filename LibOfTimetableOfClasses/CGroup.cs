@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+<<<<<<< HEAD
     public class CGroup : Controller,IController
+=======
+    public class CGroup : Controller, IController
+>>>>>>> 7cfba3521db057e2d1e3a122a08edf676d6b74a9
     {
         public CGroup() : base("Группа")
         {

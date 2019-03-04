@@ -11,7 +11,11 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер объекта Аудитория.
     /// </summary>
+<<<<<<< HEAD
     public class CAuditor : Controller,IController
+=======
+    public class CAuditor : Controller, IController
+>>>>>>> 7cfba3521db057e2d1e3a122a08edf676d6b74a9
     {
 
         public CAuditor() : base("Аудитория")
