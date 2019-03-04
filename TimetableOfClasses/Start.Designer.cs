@@ -41,6 +41,7 @@
 			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ученыеСтепениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -72,7 +73,8 @@
             this.аудиторииToolStripMenuItem,
             this.вУЗыToolStripMenuItem,
             this.министерстваToolStripMenuItem,
-            this.справочникиToolStripMenuItem1});
+            this.справочникиToolStripMenuItem1,
+            this.ученыеСтепениToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -145,6 +147,13 @@
 			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
 			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
 			// 
+			// ученыеСтепениToolStripMenuItem
+			// 
+			this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
+			this.ученыеСтепениToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.ученыеСтепениToolStripMenuItem.Text = "Ученые степени";
+			this.ученыеСтепениToolStripMenuItem.Click += new System.EventHandler(this.ученыеСтепениToolStripMenuItem_Click);
+			// 
 			// Start
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +185,7 @@
 		private System.Windows.Forms.ToolStripMenuItem вУЗыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem министерстваToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem ученыеСтепениToolStripMenuItem;
 	}
 }
 
