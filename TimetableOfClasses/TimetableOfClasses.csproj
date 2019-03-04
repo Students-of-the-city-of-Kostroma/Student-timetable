@@ -50,6 +50,12 @@
     <Compile Include="AddDiscipline.Designer.cs">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddOrEditDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditDirectory.Designer.cs">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditDirectory.resx">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
