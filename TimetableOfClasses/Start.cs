@@ -58,5 +58,11 @@ namespace TimetableOfClasses
 			AcademicDegree academicDegree = new AcademicDegree();
 			academicDegree.Show();
 		}
+
+		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			Directory directory = new Directory();
+			directory.Show();
+		}
 	}
 }
