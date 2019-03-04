@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CTeacher : Controller
+    public class CTeacher : Controller,IController
     {
         public CTeacher() : base("Учитель")
         {
