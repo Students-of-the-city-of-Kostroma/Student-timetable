@@ -11,10 +11,7 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MAuditor : Model
     {
-        /// <summary>
-        /// Перечисление полей объекта модели Аудитория
-        /// </summary>
-        public enum Keys { Id = 0, Number = 1, Floor = 2, Building = 3, Spacious = 4 }
+		
         /// <summary>
         /// номер аудитории
         /// </summary>
@@ -46,28 +43,7 @@ namespace LibOfTimetableOfClasses
             Building = building;
             Spacious = spacious;
         }
-
-        /// <summary>
-        /// Возвращает значение перечисления
-        /// </summary>
-        /// <param ключ="key"></param>
-        /// <returns></returns>
-        public object this[Keys key]
-        {
-            get
-            {
-                switch (key)
-                {
-                    case Keys.Id: return Id;
-                    case Keys.Number: return Number;
-                    case Keys.Floor: return Floor;
-                    case Keys.Building: return Building;
-                    case Keys.Spacious: return Spacious;
-                    default: return null;
-                }
-            }
-        }
-
+	
         /// <summary>
         /// Возвращает или задает number - номер аудитории
         /// </summary>

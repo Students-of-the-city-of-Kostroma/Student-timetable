@@ -11,33 +11,12 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MTeacher : Model
     {
-        public enum Keys { Id = 0, Surname = 1, Name = 2, MiddleName = 3, AcademicDegree = 4, AcademicRank = 5, SizeOfTeachingExperience = 6}
         string surname;
         string name;
         string middleName;
         string academicDegree;
         string academicRank;
         byte sizeOfTeachingExperience;
-
-        public object this[Keys key]
-        {
-            get
-            {
-                switch (key)
-                {
-                    case Keys.Id: return Id;
-                    case Keys.Surname: return Surname;
-                    case Keys.Name: return Name;
-                    case Keys.MiddleName: return MiddleName;
-                    case Keys.AcademicDegree: return AcademicDegree;
-                    case Keys.AcademicRank: return AcademicRank;
-                    case Keys.SizeOfTeachingExperience: return SizeOfTeachingExperience;
-                    default: return null;
-                }
-            }
-        }
-
-
 
         public string Surname
         {

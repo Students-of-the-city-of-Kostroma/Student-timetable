@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademicDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicDegree.Designer.cs">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ministry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ministry.Designer.cs">
+      <DependentUpon>Ministry.cs</DependentUpon>
+    </Compile>
     <Compile Include="RefData.cs" />
     <Compile Include="Rup.cs">
       <SubType>Form</SubType>
@@ -101,6 +113,9 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcademicDegree.resx">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +133,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rup.resx">
       <DependentUpon>Rup.cs</DependentUpon>
+    <EmbeddedResource Include="Ministry.resx">
+      <DependentUpon>Ministry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
