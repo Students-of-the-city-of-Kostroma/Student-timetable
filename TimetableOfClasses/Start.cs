@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +63,7 @@ namespace TimetableOfClasses
 		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			Directory directory = new Directory();
+			directory.UploadTable(Controllers.CAuditor.Select());
 			directory.Show();
 		}
 	}
