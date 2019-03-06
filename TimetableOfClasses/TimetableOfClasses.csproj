@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="AcademicTitle.Designer.cs">
       <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="AcademicDegree.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,7 @@
     </Compile>
     <EmbeddedResource Include="AcademicTitle.resx">
       <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AcademicDegree.resx">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </EmbeddedResource>
