@@ -57,6 +57,10 @@ namespace TimetableOfClasses
 		{
 			AcademicTitle academicTitle = new AcademicTitle();
 			academicTitle.Show();
+		private void ученыеСтепениToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicDegree academicDegree = new AcademicDegree();
+			academicDegree.Show();
 		}
 	}
 }
