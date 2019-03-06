@@ -77,7 +77,7 @@
             this.вУЗыToolStripMenuItem,
             this.министерстваToolStripMenuItem,
             this.справочникиToolStripMenuItem1,
-            this.ученыеЗванияToolStripMenuItem});
+            this.ученыеЗванияToolStripMenuItem,
             this.ученыеСтепениToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
