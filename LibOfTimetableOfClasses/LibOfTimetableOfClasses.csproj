@@ -46,6 +46,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
+    <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MGroup.cs" />
