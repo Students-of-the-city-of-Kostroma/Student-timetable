@@ -38,17 +38,17 @@
 			this.вУЗыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.министерстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
 			// 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.справочникиToolStripMenuItem,
             this.расписаниеToolStripMenuItem,
@@ -74,7 +74,7 @@
             this.аудиторииToolStripMenuItem,
             this.вУЗыToolStripMenuItem,
             this.министерстваToolStripMenuItem,
-			this.справочникиToolStripMenuItem1});
+            this.справочникиToolStripMenuItem1});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -82,52 +82,73 @@
 			// преподавателиToolStripMenuItem
 			// 
 			this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
-			this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.преподавателиToolStripMenuItem.Text = "Преподаватели";
 			this.преподавателиToolStripMenuItem.Click += new System.EventHandler(this.преподавателиToolStripMenuItem_Click);
 			// 
 			// дисциплиныToolStripMenuItem
 			// 
 			this.дисциплиныToolStripMenuItem.Name = "дисциплиныToolStripMenuItem";
-			this.дисциплиныToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.дисциплиныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.дисциплиныToolStripMenuItem.Text = "Дисциплины";
 			this.дисциплиныToolStripMenuItem.Click += new System.EventHandler(this.дисциплиныToolStripMenuItem_Click);
 			// 
 			// группыToolStripMenuItem
 			// 
 			this.группыToolStripMenuItem.Name = "группыToolStripMenuItem";
-			this.группыToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.группыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.группыToolStripMenuItem.Text = "Группы";
 			this.группыToolStripMenuItem.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
 			// 
 			// аудиторииToolStripMenuItem
 			// 
 			this.аудиторииToolStripMenuItem.Name = "аудиторииToolStripMenuItem";
-			this.аудиторииToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.аудиторииToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.аудиторииToolStripMenuItem.Text = "Аудитории";
 			this.аудиторииToolStripMenuItem.Click += new System.EventHandler(this.аудиторииToolStripMenuItem_Click);
 			// 
 			// вУЗыToolStripMenuItem
 			// 
 			this.вУЗыToolStripMenuItem.Name = "вУЗыToolStripMenuItem";
-			this.вУЗыToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.вУЗыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.вУЗыToolStripMenuItem.Text = "ВУЗы";
 			// 
 			// министерстваToolStripMenuItem
 			// 
 			this.министерстваToolStripMenuItem.Name = "министерстваToolStripMenuItem";
-			this.министерстваToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+			this.министерстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.министерстваToolStripMenuItem.Text = "Министерства";
 			this.министерстваToolStripMenuItem.Click += new System.EventHandler(this.министерстваToolStripMenuItem_Click);
 			// 
 			// справочникиToolStripMenuItem1
 			// 
 			this.справочникиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.редактироватьЗаписьToolStripMenuItem,
-			this.добавитьЗаписьToolStripMenuItem});
+            this.редактироватьЗаписьToolStripMenuItem,
+            this.добавитьЗаписьToolStripMenuItem});
 			this.справочникиToolStripMenuItem1.Name = "справочникиToolStripMenuItem1";
-			this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+			this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
 			this.справочникиToolStripMenuItem1.Text = "Справочники";
+			// 
+			// расписаниеToolStripMenuItem
+			// 
+			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
+			this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+			this.расписаниеToolStripMenuItem.Text = "Расписание";
+			this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.расписаниеToolStripMenuItem_Click);
+			// 
+			// нагрузкаToolStripMenuItem
+			// 
+			this.нагрузкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.рабочийToolStripMenuItem});
+			this.нагрузкаToolStripMenuItem.Name = "нагрузкаToolStripMenuItem";
+			this.нагрузкаToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+			this.нагрузкаToolStripMenuItem.Text = "Документы";
+			// 
+			// рабочийToolStripMenuItem
+			// 
+			this.рабочийToolStripMenuItem.Name = "рабочийToolStripMenuItem";
+			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
 			// 
 			// редактироватьЗаписьToolStripMenuItem
 			// 
@@ -142,27 +163,6 @@
 			this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
 			this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
 			this.добавитьЗаписьToolStripMenuItem.Click += new System.EventHandler(this.добавитьЗаписьToolStripMenuItem_Click);
-			// 
-			// расписаниеToolStripMenuItem
-			// 
-			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
-			this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-			this.расписаниеToolStripMenuItem.Text = "Расписание";
-			this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.расписаниеToolStripMenuItem_Click);
-			// 
-			// нагрузкаToolStripMenuItem
-			// 
-			this.нагрузкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.рабочийToolStripMenuItem});
-			this.нагрузкаToolStripMenuItem.Name = "нагрузкаToolStripMenuItem";
-			this.нагрузкаToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-			this.нагрузкаToolStripMenuItem.Text = "Документы";
-			// 
-			// рабочийToolStripMenuItem
-			// 
-			this.рабочийToolStripMenuItem.Name = "рабочийToolStripMenuItem";
-			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
 			// 
 			// Start
 			// 
