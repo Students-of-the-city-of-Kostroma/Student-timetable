@@ -23,10 +23,12 @@ namespace TimetableOfClasses
         {
             byte a;
             if (byte.TryParse(numericUpDown1.Value.ToString(), out a)) {
-              MTeacher Prepodavatel = new MTeacher(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
-              Controllers.CTeacher.Insert(Prepodavatel);
-              this.Close(); }
-            else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова", MessageBoxButtons.OK);
+				MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
+				if (Controllers.CTeacher.Insert(Prepodavatel))
+					Close();
+				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+			}
+            else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
         }
         /// <summary>
         /// Здесь должны быть комментарии
@@ -110,5 +112,30 @@ namespace TimetableOfClasses
                 e.Handled = true;
             }
         }
+
+		private void B_Сancel_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
+
+		private void B_Cr_n_Cl_Click(object sender, EventArgs e)
+		{
+			byte a;
+			if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
+			{
+				MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
+				if (Controllers.CTeacher.Insert(Prepodavatel))
+				{
+					textBox1.Text = "";
+					textBox2.Text = "";
+					textBox3.Text = "";
+					textBox4.Text = "";
+					textBox5.Text = "";
+					numericUpDown1.Value = 0;
+				}
+				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+			}
+			else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
+		}
 	}
 }
