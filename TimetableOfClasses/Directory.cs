@@ -20,7 +20,7 @@ namespace TimetableOfClasses
 		public void UploadTable(DataTable table)
 		{
 			dataGridView1.DataSource = table;
-			this.Text = dataGridView1.Name;
+			this.Text = table.TableName;
 		}
 	}
 }
