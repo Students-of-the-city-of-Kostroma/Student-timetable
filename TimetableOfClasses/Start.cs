@@ -51,6 +51,11 @@ namespace TimetableOfClasses
 			University university = new University();
 			university.Show();
 		}
+		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Ministry ministry = new Ministry();
+			ministry.Show();
+		}
 		private void ученыеСтепениToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AcademicDegree academicDegree = new AcademicDegree();
