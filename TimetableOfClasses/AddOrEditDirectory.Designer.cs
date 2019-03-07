@@ -97,6 +97,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(250, 261);
 			this.Controls.Add(this.tableLayoutPanel1);
+			this.MinimumSize = new System.Drawing.Size(266, 300);
 			this.Name = "AddOrEditDirectory";
 			this.Text = "Добавить запись";
 			this.tableLayoutPanel1.ResumeLayout(false);
