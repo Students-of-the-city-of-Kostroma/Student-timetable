@@ -53,6 +53,7 @@ namespace TimetableOfClasses
 			ministry.Show();
 		}
 
+
 		private void редактироватьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
@@ -66,5 +67,18 @@ namespace TimetableOfClasses
 			addOrEditDirectory.NewRow(null);
 			addOrEditDirectory.Show();
 		}
-    }
+    
+
+		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicTitle academicTitle = new AcademicTitle();
+			academicTitle.Show();
+		}
+
+		private void ученыеСтепениToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicDegree academicDegree = new AcademicDegree();
+			academicDegree.Show();
+		}
+	}
 }
