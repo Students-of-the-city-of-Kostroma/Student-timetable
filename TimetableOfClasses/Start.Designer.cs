@@ -39,8 +39,12 @@
             this.министерстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			      this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			      this.ученыеЗванияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+		      	this.ученыеСтепениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +128,18 @@
             this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
             this.справочникиToolStripMenuItem1.Text = "Справочники";
             // 
+            // редактироватьЗаписьToolStripMenuItem
+			      // 
+			      this.редактироватьЗаписьToolStripMenuItem.Name = "редактироватьЗаписьToolStripMenuItem";
+			      this.редактироватьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+			      this.редактироватьЗаписьToolStripMenuItem.Text = "Редактировать запись";
+			      // 
+		      	// добавитьЗаписьToolStripMenuItem
+			      // 
+			      this.добавитьЗаписьToolStripMenuItem.Name = "добавитьЗаписьToolStripMenuItem";
+			      this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+			      this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
+		      	// 
             // расписаниеToolStripMenuItem
             // 
             this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
@@ -147,19 +163,32 @@
             this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
             this.рабочийToolStripMenuItem.Click += new System.EventHandler(this.рабочийToolStripMenuItem_Click);
             // 
-            // Start
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 350);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Start";
+			      // ученыеЗванияToolStripMenuItem
+		      	// 
+		      	this.ученыеЗванияToolStripMenuItem.Name = "ученыеЗванияToolStripMenuItem";
+			      this.ученыеЗванияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+		      	this.ученыеЗванияToolStripMenuItem.Text = "Ученые звания";
+		    	  this.ученыеЗванияToolStripMenuItem.Click += new System.EventHandler(this.ученыеЗванияToolStripMenuItem_Click);
+		      	// ученыеСтепениToolStripMenuItem
+		     	  // 
+		    	  this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
+		      	this.ученыеСтепениToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+		      	this.ученыеСтепениToolStripMenuItem.Text = "Ученые степени";
+			      this.ученыеСтепениToolStripMenuItem.Click += new System.EventHandler(this.ученыеСтепениToolStripMenuItem_Click);
+			      // 
+		      	// Start
+		      	// 
+		    	  this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+		    	  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+		    	  this.ClientSize = new System.Drawing.Size(832, 350);
+		    	  this.Controls.Add(this.menuStrip1);
+		    	  this.MainMenuStrip = this.menuStrip1;
+		    	  this.Name = "Start";
             this.Text = "Расписание";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+		    	  this.menuStrip1.ResumeLayout(false);
+		    	  this.menuStrip1.PerformLayout();
+		      	this.ResumeLayout(false);
+		    	  this.PerformLayout();
 
         }
 
@@ -178,6 +207,10 @@
 		private System.Windows.Forms.ToolStripMenuItem вУЗыToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem министерстваToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem редактироватьЗаписьToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ученыеЗванияToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ученыеСтепениToolStripMenuItem;
 	}
 }
 
