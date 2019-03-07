@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicTitle.Designer.cs">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicDegree.Designer.cs">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcademicTitle.resx">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcademicDegree.resx">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
