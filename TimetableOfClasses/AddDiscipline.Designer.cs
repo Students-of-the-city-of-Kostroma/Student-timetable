@@ -39,8 +39,8 @@
 			// 
 			// textCodeOfDiscipline
 			// 
-			this.textCodeOfDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textCodeOfDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.textCodeOfDiscipline.Location = new System.Drawing.Point(12, 24);
 			this.textCodeOfDiscipline.Name = "textCodeOfDiscipline";
 			this.textCodeOfDiscipline.Size = new System.Drawing.Size(338, 20);
@@ -48,8 +48,8 @@
 			// 
 			// textNameOfDiscipline
 			// 
-			this.textNameOfDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textNameOfDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.textNameOfDiscipline.Location = new System.Drawing.Point(12, 63);
 			this.textNameOfDiscipline.Name = "textNameOfDiscipline";
 			this.textNameOfDiscipline.Size = new System.Drawing.Size(338, 20);
@@ -74,6 +74,7 @@
 			this.btCreateAndClean.TabIndex = 3;
 			this.btCreateAndClean.Text = "Создать и очистить";
 			this.btCreateAndClean.UseVisualStyleBackColor = true;
+			this.btCreateAndClean.Click += new System.EventHandler(this.btCreateAndClean_Click);
 			// 
 			// btCreateAndClose
 			// 
@@ -84,6 +85,7 @@
 			this.btCreateAndClose.TabIndex = 4;
 			this.btCreateAndClose.Text = "Создать и закрыть";
 			this.btCreateAndClose.UseVisualStyleBackColor = true;
+			this.btCreateAndClose.Click += new System.EventHandler(this.btCreateAndClose_Click);
 			// 
 			// label1
 			// 
@@ -120,7 +122,6 @@
 			this.Text = "AddDiscipline";
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		#endregion
