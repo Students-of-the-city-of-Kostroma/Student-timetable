@@ -13,11 +13,11 @@ namespace TimetableOfClasses
 {
     public partial class Discipline : Form
     {
-        public Discipline()
-        {
-            InitializeComponent();
-            DG_Disc.DataSource = Controllers.CDiscipline.Select();
-        }
+		public Discipline()
+		{
+			InitializeComponent();
+			DG_Disc.DataSource = Controllers.CDiscipline.Select();
+		}
 
 
         private void DG_Disc_SelectionChanged(object sender, EventArgs e)
