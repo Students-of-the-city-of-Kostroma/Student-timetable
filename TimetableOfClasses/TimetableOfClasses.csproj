@@ -119,6 +119,12 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainingProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingProfiles.Designer.cs">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AcademicTitle.resx">
       <DependentUpon>AcademicTitle.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Timetable.resx">
       <DependentUpon>Timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingProfiles.resx">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -80,5 +80,11 @@ namespace TimetableOfClasses
 			AcademicDegree academicDegree = new AcademicDegree();
 			academicDegree.Show();
 		}
-	}
+
+        private void профилиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TrainingProfiles trainingProfiles = new TrainingProfiles();
+            trainingProfiles.Show();
+        }
+    }
 }
