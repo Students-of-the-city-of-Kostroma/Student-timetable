@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicTitle.Designer.cs">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="AcademicDegree.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,17 +62,23 @@
     <Compile Include="AddDiscipline.Designer.cs">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddOrEditDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditDirectory.Designer.cs">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Directory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Directory.Designer.cs">
-      <DependentUpon>Directory.cs</DependentUpon>
+    <Compile Include="Directory.cs"> 
+      <SubType>Form</SubType> 
+    </Compile> 
+    <Compile Include="Directory.Designer.cs"> 
+      <DependentUpon>Directory.cs</DependentUpon> 
     </Compile>
     <Compile Include="Groups.cs">
       <SubType>Form</SubType>
@@ -113,17 +125,23 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcademicTitle.resx">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AcademicDegree.resx">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditDirectory.resx">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Directory.resx">
-      <DependentUpon>Directory.cs</DependentUpon>
+    <EmbeddedResource Include="Directory.resx"> 
+      <DependentUpon>Directory.cs</DependentUpon> 
     </EmbeddedResource>
     <EmbeddedResource Include="Groups.resx">
       <DependentUpon>Groups.cs</DependentUpon>
