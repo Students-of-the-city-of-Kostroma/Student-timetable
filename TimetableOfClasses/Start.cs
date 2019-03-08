@@ -46,5 +46,11 @@ namespace TimetableOfClasses
             Timetable tt = new Timetable();
             tt.Show();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Department dep = new Department();
+            dep.Show();
+        }
     }
 }
