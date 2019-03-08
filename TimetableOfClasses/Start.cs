@@ -53,6 +53,22 @@ namespace TimetableOfClasses
 			ministry.Show();
 		}
 
+
+		private void редактироватьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
+			addOrEditDirectory.EditRow(null);
+			addOrEditDirectory.Show();
+		}
+
+		private void добавитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
+			addOrEditDirectory.NewRow(null);
+			addOrEditDirectory.Show();
+		}
+    
+
 		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AcademicTitle academicTitle = new AcademicTitle();
