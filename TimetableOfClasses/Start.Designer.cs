@@ -163,12 +163,27 @@
 			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
 			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
 			// 
+			// редактироватьЗаписьToolStripMenuItem
+			// 
+			this.редактироватьЗаписьToolStripMenuItem.Name = "редактироватьЗаписьToolStripMenuItem";
+			this.редактироватьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+			this.редактироватьЗаписьToolStripMenuItem.Text = "Редактировать запись";
+			this.редактироватьЗаписьToolStripMenuItem.Click += редактироватьЗаписьToolStripMenuItem_Click;
+      //
 			// ученыеЗванияToolStripMenuItem
 			// 
 			this.ученыеЗванияToolStripMenuItem.Name = "ученыеЗванияToolStripMenuItem";
 			this.ученыеЗванияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.ученыеЗванияToolStripMenuItem.Text = "Ученые звания";
 			this.ученыеЗванияToolStripMenuItem.Click += new System.EventHandler(this.ученыеЗванияToolStripMenuItem_Click);
+      //
+      //добавитьЗаписьToolStripMenuItem
+      //
+			this.добавитьЗаписьToolStripMenuItem.Name = "добавитьЗаписьToolStripMenuItem";
+			this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+			this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
+			this.добавитьЗаписьToolStripMenuItem.Click += добавитьЗаписьToolStripMenuItem_Click;
+      //
 			// ученыеСтепениToolStripMenuItem
 			// 
 			this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
