@@ -64,5 +64,11 @@ namespace TimetableOfClasses
 			AcademicDegree academicDegree = new AcademicDegree();
 			academicDegree.Show();
 		}
+
+		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
+			typesOfOccupations.Show();
+		}
 	}
 }
