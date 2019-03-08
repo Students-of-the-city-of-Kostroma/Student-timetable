@@ -1,33 +1,33 @@
-﻿namespace TimetableOfClasse
+﻿namespace TimetableOfClasses
+{
+    partial class Discipline
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    partial class Disciplin
-    
-        /// <summary
-        /// Required designer variable
-        /// </summary
-        private System.ComponentModel.IContainer components = null
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-        /// <summary
-        /// Clean up any resources being used
-        /// </summary
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param
-        protected override void Dispose(bool disposing
-        
-            if (disposing && (components != null)
-            
-                components.Dispose()
-            
-            base.Dispose(disposing)
-        
+        #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated cod
-
-        /// <summary
-        /// Required method for Designer support - do not modif
-        /// the contents of this method with the code editor
-        /// </summary
-        private void InitializeComponent(
-        
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.DG_Disc = new System.Windows.Forms.DataGridView();
             this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,14 +104,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).EndInit();
             this.ResumeLayout(false);
 
-        
+        }
 
-        #endregio
+        #endregion
 
-        private System.Windows.Forms.DataGridView DG_Disc
+        private System.Windows.Forms.DataGridView DG_Disc;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.Button btCreateDiscipline;
-    
+    }
 }

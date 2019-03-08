@@ -1,33 +1,33 @@
-﻿namespace TimetableOfClasse
+﻿namespace TimetableOfClasses
+{
+    partial class Auditor
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    partial class Audito
-    
-        /// <summary
-        /// Required designer variable
-        /// </summary
-        private System.ComponentModel.IContainer components = null
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-        /// <summary
-        /// Clean up any resources being used
-        /// </summary
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param
-        protected override void Dispose(bool disposing
-        
-            if (disposing && (components != null)
-            
-                components.Dispose()
-            
-            base.Dispose(disposing)
-        
+        #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated cod
-
-        /// <summary
-        /// Required method for Designer support - do not modif
-        /// the contents of this method with the code editor
-        /// </summary
-        private void InitializeComponent(
-        
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.DataGridAuditor = new System.Windows.Forms.DataGridView();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stage = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,14 +88,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();
             this.ResumeLayout(false);
 
-        
+        }
 
-        #endregio
+        #endregion
 
-        private System.Windows.Forms.DataGridView DataGridAuditor
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stage
-        private System.Windows.Forms.DataGridViewTextBoxColumn Korpus
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vmestit
-    
+        private System.Windows.Forms.DataGridView DataGridAuditor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Korpus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vmestit;
+    }
 }

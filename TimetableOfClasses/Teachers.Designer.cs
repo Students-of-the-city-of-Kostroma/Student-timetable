@@ -1,33 +1,33 @@
-﻿namespace TimetableOfClasse
+﻿namespace TimetableOfClasses
+{
+    partial class Teachers
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    partial class Teacher
-    
-        /// <summary
-        /// Required designer variable
-        /// </summary
-        private System.ComponentModel.IContainer components = null
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-        /// <summary
-        /// Clean up any resources being used
-        /// </summary
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param
-        protected override void Dispose(bool disposing
-        
-            if (disposing && (components != null)
-            
-                components.Dispose()
-            
-            base.Dispose(disposing)
-        
+        #region Windows Form Designer generated code
 
-        #region Windows Form Designer generated cod
-
-        /// <summary
-        /// Required method for Designer support - do not modif
-        /// the contents of this method with the code editor
-        /// </summary
-        private void InitializeComponent(
-        
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.DG = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -152,16 +152,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);
 
-        
+        }
 
-        #endregio
+        #endregion
 
-        private System.Windows.Forms.DataGridView DG
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFam
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColName
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColSurName
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicDegree
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicRank
+        private System.Windows.Forms.DataGridView DG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSurName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicDegree;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTheSizeOfTeachingExperience;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -171,5 +171,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheSizeOfTeachingExperience;
-    
+    }
 }
