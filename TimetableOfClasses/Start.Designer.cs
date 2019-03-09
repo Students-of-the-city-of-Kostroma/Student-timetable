@@ -125,7 +125,10 @@
 			this.министерстваToolStripMenuItem.Click += new System.EventHandler(this.министерстваToolStripMenuItem_Click);
 			// 
 			// справочникиToolStripMenuItem1
-			// 
+			//
+			this.справочникиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.редактироватьЗаписьToolStripMenuItem,
+			this.добавитьЗаписьToolStripMenuItem});
 			this.справочникиToolStripMenuItem1.Name = "справочникиToolStripMenuItem1";
 			this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
 			this.справочникиToolStripMenuItem1.Text = "Справочники";
