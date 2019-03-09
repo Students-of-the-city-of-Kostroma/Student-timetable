@@ -157,12 +157,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColSurName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicDegree;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColAcademicRank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTheSizeOfTeachingExperience;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fam;
