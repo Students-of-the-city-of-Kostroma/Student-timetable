@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CGroup : Controller
+    public class CGroup : Controller,IController
     {
         public CGroup() : base("Группа")
         {
