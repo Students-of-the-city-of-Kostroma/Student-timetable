@@ -10,42 +10,42 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class Start : Form
-    {
-        public Start()
-        {
-            InitializeComponent();
-        }
+	public partial class Start : Form
+	{
+		public Start()
+		{
+			InitializeComponent();
+		}
 
-        private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Teachers t = new Teachers();
-            t.Show();
-        }
+		private void преподавателиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Teachers t = new Teachers();
+			t.Show();
+		}
 
-        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Groups group = new Groups();
-            group.Show();
-        }
-        
-        private void дисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Discipline d = new Discipline();
-            d.Show();
-        }
-        
-        private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Auditor audit = new Auditor();
-            audit.Show();
-        }
+		private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Groups group = new Groups();
+			group.Show();
+		}
 
-        private void расписаниеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Timetable tt = new Timetable();
-            tt.Show();
-        }
+		private void дисциплиныToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Discipline d = new Discipline();
+			d.Show();
+		}
+
+		private void аудиторииToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Auditor audit = new Auditor();
+			audit.Show();
+		}
+
+		private void расписаниеToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Timetable tt = new Timetable();
+			tt.Show();
+		}
 
 		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -67,7 +67,7 @@ namespace TimetableOfClasses
 			addOrEditDirectory.NewRow(null);
 			addOrEditDirectory.Show();
 		}
-    
+
 
 		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -81,10 +81,10 @@ namespace TimetableOfClasses
 			academicDegree.Show();
 		}
 
-        private void профилиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TrainingProfiles trainingProfiles = new TrainingProfiles();
-            trainingProfiles.Show();
-        }
-    }
+		private void профилиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TrainingProfiles trainingProfiles = new TrainingProfiles();
+			trainingProfiles.Show();
+		}
+	}
 }
