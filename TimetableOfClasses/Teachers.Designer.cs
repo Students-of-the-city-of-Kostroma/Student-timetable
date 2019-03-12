@@ -152,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);
 
+
         }
 
         #endregion
