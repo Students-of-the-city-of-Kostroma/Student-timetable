@@ -130,6 +130,11 @@
     </Compile>
     <Compile Include="University.Designer.cs">
       <DependentUpon>University.cs</DependentUpon>
+    <Compile Include="TypesOfOccupations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypesOfOccupations.Designer.cs">
+      <DependentUpon>TypesOfOccupations.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AcademicTitle.resx">
       <DependentUpon>AcademicTitle.cs</DependentUpon>
@@ -184,6 +189,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="University.resx">
       <DependentUpon>University.cs</DependentUpon>
+    <EmbeddedResource Include="TypesOfOccupations.resx">
+      <DependentUpon>TypesOfOccupations.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
