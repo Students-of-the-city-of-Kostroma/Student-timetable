@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер объекта Аудитория.
     /// </summary>
-    public class CAuditor : Controller
+    public class CAuditor : Controller,IController
     {
 
         public CAuditor() : base("Аудитория")
@@ -108,7 +108,20 @@ namespace LibOfTimetableOfClasses
 
         public override bool Delete(Model model)
         {
-            throw new NotImplementedException();
+			MAuditor mAuditor = (MAuditor)model;
+			for (int i = 0; i < table.Rows.Count; i++)
+			{
+				if ((string)table.Rows[i]["Name"] == mAuditor.Number &&
+					(byte)table.Rows[i]["Floor"] == mAuditor.Floor &&
+					(string)table.Rows[i]["Building"] == mAuditor.Building &&
+					(int)table.Rows[i]["Spacious"] == mAuditor.Spacious
+					)
+				{
+					table.Rows[i].Delete();
+					return true;
+				}
+			}
+			return false;
         }
     }
 }

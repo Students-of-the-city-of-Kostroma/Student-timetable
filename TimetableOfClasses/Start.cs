@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,5 +47,54 @@ namespace TimetableOfClasses
             Timetable tt = new Timetable();
             tt.Show();
         }
-    }
+		private void вУЗыToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			University university = new University();
+			university.Show();
+		}
+		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Ministry ministry = new Ministry();
+			ministry.Show();
+		}
+		private void редактироватьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
+			addOrEditDirectory.EditRow(null);
+			addOrEditDirectory.Show();
+		}
+
+		private void добавитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
+			addOrEditDirectory.NewRow(null);
+			addOrEditDirectory.Show();
+		}
+    
+
+		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicTitle academicTitle = new AcademicTitle();
+			academicTitle.Show();
+		}
+
+		private void ученыеСтепениToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AcademicDegree academicDegree = new AcademicDegree();
+			academicDegree.Show();
+		}
+
+		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
+			typesOfOccupations.Show();
+		}
+		
+		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			Directory directory = new Directory();
+			directory.UploadTable(Controllers.CAuditor.Select());
+			directory.Show();
+		}
+	}
 }

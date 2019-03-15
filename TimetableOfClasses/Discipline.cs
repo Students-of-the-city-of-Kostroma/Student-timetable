@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
     public partial class Discipline : Form
     {
-        public Discipline()
-        {
-            InitializeComponent();
-        }
+		public Discipline()
+		{
+			InitializeComponent();
+			DG_Disc.DataSource = Controllers.CDiscipline.Select();
+		}
 
 
         private void DG_Disc_SelectionChanged(object sender, EventArgs e)

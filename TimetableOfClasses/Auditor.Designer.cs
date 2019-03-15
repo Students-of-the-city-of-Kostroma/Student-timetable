@@ -101,7 +101,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();
 			this.ResumeLayout(false);
 
-        }
 
         #endregion
 
@@ -110,6 +109,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Stage;
         private System.Windows.Forms.DataGridViewTextBoxColumn Korpus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vmestit;
-		private System.Windows.Forms.Button bt1;
+		    private System.Windows.Forms.Button bt1;
 	}
 }

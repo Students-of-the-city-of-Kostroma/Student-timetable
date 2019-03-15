@@ -11,10 +11,6 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MGroup : Model
     {
-        /// <summary>
-        /// Перечисление полей объекта модели Группа. Это перечисление будет удалено.
-        /// </summary>
-        public enum Keys { Id = 0, Cipher = 1, Population = 2 }
 
         string cipher;
         /// <summary>
@@ -31,24 +27,7 @@ namespace LibOfTimetableOfClasses
             Cipher = cipher;
             Population = population;
         }
-        /// <summary>
-        /// Возвращает значение перечисления
-        /// </summary>
-        /// <param ключ="key"></param>
-        /// <returns></returns>
-        public object this[Keys key]
-        {
-            get
-            {
-                switch (key)
-                {
-                    case Keys.Id: return Id;
-                    case Keys.Population: return Population;
-                    case Keys.Cipher: return Cipher;
-                    default: return null;
-                }
-            }
-        }
+		
         /// <summary>
         /// Возвращает или задает шифр группы
         /// </summary>

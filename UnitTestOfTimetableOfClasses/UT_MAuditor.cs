@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_MAuditor
     {
         [TestMethod]
-        public void Issue_98_1()
+        public void Issue_98_1_()
         {
             try
             {

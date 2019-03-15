@@ -41,6 +41,8 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.B_Cr_n_Cl = new System.Windows.Forms.Button();
+			this.B_Сancel = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -49,9 +51,9 @@
 			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.button1.Location = new System.Drawing.Point(180, 340);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(74, 37);
+			this.button1.Size = new System.Drawing.Size(75, 37);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "Создать";
+			this.button1.Text = "Создать и закрыть";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
@@ -202,12 +204,36 @@
 			this.numericUpDown1.Size = new System.Drawing.Size(242, 20);
 			this.numericUpDown1.TabIndex = 15;
 			// 
+			// B_Cr_n_Cl
+			// 
+			this.B_Cr_n_Cl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.B_Cr_n_Cl.Location = new System.Drawing.Point(99, 340);
+			this.B_Cr_n_Cl.Name = "B_Cr_n_Cl";
+			this.B_Cr_n_Cl.Size = new System.Drawing.Size(75, 37);
+			this.B_Cr_n_Cl.TabIndex = 16;
+			this.B_Cr_n_Cl.Text = "Создать и очистить";
+			this.B_Cr_n_Cl.UseVisualStyleBackColor = true;
+			this.B_Cr_n_Cl.Click += new System.EventHandler(this.B_Cr_n_Cl_Click);
+			// 
+			// B_Сancel
+			// 
+			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.B_Сancel.Location = new System.Drawing.Point(19, 340);
+			this.B_Сancel.Name = "B_Сancel";
+			this.B_Сancel.Size = new System.Drawing.Size(75, 37);
+			this.B_Сancel.TabIndex = 17;
+			this.B_Сancel.Text = "Отмена";
+			this.B_Сancel.UseVisualStyleBackColor = true;
+			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
+			// 
 			// AddTeacher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(266, 389);
+			this.Controls.Add(this.B_Сancel);
+			this.Controls.Add(this.B_Cr_n_Cl);
 			this.Controls.Add(this.numericUpDown1);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.textBox5);
@@ -247,5 +273,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-    }
+		private System.Windows.Forms.Button B_Cr_n_Cl;
+		private System.Windows.Forms.Button B_Сancel;
+	}
 }
