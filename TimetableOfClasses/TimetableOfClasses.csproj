@@ -125,6 +125,11 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <Compile Include="University.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="University.Designer.cs">
+      <DependentUpon>University.cs</DependentUpon>
     <Compile Include="TypesOfOccupations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTeacher.resx">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
@@ -179,6 +187,8 @@
     <EmbeddedResource Include="Timetable.resx">
       <DependentUpon>Timetable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="University.resx">
+      <DependentUpon>University.cs</DependentUpon>
     <EmbeddedResource Include="TypesOfOccupations.resx">
       <DependentUpon>TypesOfOccupations.cs</DependentUpon>
     </EmbeddedResource>

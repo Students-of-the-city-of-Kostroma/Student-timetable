@@ -118,6 +118,7 @@
 			this.вУЗыToolStripMenuItem.Name = "вУЗыToolStripMenuItem";
 			this.вУЗыToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
 			this.вУЗыToolStripMenuItem.Text = "ВУЗы";
+			this.вУЗыToolStripMenuItem.Click += new System.EventHandler(this.вУЗыToolStripMenuItem_Click);
 			// 
 			// министерстваToolStripMenuItem
 			// 
