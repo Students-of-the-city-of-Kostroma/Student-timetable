@@ -130,7 +130,8 @@
     </Compile>
     <Compile Include="University.Designer.cs">
       <DependentUpon>University.cs</DependentUpon>
-    <Compile Include="TypesOfOccupations.cs">
+    </Compile>
+	<Compile Include="TypesOfOccupations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TypesOfOccupations.Designer.cs">
@@ -189,6 +190,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="University.resx">
       <DependentUpon>University.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="TypesOfOccupations.resx">
       <DependentUpon>TypesOfOccupations.cs</DependentUpon>
     </EmbeddedResource>
