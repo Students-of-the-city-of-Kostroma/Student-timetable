@@ -96,5 +96,11 @@ namespace TimetableOfClasses
 			directory.UploadTable(Controllers.CAuditor.Select());
 			directory.Show();
 		}
+
+		private void институтыПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Institutes institutes = new Institutes();
+			institutes.Show();
+		}
 	}
 }
