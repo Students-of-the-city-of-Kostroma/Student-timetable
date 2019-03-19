@@ -152,9 +152,6 @@
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTeacher.resx">
-      <DependentUpon>AddTeacher.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx"> 
       <DependentUpon>Directory.cs</DependentUpon> 
     </EmbeddedResource>
