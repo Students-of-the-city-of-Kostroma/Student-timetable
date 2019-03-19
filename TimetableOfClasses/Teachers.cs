@@ -29,7 +29,12 @@ namespace TimetableOfClasses
 
         private void RemoveTeacher(object sender, EventArgs e)
         {
-            DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
+            int countSelected = DG.SelectedRows.Count;
+
+            for (int i = 0; i < countSelected; i++)
+            {
+                DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
+            }
         }
 
         private void DG_SelectionChanged(object sender, EventArgs e)
