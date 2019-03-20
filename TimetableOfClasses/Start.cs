@@ -96,5 +96,11 @@ namespace TimetableOfClasses
 			directory.UploadTable(Controllers.CAuditor.Select());
 			directory.Show();
 		}
-	}
+
+        private void корпусаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Enclosures enclosures = new Enclosures();
+            enclosures.Show();
+        }
+    }
 }
