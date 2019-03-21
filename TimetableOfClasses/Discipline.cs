@@ -22,7 +22,7 @@ namespace TimetableOfClasses
 
         private void DG_Disc_SelectionChanged(object sender, EventArgs e)
         {
-            if ((DG_Disc.SelectedRows.Count > 0)&&(DG_Disc.SelectedCells[0].RowIndex != DG_Disc.Rows.Count - 1))
+            if (DG_Disc.SelectedCells.Count > 0)
             {
                 Delete.Enabled = true;
             }
