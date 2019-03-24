@@ -21,14 +21,19 @@ namespace TimetableOfClasses
         
         private void button1_Click(object sender, EventArgs e)
         {
-            byte a;
-            if (byte.TryParse(numericUpDown1.Value.ToString(), out a)) {
-				MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
-				if (Controllers.CTeacher.Insert(Prepodavatel))
-					Close();
-				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+			if (!textBox1.Text.Contains(" "))
+			{
+				byte a;
+				if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
+				{
+					MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
+					if (Controllers.CTeacher.Insert(Prepodavatel))
+						Close();
+					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+				}
+				else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
 			}
-            else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
+			else MessageBox.Show("Введите имя без пробелов!", "Попробуйте снова");
         }
         /// <summary>
         /// Здесь должны быть комментарии
@@ -48,7 +53,7 @@ namespace TimetableOfClasses
         {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я- ]", "");
-            R.Text = Regex.Replace(R.Text, "[ ]", "-");
+            //R.Text = Regex.Replace(R.Text, "[ ]", "-");
             R.Text = Regex.Replace(R.Text, "[-]+", "-");
             if (R.Text.IndexOf("-") == 0)
                 R.Text = R.Text.Substring(1);
