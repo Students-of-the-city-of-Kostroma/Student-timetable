@@ -8,12 +8,35 @@ namespace LibOfTimetableOfClasses
 {
     public class MHEI: Model
 	{
+		/// <summary>
+		/// Полное название
+		/// </summary>
 		string fullName;
+		/// <summary>
+		/// Сокращенное название
+		/// </summary>
 		string abbreviatedName;
+		/// <summary>
+		/// Ректор
+		/// </summary>
 		string rector;
+		/// <summary>
+		/// Контактный телефон
+		/// </summary>
 		string phone;
+		/// <summary>
+		/// Электронная почта
+		/// </summary>
 		string email;
-		
+
+		/// <summary> 
+		/// Конструктор иницциализирующий экземпляр объекта ВУЗ 
+		/// </summary> 
+		/// <param name="fullName">Полное название</param> 
+		/// <param name="abbreviatedName">Сокращенное название</param> 
+		/// <param name="rector">Ректор</param> 
+		/// <param name="phone">Контактный телефон</param> 
+		/// <param name="email">Электронная почта</param>
 		public MHEI(string fullName, string abbreviatedName, string rector, string phone, string email): base ()
 		{
 			FullName = fullName;
@@ -22,6 +45,9 @@ namespace LibOfTimetableOfClasses
 			Phone = phone;
 			Email = email;
 		}
+		/// <summary>
+		/// Возвращает или задает fullName - полное название.
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -36,6 +62,9 @@ namespace LibOfTimetableOfClasses
 				throw new AggregateException("Все значения должны быть заполнены");
 			}
 		}
+		/// <summary>
+		/// Возвращает или задает abbreviatedName - сокащенное название.
+		/// </summary>
 		public string AbbreviatedName
 		{
 			get
@@ -50,6 +79,9 @@ namespace LibOfTimetableOfClasses
 				throw new AggregateException("Все значения должны быть заполнены");
 			}
 		}
+		/// <summary>
+		/// Возвращает или задает rector - ректор.
+		/// </summary>
 		public string Rector
 		{
 			get
@@ -64,6 +96,9 @@ namespace LibOfTimetableOfClasses
 					throw new AggregateException("Все значения должны быть заполнены");
 			}
 		}
+		/// <summary>
+		///  Возвращает или задает phone - контактный телефон.
+		/// </summary>
 		public string Phone
 		{
 			get
@@ -78,6 +113,9 @@ namespace LibOfTimetableOfClasses
 					throw new AggregateException("Все значения должны быть заполнены");
 			}
 		}
+		/// <summary>
+		/// Возвращает или задает email - электронная почта.
+		/// </summary>
 		public string Email
 		{
 			get
