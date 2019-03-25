@@ -53,7 +53,7 @@ namespace TimetableOfClasses
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я- ]", "");
-			//R.Text = Regex.Replace(R.Text, "[ ]", "-");
+			R.Text = Regex.Replace(R.Text, "[ ]", "-");
 			R.Text = Regex.Replace(R.Text, "[-]+", "-");
 			if (R.Text.IndexOf("-") == 0)
 				R.Text = R.Text.Substring(1);
