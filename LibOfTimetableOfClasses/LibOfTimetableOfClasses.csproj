@@ -50,6 +50,7 @@
     <Compile Include="MAuditor.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MGroup.cs" />
+    <Compile Include="MHEI.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
