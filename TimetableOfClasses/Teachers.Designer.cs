@@ -162,4 +162,3 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicRank;
         private System.Windows.Forms.DataGridViewTextBoxColumn TheSizeOfTeachingExperience;
     }
-}
