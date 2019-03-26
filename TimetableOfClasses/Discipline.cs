@@ -34,8 +34,11 @@ namespace TimetableOfClasses
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            try { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
-            catch{}
+            if (DG_Disc.Rows.Count == 0)
+            {}
+            else
+            { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
+           
 
         }
 
