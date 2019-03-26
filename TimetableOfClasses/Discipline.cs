@@ -34,12 +34,7 @@ namespace TimetableOfClasses
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (DG_Disc.Rows.Count == 0)
-            {}
-            else
-            { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
-           
-
+           DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex);
         }
 
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
