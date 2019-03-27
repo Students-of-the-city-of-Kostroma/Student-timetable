@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_CGroup
     {
         [TestMethod]
-        public void task_16_1()
+        public void Task_16_1()
         {
             Controllers.CGroup.Select().Clear();
             bool ex = true;
@@ -22,10 +22,10 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(C1 + 1, C2);
         }
         [TestMethod]
-        public void task_16_2()
+        public void Task_16_2()
         {
 
-            task_16_1();
+            Task_16_1();
             bool ex = false;
             bool act;
             MGroup T_Group = new MGroup("17-ИСбо-2а", 12);
@@ -36,9 +36,9 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(C1, C2);
         }
         [TestMethod]
-        public void task_16_3()
+        public void Task_16_3()
         {
-            task_16_1();
+            Task_16_1();
            
 
             bool ex = true;
