@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    public class MHEI: Model
+	public class MHEI : Model
 	{
 		/// <summary>
 		/// Полное название
@@ -37,7 +37,7 @@ namespace LibOfTimetableOfClasses
 		/// <param name="rector">Ректор</param> 
 		/// <param name="phone">Контактный телефон</param> 
 		/// <param name="email">Электронная почта</param>
-		public MHEI(string fullName, string abbreviatedName, string rector, string phone, string email): base ()
+		public MHEI(string fullName, string abbreviatedName, string rector, string phone, string email) : base()
 		{
 			FullName = fullName;
 			AbbreviatedName = abbreviatedName;
@@ -59,7 +59,12 @@ namespace LibOfTimetableOfClasses
 				if (value != "" && value != null)
 					fullName = value;
 				else
-				throw new AggregateException("Все значения должны быть заполнены");
+				{
+					if (value == null)
+						throw new ArgumentNullException("Полное название не может быть не инициализировано");
+					else
+						throw new AggregateException("Все значения должны быть заполнены");
+				}
 			}
 		}
 		/// <summary>
@@ -73,10 +78,16 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+
 				if (value != "" && value != null)
 					abbreviatedName = value;
 				else
-				throw new AggregateException("Все значения должны быть заполнены");
+				{
+					if (value == null)
+						throw new ArgumentNullException("Полное название не может быть не инициализировано");
+					else
+						throw new AggregateException("Все значения должны быть заполнены");
+				}
 			}
 		}
 		/// <summary>
@@ -93,7 +104,12 @@ namespace LibOfTimetableOfClasses
 				if (value != "" && value != null)
 					rector = value;
 				else
-					throw new AggregateException("Все значения должны быть заполнены");
+				{
+					if (value == null)
+						throw new ArgumentNullException("Полное название не может быть не инициализировано");
+					else
+						throw new AggregateException("Все значения должны быть заполнены");
+				}
 			}
 		}
 		/// <summary>
@@ -110,7 +126,12 @@ namespace LibOfTimetableOfClasses
 				if (value != "" && value != null)
 					phone = value;
 				else
-					throw new AggregateException("Все значения должны быть заполнены");
+				{
+					if (value == null)
+						throw new ArgumentNullException("Полное название не может быть не инициализировано");
+					else
+						throw new AggregateException("Все значения должны быть заполнены");
+				}
 			}
 		}
 		/// <summary>
@@ -127,7 +148,12 @@ namespace LibOfTimetableOfClasses
 				if (value != "" && value != null)
 					email = value;
 				else
-					throw new AggregateException("Все значения должны быть заполнены");
+				{
+					if (value == null)
+						throw new ArgumentNullException("Полное название не может быть не инициализировано");
+					else
+						throw new AggregateException("Все значения должны быть заполнены");
+				}
 			}
 		}
 
