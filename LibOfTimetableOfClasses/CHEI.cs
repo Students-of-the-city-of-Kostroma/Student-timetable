@@ -7,7 +7,9 @@ using System.Data;
 using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
-{
+{/// <summary>
+/// ВУЗ
+/// </summary>
 	public class CHEI : Controller, IController
 	{
 		public CHEI() : base("ВУЗ")

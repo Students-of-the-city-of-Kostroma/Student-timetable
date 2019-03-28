@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+	/// <summary>
+	/// ВУЗ
+	/// </summary>
 	class MCHEI:Model
 	{
 		string fullName;
