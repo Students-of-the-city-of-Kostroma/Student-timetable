@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CGroup : Controller,IController
-    {
-        public CGroup() : base("Группа")
-        {
-            DataColumn[] keys = new DataColumn[8];
+	public class CGroup : Controller, IController
+	{
+		public CGroup() : base("Группа")
+		{
+			DataColumn[] keys = new DataColumn[8];
 
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Group";
+			DataColumn column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Group";
 			column.Caption = "Группа";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+			column.ReadOnly = true;
+			column.Unique = true;
+			table.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
-            column.DataType = typeof(ushort);
-            column.ColumnName = "Semestr";
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Semestr";
 			column.Caption = "Семестр";
 			column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
-            keys[1] = column;
+			column.Unique = true;
+			table.Columns.Add(column);
+			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -87,21 +87,21 @@ namespace LibOfTimetableOfClasses
 			keys[7] = column;
 
 			table.PrimaryKey = keys;
-        }
-        public override bool Delete(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                    table.Rows[i].Delete();
-                    return true;
-            }
-            return false;
-        }
+		}
+		public override bool Delete(Model model)
+		{
+			MGroup mGroup = (MGroup)model;
+			for (int i = 0; i < table.Rows.Count; i++)
+			{
+				table.Rows[i].Delete();
+				return true;
+			}
+			return false;
+		}
 
-        public override bool Insert(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
+		public override bool Insert(Model model)
+		{
+			MGroup mGroup = (MGroup)model;
 
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
@@ -127,12 +127,12 @@ namespace LibOfTimetableOfClasses
 				}
 
 			}
-            return false;
-        }
+			return false;
+		}
 
-        public override bool Update(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
+		public override bool Update(Model model)
+		{
+			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
 
@@ -158,7 +158,7 @@ namespace LibOfTimetableOfClasses
 				}
 
 			}
-            return false;
-        }
-    }
+			return false;
+		}
+	}
 }

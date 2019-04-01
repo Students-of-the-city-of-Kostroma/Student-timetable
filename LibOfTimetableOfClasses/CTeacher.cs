@@ -8,87 +8,87 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CTeacher : Controller,IController
-    {
-        public CTeacher() : base("Учитель")
-        {
-            DataColumn[] keys = new DataColumn[6];
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "FullName";
+	public class CTeacher : Controller, IController
+	{
+		public CTeacher() : base("Учитель")
+		{
+			DataColumn[] keys = new DataColumn[6];
+			DataColumn column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "FullName";
 			column.Caption = "ФИО";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[0] = column;
+			column.ReadOnly = true;
+			table.Columns.Add(column);
+			keys[0] = column;
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Note";
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Note";
 			column.Caption = "Примечание";
 			column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[1] = column;
+			table.Columns.Add(column);
+			keys[1] = column;
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Departament";
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Departament";
 			column.Caption = "Кафедра";
 			column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[2] = column;
+			table.Columns.Add(column);
+			keys[2] = column;
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "MetodicalDays";
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "MetodicalDays";
 			column.Caption = "Метод. дни";
 			column.ReadOnly = true;
-            table.Columns.Add(column);
+			table.Columns.Add(column);
 			keys[3] = column;
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Windows";
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Windows";
 			column.Caption = "Окна";
 			column.ReadOnly = true;
-            table.Columns.Add(column);
+			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Weekends";
+			column.DataType = typeof(string);
+			column.ColumnName = "Weekends";
 			column.Caption = "Выходные";
 			column.ReadOnly = true;
-            table.Columns.Add(column);
+			table.Columns.Add(column);
 			keys[5] = column;
 
 			table.PrimaryKey = keys;
 		}
-        public override bool Insert(Model model)
-        {
-            try
-            {
-                MTeacher mTeacher = (MTeacher)model;
-                DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
-                newRow["FullName"] = mTeacher.FullName;
-                newRow["Note"] = mTeacher.Note;
+		public override bool Insert(Model model)
+		{
+			try
+			{
+				MTeacher mTeacher = (MTeacher)model;
+				DataRow newRow = table.NewRow();
+				newRow["ID"] = Guid.NewGuid();
+				newRow["FullName"] = mTeacher.FullName;
+				newRow["Note"] = mTeacher.Note;
 				newRow["Departament"] = mTeacher.Departament;
 				newRow["MetodicalDays"] = mTeacher.MetodicalDays;
-                newRow["Windows"] = mTeacher.Windows;
+				newRow["Windows"] = mTeacher.Windows;
 				newRow["Weekends"] = mTeacher.Weekends;
-                table.Rows.Add(newRow);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Source);
-                return false;
-            }
-        }
+				table.Rows.Add(newRow);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
+		}
 
-        public override bool Update(Model model)
-        {
-            MTeacher mTeacher = (MTeacher)model;
+		public override bool Update(Model model)
+		{
+			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
 
@@ -112,18 +112,18 @@ namespace LibOfTimetableOfClasses
 					return false;
 				}
 			}
-            return false;
-        }
+			return false;
+		}
 
-        public override bool Delete(Model model)
-        {
-            MTeacher mTeacher = (MTeacher)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                    table.Rows[i].Delete();
-                    return true;
-            }
-            return false;
-        }
-    }
+		public override bool Delete(Model model)
+		{
+			MTeacher mTeacher = (MTeacher)model;
+			for (int i = 0; i < table.Rows.Count; i++)
+			{
+				table.Rows[i].Delete();
+				return true;
+			}
+			return false;
+		}
+	}
 }

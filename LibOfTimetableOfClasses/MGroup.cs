@@ -42,12 +42,12 @@ namespace LibOfTimetableOfClasses
 
 		public short Students
 		{
-			get;set;
+			get; set;
 		}
 
 		public ushort MinNumberOfClass
 		{
-			get;set;
+			get; set;
 		}
 
 		public ushort MaxNumberOfClass
@@ -66,8 +66,8 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		/// <param name="cipher">шифр</param>
 		/// <param name="population">численность</param>
-		public MGroup(string group,ushort semester,string specialty,ushort shift,short students,ushort minNumberOfClass,ushort maxNumberOfClass,string weekends):base()
-        {
+		public MGroup(string group, ushort semester, string specialty, ushort shift, short students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
+		{
 			Group = group;
 			Semester = semester;
 			Shift = shift;
@@ -75,8 +75,8 @@ namespace LibOfTimetableOfClasses
 			MinNumberOfClass = minNumberOfClass;
 			MaxNumberOfClass = maxNumberOfClass;
 			Weekends = weekends;
-        }
-		
-        
-    }
+		}
+
+
+	}
 }

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 
-    /// <summary>
-    /// Преподаватель
-    /// </summary>
-    public class MTeacher : Model
-    {
+	/// <summary>
+	/// Преподаватель
+	/// </summary>
+	public class MTeacher : Model
+	{
 		string _fullname;
 		string _note;
 		string _departament;
@@ -92,14 +92,14 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string fullname, string note, string departament, string metodicalDays, string windows, string weekends) :base()
-        {
+		public MTeacher(string fullname, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		{
 			FullName = fullname;
 			Note = note;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
 			Weekends = weekends;
-        }
-    }
+		}
+	}
 }
