@@ -6,104 +6,100 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+
     /// <summary>
     /// Преподаватель
     /// </summary>
     public class MTeacher : Model
     {
-        string surname;
-        string name;
-        string middleName;
-        string academicDegree;
-        string academicRank;
-        byte sizeOfTeachingExperience;
+		string _fullname;
+		string _note;
+		string _departament;
+		string _metodicalDays;
+		string _windows;
+		string _weekends;
 
-        public string Surname
+		public string FullName
+		{
+			get
+			{
+				return _fullname;
+			}
+			set
+			{
+				_fullname = value;
+			}
+		}
+
+		public string Departament
+		{
+			get
+			{
+				return _departament;
+			}
+			set
+			{
+				_departament = value;
+			}
+		}
+
+		public string Note
+		{
+			get
+			{
+				return _note;
+			}
+			set
+			{
+				_note = value;
+			}
+		}
+
+		public string MetodicalDays
+		{
+			get
+			{
+				return _metodicalDays;
+			}
+			set
+			{
+				_metodicalDays = value;
+			}
+		}
+
+		public string Windows
+		{
+			get
+			{
+				return _windows;
+			}
+			set
+			{
+				_windows = value;
+			}
+		}
+
+		public string Weekends
+		{
+			get
+			{
+				return _weekends;
+			}
+			set
+			{
+				_weekends = value;
+			}
+		}
+
+
+		public MTeacher(string fullname, string note, string departament, string metodicalDays, string windows, string weekends) :base()
         {
-            get
-            {
-                return surname;
-            }
-
-            set
-            {
-                surname = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
-
-        public string MiddleName
-        {
-            get
-            {
-                return middleName;
-            }
-
-            set
-            {
-                middleName = value;
-            }
-        }
-
-        public string AcademicDegree
-        {
-            get
-            {
-                return academicDegree;
-            }
-
-            set
-            {
-                academicDegree = value;
-            }
-        }
-
-        public string AcademicRank
-        {
-            get
-            {
-                return academicRank;
-            }
-
-            set
-            {
-                academicRank = value;
-            }
-        }
-
-        public byte SizeOfTeachingExperience
-        {
-            get
-            {
-                return sizeOfTeachingExperience;
-            }
-
-            set
-            {
-                sizeOfTeachingExperience = value;
-            }
-        }
-
-        public MTeacher(string surname, string name, string middleName, string academicDegree, string academicRank, byte sizeOfTeachingExperience):base()
-        {
-            Surname = surname;
-            Name = name;
-            MiddleName = middleName;
-            AcademicDegree = academicDegree;
-            AcademicRank = academicRank;
-            SizeOfTeachingExperience = sizeOfTeachingExperience;
+			FullName = fullname;
+			Note = note;
+			Departament = departament;
+			MetodicalDays = metodicalDays;
+			Windows = windows;
+			Weekends = weekends;
         }
     }
 }
