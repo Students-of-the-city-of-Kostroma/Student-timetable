@@ -17,6 +17,11 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Group.DataSource = Controllers.CGroup.Select();
+			var dt = Controllers.CGroup.Select();
+			for (int i = 1; i < dt.Columns.Count; i++)
+			{
+				DG_Group.Columns[i].HeaderText = dt.Columns[i].Caption;
+			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)

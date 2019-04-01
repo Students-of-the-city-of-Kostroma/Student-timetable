@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
 			this.DG_Group = new System.Windows.Forms.DataGridView();
-			this.Шифр = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Численность = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Group)).BeginInit();
@@ -43,29 +41,13 @@
 			this.DG_Group.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.DG_Group.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DG_Group.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Шифр,
-            this.Численность});
 			this.DG_Group.Location = new System.Drawing.Point(12, 12);
 			this.DG_Group.Name = "DG_Group";
 			this.DG_Group.ReadOnly = true;
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
-			// 
-			// Шифр
-			// 
-			this.Шифр.HeaderText = "Шифр";
-			this.Шифр.Name = "Шифр";
-			this.Шифр.ReadOnly = true;
-			this.Шифр.Width = 61;
-			// 
-			// Численность
-			// 
-			this.Численность.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Численность.HeaderText = "Численность";
-			this.Численность.Name = "Численность";
-			this.Численность.ReadOnly = true;
 			// 
 			// button1
 			// 
@@ -107,8 +89,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DG_Group;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Шифр;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Численность;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
