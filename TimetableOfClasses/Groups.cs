@@ -20,7 +20,7 @@ namespace TimetableOfClasses
 			DG_Group.DataSource = Controllers.CGroup.Select();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void DeleteRow(object sender, EventArgs e)
 		{
 			if (DG_Group.SelectedRows.Count > 0)
 			{
@@ -34,7 +34,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void AddRow(object sender, EventArgs e)
 		{
 		}
 	}
