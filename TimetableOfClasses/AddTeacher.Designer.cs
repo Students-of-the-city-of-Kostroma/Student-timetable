@@ -188,7 +188,7 @@
 			this.department.Size = new System.Drawing.Size(656, 22);
 			this.department.TabIndex = 21;
 			this.department.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
-			this.department.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.department.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label5
 			// 
