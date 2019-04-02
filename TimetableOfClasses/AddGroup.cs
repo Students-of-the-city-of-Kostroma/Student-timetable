@@ -44,9 +44,9 @@ namespace TimetableOfClasses
 									Close();
 								else errors += "Новозможно добавить эту группу";
 							}
-							else errors = "Введите корректное максимальное колличество пар!";
-						else errors = "Введите корректное минимальное колличество пар!";
-					else errors = "Введите корректное колличество студентов!";
+							else errors = "Введите корректное максимальное количество пар!";
+						else errors = "Введите корректное минимальное количество пар!";
+					else errors = "Введите корректное количество студентов!";
 				else errors = "Введите корректную смену! (1-4)";
 			else errors = "Введите корректный семестр! (1-8)";
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
@@ -110,7 +110,8 @@ namespace TimetableOfClasses
 
 		private void AddGroup_Load(object sender, EventArgs e)
 		{
-
+			tbNameGroup.Text = "00-AAaa-0a";
+			tbVixodnie.Text = "Воскресенье";
 		}
 	}
 }
