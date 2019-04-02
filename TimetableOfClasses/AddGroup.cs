@@ -24,12 +24,28 @@ namespace TimetableOfClasses
 			Close();
 		}
 
-		private void B_Cr_n_Cl_Click(object sender, EventArgs e)
+		private void createAndClose_Click(object sender, EventArgs e)
 		{
-
+			if (Add())
+				Close();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void createAndClear_Click(object sender, EventArgs e)
+		{
+			if (Add())
+			{
+				nudSemest.Value = 1;
+				nudSmena.Value = 1;
+				nudMinPar.Value = 0;
+				nudMaxPar.Value = 0;
+				nudCountStudents.Value = 0;
+				tbNameGroup.Text = "00-AAaa-0a";
+				tbVixodnie.Text = "Воскресенье";
+				tbNaprav.Text = "-";
+			}
+		}
+
+		private bool Add()
 		{
 			string errors = "";
 			ushort semest, smena, countStudents, minPar, maxPar;
@@ -41,7 +57,7 @@ namespace TimetableOfClasses
 							{
 								MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
 								if (Controllers.CGroup.Insert(Group))
-									Close();
+									return true;
 								else errors += "Новозможно добавить эту группу";
 							}
 							else errors = "Введите корректное максимальное количество пар!";
@@ -50,12 +66,15 @@ namespace TimetableOfClasses
 				else errors = "Введите корректную смену! (1-4)";
 			else errors = "Введите корректный семестр! (1-8)";
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
+			return false;
 		}
+
+
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && (l<'0'||l>'9'))
+			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && (l < '0' || l > '9'))
 			{
 				e.Handled = true;
 			}
@@ -98,12 +117,7 @@ namespace TimetableOfClasses
 		{
 			if (str.Length > 0)
 			{
-				if (str.IndexOf("-") > 0)
-				{
-					return Char.ToUpper(str[0]) + str.Substring(1, str.IndexOf("-")) + Char.ToUpper(str[str.IndexOf("-") + 1]) + str.Substring(str.IndexOf("-") + 2);
-				}
-				else
-					return Char.ToUpper(str[0]) + str.Substring(1);
+				return Char.ToUpper(str[0]) + str.Substring(1);
 			}
 			return "";
 		}
@@ -112,6 +126,8 @@ namespace TimetableOfClasses
 		{
 			tbNameGroup.Text = "00-AAaa-0a";
 			tbVixodnie.Text = "Воскресенье";
+			tbNaprav.Text = "-";
 		}
+
 	}
 }

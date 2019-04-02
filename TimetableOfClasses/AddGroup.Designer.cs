@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.B_Сancel = new System.Windows.Forms.Button();
-			this.B_Cr_n_Cl = new System.Windows.Forms.Button();
+			this.createAndClear = new System.Windows.Forms.Button();
 			this.tbVixodnie = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.tbNameGroup = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.createAndClose = new System.Windows.Forms.Button();
 			this.nudSemest = new System.Windows.Forms.NumericUpDown();
 			this.nudMinPar = new System.Windows.Forms.NumericUpDown();
 			this.label7 = new System.Windows.Forms.Label();
@@ -65,16 +65,16 @@
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
 			// 
-			// B_Cr_n_Cl
+			// createAndClear
 			// 
-			this.B_Cr_n_Cl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Cr_n_Cl.Location = new System.Drawing.Point(92, 457);
-			this.B_Cr_n_Cl.Name = "B_Cr_n_Cl";
-			this.B_Cr_n_Cl.Size = new System.Drawing.Size(75, 37);
-			this.B_Cr_n_Cl.TabIndex = 31;
-			this.B_Cr_n_Cl.Text = "Создать и очистить";
-			this.B_Cr_n_Cl.UseVisualStyleBackColor = true;
-			this.B_Cr_n_Cl.Click += new System.EventHandler(this.B_Cr_n_Cl_Click);
+			this.createAndClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.createAndClear.Location = new System.Drawing.Point(92, 457);
+			this.createAndClear.Name = "createAndClear";
+			this.createAndClear.Size = new System.Drawing.Size(75, 37);
+			this.createAndClear.TabIndex = 31;
+			this.createAndClear.Text = "Создать и очистить";
+			this.createAndClear.UseVisualStyleBackColor = true;
+			this.createAndClear.Click += new System.EventHandler(this.createAndClear_Click);
 			// 
 			// tbVixodnie
 			// 
@@ -172,16 +172,16 @@
 			this.label1.TabIndex = 19;
 			this.label1.Text = "Группа";
 			// 
-			// button1
+			// createAndClose
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(173, 457);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 37);
-			this.button1.TabIndex = 18;
-			this.button1.Text = "Создать и закрыть";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.createAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.createAndClose.Location = new System.Drawing.Point(173, 457);
+			this.createAndClose.Name = "createAndClose";
+			this.createAndClose.Size = new System.Drawing.Size(75, 37);
+			this.createAndClose.TabIndex = 18;
+			this.createAndClose.Text = "Создать и закрыть";
+			this.createAndClose.UseVisualStyleBackColor = true;
+			this.createAndClose.Click += new System.EventHandler(this.createAndClose_Click);
 			// 
 			// nudSemest
 			// 
@@ -298,7 +298,7 @@
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.nudSemest);
 			this.Controls.Add(this.B_Сancel);
-			this.Controls.Add(this.B_Cr_n_Cl);
+			this.Controls.Add(this.createAndClear);
 			this.Controls.Add(this.tbVixodnie);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
@@ -307,7 +307,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.tbNameGroup);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.createAndClose);
 			this.Name = "AddGroup";
 			this.Text = "Добавление группы";
 			this.Load += new System.EventHandler(this.AddGroup_Load);
@@ -324,7 +324,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button B_Сancel;
-		private System.Windows.Forms.Button B_Cr_n_Cl;
+		private System.Windows.Forms.Button createAndClear;
 		private System.Windows.Forms.TextBox tbVixodnie;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
@@ -333,7 +333,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbNameGroup;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button createAndClose;
 		private System.Windows.Forms.NumericUpDown nudSemest;
 		private System.Windows.Forms.NumericUpDown nudMinPar;
 		private System.Windows.Forms.Label label7;
