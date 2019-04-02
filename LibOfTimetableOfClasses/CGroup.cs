@@ -18,7 +18,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Position";
 			column.ReadOnly = false;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[0] = column;
 
@@ -26,7 +25,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 
@@ -34,15 +32,13 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Semestr";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
-			column.DataType = typeof(ushort);
+			column.DataType = typeof(string);
 			column.ColumnName = "Specialty";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[3] = column;
 
@@ -50,7 +46,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Shift";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[4] = column;
 
@@ -58,7 +53,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[5] = column;
 
@@ -66,7 +60,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MinNumberOfClass";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[6] = column;
 
@@ -74,7 +67,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MaxNumberOfClass";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[7] = column;
 
@@ -82,7 +74,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
 			column.ReadOnly = true;
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[8] = column;
 

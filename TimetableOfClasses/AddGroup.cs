@@ -58,7 +58,7 @@ namespace TimetableOfClasses
 								MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
 								if (Controllers.CGroup.Insert(Group))
 									return true;
-								else errors += "Новозможно добавить эту группу";
+								else errors += "Невозможно добавить эту группу";
 							}
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
