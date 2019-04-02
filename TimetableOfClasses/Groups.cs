@@ -36,6 +36,8 @@ namespace TimetableOfClasses
 
 		private void AddRow(object sender, EventArgs e)
 		{
+			AddGroup addDiscipline = new AddGroup();
+			addDiscipline.ShowDialog();
 		}
 	}
 }
