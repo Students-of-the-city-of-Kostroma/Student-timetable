@@ -91,7 +91,6 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-
 				try
 				{
 					table.Rows[i].BeginEdit();

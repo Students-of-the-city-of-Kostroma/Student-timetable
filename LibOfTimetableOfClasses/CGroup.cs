@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 			keys[3] = column;
 
 			column = new DataColumn();
-			column.DataType = typeof(short);
+			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
 			column.Caption = "Студентов";
 			column.ReadOnly = true;
