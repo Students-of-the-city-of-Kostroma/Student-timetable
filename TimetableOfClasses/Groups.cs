@@ -34,7 +34,8 @@ namespace TimetableOfClasses
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
+			AddGroup addDiscipline = new AddGroup();
+			addDiscipline.ShowDialog();
 		}
 	}
 }
