@@ -12,16 +12,24 @@ namespace LibOfTimetableOfClasses
 	{
 		public CGroup() : base("Группа")
 		{
-			DataColumn[] keys = new DataColumn[8];
+			DataColumn[] keys = new DataColumn[9];
 
 			DataColumn column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Position";
+			column.ReadOnly = false;
+			column.Unique = true;
+			table.Columns.Add(column);
+			keys[0] = column;
+
+			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
 			column.Caption = "Группа";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[0] = column;
+			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -30,7 +38,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[1] = column;
+			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -39,7 +47,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[2] = column;
+			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -48,7 +56,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[3] = column;
+			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -57,7 +65,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[4] = column;
+			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -66,7 +74,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[5] = column;
+			keys[6] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
@@ -75,7 +83,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[6] = column;
+			keys[7] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
@@ -84,7 +92,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
-			keys[7] = column;
+			keys[8] = column;
 
 			table.PrimaryKey = keys;
 		}
@@ -93,21 +101,35 @@ namespace LibOfTimetableOfClasses
 			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				table.Rows[i].Delete();
-				return true;
+				if ((string)table.Rows[i]["Group"] == mGroup.Group)
+				{
+					table.Rows[i].Delete();
+					Recount(i);
+					return true;
+				}
 			}
 			return false;
+		}
+
+		private void Recount(int pos)
+		{
+			for(int i = pos; i < table.Rows.Count; i++)
+			{
+				table.Rows[i]["Position"] = (ushort)table.Rows[i]["Position"] - 1;
+			}
 		}
 
 		public override bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i <= table.Rows.Count; i++)
 			{
 				try
 				{
 					DataRow newRow = table.NewRow();
+					newRow["ID"] = Guid.NewGuid();
+					newRow["Position"] = table.Rows.Count+1;
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -116,7 +138,6 @@ namespace LibOfTimetableOfClasses
 					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
 					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
 					newRow["Weekends"] = mGroup.Weekends;
-
 					table.Rows.Add(newRow);
 					return true;
 				}
