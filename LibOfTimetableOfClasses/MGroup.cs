@@ -22,42 +22,99 @@ namespace LibOfTimetableOfClasses
 
 		public string Group
 		{
-			get; set;
+			get
+			{
+				return _group;
+			}
+			set
+			{
+				_group = value;
+			}
 		}
 
 		public ushort Semester
 		{
-			get; set;
+			get
+			{
+				return _semester;
+			}
+			set
+			{
+					_semester = value;
+			}
 		}
 
 		public string Specialty
 		{
-			get; set;
+			get
+			{
+				return _specialty;
+			}
+			set
+			{
+				_specialty = value;
+			}
 		}
 
 		public ushort Shift
 		{
-			get; set;
+			get
+			{
+				return _shift;
+			}
+			set
+			{
+				_shift = value;
+			}
 		}
 
 		public short Students
 		{
-			get; set;
+			get
+			{
+				return _students;
+			}
+			set
+			{
+				_students = value;
+			}
+			
 		}
 
 		public ushort MinNumberOfClass
 		{
-			get; set;
+			get
+			{
+				return _minNumberOfClass;
+			}
+			set
+			{
+				_minNumberOfClass = value;
+			}
 		}
 
 		public ushort MaxNumberOfClass
 		{
-			get; set;
+			get
+			{
+				return _maxNumberOfClass;
+			}
+			set
+			{
+				_maxNumberOfClass = value;
+			}
 		}
 
 		public string Weekends
 		{
-			get; set;
+			get
+			{
+				return _weekends;
+			}
+			set
+			{
+				_weekends = value;
+			}
 		}
 
 
