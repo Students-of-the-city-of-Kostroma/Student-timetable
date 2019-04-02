@@ -21,7 +21,7 @@ namespace TimetableOfClasses
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if (!textBox1.Text.Contains(" "))
+			/*if (!textBox1.Text.Contains(" "))
 			{
 				byte a;
 				if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
@@ -33,7 +33,7 @@ namespace TimetableOfClasses
 				}
 				else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
 			}
-			else MessageBox.Show("Введите имя без пробелов!", "Попробуйте снова");
+			else MessageBox.Show("Введите имя без пробелов!", "Попробуйте снова");*/
 		}
 		/// <summary>
 		/// Здесь должны быть комментарии
@@ -125,7 +125,7 @@ namespace TimetableOfClasses
 
 		private void B_Cr_n_Cl_Click(object sender, EventArgs e)
 		{
-			byte a;
+			/*byte a;
 			if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
 			{
 				MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
@@ -140,7 +140,7 @@ namespace TimetableOfClasses
 				}
 				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
-			else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
+			else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");*/
 		}
 	}
 }
