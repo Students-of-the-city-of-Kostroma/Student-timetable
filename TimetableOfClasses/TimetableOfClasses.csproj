@@ -155,9 +155,6 @@
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTeacher.resx">
-      <DependentUpon>AddTeacher.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,3 +227,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+</Project>
