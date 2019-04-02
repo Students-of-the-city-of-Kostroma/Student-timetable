@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MTeacher
     {
-        [TestMethod]
+       /* [TestMethod]
         public void Issue_30_1()
         {
             try
@@ -98,6 +98,6 @@ namespace UnitTestOfTimetableOfClasses
             {
                 Assert.Fail(ex.Message);
             }
-        }
+        }*/
     }
 }
