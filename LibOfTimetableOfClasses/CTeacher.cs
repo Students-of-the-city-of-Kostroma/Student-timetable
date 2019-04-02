@@ -12,54 +12,56 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTeacher() : base("Учитель")
 		{
-			DataColumn[] keys = new DataColumn[6];
+			DataColumn[] keys = new DataColumn[7];
+
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Caption = "ФИО";
-			column.ReadOnly = true;
+			column.DataType = typeof(uint);
+			column.ColumnName = "Number";
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Note";
-			column.Caption = "Примечание";
+			column.ColumnName = "FullName";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Departament";
-			column.Caption = "Кафедра";
+			column.ColumnName = "Note";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "MetodicalDays";
-			column.Caption = "Метод. дни";
+			column.ColumnName = "Departament";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Windows";
-			column.Caption = "Окна";
+			column.ColumnName = "MetodicalDays";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
-			column.Caption = "Выходные";
+			column.ColumnName = "Windows";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[5] = column;
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Weekends";
+			column.ReadOnly = true;
+			table.Columns.Add(column);
+			keys[6] = column;
 
 			table.PrimaryKey = keys;
 		}
@@ -70,6 +72,7 @@ namespace LibOfTimetableOfClasses
 				MTeacher mTeacher = (MTeacher)model;
 				DataRow newRow = table.NewRow();
 				newRow["ID"] = Guid.NewGuid();
+				newRow["Number"] = table.Rows.Count+1;
 				newRow["FullName"] = mTeacher.FullName;
 				newRow["Note"] = mTeacher.Note;
 				newRow["Departament"] = mTeacher.Departament;
@@ -119,10 +122,22 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				table.Rows[i].Delete();
-				return true;
+				if ((string)table.Rows[i]["FullName"] == mTeacher.FullName && (string)table.Rows[i]["Departament"] == mTeacher.Departament)
+				{
+					table.Rows[i].Delete();
+					Recount(i);
+					return true;
+				}				
 			}
 			return false;
+		}
+
+		private void Recount(int k)
+		{
+			for ( int i = k; i < table.Rows.Count; i++)
+			{
+				table.Rows[i]["Number"] = (uint)table.Rows[i]["Number"] - 1;
+			}
 		}
 	}
 }

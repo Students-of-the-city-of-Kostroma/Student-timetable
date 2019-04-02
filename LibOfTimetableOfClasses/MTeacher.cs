@@ -101,5 +101,11 @@ namespace LibOfTimetableOfClasses
 			Windows = windows;
 			Weekends = weekends;
 		}
+
+		public MTeacher(string fullname,string departament) : base()
+		{
+			FullName = fullname;
+			Departament = departament;
+		}
 	}
 }
