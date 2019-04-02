@@ -21,16 +21,13 @@ namespace TimetableOfClasses
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if (!firstName.Text.Contains(" "))
-			{
+			
 				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
 				MTeacher Prepodavatel = new MTeacher(fullName,notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 					if (Controllers.CTeacher.Insert(Prepodavatel))
 						Close();
 					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 				
-			}
-			else MessageBox.Show("Введите имя без пробелов!", "Попробуйте снова");
 		}
 		/// <summary>
 		/// Здесь должны быть комментарии
