@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
 			this.DG_Group = new System.Windows.Forms.DataGridView();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btDelete = new System.Windows.Forms.Button();
+			this.btAdd = new System.Windows.Forms.Button();
 			this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Semestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,27 +70,27 @@
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
 			// 
-			// button1
+			// btDelete
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(253, 365);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Удалить";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btDelete.Location = new System.Drawing.Point(253, 365);
+			this.btDelete.Name = "btDelete";
+			this.btDelete.Size = new System.Drawing.Size(75, 23);
+			this.btDelete.TabIndex = 1;
+			this.btDelete.Text = "Удалить";
+			this.btDelete.UseVisualStyleBackColor = true;
+			this.btDelete.Click += new System.EventHandler(this.DeleteRow);
 			// 
-			// button2
+			// btAdd
 			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(334, 365);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "Добавить";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btAdd.Location = new System.Drawing.Point(334, 365);
+			this.btAdd.Name = "btAdd";
+			this.btAdd.Size = new System.Drawing.Size(75, 23);
+			this.btAdd.TabIndex = 2;
+			this.btAdd.Text = "Добавить";
+			this.btAdd.UseVisualStyleBackColor = true;
+			this.btAdd.Click += new System.EventHandler(this.AddRow);
 			// 
 			// Position
 			// 
@@ -160,8 +160,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(421, 400);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btAdd);
+			this.Controls.Add(this.btDelete);
 			this.Controls.Add(this.DG_Group);
 			this.Name = "Groups";
 			this.Text = "Группы";
@@ -173,8 +173,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DG_Group;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.Button btAdd;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Position;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Group;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Semestr;
