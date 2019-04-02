@@ -163,6 +163,8 @@
 			this.notes.Name = "notes";
 			this.notes.Size = new System.Drawing.Size(656, 22);
 			this.notes.TabIndex = 19;
+			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
+			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label4
 			// 
@@ -185,6 +187,8 @@
 			this.department.Name = "department";
 			this.department.Size = new System.Drawing.Size(656, 22);
 			this.department.TabIndex = 21;
+			this.department.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
+			this.department.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
 			// label5
 			// 
@@ -207,6 +211,8 @@
 			this.metodDays.Name = "metodDays";
 			this.metodDays.Size = new System.Drawing.Size(656, 22);
 			this.metodDays.TabIndex = 23;
+			this.metodDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
+			this.metodDays.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label6
 			// 
@@ -229,6 +235,8 @@
 			this.windows.Name = "windows";
 			this.windows.Size = new System.Drawing.Size(656, 22);
 			this.windows.TabIndex = 25;
+			this.windows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
+			this.windows.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label7
 			// 
@@ -251,6 +259,7 @@
 			this.weekends.Name = "weekends";
 			this.weekends.Size = new System.Drawing.Size(656, 22);
 			this.weekends.TabIndex = 27;
+			this.weekends.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label8
 			// 
@@ -294,6 +303,7 @@
 			this.Name = "AddTeacher";
 			this.Text = "Добавить преподавателя";
 			this.Load += new System.EventHandler(this.AddTeacher_Load);
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
