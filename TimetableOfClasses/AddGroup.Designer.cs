@@ -309,7 +309,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button1);
 			this.Name = "AddGroup";
-			this.Text = "AddGroup";
+			this.Text = "Добавление группы";
 			this.Load += new System.EventHandler(this.AddGroup_Load);
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).EndInit();
