@@ -25,7 +25,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
-			column.Caption = "Группа";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -34,7 +33,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Semestr";
-			column.Caption = "Семестр";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -43,7 +41,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Specialty";
-			column.Caption = "Направление подготовки";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -52,7 +49,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Shift";
-			column.Caption = "Семестр";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -61,7 +57,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
-			column.Caption = "Студентов";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -70,7 +65,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MinNumberOfClass";
-			column.Caption = "Пар/день min";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -79,7 +73,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MaxNumberOfClass";
-			column.Caption = "Пар/день max";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -88,7 +81,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			column.Caption = "Выходные";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
