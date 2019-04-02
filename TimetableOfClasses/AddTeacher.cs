@@ -21,19 +21,13 @@ namespace TimetableOfClasses
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			/*if (!textBox1.Text.Contains(" "))
-			{
-				byte a;
-				if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
-				{
-					MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
+			
+				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+				MTeacher Prepodavatel = new MTeacher(fullName,notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 					if (Controllers.CTeacher.Insert(Prepodavatel))
 						Close();
 					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
-				}
-				else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");
-			}
-			else MessageBox.Show("Введите имя без пробелов!", "Попробуйте снова");*/
+				
 		}
 		/// <summary>
 		/// Здесь должны быть комментарии
@@ -42,11 +36,13 @@ namespace TimetableOfClasses
 		/// <param name="e"></param>
 		private void AddTeacher_Load(object sender, EventArgs e)
 		{
-			textBox1.Text = "Иван";
-			textBox2.Text = "Иванов";
-			textBox3.Text = "Иванович";
-			textBox4.Text = "Доктор наук";
-			textBox5.Text = "Профессор";
+			firstName.Text = "Иван";
+			secondName.Text = "Иванов";
+			patronymic.Text = "Иванович";
+			department.Text = "фаст";
+			metodDays.Text = "методические дни";
+			windows.Text = "окна";
+			weekends.Text = "Выходные";
 		}
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
@@ -125,22 +121,19 @@ namespace TimetableOfClasses
 
 		private void B_Cr_n_Cl_Click(object sender, EventArgs e)
 		{
-			/*byte a;
-			if (byte.TryParse(numericUpDown1.Value.ToString(), out a))
-			{
-				MTeacher Prepodavatel = new MTeacher(textBox2.Text, textBox1.Text, textBox3.Text, textBox4.Text, textBox5.Text, a);
-				if (Controllers.CTeacher.Insert(Prepodavatel))
+			string fullName = secondName.Text+" "+ firstName.Text + " " + patronymic.Text;
+			MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+			if (Controllers.CTeacher.Insert(Prepodavatel))
 				{
-					textBox1.Text = "";
-					textBox2.Text = "";
-					textBox3.Text = "";
-					textBox4.Text = "";
-					textBox5.Text = "";
-					numericUpDown1.Value = 0;
-				}
-				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+				firstName.Text = "";
+				secondName.Text = "";
+				patronymic.Text = "";
+				department.Text = "фаст";
+				metodDays.Text = "";
+				windows.Text = "";
+				weekends.Text = "";
 			}
-			else MessageBox.Show("Введите корректный стаж! (0-60)", "Попробуйте снова");*/
+				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
 	}
 }
