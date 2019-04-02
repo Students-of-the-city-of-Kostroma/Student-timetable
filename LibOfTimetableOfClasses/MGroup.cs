@@ -128,10 +128,16 @@ namespace LibOfTimetableOfClasses
 			Group = group;
 			Semester = semester;
 			Shift = shift;
+			Specialty = specialty;
 			Students = students;
 			MinNumberOfClass = minNumberOfClass;
 			MaxNumberOfClass = maxNumberOfClass;
 			Weekends = weekends;
+		}
+
+		public MGroup(string group) : base()
+		{
+			Group = group;
 		}
 
 

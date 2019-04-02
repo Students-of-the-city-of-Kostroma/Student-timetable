@@ -16,23 +16,25 @@ namespace TimetableOfClasses
 		public Groups()
 		{
 			InitializeComponent();
+			DG_Group.AutoGenerateColumns = false;
 			DG_Group.DataSource = Controllers.CGroup.Select();
-			var dt = Controllers.CGroup.Select();
-			for (int i = 1; i < dt.Columns.Count; i++)
-			{
-				DG_Group.Columns[i].HeaderText = dt.Columns[i].Caption;
-			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void DeleteRow(object sender, EventArgs e)
 		{
 			if (DG_Group.SelectedRows.Count > 0)
 			{
-				DG_Group.Rows.RemoveAt(DG_Group.SelectedCells[0].RowIndex);
+				MGroup mGroup;
+				foreach (DataGridViewRow row in DG_Group.SelectedRows)
+				{
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					mGroup = new MGroup((string)Row["Group"]);
+					Controllers.CGroup.Delete(mGroup);
+				}
 			}
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void AddRow(object sender, EventArgs e)
 		{
 			AddGroup addDiscipline = new AddGroup();
 			addDiscipline.ShowDialog();

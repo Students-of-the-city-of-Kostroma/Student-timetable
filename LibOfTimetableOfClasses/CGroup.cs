@@ -12,21 +12,19 @@ namespace LibOfTimetableOfClasses
 	{
 		public CGroup() : base("Группа")
 		{
-			DataColumn[] keys = new DataColumn[8];
+			DataColumn[] keys = new DataColumn[9];
 
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Group";
-			column.Caption = "Группа";
-			column.ReadOnly = true;
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Position";
+			column.ReadOnly = false;
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Semestr";
-			column.Caption = "Семестр";
+			column.DataType = typeof(string);
+			column.ColumnName = "Group";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -34,8 +32,7 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
-			column.ColumnName = "Specialty";
-			column.Caption = "Направление подготовки";
+			column.ColumnName = "Semestr";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -43,17 +40,15 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
-			column.ColumnName = "Shift";
-			column.Caption = "Семестр";
+			column.ColumnName = "Specialty";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
-			column.DataType = typeof(short);
-			column.ColumnName = "Students";
-			column.Caption = "Студентов";
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Shift";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -61,8 +56,7 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
-			column.ColumnName = "MinNumberOfClass";
-			column.Caption = "Пар/день min";
+			column.ColumnName = "Students";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
@@ -70,21 +64,27 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
-			column.ColumnName = "MaxNumberOfClass";
-			column.Caption = "Пар/день max";
+			column.ColumnName = "MinNumberOfClass";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[6] = column;
 
 			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
-			column.Caption = "Выходные";
+			column.DataType = typeof(ushort);
+			column.ColumnName = "MaxNumberOfClass";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[7] = column;
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Weekends";
+			column.ReadOnly = true;
+			column.Unique = true;
+			table.Columns.Add(column);
+			keys[8] = column;
 
 			table.PrimaryKey = keys;
 		}
@@ -93,21 +93,35 @@ namespace LibOfTimetableOfClasses
 			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				table.Rows[i].Delete();
-				return true;
+				if ((string)table.Rows[i]["Group"] == mGroup.Group)
+				{
+					table.Rows[i].Delete();
+					Recount(i);
+					return true;
+				}
 			}
 			return false;
+		}
+
+		private void Recount(int pos)
+		{
+			for(int i = pos; i < table.Rows.Count; i++)
+			{
+				table.Rows[i]["Position"] = (ushort)table.Rows[i]["Position"] - 1;
+			}
 		}
 
 		public override bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i <= table.Rows.Count; i++)
 			{
 				try
 				{
 					DataRow newRow = table.NewRow();
+					newRow["ID"] = Guid.NewGuid();
+					newRow["Position"] = table.Rows.Count+1;
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -116,7 +130,6 @@ namespace LibOfTimetableOfClasses
 					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
 					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
 					newRow["Weekends"] = mGroup.Weekends;
-
 					table.Rows.Add(newRow);
 					return true;
 				}
