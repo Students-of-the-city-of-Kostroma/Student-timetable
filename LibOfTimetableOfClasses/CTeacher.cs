@@ -59,7 +59,6 @@ namespace LibOfTimetableOfClasses
 			try
             {
 				MTeacher mTeacher = (MTeacher)model;
-
 				DataRow newRow = table.NewRow();
                 newRow["ID"] = Guid.NewGuid();
                 newRow["Surname"] = mTeacher.Surname;
