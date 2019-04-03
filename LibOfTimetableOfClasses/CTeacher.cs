@@ -54,11 +54,12 @@ namespace LibOfTimetableOfClasses
             table.Columns.Add(column);
         }
 
-		public override bool Insert(Model model)
-		{
-			MTeacher mTeacher = (MTeacher)model;
+		
+        public override bool Insert(Model model)
+        {
 			try
 			{
+				MTeacher mTeacher = (MTeacher)model;
 				DataRow newRow = table.NewRow();
 				newRow["ID"] = Guid.NewGuid();
 				newRow["Surname"] = mTeacher.Surname;
