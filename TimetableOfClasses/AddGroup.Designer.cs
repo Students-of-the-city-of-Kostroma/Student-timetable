@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
 			this.B_Сancel = new System.Windows.Forms.Button();
-			this.createAndClear = new System.Windows.Forms.Button();
 			this.tbVixodnie = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +37,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.tbNameGroup = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.createAndClose = new System.Windows.Forms.Button();
+			this.groupAdd = new System.Windows.Forms.Button();
 			this.nudSemest = new System.Windows.Forms.NumericUpDown();
 			this.nudMinPar = new System.Windows.Forms.NumericUpDown();
 			this.label7 = new System.Windows.Forms.Label();
@@ -64,17 +63,6 @@
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
-			// 
-			// createAndClear
-			// 
-			this.createAndClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClear.Location = new System.Drawing.Point(92, 457);
-			this.createAndClear.Name = "createAndClear";
-			this.createAndClear.Size = new System.Drawing.Size(75, 37);
-			this.createAndClear.TabIndex = 31;
-			this.createAndClear.Text = "Создать и очистить";
-			this.createAndClear.UseVisualStyleBackColor = true;
-			this.createAndClear.Click += new System.EventHandler(this.createAndClear_Click);
 			// 
 			// tbVixodnie
 			// 
@@ -172,22 +160,27 @@
 			this.label1.TabIndex = 19;
 			this.label1.Text = "Группа";
 			// 
-			// createAndClose
+			// groupAdd
 			// 
-			this.createAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClose.Location = new System.Drawing.Point(173, 457);
-			this.createAndClose.Name = "createAndClose";
-			this.createAndClose.Size = new System.Drawing.Size(75, 37);
-			this.createAndClose.TabIndex = 18;
-			this.createAndClose.Text = "Создать и закрыть";
-			this.createAndClose.UseVisualStyleBackColor = true;
-			this.createAndClose.Click += new System.EventHandler(this.createAndClose_Click);
+			this.groupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupAdd.Location = new System.Drawing.Point(173, 457);
+			this.groupAdd.Name = "groupAdd";
+			this.groupAdd.Size = new System.Drawing.Size(75, 37);
+			this.groupAdd.TabIndex = 18;
+			this.groupAdd.Text = "Сохранить";
+			this.groupAdd.UseVisualStyleBackColor = true;
+			this.groupAdd.Click += new System.EventHandler(this.createAndClose_Click);
 			// 
 			// nudSemest
 			// 
 			this.nudSemest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSemest.Location = new System.Drawing.Point(12, 85);
+			this.nudSemest.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
 			this.nudSemest.Minimum = new decimal(new int[] {
             1,
             0,
@@ -201,15 +194,22 @@
             0,
             0,
             0});
+			this.nudSemest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// nudMinPar
 			// 
 			this.nudMinPar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudMinPar.Location = new System.Drawing.Point(11, 305);
+			this.nudMinPar.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
 			this.nudMinPar.Name = "nudMinPar";
 			this.nudMinPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMinPar.TabIndex = 35;
+			this.nudMinPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label7
 			// 
@@ -228,9 +228,15 @@
 			this.nudMaxPar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudMaxPar.Location = new System.Drawing.Point(11, 363);
+			this.nudMaxPar.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
 			this.nudMaxPar.Name = "nudMaxPar";
 			this.nudMaxPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMaxPar.TabIndex = 37;
+			this.nudMaxPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label8
 			// 
@@ -249,15 +255,26 @@
 			this.nudCountStudents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudCountStudents.Location = new System.Drawing.Point(11, 249);
+			this.nudCountStudents.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
 			this.nudCountStudents.Name = "nudCountStudents";
 			this.nudCountStudents.Size = new System.Drawing.Size(236, 20);
 			this.nudCountStudents.TabIndex = 38;
+			this.nudCountStudents.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// nudSmena
 			// 
 			this.nudSmena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSmena.Location = new System.Drawing.Point(11, 193);
+			this.nudSmena.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
 			this.nudSmena.Minimum = new decimal(new int[] {
             1,
             0,
@@ -271,6 +288,7 @@
             0,
             0,
             0});
+			this.nudSmena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label6
 			// 
@@ -298,7 +316,6 @@
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.nudSemest);
 			this.Controls.Add(this.B_Сancel);
-			this.Controls.Add(this.createAndClear);
 			this.Controls.Add(this.tbVixodnie);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
@@ -307,7 +324,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.tbNameGroup);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.createAndClose);
+			this.Controls.Add(this.groupAdd);
 			this.Name = "AddGroup";
 			this.Text = "Добавление группы";
 			this.Load += new System.EventHandler(this.AddGroup_Load);
@@ -324,7 +341,6 @@
 		#endregion
 
 		private System.Windows.Forms.Button B_Сancel;
-		private System.Windows.Forms.Button createAndClear;
 		private System.Windows.Forms.TextBox tbVixodnie;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
@@ -333,7 +349,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbNameGroup;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button createAndClose;
+		private System.Windows.Forms.Button groupAdd;
 		private System.Windows.Forms.NumericUpDown nudSemest;
 		private System.Windows.Forms.NumericUpDown nudMinPar;
 		private System.Windows.Forms.Label label7;

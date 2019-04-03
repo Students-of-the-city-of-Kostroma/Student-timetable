@@ -27,21 +27,8 @@ namespace TimetableOfClasses
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
 			if (Add())
-				Close();
-		}
-
-		private void createAndClear_Click(object sender, EventArgs e)
-		{
-			if (Add())
 			{
-				nudSemest.Value = 1;
-				nudSmena.Value = 1;
-				nudMinPar.Value = 0;
-				nudMaxPar.Value = 0;
-				nudCountStudents.Value = 0;
-				tbNameGroup.Text = "00-AAaa-0a";
-				tbVixodnie.Text = "Воскресенье";
-				tbNaprav.Text = "-";
+				Close();
 			}
 		}
 
@@ -83,7 +70,7 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
+			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ' && l != '-')
 			{
 				e.Handled = true;
 			}
@@ -98,16 +85,19 @@ namespace TimetableOfClasses
 			}
 		}
 
+		private void KeyPress4(object sender, KeyPressEventArgs e)
+		{
+			char l = e.KeyChar;
+			if ((l < '0' || l > '9')&& l != '\b')
+			{
+				e.Handled = true;
+			}
+		}
+
 		private void SelectionOfLetters1(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
-			R.Text = Regex.Replace(R.Text, "[^а-яА-Я- ]", "");
-			R.Text = Regex.Replace(R.Text, "[ ]", "-");
-			R.Text = Regex.Replace(R.Text, "[-]+", "-");
-			if (R.Text.IndexOf("-") == 0)
-				R.Text = R.Text.Substring(1);
-			if (R.Text.LastIndexOf("-") == R.Text.Length - 1)
-				R.Text = R.Text.Remove(R.Text.Length - 1);
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
 
@@ -117,7 +107,21 @@ namespace TimetableOfClasses
 		{
 			if (str.Length > 0)
 			{
-				return Char.ToUpper(str[0]) + str.Substring(1);
+				int index=0;
+				string text = Char.ToUpper(str[0]) + str.Substring(1);
+				while (str.IndexOf(",",index+1) > index)
+				{
+					index = str.IndexOf(",", index + 1);
+					for (int i = index + 1; i < text.Length; i++)
+					{
+						if (text[i] >= 'А' && text[i] <= 'я')
+						{
+							text = text.Substring(0, i) + Char.ToUpper(text[i]) + text.Substring(i + 1);
+							break;
+						}
+					}
+				}
+				return text;
 			}
 			return "";
 		}
