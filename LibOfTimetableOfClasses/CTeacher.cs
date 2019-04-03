@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
 			DataColumn[] keys = new DataColumn[7];
 
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(uint);
+			column.DataType = typeof(ushort);
 			column.ColumnName = "Number";
 			column.ReadOnly = false;
 			table.Columns.Add(column);
@@ -97,7 +97,6 @@ namespace LibOfTimetableOfClasses
 				try
 				{
 					table.Rows[i].BeginEdit();
-					table.Rows[i]["ID"] = Guid.NewGuid();
 					table.Rows[i]["FullName"] = mTeacher.FullName;
 					table.Rows[i]["Note"] = mTeacher.Note;
 					table.Rows[i]["Departament"] = mTeacher.Departament;
@@ -136,7 +135,7 @@ namespace LibOfTimetableOfClasses
 		{
 			for ( int i = k; i < table.Rows.Count; i++)
 			{
-				table.Rows[i]["Number"] = (uint)table.Rows[i]["Number"] - 1;
+				table.Rows[i]["Number"] = (ushort)table.Rows[i]["Number"] - 1;
 			}
 		}
 	}

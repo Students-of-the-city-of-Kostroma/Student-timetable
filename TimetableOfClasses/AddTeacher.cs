@@ -19,16 +19,20 @@ namespace TimetableOfClasses
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				MTeacher Prepodavatel = new MTeacher(fullName,notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-					if (Controllers.CTeacher.Insert(Prepodavatel))
-						Close();
-					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
-				
+			if(Add())
+				Close();
+			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
+
+		private bool Add()
+		{
+			string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+			MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+			return Controllers.CTeacher.Insert(Prepodavatel);
+		}
+
 		/// <summary>
 		/// Здесь должны быть комментарии
 		/// </summary>
@@ -39,10 +43,10 @@ namespace TimetableOfClasses
 			firstName.Text = "Иван";
 			secondName.Text = "Иванов";
 			patronymic.Text = "Иванович";
-			department.Text = "фаст";
-			metodDays.Text = "методические дни";
-			windows.Text = "окна";
-			weekends.Text = "Выходные";
+			department.Text = "ФАСТ";
+			metodDays.Text = "Пн, Вт";
+			windows.Text = "Ср, Чт, Пт";
+			weekends.Text = "Сб, Вс";
 		}
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
@@ -91,7 +95,7 @@ namespace TimetableOfClasses
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-')
+			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
 			{
 				e.Handled = true;
 			}
@@ -100,15 +104,16 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
+			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && (l < '0' || l > '9'))
 			{
 				e.Handled = true;
 			}
 		}
 
-		private void KeyPressNumber(object sender, KeyPressEventArgs e)
+		private void KeyPress3(object sender, KeyPressEventArgs e)
 		{
-			if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+			char l = e.KeyChar;
+			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ' && l != ',')
 			{
 				e.Handled = true;
 			}
@@ -119,21 +124,18 @@ namespace TimetableOfClasses
 			Close();
 		}
 
-		private void B_Cr_n_Cl_Click(object sender, EventArgs e)
+		private void createAndClear_Click(object sender, EventArgs e)
 		{
-			string fullName = secondName.Text+" "+ firstName.Text + " " + patronymic.Text;
-			MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-			if (Controllers.CTeacher.Insert(Prepodavatel))
-				{
+			if (Add())
+			{
 				firstName.Text = "";
 				secondName.Text = "";
 				patronymic.Text = "";
-				department.Text = "фаст";
+				department.Text = "";
 				metodDays.Text = "";
 				windows.Text = "";
 				weekends.Text = "";
 			}
-				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
 	}
 }

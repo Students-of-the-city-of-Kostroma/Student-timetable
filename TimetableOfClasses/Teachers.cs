@@ -16,13 +16,8 @@ namespace TimetableOfClasses
         public Teachers()
         {
             InitializeComponent();
-			//привязываем таблицу контроллера CTeacher
-			//DG.AutoGenerateColumns = false;
+			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.CTeacher.Select();
-			var dt = Controllers.CTeacher.Select();
-			for(int i = 1; i < dt.Columns.Count; i++) { 
-				DG.Columns[i].HeaderText = dt.Columns[i].Caption;
-			}
 		}
 
         private void AddTeacher(object sender, EventArgs e)
