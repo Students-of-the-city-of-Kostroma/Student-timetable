@@ -55,24 +55,12 @@ namespace LibOfTimetableOfClasses
         }
         public override bool Insert(Model model)
         {
-			MTeacher mTeacher = (MTeacher)model;
-			//проверяем на наличие в таблице записи с таким ключом
-			for (int i = 0; i < table.Rows.Count; i++)
-			{
-				if (mTeacher.Surname == (string)table.Rows[i]["Surname"] &&
-					mTeacher.Name == (string)table.Rows[i]["Name"] &&
-					mTeacher.MiddleName == (string)table.Rows[i]["MiddleName"] &&
-					mTeacher.SizeOfTeachingExperience == (byte)table.Rows[i]["SizeOfTeachingExperience"])
-				{
-					//в таблице уже есть запись с таким ключом
-					return false;
-				}
-			}
-
+			
 			try
             {
-                
-                DataRow newRow = table.NewRow();
+				MTeacher mTeacher = (MTeacher)model;
+
+				DataRow newRow = table.NewRow();
                 newRow["ID"] = Guid.NewGuid();
                 newRow["Surname"] = mTeacher.Surname;
                 newRow["Name"] = mTeacher.Name;
