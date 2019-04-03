@@ -70,7 +70,7 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach(DataRow row in table.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Note"] == mTeacher.Note)
+				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Note"] == mTeacher.Note && (string)row["Departament"] == mTeacher.Departament)
 					return false;
 			}
 			return true;
