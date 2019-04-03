@@ -177,7 +177,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSemest.Location = new System.Drawing.Point(12, 85);
 			this.nudSemest.Maximum = new decimal(new int[] {
-            2,
+            10,
             0,
             0,
             0});

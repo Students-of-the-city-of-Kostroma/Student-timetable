@@ -50,8 +50,8 @@ namespace TimetableOfClasses
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
 					else errors = "Введите корректное количество студентов!";
-				else errors = "Введите корректную смену! (1-4)";
-			else errors = "Введите корректный семестр! (1-8)";
+				else errors = "Введите корректную смену! (1-2)";
+			else errors = "Введите корректный семестр! (1-10)";
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
