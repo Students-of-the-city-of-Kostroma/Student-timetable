@@ -102,17 +102,29 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+
+		private bool isValidKey(MGroup mGroup)
+		{
+			foreach (DataRow Row in table.Rows)
+			{
+				if (mGroup.Group == (string)Row["Group"] && mGroup.Semester == (ushort)Row["Semestr"])
+					return false;
+			}
+			return true;
+		}
+
+
 		public override bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
-			for (int i = 0; i <= table.Rows.Count; i++)
+			if (isValidKey(mGroup))
 			{
 				try
 				{
 					DataRow newRow = table.NewRow();
 					newRow["ID"] = Guid.NewGuid();
-					newRow["Position"] = table.Rows.Count+1;
+					newRow["Position"] = table.Rows.Count + 1;
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -129,9 +141,10 @@ namespace LibOfTimetableOfClasses
 					Debug.WriteLine(ex.Source);
 					return false;
 				}
-
 			}
+
 			return false;
+
 		}
 
 		public override bool Update(Model model)
