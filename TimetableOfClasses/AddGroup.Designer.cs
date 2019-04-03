@@ -74,7 +74,7 @@
 			this.tbVixodnie.Size = new System.Drawing.Size(235, 22);
 			this.tbVixodnie.TabIndex = 28;
 			this.tbVixodnie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
-			this.tbVixodnie.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.tbVixodnie.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label5
 			// 
@@ -110,7 +110,7 @@
 			this.tbNaprav.Size = new System.Drawing.Size(235, 22);
 			this.tbNaprav.TabIndex = 24;
 			this.tbNaprav.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.tbNaprav.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.tbNaprav.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label3
 			// 

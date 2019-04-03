@@ -88,7 +88,7 @@ namespace TimetableOfClasses
 		private void KeyPress4(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < '0' || l > '9')&& l != '\b')
+			if ((l < '0' || l > '9') && l != '\b')
 			{
 				e.Handled = true;
 			}
@@ -96,20 +96,31 @@ namespace TimetableOfClasses
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
 		{
+			string pattern = @"[0-9]{2}-[А-Я]{1,2}[а-я]{2}-[0-9]{1}[а-я]{0,1}";
+			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
+
+			TextBox R = sender as TextBox;
+			if (!regex.IsMatch(R.Text))
+			{ R.Text = "00-ААаа-0а"; }
+			else
+			{ }
+		}
+
+		private void SelectionOfLetters2(object sender, EventArgs e)
+		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
-
 		}
 
 		public static string FirstLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
-				int index=0;
+				int index = 0;
 				string text = Char.ToUpper(str[0]) + str.Substring(1);
-				while (str.IndexOf(",",index+1) > index)
+				while (str.IndexOf(",", index + 1) > index)
 				{
 					index = str.IndexOf(",", index + 1);
 					for (int i = index + 1; i < text.Length; i++)
@@ -128,7 +139,7 @@ namespace TimetableOfClasses
 
 		private void AddGroup_Load(object sender, EventArgs e)
 		{
-			tbNameGroup.Text = "00-AAaa-0a";
+			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
 			tbNaprav.Text = "-";
 		}
