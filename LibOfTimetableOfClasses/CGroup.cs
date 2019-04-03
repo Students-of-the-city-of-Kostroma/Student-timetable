@@ -96,7 +96,7 @@ namespace LibOfTimetableOfClasses
 
 		private void Recount(int pos)
 		{
-			for(int i = pos; i < table.Rows.Count; i++)
+			for (int i = pos; i < table.Rows.Count; i++)
 			{
 				table.Rows[i]["Position"] = (ushort)table.Rows[i]["Position"] - 1;
 			}
@@ -112,7 +112,7 @@ namespace LibOfTimetableOfClasses
 				{
 					DataRow newRow = table.NewRow();
 					newRow["ID"] = Guid.NewGuid();
-					newRow["Position"] = table.Rows.Count+1;
+					newRow["Position"] = table.Rows.Count + 1;
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -139,27 +139,30 @@ namespace LibOfTimetableOfClasses
 			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-
-				try
-				{
-					table.Rows[i].BeginEdit();
-					table.Rows[i]["Group"] = mGroup.Group;
-					table.Rows[i]["Semestr"] = mGroup.Semester;
-					table.Rows[i]["Specialty"] = mGroup.Specialty;
-					table.Rows[i]["Shift"] = mGroup.Shift;
-					table.Rows[i]["Students"] = mGroup.Students;
-					table.Rows[i]["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-					table.Rows[i]["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-					table.Rows[i]["Weekends"] = mGroup.Weekends;
-					table.Rows[i].EndEdit();
-					table.Rows[i].AcceptChanges();
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				
+				if ((Guid)table.Rows[i][0] == mGroup.ID)
+					try
+					{
+						table.Rows[i].Delete();
+						DataRow newRow = table.NewRow();
+						newRow["ID"] = mGroup.ID;
+						newRow["Position"] = mGroup.Position;
+						newRow["Group"] = mGroup.Group;
+						newRow["Semestr"] = mGroup.Semester;
+						newRow["Specialty"] = mGroup.Specialty;
+						newRow["Shift"] = mGroup.Shift;
+						newRow["Students"] = mGroup.Students;
+						newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+						newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+						newRow["Weekends"] = mGroup.Weekends;
+						table.Rows.Add(newRow);
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
 
 			}
 			return false;

@@ -42,10 +42,10 @@ namespace TimetableOfClasses
 
 		private void Update(object sender, EventArgs e)
 		{
-			if (DG_Group.SelectedRows.Count == 0)
+			if (DG_Group.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((string)Row["Group"]);
+				MGroup mGroup = new MGroup((Guid)Row.ItemArray[0], (string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"], (ushort)Row.ItemArray[1]);
 				AddGroup addDiscipline = new AddGroup(mGroup);
 				addDiscipline.ShowDialog();
 			}

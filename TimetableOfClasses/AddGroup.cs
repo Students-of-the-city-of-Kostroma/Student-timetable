@@ -14,13 +14,20 @@ namespace TimetableOfClasses
 {
 	public partial class AddGroup : Form
 	{
+
+		private MGroup group;
+
 		public AddGroup()
 		{
 			InitializeComponent();
+			tbNameGroup.Text = "00-ААаа-0а";
+			tbVixodnie.Text = "Воскресенье";
+			tbNaprav.Text = "-";
 		}
 
 		public AddGroup(MGroup mGroup)
 		{
+			InitializeComponent();
 			tbNameGroup.Text = mGroup.Group;
 			nudSemest.Value = mGroup.Semester;
 			tbNaprav.Text = mGroup.Specialty;
@@ -30,7 +37,7 @@ namespace TimetableOfClasses
 			nudMaxPar.Value = mGroup.MaxNumberOfClass;
 			tbVixodnie.Text = mGroup.Weekends;
 			this.Text = "Изменение группы";
-			InitializeComponent();
+			group = mGroup;
 		}
 
 		private void B_Сancel_Click(object sender, EventArgs e)
@@ -50,16 +57,33 @@ namespace TimetableOfClasses
 		{
 			string errors = "";
 			ushort semest, smena, countStudents, minPar, maxPar;
-			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 8 && semest > 0)
-				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 4 && smena > 0)
+			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
+				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 2 && smena > 0)
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
 							{
-								MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-								if (Controllers.CGroup.Insert(Group))
-									return true;
-								else errors += "Невозможно добавить эту группу";
+								if (group == null)
+								{
+									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+									if (Controllers.CGroup.Insert(Group))
+										return true;
+									else errors = "Невозможно добавить эту группу";
+								}
+								else
+								{
+									group.Group = tbNameGroup.Text;
+									group.Semester = semest;
+									group.Specialty = tbNaprav.Text;
+									group.Shift = smena;
+									group.Students = countStudents;
+									group.MinNumberOfClass = minPar;
+									group.MaxNumberOfClass = maxPar;
+									group.Weekends = tbVixodnie.Text;
+									if (Controllers.CGroup.Update(group))
+										return true;
+									else errors = "Невозможно так изменить эту группу";
+								}
 							}
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
@@ -151,12 +175,6 @@ namespace TimetableOfClasses
 			return "";
 		}
 
-		private void AddGroup_Load(object sender, EventArgs e)
-		{
-			tbNameGroup.Text = "00-ААаа-0а";
-			tbVixodnie.Text = "Воскресенье";
-			tbNaprav.Text = "-";
-		}
 
 	}
 }

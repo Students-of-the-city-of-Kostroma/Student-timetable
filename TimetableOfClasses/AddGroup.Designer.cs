@@ -327,7 +327,6 @@
 			this.Controls.Add(this.groupAdd);
 			this.Name = "AddGroup";
 			this.Text = "Добавление группы";
-			this.Load += new System.EventHandler(this.AddGroup_Load);
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxPar)).EndInit();
