@@ -28,9 +28,9 @@ namespace TimetableOfClasses
 
         private void RemoveTeacher(object sender, EventArgs e)
         {
-            //DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
-
-			if(DG.SelectedRows.Count>0)
+			//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
+			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (DG.SelectedRows.Count>0 && dr == DialogResult.Yes)
 			{
 				MTeacher mTeacher;
 				foreach(DataGridViewRow row in DG.SelectedRows)
