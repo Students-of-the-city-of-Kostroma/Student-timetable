@@ -19,6 +19,20 @@ namespace TimetableOfClasses
 			InitializeComponent();
 		}
 
+		public AddGroup(MGroup mGroup)
+		{
+			tbNameGroup.Text = mGroup.Group;
+			nudSemest.Value = mGroup.Semester;
+			tbNaprav.Text = mGroup.Specialty;
+			nudSmena.Value = mGroup.Shift;
+			nudCountStudents.Value = mGroup.Students;
+			nudMinPar.Value = mGroup.MinNumberOfClass;
+			nudMaxPar.Value = mGroup.MaxNumberOfClass;
+			tbVixodnie.Text = mGroup.Weekends;
+			this.Text = "Изменение группы";
+			InitializeComponent();
+		}
+
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
 			Close();

@@ -39,5 +39,17 @@ namespace TimetableOfClasses
 			AddGroup addDiscipline = new AddGroup();
 			addDiscipline.ShowDialog();
 		}
+
+		private void Update(object sender, EventArgs e)
+		{
+			if (DG_Group.SelectedRows.Count == 0)
+			{
+				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+				MGroup mGroup = new MGroup((string)Row["Group"]);
+				AddGroup addDiscipline = new AddGroup(mGroup);
+				addDiscipline.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+		}
 	}
 }
