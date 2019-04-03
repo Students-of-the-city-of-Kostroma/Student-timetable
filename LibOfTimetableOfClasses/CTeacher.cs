@@ -65,28 +65,43 @@ namespace LibOfTimetableOfClasses
 
 			table.PrimaryKey = keys;
 		}
+
+		bool isValidKey(MTeacher mTeacher)
+		{
+			foreach(DataRow row in table.Rows)
+			{
+				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Note"] == mTeacher.Note)
+					return false;
+			}
+			return true;
+		}
+		
 		public override bool Insert(Model model)
 		{
-			try
+			MTeacher mTeacher = (MTeacher)model;
+			if (isValidKey(mTeacher))
 			{
-				MTeacher mTeacher = (MTeacher)model;
-				DataRow newRow = table.NewRow();
-				newRow["ID"] = Guid.NewGuid();
-				newRow["Number"] = table.Rows.Count+1;
-				newRow["FullName"] = mTeacher.FullName;
-				newRow["Note"] = mTeacher.Note;
-				newRow["Departament"] = mTeacher.Departament;
-				newRow["MetodicalDays"] = mTeacher.MetodicalDays;
-				newRow["Windows"] = mTeacher.Windows;
-				newRow["Weekends"] = mTeacher.Weekends;
-				table.Rows.Add(newRow);
-				return true;
+				try
+				{
+					DataRow newRow = table.NewRow();
+					newRow["ID"] = Guid.NewGuid();
+					newRow["Number"] = table.Rows.Count + 1;
+					newRow["FullName"] = mTeacher.FullName;
+					newRow["Note"] = mTeacher.Note;
+					newRow["Departament"] = mTeacher.Departament;
+					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+					newRow["Windows"] = mTeacher.Windows;
+					newRow["Weekends"] = mTeacher.Weekends;
+					table.Rows.Add(newRow);
+					return true;
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.Source);
+					return false;
+				}
 			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.Source);
-				return false;
-			}
+			return false;
 		}
 
 		public override bool Update(Model model)
