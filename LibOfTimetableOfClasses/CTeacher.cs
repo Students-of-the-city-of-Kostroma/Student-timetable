@@ -53,28 +53,30 @@ namespace LibOfTimetableOfClasses
             column.ReadOnly = true;
             table.Columns.Add(column);
         }
+
+		
         public override bool Insert(Model model)
         {
-            try
-            {
-                MTeacher mTeacher = (MTeacher)model;
-                DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
-                newRow["Surname"] = mTeacher.Surname;
-                newRow["Name"] = mTeacher.Name;
-                newRow["MiddleName"] = mTeacher.MiddleName;
-                newRow["AcademicDegree"] = mTeacher.AcademicDegree;
-                newRow["AcademicRank"] = mTeacher.AcademicRank;
-                newRow["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
-                table.Rows.Add(newRow);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Source);
-                return false;
-            }
-        }
+			try
+			{
+				MTeacher mTeacher = (MTeacher)model;
+				DataRow newRow = table.NewRow();
+				newRow["ID"] = Guid.NewGuid();
+				newRow["Surname"] = mTeacher.Surname;
+				newRow["Name"] = mTeacher.Name;
+				newRow["MiddleName"] = mTeacher.MiddleName;
+				newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+				newRow["AcademicRank"] = mTeacher.AcademicRank;
+				newRow["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
+				table.Rows.Add(newRow);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
+		}
 
         public override bool Update(Model model)
         {
