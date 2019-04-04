@@ -50,10 +50,10 @@ namespace TimetableOfClasses
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
-
-
 			DataGridViewColumn oldColumn = DG.SortedColumn;
 			ListSortDirection direction;
+
+			DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 
 			if (oldColumn != null)
 			{
@@ -74,9 +74,32 @@ namespace TimetableOfClasses
 			}
 
 			DG.Sort(newColumn, direction);
+			Recount();
+
+			for (int i = 0; i < DG.RowCount; i++)
+			{
+
+				DataRow tmpRow = ((DataRowView)DG.Rows[i].DataBoundItem).Row;
+				if ((Guid)Row.ItemArray[0] == (Guid)tmpRow.ItemArray[0])
+				{
+					DG.Rows[i].Selected = true;
+				}
+			}
+		}
+
+		private void Recount()
+		{
 			for (int i = 0; i < DG.RowCount; i++)
 			{
 				DG[0, i].Value = i + 1;
+			}
+		}
+
+		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		{
+			foreach (DataGridViewColumn column in DG.Columns)
+			{
+				column.SortMode = DataGridViewColumnSortMode.Programmatic;
 			}
 		}
 	}

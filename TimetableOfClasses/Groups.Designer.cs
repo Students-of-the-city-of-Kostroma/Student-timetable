@@ -64,6 +64,7 @@
             this.MaxNumberOfClass,
             this.Weekends});
 			this.DG_Group.Location = new System.Drawing.Point(12, 12);
+			this.DG_Group.MultiSelect = false;
 			this.DG_Group.Name = "DG_Group";
 			this.DG_Group.ReadOnly = true;
 			this.DG_Group.RowHeadersVisible = false;

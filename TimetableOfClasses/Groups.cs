@@ -61,14 +61,13 @@ namespace TimetableOfClasses
 		private void DG_Group_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			DataGridViewColumn newColumn = DG_Group.Columns[e.ColumnIndex];
-
-
 			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
 			ListSortDirection direction;
 
+			DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+
 			if (oldColumn != null)
 			{
-				// Sort the same column again, reversing the SortOrder.
 				if (oldColumn == newColumn &&
 					DG_Group.SortOrder == SortOrder.Ascending)
 				{
@@ -76,7 +75,6 @@ namespace TimetableOfClasses
 				}
 				else
 				{
-					// Sort a new column and remove the old SortGlyph.
 					direction = ListSortDirection.Ascending;
 					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
 				}
@@ -87,9 +85,24 @@ namespace TimetableOfClasses
 			}
 
 			DG_Group.Sort(newColumn, direction);
+			Recount();
+
+			for(int i=0;i<DG_Group.RowCount;i++)
+			{
+
+				DataRow tmpRow = ((DataRowView)DG_Group.Rows[i].DataBoundItem).Row;
+				if ((Guid)Row.ItemArray[0] == (Guid)tmpRow.ItemArray[0])
+				{
+					DG_Group.Rows[i].Selected = true;
+				}
+			}
+		}
+
+		private void Recount()
+		{
 			for (int i = 0; i < DG_Group.RowCount; i++)
 			{
-				DG_Group[0, i].Value = i+1;
+				DG_Group[0, i].Value = i + 1;
 			}
 		}
 
