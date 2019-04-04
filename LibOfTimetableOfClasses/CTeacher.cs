@@ -24,42 +24,42 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Note";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[6] = column;
 
@@ -109,18 +109,30 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
+				if ((ushort)table.Rows[i]["Number"] == mTeacher.Number)
 				try
 				{
-					table.Rows[i].BeginEdit();
-					table.Rows[i]["FullName"] = mTeacher.FullName;
-					table.Rows[i]["Note"] = mTeacher.Note;
-					table.Rows[i]["Departament"] = mTeacher.Departament;
-					table.Rows[i]["MetodicalDays"] = mTeacher.MetodicalDays;
-					table.Rows[i]["Windows"] = mTeacher.Windows;
-					table.Rows[i]["Weekends"] = mTeacher.Weekends;
-					table.Rows[i].EndEdit();
-					table.Rows[i].AcceptChanges();
-					return true;
+						//table.Rows[i].BeginEdit();
+						//table.Rows[i]["FullName"] = mTeacher.FullName;
+						//table.Rows[i]["Note"] = mTeacher.Note;
+						//table.Rows[i]["Departament"] = mTeacher.Departament;
+						//table.Rows[i]["MetodicalDays"] = mTeacher.MetodicalDays;
+						//table.Rows[i]["Windows"] = mTeacher.Windows;
+						//table.Rows[i]["Weekends"] = mTeacher.Weekends;
+						//table.Rows[i].EndEdit();
+						//table.Rows[i].AcceptChanges();
+						table.Rows[i].Delete();
+						DataRow newRow = table.NewRow();
+						newRow["ID"] = mTeacher.ID;
+						newRow["Number"] = mTeacher.Number;
+						newRow["FullName"] = mTeacher.FullName;
+						newRow["Note"] = mTeacher.Note;
+						newRow["Departament"] = mTeacher.Departament;
+						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+						newRow["Windows"] = mTeacher.Windows;
+						newRow["Weekends"] = mTeacher.Weekends;
+						table.Rows.Add(newRow);
+						return true;
 				}
 				catch (Exception ex)
 				{

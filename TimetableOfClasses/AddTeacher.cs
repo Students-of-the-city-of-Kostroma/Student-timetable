@@ -14,23 +14,74 @@ namespace TimetableOfClasses
 {
 	public partial class AddTeacher : Form
 	{
+		private MTeacher Lehrer;
+
 		public AddTeacher()
 		{
 			InitializeComponent();
 		}
 
+		public AddTeacher(MTeacher mTeacher)
+		{
+			InitializeComponent();
+			this.Text = "Изменение преподавателя";			
+			string[] split = mTeacher.FullName.Split(' ');
+			#region(FullName)
+			firstName.Text = split[0];
+			secondName.Text = split[1];
+			patronymic.Text = split[2];
+			#endregion
+			notes.Text = mTeacher.Note;
+			department.Text = mTeacher.Departament;		
+			metodDays.Text = mTeacher.MetodicalDays;
+			windows.Text = mTeacher.Windows;
+			weekends.Text = mTeacher.Weekends;
+			Lehrer = mTeacher;
+			
+		}
+
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if(Add())
-				Close();
+			if (Add())
+			{ Close(); SortForUpdate(); }
 			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
 
 		private bool Add()
 		{
-			string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-			MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-			return Controllers.CTeacher.Insert(Prepodavatel);
+			if (Lehrer == null)
+			{
+				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				return Controllers.CTeacher.Insert(Prepodavatel);
+			}
+			else
+			{
+
+				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+				Lehrer.FullName = fullName;
+				Lehrer.Note = notes.Text;
+				Lehrer.Departament = department.Text;
+				Lehrer.MetodicalDays = metodDays.Text;
+				Lehrer.Windows = windows.Text;
+				Lehrer.Weekends = weekends.Text;	
+				return Controllers.CTeacher.Update(Lehrer);					
+			}
+		}
+
+		private void SortForUpdate()
+		{
+			if (Lehrer != null)
+			{
+				Form f = this.Owner;
+				foreach (object dgw in f.Controls)
+					if (dgw is DataGridView)
+					{
+						var dataGridView = dgw as DataGridView;
+						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
+						dataGridView.Columns[Lehrer.Number].Selected = true;
+					}
+			}
 		}
 
 		/// <summary>
