@@ -48,6 +48,7 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
+				SortForUpdate();
 				Close();
 			}
 		}
@@ -189,12 +190,19 @@ namespace TimetableOfClasses
 			return "";
 		}
 
-		private void AddGroup_FormClosed(object sender, FormClosingEventArgs e)
+		private void SortForUpdate()
 		{
-			Form f = this.Owner;
-			foreach (object dgw in f.Controls)
-				if (dgw is DataGridView)
-					(dgw as DataGridView).Sort((dgw as DataGridView).Columns[0], ListSortDirection.Ascending);
+			if (group != null)
+			{
+				Form f = this.Owner;
+				foreach (object dgw in f.Controls)
+					if (dgw is DataGridView)
+					{
+						var dataGridView = dgw as DataGridView;
+						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
+						dataGridView.Columns[group.Position].Selected = true;
+					}
+			}
 		}
 
 	}

@@ -327,7 +327,6 @@
 			this.Controls.Add(this.groupAdd);
 			this.Name = "AddGroup";
 			this.Text = "Добавление группы";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddGroup_FormClosed);
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxPar)).EndInit();
