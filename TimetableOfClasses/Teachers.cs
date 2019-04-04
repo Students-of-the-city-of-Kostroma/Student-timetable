@@ -42,7 +42,20 @@ namespace TimetableOfClasses
 			}
         }
 
-        private void DG_SelectionChanged(object sender, EventArgs e)
+		private void Update(object sender, EventArgs e)
+		{
+			if (DG.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				MTeacher mTeacher = new MTeacher((Guid)Row.ItemArray[0], (string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"], (ushort)Row.ItemArray[1]);
+				AddTeacher add = new AddTeacher(mTeacher);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+		}
+
+		private void DG_SelectionChanged(object sender, EventArgs e)
         {
             //button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }

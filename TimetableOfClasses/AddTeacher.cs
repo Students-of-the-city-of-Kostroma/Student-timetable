@@ -14,23 +14,84 @@ namespace TimetableOfClasses
 {
 	public partial class AddTeacher : Form
 	{
+		private MTeacher Lehrer;
+
 		public AddTeacher()
 		{
 			InitializeComponent();
+			firstName.Text = "Иван";
+			secondName.Text = "Иванов";
+			patronymic.Text = "Иванович";
+			department.Text = "ФАСТ";
+			metodDays.Text = "Пн, Вт";
+			windows.Text = "Ср, Чт, Пт";
+			weekends.Text = "Сб, Вс";
+		}
+
+		public AddTeacher(MTeacher mTeacher)
+		{
+			InitializeComponent();
+			this.Text = "Изменение преподавателя";			
+			string[] split = mTeacher.FullName.Split(' ');
+			#region(FullName)
+			firstName.Text = split[1];
+			secondName.Text = split[0];
+			patronymic.Text = split[2];
+			#endregion
+			notes.Text = mTeacher.Note;
+			department.Text = mTeacher.Departament;		
+			metodDays.Text = mTeacher.MetodicalDays;
+			windows.Text = mTeacher.Windows;
+			weekends.Text = mTeacher.Weekends;
+			Lehrer = mTeacher;
+			
 		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if(Add())
+			if (Add())
+			{
+				SortForUpdate();
 				Close();
+			}
 			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
 
 		private bool Add()
 		{
-			string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-			MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-			return Controllers.CTeacher.Insert(Prepodavatel);
+			if (Lehrer == null)
+			{
+				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				return Controllers.CTeacher.Insert(Prepodavatel);
+			}
+			else
+			{
+
+				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
+				Lehrer.FullName = fullName;
+				Lehrer.Note = notes.Text;
+				Lehrer.Departament = department.Text;
+				Lehrer.MetodicalDays = metodDays.Text;
+				Lehrer.Windows = windows.Text;
+				Lehrer.Weekends = weekends.Text;	
+				return Controllers.CTeacher.Update(Lehrer);					
+			}
+		}
+
+		private void SortForUpdate()
+		{
+			if (Lehrer != null)
+			{
+				Form f = this.Owner;
+				foreach (object dgw in f.Controls)
+					if (dgw is DataGridView)
+					{
+						var dataGridView = dgw as DataGridView;
+						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
+						dataGridView.Columns[Lehrer.Number].Selected = true;
+					}
+			}
 		}
 
 		/// <summary>
@@ -40,13 +101,7 @@ namespace TimetableOfClasses
 		/// <param name="e"></param>
 		private void AddTeacher_Load(object sender, EventArgs e)
 		{
-			firstName.Text = "Иван";
-			secondName.Text = "Иванов";
-			patronymic.Text = "Иванович";
-			department.Text = "ФАСТ";
-			metodDays.Text = "Пн, Вт";
-			windows.Text = "Ср, Чт, Пт";
-			weekends.Text = "Сб, Вс";
+			
 		}
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
@@ -113,7 +168,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		public static string FirstLetterToUpper(string str)
+		private static string FirstLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
@@ -127,7 +182,7 @@ namespace TimetableOfClasses
 			return "";
 		}
 
-		public static string PeriodLetterToUpper(string str)
+		private static string PeriodLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
