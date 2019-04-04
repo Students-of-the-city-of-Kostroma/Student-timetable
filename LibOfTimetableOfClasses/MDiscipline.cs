@@ -11,33 +11,44 @@ namespace LibOfTimetableOfClasses
     /// </summary>
      public class MDiscipline : Model
     {
-        /// <summary>
-        /// Название дисциплины
-        /// </summary>
-        protected string name;
-        /// <summary>
-        /// Код дисциплины
-        /// </summary>
-        protected string code;
-        /// <summary>
-        /// Создает экземпляр дисциплины
-        /// </summary>
-        /// <param name="name">Название дисциплины</param>
-        /// <param name="code">Код дисциплины</param>
-        public MDiscipline(string name, string code):base()
-        {
-            Name = name;
-            Code = code;
-        }
+		/// <summary>
+		/// Полное название дисциплины
+		/// </summary>
+		protected string fullname;
+		/// <summary>
+		/// Краткое название дисциплины
+		/// </summary>
+		protected string shortname;
+		/// <summary>
+		/// Цикл дисциплин
+		/// </summary>
+		protected string cycleofdis;
+		/// <summary>
+		/// Создает экземпляр дисциплины
+		/// </summary>
+		/// <param name="fullname">Полное название дисциплины</param>
+		/// <param name="chortname">Краткое название дисциплины</param>
+		/// <param name="cycleofdis">Цикл дисциплин</param>
+		public MDiscipline(string fullname, string shortname, string cycleofdis) : base()
+		{
+			Fullname = fullname;
+			Shortname = shortname;
+			CycleofDis = cycleofdis;
 
-        /// <summary>
-        /// Возвращает или задает значение Name - название
-        /// </summary>
-        public string Name { set { name = value; }  get { return name; } }
+		}
 
-        /// <summary>
-        /// Возвращает или задает значение Code - код
-        /// </summary>
-        public string Code { set { code = value; } get { return code; } }
-    }
+		/// <summary>
+		/// Возвращает или задает значение Name - полное название
+		/// </summary>
+		public string Fullname { set { fullname = value; } get { return fullname; } }
+
+		/// <summary>
+		/// Возвращает или задает значение Shortname - краткому названию
+		/// </summary>
+		public string Shortname { set { shortname = value; } get { return shortname; } }
+		/// <summary>
+		/// 
+		/// </summary>
+		public string CycleofDis { set { cycleofdis = value; } get { return cycleofdis; } }
+	}
 }

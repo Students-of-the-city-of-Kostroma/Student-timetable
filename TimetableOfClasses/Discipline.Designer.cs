@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
 			this.DG_Disc = new System.Windows.Forms.DataGridView();
-			this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Delete = new System.Windows.Forms.Button();
 			this.btCreateDiscipline = new System.Windows.Forms.Button();
+			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CycleofDis = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,29 +47,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_Disc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_Disc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Kod,
-            this.Naim});
+            this.Number,
+            this.FullName,
+            this.Shortname,
+            this.CycleofDis});
 			this.DG_Disc.Location = new System.Drawing.Point(12, 12);
 			this.DG_Disc.Name = "DG_Disc";
 			this.DG_Disc.ReadOnly = true;
+			this.DG_Disc.RowHeadersVisible = false;
 			this.DG_Disc.Size = new System.Drawing.Size(394, 156);
 			this.DG_Disc.TabIndex = 0;
 			this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
-			// 
-			// Kod
-			// 
-			this.Kod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.Kod.HeaderText = "Код";
-			this.Kod.Name = "Kod";
-			this.Kod.ReadOnly = true;
-			this.Kod.Width = 51;
-			// 
-			// Naim
-			// 
-			this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Naim.HeaderText = "Наименование";
-			this.Naim.Name = "Naim";
-			this.Naim.ReadOnly = true;
 			// 
 			// Delete
 			// 
@@ -92,6 +82,33 @@
 			this.btCreateDiscipline.UseVisualStyleBackColor = true;
 			this.btCreateDiscipline.Click += new System.EventHandler(this.btCreateDiscipline_Click);
 			// 
+			// Number
+			// 
+			this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.Number.HeaderText = "";
+			this.Number.Name = "Number";
+			this.Number.ReadOnly = true;
+			this.Number.Width = 19;
+			// 
+			// FullName
+			// 
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.HeaderText = "Полное название дисциплины";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Shortname
+			// 
+			this.Shortname.HeaderText = "Краткое название дисциплины";
+			this.Shortname.Name = "Shortname";
+			this.Shortname.ReadOnly = true;
+			// 
+			// CycleofDis
+			// 
+			this.CycleofDis.HeaderText = "Цикл дисциплин";
+			this.CycleofDis.Name = "CycleofDis";
+			this.CycleofDis.ReadOnly = true;
+			// 
 			// Discipline
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,8 +128,10 @@
 
         private System.Windows.Forms.DataGridView DG_Disc;
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.Button btCreateDiscipline;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDis;
+	}
 }

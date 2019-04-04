@@ -21,7 +21,7 @@ namespace TimetableOfClasses
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
-			byte a;
+			/*byte a;
 			if ((byte.TryParse(textCodeOfDiscipline.Text.ToString(), out a)) && (textCodeOfDiscipline.Text.Length != 0) && (textNameOfDiscipline.Text.Length != 0))
 			{
 				MDiscipline Discipline = new MDiscipline(textNameOfDiscipline.Text, textCodeOfDiscipline.Text);
@@ -29,19 +29,19 @@ namespace TimetableOfClasses
 				textNameOfDiscipline.Text = "";
 				textCodeOfDiscipline.Text = "";
 			}
-			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);*/
 		}
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-			byte a;
+			/*byte a;
 			if ((byte.TryParse(textCodeOfDiscipline.Text.ToString(), out a)) && (textCodeOfDiscipline.Text.Length != 0) && (textNameOfDiscipline.Text.Length != 0))
 			{
 				MDiscipline Discipline = new MDiscipline(textNameOfDiscipline.Text, textCodeOfDiscipline.Text);
 				Controllers.CDiscipline.Insert(Discipline);
 				this.Close();
 			}
-			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);*/
 		}
 	}
 }

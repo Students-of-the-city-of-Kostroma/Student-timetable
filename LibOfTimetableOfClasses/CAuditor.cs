@@ -19,52 +19,53 @@ namespace LibOfTimetableOfClasses
             DataColumn[] keys = new DataColumn[2];
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "number";
-            column.ReadOnly = true;
+			column.ColumnName = "NameOfAud";
+			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
             keys[0] = column;
 
             column = new DataColumn();
-            column.DataType = typeof(byte);
-            column.ColumnName = "floor";
-            column.ReadOnly = true;
+			column.DataType = typeof(string);
+			column.ColumnName = "Cafedra";
+			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "building";
-            column.ReadOnly = true;
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Spacious";
+			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
             keys[1] = column;
 
             column = new DataColumn();
-            column.DataType = typeof(int);
-            column.ColumnName = "spacious";
-            column.ReadOnly = true;
+			column.DataType = typeof(byte);
+			column.ColumnName = "Building";
+			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            table.PrimaryKey = keys;
+			keys[1] = column;
+			table.PrimaryKey = keys;
         }
 
         public override bool Insert(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
-            if (mAuditor.Number != null && mAuditor.Building != null)
+            if (mAuditor.NameOfAud != null)
             {
                 for (int i = 0; i < table.Rows.Count; i++)
-                if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Building"] != mAuditor.Building)
-                {
+                if ((string)table.Rows[i]["NameOfAud"] != mAuditor.NameOfAud && (string)table.Rows[i]["Cafedra"] != mAuditor.Cafedra && (ushort)table.Rows[i]["Spacious"] != mAuditor.Spacious && (byte)table.Rows[i]["Building"] != mAuditor.Building)
+					{
                     try
                     {
                          DataRow newRow = table.NewRow();
                          newRow["ID"] = Guid.NewGuid();
-                         newRow["Number"] = mAuditor.Number;
-                         newRow["Building"] = mAuditor.Building;
-                         newRow["Floor"] = mAuditor.Floor;
-                         newRow["Spacious"] = mAuditor.Spacious;
+                         newRow["NameOfAud"] = mAuditor.NameOfAud;
+						 newRow["Cafedra"] = mAuditor.Cafedra;
+						 newRow["Spacious"] = mAuditor.Spacious;
+						 newRow["Building"] = mAuditor.Building;
                          table.Rows.Add(newRow);
                          return true;
                     }
@@ -82,16 +83,16 @@ namespace LibOfTimetableOfClasses
             MAuditor mAuditor = (MAuditor)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number != null && mAuditor.Building != null)
-                {
+                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.NameOfAud != null)
+				{
                     try
                     {
                         table.Rows[i].BeginEdit();
                         table.Rows[i]["ID"] = mAuditor.Id;
-                        table.Rows[i]["Number"] = mAuditor.Number;
-                        table.Rows[i]["Floor"] = mAuditor.Floor;
-                        table.Rows[i]["Building"] = mAuditor.Building;
-                        table.Rows[i]["Spacious"] = mAuditor.Spacious;
+                        table.Rows[i]["NameOfAdud"] = mAuditor.NameOfAud;
+						table.Rows[i]["Cafedra"] = mAuditor.Cafedra;
+						table.Rows[i]["Spacious"] = mAuditor.Spacious;
+						table.Rows[i]["Building"] = mAuditor.Building;
                         table.Rows[i].EndEdit();
                         table.Rows[i].AcceptChanges();
                         return true;
@@ -111,10 +112,10 @@ namespace LibOfTimetableOfClasses
 			MAuditor mAuditor = (MAuditor)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Name"] == mAuditor.Number &&
-					(byte)table.Rows[i]["Floor"] == mAuditor.Floor &&
-					(string)table.Rows[i]["Building"] == mAuditor.Building &&
-					(int)table.Rows[i]["Spacious"] == mAuditor.Spacious
+				if ((string)table.Rows[i]["NameOfAdud"] == mAuditor.NameOfAud &&
+					(string)table.Rows[i]["Cafedra"] == mAuditor.Cafedra &&
+					(ushort)table.Rows[i]["Spacious"] == mAuditor.Spacious &&
+					(byte)table.Rows[i]["Building"] == mAuditor.Building
 					)
 				{
 					table.Rows[i].Delete();

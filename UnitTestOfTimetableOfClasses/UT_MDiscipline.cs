@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MDiscipline
     {
-        [TestMethod]
+       /* [TestMethod]
         public void Issue_136_1()
         {
             try
@@ -46,5 +46,6 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
+		*/
     }
 }

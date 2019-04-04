@@ -17,25 +17,31 @@ namespace LibOfTimetableOfClasses
         {
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "Name";
+            column.ColumnName = "Fullname";
             column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
 
             column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "Code";
+            column.ColumnName = "Shortname";
             column.ReadOnly = true;
             table.Columns.Add(column);
-        }
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "CycleofDis";
+			column.ReadOnly = true;
+			table.Columns.Add(column);
+		}
 
         public override bool Delete(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((string)table.Rows[i]["Name"] == mDiscipline.Name && (string)table.Rows[i]["Code"] == mDiscipline.Code)
-                {
+                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname && (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname && (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDis)
+				{
                     table.Rows[i].Delete();
                     return true;
                 }
@@ -50,9 +56,10 @@ namespace LibOfTimetableOfClasses
                 MDiscipline mDiscipline = (MDiscipline)model;
                 DataRow newRow = table.NewRow();
                 newRow["ID"] = Guid.NewGuid();
-                newRow["Name"] = mDiscipline.Name;
-                newRow["Code"] = mDiscipline.Code;
-                table.Rows.Add(newRow);
+                newRow["Fullname"] = mDiscipline.Fullname;
+				newRow["Shortname"] = mDiscipline.Shortname;
+				newRow["CycleofDis"] = mDiscipline.CycleofDis;
+				table.Rows.Add(newRow);
                 return true;
             }
             catch (Exception ex)
@@ -69,14 +76,15 @@ namespace LibOfTimetableOfClasses
             {
                 if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
                 {
-                    if ((mDiscipline.Name != null && mDiscipline.Code != null ))
-                    {
+                    if ((mDiscipline.Fullname != null && mDiscipline.Shortname != null && mDiscipline.CycleofDis != null))
+					{
                         try
                         {
                             table.Rows[i].BeginEdit();
-                            table.Rows[i]["Name"] = mDiscipline.Name;
-                            table.Rows[i]["Code"] = mDiscipline.Code;
-                            table.Rows[i].EndEdit();
+                            table.Rows[i]["Fullname"] = mDiscipline.Fullname;
+							table.Rows[i]["Shortname"] = mDiscipline.Shortname;
+							table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDis;
+							table.Rows[i].EndEdit();
                             table.Rows[i].AcceptChanges();
                             return true;
                         }
