@@ -47,5 +47,37 @@ namespace TimetableOfClasses
             //button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
         }
 
-    }
+		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
+
+
+			DataGridViewColumn oldColumn = DG.SortedColumn;
+			ListSortDirection direction;
+
+			if (oldColumn != null)
+			{
+				if (oldColumn == newColumn &&
+					DG.SortOrder == SortOrder.Ascending)
+				{
+					direction = ListSortDirection.Descending;
+				}
+				else
+				{
+					direction = ListSortDirection.Ascending;
+					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+				}
+			}
+			else
+			{
+				direction = ListSortDirection.Ascending;
+			}
+
+			DG.Sort(newColumn, direction);
+			for (int i = 0; i < DG.RowCount; i++)
+			{
+				DG[0, i].Value = i + 1;
+			}
+		}
+	}
 }

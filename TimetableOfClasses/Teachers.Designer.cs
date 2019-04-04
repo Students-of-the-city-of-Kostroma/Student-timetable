@@ -65,6 +65,7 @@
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(690, 298);
 			this.DG.TabIndex = 0;
+			this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
 			this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
 			// 
 			// Number
