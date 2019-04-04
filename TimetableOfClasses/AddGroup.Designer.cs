@@ -56,9 +56,9 @@
 			// B_Сancel
 			// 
 			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Сancel.Location = new System.Drawing.Point(12, 457);
+			this.B_Сancel.Location = new System.Drawing.Point(82, 461);
 			this.B_Сancel.Name = "B_Сancel";
-			this.B_Сancel.Size = new System.Drawing.Size(75, 37);
+			this.B_Сancel.Size = new System.Drawing.Size(77, 32);
 			this.B_Сancel.TabIndex = 32;
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@
 			// groupAdd
 			// 
 			this.groupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupAdd.Location = new System.Drawing.Point(173, 457);
+			this.groupAdd.Location = new System.Drawing.Point(165, 461);
 			this.groupAdd.Name = "groupAdd";
-			this.groupAdd.Size = new System.Drawing.Size(75, 37);
+			this.groupAdd.Size = new System.Drawing.Size(83, 32);
 			this.groupAdd.TabIndex = 18;
 			this.groupAdd.Text = "Сохранить";
 			this.groupAdd.UseVisualStyleBackColor = true;
@@ -306,7 +306,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(259, 505);
+			this.ClientSize = new System.Drawing.Size(259, 497);
 			this.Controls.Add(this.nudSmena);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.nudCountStudents);

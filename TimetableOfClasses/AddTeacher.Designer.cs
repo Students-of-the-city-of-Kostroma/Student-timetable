@@ -51,9 +51,9 @@
 			// createAndClose
 			// 
 			this.createAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClose.Location = new System.Drawing.Point(177, 458);
+			this.createAndClose.Location = new System.Drawing.Point(164, 439);
 			this.createAndClose.Name = "createAndClose";
-			this.createAndClose.Size = new System.Drawing.Size(75, 37);
+			this.createAndClose.Size = new System.Drawing.Size(87, 34);
 			this.createAndClose.TabIndex = 0;
 			this.createAndClose.Text = "Сохранить";
 			this.createAndClose.UseVisualStyleBackColor = true;
@@ -134,9 +134,9 @@
 			// B_Сancel
 			// 
 			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Сancel.Location = new System.Drawing.Point(96, 458);
+			this.B_Сancel.Location = new System.Drawing.Point(75, 439);
 			this.B_Сancel.Name = "B_Сancel";
-			this.B_Сancel.Size = new System.Drawing.Size(75, 37);
+			this.B_Сancel.Size = new System.Drawing.Size(83, 34);
 			this.B_Сancel.TabIndex = 17;
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
@@ -267,7 +267,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(263, 507);
+			this.ClientSize = new System.Drawing.Size(263, 475);
 			this.Controls.Add(this.weekends);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.windows);

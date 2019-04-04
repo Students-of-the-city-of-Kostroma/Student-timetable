@@ -50,7 +50,10 @@ namespace TimetableOfClasses
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
 			if (Add())
-			{ Close(); SortForUpdate(); }
+			{
+				SortForUpdate();
+				Close();
+			}
 			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
 		}
 
@@ -165,7 +168,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		public static string FirstLetterToUpper(string str)
+		private static string FirstLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
@@ -179,7 +182,7 @@ namespace TimetableOfClasses
 			return "";
 		}
 
-		public static string PeriodLetterToUpper(string str)
+		private static string PeriodLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
