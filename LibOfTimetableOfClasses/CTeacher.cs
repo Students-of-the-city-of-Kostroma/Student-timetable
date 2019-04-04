@@ -112,15 +112,6 @@ namespace LibOfTimetableOfClasses
 				if ((ushort)table.Rows[i]["Number"] == mTeacher.Number)
 				try
 				{
-						//table.Rows[i].BeginEdit();
-						//table.Rows[i]["FullName"] = mTeacher.FullName;
-						//table.Rows[i]["Note"] = mTeacher.Note;
-						//table.Rows[i]["Departament"] = mTeacher.Departament;
-						//table.Rows[i]["MetodicalDays"] = mTeacher.MetodicalDays;
-						//table.Rows[i]["Windows"] = mTeacher.Windows;
-						//table.Rows[i]["Weekends"] = mTeacher.Weekends;
-						//table.Rows[i].EndEdit();
-						//table.Rows[i].AcceptChanges();
 						table.Rows[i].Delete();
 						DataRow newRow = table.NewRow();
 						newRow["ID"] = mTeacher.ID;

@@ -34,8 +34,8 @@ namespace TimetableOfClasses
 			this.Text = "Изменение преподавателя";			
 			string[] split = mTeacher.FullName.Split(' ');
 			#region(FullName)
-			firstName.Text = split[0];
-			secondName.Text = split[1];
+			firstName.Text = split[1];
+			secondName.Text = split[0];
 			patronymic.Text = split[2];
 			#endregion
 			notes.Text = mTeacher.Note;
