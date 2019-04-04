@@ -30,8 +30,8 @@
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Audit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Vmestit = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Korpus = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
@@ -46,8 +46,8 @@
 			this.DataGridAuditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DataGridAuditor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
-            this.Cafedra,
             this.Audit,
+            this.Cafedra,
             this.Vmestit,
             this.Korpus});
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
@@ -62,17 +62,17 @@
 			this.Number.Name = "Number";
 			this.Number.Width = 21;
 			// 
-			// Cafedra
-			// 
-			this.Cafedra.HeaderText = "Кафедра";
-			this.Cafedra.Name = "Cafedra";
-			this.Cafedra.Width = 77;
-			// 
 			// Audit
 			// 
 			this.Audit.HeaderText = "Аудитория";
 			this.Audit.Name = "Audit";
 			this.Audit.Width = 85;
+			// 
+			// Cafedra
+			// 
+			this.Cafedra.HeaderText = "Кафедра";
+			this.Cafedra.Name = "Cafedra";
+			this.Cafedra.Width = 77;
 			// 
 			// Vmestit
 			// 
@@ -103,8 +103,8 @@
 
         private System.Windows.Forms.DataGridView DataGridAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Audit;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Vmestit;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Korpus;
 	}
