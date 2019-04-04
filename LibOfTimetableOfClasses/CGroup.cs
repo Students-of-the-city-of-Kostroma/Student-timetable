@@ -84,10 +84,10 @@ namespace LibOfTimetableOfClasses
 			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Group"] == mGroup.Group)
+				if ((ushort)table.Rows[i]["Position"] == mGroup.Position)
 				{
 					table.Rows[i].Delete();
-					Recount(i);
+					Recount(mGroup.Position-1);
 					return true;
 				}
 			}
@@ -140,7 +140,7 @@ namespace LibOfTimetableOfClasses
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
 				
-				if ((Guid)table.Rows[i][0] == mGroup.ID)
+				if ((ushort)table.Rows[i]["Position"] == mGroup.Position)
 					try
 					{
 						table.Rows[i].Delete();
