@@ -37,6 +37,7 @@ namespace TimetableOfClasses
 		private void AddRow(object sender, EventArgs e)
 		{
 			AddGroup addDiscipline = new AddGroup();
+			addDiscipline.Owner = this;
 			addDiscipline.ShowDialog();
 		}
 
@@ -47,6 +48,7 @@ namespace TimetableOfClasses
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
 				MGroup mGroup = new MGroup((Guid)Row.ItemArray[0], (string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"], (ushort)Row.ItemArray[1]);
 				AddGroup addDiscipline = new AddGroup(mGroup);
+				addDiscipline.Owner = this;
 				addDiscipline.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }

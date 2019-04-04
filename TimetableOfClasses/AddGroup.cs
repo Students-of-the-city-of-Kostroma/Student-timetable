@@ -22,7 +22,6 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
-			tbNaprav.Text = "-";
 		}
 
 		public AddGroup(MGroup mGroup)
@@ -148,6 +147,21 @@ namespace TimetableOfClasses
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+			if (R.Text.IndexOf("-") == 0)
+				R.Text = R.Text.Substring(1);
+			if (R.Text.IndexOf(" ") == 0)
+				R.Text = R.Text.Substring(1);
+			if (R.Text.IndexOf(",") == 0)
+				R.Text = R.Text.Substring(1);
+			if (R.Text.Length != 0)
+			{
+				if (R.Text.IndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				if (R.Text.IndexOf("-") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				if (R.Text.IndexOf(",") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+			}
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
 		}
@@ -175,6 +189,13 @@ namespace TimetableOfClasses
 			return "";
 		}
 
+		private void AddGroup_FormClosed(object sender, FormClosingEventArgs e)
+		{
+			Form f = this.Owner;
+			foreach (object dgw in f.Controls)
+				if (dgw is DataGridView)
+					(dgw as DataGridView).Sort((dgw as DataGridView).Columns[0], ListSortDirection.Ascending);
+		}
 
 	}
 }
