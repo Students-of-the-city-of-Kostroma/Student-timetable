@@ -24,42 +24,42 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Note";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			column.ReadOnly = false;
+			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[6] = column;
 

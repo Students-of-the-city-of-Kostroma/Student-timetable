@@ -19,6 +19,13 @@ namespace TimetableOfClasses
 		public AddTeacher()
 		{
 			InitializeComponent();
+			firstName.Text = "Иван";
+			secondName.Text = "Иванов";
+			patronymic.Text = "Иванович";
+			department.Text = "ФАСТ";
+			metodDays.Text = "Пн, Вт";
+			windows.Text = "Ср, Чт, Пт";
+			weekends.Text = "Сб, Вс";
 		}
 
 		public AddTeacher(MTeacher mTeacher)
@@ -91,13 +98,7 @@ namespace TimetableOfClasses
 		/// <param name="e"></param>
 		private void AddTeacher_Load(object sender, EventArgs e)
 		{
-			firstName.Text = "Иван";
-			secondName.Text = "Иванов";
-			patronymic.Text = "Иванович";
-			department.Text = "ФАСТ";
-			metodDays.Text = "Пн, Вт";
-			windows.Text = "Ср, Чт, Пт";
-			weekends.Text = "Сб, Вс";
+			
 		}
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
