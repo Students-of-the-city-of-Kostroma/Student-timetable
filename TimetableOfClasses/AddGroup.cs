@@ -166,7 +166,7 @@ namespace TimetableOfClasses
 			R.Text = FirstLetterToUpper(R.Text);
 		}
 
-		public static string FirstLetterToUpper(string str)
+		private static string FirstLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
