@@ -152,7 +152,7 @@
 			this.notes.Size = new System.Drawing.Size(239, 22);
 			this.notes.TabIndex = 19;
 			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters2);
+			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters4);
 			// 
 			// label4
 			// 
