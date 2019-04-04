@@ -247,7 +247,7 @@
 			this.weekends.Name = "weekends";
 			this.weekends.Size = new System.Drawing.Size(239, 22);
 			this.weekends.TabIndex = 27;
-			this.weekends.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
+			this.weekends.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.weekends.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
 			// label8
@@ -291,7 +291,6 @@
 			this.Name = "AddTeacher";
 			this.Text = "Добавить преподавателя";
 			this.Load += new System.EventHandler(this.AddTeacher_Load);
-			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

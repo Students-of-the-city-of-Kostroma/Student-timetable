@@ -100,7 +100,7 @@ namespace TimetableOfClasses
 		private void SelectionOfLetters4(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
-			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+			R.Text = Regex.Replace(R.Text, "[^0-9а-яА-Я-, ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
 			if (R.Text.Length > 2)
 			{
@@ -157,7 +157,7 @@ namespace TimetableOfClasses
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ' && l != ',')
+			if ((l < 'А' || l > 'я') && l != '\b' )
 			{
 				e.Handled = true;
 			}
@@ -175,7 +175,7 @@ namespace TimetableOfClasses
 		private void KeyPress3(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ' )
+			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
 			{
 				e.Handled = true;
 			}
