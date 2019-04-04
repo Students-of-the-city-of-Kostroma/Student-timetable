@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
 			this.DG_Group = new System.Windows.Forms.DataGridView();
-			this.btDelete = new System.Windows.Forms.Button();
-			this.btAdd = new System.Windows.Forms.Button();
 			this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Semestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,9 @@
 			this.MinNumberOfClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MaxNumberOfClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Weekends = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btDelete = new System.Windows.Forms.Button();
+			this.btAdd = new System.Windows.Forms.Button();
+			this.btUpdate = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Group)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -69,28 +70,6 @@
 			this.DG_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
-			// 
-			// btDelete
-			// 
-			this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btDelete.Location = new System.Drawing.Point(253, 365);
-			this.btDelete.Name = "btDelete";
-			this.btDelete.Size = new System.Drawing.Size(75, 23);
-			this.btDelete.TabIndex = 1;
-			this.btDelete.Text = "Удалить";
-			this.btDelete.UseVisualStyleBackColor = true;
-			this.btDelete.Click += new System.EventHandler(this.DeleteRow);
-			// 
-			// btAdd
-			// 
-			this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btAdd.Location = new System.Drawing.Point(334, 365);
-			this.btAdd.Name = "btAdd";
-			this.btAdd.Size = new System.Drawing.Size(75, 23);
-			this.btAdd.TabIndex = 2;
-			this.btAdd.Text = "Добавить";
-			this.btAdd.UseVisualStyleBackColor = true;
-			this.btAdd.Click += new System.EventHandler(this.AddRow);
 			// 
 			// Position
 			// 
@@ -155,11 +134,45 @@
 			this.Weekends.Name = "Weekends";
 			this.Weekends.ReadOnly = true;
 			// 
+			// btDelete
+			// 
+			this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btDelete.Location = new System.Drawing.Point(172, 365);
+			this.btDelete.Name = "btDelete";
+			this.btDelete.Size = new System.Drawing.Size(75, 23);
+			this.btDelete.TabIndex = 1;
+			this.btDelete.Text = "Удалить";
+			this.btDelete.UseVisualStyleBackColor = true;
+			this.btDelete.Click += new System.EventHandler(this.DeleteRow);
+			// 
+			// btAdd
+			// 
+			this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btAdd.Location = new System.Drawing.Point(334, 365);
+			this.btAdd.Name = "btAdd";
+			this.btAdd.Size = new System.Drawing.Size(75, 23);
+			this.btAdd.TabIndex = 2;
+			this.btAdd.Text = "Добавить";
+			this.btAdd.UseVisualStyleBackColor = true;
+			this.btAdd.Click += new System.EventHandler(this.AddRow);
+			// 
+			// btUpdate
+			// 
+			this.btUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btUpdate.Location = new System.Drawing.Point(253, 365);
+			this.btUpdate.Name = "btUpdate";
+			this.btUpdate.Size = new System.Drawing.Size(75, 23);
+			this.btUpdate.TabIndex = 3;
+			this.btUpdate.Text = "Изменить";
+			this.btUpdate.UseVisualStyleBackColor = true;
+			this.btUpdate.Click += new System.EventHandler(this.Update);
+			// 
 			// Groups
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(421, 400);
+			this.Controls.Add(this.btUpdate);
 			this.Controls.Add(this.btAdd);
 			this.Controls.Add(this.btDelete);
 			this.Controls.Add(this.DG_Group);
@@ -184,5 +197,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn MinNumberOfClass;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaxNumberOfClass;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Weekends;
+		private System.Windows.Forms.Button btUpdate;
 	}
 }

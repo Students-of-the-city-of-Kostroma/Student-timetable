@@ -14,9 +14,29 @@ namespace TimetableOfClasses
 {
 	public partial class AddGroup : Form
 	{
+
+		private MGroup group;
+
 		public AddGroup()
 		{
 			InitializeComponent();
+			tbNameGroup.Text = "00-ААаа-0а";
+			tbVixodnie.Text = "Воскресенье";
+		}
+
+		public AddGroup(MGroup mGroup)
+		{
+			InitializeComponent();
+			tbNameGroup.Text = mGroup.Group;
+			nudSemest.Value = mGroup.Semester;
+			tbNaprav.Text = mGroup.Specialty;
+			nudSmena.Value = mGroup.Shift;
+			nudCountStudents.Value = mGroup.Students;
+			nudMinPar.Value = mGroup.MinNumberOfClass;
+			nudMaxPar.Value = mGroup.MaxNumberOfClass;
+			tbVixodnie.Text = mGroup.Weekends;
+			this.Text = "Изменение группы";
+			group = mGroup;
 		}
 
 		private void B_Сancel_Click(object sender, EventArgs e)
@@ -28,6 +48,7 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
+				SortForUpdate();
 				Close();
 			}
 		}
@@ -36,16 +57,33 @@ namespace TimetableOfClasses
 		{
 			string errors = "";
 			ushort semest, smena, countStudents, minPar, maxPar;
-			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 8 && semest > 0)
-				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 4 && smena > 0)
+			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
+				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 2 && smena > 0)
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
 							{
-								MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-								if (Controllers.CGroup.Insert(Group))
-									return true;
-								else errors += "Невозможно добавить эту группу";
+								if (group == null)
+								{
+									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+									if (Controllers.CGroup.Insert(Group))
+										return true;
+									else errors = "Невозможно добавить эту группу";
+								}
+								else
+								{
+									group.Group = tbNameGroup.Text;
+									group.Semester = semest;
+									group.Specialty = tbNaprav.Text;
+									group.Shift = smena;
+									group.Students = countStudents;
+									group.MinNumberOfClass = minPar;
+									group.MaxNumberOfClass = maxPar;
+									group.Weekends = tbVixodnie.Text;
+									if (Controllers.CGroup.Update(group))
+										return true;
+									else errors = "Невозможно так изменить эту группу";
+								}
 							}
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
@@ -110,11 +148,26 @@ namespace TimetableOfClasses
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+			while (R.Text.IndexOf("-") == 0)
+				R.Text = R.Text.Substring(1);
+			while (R.Text.IndexOf(" ") == 0)
+				R.Text = R.Text.Substring(1);
+			while (R.Text.IndexOf(",") == 0)
+				R.Text = R.Text.Substring(1);
+			if (R.Text.Length != 0)
+			{
+				while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+			}
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
 		}
 
-		public static string FirstLetterToUpper(string str)
+		private static string FirstLetterToUpper(string str)
 		{
 			if (str.Length > 0)
 			{
@@ -137,11 +190,19 @@ namespace TimetableOfClasses
 			return "";
 		}
 
-		private void AddGroup_Load(object sender, EventArgs e)
+		private void SortForUpdate()
 		{
-			tbNameGroup.Text = "00-ААаа-0а";
-			tbVixodnie.Text = "Воскресенье";
-			tbNaprav.Text = "-";
+			if (group != null)
+			{
+				Form f = this.Owner;
+				foreach (object dgw in f.Controls)
+					if (dgw is DataGridView)
+					{
+						var dataGridView = dgw as DataGridView;
+						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
+						dataGridView.Columns[group.Position].Selected = true;
+					}
+			}
 		}
 
 	}
