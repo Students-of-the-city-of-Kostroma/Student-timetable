@@ -147,19 +147,19 @@ namespace TimetableOfClasses
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
-			if (R.Text.IndexOf("-") == 0)
+			while (R.Text.IndexOf("-") == 0)
 				R.Text = R.Text.Substring(1);
-			if (R.Text.IndexOf(" ") == 0)
+			while (R.Text.IndexOf(" ") == 0)
 				R.Text = R.Text.Substring(1);
-			if (R.Text.IndexOf(",") == 0)
+			while (R.Text.IndexOf(",") == 0)
 				R.Text = R.Text.Substring(1);
 			if (R.Text.Length != 0)
 			{
-				if (R.Text.IndexOf(" ") == R.Text.Length - 1)
+				while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
 					R.Text = R.Text.Remove(R.Text.Length - 1);
-				if (R.Text.IndexOf("-") == R.Text.Length - 1)
+				while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
 					R.Text = R.Text.Remove(R.Text.Length - 1);
-				if (R.Text.IndexOf(",") == R.Text.Length - 1)
+				while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
 					R.Text = R.Text.Remove(R.Text.Length - 1);
 			}
 			R.Text = R.Text.ToLower();
