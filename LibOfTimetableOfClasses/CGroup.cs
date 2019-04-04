@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -101,7 +101,6 @@ namespace LibOfTimetableOfClasses
 				table.Rows[i]["Position"] = (ushort)table.Rows[i]["Position"] - 1;
 			}
 		}
-
 
 		private bool isValidKey(MGroup mGroup)
 		{

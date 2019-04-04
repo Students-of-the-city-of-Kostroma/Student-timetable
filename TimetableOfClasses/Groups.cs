@@ -36,8 +36,6 @@ namespace TimetableOfClasses
 					}
 				}
 			}
-
-
 		}
 
 		private void AddRow(object sender, EventArgs e)
@@ -58,6 +56,49 @@ namespace TimetableOfClasses
 				addDiscipline.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+		}
+
+		private void DG_Group_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			DataGridViewColumn newColumn = DG_Group.Columns[e.ColumnIndex];
+
+
+			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
+			ListSortDirection direction;
+
+			if (oldColumn != null)
+			{
+				// Sort the same column again, reversing the SortOrder.
+				if (oldColumn == newColumn &&
+					DG_Group.SortOrder == SortOrder.Ascending)
+				{
+					direction = ListSortDirection.Descending;
+				}
+				else
+				{
+					// Sort a new column and remove the old SortGlyph.
+					direction = ListSortDirection.Ascending;
+					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+				}
+			}
+			else
+			{
+				direction = ListSortDirection.Ascending;
+			}
+
+			DG_Group.Sort(newColumn, direction);
+			for (int i = 0; i < DG_Group.RowCount; i++)
+			{
+				DG_Group[0, i].Value = i+1;
+			}
+		}
+
+		private void DG_Group_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		{
+			foreach (DataGridViewColumn column in DG_Group.Columns)
+			{
+				column.SortMode = DataGridViewColumnSortMode.Programmatic;
+			}
 		}
 	}
 }
