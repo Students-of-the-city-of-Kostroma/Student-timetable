@@ -52,15 +52,17 @@ namespace TimetableOfClasses
 		private void SelectionOfLetters1(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
-			R.Text = Regex.Replace(R.Text, "[^а-яА-Я- ]", "");
-			R.Text = Regex.Replace(R.Text, "[ ]", "-");
-			R.Text = Regex.Replace(R.Text, "[-]+", "-");
-			if (R.Text.IndexOf("-") == 0)
-				R.Text = R.Text.Substring(1);
-			if (R.Text.LastIndexOf("-") == R.Text.Length - 1)
-				R.Text = R.Text.Remove(R.Text.Length - 1);
-			R.Text = R.Text.ToLower();
-			R.Text = FirstLetterToUpper(R.Text);
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
+			}
 
 		}
 
@@ -69,12 +71,46 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if (R.Text.IndexOf(" ") == 0)
-				R.Text = R.Text.Substring(1);
-			if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-				R.Text = R.Text.Remove(R.Text.Length - 1);
-			R.Text = R.Text.ToLower();
-			R.Text = FirstLetterToUpper(R.Text);
+			if(R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
+			}
+		}
+
+		private void SelectionOfLetters3(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToUpper();
+			}
+		}
+
+		private void SelectionOfLetters4(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^0-9а-яА-Я-, ]", "");
+			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
+			}
 		}
 
 		public static string FirstLetterToUpper(string str)
@@ -91,11 +127,37 @@ namespace TimetableOfClasses
 			return "";
 		}
 
+		public static string PeriodLetterToUpper(string str)
+		{
+			if (str.Length > 0)
+			{
+				if (str.IndexOf(",") > 0)
+				{
+					char p;
+					str = Char.ToUpper(str[0]) + str.Substring(1);
+					for (int i=0; i < str.Length; i++)
+					{   
+						if(str[i] == ',')
+						{
+							p = Char.ToUpper(str[i + 2]);
+							str = str.Remove(i + 2, 1);
+							str = str.Insert(i + 2, ""+p);
+						}
+					}
+					return str;
+				}
+				else
+					return Char.ToUpper(str[0]) + str.Substring(1);
+			}
+			return "";
+		}
+
+
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
+			if ((l < 'А' || l > 'я') && l != '\b' )
 			{
 				e.Handled = true;
 			}
@@ -104,7 +166,7 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && (l < '0' || l > '9'))
+			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' '  && l != ',' && (l < '0' || l > '9'))
 			{
 				e.Handled = true;
 			}
@@ -113,29 +175,16 @@ namespace TimetableOfClasses
 		private void KeyPress3(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ' && l != ',')
+			if ((l < 'А' || l > 'я') && l != '\b' && l != ' ')
 			{
 				e.Handled = true;
 			}
+			e.Handled = false;
 		}
 
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
 			Close();
-		}
-
-		private void createAndClear_Click(object sender, EventArgs e)
-		{
-			if (Add())
-			{
-				firstName.Text = "";
-				secondName.Text = "";
-				patronymic.Text = "";
-				department.Text = "";
-				metodDays.Text = "";
-				windows.Text = "";
-				weekends.Text = "";
-			}
 		}
 	}
 }

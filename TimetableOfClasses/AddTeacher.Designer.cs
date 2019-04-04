@@ -35,7 +35,6 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.patronymic = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.createAndClear = new System.Windows.Forms.Button();
 			this.B_Сancel = new System.Windows.Forms.Button();
 			this.notes = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +55,7 @@
 			this.createAndClose.Name = "createAndClose";
 			this.createAndClose.Size = new System.Drawing.Size(75, 37);
 			this.createAndClose.TabIndex = 0;
-			this.createAndClose.Text = "Создать и закрыть";
+			this.createAndClose.Text = "Сохранить";
 			this.createAndClose.UseVisualStyleBackColor = true;
 			this.createAndClose.Click += new System.EventHandler(this.createAndClose_Click);
 			// 
@@ -82,7 +81,7 @@
 			this.firstName.Size = new System.Drawing.Size(239, 22);
 			this.firstName.TabIndex = 2;
 			this.firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
-			this.firstName.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.firstName.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// secondName
 			// 
@@ -94,7 +93,7 @@
 			this.secondName.Size = new System.Drawing.Size(239, 22);
 			this.secondName.TabIndex = 4;
 			this.secondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
-			this.secondName.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.secondName.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label2
 			// 
@@ -118,7 +117,7 @@
 			this.patronymic.Size = new System.Drawing.Size(239, 22);
 			this.patronymic.TabIndex = 6;
 			this.patronymic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
-			this.patronymic.Leave += new System.EventHandler(this.SelectionOfLetters1);
+			this.patronymic.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label3
 			// 
@@ -132,21 +131,10 @@
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Отчество";
 			// 
-			// createAndClear
-			// 
-			this.createAndClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClear.Location = new System.Drawing.Point(96, 458);
-			this.createAndClear.Name = "createAndClear";
-			this.createAndClear.Size = new System.Drawing.Size(75, 37);
-			this.createAndClear.TabIndex = 16;
-			this.createAndClear.Text = "Создать и очистить";
-			this.createAndClear.UseVisualStyleBackColor = true;
-			this.createAndClear.Click += new System.EventHandler(this.createAndClear_Click);
-			// 
 			// B_Сancel
 			// 
 			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Сancel.Location = new System.Drawing.Point(16, 458);
+			this.B_Сancel.Location = new System.Drawing.Point(96, 458);
 			this.B_Сancel.Name = "B_Сancel";
 			this.B_Сancel.Size = new System.Drawing.Size(75, 37);
 			this.B_Сancel.TabIndex = 17;
@@ -164,7 +152,7 @@
 			this.notes.Size = new System.Drawing.Size(239, 22);
 			this.notes.TabIndex = 19;
 			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters2);
+			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters4);
 			// 
 			// label4
 			// 
@@ -188,7 +176,7 @@
 			this.department.Size = new System.Drawing.Size(239, 22);
 			this.department.TabIndex = 21;
 			this.department.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
-			this.department.Leave += new System.EventHandler(this.SelectionOfLetters2);
+			this.department.Leave += new System.EventHandler(this.SelectionOfLetters3);
 			// 
 			// label5
 			// 
@@ -236,7 +224,7 @@
 			this.windows.Size = new System.Drawing.Size(239, 22);
 			this.windows.TabIndex = 25;
 			this.windows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
-			this.windows.Leave += new System.EventHandler(this.SelectionOfLetters2);
+			this.windows.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
 			// label7
 			// 
@@ -260,7 +248,7 @@
 			this.weekends.Size = new System.Drawing.Size(239, 22);
 			this.weekends.TabIndex = 27;
 			this.weekends.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
-			this.weekends.Leave += new System.EventHandler(this.SelectionOfLetters2);
+			this.weekends.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
 			// label8
 			// 
@@ -291,7 +279,6 @@
 			this.Controls.Add(this.notes);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.B_Сancel);
-			this.Controls.Add(this.createAndClear);
 			this.Controls.Add(this.patronymic);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.secondName);
@@ -304,7 +291,6 @@
 			this.Name = "AddTeacher";
 			this.Text = "Добавить преподавателя";
 			this.Load += new System.EventHandler(this.AddTeacher_Load);
-			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -319,7 +305,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox patronymic;
         private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button createAndClear;
 		private System.Windows.Forms.Button B_Сancel;
 		private System.Windows.Forms.TextBox notes;
 		private System.Windows.Forms.Label label4;
