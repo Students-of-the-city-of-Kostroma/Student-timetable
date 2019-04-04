@@ -64,12 +64,15 @@
             this.MaxNumberOfClass,
             this.Weekends});
 			this.DG_Group.Location = new System.Drawing.Point(12, 12);
+			this.DG_Group.MultiSelect = false;
 			this.DG_Group.Name = "DG_Group";
 			this.DG_Group.ReadOnly = true;
 			this.DG_Group.RowHeadersVisible = false;
 			this.DG_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
+			this.DG_Group.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_Group_ColumnHeaderMouseClick);
+			this.DG_Group.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_Group_DataBindingComplete);
 			// 
 			// Position
 			// 
