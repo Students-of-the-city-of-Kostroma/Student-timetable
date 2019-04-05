@@ -22,11 +22,11 @@ namespace LibOfTimetableOfClasses
             column.Unique = true;
             table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Shortname";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Shortname";
+			column.ReadOnly = true;
+			table.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
@@ -38,9 +38,12 @@ namespace LibOfTimetableOfClasses
         public override bool Delete(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
+			
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname && (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname && (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDiscipline)
+                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname 
+				&& (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname 
+				&& (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDiscipline)
 				{
                     table.Rows[i].Delete();
                     return true;
@@ -52,6 +55,17 @@ namespace LibOfTimetableOfClasses
         public override bool Insert(Model model)
         {
 			MDiscipline mDiscipline = (MDiscipline)model;
+			
+			if (mDiscipline.Fullname == null || mDiscipline.Shortname == null)
+				return false;
+				
+			for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname 
+				&& (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname)
+					return false;
+            }
+			
 			try
             {
                 DataRow newRow = table.NewRow();
