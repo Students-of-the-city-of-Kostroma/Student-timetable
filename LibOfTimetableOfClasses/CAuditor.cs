@@ -19,7 +19,7 @@ namespace LibOfTimetableOfClasses
             DataColumn[] keys = new DataColumn[2];
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
-			column.ColumnName = "NameOfAud";
+			column.ColumnName = "NameOfAuditor";
 			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
@@ -57,14 +57,14 @@ namespace LibOfTimetableOfClasses
 				return false;
 
 			 for (int i = 0; i < table.Rows.Count; i++)
-				 if ((string)table.Rows[i]["NameOfAud"] == mAuditor.NameOfAuditor)
+				 if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor)
 					  return false;
 
 			try
 			{
 				DataRow newRow = table.NewRow();
 				newRow["ID"] = Guid.NewGuid();
-				newRow["NameOfAud"] = mAuditor.NameOfAuditor;
+				newRow["NameOfAuditor"] = mAuditor.NameOfAuditor;
 				newRow["Cafedra"] = mAuditor.Cafedra;
 				newRow["Spacious"] = mAuditor.Spacious;
 				newRow["Building"] = mAuditor.Building;
@@ -89,7 +89,7 @@ namespace LibOfTimetableOfClasses
                     try
                     {
                         table.Rows[i].BeginEdit();
-                        table.Rows[i]["NameOfAdud"] = mAuditor.NameOfAuditor;
+                        table.Rows[i]["NameOfAuditor"] = mAuditor.NameOfAuditor;
 						table.Rows[i]["Cafedra"] = mAuditor.Cafedra;
 						table.Rows[i]["Spacious"] = mAuditor.Spacious;
 						table.Rows[i]["Building"] = mAuditor.Building;

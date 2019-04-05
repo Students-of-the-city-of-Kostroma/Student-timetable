@@ -34,7 +34,7 @@
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CycleofDis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -50,7 +50,7 @@
             this.Number,
             this.FullName,
             this.Shortname,
-            this.CycleofDis});
+            this.CycleofDiscipline});
 			this.DG_Disc.Location = new System.Drawing.Point(12, 12);
 			this.DG_Disc.Name = "DG_Disc";
 			this.DG_Disc.ReadOnly = true;
@@ -105,12 +105,12 @@
 			this.Shortname.Name = "Shortname";
 			this.Shortname.ReadOnly = true;
 			// 
-			// CycleofDis
+			// CycleofDiscipline
 			// 
-			this.CycleofDis.DataPropertyName = "CycleofDiscipline";
-			this.CycleofDis.HeaderText = "Цикл дисциплин";
-			this.CycleofDis.Name = "CycleofDis";
-			this.CycleofDis.ReadOnly = true;
+			this.CycleofDiscipline.DataPropertyName = "CycleofDiscipline";
+			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
+			this.CycleofDiscipline.Name = "CycleofDiscipline";
+			this.CycleofDiscipline.ReadOnly = true;
 			// 
 			// Discipline
 			// 
@@ -135,6 +135,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
-		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDis;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;
 	}
 }

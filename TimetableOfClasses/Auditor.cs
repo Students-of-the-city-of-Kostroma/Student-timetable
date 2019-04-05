@@ -16,6 +16,7 @@ namespace TimetableOfClasses
         public Auditor()
         {
             InitializeComponent();
+			DataGridAuditor.AutoGenerateColumns = false;
 			DataGridAuditor.DataSource = Controllers.CAuditor.Select();
 		}
     }
