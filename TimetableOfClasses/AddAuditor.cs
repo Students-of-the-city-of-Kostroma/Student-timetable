@@ -18,23 +18,23 @@ namespace TimetableOfClasses
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)// отмена
+		private void btCancel_Click(object sender, EventArgs e)// отмена
 		{
 			Close();
 		}
 
-		private void button2_Click(object sender, EventArgs e)// создать и очистить
+		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
-			if (textBox1.Text.Contains(" ") || textBox2.Text.Contains(" ") || textBox3.Text.Contains(" ") || Convert.ToString(numericUpDown1.Value) == "")
+			if (tbAuditor.Text.Contains(" ") || tbKaf.Text.Contains(" ") || tbCorpus.Text.Contains(" ") || Convert.ToString(nuPlaces.Value) == "")
 				MessageBox.Show("Заполните все поля");
-			MAuditor Auditor = new MAuditor(textBox1.Text, textBox2.Text, (ushort)numericUpDown1.Value, Convert.ToByte(textBox3.Text));
+			MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
 			try
 			{
 				Controllers.CAuditor.Insert(Auditor);
-				textBox1.Text = "";
-				textBox2.Text = "";
-				textBox3.Text = "";
-				numericUpDown1.Value = 0;
+				tbAuditor.Text = "";
+				tbKaf.Text = "";
+				tbCorpus.Text = "";
+				nuPlaces.Value = 0;
 			}
 			catch (Exception ex)
 			{
@@ -42,11 +42,11 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void button3_Click(object sender, EventArgs e)// создать и закрыть
+		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
-			if (textBox1.Text.Contains(" ") || textBox2.Text.Contains(" ") || textBox3.Text.Contains(" ") || Convert.ToString(numericUpDown1.Value) == "")
+			if (tbAuditor.Text.Contains(" ") || tbKaf.Text.Contains(" ") || tbCorpus.Text.Contains(" ") || Convert.ToString(nuPlaces.Value) == "")
 				MessageBox.Show("Заполните все поля");
-			MAuditor Auditor = new MAuditor(textBox1.Text, textBox2.Text, (ushort)numericUpDown1.Value, Convert.ToByte(textBox3.Text));
+			MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
 			try
 			{
 				Controllers.CAuditor.Insert(Auditor);
@@ -58,21 +58,21 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)// Аудитория
+		private void tbAuditor_KeyPress(object sender, KeyPressEventArgs e)// Аудитория
 		{
 			if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == 8) return;
 			else
 				e.Handled = true;
 		}
 
-		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)// Кафедра
+		private void tbKaf_KeyPress(object sender, KeyPressEventArgs e)// Кафедра
 		{
 			if (Char.IsLetter(e.KeyChar) || Convert.ToString(e.KeyChar) == " " || e.KeyChar == 8) return;
 			else
 				e.Handled = true;
 		}
 
-		private void textBox3_KeyPress(object sender, KeyPressEventArgs e)// Корпус
+		private void tbCorpus_KeyPress(object sender, KeyPressEventArgs e)// Корпус
 		{
 			byte k;
 			if (!(byte.TryParse(Convert.ToString(e.KeyChar), out k) || e.KeyChar == 8))

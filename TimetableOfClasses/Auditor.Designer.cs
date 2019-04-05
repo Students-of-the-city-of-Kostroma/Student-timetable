@@ -34,7 +34,7 @@
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btAddAuditor = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -91,23 +91,23 @@
 			this.Building.Name = "Building";
 			this.Building.Width = 68;
 			// 
-			// button1
+			// btAddAuditor
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.button1.Location = new System.Drawing.Point(12, 241);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "Добавить";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btAddAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btAddAuditor.Location = new System.Drawing.Point(12, 241);
+			this.btAddAuditor.Name = "btAddAuditor";
+			this.btAddAuditor.Size = new System.Drawing.Size(75, 23);
+			this.btAddAuditor.TabIndex = 2;
+			this.btAddAuditor.Text = "Добавить";
+			this.btAddAuditor.UseVisualStyleBackColor = true;
+			this.btAddAuditor.Click += new System.EventHandler(this.btAddAuditor_Click);
 			// 
 			// Auditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(491, 268);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btAddAuditor);
 			this.Controls.Add(this.DataGridAuditor);
 			this.Name = "Auditor";
 			this.Text = "Аудитории";
@@ -124,6 +124,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btAddAuditor;
 	}
 }

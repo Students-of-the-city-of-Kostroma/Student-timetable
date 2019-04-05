@@ -19,7 +19,7 @@ namespace TimetableOfClasses
 			DataGridAuditor.DataSource = Controllers.CAuditor.Select();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btAddAuditor_Click(object sender, EventArgs e)
 		{
 			AddAuditor a = new AddAuditor();
 			a.ShowDialog();
