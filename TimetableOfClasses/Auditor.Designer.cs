@@ -64,24 +64,28 @@
 			// 
 			// Audit
 			// 
+			this.Audit.DataPropertyName = "NameOfAuditor";
 			this.Audit.HeaderText = "Аудитория";
 			this.Audit.Name = "Audit";
 			this.Audit.Width = 85;
 			// 
 			// Cafedra
 			// 
+			this.Cafedra.DataPropertyName = "Cafedra";
 			this.Cafedra.HeaderText = "Кафедра";
 			this.Cafedra.Name = "Cafedra";
 			this.Cafedra.Width = 77;
 			// 
 			// Vmestit
 			// 
+			this.Vmestit.DataPropertyName = "Spacious";
 			this.Vmestit.HeaderText = "Число мест";
 			this.Vmestit.Name = "Vmestit";
 			this.Vmestit.Width = 92;
 			// 
 			// Korpus
 			// 
+			this.Korpus.DataPropertyName = "Building";
 			this.Korpus.HeaderText = "Корпус";
 			this.Korpus.Name = "Korpus";
 			this.Korpus.Width = 68;

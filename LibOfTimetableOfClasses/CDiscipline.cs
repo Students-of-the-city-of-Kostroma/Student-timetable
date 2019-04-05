@@ -40,7 +40,7 @@ namespace LibOfTimetableOfClasses
             MDiscipline mDiscipline = (MDiscipline)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname && (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname && (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDis)
+                if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname && (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname && (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDiscipline)
 				{
                     table.Rows[i].Delete();
                     return true;
@@ -51,14 +51,14 @@ namespace LibOfTimetableOfClasses
 
         public override bool Insert(Model model)
         {
-            try
+			MDiscipline mDiscipline = (MDiscipline)model;
+			try
             {
-                MDiscipline mDiscipline = (MDiscipline)model;
                 DataRow newRow = table.NewRow();
                 newRow["ID"] = Guid.NewGuid();
                 newRow["Fullname"] = mDiscipline.Fullname;
 				newRow["Shortname"] = mDiscipline.Shortname;
-				newRow["CycleofDis"] = mDiscipline.CycleofDis;
+				newRow["CycleofDis"] = mDiscipline.CycleofDiscipline;
 				table.Rows.Add(newRow);
                 return true;
             }
@@ -76,14 +76,14 @@ namespace LibOfTimetableOfClasses
             {
                 if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
                 {
-                    if ((mDiscipline.Fullname != null && mDiscipline.Shortname != null && mDiscipline.CycleofDis != null))
+                    if ((mDiscipline.Fullname != null && mDiscipline.Shortname != null && mDiscipline.CycleofDiscipline != null))
 					{
                         try
                         {
                             table.Rows[i].BeginEdit();
                             table.Rows[i]["Fullname"] = mDiscipline.Fullname;
 							table.Rows[i]["Shortname"] = mDiscipline.Shortname;
-							table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDis;
+							table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDiscipline;
 							table.Rows[i].EndEdit();
                             table.Rows[i].AcceptChanges();
                             return true;
