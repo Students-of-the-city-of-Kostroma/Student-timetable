@@ -14,41 +14,41 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Полное название дисциплины
 		/// </summary>
-		protected string fullname;
+		protected string fullName;
 		/// <summary>
 		/// Краткое название дисциплины
 		/// </summary>
-		protected string shortname;
+		protected string shortName;
 		/// <summary>
 		/// Цикл дисциплин
 		/// </summary>
-		protected string cycleofdis;
+		protected string cycleOfDiscipline;
 		/// <summary>
 		/// Создает экземпляр дисциплины
 		/// </summary>
-		/// <param name="fullname">Полное название дисциплины</param>
-		/// <param name="chortname">Краткое название дисциплины</param>
-		/// <param name="cycleofdis">Цикл дисциплин</param>
-		public MDiscipline(string fullname, string shortname, string cycleofdis) : base()
+		/// <param name="fullName">Полное название дисциплины</param>
+		/// <param name="shortName">Краткое название дисциплины</param>
+		/// <param name="cycleOfDiscipline">Цикл дисциплин</param>
+		public MDiscipline(string fullName, string shortName, string cycleOfDiscipline) : base()
 		{
-			Fullname = fullname;
-			Shortname = shortname;
-			CycleofDis = cycleofdis;
+			Fullname = fullName;
+			Shortname = shortName;
+			CycleofDiscipline = cycleOfDiscipline;
 
 		}
 
 		/// <summary>
 		/// Возвращает или задает значение Name - полное название
 		/// </summary>
-		public string Fullname { set { fullname = value; } get { return fullname; } }
+		public string Fullname { set { fullName = value; } get { return fullName; } }
 
 		/// <summary>
 		/// Возвращает или задает значение Shortname - краткому названию
 		/// </summary>
-		public string Shortname { set { shortname = value; } get { return shortname; } }
+		public string Shortname { set { shortName = value; } get { return shortName; } }
 		/// <summary>
 		/// 
 		/// </summary>
-		public string CycleofDis { set { cycleofdis = value; } get { return cycleofdis; } }
+		public string CycleofDiscipline { set { cycleOfDiscipline = value; } get { return cycleOfDiscipline; } }
 	}
 }

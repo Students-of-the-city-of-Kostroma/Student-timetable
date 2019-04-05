@@ -30,10 +30,10 @@
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Audit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NameOfAud = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Vmestit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Korpus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -46,10 +46,10 @@
 			this.DataGridAuditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DataGridAuditor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
-            this.Audit,
+            this.NameOfAud,
             this.Cafedra,
-            this.Vmestit,
-            this.Korpus});
+            this.Spacious,
+            this.Building});
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
 			this.DataGridAuditor.Name = "DataGridAuditor";
 			this.DataGridAuditor.RowHeadersVisible = false;
@@ -62,29 +62,33 @@
 			this.Number.Name = "Number";
 			this.Number.Width = 21;
 			// 
-			// Audit
+			// NameOfAud
 			// 
-			this.Audit.HeaderText = "Аудитория";
-			this.Audit.Name = "Audit";
-			this.Audit.Width = 85;
+			this.NameOfAud.DataPropertyName = "NameOfAuditor";
+			this.NameOfAud.HeaderText = "Аудитория";
+			this.NameOfAud.Name = "NameOfAud";
+			this.NameOfAud.Width = 85;
 			// 
 			// Cafedra
 			// 
+			this.Cafedra.DataPropertyName = "Cafedra";
 			this.Cafedra.HeaderText = "Кафедра";
 			this.Cafedra.Name = "Cafedra";
 			this.Cafedra.Width = 77;
 			// 
-			// Vmestit
+			// Spacious
 			// 
-			this.Vmestit.HeaderText = "Число мест";
-			this.Vmestit.Name = "Vmestit";
-			this.Vmestit.Width = 92;
+			this.Spacious.DataPropertyName = "Spacious";
+			this.Spacious.HeaderText = "Число мест";
+			this.Spacious.Name = "Spacious";
+			this.Spacious.Width = 92;
 			// 
-			// Korpus
+			// Building
 			// 
-			this.Korpus.HeaderText = "Корпус";
-			this.Korpus.Name = "Korpus";
-			this.Korpus.Width = 68;
+			this.Building.DataPropertyName = "Building";
+			this.Building.HeaderText = "Корпус";
+			this.Building.Name = "Building";
+			this.Building.Width = 68;
 			// 
 			// Auditor
 			// 
@@ -103,9 +107,9 @@
 
         private System.Windows.Forms.DataGridView DataGridAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Audit;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAud;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Vmestit;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Korpus;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
 	}
 }

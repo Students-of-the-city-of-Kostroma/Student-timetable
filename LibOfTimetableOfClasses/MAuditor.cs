@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// аудитория
 		/// </summary>
-		string nameofaud;
+		string nameOfAuditor;
 		/// <summary>
 		/// кафедра
 		/// </summary>     
@@ -30,9 +30,9 @@ namespace LibOfTimetableOfClasses
 		byte building;
 
 
-		public MAuditor(string nameofaud, string cafedra, ushort spacious, byte building) : base()
+		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, byte building) : base()
 		{
-			NameOfAud = nameofaud;
+			NameOfAuditor = nameOfAuditor;
 			Cafedra = cafedra;
 			Spacious = spacious;
 			Building = building;
@@ -41,16 +41,16 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Возвращает или задает nameofaud - название аудитории
 		/// </summary>
-		public string NameOfAud
+		public string NameOfAuditor
 		{
 			get
 			{
-				return nameofaud;
+				return nameOfAuditor;
 			}
 
 			set
 			{
-				nameofaud = value;
+				nameOfAuditor = value;
 			}
 		}
 

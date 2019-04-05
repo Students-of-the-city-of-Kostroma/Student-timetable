@@ -93,18 +93,21 @@
 			// FullName
 			// 
 			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "Fullname";
 			this.FullName.HeaderText = "Полное название дисциплины";
 			this.FullName.Name = "FullName";
 			this.FullName.ReadOnly = true;
 			// 
 			// Shortname
 			// 
+			this.Shortname.DataPropertyName = "Shortname";
 			this.Shortname.HeaderText = "Краткое название дисциплины";
 			this.Shortname.Name = "Shortname";
 			this.Shortname.ReadOnly = true;
 			// 
 			// CycleofDis
 			// 
+			this.CycleofDis.DataPropertyName = "CycleofDiscipline";
 			this.CycleofDis.HeaderText = "Цикл дисциплин";
 			this.CycleofDis.Name = "CycleofDis";
 			this.CycleofDis.ReadOnly = true;
