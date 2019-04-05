@@ -30,7 +30,7 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "CycleofDis";
+			column.ColumnName = "CycleofDiscipline";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
 		}
@@ -43,7 +43,7 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname 
 				&& (string)table.Rows[i]["Shortname"] == mDiscipline.Shortname 
-				&& (string)table.Rows[i]["CycleofDis"] == mDiscipline.CycleofDiscipline)
+				&& (string)table.Rows[i]["CycleofDiscipline"] == mDiscipline.CycleofDiscipline)
 				{
                     table.Rows[i].Delete();
                     return true;
@@ -72,7 +72,7 @@ namespace LibOfTimetableOfClasses
                 newRow["ID"] = Guid.NewGuid();
                 newRow["Fullname"] = mDiscipline.Fullname;
 				newRow["Shortname"] = mDiscipline.Shortname;
-				newRow["CycleofDis"] = mDiscipline.CycleofDiscipline;
+				newRow["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
 				table.Rows.Add(newRow);
                 return true;
             }
@@ -97,7 +97,7 @@ namespace LibOfTimetableOfClasses
                             table.Rows[i].BeginEdit();
                             table.Rows[i]["Fullname"] = mDiscipline.Fullname;
 							table.Rows[i]["Shortname"] = mDiscipline.Shortname;
-							table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDiscipline;
+							table.Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
 							table.Rows[i].EndEdit();
                             table.Rows[i].AcceptChanges();
                             return true;
