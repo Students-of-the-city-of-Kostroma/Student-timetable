@@ -11,13 +11,20 @@ using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
+
     public partial class Auditor : Form
     {
-        public Auditor()
-        {
-            InitializeComponent();
+     public Auditor()
+     {
+      InitializeComponent();
 			DataGridAuditor.AutoGenerateColumns = false;
 			DataGridAuditor.DataSource = Controllers.CAuditor.Select();
+		 }
+
+		private void btAddAuditor_Click(object sender, EventArgs e)
+		{
+			AddAuditor a = new AddAuditor();
+			a.ShowDialog();
 		}
-    }
+	}
 }
