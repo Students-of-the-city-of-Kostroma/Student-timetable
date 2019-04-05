@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TimetableOfClasses
 {
-    public static class RefData
-    {
-        public static CTeacher CTeacher = new CTeacher();
-        public static CAuditor CAuditor = new CAuditor();
-        public static CDiscipline CDiscipline = new CDiscipline();
-        public static CGroup CGroup = new CGroup();
-    }
+	public static class RefData
+	{
+		public static CTeacher CTeacher = new CTeacher();
+		public static CAuditor CAuditor = new CAuditor();
+		public static CDiscipline CDiscipline = new CDiscipline();
+		public static CGroup CGroup = new CGroup();
+	}
 }

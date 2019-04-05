@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class TrainingProfiles : Form
-    {
-        public TrainingProfiles()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class TrainingProfiles : Form
+	{
+		public TrainingProfiles()
+		{
+			InitializeComponent();
+		}
+	}
 }

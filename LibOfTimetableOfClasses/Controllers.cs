@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    /// <summary>
-    /// В этом классе храняться все экземпляры контроллеров.
-    /// </summary>
-    public static class Controllers
-    {
-        public static CTeacher CTeacher = new CTeacher();
-        public static CAuditor CAuditor = new CAuditor();
-        public static CDiscipline CDiscipline = new CDiscipline();
-        public static CGroup CGroup = new CGroup();
-    }
+	/// <summary>
+	/// В этом классе храняться все экземпляры контроллеров.
+	/// </summary>
+	public static class Controllers
+	{
+		public static CTeacher CTeacher = new CTeacher();
+		public static CAuditor CAuditor = new CAuditor();
+		public static CDiscipline CDiscipline = new CDiscipline();
+		public static CGroup CGroup = new CGroup();
+	}
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class Auditor : Form
-    {
-        public Auditor()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Auditor : Form
+	{
+		public Auditor()
+		{
+			InitializeComponent();
+		}
+	}
 }
