@@ -53,12 +53,12 @@ namespace LibOfTimetableOfClasses
         public override bool Insert(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
-			if (mAuditor.NameOfAud == null)
-				return;
+			if (mAuditor.NameOfAuditor == null)
+				return false;
 
 			 for (int i = 0; i < table.Rows.Count; i++)
-				 if ((string)table.Rows[i]["NameOfAud"] == mAuditor.NameOfAud)
-					  return;
+				 if ((string)table.Rows[i]["NameOfAud"] == mAuditor.NameOfAuditor)
+					  return false;
 
 			try
 			{
