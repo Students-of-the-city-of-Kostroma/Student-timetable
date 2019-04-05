@@ -50,7 +50,7 @@ namespace TimetableOfClasses
 			if (DG_Group.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((Guid)Row.ItemArray[0], (string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"], (ushort)Row.ItemArray[1]);
+				MGroup mGroup = new MGroup((ushort)Row.ItemArray[0], (string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
 				AddGroup addDiscipline = new AddGroup(mGroup);
 				addDiscipline.Owner = this;
 				addDiscipline.ShowDialog();
@@ -64,37 +64,47 @@ namespace TimetableOfClasses
 			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
 			ListSortDirection direction;
 
-			DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-
-			if (oldColumn != null)
+			if (DG_Group.Rows == null)
 			{
-				if (oldColumn == newColumn &&
-					DG_Group.SortOrder == SortOrder.Ascending)
+				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+
+				if (oldColumn != null)
 				{
-					direction = ListSortDirection.Descending;
+					if (oldColumn == newColumn &&
+						DG_Group.SortOrder == SortOrder.Ascending)
+					{
+						direction = ListSortDirection.Descending;
+					}
+					else
+					{
+						direction = ListSortDirection.Ascending;
+						oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+					}
 				}
 				else
 				{
 					direction = ListSortDirection.Ascending;
-					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
 				}
-			}
-			else
-			{
-				direction = ListSortDirection.Ascending;
-			}
 
-			DG_Group.Sort(newColumn, direction);
-			Recount();
-
-			for(int i=0;i<DG_Group.RowCount;i++)
-			{
-
-				DataRow tmpRow = ((DataRowView)DG_Group.Rows[i].DataBoundItem).Row;
-				if ((Guid)Row.ItemArray[0] == (Guid)tmpRow.ItemArray[0])
+				//сохраняем номер выделенной строки
+				List<ushort> arraySelectedRows = new List<ushort>();
+				foreach (DataGridViewRow item in DG_Group.SelectedRows)
 				{
-					DG_Group.Rows[i].Selected = true;
+					arraySelectedRows.Add((ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0]);
 				}
+
+				DG_Group.Sort(newColumn, direction);
+
+				foreach (DataGridViewRow item in DG_Group.Rows)
+				{
+					ushort index = (ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0];
+					if (arraySelectedRows.Contains(index))
+					{
+						item.Selected = true;
+					}
+				}
+
+				Recount();
 			}
 		}
 

@@ -89,7 +89,6 @@ namespace TimetableOfClasses
 					{
 						var dataGridView = dgw as DataGridView;
 						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-						dataGridView.Columns[Lehrer.Number].Selected = true;
 					}
 			}
 		}

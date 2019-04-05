@@ -200,7 +200,6 @@ namespace TimetableOfClasses
 					{
 						var dataGridView = dgw as DataGridView;
 						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-						dataGridView.Columns[group.Position].Selected = true;
 					}
 			}
 		}

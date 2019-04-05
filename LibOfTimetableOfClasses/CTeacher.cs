@@ -17,49 +17,42 @@ namespace LibOfTimetableOfClasses
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Number";
-			column.ReadOnly = false;
 			table.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Note";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[6] = column;
 
@@ -84,7 +77,6 @@ namespace LibOfTimetableOfClasses
 				try
 				{
 					DataRow newRow = table.NewRow();
-					newRow["ID"] = Guid.NewGuid();
 					newRow["Number"] = table.Rows.Count + 1;
 					newRow["FullName"] = mTeacher.FullName;
 					newRow["Note"] = mTeacher.Note;
@@ -107,28 +99,27 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			if (isValidKey(mTeacher))
 			{
-				if ((ushort)table.Rows[i]["Number"] == mTeacher.Number)
-				try
+				for (int i = 0; i < table.Rows.Count; i++)
 				{
-						table.Rows[i].Delete();
-						DataRow newRow = table.NewRow();
-						newRow["ID"] = mTeacher.ID;
-						newRow["Number"] = mTeacher.Number;
-						newRow["FullName"] = mTeacher.FullName;
-						newRow["Note"] = mTeacher.Note;
-						newRow["Departament"] = mTeacher.Departament;
-						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
-						newRow["Windows"] = mTeacher.Windows;
-						newRow["Weekends"] = mTeacher.Weekends;
-						table.Rows.Add(newRow);
-						return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
+					if ((ushort)table.Rows[i]["Number"] == mTeacher.Number)
+						try
+						{
+							DataRow newRow = table.Rows[i];
+							newRow["FullName"] = mTeacher.FullName;
+							newRow["Note"] = mTeacher.Note;
+							newRow["Departament"] = mTeacher.Departament;
+							newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+							newRow["Windows"] = mTeacher.Windows;
+							newRow["Weekends"] = mTeacher.Weekends;
+							return true;
+						}
+						catch (Exception ex)
+						{
+							Debug.WriteLine(ex.Source);
+							return false;
+						}
 				}
 			}
 			return false;
