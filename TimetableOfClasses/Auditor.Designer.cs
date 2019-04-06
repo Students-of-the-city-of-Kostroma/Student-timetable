@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
-			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btAddAuditor = new System.Windows.Forms.Button();
+			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -58,40 +58,6 @@
 			this.DataGridAuditor.TabIndex = 1;
 			this.DataGridAuditor.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridAuditor_RowsAdded);
 			// 
-			// Number
-			// 
-			this.Number.HeaderText = "";
-			this.Number.Name = "Number";
-			this.Number.Width = 21;
-			// 
-			// NameOfAuditor
-			// 
-			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
-			this.NameOfAuditor.HeaderText = "Аудитория";
-			this.NameOfAuditor.Name = "NameOfAuditor";
-			this.NameOfAuditor.Width = 85;
-			// 
-			// Cafedra
-			// 
-			this.Cafedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Cafedra.DataPropertyName = "Cafedra";
-			this.Cafedra.HeaderText = "Кафедра";
-			this.Cafedra.Name = "Cafedra";
-			// 
-			// Spacious
-			// 
-			this.Spacious.DataPropertyName = "Spacious";
-			this.Spacious.HeaderText = "Число мест";
-			this.Spacious.Name = "Spacious";
-			this.Spacious.Width = 92;
-			// 
-			// Building
-			// 
-			this.Building.DataPropertyName = "Building";
-			this.Building.HeaderText = "Корпус";
-			this.Building.Name = "Building";
-			this.Building.Width = 68;
-			// 
 			// btAddAuditor
 			// 
 			this.btAddAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -102,6 +68,40 @@
 			this.btAddAuditor.Text = "Добавить";
 			this.btAddAuditor.UseVisualStyleBackColor = true;
 			this.btAddAuditor.Click += new System.EventHandler(this.btAddAuditor_Click);
+			// 
+			// Building
+			// 
+			this.Building.DataPropertyName = "Building";
+			this.Building.HeaderText = "Корпус";
+			this.Building.Name = "Building";
+			this.Building.Width = 68;
+			// 
+			// Spacious
+			// 
+			this.Spacious.DataPropertyName = "Spacious";
+			this.Spacious.HeaderText = "Число мест";
+			this.Spacious.Name = "Spacious";
+			this.Spacious.Width = 92;
+			// 
+			// Cafedra
+			// 
+			this.Cafedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Cafedra.DataPropertyName = "Cafedra";
+			this.Cafedra.HeaderText = "Кафедра";
+			this.Cafedra.Name = "Cafedra";
+			// 
+			// NameOfAuditor
+			// 
+			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
+			this.NameOfAuditor.HeaderText = "Аудитория";
+			this.NameOfAuditor.Name = "NameOfAuditor";
+			this.NameOfAuditor.Width = 85;
+			// 
+			// Number
+			// 
+			this.Number.HeaderText = "";
+			this.Number.Name = "Number";
+			this.Number.Width = 21;
 			// 
 			// Auditor
 			// 
