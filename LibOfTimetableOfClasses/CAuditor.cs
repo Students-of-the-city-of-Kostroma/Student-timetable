@@ -81,29 +81,32 @@ namespace LibOfTimetableOfClasses
         public override bool Update(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
-			
-            for (int i = 0; i < table.Rows.Count; i++)
+
+			if (mAuditor.NameOfAuditor == null)
+				return false;
+
+			for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.NameOfAuditor != null)
+				if ((string)table.Rows[i]["NameOfAdud"] == mAuditor.NameOfAuditor)
 				{
-                    try
-                    {
-                        table.Rows[i].BeginEdit();
-                        table.Rows[i]["NameOfAdud"] = mAuditor.NameOfAuditor;
+					try
+					{
+						table.Rows[i].BeginEdit();
+						table.Rows[i]["NameOfAdud"] = mAuditor.NameOfAuditor;
 						table.Rows[i]["Cafedra"] = mAuditor.Cafedra;
 						table.Rows[i]["Spacious"] = mAuditor.Spacious;
 						table.Rows[i]["Building"] = mAuditor.Building;
-                        table.Rows[i].EndEdit();
-                        table.Rows[i].AcceptChanges();
-						
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
-                }
+						table.Rows[i].EndEdit();
+						table.Rows[i].AcceptChanges();
+
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
             }
             return false;
         }
@@ -114,7 +117,8 @@ namespace LibOfTimetableOfClasses
 			
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.NameOfAuditor != null)
+				if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
+					&& (byte)table.Rows[i]["Building"] == mAuditor.Building)
 				{
 					table.Rows[i].Delete();
 					return true;
