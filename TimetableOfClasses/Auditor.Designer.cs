@@ -30,7 +30,7 @@
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.NameOfAud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
 			this.DataGridAuditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DataGridAuditor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
-            this.NameOfAud,
+            this.NameOfAuditor,
             this.Cafedra,
             this.Spacious,
             this.Building});
@@ -63,12 +63,12 @@
 			this.Number.Name = "Number";
 			this.Number.Width = 21;
 			// 
-			// NameOfAud
+			// NameOfAuditor
 			// 
-			this.NameOfAud.DataPropertyName = "NameOfAuditor";
-			this.NameOfAud.HeaderText = "Аудитория";
-			this.NameOfAud.Name = "NameOfAud";
-			this.NameOfAud.Width = 85;
+			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
+			this.NameOfAuditor.HeaderText = "Аудитория";
+			this.NameOfAuditor.Name = "NameOfAuditor";
+			this.NameOfAuditor.Width = 85;
 			// 
 			// Cafedra
 			// 
@@ -120,7 +120,7 @@
 
         private System.Windows.Forms.DataGridView DataGridAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAud;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
