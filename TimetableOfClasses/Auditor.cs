@@ -26,5 +26,12 @@ namespace TimetableOfClasses
 			AddAuditor a = new AddAuditor();
 			a.ShowDialog();
 		}
+
+		private void DataGridAuditor_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+		{
+			DataGridView grid = sender as DataGridView;
+			for (int i = 0; i < grid.Rows.Count; i++)
+				grid.Rows[i].Cells[0].Value = (i+1).ToString();
+		}
 	}
 }

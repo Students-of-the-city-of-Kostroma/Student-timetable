@@ -53,9 +53,10 @@
             this.Building});
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
 			this.DataGridAuditor.Name = "DataGridAuditor";
-			this.DataGridAuditor.RowHeadersVisible = false;
+			this.DataGridAuditor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DataGridAuditor.Size = new System.Drawing.Size(467, 225);
 			this.DataGridAuditor.TabIndex = 1;
+			this.DataGridAuditor.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridAuditor_RowsAdded);
 			// 
 			// Number
 			// 
@@ -72,10 +73,10 @@
 			// 
 			// Cafedra
 			// 
+			this.Cafedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Cafedra.DataPropertyName = "Cafedra";
 			this.Cafedra.HeaderText = "Кафедра";
 			this.Cafedra.Name = "Cafedra";
-			this.Cafedra.Width = 77;
 			// 
 			// Spacious
 			// 
@@ -119,11 +120,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DataGridAuditor;
+		private System.Windows.Forms.Button btAddAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-		private System.Windows.Forms.Button btAddAuditor;
 	}
 }

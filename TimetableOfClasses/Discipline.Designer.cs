@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
 			this.DG_Disc = new System.Windows.Forms.DataGridView();
-			this.Delete = new System.Windows.Forms.Button();
-			this.btCreateDiscipline = new System.Windows.Forms.Button();
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Delete = new System.Windows.Forms.Button();
+			this.btCreateDiscipline = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -54,33 +54,11 @@
 			this.DG_Disc.Location = new System.Drawing.Point(12, 12);
 			this.DG_Disc.Name = "DG_Disc";
 			this.DG_Disc.ReadOnly = true;
-			this.DG_Disc.RowHeadersVisible = false;
+			this.DG_Disc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Disc.Size = new System.Drawing.Size(394, 156);
 			this.DG_Disc.TabIndex = 0;
+			this.DG_Disc.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DG_Disc_RowsAdded);
 			this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
-			// 
-			// Delete
-			// 
-			this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.Delete.Enabled = false;
-			this.Delete.Location = new System.Drawing.Point(167, 175);
-			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(75, 23);
-			this.Delete.TabIndex = 1;
-			this.Delete.Text = "Удалить";
-			this.Delete.UseVisualStyleBackColor = true;
-			this.Delete.Click += new System.EventHandler(this.Delete_Click);
-			// 
-			// btCreateDiscipline
-			// 
-			this.btCreateDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateDiscipline.Location = new System.Drawing.Point(331, 175);
-			this.btCreateDiscipline.Name = "btCreateDiscipline";
-			this.btCreateDiscipline.Size = new System.Drawing.Size(75, 23);
-			this.btCreateDiscipline.TabIndex = 2;
-			this.btCreateDiscipline.Text = "Создать";
-			this.btCreateDiscipline.UseVisualStyleBackColor = true;
-			this.btCreateDiscipline.Click += new System.EventHandler(this.btCreateDiscipline_Click);
 			// 
 			// Number
 			// 
@@ -111,6 +89,29 @@
 			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
 			this.CycleofDiscipline.Name = "CycleofDiscipline";
 			this.CycleofDiscipline.ReadOnly = true;
+			// 
+			// Delete
+			// 
+			this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.Delete.Enabled = false;
+			this.Delete.Location = new System.Drawing.Point(167, 175);
+			this.Delete.Name = "Delete";
+			this.Delete.Size = new System.Drawing.Size(75, 23);
+			this.Delete.TabIndex = 1;
+			this.Delete.Text = "Удалить";
+			this.Delete.UseVisualStyleBackColor = true;
+			this.Delete.Click += new System.EventHandler(this.Delete_Click);
+			// 
+			// btCreateDiscipline
+			// 
+			this.btCreateDiscipline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCreateDiscipline.Location = new System.Drawing.Point(331, 175);
+			this.btCreateDiscipline.Name = "btCreateDiscipline";
+			this.btCreateDiscipline.Size = new System.Drawing.Size(75, 23);
+			this.btCreateDiscipline.TabIndex = 2;
+			this.btCreateDiscipline.Text = "Создать";
+			this.btCreateDiscipline.UseVisualStyleBackColor = true;
+			this.btCreateDiscipline.Click += new System.EventHandler(this.btCreateDiscipline_Click);
 			// 
 			// Discipline
 			// 

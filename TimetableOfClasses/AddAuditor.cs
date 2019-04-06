@@ -44,17 +44,21 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
-			if (tbAuditor.Text.Contains(" ") || tbKaf.Text.Contains(" ") || tbCorpus.Text.Contains(" ") || Convert.ToString(nuPlaces.Value) == "")
-				MessageBox.Show("Заполните все поля");
-			MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
-			try
+			byte a;
+			if (tbAuditor.Text.Contains(" ") || tbKaf.Text.Contains(" ") || tbCorpus.Text.Contains(" ") || !(byte.TryParse(tbCorpus.Text, out a)) || Convert.ToString(nuPlaces.Value) == "")
+				MessageBox.Show("Заполните все поля корректно");
+			else
 			{
-				Controllers.CAuditor.Insert(Auditor);
-				Close();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
+				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
+				try
+				{
+					Controllers.CAuditor.Insert(Auditor);
+					Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
 		}
 
@@ -75,7 +79,7 @@ namespace TimetableOfClasses
 		private void tbCorpus_KeyPress(object sender, KeyPressEventArgs e)// Корпус
 		{
 			byte k;
-			if (!(byte.TryParse(Convert.ToString(e.KeyChar), out k) || e.KeyChar == 8))
+			if (!(byte.TryParse(Convert.ToString(e.KeyChar), out k) || e.KeyChar == 8))//Convert.ToString(e.KeyChar)
 			{
 				e.Handled = true;
 			}
