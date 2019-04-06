@@ -52,5 +52,14 @@ namespace TimetableOfClasses
 			}
 			
 		}
+
+		private void DataGridAuditor_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DataGridAuditor.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DataGridAuditor.Rows[index].HeaderCell.Value = indexStr;
+		}
 	}
 }
