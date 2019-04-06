@@ -12,61 +12,57 @@ namespace LibOfTimetableOfClasses
 	{
 		public CGroup() : base("Группа")
 		{
-			DataColumn[] keys = new DataColumn[9];
+			DataColumn[] keys = new DataColumn[8];
 
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Position";
-			table.Columns.Add(column);
-			keys[0] = column;
-
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
 			table.Columns.Add(column);
-			keys[1] = column;
+			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Semestr";
 			table.Columns.Add(column);
-			keys[2] = column;
+			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Specialty";
 			table.Columns.Add(column);
-			keys[3] = column;
+			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Shift";
 			table.Columns.Add(column);
-			keys[4] = column;
+			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
 			table.Columns.Add(column);
-			keys[5] = column;
+			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MinNumberOfClass";
 			table.Columns.Add(column);
-			keys[6] = column;
+			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MaxNumberOfClass";
 			table.Columns.Add(column);
-			keys[7] = column;
+			keys[6] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
 			table.Columns.Add(column);
-			keys[8] = column;
+			keys[7] = column;
 
 			table.PrimaryKey = keys;
 		}
@@ -79,19 +75,10 @@ namespace LibOfTimetableOfClasses
 				if ((string)table.Rows[i]["Group"] == mGroup.Group)
 				{
 					table.Rows[i].Delete();
-					Recount(i);
 					return true;
 				}
 			}
 			return false;
-		}
-
-		private void Recount(int pos)
-		{
-			for (int i = pos; i < table.Rows.Count; i++)
-			{
-				table.Rows[i]["Position"] = (ushort)table.Rows[i]["Position"] - 1;
-			}
 		}
 
 		private bool isValidKey(MGroup mGroup)
@@ -114,7 +101,6 @@ namespace LibOfTimetableOfClasses
 				try
 				{
 					DataRow newRow = table.NewRow();
-					newRow["Position"] = table.Rows.Count + 1;
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -140,12 +126,11 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
-			if (isValidKey(mGroup))
-			{
 				for (int i = 0; i < table.Rows.Count; i++)
 				{
 
-					if ((ushort)table.Rows[i]["Position"] == mGroup.Position)
+					if (mGroup.Group == (string)table.Rows[i]["Group"] 
+					&& mGroup.Semester == (ushort) table.Rows[i]["Semestr"])
 					{
 						try
 						{
@@ -166,7 +151,6 @@ namespace LibOfTimetableOfClasses
 							return false;
 						}
 					}
-				}
 			}
 			return false;
 		}

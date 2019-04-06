@@ -33,16 +33,31 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			this.Text = "Изменение преподавателя";			
 			string[] split = mTeacher.FullName.Split(' ');
+
 			#region(FullName)
+
 			firstName.Text = split[1];
+			firstName.ReadOnly = true;
+
 			secondName.Text = split[0];
+			secondName.ReadOnly = true;
+
 			patronymic.Text = split[2];
+			patronymic.ReadOnly = true;
+
 			#endregion
+
 			notes.Text = mTeacher.Note;
-			department.Text = mTeacher.Departament;		
+
+			department.Text = mTeacher.Departament;
+			department.ReadOnly = true;
+
 			metodDays.Text = mTeacher.MetodicalDays;
+
 			windows.Text = mTeacher.Windows;
+
 			weekends.Text = mTeacher.Weekends;
+
 			Lehrer = mTeacher;
 			
 		}

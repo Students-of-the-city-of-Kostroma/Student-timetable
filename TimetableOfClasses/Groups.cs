@@ -50,7 +50,7 @@ namespace TimetableOfClasses
 			if (DG_Group.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((ushort)Row.ItemArray[0], (string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
+				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
 				AddGroup addDiscipline = new AddGroup(mGroup);
 				addDiscipline.Owner = this;
 				addDiscipline.ShowDialog();
@@ -64,9 +64,9 @@ namespace TimetableOfClasses
 			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
 			ListSortDirection direction;
 
-			if (DG_Group.Rows == null)
-			{
-				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+			if (DG_Group.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG_Group?.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
 
 				if (oldColumn != null)
 				{
@@ -87,32 +87,20 @@ namespace TimetableOfClasses
 				}
 
 				//сохраняем номер выделенной строки
-				List<ushort> arraySelectedRows = new List<ushort>();
+				List<object> arraySelectedRows = new List<object>();
 				foreach (DataGridViewRow item in DG_Group.SelectedRows)
 				{
-					arraySelectedRows.Add((ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0]);
+					arraySelectedRows.Add(item.DataBoundItem);
 				}
 
 				DG_Group.Sort(newColumn, direction);
 
-				foreach (DataGridViewRow item in DG_Group.Rows)
-				{
-					ushort index = (ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0];
-					if (arraySelectedRows.Contains(index))
-					{
-						item.Selected = true;
-					}
-				}
-
-				Recount();
-			}
-		}
-
-		private void Recount()
-		{
-			for (int i = 0; i < DG_Group.RowCount; i++)
+			foreach (DataGridViewRow item in DG_Group.Rows)
 			{
-				DG_Group[0, i].Value = i + 1;
+				if (arraySelectedRows.Contains(item.DataBoundItem))
+				{
+					item.Selected = true;
+				}
 			}
 		}
 
@@ -122,6 +110,15 @@ namespace TimetableOfClasses
 			{
 				column.SortMode = DataGridViewColumnSortMode.Programmatic;
 			}
+		}
+
+		private void DG_Group_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG_Group.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }

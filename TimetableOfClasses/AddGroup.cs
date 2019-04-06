@@ -27,14 +27,25 @@ namespace TimetableOfClasses
 		public AddGroup(MGroup mGroup)
 		{
 			InitializeComponent();
+
 			tbNameGroup.Text = mGroup.Group;
+			tbNameGroup.ReadOnly = true;
+
 			nudSemest.Value = mGroup.Semester;
+			nudSemest.ReadOnly = true;
+
 			tbNaprav.Text = mGroup.Specialty;
+
 			nudSmena.Value = mGroup.Shift;
+
 			nudCountStudents.Value = mGroup.Students;
+
 			nudMinPar.Value = mGroup.MinNumberOfClass;
+
 			nudMaxPar.Value = mGroup.MaxNumberOfClass;
+
 			tbVixodnie.Text = mGroup.Weekends;
+
 			this.Text = "Изменение группы";
 			group = mGroup;
 		}

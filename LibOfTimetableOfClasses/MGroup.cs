@@ -11,7 +11,6 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MGroup : Model
 	{
-		ushort _position;
 		string _group;
 		ushort _semester;
 		string _specialty;
@@ -20,18 +19,6 @@ namespace LibOfTimetableOfClasses
 		ushort _minNumberOfClass;
 		ushort _maxNumberOfClass;
 		string _weekends;
-
-		public ushort Position
-		{
-			get
-			{
-				return _position;
-			}
-			set
-			{
-				_position = value;
-			}
-		}
 
 		public string Group
 		{
@@ -138,19 +125,6 @@ namespace LibOfTimetableOfClasses
 		/// <param name="population">численность</param>
 		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
 		{
-			Group = group;
-			Semester = semester;
-			Shift = shift;
-			Specialty = specialty;
-			Students = students;
-			MinNumberOfClass = minNumberOfClass;
-			MaxNumberOfClass = maxNumberOfClass;
-			Weekends = weekends;
-		}
-
-		public MGroup(ushort position, string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
-		{
-			Position = position;
 			Group = group;
 			Semester = semester;
 			Shift = shift;

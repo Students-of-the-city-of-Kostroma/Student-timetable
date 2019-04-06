@@ -47,7 +47,7 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				MTeacher mTeacher = new MTeacher((ushort)Row.ItemArray[0], (string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+				MTeacher mTeacher = new MTeacher((string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
 				add.ShowDialog();
@@ -65,11 +65,12 @@ namespace TimetableOfClasses
 			DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
 			DataGridViewColumn oldColumn = DG.SortedColumn;
 			ListSortDirection direction;
-			if (DG.Rows == null)
-			{
-				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 
-				if (oldColumn != null)
+			if (DG.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
+
+			if (oldColumn != null)
 				{
 					if (oldColumn == newColumn &&
 						DG.SortOrder == SortOrder.Ascending)
@@ -86,34 +87,23 @@ namespace TimetableOfClasses
 				{
 					direction = ListSortDirection.Ascending;
 				}
-				//сохраняем номер выделенной строки
-				List<ushort> arraySelectedRows = new List<ushort>();
-				foreach (DataGridViewRow item in DG.SelectedRows)
-				{
-					arraySelectedRows.Add((ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0]);
-				}
 
-				DG.Sort(newColumn, direction);
-
-				foreach (DataGridViewRow item in DG.Rows)
-				{
-					ushort index = (ushort)(item.DataBoundItem as DataRowView).Row.ItemArray[0];
-					if (arraySelectedRows.Contains(index))
-					{
-						item.Selected = true;
-					}
-				}
-
-				Recount();
-			}
-		}
-
-		private void Recount()
-		{
-			for (int i = 0; i < DG.RowCount; i++)
+			//сохраняем номер выделенной строки
+			List<object> arraySelectedRows = new List<object>();
+			foreach (DataGridViewRow item in DG.SelectedRows)
 			{
-				DG[0, i].Value = i + 1;
+				arraySelectedRows.Add(item.DataBoundItem);
 			}
+
+			DG.Sort(newColumn, direction);
+
+			foreach (DataGridViewRow item in DG.Rows)
+			{
+				if (arraySelectedRows.Contains(item.DataBoundItem))
+				{
+					item.Selected = true;
+				}
+			} 
 		}
 
 		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -122,6 +112,15 @@ namespace TimetableOfClasses
 			{
 				column.SortMode = DataGridViewColumnSortMode.Programmatic;
 			}
+		}
+
+		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }

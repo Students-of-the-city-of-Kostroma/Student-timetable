@@ -12,25 +12,12 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MTeacher : Model
 	{
-		ushort _number;
 		string _fullname;
 		string _note;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
 		string _weekends;
-
-		public ushort Number
-		{
-			get
-			{
-				return _number;
-			}
-			set
-			{
-				_number = value;
-			}
-		}
 
 		public string FullName
 		{
@@ -107,17 +94,6 @@ namespace LibOfTimetableOfClasses
 
 		public MTeacher(string fullname, string note, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
-			FullName = fullname;
-			Note = note;
-			Departament = departament;
-			MetodicalDays = metodicalDays;
-			Windows = windows;
-			Weekends = weekends;
-		}
-
-		public MTeacher(ushort number, string fullname, string note, string departament, string metodicalDays, string windows, string weekends) : base()
-		{
-			Number = number;
 			FullName = fullname;
 			Note = note;
 			Departament = departament;
