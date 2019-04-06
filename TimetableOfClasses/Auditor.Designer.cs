@@ -35,6 +35,7 @@
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btAddAuditor = new System.Windows.Forms.Button();
+			this.btDelAuditor = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -54,6 +55,7 @@
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
 			this.DataGridAuditor.Name = "DataGridAuditor";
 			this.DataGridAuditor.RowHeadersVisible = false;
+			this.DataGridAuditor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DataGridAuditor.Size = new System.Drawing.Size(467, 225);
 			this.DataGridAuditor.TabIndex = 1;
 			// 
@@ -102,11 +104,23 @@
 			this.btAddAuditor.UseVisualStyleBackColor = true;
 			this.btAddAuditor.Click += new System.EventHandler(this.btAddAuditor_Click);
 			// 
+			// btDelAuditor
+			// 
+			this.btDelAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btDelAuditor.Location = new System.Drawing.Point(93, 241);
+			this.btDelAuditor.Name = "btDelAuditor";
+			this.btDelAuditor.Size = new System.Drawing.Size(75, 23);
+			this.btDelAuditor.TabIndex = 3;
+			this.btDelAuditor.Text = "Удалить";
+			this.btDelAuditor.UseVisualStyleBackColor = true;
+			this.btDelAuditor.Click += new System.EventHandler(this.btDelAuditor_Click);
+			// 
 			// Auditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(491, 268);
+			this.Controls.Add(this.btDelAuditor);
 			this.Controls.Add(this.btAddAuditor);
 			this.Controls.Add(this.DataGridAuditor);
 			this.Name = "Auditor";
@@ -125,5 +139,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
 		private System.Windows.Forms.Button btAddAuditor;
+		private System.Windows.Forms.Button btDelAuditor;
 	}
 }
