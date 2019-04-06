@@ -39,11 +39,11 @@ namespace TimetableOfClasses
 			foreach (DataGridViewRow row in DG_Disc.SelectedRows)
 			{
 				DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-				SelectedName += (string)Row["NameOfAuditor"] + ", ";
+				SelectedName += (string)Row["Fullname"] + ", ";
 			}
 			if (SelectedName.Length > 2)
 				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
-			DialogResult dr = MessageBox.Show("Удалить аудиторию - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+			DialogResult dr = MessageBox.Show("Удалить дисциплину - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 			if (DG_Disc.SelectedRows.Count > 0 && dr == DialogResult.OK)
 			{
 				int countSelected = DG_Disc.SelectedRows.Count;
