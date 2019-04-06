@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UT_CGroup.cs" />
+    <Compile Include="UT_Insert_CTeacher.cs" />
     <Compile Include="UT_MDiscipline.cs" />
     <Compile Include="UT_MAuditor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
