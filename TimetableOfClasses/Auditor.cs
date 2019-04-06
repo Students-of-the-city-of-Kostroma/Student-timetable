@@ -55,9 +55,11 @@ namespace TimetableOfClasses
 
 		private void DataGridAuditor_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
 		{
-			DataGridView grid = sender as DataGridView;
-			for (int i = 0; i < grid.Rows.Count; i++)
-				grid.Rows[i].Cells[0].Value = (i + 1).ToString();
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DataGridAuditor.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DataGridAuditor.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }

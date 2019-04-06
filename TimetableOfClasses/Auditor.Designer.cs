@@ -31,7 +31,6 @@
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
 			this.btAddAuditor = new System.Windows.Forms.Button();
 			this.btDelAuditor = new System.Windows.Forms.Button();
-			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +48,6 @@
 			this.DataGridAuditor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.DataGridAuditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DataGridAuditor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
             this.NameOfAuditor,
             this.Cafedra,
             this.Spacious,
@@ -83,13 +81,6 @@
 			this.btDelAuditor.Text = "Удалить";
 			this.btDelAuditor.UseVisualStyleBackColor = true;
 			this.btDelAuditor.Click += new System.EventHandler(this.btDelAuditor_Click);
-			// 
-			// Number
-			// 
-			this.Number.HeaderText = "№";
-			this.Number.Name = "Number";
-			this.Number.ReadOnly = true;
-			this.Number.Width = 43;
 			// 
 			// NameOfAuditor
 			// 
@@ -143,7 +134,6 @@
         private System.Windows.Forms.DataGridView DataGridAuditor;
 		private System.Windows.Forms.Button btAddAuditor;
 		private System.Windows.Forms.Button btDelAuditor;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
