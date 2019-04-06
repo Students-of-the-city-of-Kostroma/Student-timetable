@@ -59,7 +59,6 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
-				SortForUpdate();
 				Close();
 			}
 		}
@@ -199,20 +198,6 @@ namespace TimetableOfClasses
 				return text;
 			}
 			return "";
-		}
-
-		private void SortForUpdate()
-		{
-			if (group != null)
-			{
-				Form f = this.Owner;
-				foreach (object dgw in f.Controls)
-					if (dgw is DataGridView)
-					{
-						var dataGridView = dgw as DataGridView;
-						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-					}
-			}
 		}
 
 	}

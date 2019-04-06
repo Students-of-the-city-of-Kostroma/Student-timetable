@@ -66,7 +66,6 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
-				SortForUpdate();
 				Close();
 			}
 			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
@@ -91,20 +90,6 @@ namespace TimetableOfClasses
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;	
 				return Controllers.CTeacher.Update(Lehrer);					
-			}
-		}
-
-		private void SortForUpdate()
-		{
-			if (Lehrer != null)
-			{
-				Form f = this.Owner;
-				foreach (object dgw in f.Controls)
-					if (dgw is DataGridView)
-					{
-						var dataGridView = dgw as DataGridView;
-						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-					}
 			}
 		}
 
