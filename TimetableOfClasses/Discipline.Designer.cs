@@ -31,7 +31,6 @@
 			this.DG_Disc = new System.Windows.Forms.DataGridView();
 			this.Delete = new System.Windows.Forms.Button();
 			this.btCreateDiscipline = new System.Windows.Forms.Button();
-			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +46,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_Disc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_Disc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
             this.FullName,
             this.Shortname,
             this.CycleofDiscipline});
@@ -82,14 +80,6 @@
 			this.btCreateDiscipline.Text = "Создать";
 			this.btCreateDiscipline.UseVisualStyleBackColor = true;
 			this.btCreateDiscipline.Click += new System.EventHandler(this.btCreateDiscipline_Click);
-			// 
-			// Number
-			// 
-			this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.Number.HeaderText = "№";
-			this.Number.Name = "Number";
-			this.Number.ReadOnly = true;
-			this.Number.Width = 43;
 			// 
 			// FullName
 			// 
@@ -133,7 +123,6 @@
         private System.Windows.Forms.DataGridView DG_Disc;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button btCreateDiscipline;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;
