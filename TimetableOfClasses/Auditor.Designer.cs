@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
+			this.btAddAuditor = new System.Windows.Forms.Button();
+			this.btDelAuditor = new System.Windows.Forms.Button();
 			this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btAddAuditor = new System.Windows.Forms.Button();
-			this.btDelAuditor = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// DataGridAuditor
 			// 
+			this.DataGridAuditor.AllowUserToAddRows = false;
+			this.DataGridAuditor.AllowUserToDeleteRows = false;
 			this.DataGridAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -54,44 +56,11 @@
             this.Building});
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
 			this.DataGridAuditor.Name = "DataGridAuditor";
-			this.DataGridAuditor.RowHeadersVisible = false;
+			this.DataGridAuditor.ReadOnly = true;
 			this.DataGridAuditor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DataGridAuditor.Size = new System.Drawing.Size(467, 225);
 			this.DataGridAuditor.TabIndex = 1;
-			// 
-			// Number
-			// 
-			this.Number.HeaderText = "";
-			this.Number.Name = "Number";
-			this.Number.Width = 21;
-			// 
-			// NameOfAuditor
-			// 
-			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
-			this.NameOfAuditor.HeaderText = "Аудитория";
-			this.NameOfAuditor.Name = "NameOfAuditor";
-			this.NameOfAuditor.Width = 85;
-			// 
-			// Cafedra
-			// 
-			this.Cafedra.DataPropertyName = "Cafedra";
-			this.Cafedra.HeaderText = "Кафедра";
-			this.Cafedra.Name = "Cafedra";
-			this.Cafedra.Width = 77;
-			// 
-			// Spacious
-			// 
-			this.Spacious.DataPropertyName = "Spacious";
-			this.Spacious.HeaderText = "Число мест";
-			this.Spacious.Name = "Spacious";
-			this.Spacious.Width = 92;
-			// 
-			// Building
-			// 
-			this.Building.DataPropertyName = "Building";
-			this.Building.HeaderText = "Корпус";
-			this.Building.Name = "Building";
-			this.Building.Width = 68;
+			this.DataGridAuditor.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridAuditor_RowsAdded);
 			// 
 			// btAddAuditor
 			// 
@@ -115,6 +84,45 @@
 			this.btDelAuditor.UseVisualStyleBackColor = true;
 			this.btDelAuditor.Click += new System.EventHandler(this.btDelAuditor_Click);
 			// 
+			// Number
+			// 
+			this.Number.HeaderText = "№";
+			this.Number.Name = "Number";
+			this.Number.ReadOnly = true;
+			this.Number.Width = 43;
+			// 
+			// NameOfAuditor
+			// 
+			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
+			this.NameOfAuditor.HeaderText = "Аудитория";
+			this.NameOfAuditor.Name = "NameOfAuditor";
+			this.NameOfAuditor.ReadOnly = true;
+			this.NameOfAuditor.Width = 85;
+			// 
+			// Cafedra
+			// 
+			this.Cafedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Cafedra.DataPropertyName = "Cafedra";
+			this.Cafedra.HeaderText = "Кафедра";
+			this.Cafedra.Name = "Cafedra";
+			this.Cafedra.ReadOnly = true;
+			// 
+			// Spacious
+			// 
+			this.Spacious.DataPropertyName = "Spacious";
+			this.Spacious.HeaderText = "Число мест";
+			this.Spacious.Name = "Spacious";
+			this.Spacious.ReadOnly = true;
+			this.Spacious.Width = 92;
+			// 
+			// Building
+			// 
+			this.Building.DataPropertyName = "Building";
+			this.Building.HeaderText = "Корпус";
+			this.Building.Name = "Building";
+			this.Building.ReadOnly = true;
+			this.Building.Width = 68;
+			// 
 			// Auditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,12 +141,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DataGridAuditor;
+		private System.Windows.Forms.Button btAddAuditor;
+		private System.Windows.Forms.Button btDelAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Number;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-		private System.Windows.Forms.Button btAddAuditor;
-		private System.Windows.Forms.Button btDelAuditor;
 	}
 }

@@ -64,6 +64,13 @@ namespace TimetableOfClasses
 			AddDiscipline addDiscipline = new AddDiscipline();
 			addDiscipline.ShowDialog();
 		}
+
+		private void DG_Disc_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+		{
+			DataGridView grid = sender as DataGridView;
+			for (int i = 0; i < grid.Rows.Count; i++)
+				grid.Rows[i].Cells[0].Value = (i + 1).ToString();
+		}
 	}
 }
 
