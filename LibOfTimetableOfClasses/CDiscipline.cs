@@ -86,29 +86,30 @@ namespace LibOfTimetableOfClasses
         public override bool Update(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
-            for (int i = 0; i < table.Rows.Count; i++)
+
+			if ((mDiscipline.Fullname == null && mDiscipline.Shortname == null && mDiscipline.CycleofDiscipline == null))
+				return false;
+
+			for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
-                {
-                    if ((mDiscipline.Fullname != null && mDiscipline.Shortname != null && mDiscipline.CycleofDiscipline != null))
+				if ((string)table.Rows[i]["Fullname"] == mDiscipline.Fullname)
+				{
+					try
 					{
-                        try
-                        {
-                            table.Rows[i].BeginEdit();
-                            table.Rows[i]["Fullname"] = mDiscipline.Fullname;
-							table.Rows[i]["Shortname"] = mDiscipline.Shortname;
-							table.Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
-							table.Rows[i].EndEdit();
-                            table.Rows[i].AcceptChanges();
-                            return true;
-                        }
-                        catch (Exception ex)
-                        {
-                            Debug.WriteLine(ex.Source);
-                            return false;
-                        }
-                    }
-                }
+						table.Rows[i].BeginEdit();
+						table.Rows[i]["Fullname"] = mDiscipline.Fullname;
+						table.Rows[i]["Shortname"] = mDiscipline.Shortname;
+						table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDiscipline;
+						table.Rows[i].EndEdit();
+						table.Rows[i].AcceptChanges();
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
             }
             return false;
         }
