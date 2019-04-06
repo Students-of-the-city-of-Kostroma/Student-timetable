@@ -38,9 +38,9 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
             column.Unique = true;
             table.Columns.Add(column);
-            keys[1] = column;
+			keys[1] = column;
 
-            column = new DataColumn();
+			column = new DataColumn();
 			column.DataType = typeof(byte);
 			column.ColumnName = "Building";
 			column.ReadOnly = true;
@@ -111,16 +111,16 @@ namespace LibOfTimetableOfClasses
         public override bool Delete(Model model)
         {
 			MAuditor mAuditor = (MAuditor)model;
-			
+
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.NameOfAuditor != null)
+				if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor && (byte)table.Rows[i]["Building"] == mAuditor.Building)
 				{
 					table.Rows[i].Delete();
 					return true;
 				}
 			}
 			return false;
-        }
-    }
+		}
+	}
 }

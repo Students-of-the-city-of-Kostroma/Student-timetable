@@ -42,9 +42,12 @@ namespace TimetableOfClasses
 			{
 				int countSelected = DataGridAuditor.SelectedRows.Count;
 
-				for (int i = 0; i < countSelected; i++)
+				MAuditor mAuditor;
+				foreach (DataGridViewRow row in DataGridAuditor.SelectedRows)
 				{
-					DataGridAuditor.Rows.RemoveAt(DataGridAuditor.SelectedCells[0].RowIndex);
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
+					Controllers.CAuditor.Delete(mAuditor);
 				}
 			}
 			

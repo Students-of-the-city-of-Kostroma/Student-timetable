@@ -48,9 +48,12 @@ namespace TimetableOfClasses
 			{
 				int countSelected = DG_Disc.SelectedRows.Count;
 
-				for (int i = 0; i < countSelected; i++)
+				MDiscipline mDiscipline;
+				foreach (DataGridViewRow row in DG_Disc.SelectedRows)
 				{
-					DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex);
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
+					Controllers.CDiscipline.Delete(mDiscipline);
 				}
 			}
 
