@@ -35,13 +35,29 @@ namespace TimetableOfClasses
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (DG_Disc.Rows.Count == 0)
-            {}
-            else
-            { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
-           
+			string SelectedName = "";
+			foreach (DataGridViewRow row in DG_Disc.SelectedRows)
+			{
+				DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+				SelectedName += (string)Row["NameOfAuditor"] + ", ";
+			}
+			if (SelectedName.Length > 2)
+				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
+			DialogResult dr = MessageBox.Show("Удалить аудиторию - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+			if (DG_Disc.SelectedRows.Count > 0 && dr == DialogResult.OK)
+			{
+				int countSelected = DG_Disc.SelectedRows.Count;
 
-        }
+				MDiscipline mDiscipline;
+				foreach (DataGridViewRow row in DG_Disc.SelectedRows)
+				{
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
+					Controllers.CDiscipline.Delete(mDiscipline);
+				}
+			}
+
+		}
 
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
 		{
