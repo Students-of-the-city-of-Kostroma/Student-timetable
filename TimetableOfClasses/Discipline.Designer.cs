@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
 			this.DG_Disc = new System.Windows.Forms.DataGridView();
-			this.Delete = new System.Windows.Forms.Button();
-			this.btCreateDiscipline = new System.Windows.Forms.Button();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Delete = new System.Windows.Forms.Button();
+			this.btCreateDiscipline = new System.Windows.Forms.Button();
+			this.btChange = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -58,6 +59,28 @@
 			this.DG_Disc.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DG_Disc_RowsAdded);
 			this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
 			// 
+			// FullName
+			// 
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "Fullname";
+			this.FullName.HeaderText = "Полное название дисциплины";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Shortname
+			// 
+			this.Shortname.DataPropertyName = "Shortname";
+			this.Shortname.HeaderText = "Краткое название дисциплины";
+			this.Shortname.Name = "Shortname";
+			this.Shortname.ReadOnly = true;
+			// 
+			// CycleofDiscipline
+			// 
+			this.CycleofDiscipline.DataPropertyName = "CycleofDiscipline";
+			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
+			this.CycleofDiscipline.Name = "CycleofDiscipline";
+			this.CycleofDiscipline.ReadOnly = true;
+			// 
 			// Delete
 			// 
 			this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -81,33 +104,24 @@
 			this.btCreateDiscipline.UseVisualStyleBackColor = true;
 			this.btCreateDiscipline.Click += new System.EventHandler(this.btCreateDiscipline_Click);
 			// 
-			// FullName
+			// btChange
 			// 
-			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.FullName.DataPropertyName = "Fullname";
-			this.FullName.HeaderText = "Полное название дисциплины";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// Shortname
-			// 
-			this.Shortname.DataPropertyName = "Shortname";
-			this.Shortname.HeaderText = "Краткое название дисциплины";
-			this.Shortname.Name = "Shortname";
-			this.Shortname.ReadOnly = true;
-			// 
-			// CycleofDiscipline
-			// 
-			this.CycleofDiscipline.DataPropertyName = "CycleofDiscipline";
-			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
-			this.CycleofDiscipline.Name = "CycleofDiscipline";
-			this.CycleofDiscipline.ReadOnly = true;
+			this.btChange.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btChange.Enabled = false;
+			this.btChange.Location = new System.Drawing.Point(250, 175);
+			this.btChange.Name = "btChange";
+			this.btChange.Size = new System.Drawing.Size(75, 23);
+			this.btChange.TabIndex = 3;
+			this.btChange.Text = "Изменить";
+			this.btChange.UseVisualStyleBackColor = true;
+			this.btChange.Click += new System.EventHandler(this.btChange_Click);
 			// 
 			// Discipline
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(417, 203);
+			this.Controls.Add(this.btChange);
 			this.Controls.Add(this.btCreateDiscipline);
 			this.Controls.Add(this.Delete);
 			this.Controls.Add(this.DG_Disc);
@@ -126,5 +140,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;
+		private System.Windows.Forms.Button btChange;
 	}
 }

@@ -25,13 +25,13 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Shortname";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "CycleofDiscipline";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			table.Columns.Add(column);
 		}
 
@@ -97,9 +97,8 @@ namespace LibOfTimetableOfClasses
 					try
 					{
 						table.Rows[i].BeginEdit();
-						table.Rows[i]["Fullname"] = mDiscipline.Fullname;
 						table.Rows[i]["Shortname"] = mDiscipline.Shortname;
-						table.Rows[i]["CycleofDis"] = mDiscipline.CycleofDiscipline;
+						table.Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
 						table.Rows[i].EndEdit();
 						table.Rows[i].AcceptChanges();
 						return true;

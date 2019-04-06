@@ -16,6 +16,22 @@ namespace TimetableOfClasses
 		public AddAuditor()
 		{
 			InitializeComponent();
+			itsupdate = false;
+		}
+		bool itsupdate = false;
+		public AddAuditor(MAuditor mAuditor)
+		{
+			InitializeComponent();
+			this.Text = "Изменение дисциплины";
+			bt_Cr_n_Cl.Visible = false;
+			bt_Cr_n_Close.Text = "Сохранить";
+			tbAuditor.Text = mAuditor.NameOfAuditor;
+			tbAuditor.Enabled = false;
+			tbKaf.Text = mAuditor.Cafedra;
+			tbCorpus.Text = Convert.ToString(mAuditor.Building);
+			tbCorpus.Enabled = false;
+			nuPlaces.Value = mAuditor.Spacious;
+			itsupdate = true;
 		}
 
 		private void btCancel_Click(object sender, EventArgs e)// отмена
@@ -49,7 +65,9 @@ namespace TimetableOfClasses
 			MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
 			try
 			{
-				Controllers.CAuditor.Insert(Auditor);
+				if (!itsupdate)
+					Controllers.CAuditor.Insert(Auditor);
+				else Controllers.CAuditor.Update(Auditor);
 				Close();
 			}
 			catch (Exception ex)

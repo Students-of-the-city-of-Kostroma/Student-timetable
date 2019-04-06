@@ -26,11 +26,13 @@ namespace TimetableOfClasses
             if (DG_Disc.SelectedCells.Count > 0)
             {
                 Delete.Enabled = true;
-            }
+				btChange.Enabled = true;
+			}
             else
             {
                 Delete.Enabled = false;
-            }
+				btChange.Enabled = false;
+			}
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -72,6 +74,19 @@ namespace TimetableOfClasses
 			object header = this.DG_Disc.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
 				this.DG_Disc.Rows[index].HeaderCell.Value = indexStr;
+		}
+
+		private void btChange_Click(object sender, EventArgs e)
+		{
+			if (DG_Disc.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG_Disc.SelectedRows[0].DataBoundItem).Row;
+				MDiscipline mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
+				AddDiscipline add = new AddDiscipline(mDiscipline);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
 	}
 }

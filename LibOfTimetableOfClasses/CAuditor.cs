@@ -28,23 +28,22 @@ namespace LibOfTimetableOfClasses
             column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Cafedra";
-			column.ReadOnly = true;
-            column.Unique = true;
+			column.ReadOnly = false;
+            column.Unique = false;
             table.Columns.Add(column);
 
             column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Spacious";
-			column.ReadOnly = true;
-            column.Unique = true;
+			column.ReadOnly = false;
+            column.Unique = false;
             table.Columns.Add(column);
-			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(byte);
 			column.ColumnName = "Building";
 			column.ReadOnly = true;
-            column.Unique = true;
+            column.Unique = false;
             table.Columns.Add(column);
 			keys[1] = column;
 			table.PrimaryKey = keys;
@@ -87,15 +86,14 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < table.Rows.Count; i++)
             {
-				if ((string)table.Rows[i]["NameOfAdud"] == mAuditor.NameOfAuditor)
+				if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
+					&& (byte)table.Rows[i]["Building"] == mAuditor.Building)
 				{
 					try
 					{
 						table.Rows[i].BeginEdit();
-						table.Rows[i]["NameOfAdud"] = mAuditor.NameOfAuditor;
 						table.Rows[i]["Cafedra"] = mAuditor.Cafedra;
 						table.Rows[i]["Spacious"] = mAuditor.Spacious;
-						table.Rows[i]["Building"] = mAuditor.Building;
 						table.Rows[i].EndEdit();
 						table.Rows[i].AcceptChanges();
 

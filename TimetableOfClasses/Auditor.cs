@@ -52,7 +52,19 @@ namespace TimetableOfClasses
 			}
 			
 		}
-
+		private void DG_Disc_SelectionChanged(object sender, EventArgs e)
+		{
+			if (DataGridAuditor.SelectedCells.Count > 0)
+			{
+				btDelAuditor.Enabled = true;
+				btChange.Enabled = true;
+			}
+			else
+			{
+				btDelAuditor.Enabled = false;
+				btChange.Enabled = false;
+			}
+		}
 		private void DataGridAuditor_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
 		{
 			int index = e.RowIndex;
@@ -60,6 +72,19 @@ namespace TimetableOfClasses
 			object header = this.DataGridAuditor.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
 				this.DataGridAuditor.Rows[index].HeaderCell.Value = indexStr;
+		}
+
+		private void btChange_Click(object sender, EventArgs e)
+		{
+			if (DataGridAuditor.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DataGridAuditor.SelectedRows[0].DataBoundItem).Row;
+				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
+				AddAuditor add = new AddAuditor(mAuditor);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
 	}
 }
