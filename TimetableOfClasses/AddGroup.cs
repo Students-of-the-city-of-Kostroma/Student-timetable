@@ -29,12 +29,13 @@ namespace TimetableOfClasses
 			InitializeComponent();
 
 			tbNameGroup.Text = mGroup.Group;
-			tbNameGroup.ReadOnly = true;
+			tbNameGroup.Enabled = false;
 
 			nudSemest.Value = mGroup.Semester;
-			nudSemest.ReadOnly = true;
+			nudSemest.Enabled = false;
 
 			tbNaprav.Text = mGroup.Specialty;
+			tbNaprav.Enabled = false;
 
 			nudSmena.Value = mGroup.Shift;
 

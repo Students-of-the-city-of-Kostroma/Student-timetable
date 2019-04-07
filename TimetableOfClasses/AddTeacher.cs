@@ -37,20 +37,20 @@ namespace TimetableOfClasses
 			#region(FullName)
 
 			firstName.Text = split[1];
-			firstName.ReadOnly = true;
+			firstName.Enabled = false;
 
 			secondName.Text = split[0];
-			secondName.ReadOnly = true;
+			secondName.Enabled = false;
 
 			patronymic.Text = split[2];
-			patronymic.ReadOnly = true;
+			patronymic.Enabled = false;
 
 			#endregion
 
 			notes.Text = mTeacher.Note;
 
 			department.Text = mTeacher.Departament;
-			department.ReadOnly = true;
+			department.Enabled = false;
 
 			metodDays.Text = mTeacher.MetodicalDays;
 
