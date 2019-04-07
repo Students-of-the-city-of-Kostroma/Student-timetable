@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MDiscipline D = new MDiscipline(null, "");
+                MDiscipline D = new MDiscipline("", "");
                 Assert.AreEqual(typeof(string), D.Code.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
