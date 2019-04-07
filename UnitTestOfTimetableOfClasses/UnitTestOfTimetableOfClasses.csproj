@@ -49,6 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UT_MTeacher.cs" />
     <Compile Include="UT_Update_CTeacher.cs" />
+    <Compile Include="UT_Update_CGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
