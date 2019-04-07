@@ -23,21 +23,21 @@ namespace UnitTestOfTimetableOfClasses
 		}
 
 
-		//[TestMethod]
-		//public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты раздичаются
-		//{
-		//	//arrange
-		//	CGroup.DataSet.Tables.Clear();
-		//	MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-		//	CGroup cg = new CGroup();
-		//	bool g = cg.Insert(gr);
-		//	bool expected = false;
-		//	//act
-		//	MGroup gr1 = new MGroup("17-ИСбо-2а", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
-		//	bool actual = cg.Insert(gr1);
-		//	//assert
-		//	Assert.AreEqual(expected, actual);
-		//}
+		[TestMethod]
+		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты раздичаются
+		{
+			//arrange
+			CGroup.DataSet.Tables.Clear();
+			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = false;
+			//act
+			MGroup gr1 = new MGroup("17-ИСбо-2а", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
 
 		[TestMethod]
 		public void Task_251_10() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
