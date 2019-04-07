@@ -35,6 +35,7 @@ namespace TimetableOfClasses
 			nudSemest.Enabled = false;
 
 			tbNaprav.Text = mGroup.Specialty;
+			tbNaprav.Enabled = false;
 
 			nudSmena.Value = mGroup.Shift;
 

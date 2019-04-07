@@ -85,8 +85,15 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach (DataRow Row in table.Rows)
 			{
-				if (mGroup.Group == (string)Row["Group"] && mGroup.Semester == (ushort)Row["Semestr"])
-					return false;
+				if (mGroup.Group == (string)Row["Group"])
+				{
+					if (mGroup.Specialty == (string)Row["Specialty"])
+					{
+						if (mGroup.Semester == (ushort)Row["Semestr"])
+							return false;
+					}
+					else return false;
+				}		
 			}
 			return true;
 		}
@@ -130,6 +137,7 @@ namespace LibOfTimetableOfClasses
 				{
 
 					if (mGroup.Group == (string)table.Rows[i]["Group"] 
+					&& mGroup.Specialty == (string)table.Rows[i]["Specialty"]
 					&& mGroup.Semester == (ushort) table.Rows[i]["Semestr"])
 					{
 						try
