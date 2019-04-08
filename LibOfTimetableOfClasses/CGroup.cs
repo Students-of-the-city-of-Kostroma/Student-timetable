@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Data;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -8,73 +8,75 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-	public class CGroup : Controller, IController
+	public class CGroup : DataTable, IController
 	{
 		public CGroup() : base("Группа")
 		{
 			DataColumn[] keys = new DataColumn[8];
 
 			DataColumn column = new DataColumn();
-			
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Semestr";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Specialty";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Shift";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MinNumberOfClass";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MaxNumberOfClass";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[6] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[7] = column;
 
-			table.PrimaryKey = keys;
+			this.PrimaryKey = keys;
 		}
 
-		public override bool Delete(Model model)
+
+		public bool Delete(Model model)
+
 		{
 			MGroup mGroup = (MGroup)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Group"] == mGroup.Group)
+				if ((string)this.Rows[i]["Group"] == mGroup.Group)
 				{
-					table.Rows[i].Delete();
+
+					this.Rows[i].Delete();
+
 					return true;
 				}
 			}
@@ -83,7 +85,7 @@ namespace LibOfTimetableOfClasses
 
 		private bool isValidKey(MGroup mGroup)
 		{
-			foreach (DataRow Row in table.Rows)
+			foreach (DataRow Row in this.Rows)
 			{
 				if (mGroup.Group == (string)Row["Group"])
 				{
@@ -98,8 +100,12 @@ namespace LibOfTimetableOfClasses
 			return true;
 		}
 
+		public DataTable Select()
+		{
+			return this;
+		}
 
-		public override bool Insert(Model model)
+		public bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
@@ -107,7 +113,8 @@ namespace LibOfTimetableOfClasses
 			{
 				try
 				{
-					DataRow newRow = table.NewRow();
+
+					DataRow newRow = this.NewRow();
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
 					newRow["Specialty"] = mGroup.Specialty;
@@ -116,7 +123,7 @@ namespace LibOfTimetableOfClasses
 					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
 					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
 					newRow["Weekends"] = mGroup.Weekends;
-					table.Rows.Add(newRow);
+					this.Rows.Add(newRow);
 					return true;
 				}
 				catch (Exception ex)
@@ -130,19 +137,21 @@ namespace LibOfTimetableOfClasses
 
 		}
 
-		public override bool Update(Model model)
+		public bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
-				for (int i = 0; i < table.Rows.Count; i++)
+
+				for (int i = 0; i < this.Rows.Count; i++)
 				{
 
-					if (mGroup.Group == (string)table.Rows[i]["Group"] 
-					&& mGroup.Specialty == (string)table.Rows[i]["Specialty"]
-					&& mGroup.Semester == (ushort) table.Rows[i]["Semestr"])
+					if (mGroup.Group == (string)this.Rows[i]["Group"] 
+					&& mGroup.Specialty == (string)this.Rows[i]["Specialty"]
+					&& mGroup.Semester == (ushort)this.Rows[i]["Semestr"])
+
 					{
 						try
 						{
-							DataRow newRow = table.Rows[i];
+							DataRow newRow = this.Rows[i];
 							newRow["Group"] = mGroup.Group;
 							newRow["Semestr"] = mGroup.Semester;
 							newRow["Specialty"] = mGroup.Specialty;
