@@ -65,45 +65,43 @@ namespace TimetableOfClasses
 			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
 			ListSortDirection direction;
 
-			DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+			if (DG_Group.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG_Group?.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
 
-			if (oldColumn != null)
-			{
-				if (oldColumn == newColumn &&
-					DG_Group.SortOrder == SortOrder.Ascending)
+				if (oldColumn != null)
 				{
-					direction = ListSortDirection.Descending;
+					if (oldColumn == newColumn &&
+						DG_Group.SortOrder == SortOrder.Ascending)
+					{
+						direction = ListSortDirection.Descending;
+					}
+					else
+					{
+						direction = ListSortDirection.Ascending;
+						oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+					}
 				}
 				else
 				{
 					direction = ListSortDirection.Ascending;
-					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
 				}
-			}
-			else
-			{
-				direction = ListSortDirection.Ascending;
-			}
 
-			DG_Group.Sort(newColumn, direction);
-			Recount();
-
-			for(int i=0;i<DG_Group.RowCount;i++)
-			{
-
-				DataRow tmpRow = ((DataRowView)DG_Group.Rows[i].DataBoundItem).Row;
-				if ((Guid)Row.ItemArray[0] == (Guid)tmpRow.ItemArray[0])
+				//сохраняем номер выделенной строки
+				List<object> arraySelectedRows = new List<object>();
+				foreach (DataGridViewRow item in DG_Group.SelectedRows)
 				{
-					DG_Group.Rows[i].Selected = true;
+					arraySelectedRows.Add(item.DataBoundItem);
 				}
-			}
-		}
 
-		private void Recount()
-		{
-			for (int i = 0; i < DG_Group.RowCount; i++)
+				DG_Group.Sort(newColumn, direction);
+
+			foreach (DataGridViewRow item in DG_Group.Rows)
 			{
-				DG_Group[0, i].Value = i + 1;
+				if (arraySelectedRows.Contains(item.DataBoundItem))
+				{
+					item.Selected = true;
+				}
 			}
 		}
 
@@ -113,6 +111,15 @@ namespace TimetableOfClasses
 			{
 				column.SortMode = DataGridViewColumnSortMode.Programmatic;
 			}
+		}
+
+		private void DG_Group_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG_Group.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }

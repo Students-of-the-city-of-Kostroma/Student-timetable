@@ -47,7 +47,7 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				MTeacher mTeacher = new MTeacher((Guid)Row.ItemArray[0], (string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"], (ushort)Row.ItemArray[1]);
+				MTeacher mTeacher = new MTeacher((string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
 				add.ShowDialog();
@@ -66,46 +66,44 @@ namespace TimetableOfClasses
 			DataGridViewColumn oldColumn = DG.SortedColumn;
 			ListSortDirection direction;
 
-			DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+			if (DG.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
 
 			if (oldColumn != null)
-			{
-				if (oldColumn == newColumn &&
-					DG.SortOrder == SortOrder.Ascending)
 				{
-					direction = ListSortDirection.Descending;
+					if (oldColumn == newColumn &&
+						DG.SortOrder == SortOrder.Ascending)
+					{
+						direction = ListSortDirection.Descending;
+					}
+					else
+					{
+						direction = ListSortDirection.Ascending;
+						oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+					}
 				}
 				else
 				{
 					direction = ListSortDirection.Ascending;
-					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
 				}
-			}
-			else
+
+			//сохраняем номер выделенной строки
+			List<object> arraySelectedRows = new List<object>();
+			foreach (DataGridViewRow item in DG.SelectedRows)
 			{
-				direction = ListSortDirection.Ascending;
+				arraySelectedRows.Add(item.DataBoundItem);
 			}
 
 			DG.Sort(newColumn, direction);
-			Recount();
 
-			for (int i = 0; i < DG.RowCount; i++)
+			foreach (DataGridViewRow item in DG.Rows)
 			{
-
-				DataRow tmpRow = ((DataRowView)DG.Rows[i].DataBoundItem).Row;
-				if ((Guid)Row.ItemArray[0] == (Guid)tmpRow.ItemArray[0])
+				if (arraySelectedRows.Contains(item.DataBoundItem))
 				{
-					DG.Rows[i].Selected = true;
+					item.Selected = true;
 				}
-			}
-		}
-
-		private void Recount()
-		{
-			for (int i = 0; i < DG.RowCount; i++)
-			{
-				DG[0, i].Value = i + 1;
-			}
+			} 
 		}
 
 		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -114,6 +112,15 @@ namespace TimetableOfClasses
 			{
 				column.SortMode = DataGridViewColumnSortMode.Programmatic;
 			}
+		}
+
+		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }

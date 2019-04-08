@@ -42,10 +42,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UT_CGroup.cs" />
+    <Compile Include="UT_Deleted_CTeacher.cs" />
+    <Compile Include="UT_Delete_CGroup.cs" />
+    <Compile Include="UT_Insert_CTeacher.cs" />
+    <Compile Include="UT_Insert_CGroup.cs" />
     <Compile Include="UT_MDiscipline.cs" />
     <Compile Include="UT_MAuditor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UT_MGroup.cs" />
     <Compile Include="UT_MTeacher.cs" />
+    <Compile Include="UT_Update_CTeacher.cs" />
+    <Compile Include="UT_Update_CGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">

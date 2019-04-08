@@ -12,56 +12,44 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTeacher() : base("Учитель")
 		{
-			DataColumn[] keys = new DataColumn[7];
+			DataColumn[] keys = new DataColumn[6];
 
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Number";
-			column.ReadOnly = false;
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "FullName";
 			table.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.ReadOnly = true;
+			column.ColumnName = "Note";
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Note";
-			column.ReadOnly = true;
+			column.ColumnName = "Departament";
 			table.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Departament";
-			column.ReadOnly = true;
+			column.ColumnName = "MetodicalDays";
 			table.Columns.Add(column);
 			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "MetodicalDays";
-			column.ReadOnly = true;
+			column.ColumnName = "Windows";
 			table.Columns.Add(column);
 			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Windows";
-			column.ReadOnly = true;
+			column.ColumnName = "Weekends";
 			table.Columns.Add(column);
 			keys[5] = column;
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
-			column.ReadOnly = true;
-			table.Columns.Add(column);
-			keys[6] = column;
 
 			table.PrimaryKey = keys;
 		}
@@ -70,7 +58,7 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach(DataRow row in table.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Note"] == mTeacher.Note && (string)row["Departament"] == mTeacher.Departament)
+				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Departament"] == mTeacher.Departament)
 					return false;
 			}
 			return true;
@@ -84,8 +72,6 @@ namespace LibOfTimetableOfClasses
 				try
 				{
 					DataRow newRow = table.NewRow();
-					newRow["ID"] = Guid.NewGuid();
-					newRow["Number"] = table.Rows.Count + 1;
 					newRow["FullName"] = mTeacher.FullName;
 					newRow["Note"] = mTeacher.Note;
 					newRow["Departament"] = mTeacher.Departament;
@@ -109,30 +95,28 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((ushort)table.Rows[i]["Number"] == mTeacher.Number)
-				try
-				{
-						table.Rows[i].Delete();
-						DataRow newRow = table.NewRow();
-						newRow["ID"] = mTeacher.ID;
-						newRow["Number"] = mTeacher.Number;
+				if ((string)table.Rows[i]["FullName"] == mTeacher.FullName 
+						&& (string)table.Rows[i]["Departament"] == mTeacher.Departament)
+					try
+					{
+						DataRow newRow = table.Rows[i];
 						newRow["FullName"] = mTeacher.FullName;
 						newRow["Note"] = mTeacher.Note;
 						newRow["Departament"] = mTeacher.Departament;
 						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 						newRow["Windows"] = mTeacher.Windows;
 						newRow["Weekends"] = mTeacher.Weekends;
-						table.Rows.Add(newRow);
 						return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
 			}
 			return false;
 		}
+		
 
 		public override bool Delete(Model model)
 		{
@@ -142,19 +126,11 @@ namespace LibOfTimetableOfClasses
 				if ((string)table.Rows[i]["FullName"] == mTeacher.FullName && (string)table.Rows[i]["Departament"] == mTeacher.Departament)
 				{
 					table.Rows[i].Delete();
-					Recount(i);
+					//Recount(i);
 					return true;
 				}				
 			}
 			return false;
-		}
-
-		private void Recount(int k)
-		{
-			for ( int i = k; i < table.Rows.Count; i++)
-			{
-				table.Rows[i]["Number"] = (ushort)table.Rows[i]["Number"] - 1;
-			}
 		}
 	}
 }

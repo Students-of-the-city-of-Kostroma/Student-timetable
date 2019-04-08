@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
 			this.DG_Group = new System.Windows.Forms.DataGridView();
-			this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Semestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Specialty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +53,6 @@
 			this.DG_Group.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_Group.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Position,
             this.Group,
             this.Semestr,
             this.Specialty,
@@ -67,19 +65,12 @@
 			this.DG_Group.MultiSelect = false;
 			this.DG_Group.Name = "DG_Group";
 			this.DG_Group.ReadOnly = true;
-			this.DG_Group.RowHeadersVisible = false;
 			this.DG_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
 			this.DG_Group.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_Group_ColumnHeaderMouseClick);
 			this.DG_Group.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_Group_DataBindingComplete);
-			// 
-			// Position
-			// 
-			this.Position.DataPropertyName = "Position";
-			this.Position.HeaderText = " ";
-			this.Position.Name = "Position";
-			this.Position.ReadOnly = true;
+			this.DG_Group.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Group_RowPrePaint);
 			// 
 			// Group
 			// 
@@ -191,7 +182,7 @@
         private System.Windows.Forms.DataGridView DG_Group;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btAdd;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+		private System.Windows.Forms.Button btUpdate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Group;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Semestr;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Specialty;
@@ -200,6 +191,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn MinNumberOfClass;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaxNumberOfClass;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Weekends;
-		private System.Windows.Forms.Button btUpdate;
 	}
 }

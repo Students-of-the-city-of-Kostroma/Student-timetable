@@ -12,12 +12,12 @@ namespace LibOfTimetableOfClasses
 	{
 		public CGroup() : base("Группа")
 		{
-			DataColumn[] keys = new DataColumn[9];
+			DataColumn[] keys = new DataColumn[8];
 
 			DataColumn column = new DataColumn();
+
 			column.DataType = typeof(Guid);
 			column.ColumnName = "ID";
-			column.ReadOnly = true;
 			column.Unique = true;
 			this.Columns.Add(column);
 
@@ -72,34 +72,37 @@ namespace LibOfTimetableOfClasses
 			this.PrimaryKey = keys;
 		}
 
+
 		public bool Delete(Model model)
+
 		{
 			MGroup mGroup = (MGroup)model;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
 				if ((string)this.Rows[i]["Group"] == mGroup.Group)
 				{
+
 					this.Rows[i].Delete();
+
 					return true;
 				}
 			}
 			return false;
 		}
 
-		private void Recount(int pos)
-		{
-			for (int i = pos; i < this.Rows.Count; i++)
-			{
-				this.Rows[i]["Position"] = (ushort)this.Rows[i]["Position"] - 1;
-			}
-		}
-
 		private bool isValidKey(MGroup mGroup)
 		{
 			foreach (DataRow Row in this.Rows)
 			{
-				if (mGroup.Group == (string)Row["Group"] && mGroup.Semester == (ushort)Row["Semestr"])
-					return false;
+				if (mGroup.Group == (string)Row["Group"])
+				{
+					if (mGroup.Specialty == (string)Row["Specialty"])
+					{
+						if (mGroup.Semester == (ushort)Row["Semestr"])
+							return false;
+					}
+					else return false;
+				}		
 			}
 			return true;
 		}
@@ -117,6 +120,7 @@ namespace LibOfTimetableOfClasses
 			{
 				try
 				{
+
 					DataRow newRow = this.NewRow();
 					newRow["Group"] = mGroup.Group;
 					newRow["Semestr"] = mGroup.Semester;
@@ -143,33 +147,34 @@ namespace LibOfTimetableOfClasses
 		public bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
-			for (int i = 0; i < this.Rows.Count; i++)
-			{
 
-				if (mGroup.Group == (string)this.Rows[i]["Group"]
-				&& mGroup.Specialty == (string)this.Rows[i]["Specialty"]
-				&& mGroup.Semester == (ushort)this.Rows[i]["Semestr"])
+				for (int i = 0; i < table.Rows.Count; i++)
 				{
-					try
-					{
-						DataRow newRow = this.Rows[i];
-						newRow["Group"] = mGroup.Group;
-						newRow["Semestr"] = mGroup.Semester;
-						newRow["Specialty"] = mGroup.Specialty;
-						newRow["Shift"] = mGroup.Shift;
-						newRow["Students"] = mGroup.Students;
-						newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-						newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-						newRow["Weekends"] = mGroup.Weekends;
-						return true;
-					}
-					catch (Exception ex)
-					{
-						Debug.WriteLine(ex.Source);
-						return false;
-					}
 
-				}
+					if (mGroup.Group == (string)table.Rows[i]["Group"] 
+					&& mGroup.Specialty == (string)table.Rows[i]["Specialty"]
+					&& mGroup.Semester == (ushort) table.Rows[i]["Semestr"])
+
+					{
+						try
+						{
+							DataRow newRow = table.Rows[i];
+							newRow["Group"] = mGroup.Group;
+							newRow["Semestr"] = mGroup.Semester;
+							newRow["Specialty"] = mGroup.Specialty;
+							newRow["Shift"] = mGroup.Shift;
+							newRow["Students"] = mGroup.Students;
+							newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+							newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+							newRow["Weekends"] = mGroup.Weekends;
+							return true;
+						}
+						catch (Exception ex)
+						{
+							Debug.WriteLine(ex.Source);
+							return false;
+						}
+					}
 			}
 			return false;
 		}

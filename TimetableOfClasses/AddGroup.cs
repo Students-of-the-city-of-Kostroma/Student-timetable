@@ -29,14 +29,26 @@ namespace TimetableOfClasses
 		public AddGroup(MGroup mGroup, CGroup cGroup)
 		{
 			InitializeComponent();
+
 			tbNameGroup.Text = mGroup.Group;
+			tbNameGroup.Enabled = false;
+
 			nudSemest.Value = mGroup.Semester;
+			nudSemest.Enabled = false;
+
 			tbNaprav.Text = mGroup.Specialty;
+			tbNaprav.Enabled = false;
+
 			nudSmena.Value = mGroup.Shift;
+
 			nudCountStudents.Value = mGroup.Students;
+
 			nudMinPar.Value = mGroup.MinNumberOfClass;
+
 			nudMaxPar.Value = mGroup.MaxNumberOfClass;
+
 			tbVixodnie.Text = mGroup.Weekends;
+
 			this.Text = "Изменение группы";
 			group = mGroup;
 			cGroupTmp = cGroup;
@@ -51,7 +63,6 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
-				SortForUpdate();
 				Close();
 			}
 		}
@@ -191,21 +202,6 @@ namespace TimetableOfClasses
 				return text;
 			}
 			return "";
-		}
-
-		private void SortForUpdate()
-		{
-			if (group != null)
-			{
-				Form f = this.Owner;
-				foreach (object dgw in f.Controls)
-					if (dgw is DataGridView)
-					{
-						var dataGridView = dgw as DataGridView;
-						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-						dataGridView.Columns[group.Position].Selected = true;
-					}
-			}
 		}
 
 	}

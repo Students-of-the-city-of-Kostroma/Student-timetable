@@ -33,16 +33,31 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			this.Text = "Изменение преподавателя";			
 			string[] split = mTeacher.FullName.Split(' ');
+
 			#region(FullName)
+
 			firstName.Text = split[1];
+			firstName.Enabled = false;
+
 			secondName.Text = split[0];
+			secondName.Enabled = false;
+
 			patronymic.Text = split[2];
+			patronymic.Enabled = false;
+
 			#endregion
+
 			notes.Text = mTeacher.Note;
-			department.Text = mTeacher.Departament;		
+
+			department.Text = mTeacher.Departament;
+			department.Enabled = false;
+
 			metodDays.Text = mTeacher.MetodicalDays;
+
 			windows.Text = mTeacher.Windows;
+
 			weekends.Text = mTeacher.Weekends;
+
 			Lehrer = mTeacher;
 			
 		}
@@ -51,7 +66,6 @@ namespace TimetableOfClasses
 		{
 			if (Add())
 			{
-				SortForUpdate();
 				Close();
 			}
 			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
@@ -76,21 +90,6 @@ namespace TimetableOfClasses
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;	
 				return Controllers.CTeacher.Update(Lehrer);					
-			}
-		}
-
-		private void SortForUpdate()
-		{
-			if (Lehrer != null)
-			{
-				Form f = this.Owner;
-				foreach (object dgw in f.Controls)
-					if (dgw is DataGridView)
-					{
-						var dataGridView = dgw as DataGridView;
-						dataGridView.Sort(dataGridView.Columns[0], ListSortDirection.Ascending);
-						dataGridView.Columns[Lehrer.Number].Selected = true;
-					}
 			}
 		}
 
