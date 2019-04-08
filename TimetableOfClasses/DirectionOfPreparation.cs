@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class DirectionOfPreparation : Form
-    {
-        public DirectionOfPreparation()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class DirectionOfPreparation : Form
+	{
+		public DirectionOfPreparation()
+		{
+			InitializeComponent();
+		}
+	}
 }
