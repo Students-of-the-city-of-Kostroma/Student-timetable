@@ -16,15 +16,17 @@ namespace TimetableOfClasses
 	{
 
 		private MGroup group;
+		private CGroup cGroupTmp = new CGroup();
 
-		public AddGroup()
+		public AddGroup(CGroup cGroup)
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
+			cGroupTmp = cGroup;
 		}
 
-		public AddGroup(MGroup mGroup)
+		public AddGroup(MGroup mGroup, CGroup cGroup)
 		{
 			InitializeComponent();
 			tbNameGroup.Text = mGroup.Group;
@@ -37,6 +39,7 @@ namespace TimetableOfClasses
 			tbVixodnie.Text = mGroup.Weekends;
 			this.Text = "Изменение группы";
 			group = mGroup;
+			cGroupTmp = cGroup;
 		}
 
 		private void B_Сancel_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace TimetableOfClasses
 								if (group == null)
 								{
 									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-									if (Controllers.CGroup.Insert(Group))
+									if (cGroupTmp.Insert(Group))
 										return true;
 									else errors = "Невозможно добавить эту группу";
 								}
@@ -80,7 +83,7 @@ namespace TimetableOfClasses
 									group.MinNumberOfClass = minPar;
 									group.MaxNumberOfClass = maxPar;
 									group.Weekends = tbVixodnie.Text;
-									if (Controllers.CGroup.Update(group))
+									if (cGroupTmp.Update(group))
 										return true;
 									else errors = "Невозможно так изменить эту группу";
 								}
@@ -134,7 +137,7 @@ namespace TimetableOfClasses
 
 		private void SelectionOfLetters1(object sender, EventArgs e)
 		{
-			string pattern = @"[0-9]{2}-[А-Я]{1,2}[а-я]{2}-[0-9]{1}[а-я]{0,1}";
+			string pattern = @"^[0-9]{2}-[А-Я]{1,2}[а-я]{2}-[0-9]{1}[а-я]{0,1}$";
 			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
 
 			TextBox R = sender as TextBox;
