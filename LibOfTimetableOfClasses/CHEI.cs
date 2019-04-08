@@ -50,7 +50,13 @@ namespace LibOfTimetableOfClasses
 			table.Columns.Add(column);
 
 		}
-		public override bool Insert(Model model)
+
+        public override bool Delete(Model model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Insert(Model model)
 		{
 			try
 			{
@@ -70,9 +76,10 @@ namespace LibOfTimetableOfClasses
 				return false;
 			}
 		}
-		public override bool Update(Model model)
-		{  }
-		public override bool Delete(Model model)
-		{  }
-	}
+
+        public override bool Update(Model model)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
