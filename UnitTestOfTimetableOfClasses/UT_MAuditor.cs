@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAuditor
     {
-        [TestMethod]
+        /*[TestMethod]
         public void Issue_98_1_()
         {
             try
@@ -19,7 +19,7 @@ namespace UnitTestOfTimetableOfClasses
             {
                 Assert.Fail(ex.Message);
             }
-        }
+        }*/
         [TestMethod]
         public void Issue_98_2()
         {
