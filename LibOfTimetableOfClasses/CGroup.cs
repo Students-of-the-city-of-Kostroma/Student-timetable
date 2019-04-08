@@ -15,13 +15,6 @@ namespace LibOfTimetableOfClasses
 			DataColumn[] keys = new DataColumn[8];
 
 			DataColumn column = new DataColumn();
-
-			column.DataType = typeof(Guid);
-			column.ColumnName = "ID";
-			column.Unique = true;
-			this.Columns.Add(column);
-
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
 			this.Columns.Add(column);
@@ -148,17 +141,17 @@ namespace LibOfTimetableOfClasses
 		{
 			MGroup mGroup = (MGroup)model;
 
-				for (int i = 0; i < table.Rows.Count; i++)
+				for (int i = 0; i < this.Rows.Count; i++)
 				{
 
-					if (mGroup.Group == (string)table.Rows[i]["Group"] 
-					&& mGroup.Specialty == (string)table.Rows[i]["Specialty"]
-					&& mGroup.Semester == (ushort) table.Rows[i]["Semestr"])
+					if (mGroup.Group == (string)this.Rows[i]["Group"] 
+					&& mGroup.Specialty == (string)this.Rows[i]["Specialty"]
+					&& mGroup.Semester == (ushort)this.Rows[i]["Semestr"])
 
 					{
 						try
 						{
-							DataRow newRow = table.Rows[i];
+							DataRow newRow = this.Rows[i];
 							newRow["Group"] = mGroup.Group;
 							newRow["Semestr"] = mGroup.Semester;
 							newRow["Specialty"] = mGroup.Specialty;
