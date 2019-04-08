@@ -49,7 +49,6 @@ namespace LibOfTimetableOfClasses
             {
                 MDiscipline mDiscipline = (MDiscipline)model;
                 DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
                 newRow["Name"] = mDiscipline.Name;
                 newRow["Code"] = mDiscipline.Code;
                 table.Rows.Add(newRow);
@@ -66,9 +65,7 @@ namespace LibOfTimetableOfClasses
         {
             MDiscipline mDiscipline = (MDiscipline)model;
             for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
-                {
+            {       
                     if ((mDiscipline.Name != null && mDiscipline.Code != null ))
                     {
                         try
@@ -86,7 +83,6 @@ namespace LibOfTimetableOfClasses
                             return false;
                         }
                     }
-                }
             }
             return false;
         }
