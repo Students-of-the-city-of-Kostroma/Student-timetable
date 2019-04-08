@@ -12,6 +12,5 @@ namespace LibOfTimetableOfClasses
         bool Delete(Model model);
         bool Insert(Model model);
         bool Update(Model model);
-		DataTable Select();
 	}
 }

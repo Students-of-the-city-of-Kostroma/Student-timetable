@@ -18,7 +18,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Group.AutoGenerateColumns = false;
-			DG_Group.DataSource = cGroupTmp.Select();
+			DG_Group.DataSource = cGroupTmp;
 		}
 
 		private void DeleteRow(object sender, EventArgs e)
