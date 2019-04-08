@@ -56,15 +56,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "" && value != null)
-					fullName = value;
-				else
-				{
-					if (value == null)
-						throw new ArgumentNullException("Полное название не может быть не инициализировано");
-					else
-						throw new AggregateException("Все значения должны быть заполнены");
-				}
+				if (value == null) throw new ArgumentNullException("Полное название не может быть не инициализировано");
+				if (value == "") throw new AggregateException("Все значения должны быть заполнены");
+				fullName = value;
 			}
 		}
 		/// <summary>
@@ -78,16 +72,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-
-				if (value != "" && value != null)
-					abbreviatedName = value;
-				else
-				{
-					if (value == null)
-						throw new ArgumentNullException("Полное название не может быть не инициализировано");
-					else
-						throw new AggregateException("Все значения должны быть заполнены");
-				}
+				if (value == null) throw new ArgumentNullException("Полное название не может быть не инициализировано");
+				if (value == "") throw new AggregateException("Все значения должны быть заполнены");
+				abbreviatedName = value;
 			}
 		}
 		/// <summary>
@@ -101,15 +88,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "" && value != null)
-					rector = value;
-				else
-				{
-					if (value == null)
-						throw new ArgumentNullException("Полное название не может быть не инициализировано");
-					else
-						throw new AggregateException("Все значения должны быть заполнены");
-				}
+				if (value == null) throw new ArgumentNullException("Полное название не может быть не инициализировано");
+				if (value == "") throw new AggregateException("Все значения должны быть заполнены");
+				rector = value;
 			}
 		}
 		/// <summary>
@@ -123,15 +104,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "" && value != null)
-					phone = value;
-				else
-				{
-					if (value == null)
-						throw new ArgumentNullException("Полное название не может быть не инициализировано");
-					else
-						throw new AggregateException("Все значения должны быть заполнены");
-				}
+				if (value == null) throw new ArgumentNullException("Полное название не может быть не инициализировано");
+				if (value == "") throw new AggregateException("Все значения должны быть заполнены");
+				phone = value;
 			}
 		}
 		/// <summary>
@@ -145,17 +120,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "" && value != null)
-					email = value;
-				else
-				{
-					if (value == null)
-						throw new ArgumentNullException("Полное название не может быть не инициализировано");
-					else
-						throw new AggregateException("Все значения должны быть заполнены");
-				}
+				if (value == null) throw new ArgumentNullException("Полное название не может быть не инициализировано");
+				if (value == "") throw new AggregateException("Все значения должны быть заполнены");
+				email = value;
 			}
 		}
 
 	}
 }
+
