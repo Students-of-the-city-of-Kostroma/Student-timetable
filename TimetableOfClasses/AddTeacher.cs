@@ -60,7 +60,6 @@ namespace TimetableOfClasses
 
 			Lehrer = mTeacher;
 
-
 		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
