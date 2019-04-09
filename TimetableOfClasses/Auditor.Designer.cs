@@ -39,19 +39,19 @@
 			// 
 			// DataGridAuditor
 			// 
-			this.DataGridAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.DataGridAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.DataGridAuditor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.DataGridAuditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DataGridAuditor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Number,
-			this.Stage,
-			this.Korpus,
-			this.Vmestit});
+            this.Number,
+            this.Stage,
+            this.Korpus,
+            this.Vmestit});
 			this.DataGridAuditor.Location = new System.Drawing.Point(12, 12);
 			this.DataGridAuditor.Name = "DataGridAuditor";
-			this.DataGridAuditor.Size = new System.Drawing.Size(467, 237);
+			this.DataGridAuditor.Size = new System.Drawing.Size(467, 228);
 			this.DataGridAuditor.TabIndex = 1;
 			// 
 			// Number
@@ -81,7 +81,7 @@
 			// bt1
 			// 
 			this.bt1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.bt1.Location = new System.Drawing.Point(411, 228);
+			this.bt1.Location = new System.Drawing.Point(411, 246);
 			this.bt1.Name = "bt1";
 			this.bt1.Size = new System.Drawing.Size(68, 21);
 			this.bt1.TabIndex = 2;
@@ -93,13 +93,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(491, 261);
+			this.ClientSize = new System.Drawing.Size(491, 278);
 			this.Controls.Add(this.bt1);
 			this.Controls.Add(this.DataGridAuditor);
 			this.Name = "Auditor";
 			this.Text = "Аудитории";
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();
 			this.ResumeLayout(false);
+
 		}
 
 
