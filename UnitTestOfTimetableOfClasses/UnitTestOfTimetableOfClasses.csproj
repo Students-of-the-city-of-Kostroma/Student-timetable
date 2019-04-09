@@ -41,6 +41,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />
     <Compile Include="UT_CDiscipline.cs" />
     <Compile Include="UT_CGroup.cs" />
