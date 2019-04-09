@@ -59,7 +59,7 @@ namespace TimetableOfClasses
 			weekends.Text = mTeacher.Weekends;
 
 			Lehrer = mTeacher;
-			
+
 		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace TimetableOfClasses
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
-				Lehrer.Weekends = weekends.Text;	
+				Lehrer.Weekends = weekends.Text;
 				return Controllers.CTeacher.Update(Lehrer);					
 			}
 		}

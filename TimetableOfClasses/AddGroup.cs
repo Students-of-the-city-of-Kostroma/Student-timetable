@@ -14,19 +14,16 @@ namespace TimetableOfClasses
 {
 	public partial class AddGroup : Form
 	{
-
 		private MGroup group;
-		private CGroup cGroupTmp = new CGroup();
 
-		public AddGroup(CGroup cGroup)
+		public AddGroup()
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
-			cGroupTmp = cGroup;
 		}
 
-		public AddGroup(MGroup mGroup, CGroup cGroup)
+		public AddGroup(MGroup mGroup)
 		{
 			InitializeComponent();
 
@@ -51,7 +48,6 @@ namespace TimetableOfClasses
 
 			this.Text = "Изменение группы";
 			group = mGroup;
-			cGroupTmp = cGroup;
 		}
 
 		private void B_Сancel_Click(object sender, EventArgs e)
@@ -80,7 +76,7 @@ namespace TimetableOfClasses
 								if (group == null)
 								{
 									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-									if (cGroupTmp.Insert(Group))
+									if (Controllers.CGroup.Insert(Group))
 										return true;
 									else errors = "Невозможно добавить эту группу";
 								}
@@ -94,7 +90,7 @@ namespace TimetableOfClasses
 									group.MinNumberOfClass = minPar;
 									group.MaxNumberOfClass = maxPar;
 									group.Weekends = tbVixodnie.Text;
-									if (cGroupTmp.Update(group))
+									if (Controllers.CGroup.Update(group))
 										return true;
 									else errors = "Невозможно так изменить эту группу";
 								}
