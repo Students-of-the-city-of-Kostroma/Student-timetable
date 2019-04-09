@@ -65,14 +65,6 @@ namespace TimetableOfClasses
 				btChange.Enabled = false;
 			}
 		}
-		private void DataGridAuditor_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-		{
-			int index = e.RowIndex;
-			string indexStr = (index + 1).ToString();
-			object header = this.DataGridAuditor.Rows[index].HeaderCell.Value;
-			if (header == null || !header.Equals(indexStr))
-				this.DataGridAuditor.Rows[index].HeaderCell.Value = indexStr;
-		}
 
 		private void btChange_Click(object sender, EventArgs e)
 		{
@@ -85,6 +77,15 @@ namespace TimetableOfClasses
 				add.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+		}
+
+		private void DataGridAuditor_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DataGridAuditor.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DataGridAuditor.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
 }
