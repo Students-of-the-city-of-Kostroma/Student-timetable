@@ -47,5 +47,63 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}
+
+		[TestMethod]
+		public void Task_269_1()
+		{
+			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
+
+			Controllers.CDiscipline.Select().Clear();
+			Controllers.CDiscipline.Insert(T_Discipline);
+
+			T_Discipline = new MDiscipline("Физика", "Физ.", "33");
+			bool result = Controllers.CDiscipline.Update(T_Discipline);
+
+			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
+		}
+
+		[TestMethod]
+		public void Task_269_2()
+		{
+			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
+
+			Controllers.CDiscipline.Select().Clear();
+			Controllers.CDiscipline.Insert(T_Discipline);
+
+			T_Discipline = new MDiscipline("Математика", "Физ.", "33");
+			bool result = Controllers.CDiscipline.Update(T_Discipline);
+
+			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
+		}
+
+		[TestMethod]
+		public void Task_269_3()
+		{
+			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
+
+			Controllers.CDiscipline.Select().Clear();
+			Controllers.CDiscipline.Insert(T_Discipline);
+
+			T_Discipline = new MDiscipline("Физика", "Мат.", "33");
+			bool result = Controllers.CDiscipline.Update(T_Discipline);
+
+
+			Assert.IsFalse(result, "Ожидаем, что Модель не изменится");
+		}
+
+		[TestMethod]
+		public void Task_269_4()
+		{
+			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
+
+			Controllers.CDiscipline.Select().Clear();
+			Controllers.CDiscipline.Insert(T_Discipline);
+
+			T_Discipline = new MDiscipline("Математика", "Мат.", "42");
+			bool result = Controllers.CDiscipline.Update(T_Discipline);
+
+
+			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
+		}
 	}
 }
