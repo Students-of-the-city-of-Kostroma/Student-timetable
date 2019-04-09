@@ -59,7 +59,7 @@
 			this.DataGridAuditor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DataGridAuditor.Size = new System.Drawing.Size(467, 225);
 			this.DataGridAuditor.TabIndex = 1;
-			this.DataGridAuditor.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridAuditor_RowsAdded);
+			this.DataGridAuditor.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridAuditor_RowPrePaint);
 			// 
 			// NameOfAuditor
 			// 

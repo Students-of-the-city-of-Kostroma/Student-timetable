@@ -56,7 +56,7 @@
 			this.DG_Disc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Disc.Size = new System.Drawing.Size(394, 156);
 			this.DG_Disc.TabIndex = 0;
-			this.DG_Disc.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DG_Disc_RowsAdded);
+			this.DG_Disc.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Disc_RowPrePaint);
 			this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
 			// 
 			// FullName
