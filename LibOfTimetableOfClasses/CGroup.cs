@@ -162,5 +162,10 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
+
+		public bool Update(DataRow row, Model model)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
