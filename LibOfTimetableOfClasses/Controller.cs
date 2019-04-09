@@ -27,12 +27,6 @@ namespace LibOfTimetableOfClasses
         public Controller(string tableName="Controller")
         {
             table = new DataTable(tableName);
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(Guid);
-            column.ColumnName = "ID";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
             DataSet.Tables.Add(table);
         }
         /// <summary>

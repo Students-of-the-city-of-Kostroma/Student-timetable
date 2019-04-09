@@ -8,91 +8,173 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CGroup : Controller,IController
-    {
-        public CGroup() : base("Группа")
-        {
-            DataColumn[] keys = new DataColumn[1];
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(byte);
-            column.ColumnName = "population";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+	public class CGroup : DataTable, IController
+	{
+		public CGroup() : base("Группа")
+		{
+			DataColumn[] keys = new DataColumn[8];
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "cipher";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
-            keys[0] = column;
-            table.PrimaryKey = keys;
-        }
-        public override bool Delete(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if ((Guid)table.Rows[i]["ID"] == model.Id && mGroup.Cipher == (string)table.Rows[i]["cipher"])
-                {
-                    table.Rows[i].Delete();
-                    return true;
-                }
-            }
-            return false;
-        }
+			DataColumn column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Group";
+			this.Columns.Add(column);
+			keys[0] = column;
 
-        public override bool Insert(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
+			column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Semestr";
+			this.Columns.Add(column);
+			keys[1] = column;
 
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if (mGroup.Cipher != (string)table.Rows[i]["chipher"] && mGroup.Cipher != null)
-                {
-                    try {
-                        DataRow newRow = table.NewRow();
-                        newRow["chipher"] = mGroup.Cipher;
-                        newRow["population"] = mGroup.Population;
-                        table.Rows.Add(newRow);
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Specialty";
+			this.Columns.Add(column);
+			keys[2] = column;
 
-                }
-            }
-            return false;
-        }
+			column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Shift";
+			this.Columns.Add(column);
+			keys[3] = column;
 
-        public override bool Update(Model model)
-        {
-            MGroup mGroup = (MGroup)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if ((Guid)table.Rows[i]["ID"] == model.Id && mGroup.Cipher != null)
-                {
-                    try
-                    {
-                        table.Rows[i].BeginEdit();
-                        table.Rows[i]["cipher"] = mGroup.Cipher;
-                        table.Rows[i]["population"] = mGroup.Population;
-                        table.Rows[i].EndEdit();
-                        table.Rows[i].AcceptChanges();
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
-                }
-            }
-            return false;
-        }
-    }
+			column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Students";
+			this.Columns.Add(column);
+			keys[4] = column;
+
+			column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "MinNumberOfClass";
+			this.Columns.Add(column);
+			keys[5] = column;
+
+			column = new DataColumn();
+			column.DataType = typeof(ushort);
+			column.ColumnName = "MaxNumberOfClass";
+			this.Columns.Add(column);
+			keys[6] = column;
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Weekends";
+			this.Columns.Add(column);
+			keys[7] = column;
+
+			this.PrimaryKey = keys;
+		}
+
+
+		public bool Delete(Model model)
+
+		{
+			MGroup mGroup = (MGroup)model;
+			for (int i = 0; i < this.Rows.Count; i++)
+			{
+				if ((string)this.Rows[i]["Group"] == mGroup.Group)
+				{
+
+					this.Rows[i].Delete();
+
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private bool isValidKey(MGroup mGroup)
+		{
+			foreach (DataRow Row in this.Rows)
+			{
+				if (mGroup.Group == (string)Row["Group"])
+				{
+					if (mGroup.Specialty == (string)Row["Specialty"])
+					{
+						if (mGroup.Semester == (ushort)Row["Semestr"])
+							return false;
+					}
+					else return false;
+				}		
+			}
+			return true;
+		}
+
+		public DataTable Select()
+		{
+			return this;
+		}
+
+		public bool Insert(Model model)
+		{
+			MGroup mGroup = (MGroup)model;
+
+			if (isValidKey(mGroup))
+			{
+				try
+				{
+
+					DataRow newRow = this.NewRow();
+					newRow["Group"] = mGroup.Group;
+					newRow["Semestr"] = mGroup.Semester;
+					newRow["Specialty"] = mGroup.Specialty;
+					newRow["Shift"] = mGroup.Shift;
+					newRow["Students"] = mGroup.Students;
+					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+					newRow["Weekends"] = mGroup.Weekends;
+					this.Rows.Add(newRow);
+					return true;
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.Source);
+					return false;
+				}
+			}
+
+			return false;
+
+		}
+
+		public bool Update(Model model)
+		{
+			MGroup mGroup = (MGroup)model;
+
+				for (int i = 0; i < this.Rows.Count; i++)
+				{
+
+					if (mGroup.Group == (string)this.Rows[i]["Group"] 
+					&& mGroup.Specialty == (string)this.Rows[i]["Specialty"]
+					&& mGroup.Semester == (ushort)this.Rows[i]["Semestr"])
+
+					{
+						try
+						{
+							DataRow newRow = this.Rows[i];
+							newRow["Group"] = mGroup.Group;
+							newRow["Semestr"] = mGroup.Semester;
+							newRow["Specialty"] = mGroup.Specialty;
+							newRow["Shift"] = mGroup.Shift;
+							newRow["Students"] = mGroup.Students;
+							newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+							newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+							newRow["Weekends"] = mGroup.Weekends;
+							return true;
+						}
+						catch (Exception ex)
+						{
+							Debug.WriteLine(ex.Source);
+							return false;
+						}
+					}
+			}
+			return false;
+		}
+
+		public bool Update(DataRow row, Model model)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

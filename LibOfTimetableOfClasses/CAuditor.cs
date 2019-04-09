@@ -82,12 +82,11 @@ namespace LibOfTimetableOfClasses
             MAuditor mAuditor = (MAuditor)model;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number != null && mAuditor.Building != null)
+                if ( mAuditor.Number != null && mAuditor.Building != null)
                 {
                     try
                     {
                         table.Rows[i].BeginEdit();
-                        table.Rows[i]["ID"] = mAuditor.Id;
                         table.Rows[i]["Number"] = mAuditor.Number;
                         table.Rows[i]["Floor"] = mAuditor.Floor;
                         table.Rows[i]["Building"] = mAuditor.Building;
@@ -123,5 +122,10 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
         }
-    }
+
+		public bool Update(DataRow row, Model model)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

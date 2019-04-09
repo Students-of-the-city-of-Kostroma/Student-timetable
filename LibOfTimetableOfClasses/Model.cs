@@ -13,19 +13,11 @@ namespace LibOfTimetableOfClasses
     public abstract class Model
     {
         /// <summary>
-        /// Идентификатор
-        /// </summary>
-        protected Guid id;
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        public Guid Id { get { return id; } }
-        /// <summary>
         /// Инициализирует идентификатор
         /// </summary>
         public Model()
         {
-            id = Guid.NewGuid();
+
         }
     }
 }
