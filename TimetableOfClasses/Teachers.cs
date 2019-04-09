@@ -13,18 +13,17 @@ namespace TimetableOfClasses
 {
     public partial class Teachers : Form
     {
-		static CTeacher CTeacher = new CTeacher();
 
         public Teachers()
         {
             InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = CTeacher;
+			DG.DataSource = Controllers.CTeacher;
 		}
 
         private void AddTeacher(object sender, EventArgs e)
         {
-			AddTeacher t = new AddTeacher(CTeacher);
+			AddTeacher t = new AddTeacher();
             t.ShowDialog();
         }
 
@@ -39,7 +38,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mTeacher = new MTeacher((string)Row["FullName"], (string)Row["Departament"]);
-					CTeacher.Delete(mTeacher);
+					Controllers.CTeacher.Delete(mTeacher);
 				}
 			}
         }
@@ -50,7 +49,7 @@ namespace TimetableOfClasses
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 				MTeacher mTeacher = new MTeacher((string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-				AddTeacher add = new AddTeacher(mTeacher, CTeacher);
+				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
 				add.ShowDialog();
 			}
