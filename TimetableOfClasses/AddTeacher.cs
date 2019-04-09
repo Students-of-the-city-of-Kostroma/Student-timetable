@@ -15,8 +15,9 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
+		private CTeacher CTeacher;
 
-		public AddTeacher()
+		public AddTeacher(CTeacher DataSource)
 		{
 			InitializeComponent();
 			firstName.Text = "Иван";
@@ -26,9 +27,10 @@ namespace TimetableOfClasses
 			metodDays.Text = "Пн, Вт";
 			windows.Text = "Ср, Чт, Пт";
 			weekends.Text = "Сб, Вс";
+			CTeacher = DataSource;
 		}
 
-		public AddTeacher(MTeacher mTeacher)
+		public AddTeacher(MTeacher mTeacher, CTeacher DataSource)
 		{
 			InitializeComponent();
 			this.Text = "Изменение преподавателя";			
@@ -59,7 +61,9 @@ namespace TimetableOfClasses
 			weekends.Text = mTeacher.Weekends;
 
 			Lehrer = mTeacher;
-			
+
+			CTeacher = DataSource;
+
 		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
@@ -77,7 +81,7 @@ namespace TimetableOfClasses
 			{
 				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
 				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				return CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
@@ -88,8 +92,8 @@ namespace TimetableOfClasses
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
-				Lehrer.Weekends = weekends.Text;	
-				return Controllers.CTeacher.Update(Lehrer);					
+				Lehrer.Weekends = weekends.Text;
+				return CTeacher.Update(Lehrer);					
 			}
 		}
 
