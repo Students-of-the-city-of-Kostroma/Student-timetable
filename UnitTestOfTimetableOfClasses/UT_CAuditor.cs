@@ -47,5 +47,60 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}
+
+		[TestMethod]
+		public void Task_268_1()
+		{
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			Controllers.CAuditor.Select().Clear();
+			Controllers.CAuditor.Insert(T_Auditor);
+
+			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 5);
+			Assert.IsTrue(Controllers.CAuditor.Update(T_Auditor), "Ожидатся Изменение в модели");
+		}
+
+		[TestMethod]
+		public void Task_268_2()
+		{
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			Controllers.CAuditor.Select().Clear();
+			Controllers.CAuditor.Insert(T_Auditor);
+
+			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 4);
+			Assert.IsFalse(Controllers.CAuditor.Update(T_Auditor), "Не ожидатся Изменение в модели");
+		}
+
+		[TestMethod]
+		public void Task_268_3()
+		{
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			Controllers.CAuditor.Select().Clear();
+			Controllers.CAuditor.Insert(T_Auditor);
+
+			T_Auditor = new MAuditor("302", "каф. Дизайна", 20, 4);
+			Assert.IsFalse(Controllers.CAuditor.Update(T_Auditor), "Не ожидатся Изменение в модели");
+		}
+
+		[TestMethod]
+		public void Task_268_4()
+		{
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			Controllers.CAuditor.Select().Clear();
+			Controllers.CAuditor.Insert(T_Auditor);
+
+			T_Auditor = new MAuditor("502", "каф. Иностранных языков", 30, 4);
+			Assert.IsFalse(Controllers.CAuditor.Update(T_Auditor), "Не ожидатся Изменение в модели");
+		}
+
+		[TestMethod]
+		public void Task_268_5()
+		{
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			Controllers.CAuditor.Select().Clear();
+			Controllers.CAuditor.Insert(T_Auditor);
+
+			T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, 5);
+			Assert.IsFalse(Controllers.CAuditor.Update(T_Auditor), "Не ожидатся Изменение в модели");
+		}
 	}
 }
