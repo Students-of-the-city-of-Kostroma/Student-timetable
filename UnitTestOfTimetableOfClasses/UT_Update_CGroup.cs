@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_1() // Изменение когда все поля отличаются
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			cg.Insert(gr);
@@ -38,7 +37,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_4_to_7() // повтор всех атрибутов кроме неизменяемых
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			cg.Insert(gr);

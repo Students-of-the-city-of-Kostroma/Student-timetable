@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_1() //Добавление в пустую таблицу
 		{
 			//arrange 
-			CTeacher.DataSet.Tables.Clear();
 			MTeacher tcher = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act
@@ -26,7 +25,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_2() //Полностью отличные атрибуты
 		{
 			//arrange 
-			CTeacher.DataSet.Tables.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			bool expected = true;
@@ -42,10 +40,9 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_3() //Повторяющийся атрибут "ФИО"
 		{
 			//arrange 
-			CTeacher.DataSet.Tables.Clear();
 			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			bool expected = true;
+			bool expected = false;
 			//act
 			CTeacher T = new CTeacher();
 			bool f = T.Insert(tcher1);
@@ -58,7 +55,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_4_or_6() //Повторяющиеся атрибуты все кроме ФИО
 		{
 			//arrange 
-			CTeacher.DataSet.Tables.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
@@ -74,7 +70,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_7() //Все атрибуты повторяются
 		{
 			//arrange 
-			CTeacher.DataSet.Tables.Clear();
 			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = false;

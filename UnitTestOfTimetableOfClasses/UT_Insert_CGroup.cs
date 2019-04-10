@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_1() //пустая таблица
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			bool expected = true;
 			//act
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
@@ -27,7 +26,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты раздичаются
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			bool g = cg.Insert(gr);
@@ -43,7 +41,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_10() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ЮФбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			bool g = cg.Insert(gr);
@@ -60,7 +57,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_11() //полное дублирование всех атрибутов
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			bool g = cg.Insert(gr);
@@ -77,7 +73,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_from_3_or_9() // дублирование всех атрибутов, кроме атрибута "Группа"
 		{
 			//arrange
-			CGroup.DataSet.Tables.Clear();
 			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			CGroup cg = new CGroup();
 			bool g = cg.Insert(gr);
