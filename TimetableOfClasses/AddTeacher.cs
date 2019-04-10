@@ -50,7 +50,6 @@ namespace TimetableOfClasses
 			notes.Text = mTeacher.Note;
 
 			department.Text = mTeacher.Departament;
-			department.Enabled = false;
 
 			metodDays.Text = mTeacher.MetodicalDays;
 

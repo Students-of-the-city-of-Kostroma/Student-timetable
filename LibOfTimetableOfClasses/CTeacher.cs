@@ -18,6 +18,7 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
+			column.Unique = true;
 			this.Columns.Add(column);
 			keys[0] = column;
 
@@ -50,15 +51,13 @@ namespace LibOfTimetableOfClasses
 			column.ColumnName = "Weekends";
 			this.Columns.Add(column);
 			keys[5] = column;
-
-			this.PrimaryKey = keys;
 		}
 
 		bool isValidKey(MTeacher mTeacher)
 		{
 			foreach(DataRow row in this.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Departament"] == mTeacher.Departament)
+				if ((string)row["FullName"] == mTeacher.FullName )
 					return false;
 			}
 			return true;
@@ -95,12 +94,10 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = (MTeacher)model;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName 
-						&& (string)this.Rows[i]["Departament"] == mTeacher.Departament)
+				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName)
 					try
 					{
 						DataRow newRow = this.Rows[i];
-						newRow["FullName"] = mTeacher.FullName;
 						newRow["Note"] = mTeacher.Note;
 						newRow["Departament"] = mTeacher.Departament;
 						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
@@ -133,9 +130,5 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

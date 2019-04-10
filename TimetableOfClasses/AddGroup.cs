@@ -31,10 +31,8 @@ namespace TimetableOfClasses
 			tbNameGroup.Enabled = false;
 
 			nudSemest.Value = mGroup.Semester;
-			nudSemest.Enabled = false;
 
 			tbNaprav.Text = mGroup.Specialty;
-			tbNaprav.Enabled = false;
 
 			nudSmena.Value = mGroup.Shift;
 
