@@ -13,6 +13,9 @@ namespace TimetableOfClasses
 {
 	public partial class AddAuditor : Form
 	{
+
+		MAuditor mAuditor;
+
 		public AddAuditor()
 		{
 			InitializeComponent();

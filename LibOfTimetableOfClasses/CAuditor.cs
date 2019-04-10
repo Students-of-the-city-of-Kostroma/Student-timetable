@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер объекта Аудитория.
     /// </summary>
-    public class CAuditor : Controller,IController
+    public class CAuditor :DataTable,IController
     {
 
         public CAuditor() : base("Аудитория")
@@ -20,54 +20,46 @@ namespace LibOfTimetableOfClasses
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
 			column.ColumnName = "NameOfAuditor";
-			column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+            column.Unique = false;
+            Columns.Add(column);
             keys[0] = column;
 
             column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Cafedra";
-			column.ReadOnly = false;
             column.Unique = false;
-            table.Columns.Add(column);
+            Columns.Add(column);
 
             column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Spacious";
-			column.ReadOnly = false;
             column.Unique = false;
-            table.Columns.Add(column);
+            Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(byte);
 			column.ColumnName = "Building";
-			column.ReadOnly = true;
             column.Unique = false;
-            table.Columns.Add(column);
+            Columns.Add(column);
 			keys[1] = column;
-			table.PrimaryKey = keys;
+			PrimaryKey = keys;
         }
 
-        public override bool Insert(Model model)
+        public  bool Insert(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
 			if (mAuditor.NameOfAuditor == null)
 				return false;
 
-			 for (int i = 0; i < table.Rows.Count; i++)
-				 if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor)
-					  return false;
-
 			try
 			{
-				DataRow newRow = table.NewRow();
-				newRow["ID"] = Guid.NewGuid();
+				DataRow newRow = NewRow();
+				//newRow["ID"] = Guid.NewGuid();
 				newRow["NameOfAuditor"] = mAuditor.NameOfAuditor;
 				newRow["Cafedra"] = mAuditor.Cafedra;
 				newRow["Spacious"] = mAuditor.Spacious;
 				newRow["Building"] = mAuditor.Building;
-				table.Rows.Add(newRow);
+				Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
@@ -77,25 +69,25 @@ namespace LibOfTimetableOfClasses
 			}
         }
 
-        public override bool Update(Model model)
+        public  bool Update(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
 
 			if (mAuditor.NameOfAuditor == null)
 				return false;
 
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < Rows.Count; i++)
             {
-				if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
-					&& (byte)table.Rows[i]["Building"] == mAuditor.Building)
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
+					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
 					try
 					{
-						table.Rows[i].BeginEdit();
-						table.Rows[i]["Cafedra"] = mAuditor.Cafedra;
-						table.Rows[i]["Spacious"] = mAuditor.Spacious;
-						table.Rows[i].EndEdit();
-						table.Rows[i].AcceptChanges();
+						Rows[i].BeginEdit();
+						Rows[i]["Cafedra"] = mAuditor.Cafedra;
+						Rows[i]["Spacious"] = mAuditor.Spacious;
+						Rows[i].EndEdit();
+						Rows[i].AcceptChanges();
 
 						return true;
 					}
@@ -109,16 +101,16 @@ namespace LibOfTimetableOfClasses
             return false;
         }
 
-        public override bool Delete(Model model)
+        public  bool Delete(Model model)
         {
 			MAuditor mAuditor = (MAuditor)model;
 
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
-					&& (byte)table.Rows[i]["Building"] == mAuditor.Building)
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
+					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
-					table.Rows[i].Delete();
+					Rows[i].Delete();
 					return true;
 				}
 			}
