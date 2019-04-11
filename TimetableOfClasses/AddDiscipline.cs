@@ -13,7 +13,7 @@ using LibOfTimetableOfClasses;
 namespace TimetableOfClasses
 {
 	public partial class AddDiscipline : Form
-	{
+	{ 
 		public AddDiscipline()
 		{
 			InitializeComponent();
@@ -23,7 +23,7 @@ namespace TimetableOfClasses
 		public AddDiscipline(MDiscipline mDiscipline)
 		{
 			InitializeComponent();
-			this.Text = "Изменение дисциплины";
+			Text = "Изменение дисциплины";
 			btCreateAndClean.Visible = false;
 			btCreateAndClose.Text = "Сохранить";
 			tbFullName.Text = mDiscipline.Fullname;
