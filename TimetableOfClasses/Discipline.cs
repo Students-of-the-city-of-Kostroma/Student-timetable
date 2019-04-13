@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Disc.AutoGenerateColumns = false;
-			DG_Disc.DataSource = Controllers.CDiscipline.Select();
+			DG_Disc.DataSource = Controllers.CDiscipline;
 		}
 
 
