@@ -27,9 +27,8 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
-		// тесты 2 3 и 4 и 6 и 8 невозможно выполнить так как ФИО и Кафедра изменить невозможно
 		[TestMethod]
-		public void Task_247_5and7()//изменение при условии что примечание и график работы дублируется
+		public void Task_247_5and7()//изменение при условии что примечание, кафедра и график работы дублируется
 		{
 			//arrange
 			MTeacher tcher = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
@@ -40,6 +39,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool expected = true;
 			//act
 			tcher1.Note = "Кандидат наук";
+			tcher1.Departament = "ФАСТ";
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
 			tcher1.Weekends = "Воскресенье";
