@@ -45,8 +45,8 @@ namespace UnitTestOfTimetableOfClasses
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, "ИСиТД", 2, 2, 1, 1, "Воскресенье");
 			cg.Insert(gr1);
 			//gr1.Group = "17-ИДбо-2б";
-			//gr1.Semester = 3;
-			//gr1.Specialty = "ТМ";
+			gr1.Semester = 1;
+			gr1.Specialty = "ИСиТ";
 			gr1.Shift = 1;
 			gr1.Students = 1;
 			gr1.MaxNumberOfClass = 0;
