@@ -12,45 +12,38 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTeacher() : base("Учитель")
 		{
-			DataColumn[] keys = new DataColumn[6];
-
+			
 			DataColumn column = new DataColumn();
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
 			column.Unique = true;
 			this.Columns.Add(column);
-			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Note";
 			this.Columns.Add(column);
-			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
 			this.Columns.Add(column);
-			keys[2] = column;
-
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
 			this.Columns.Add(column);
-			keys[3] = column;
-
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
 			this.Columns.Add(column);
-			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
 			this.Columns.Add(column);
-			keys[5] = column;
 		}
 
 		bool isValidKey(MTeacher mTeacher)
