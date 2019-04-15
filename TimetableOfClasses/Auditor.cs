@@ -52,7 +52,7 @@ namespace TimetableOfClasses
 			}
 			
 		}
-		private void DG_Disc_SelectionChanged(object sender, EventArgs e)
+		private void DataGridAuditor_SelectionChanged(object sender, EventArgs e)
 		{
 			if (DataGridAuditor.SelectedCells.Count > 0)
 			{
