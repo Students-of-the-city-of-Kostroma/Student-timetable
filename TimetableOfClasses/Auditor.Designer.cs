@@ -60,6 +60,7 @@
 			this.DataGridAuditor.Size = new System.Drawing.Size(467, 225);
 			this.DataGridAuditor.TabIndex = 1;
 			this.DataGridAuditor.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridAuditor_RowPrePaint);
+			this.DataGridAuditor.SelectionChanged += new System.EventHandler(this.DataGridAuditor_SelectionChanged);
 			// 
 			// NameOfAuditor
 			// 
@@ -107,6 +108,7 @@
 			// btDelAuditor
 			// 
 			this.btDelAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btDelAuditor.Enabled = false;
 			this.btDelAuditor.Location = new System.Drawing.Point(174, 241);
 			this.btDelAuditor.Name = "btDelAuditor";
 			this.btDelAuditor.Size = new System.Drawing.Size(75, 23);
@@ -118,6 +120,7 @@
 			// btChange
 			// 
 			this.btChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btChange.Enabled = false;
 			this.btChange.Location = new System.Drawing.Point(93, 241);
 			this.btChange.Name = "btChange";
 			this.btChange.Size = new System.Drawing.Size(75, 23);
