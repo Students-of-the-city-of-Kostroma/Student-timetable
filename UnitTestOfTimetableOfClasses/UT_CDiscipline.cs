@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_CDiscipline
 	{
 		[TestMethod]
-		public void Task_273_1()
+		public void Task_339_1()
 		{
 			Pre_condition_Del();
 			bool ex = true;
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(C1 - 1, C2);
 		}
 		/// <summary>
-		/// Начальные условия для тестирования метода Delete в task-273-1
+		/// Начальные условия для тестирования метода Delete в task-339
 		/// </summary>
 		public void Pre_condition_Del()
 		{
@@ -36,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(C1 + 1, C2);
 		}
 		[TestMethod]
-		public void Task_273_2()
+		public void Task_339_2()
 		{
 			bool ex = false;
 			bool act;
@@ -48,8 +48,6 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(C1, C2);
 		}
 
-		/*[TestMethod]
-		public void Task_269_1()
 		[TestMethod]
 		public void Task_337_1()
 		{
@@ -185,6 +183,5 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
-		*/
 	}
 }
