@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_273_1()
 		{
-			Pre_condition();
+			Pre_condition_Del();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses
 		/// <summary>
 		/// Начальные условия для тестирования метода Delete в task-273-1
 		/// </summary>
-		public void Pre_condition()
+		public void Pre_condition_Del()
 		{
 			Controllers.CDiscipline.Clear();
 			bool ex = true;
@@ -48,6 +48,8 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(C1, C2);
 		}
 
+		/*[TestMethod]
+		public void Task_269_1()
 		[TestMethod]
 		public void Task_337_1()
 		{
@@ -183,5 +185,6 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
+		*/
 	}
 }
