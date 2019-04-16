@@ -28,6 +28,16 @@ namespace TimetableOfClasses
 			weekends.Text = "Сб, Вс";
 		}
 
+		private bool isEmpty(string str)
+		{
+			return str.Length == 0;
+		}
+
+		private void message()
+		{
+			MessageBox.Show("Строка не должна быть пустой", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
 		public AddTeacher(MTeacher mTeacher)
 		{
 			InitializeComponent();
@@ -107,16 +117,19 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
-			if (R.Text.Length > 2)
+			if (!isEmpty(R.Text))
 			{
-				if (R.Text.IndexOf(", ") == 0)
-					R.Text = R.Text.Substring(1);
-				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
-				R.Text = R.Text.ToLower();
-				R.Text = PeriodLetterToUpper(R.Text);
+				if (R.Text.Length > 2)
+				{
+					if (R.Text.IndexOf(", ") == 0)
+						R.Text = R.Text.Substring(1);
+					if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+					R.Text = R.Text.ToLower();
+					R.Text = PeriodLetterToUpper(R.Text);
+				}
 			}
-
+			else message();
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
@@ -124,15 +137,19 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if(R.Text.Length > 2)
+			if (!isEmpty(R.Text))
 			{
-				if (R.Text.IndexOf(" ") == 0)
-					R.Text = R.Text.Substring(1);
-				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
-				R.Text = R.Text.ToLower();
-				R.Text = FirstLetterToUpper(R.Text);
+				if (R.Text.Length > 2)
+				{
+					if (R.Text.IndexOf(" ") == 0)
+						R.Text = R.Text.Substring(1);
+					if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+					R.Text = R.Text.ToLower();
+					R.Text = FirstLetterToUpper(R.Text);
+				}
 			}
+			else message();
 		}
 
 		private void SelectionOfLetters3(object sender, EventArgs e)
@@ -140,14 +157,18 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if (R.Text.Length > 2)
+			if (!isEmpty(R.Text))
 			{
-				if (R.Text.IndexOf(" ") == 0)
-					R.Text = R.Text.Substring(1);
-				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
-				R.Text = R.Text.ToUpper();
+				if (R.Text.Length > 2)
+				{
+					if (R.Text.IndexOf(" ") == 0)
+						R.Text = R.Text.Substring(1);
+					if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+					R.Text = R.Text.ToUpper();
+				}
 			}
+			else message();
 		}
 
 		private void SelectionOfLetters4(object sender, EventArgs e)
@@ -155,6 +176,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^0-9а-яА-Я-, ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+
 			if (R.Text.Length > 2)
 			{
 				if (R.Text.IndexOf(" ") == 0)
@@ -164,6 +186,7 @@ namespace TimetableOfClasses
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
+
 		}
 
 		private static string FirstLetterToUpper(string str)
