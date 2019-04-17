@@ -68,8 +68,12 @@ namespace TimetableOfClasses
         static bool isNumberDontContains(string input)
         {
             foreach (char c in input)
-                if (Char.IsNumber(c))
+                if (Char.IsNumber(c) || Char.IsPunctuation(c) || Char.IsSymbol(c))
+                {
+                    if (c == '.' || c == '-')
+                        continue;
                     return false;
+                }
             return true;
         }
 
