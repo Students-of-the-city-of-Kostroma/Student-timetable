@@ -282,7 +282,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			if (R.TextLength == 0)
 				R.BackColor = Color.Red;
-			if (!isEmpty(R.Text))
+			else
 				R.BackColor = Color.White;
 		}
 	}
