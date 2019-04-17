@@ -7,19 +7,19 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MDiscipline
     {
-		[TestMethod]
-		public void Issue_275_1()
-		{
-			try
-			{
-				MDiscipline T_Discipline = new MDiscipline("", "", "");
-				Assert.AreEqual(typeof(Guid), T_Discipline.Id.GetType(), "Ожидался тип поля Guid");
-			}
-			catch (Exception ex)
-			{
-				Assert.Fail(ex.Message);
-			}
-		}
+		//[TestMethod]
+		//public void Issue_275_1()
+		//{
+		//	try
+		//	{
+		//		MDiscipline T_Discipline = new MDiscipline("", "", "");
+		//		Assert.AreEqual(typeof(Guid), T_Discipline.Id.GetType(), "Ожидался тип поля Guid");
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		Assert.Fail(ex.Message);
+		//	}
+		//}
 		[TestMethod]
 		public void Issue_275_2()
 		{
