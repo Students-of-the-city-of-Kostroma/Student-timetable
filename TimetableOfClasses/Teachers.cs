@@ -13,17 +13,18 @@ namespace TimetableOfClasses
 {
     public partial class Teachers : Form
     {
+
         public Teachers()
         {
             InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CTeacher.Select();
+			DG.DataSource = Controllers.CTeacher;
 		}
 
         private void AddTeacher(object sender, EventArgs e)
         {
 			AddTeacher t = new AddTeacher();
-             t.ShowDialog();
+            t.ShowDialog();
         }
 
         private void RemoveTeacher(object sender, EventArgs e)

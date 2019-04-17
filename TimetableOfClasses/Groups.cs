@@ -13,12 +13,11 @@ namespace TimetableOfClasses
 {
 	public partial class Groups : Form
 	{
-		static CGroup cGroupTmp = new CGroup();
 		public Groups()
 		{
 			InitializeComponent();
 			DG_Group.AutoGenerateColumns = false;
-			DG_Group.DataSource = cGroupTmp;
+			DG_Group.DataSource = Controllers.CGroup;
 		}
 
 		private void DeleteRow(object sender, EventArgs e)
@@ -33,7 +32,7 @@ namespace TimetableOfClasses
 					{
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 						mGroup = new MGroup((string)Row["Group"]);
-						cGroupTmp.Delete(mGroup);
+						Controllers.CGroup.Delete(mGroup);
 					}
 				}
 			}
@@ -41,7 +40,7 @@ namespace TimetableOfClasses
 
 		private void AddRow(object sender, EventArgs e)
 		{
-			AddGroup addDiscipline = new AddGroup(cGroupTmp);
+			AddGroup addDiscipline = new AddGroup();
 			addDiscipline.Owner = this;
 			addDiscipline.ShowDialog();
 		}
@@ -52,7 +51,7 @@ namespace TimetableOfClasses
 			{
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
 				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
-				AddGroup addDiscipline = new AddGroup(mGroup,cGroupTmp);
+				AddGroup addDiscipline = new AddGroup(mGroup);
 				addDiscipline.Owner = this;
 				addDiscipline.ShowDialog();
 			}

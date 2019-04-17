@@ -12,57 +12,47 @@ namespace LibOfTimetableOfClasses
 	{
 		public CGroup() : base("Группа")
 		{
-			DataColumn[] keys = new DataColumn[8];
-
+	
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Group";
+			column.Unique = true;
 			this.Columns.Add(column);
-			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Semestr";
 			this.Columns.Add(column);
-			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Specialty";
 			this.Columns.Add(column);
-			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Shift";
 			this.Columns.Add(column);
-			keys[3] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Students";
 			this.Columns.Add(column);
-			keys[4] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MinNumberOfClass";
 			this.Columns.Add(column);
-			keys[5] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "MaxNumberOfClass";
 			this.Columns.Add(column);
-			keys[6] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
 			this.Columns.Add(column);
-			keys[7] = column;
-
-			this.PrimaryKey = keys;
 		}
 
 
@@ -88,21 +78,9 @@ namespace LibOfTimetableOfClasses
 			foreach (DataRow Row in this.Rows)
 			{
 				if (mGroup.Group == (string)Row["Group"])
-				{
-					if (mGroup.Specialty == (string)Row["Specialty"])
-					{
-						if (mGroup.Semester == (ushort)Row["Semestr"])
-							return false;
-					}
-					else return false;
-				}		
+					return false;					
 			}
 			return true;
-		}
-
-		public DataTable Select()
-		{
-			return this;
 		}
 
 		public bool Insert(Model model)
@@ -144,15 +122,11 @@ namespace LibOfTimetableOfClasses
 				for (int i = 0; i < this.Rows.Count; i++)
 				{
 
-					if (mGroup.Group == (string)this.Rows[i]["Group"] 
-					&& mGroup.Specialty == (string)this.Rows[i]["Specialty"]
-					&& mGroup.Semester == (ushort)this.Rows[i]["Semestr"])
-
+					if (mGroup.Group == (string)this.Rows[i]["Group"])
 					{
 						try
 						{
 							DataRow newRow = this.Rows[i];
-							newRow["Group"] = mGroup.Group;
 							newRow["Semestr"] = mGroup.Semester;
 							newRow["Specialty"] = mGroup.Specialty;
 							newRow["Shift"] = mGroup.Shift;
@@ -172,9 +146,5 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

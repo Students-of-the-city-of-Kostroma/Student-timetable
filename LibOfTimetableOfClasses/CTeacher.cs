@@ -8,77 +8,69 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
-	public class CTeacher : Controller, IController
+	public class CTeacher : DataTable, IController
 	{
 		public CTeacher() : base("Учитель")
 		{
-			DataColumn[] keys = new DataColumn[6];
-
+			
 			DataColumn column = new DataColumn();
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
-			table.Columns.Add(column);
-			keys[0] = column;
+			column.Unique = true;
+			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Note";
-			table.Columns.Add(column);
-			keys[1] = column;
+			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
-			table.Columns.Add(column);
-			keys[2] = column;
-
+			this.Columns.Add(column);
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
-			table.Columns.Add(column);
-			keys[3] = column;
-
+			this.Columns.Add(column);
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
-			table.Columns.Add(column);
-			keys[4] = column;
+			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
-			table.Columns.Add(column);
-			keys[5] = column;
-
-			table.PrimaryKey = keys;
+			this.Columns.Add(column);
 		}
 
 		bool isValidKey(MTeacher mTeacher)
 		{
-			foreach(DataRow row in table.Rows)
+			foreach(DataRow row in this.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName && (string)row["Departament"] == mTeacher.Departament)
+				if ((string)row["FullName"] == mTeacher.FullName )
 					return false;
 			}
 			return true;
 		}
 		
-		public override bool Insert(Model model)
+		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
 			if (isValidKey(mTeacher))
 			{
 				try
 				{
-					DataRow newRow = table.NewRow();
+					DataRow newRow = this.NewRow();
 					newRow["FullName"] = mTeacher.FullName;
 					newRow["Note"] = mTeacher.Note;
 					newRow["Departament"] = mTeacher.Departament;
 					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 					newRow["Windows"] = mTeacher.Windows;
 					newRow["Weekends"] = mTeacher.Weekends;
-					table.Rows.Add(newRow);
+					this.Rows.Add(newRow);
 					return true;
 				}
 				catch (Exception ex)
@@ -90,17 +82,15 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		public override bool Update(Model model)
+		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["FullName"] == mTeacher.FullName 
-						&& (string)table.Rows[i]["Departament"] == mTeacher.Departament)
+				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName)
 					try
 					{
-						DataRow newRow = table.Rows[i];
-						newRow["FullName"] = mTeacher.FullName;
+						DataRow newRow = this.Rows[i];
 						newRow["Note"] = mTeacher.Note;
 						newRow["Departament"] = mTeacher.Departament;
 						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
@@ -118,14 +108,14 @@ namespace LibOfTimetableOfClasses
 		}
 		
 
-		public override bool Delete(Model model)
+		public bool Delete(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["FullName"] == mTeacher.FullName && (string)table.Rows[i]["Departament"] == mTeacher.Departament)
+				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
 				{
-					table.Rows[i].Delete();
+					this.Rows[i].Delete();
 					//Recount(i);
 					return true;
 				}				
@@ -133,9 +123,5 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
