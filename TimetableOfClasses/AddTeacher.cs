@@ -28,11 +28,6 @@ namespace TimetableOfClasses
 			weekends.Text = "Сб, Вс";
 		}
 
-		private bool isEmpty(string str)
-		{
-			return str.Length == 0;
-		}
-
 		private bool isEmpty(string[] strArgs)
 		{
 			foreach(var cur in strArgs)
@@ -136,23 +131,17 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
-			if (!isEmpty(R.Text))
+
+			if (R.Text.Length > 2)
 			{
-				if (R.Text.Length > 2)
-				{
-					if (R.Text.IndexOf(", ") == 0)
-						R.Text = R.Text.Substring(1);
-					if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-					R.Text = R.Text.ToLower();
-					R.Text = PeriodLetterToUpper(R.Text);
-				}
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
 			}
-			else
-			{
-				R.BackColor = Color.Red;
-				message();
-			}
+
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
@@ -184,22 +173,16 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if (!isEmpty(R.Text))
+
+			if (R.Text.Length > 2)
 			{
-				if (R.Text.Length > 2)
-				{
-					if (R.Text.IndexOf(" ") == 0)
-						R.Text = R.Text.Substring(1);
-					if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-					R.Text = R.Text.ToUpper();
-				}
+				if (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToUpper();
 			}
-			else
-			{
-				R.BackColor = Color.Red;
-				message();
-			}
+
 		}
 
 		private void SelectionOfLetters4(object sender, EventArgs e)
@@ -297,7 +280,9 @@ namespace TimetableOfClasses
 		private void fieldChanged(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
-			if(!isEmpty(R.Text))
+			if (R.TextLength == 0)
+				R.BackColor = Color.Red;
+			if (!isEmpty(R.Text))
 				R.BackColor = Color.White;
 		}
 	}

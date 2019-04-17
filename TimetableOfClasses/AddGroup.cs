@@ -16,7 +16,6 @@ namespace TimetableOfClasses
 	{
 		private MGroup group;
 
-		private object args;
 
 		public AddGroup()
 		{
@@ -72,10 +71,6 @@ namespace TimetableOfClasses
 			Close();
 		}
 
-		private bool isEmpty(string str)
-		{
-			return str.Length == 0;
-		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
@@ -177,47 +172,39 @@ namespace TimetableOfClasses
 			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
 
 			TextBox R = sender as TextBox;
-			if (!isEmpty(R.Text))
-			{
-				if (!regex.IsMatch(R.Text))
-				{ R.Text = "00-ААаа-0а"; }
-				else
-				{ }
-			}
+
+
+			if (!regex.IsMatch(R.Text))
+			{ R.Text = "00-ААаа-0а"; }
 			else
-			{
-				R.BackColor = Color.Red;
-			}
+			{ }
+
+
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
-			if (!isEmpty(R.Text))
+
+			while (R.Text.IndexOf("-") == 0)
+				R.Text = R.Text.Substring(1);
+			while (R.Text.IndexOf(" ") == 0)
+				R.Text = R.Text.Substring(1);
+			while (R.Text.IndexOf(",") == 0)
+				R.Text = R.Text.Substring(1);
+			if (R.Text.Length != 0)
 			{
-				while (R.Text.IndexOf("-") == 0)
-					R.Text = R.Text.Substring(1);
-				while (R.Text.IndexOf(" ") == 0)
-					R.Text = R.Text.Substring(1);
-				while (R.Text.IndexOf(",") == 0)
-					R.Text = R.Text.Substring(1);
-				if (R.Text.Length != 0)
-				{
-					while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-					while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-					while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-				}
-				R.Text = R.Text.ToLower();
-				R.Text = FirstLetterToUpper(R.Text);
+				while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
 			}
-			else
-			{
-				R.BackColor = Color.Red;
-			}
+			R.Text = R.Text.ToLower();
+			R.Text = FirstLetterToUpper(R.Text);
+
 		}
 
 		private static string FirstLetterToUpper(string str)
@@ -246,6 +233,8 @@ namespace TimetableOfClasses
 		private void fieldChanged(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
+			if (R.TextLength == 0)
+				R.BackColor = Color.Red;
 			if (!isEmpty(R.Text))
 				R.BackColor = Color.White;
 		}
