@@ -148,7 +148,11 @@ namespace TimetableOfClasses
 					R.Text = PeriodLetterToUpper(R.Text);
 				}
 			}
-			else message();
+			else
+			{
+				R.BackColor = Color.Red;
+				message();
+			}
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
@@ -168,7 +172,11 @@ namespace TimetableOfClasses
 					R.Text = FirstLetterToUpper(R.Text);
 				}
 			}
-			else message();
+			else
+			{
+				R.BackColor = Color.Red;
+				message();
+			}
 		}
 
 		private void SelectionOfLetters3(object sender, EventArgs e)
@@ -187,7 +195,11 @@ namespace TimetableOfClasses
 					R.Text = R.Text.ToUpper();
 				}
 			}
-			else message();
+			else
+			{
+				R.BackColor = Color.Red;
+				message();
+			}
 		}
 
 		private void SelectionOfLetters4(object sender, EventArgs e)
@@ -280,6 +292,13 @@ namespace TimetableOfClasses
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
 			Close();
+		}
+
+		private void fieldChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if(!isEmpty(R.Text))
+				R.BackColor = Color.White;
 		}
 	}
 }
