@@ -92,6 +92,7 @@ namespace LibOfTimetableOfClasses
 		public MEnclosures(string name, string university) : base()
 		{
 			Name = name;
+			University = university;
 		}
 	}
 }
