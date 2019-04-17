@@ -11,33 +11,44 @@ namespace LibOfTimetableOfClasses
     /// </summary>
      public class MDiscipline : Model
     {
-        /// <summary>
-        /// Название дисциплины
-        /// </summary>
-        protected string name;
-        /// <summary>
-        /// Код дисциплины
-        /// </summary>
-        protected string code;
-        /// <summary>
-        /// Создает экземпляр дисциплины
-        /// </summary>
-        /// <param name="name">Название дисциплины</param>
-        /// <param name="code">Код дисциплины</param>
-        public MDiscipline(string name, string code):base()
-        {
-            Name = name;
-            Code = code;
-        }
+		/// <summary>
+		/// Полное название дисциплины
+		/// </summary>
+		protected string fullName;
+		/// <summary>
+		/// Краткое название дисциплины
+		/// </summary>
+		protected string shortName;
+		/// <summary>
+		/// Цикл дисциплин
+		/// </summary>
+		protected string cycleOfDiscipline;
+		/// <summary>
+		/// Создает экземпляр дисциплины
+		/// </summary>
+		/// <param name="fullName">Полное название дисциплины</param>
+		/// <param name="shortName">Краткое название дисциплины</param>
+		/// <param name="cycleOfDiscipline">Цикл дисциплин</param>
+		public MDiscipline(string fullName, string shortName, string cycleOfDiscipline) : base()
+		{
+			Fullname = fullName;
+			Shortname = shortName;
+			CycleofDiscipline = cycleOfDiscipline;
 
-        /// <summary>
-        /// Возвращает или задает значение Name - название
-        /// </summary>
-        public string Name { set { name = value; }  get { return name; } }
+		}
 
-        /// <summary>
-        /// Возвращает или задает значение Code - код
-        /// </summary>
-        public string Code { set { code = value; } get { return code; } }
-    }
+		/// <summary>
+		/// Возвращает или задает значение Name - полное название
+		/// </summary>
+		public string Fullname { set { fullName = value; } get { return fullName; } }
+
+		/// <summary>
+		/// Возвращает или задает значение Shortname - краткому названию
+		/// </summary>
+		public string Shortname { set { shortName = value; } get { return shortName; } }
+		/// <summary>
+		/// 
+		/// </summary>
+		public string CycleofDiscipline { set { cycleOfDiscipline = value; } get { return cycleOfDiscipline; } }
+	}
 }
