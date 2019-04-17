@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
-	class СEnclosures : DataTable, IController
+	public class СEnclosures : DataTable, IController
 	{
 		public СEnclosures() : base("Корпус")
 		{
@@ -19,8 +19,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
-			this.PrimaryKey = keys;
-
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "University";
@@ -45,6 +44,8 @@ namespace LibOfTimetableOfClasses
 			column.ColumnName = "Comment";
 			column.ReadOnly = true;
 			this.Columns.Add(column);
+
+			this.PrimaryKey = keys;
 		}
 
 
@@ -67,7 +68,7 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach (DataRow row in this.Rows)
 			{
-				if ((string)row["Name"] == mEnclosures.Name)
+				if ((string)row["Name"] == mEnclosures.Name && (string)row["University"] == mEnclosures.University)
 					return false;
 			}
 			return true;
@@ -107,16 +108,13 @@ namespace LibOfTimetableOfClasses
 			MEnclosures mEnclosures = (MEnclosures)model;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-					if ((string)this.Rows[i]["Name"] == mEnclosures.Name && (string)this.Rows[i]["University"] == mEnclosures.University)
+				if ((string)this.Rows[i]["Name"] == mEnclosures.Name && (string)this.Rows[i]["University"] == mEnclosures.University)
 					try
 					{
-						DataRow newRow = this.NewRow();
-						newRow["Name"] = mEnclosures.Name;
-						newRow["University"] = mEnclosures.University;
+						DataRow newRow = this.Rows[i];
 						newRow["Address"] = mEnclosures.Address;
 						newRow["Phone"] = mEnclosures.Phone;
 						newRow["Comment"] = mEnclosures.Comment;
-						this.Rows.Add(newRow);
 						return true;
 					}
 					catch (Exception ex)
