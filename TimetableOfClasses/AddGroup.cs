@@ -16,6 +16,8 @@ namespace TimetableOfClasses
 	{
 		private MGroup group;
 
+		private object args;
+
 		public AddGroup()
 		{
 			InitializeComponent();
@@ -70,9 +72,16 @@ namespace TimetableOfClasses
 			Close();
 		}
 
+		private bool isEmpty(string str)
+		{
+			return str.Length == 0;
+		}
+
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
 			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
+			if (tbNaprav.Text.Length == 0)
+				tbNaprav.BackColor = Color.Red;
 			if (!isEmpty(args))
 			{
 				if (Add())
@@ -168,33 +177,47 @@ namespace TimetableOfClasses
 			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
 
 			TextBox R = sender as TextBox;
-			if (!regex.IsMatch(R.Text))
-			{ R.Text = "00-ААаа-0а"; }
+			if (!isEmpty(R.Text))
+			{
+				if (!regex.IsMatch(R.Text))
+				{ R.Text = "00-ААаа-0а"; }
+				else
+				{ }
+			}
 			else
-			{ }
+			{
+				R.BackColor = Color.Red;
+			}
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
-			while (R.Text.IndexOf("-") == 0)
-				R.Text = R.Text.Substring(1);
-			while (R.Text.IndexOf(" ") == 0)
-				R.Text = R.Text.Substring(1);
-			while (R.Text.IndexOf(",") == 0)
-				R.Text = R.Text.Substring(1);
-			if (R.Text.Length != 0)
+			if (!isEmpty(R.Text))
 			{
-				while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
-				while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
-				while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
-					R.Text = R.Text.Remove(R.Text.Length - 1);
+				while (R.Text.IndexOf("-") == 0)
+					R.Text = R.Text.Substring(1);
+				while (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				while (R.Text.IndexOf(",") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.Length != 0)
+				{
+					while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+					while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+					while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
+						R.Text = R.Text.Remove(R.Text.Length - 1);
+				}
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
 			}
-			R.Text = R.Text.ToLower();
-			R.Text = FirstLetterToUpper(R.Text);
+			else
+			{
+				R.BackColor = Color.Red;
+			}
 		}
 
 		private static string FirstLetterToUpper(string str)
@@ -218,6 +241,13 @@ namespace TimetableOfClasses
 				return text;
 			}
 			return "";
+		}
+
+		private void fieldChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if (!isEmpty(R.Text))
+				R.BackColor = Color.White;
 		}
 
 	}

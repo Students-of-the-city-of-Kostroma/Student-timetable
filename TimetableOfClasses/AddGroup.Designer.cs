@@ -73,6 +73,7 @@
 			this.tbVixodnie.Name = "tbVixodnie";
 			this.tbVixodnie.Size = new System.Drawing.Size(235, 22);
 			this.tbVixodnie.TabIndex = 28;
+			this.tbVixodnie.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbVixodnie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.tbVixodnie.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -109,6 +110,7 @@
 			this.tbNaprav.Name = "tbNaprav";
 			this.tbNaprav.Size = new System.Drawing.Size(235, 22);
 			this.tbNaprav.TabIndex = 24;
+			this.tbNaprav.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbNaprav.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
 			this.tbNaprav.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -145,6 +147,7 @@
 			this.tbNameGroup.Name = "tbNameGroup";
 			this.tbNameGroup.Size = new System.Drawing.Size(235, 22);
 			this.tbNameGroup.TabIndex = 20;
+			this.tbNameGroup.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbNameGroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.tbNameGroup.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
