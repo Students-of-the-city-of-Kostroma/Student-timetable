@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CGroup
 	{
+
 		[TestMethod]
 		public void task_250_1_1() // Изменение когда все поля отличаются
 		{
@@ -56,7 +57,5 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
-
-		
 	}
 }

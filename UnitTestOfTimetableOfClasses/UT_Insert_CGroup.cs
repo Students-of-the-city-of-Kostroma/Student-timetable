@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CGroup
 	{
+
 		[TestMethod]
 		public void Task_251_1() //пустая таблица
 		{

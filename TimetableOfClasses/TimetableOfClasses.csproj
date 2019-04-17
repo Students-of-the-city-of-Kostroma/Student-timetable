@@ -56,6 +56,18 @@
     <Compile Include="AcademicDegree.Designer.cs">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAcademicTitle.Designer.cs">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAuditor.Designer.cs">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AcademicDegree.resx">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAcademicTitle.resx">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAuditor.resx">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
