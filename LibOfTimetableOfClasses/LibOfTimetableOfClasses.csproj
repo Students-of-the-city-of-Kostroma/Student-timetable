@@ -42,15 +42,17 @@
   <ItemGroup>
     <Compile Include="CAuditor.cs" />
     <Compile Include="CDiscipline.cs" />
-    <Compile Include="CGroup.cs" />
+    <Compile Include="CEnclosures.cs"/>
+    <Compile Include="CGroup.cs"/>
     <Compile Include="CHEI.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
-    <Compile Include="CTeacher.cs" />
+    <Compile Include="CTeacher.cs"/>
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
     <Compile Include="MDiscipline.cs" />
+    <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
