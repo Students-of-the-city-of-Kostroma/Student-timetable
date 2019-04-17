@@ -33,9 +33,21 @@ namespace TimetableOfClasses
 			return str.Length == 0;
 		}
 
+		private bool isEmpty(string[] strArgs)
+		{
+			foreach(var cur in strArgs)
+			{
+				if (cur.Length == 0)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
 		private void message()
 		{
-			MessageBox.Show("Строка не должна быть пустой", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		public AddTeacher(MTeacher mTeacher)
@@ -73,15 +85,21 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (Add())
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, patronymic.Text, department.Text, metodDays.Text, windows.Text, weekends.Text }))
 			{
-				Close();
+				if (Add())
+				{
+					Close();
+				}
+				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
-			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
+			else message();		
 		}
 
 		private bool Add()
 		{
+
+
 			if (Lehrer == null)
 			{
 				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
@@ -98,8 +116,9 @@ namespace TimetableOfClasses
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);					
+				return Controllers.CTeacher.Update(Lehrer);
 			}
+
 		}
 
 		/// <summary>
