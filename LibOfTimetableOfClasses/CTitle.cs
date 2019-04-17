@@ -10,14 +10,18 @@ namespace LibOfTimetableOfClasses
 {
 	public class CTitle : Controller, IController
 	{
-		public CTitle () : base("Уч.звание")
+		public CTitle() : base("Уч.звание")
 		{
+
+			DataColumn[] keys = new DataColumn[2];
+
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Сокращенная запись уч. звания";
 			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
+			keys[0] = column;
 
 
 			column = new DataColumn();
@@ -25,14 +29,15 @@ namespace LibOfTimetableOfClasses
 			column.ColumnName = "Полная запись уч. звания";
 			column.ReadOnly = true;
 			table.Columns.Add(column);
+			keys[1] = column;
 		}
 
 		public override bool Delete(Model model)
 		{
-			MTitle mTitle= (MTitle)model;
+			MTitle mTitle = (MTitle)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.Name && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
+				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
 					table.Rows[i].Delete();
 					return true;
@@ -47,7 +52,7 @@ namespace LibOfTimetableOfClasses
 			{
 				MTitle mTitle = (MTitle)model;
 				DataRow newRow = table.NewRow();
-				newRow["Полная запись уч. звания"] = mTitle.Name;
+				newRow["Полная запись уч. звания"] = mTitle.FullName;
 				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
 				table.Rows.Add(newRow);
 				return true;
@@ -64,15 +69,13 @@ namespace LibOfTimetableOfClasses
 			MTitle mTitle = (MTitle)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((mTitle.Name != null && mTitle.Reduction != null))
+				if ((mTitle.FullName != null && mTitle.Reduction != null))
 				{
 					try
 					{
-						table.Rows[i].BeginEdit();
-						table.Rows[i]["Полная запись уч. звания"] = mTitle.Name;
-						table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						table.Rows[i].EndEdit();
-						table.Rows[i].AcceptChanges();
+						DataRow newRow = table.Rows[i];
+						newRow["Полная запись уч. звания"] = mTitle.FullName;
+						newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
 						return true;
 					}
 					catch (Exception ex)

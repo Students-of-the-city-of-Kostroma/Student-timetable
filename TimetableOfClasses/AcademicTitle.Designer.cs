@@ -86,6 +86,7 @@
 			this.Change.TabIndex = 3;
 			this.Change.Text = "Изменить";
 			this.Change.UseVisualStyleBackColor = true;
+			this.Change.Click += new System.EventHandler(this.Change_Click);
 			// 
 			// AcademicTitle
 			// 
