@@ -23,6 +23,23 @@ namespace TimetableOfClasses
 			tbVixodnie.Text = "Воскресенье";
 		}
 
+		private bool isEmpty(string[] strArgs)
+		{
+			foreach (var cur in strArgs)
+			{
+				if (cur.Length == 0)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private void message()
+		{
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
 		public AddGroup(MGroup mGroup)
 		{
 			InitializeComponent();
@@ -55,10 +72,15 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (Add())
+			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
+			if (!isEmpty(args))
 			{
-				Close();
+				if (Add())
+				{
+					Close();
+				}
 			}
+			else message();
 		}
 
 		private bool Add()
