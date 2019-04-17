@@ -7,20 +7,20 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAuditor
     {
-        [TestMethod]
-        public void Task_274_1()
+        //[TestMethod]
+    //    public void Task_274_1()
 
-        {
-            try
-            {
-				MAuditor T_Auditor = new MAuditor("", "", 0, 0);
-				Assert.AreEqual(typeof(Guid), T_Auditor.Id.GetType(), "Ожидался тип поля Guid");
-            }
-            catch(Exception ex)
-            {
-                Assert.Fail(ex.Message);
-            }
-        }
+    //    {
+    //        try
+    //        {
+				//MAuditor T_Auditor = new MAuditor("", "", 0, 0);
+				//Assert.AreEqual(typeof(Guid), T_Auditor.Id.GetType(), "Ожидался тип поля Guid");
+    //        }
+    //        catch(Exception ex)
+    //        {
+    //            Assert.Fail(ex.Message);
+    //        }
+    //    }
 		[TestMethod]
 		public void Task_274_2()
 		{
