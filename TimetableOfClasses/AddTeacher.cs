@@ -149,23 +149,16 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if (!isEmpty(R.Text))
+			if (R.Text.Length > 2)
 			{
-				if (R.Text.Length > 2)
-				{
-					if (R.Text.IndexOf(" ") == 0)
-						R.Text = R.Text.Substring(1);
-					if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-						R.Text = R.Text.Remove(R.Text.Length - 1);
-					R.Text = R.Text.ToLower();
-					R.Text = FirstLetterToUpper(R.Text);
-				}
+				if (R.Text.IndexOf(" ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
 			}
-			else
-			{
-				R.BackColor = Color.Red;
-				message();
-			}
+
 		}
 
 		private void SelectionOfLetters3(object sender, EventArgs e)
