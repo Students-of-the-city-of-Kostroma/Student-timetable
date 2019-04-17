@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
-    interface IController
-    {
-        bool Delete(Model model);
-        bool Insert(Model model);
-        bool Update(Model model);
-    }
+	interface IController
+	{
+		bool Delete(Model model);
+		bool Insert(Model model);
+		bool Update(Model model);
+		bool Update(DataRow row, Model model);
+	}
 }

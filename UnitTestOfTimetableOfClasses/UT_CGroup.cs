@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_CGroup
     {
-        [TestMethod]
+       /* [TestMethod]
         public void Task_16_1()
         {
             Controllers.CGroup.Select().Clear();
@@ -49,6 +49,6 @@ namespace UnitTestOfTimetableOfClasses
             int C2 = Controllers.CGroup.Select().Rows.Count;
             Assert.AreEqual(ex, act);
             Assert.AreEqual(C1 + 1, C2);
-        }
+        }*/
     }
 }

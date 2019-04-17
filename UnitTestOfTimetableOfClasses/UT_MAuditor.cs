@@ -9,6 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         [TestMethod]
         public void Task_274_1()
+
         {
             try
             {
