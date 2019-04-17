@@ -67,16 +67,21 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+            if ((mTitle.FullName == null && mTitle.Reduction == null))
+                return false;
+
+            for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((mTitle.FullName != null && mTitle.Reduction != null))
+				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName)
 				{
 					try
 					{
-						DataRow newRow = table.Rows[i];
-						newRow["Полная запись уч. звания"] = mTitle.FullName;
-						newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						return true;
+                        table.Rows[i].BeginEdit();
+                        table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
+                        table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
+                        table.Rows[i].EndEdit();
+                        table.Rows[i].AcceptChanges();
+                        return true;
 					}
 					catch (Exception ex)
 					{
