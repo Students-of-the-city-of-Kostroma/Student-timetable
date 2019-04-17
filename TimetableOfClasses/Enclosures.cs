@@ -84,7 +84,7 @@ namespace TimetableOfClasses
 
 		}
 
-		private void RemoveTeacher(object sender, EventArgs e)
+		private void Deletet(object sender, EventArgs e)
 		{
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (DG.SelectedRows.Count > 0 && dr == DialogResult.Yes)
@@ -97,6 +97,16 @@ namespace TimetableOfClasses
 					Controllers.CTeacher.Delete(mEnclosures);
 				}
 			}
+		}
+
+		private void Updatet(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Added(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -35,9 +35,9 @@
 			this.CAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Delete = new System.Windows.Forms.Button();
-			this.Update = new System.Windows.Forms.Button();
-			this.Create = new System.Windows.Forms.Button();
+			this.Delete1 = new System.Windows.Forms.Button();
+			this.Update1 = new System.Windows.Forms.Button();
+			this.Create1 = new System.Windows.Forms.Button();
 			this.сEnclosuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.сEnclosuresBindingSource)).BeginInit();
@@ -102,35 +102,38 @@
 			this.CComment.Name = "CComment";
 			this.CComment.ReadOnly = true;
 			// 
-			// Delete
+			// Delete1
 			// 
-			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Delete.Location = new System.Drawing.Point(447, 301);
-			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(75, 23);
-			this.Delete.TabIndex = 1;
-			this.Delete.Text = "Удалить";
-			this.Delete.UseVisualStyleBackColor = true;
+			this.Delete1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Delete1.Location = new System.Drawing.Point(447, 301);
+			this.Delete1.Name = "Delete1";
+			this.Delete1.Size = new System.Drawing.Size(75, 23);
+			this.Delete1.TabIndex = 1;
+			this.Delete1.Text = "Удалить";
+			this.Delete1.UseVisualStyleBackColor = true;
+			this.Delete1.Click += new System.EventHandler(this.Deletet);
 			// 
-			// Update
+			// Update1
 			// 
-			this.Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Update.Location = new System.Drawing.Point(528, 301);
-			this.Update.Name = "Update";
-			this.Update.Size = new System.Drawing.Size(75, 23);
-			this.Update.TabIndex = 2;
-			this.Update.Text = "Изменить";
-			this.Update.UseVisualStyleBackColor = true;
+			this.Update1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Update1.Location = new System.Drawing.Point(528, 301);
+			this.Update1.Name = "Update1";
+			this.Update1.Size = new System.Drawing.Size(75, 23);
+			this.Update1.TabIndex = 2;
+			this.Update1.Text = "Изменить";
+			this.Update1.UseVisualStyleBackColor = true;
+			this.Update1.Click += new System.EventHandler(this.Updatet);
 			// 
-			// Create
+			// Create1
 			// 
-			this.Create.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Create.Location = new System.Drawing.Point(609, 301);
-			this.Create.Name = "Create";
-			this.Create.Size = new System.Drawing.Size(75, 23);
-			this.Create.TabIndex = 3;
-			this.Create.Text = "Добавить";
-			this.Create.UseVisualStyleBackColor = true;
+			this.Create1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Create1.Location = new System.Drawing.Point(609, 301);
+			this.Create1.Name = "Create1";
+			this.Create1.Size = new System.Drawing.Size(75, 23);
+			this.Create1.TabIndex = 3;
+			this.Create1.Text = "Добавить";
+			this.Create1.UseVisualStyleBackColor = true;
+			this.Create1.Click += new System.EventHandler(this.Added);
 			// 
 			// сEnclosuresBindingSource
 			// 
@@ -141,9 +144,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(696, 336);
-			this.Controls.Add(this.Create);
-			this.Controls.Add(this.Update);
-			this.Controls.Add(this.Delete);
+			this.Controls.Add(this.Create1);
+			this.Controls.Add(this.Update1);
+			this.Controls.Add(this.Delete1);
 			this.Controls.Add(this.DG);
 			this.Name = "Enclosures";
 			this.Text = "Корпуса";
@@ -156,9 +159,9 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView DG;
-		private System.Windows.Forms.Button Delete;
-		private System.Windows.Forms.Button Update;
-		private System.Windows.Forms.Button Create;
+		private System.Windows.Forms.Button Delete1;
+		private System.Windows.Forms.Button Update1;
+		private System.Windows.Forms.Button Create1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CUniversity;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CAddress;
