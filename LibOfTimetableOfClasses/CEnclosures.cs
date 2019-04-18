@@ -34,7 +34,7 @@ namespace LibOfTimetableOfClasses
 			this.Columns.Add(column);
 
 			column = new DataColumn();
-			column.DataType = typeof(int);
+			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
 			column.ReadOnly = true;
 			this.Columns.Add(column);
