@@ -50,6 +50,7 @@
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
+    <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
