@@ -40,7 +40,6 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.cancel = new System.Windows.Forms.Button();
 			this.save = new System.Windows.Forms.Button();
-			this.clear = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// name
@@ -48,8 +47,9 @@
 			this.name.Location = new System.Drawing.Point(12, 32);
 			this.name.MaxLength = 50;
 			this.name.Name = "name";
-			this.name.Size = new System.Drawing.Size(285, 20);
+			this.name.Size = new System.Drawing.Size(188, 20);
 			this.name.TabIndex = 0;
+			this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
 			this.name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.name_KeyPress);
 			// 
 			// university
@@ -57,8 +57,9 @@
 			this.university.Location = new System.Drawing.Point(12, 85);
 			this.university.MaxLength = 10;
 			this.university.Name = "university";
-			this.university.Size = new System.Drawing.Size(285, 20);
+			this.university.Size = new System.Drawing.Size(188, 20);
 			this.university.TabIndex = 1;
+			this.university.TextChanged += new System.EventHandler(this.name_TextChanged);
 			this.university.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.university_KeyPress);
 			this.university.Leave += new System.EventHandler(this.university_Leave);
 			// 
@@ -67,8 +68,9 @@
 			this.address.Location = new System.Drawing.Point(12, 138);
 			this.address.MaxLength = 255;
 			this.address.Name = "address";
-			this.address.Size = new System.Drawing.Size(285, 20);
+			this.address.Size = new System.Drawing.Size(188, 20);
 			this.address.TabIndex = 2;
+			this.address.TextChanged += new System.EventHandler(this.name_TextChanged);
 			this.address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.address_KeyPress);
 			// 
 			// note
@@ -76,18 +78,20 @@
 			this.note.Location = new System.Drawing.Point(12, 250);
 			this.note.MaxLength = 256;
 			this.note.Name = "note";
-			this.note.Size = new System.Drawing.Size(285, 20);
+			this.note.Size = new System.Drawing.Size(188, 20);
 			this.note.TabIndex = 4;
-			this.note.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.address_KeyPress);
+			this.note.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.note_KeyPress);
 			// 
 			// phoneNumber
 			// 
 			this.phoneNumber.Location = new System.Drawing.Point(12, 197);
 			this.phoneNumber.MaxLength = 11;
 			this.phoneNumber.Name = "phoneNumber";
-			this.phoneNumber.Size = new System.Drawing.Size(285, 20);
+			this.phoneNumber.Size = new System.Drawing.Size(188, 20);
 			this.phoneNumber.TabIndex = 3;
+			this.phoneNumber.TextChanged += new System.EventHandler(this.name_TextChanged);
 			this.phoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumber_KeyPress);
+			this.phoneNumber.Layout += new System.Windows.Forms.LayoutEventHandler(this.phoneNumber_Layout);
 			// 
 			// label1
 			// 
@@ -146,7 +150,7 @@
 			// 
 			// save
 			// 
-			this.save.Location = new System.Drawing.Point(206, 287);
+			this.save.Location = new System.Drawing.Point(109, 288);
 			this.save.Name = "save";
 			this.save.Size = new System.Drawing.Size(91, 32);
 			this.save.TabIndex = 11;
@@ -154,22 +158,11 @@
 			this.save.UseVisualStyleBackColor = true;
 			this.save.Click += new System.EventHandler(this.save_Click);
 			// 
-			// clear
-			// 
-			this.clear.Location = new System.Drawing.Point(109, 287);
-			this.clear.Name = "clear";
-			this.clear.Size = new System.Drawing.Size(91, 32);
-			this.clear.TabIndex = 12;
-			this.clear.Text = "Очистить";
-			this.clear.UseVisualStyleBackColor = true;
-			this.clear.Click += new System.EventHandler(this.clear_Click);
-			// 
 			// AddEnclosures
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(310, 332);
-			this.Controls.Add(this.clear);
+			this.ClientSize = new System.Drawing.Size(216, 332);
 			this.Controls.Add(this.save);
 			this.Controls.Add(this.cancel);
 			this.Controls.Add(this.label5);
@@ -203,6 +196,5 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button cancel;
 		private System.Windows.Forms.Button save;
-		private System.Windows.Forms.Button clear;
 	}
 }

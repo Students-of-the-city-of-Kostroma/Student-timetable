@@ -53,7 +53,16 @@ namespace TimetableOfClasses
 		private void address_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Адреса
 		{
 			char ch = e.KeyChar;
-			if ((ch < 'А' || ch > 'я') && (ch < 'A' || ch > 'z') && ch != '-' && (ch < '0' || ch > '9') && ch != '\b' && ch!=',' && ch!='.' && ch != '-' && ch != ' ')
+			if ((ch < 'А' || ch > 'я') && ch != '-' && (ch < '0' || ch > '9') && ch != '\b' && ch != ',' && ch != '.' && ch != '-' && ch != ' ')
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void note_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений замечания
+		{
+			char ch = e.KeyChar;
+			if ((ch < 'А' || ch > 'я') && (ch < 'A' || ch > 'z') && ch != '-' && (ch < '0' || ch > '9') && ch != '\b' && ch != ',' && ch != '.' && ch != '-' && ch != ' ')
 			{
 				e.Handled = true;
 			}
@@ -83,6 +92,8 @@ namespace TimetableOfClasses
 
 		private void save_Click(object sender, EventArgs e)//Сохранить изменения
 		{
+			checkNumber();
+			if (checkField()) return; 
 
 			if (Enclosures == null)
 			{
@@ -110,6 +121,37 @@ namespace TimetableOfClasses
 				else MessageBox.Show("Упс, невозможно обновить информацию об этом корпусе!");
 			}
 
+		}
+
+		private void phoneNumber_Layout(object sender, LayoutEventArgs e)
+		{
+			checkNumber();
+		}
+		private void checkNumber()
+		{
+			if (phoneNumber.Text.Length != 6 && phoneNumber.Text.Length != 11)
+			{
+				MessageBox.Show("Номер может быть длинной только 6 либо 11 символов!");
+				phoneNumber.Text = "";
+			}
+		}
+		private bool checkField()
+		{
+			bool flag = false;
+			foreach (object obj in this.Controls)
+			{
+				if ((obj is TextBox) && (obj as TextBox).Text.Length == 0 && (obj as TextBox).Name != "note")
+				{
+					(obj as TextBox).BackColor = Color.Red;
+					flag = true;
+				}
+			}
+			return flag;
+		}
+
+		private void name_TextChanged(object sender, EventArgs e)
+		{
+			if ((sender as TextBox).BackColor == Color.Red) (sender as TextBox).BackColor = DefaultBackColor;
 		}
 	}
 }
