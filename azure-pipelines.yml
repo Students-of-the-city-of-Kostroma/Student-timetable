@@ -5,7 +5,8 @@
 
 trigger:
 - Testing
-- task*
+- task-*
+- 17-*
 
 pool:
   vmImage: 'VS2017-Win2016'
