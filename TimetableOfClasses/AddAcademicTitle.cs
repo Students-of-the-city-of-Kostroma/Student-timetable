@@ -28,6 +28,7 @@ namespace TimetableOfClasses
 			this.Text = "Изменение уч. звания";
             this.btCreateAndClean.Visible = false;
             this.btCreateAndClose.Text = "Изменить";
+            this.Reduction.Enabled = false;
 			FullName.Text = mTitle.FullName;
 			Reduction.Text = mTitle.Reduction;
             update = true;

@@ -18,7 +18,6 @@ namespace LibOfTimetableOfClasses
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Сокращенная запись уч. звания";
-			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[0] = column;
@@ -27,7 +26,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полная запись уч. звания";
-			column.ReadOnly = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 		}
@@ -70,17 +68,17 @@ namespace LibOfTimetableOfClasses
             if ((mTitle.FullName == null && mTitle.Reduction == null))
                 return false;
 
-            for (int i = 0; i < table.Rows.Count; i++)
+            for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName)
+				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
 					try
 					{
-                        table.Rows[i].BeginEdit();
-                        table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
-                        table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
-                        table.Rows[i].EndEdit();
-                        table.Rows[i].AcceptChanges();
+                        this.table.Rows[i].BeginEdit();
+                        this.table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
+                        this.table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
+                        this.table.Rows[i].EndEdit();
+                        this.table.Rows[i].AcceptChanges();
                         return true;
 					}
 					catch (Exception ex)
