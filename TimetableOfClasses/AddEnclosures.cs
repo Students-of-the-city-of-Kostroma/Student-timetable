@@ -138,13 +138,10 @@ namespace TimetableOfClasses
 		private bool checkField()
 		{
 			bool flag = false;
-			foreach (object obj in this.Controls)
-			{
-				if ((obj is TextBox) && (obj as TextBox).BackColor == Color.Red && (obj as TextBox).Name != "note")
-				{
-					flag = true;
-				}
-			}
+			if (name.Text.Length == 0) { name.BackColor = Color.Red; flag = true; }
+			if (university.Text.Length == 0) { university.BackColor = Color.Red; flag = true; }
+			if (address.Text.Length == 0) { address.BackColor = Color.Red; flag = true; }
+			if (phoneNumber.Text.Length == 0) { phoneNumber.BackColor = Color.Red; flag = true; }
 			return flag;
 		}
 

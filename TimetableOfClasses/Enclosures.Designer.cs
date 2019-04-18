@@ -61,6 +61,7 @@
 			this.DG.Location = new System.Drawing.Point(12, 12);
 			this.DG.Name = "DG";
 			this.DG.ReadOnly = true;
+			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(672, 283);
 			this.DG.TabIndex = 0;
 			this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
