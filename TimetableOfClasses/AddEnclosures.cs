@@ -140,9 +140,8 @@ namespace TimetableOfClasses
 			bool flag = false;
 			foreach (object obj in this.Controls)
 			{
-				if ((obj is TextBox) && (obj as TextBox).Text.Length == 0 && (obj as TextBox).Name != "note")
+				if ((obj is TextBox) && (obj as TextBox).BackColor == Color.Red && (obj as TextBox).Name != "note")
 				{
-					(obj as TextBox).BackColor = Color.Red;
 					flag = true;
 				}
 			}
@@ -151,7 +150,8 @@ namespace TimetableOfClasses
 
 		private void name_TextChanged(object sender, EventArgs e)
 		{
-			if ((sender as TextBox).BackColor == Color.Red) (sender as TextBox).BackColor = DefaultBackColor;
+			if ((sender as TextBox).Text.Length==0) (sender as TextBox).BackColor = Color.Red;
+			else (sender as TextBox).BackColor = Color.White;
 		}
 	}
 }
