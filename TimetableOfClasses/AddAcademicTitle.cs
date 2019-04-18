@@ -50,7 +50,7 @@ namespace TimetableOfClasses
             else
             {
 
-                if (isNumberDontContains(Reduction.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+                if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
                 {
                     MTitle Title = new MTitle(FullName.Text, Reduction.Text);
                     Controllers.CTitle.Insert(Title);
@@ -65,7 +65,7 @@ namespace TimetableOfClasses
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
 			
-			if (isNumberDontContains(Reduction.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+			if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 			{
 				MTitle Title = new MTitle(FullName.Text, Reduction.Text);
 				Controllers.CTitle.Insert(Title);
