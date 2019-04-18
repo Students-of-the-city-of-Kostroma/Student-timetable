@@ -43,10 +43,10 @@
 			this.ученыеЗванияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ученыеСтепениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.видыЗанятийПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -172,6 +172,13 @@
 			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Виды занятий подготовки";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.видыЗанятийПодготовкиToolStripMenuItem_Click);
 			// 
+			// КафедрыПодготовкиКорпусаtoolStripMenuItem1
+			// 
+			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Name = "КафедрыПодготовкиКорпусаtoolStripMenuItem1";
+			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
+			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Text = "Кафедры подготовки";
+			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Click += new System.EventHandler(this.КафедрыПодготовкиКорпусаtoolStripMenuItem1_Click);
+			// 
 			// расписаниеToolStripMenuItem
 			// 
 			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
@@ -192,13 +199,6 @@
 			this.рабочийToolStripMenuItem.Name = "рабочийToolStripMenuItem";
 			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
 			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
-			// 
-			// КафедрыПодготовкиКорпусаtoolStripMenuItem1
-			// 
-			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Name = "КафедрыПодготовкиКорпусаtoolStripMenuItem1";
-			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
-			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Text = "Кафедры подготовки";
-			this.КафедрыПодготовкиКорпусаtoolStripMenuItem1.Click += new System.EventHandler(this.КафедрыПодготовкиКорпусаtoolStripMenuItem1_Click);
 			// 
 			// Start
 			// 

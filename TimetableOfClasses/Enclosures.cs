@@ -101,12 +101,22 @@ namespace TimetableOfClasses
 
 		private void Updatet(object sender, EventArgs e)
 		{
-
+			if (DG.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				MEnclosures mEnclosures = new MEnclosures((string)Row[0], (string)Row[1], (string)Row[2], (string)Row[3], (string)Row[4]);
+				AddEnclosures addEnclosures = new AddEnclosures(mEnclosures);
+				addEnclosures.Owner = this;
+				addEnclosures.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
 
 		private void Added(object sender, EventArgs e)
 		{
-
+			AddEnclosures addEnclosures = new AddEnclosures();
+			addEnclosures.Owner = this;
+			addEnclosures.ShowDialog();
 		}
 	}
 }
