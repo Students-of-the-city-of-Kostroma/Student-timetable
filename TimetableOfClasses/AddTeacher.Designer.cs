@@ -228,7 +228,6 @@
 			this.windows.Name = "windows";
 			this.windows.Size = new System.Drawing.Size(239, 22);
 			this.windows.TabIndex = 25;
-			this.windows.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.windows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.windows.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
