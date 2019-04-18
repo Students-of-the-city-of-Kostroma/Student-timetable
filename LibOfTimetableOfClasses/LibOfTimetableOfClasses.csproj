@@ -50,9 +50,7 @@
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
-    <Compile Include="CTrainingProfiles.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
