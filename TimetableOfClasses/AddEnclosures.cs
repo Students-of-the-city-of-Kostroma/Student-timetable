@@ -24,6 +24,13 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			Enclosures = mEnclosures;
+			name.Text = Enclosures.Name;
+			name.Enabled = false;
+			university.Text = Enclosures.University;
+			university.Enabled = false;
+			address.Text = Enclosures.Address;
+			phoneNumber.Text = Enclosures.Phone;
+			note.Text = Enclosures.Comment;
 		}
 
 		private void name_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Названия корпуса
