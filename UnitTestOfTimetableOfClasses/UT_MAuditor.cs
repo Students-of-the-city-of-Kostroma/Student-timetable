@@ -59,6 +59,7 @@ namespace UnitTestOfTimetableOfClasses
 				Assert.Fail(ex.Message);
 			}
 		}
+
 		[TestMethod]
 		public void Issue_98_5()
 		{
