@@ -75,7 +75,7 @@ namespace TimetableOfClasses
 		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AcademicTitle academicTitle = new AcademicTitle();
-			academicTitle.Show();
+            academicTitle.Show();
 		}
 
 		private void ученыеСтепениToolStripMenuItem_Click(object sender, EventArgs e)

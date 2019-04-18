@@ -38,26 +38,35 @@ namespace TimetableOfClasses
 		{
             if (update)
             {
-                if (isNumberDontContains(Reduction.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+                if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
                 {
-                    MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                    Controllers.CTitle.Update(Title);
-                    FullName.Text = "";
-                    Reduction.Text = "";
-                    Close();
+                    if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+                    {
+                        MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+                        Controllers.CTitle.Update(Title);
+                        FullName.Text = "";
+                        Reduction.Text = "";
+                        Close();
+                     }
+                    else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
             else
             {
 
-                if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+                if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
                 {
-                    MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                    Controllers.CTitle.Insert(Title);
-                    FullName.Text = "";
-                    Reduction.Text = "";
-                    Close();
+                    if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+                    {
+                        MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+                        Controllers.CTitle.Insert(Title);
+                        FullName.Text = "";
+                        Reduction.Text = "";
+                        Close();
+                    }
+                    else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
@@ -66,13 +75,17 @@ namespace TimetableOfClasses
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
 			
-			if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text) && (Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 			{
-				MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-				Controllers.CTitle.Insert(Title);
-				FullName.Text = "";
-				Reduction.Text = "";
-			}
+                if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+                {
+                    MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+                    Controllers.CTitle.Insert(Title);
+                    FullName.Text = "";
+                    Reduction.Text = "";
+                }
+                else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+            }
 			else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
 		}
 

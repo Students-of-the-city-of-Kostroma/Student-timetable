@@ -140,16 +140,9 @@
 			// ученыеСтепениToolStripMenuItem
 			// 
 			this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
-			this.ученыеСтепениToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.ученыеСтепениToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
 			this.ученыеСтепениToolStripMenuItem.Text = "Ученые степени";
 			this.ученыеСтепениToolStripMenuItem.Click += new System.EventHandler(this.ученыеСтепениToolStripMenuItem_Click);
-			// 
-			// ученыеЗванияToolStripMenuItem
-			// 
-			this.ученыеЗванияToolStripMenuItem.Name = "ученыеЗванияToolStripMenuItem";
-			this.ученыеЗванияToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.ученыеЗванияToolStripMenuItem.Text = "Ученые звания";
-			this.ученыеЗванияToolStripMenuItem.Click += new System.EventHandler(this.ученыеЗванияToolStripMenuItem_Click);
 			// 
 			// ученыеСтепениToolStripMenuItem
 			// 
