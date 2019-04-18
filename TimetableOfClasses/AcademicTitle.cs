@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibOfTimetableOfClasses;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.Data;
+	using System.Drawing;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.Windows.Forms;
+	using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -46,23 +46,23 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-					string message = "Вы уверны что хотите удалить уч. звание?";
-					string caption = "Подтверждение удаления";
-					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-					DialogResult result;
+				string message = "Вы уверны что хотите удалить уч. звание?";
+				string caption = "Подтверждение удаления";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result;
 
-					result = MessageBox.Show(message, caption, buttons);
-					if (result == System.Windows.Forms.DialogResult.Yes)
-					{
-						DG_AcademicTitle.Rows.RemoveAt(DG_AcademicTitle.SelectedCells[0].RowIndex);
-					}
-				
+				result = MessageBox.Show(message, caption, buttons);
+				if (result == System.Windows.Forms.DialogResult.Yes)
+				{
+					DG_AcademicTitle.Rows.RemoveAt(DG_AcademicTitle.SelectedCells[0].RowIndex);
+				}
+
 			}
 		}
 
 		private void Change_Click(object sender, EventArgs e)
 		{
-			if(DG_AcademicTitle.SelectedRows.Count==1)
+			if (DG_AcademicTitle.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
 				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
