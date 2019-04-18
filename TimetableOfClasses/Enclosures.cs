@@ -104,7 +104,7 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				MEnclosures mEnclosures = new MEnclosures((string)Row["CName"], (string)Row["CUniversity"], (string)Row["CAddress"], (string)Row["CPhone"], (string)Row["CComment"]);
+				MEnclosures mEnclosures = new MEnclosures((string)Row[0], (string)Row[1], (string)Row[2], (string)Row[3], (string)Row[4]);
 				AddEnclosures addEnclosures = new AddEnclosures(mEnclosures);
 				addEnclosures.Owner = this;
 				addEnclosures.ShowDialog();

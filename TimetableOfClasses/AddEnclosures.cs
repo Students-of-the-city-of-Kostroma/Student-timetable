@@ -114,7 +114,7 @@ namespace TimetableOfClasses
 				Enclosures.Phone = phoneNumber.Text;
 				Enclosures.Comment = note.Text;
 
-				if (Controllers.CGroup.Update(Enclosures))
+				if (Controllers.СEnclosures.Update(Enclosures))
 				{
 					this.Close();
 				}
