@@ -21,6 +21,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
+			tbNaprav.Text = "Информационные системы";
 			tbVixodnie.Text = "Воскресенье";
 		}
 
