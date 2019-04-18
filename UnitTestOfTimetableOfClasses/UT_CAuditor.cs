@@ -20,6 +20,7 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 - 1, C2);
 		}
+
 		/// <summary>
 		/// Начальные условия для метода Delete
 		/// </summary>
@@ -127,7 +128,7 @@ namespace UnitTestOfTimetableOfClasses
 			act = Controllers.CAuditor.Insert(T_Auditor);
 			int C2 = Controllers.CAuditor.Rows.Count;
 			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1+1, C2);
+			Assert.AreEqual(C1 + 1, C2);
 		}
 
 		[TestMethod]
@@ -141,7 +142,7 @@ namespace UnitTestOfTimetableOfClasses
 			act = Controllers.CAuditor.Insert(T_Auditor);
 			int C2 = Controllers.CAuditor.Rows.Count;
 			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1+1, C2);
+			Assert.AreEqual(C1 + 1, C2);
 		}
 
 		[TestMethod]
