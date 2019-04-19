@@ -9,7 +9,7 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// Профили подготовки
 	/// </summary>
-	class MTrainingProfile : Model
+	public class MTrainingProfile : Model
 	{
 		/// <summary>
 		/// Полное название профиля подготовки
