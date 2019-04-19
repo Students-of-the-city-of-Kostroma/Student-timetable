@@ -73,6 +73,5 @@ namespace UnitTestOfTimetableOfClasses
 				Assert.Fail(ex.Message);
 			}
 		}
-
 	}
 }
