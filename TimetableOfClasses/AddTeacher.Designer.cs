@@ -77,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.firstName.Location = new System.Drawing.Point(12, 28);
+			this.firstName.MaxLength = 25;
 			this.firstName.Name = "firstName";
 			this.firstName.Size = new System.Drawing.Size(239, 22);
 			this.firstName.TabIndex = 2;
@@ -90,6 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.secondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.secondName.Location = new System.Drawing.Point(12, 84);
+			this.secondName.MaxLength = 50;
 			this.secondName.Name = "secondName";
 			this.secondName.Size = new System.Drawing.Size(239, 22);
 			this.secondName.TabIndex = 4;
@@ -115,6 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.patronymic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.patronymic.Location = new System.Drawing.Point(12, 137);
+			this.patronymic.MaxLength = 30;
 			this.patronymic.Name = "patronymic";
 			this.patronymic.Size = new System.Drawing.Size(239, 22);
 			this.patronymic.TabIndex = 6;
@@ -151,6 +154,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.notes.Location = new System.Drawing.Point(12, 191);
+			this.notes.MaxLength = 256;
 			this.notes.Name = "notes";
 			this.notes.Size = new System.Drawing.Size(239, 22);
 			this.notes.TabIndex = 19;
@@ -175,6 +179,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.department.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.department.Location = new System.Drawing.Point(12, 246);
+			this.department.MaxLength = 100;
 			this.department.Name = "department";
 			this.department.Size = new System.Drawing.Size(239, 22);
 			this.department.TabIndex = 21;
@@ -200,6 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.metodDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.metodDays.Location = new System.Drawing.Point(12, 303);
+			this.metodDays.MaxLength = 70;
 			this.metodDays.Name = "metodDays";
 			this.metodDays.Size = new System.Drawing.Size(239, 22);
 			this.metodDays.TabIndex = 23;
@@ -225,6 +231,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.windows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.windows.Location = new System.Drawing.Point(12, 357);
+			this.windows.MaxLength = 70;
 			this.windows.Name = "windows";
 			this.windows.Size = new System.Drawing.Size(239, 22);
 			this.windows.TabIndex = 25;
@@ -249,6 +256,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.weekends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.weekends.Location = new System.Drawing.Point(12, 408);
+			this.weekends.MaxLength = 70;
 			this.weekends.Name = "weekends";
 			this.weekends.Size = new System.Drawing.Size(239, 22);
 			this.weekends.TabIndex = 27;

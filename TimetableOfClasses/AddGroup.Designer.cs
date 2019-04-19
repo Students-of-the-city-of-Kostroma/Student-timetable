@@ -70,6 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbVixodnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbVixodnie.Location = new System.Drawing.Point(11, 421);
+			this.tbVixodnie.MaxLength = 70;
 			this.tbVixodnie.Name = "tbVixodnie";
 			this.tbVixodnie.Size = new System.Drawing.Size(235, 22);
 			this.tbVixodnie.TabIndex = 28;
@@ -107,6 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbNaprav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbNaprav.Location = new System.Drawing.Point(11, 139);
+			this.tbNaprav.MaxLength = 100;
 			this.tbNaprav.Name = "tbNaprav";
 			this.tbNaprav.Size = new System.Drawing.Size(235, 22);
 			this.tbNaprav.TabIndex = 24;
@@ -144,6 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbNameGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbNameGroup.Location = new System.Drawing.Point(12, 29);
+			this.tbNameGroup.MaxLength = 10;
 			this.tbNameGroup.Name = "tbNameGroup";
 			this.tbNameGroup.Size = new System.Drawing.Size(235, 22);
 			this.tbNameGroup.TabIndex = 20;
