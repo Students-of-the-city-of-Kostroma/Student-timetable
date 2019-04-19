@@ -47,6 +47,7 @@
     <Compile Include="UT_CGroup.cs" />
     <Compile Include="UT_Deleted_CTeacher.cs" />
     <Compile Include="UT_Delete_CGroup.cs" />
+    <Compile Include="UT_Insert_CEnclosurse.cs" />
     <Compile Include="UT_Insert_CTeacher.cs" />
     <Compile Include="UT_Insert_CGroup.cs" />
     <Compile Include="UT_MDiscipline.cs" />
