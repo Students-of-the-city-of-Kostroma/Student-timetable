@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// Контроллер класса объекта Профили подготовки
 	/// </summary>
-	class CTrainingProfile : DataTable, IController
+	public class CTrainingProfile : DataTable, IController
 	{
 		public CTrainingProfile() : base("Профиль подготовки")
         {

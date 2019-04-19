@@ -95,5 +95,11 @@ namespace TimetableOfClasses
 			Directory directory = new Directory();
 			directory.Show();
 		}
+
+		private void профильПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TrainingProfiles trainingProfiles = new TrainingProfiles();
+			trainingProfiles.Show();
+		}
 	}
 }

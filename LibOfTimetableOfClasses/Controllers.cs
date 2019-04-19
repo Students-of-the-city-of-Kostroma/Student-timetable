@@ -16,5 +16,6 @@ namespace LibOfTimetableOfClasses
         public static CDiscipline CDiscipline = new CDiscipline();
         public static CGroup CGroup = new CGroup();
 		public static CTitle CTitle = new CTitle();
-    }
+		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
+	}
 }
