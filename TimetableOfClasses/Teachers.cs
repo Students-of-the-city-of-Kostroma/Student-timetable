@@ -27,21 +27,23 @@ namespace TimetableOfClasses
             t.ShowDialog();
         }
 
-        private void RemoveTeacher(object sender, EventArgs e)
-        {
+		private void RemoveTeacher(object sender, EventArgs e)
+		{
 			//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
+			if (DG.SelectedRows.Count == 0) return;
+
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (DG.SelectedRows.Count>0 && dr == DialogResult.Yes)
+			MTeacher mTeacher;
+			if (dr == DialogResult.Yes)
 			{
-				MTeacher mTeacher;
-				foreach(DataGridViewRow row in DG.SelectedRows)
+				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mTeacher = new MTeacher((string)Row["FullName"], (string)Row["Departament"]);
 					Controllers.CTeacher.Delete(mTeacher);
 				}
 			}
-        }
+		}
 
 		private void Update(object sender, EventArgs e)
 		{
