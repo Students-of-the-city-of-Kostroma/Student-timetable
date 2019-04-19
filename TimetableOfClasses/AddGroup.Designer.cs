@@ -211,7 +211,6 @@
             0,
             0});
 			this.nudMinPar.Name = "nudMinPar";
-			this.nudMinPar.ReadOnly = true;
 			this.nudMinPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMinPar.TabIndex = 35;
 			this.nudMinPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
@@ -239,7 +238,6 @@
             0,
             0});
 			this.nudMaxPar.Name = "nudMaxPar";
-			this.nudMaxPar.ReadOnly = true;
 			this.nudMaxPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMaxPar.TabIndex = 37;
 			this.nudMaxPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
@@ -267,7 +265,6 @@
             0,
             0});
 			this.nudCountStudents.Name = "nudCountStudents";
-			this.nudCountStudents.ReadOnly = true;
 			this.nudCountStudents.Size = new System.Drawing.Size(236, 20);
 			this.nudCountStudents.TabIndex = 38;
 			this.nudCountStudents.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
@@ -288,7 +285,6 @@
             0,
             0});
 			this.nudSmena.Name = "nudSmena";
-			this.nudSmena.ReadOnly = true;
 			this.nudSmena.Size = new System.Drawing.Size(236, 20);
 			this.nudSmena.TabIndex = 40;
 			this.nudSmena.Value = new decimal(new int[] {
