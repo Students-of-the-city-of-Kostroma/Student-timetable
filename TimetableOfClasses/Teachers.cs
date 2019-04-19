@@ -30,15 +30,18 @@ namespace TimetableOfClasses
         private void RemoveTeacher(object sender, EventArgs e)
         {
 			//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
-			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (DG.SelectedRows.Count>0 && dr == DialogResult.Yes)
+			if (DG.SelectedRows.Count>0)
 			{
+				DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				MTeacher mTeacher;
-				foreach(DataGridViewRow row in DG.SelectedRows)
+				if (dr == DialogResult.Yes)
 				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mTeacher = new MTeacher((string)Row["FullName"], (string)Row["Departament"]);
-					Controllers.CTeacher.Delete(mTeacher);
+					foreach (DataGridViewRow row in DG.SelectedRows)
+					{
+						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+						mTeacher = new MTeacher((string)Row["FullName"], (string)Row["Departament"]);
+						Controllers.CTeacher.Delete(mTeacher);
+					}
 				}
 			}
         }
