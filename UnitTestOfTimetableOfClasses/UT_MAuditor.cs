@@ -60,6 +60,7 @@ namespace UnitTestOfTimetableOfClasses
 				Assert.Fail(ex.Message);
 			}
 		}
+
 		[TestMethod]
 		public void Task_274_5()
 		{
