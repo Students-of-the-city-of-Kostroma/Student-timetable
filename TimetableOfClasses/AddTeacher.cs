@@ -28,6 +28,23 @@ namespace TimetableOfClasses
 			weekends.Text = "Сб, Вс";
 		}
 
+		private bool isEmpty(string[] strArgs)
+		{
+			foreach(var cur in strArgs)
+			{
+				if (cur.Length == 0)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private void message()
+		{
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
 		public AddTeacher(MTeacher mTeacher)
 		{
 			InitializeComponent();
@@ -63,15 +80,21 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (Add())
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, patronymic.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
-				Close();
+				if (Add())
+				{
+					Close();
+				}
+				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
-			else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");			
+			else message();		
 		}
 
 		private bool Add()
 		{
+
+
 			if (Lehrer == null)
 			{
 				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
@@ -88,8 +111,9 @@ namespace TimetableOfClasses
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);					
+				return Controllers.CTeacher.Update(Lehrer);
 			}
+
 		}
 
 		/// <summary>
@@ -107,6 +131,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+
 			if (R.Text.Length > 2)
 			{
 				if (R.Text.IndexOf(", ") == 0)
@@ -124,7 +149,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
-			if(R.Text.Length > 2)
+			if (R.Text.Length > 2)
 			{
 				if (R.Text.IndexOf(" ") == 0)
 					R.Text = R.Text.Substring(1);
@@ -133,6 +158,7 @@ namespace TimetableOfClasses
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
+
 		}
 
 		private void SelectionOfLetters3(object sender, EventArgs e)
@@ -140,6 +166,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+
 			if (R.Text.Length > 2)
 			{
 				if (R.Text.IndexOf(" ") == 0)
@@ -148,6 +175,7 @@ namespace TimetableOfClasses
 					R.Text = R.Text.Remove(R.Text.Length - 1);
 				R.Text = R.Text.ToUpper();
 			}
+
 		}
 
 		private void SelectionOfLetters4(object sender, EventArgs e)
@@ -155,6 +183,7 @@ namespace TimetableOfClasses
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^0-9а-яА-Я-, ]", "");
 			R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+
 			if (R.Text.Length > 2)
 			{
 				if (R.Text.IndexOf(" ") == 0)
@@ -164,6 +193,7 @@ namespace TimetableOfClasses
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
+
 		}
 
 		private static string FirstLetterToUpper(string str)
@@ -238,6 +268,15 @@ namespace TimetableOfClasses
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
 			Close();
+		}
+
+		private void fieldChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if (R.TextLength == 0)
+				R.BackColor = Color.Red;
+			else
+				R.BackColor = Color.White;
 		}
 	}
 }

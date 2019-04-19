@@ -163,8 +163,6 @@
 			this.ученыеСтепениToolStripMenuItem.Text = "Ученые степени";
 			this.ученыеСтепениToolStripMenuItem.Click += new System.EventHandler(this.ученыеСтепениToolStripMenuItem_Click);
 			// 
-			// корпусаToolStripMenuItem
-			// 
 			this.корпусаToolStripMenuItem.Name = "корпусаToolStripMenuItem";
 			this.корпусаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.корпусаToolStripMenuItem.Text = "Корпуса";

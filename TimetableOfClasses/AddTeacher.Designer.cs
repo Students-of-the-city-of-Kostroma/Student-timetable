@@ -81,6 +81,7 @@
 			this.firstName.Name = "firstName";
 			this.firstName.Size = new System.Drawing.Size(239, 22);
 			this.firstName.TabIndex = 2;
+			this.firstName.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.firstName.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -94,6 +95,7 @@
 			this.secondName.Name = "secondName";
 			this.secondName.Size = new System.Drawing.Size(239, 22);
 			this.secondName.TabIndex = 4;
+			this.secondName.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.secondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.secondName.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -119,6 +121,7 @@
 			this.patronymic.Name = "patronymic";
 			this.patronymic.Size = new System.Drawing.Size(239, 22);
 			this.patronymic.TabIndex = 6;
+			this.patronymic.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.patronymic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.patronymic.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -180,6 +183,7 @@
 			this.department.Name = "department";
 			this.department.Size = new System.Drawing.Size(239, 22);
 			this.department.TabIndex = 21;
+			this.department.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.department.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.department.Leave += new System.EventHandler(this.SelectionOfLetters3);
 			// 
@@ -205,6 +209,7 @@
 			this.metodDays.Name = "metodDays";
 			this.metodDays.Size = new System.Drawing.Size(239, 22);
 			this.metodDays.TabIndex = 23;
+			this.metodDays.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.metodDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.metodDays.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
@@ -255,6 +260,7 @@
 			this.weekends.Name = "weekends";
 			this.weekends.Size = new System.Drawing.Size(239, 22);
 			this.weekends.TabIndex = 27;
+			this.weekends.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.weekends.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.weekends.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
