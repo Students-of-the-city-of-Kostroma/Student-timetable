@@ -86,8 +86,8 @@ namespace TimetableOfClasses
 
 		private void корпусаToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
-			typesOfOccupations.Show();
+			Enclosures enclosures = new Enclosures();
+			enclosures.Show();
 		}
 		
 		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -96,10 +96,10 @@ namespace TimetableOfClasses
 			directory.Show();
 		}
 
-		private void КафедрыПодготовкиКорпусаtoolStripMenuItem1_Click(object sender, EventArgs e)
+		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Enclosures enclosures = new Enclosures();
-			enclosures.Show();
+			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
+			typesOfOccupations.Show();
 		}
 	}
 }
