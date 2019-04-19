@@ -4,7 +4,8 @@ using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]
+
+	[TestClass]
     public class UT_MAuditor
     {
         //[TestMethod]
