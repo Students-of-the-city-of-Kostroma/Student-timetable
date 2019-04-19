@@ -86,8 +86,9 @@ namespace TimetableOfClasses
 
 		private void Deletet(object sender, EventArgs e)
 		{
+			if (DG.SelectedRows.Count == 0) return;
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (DG.SelectedRows.Count > 0 && dr == DialogResult.Yes)
+			if (dr == DialogResult.Yes)
 			{
 				MEnclosures mEnclosures;
 				foreach (DataGridViewRow row in DG.SelectedRows)
