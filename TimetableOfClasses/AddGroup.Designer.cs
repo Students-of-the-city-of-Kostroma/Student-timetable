@@ -190,7 +190,6 @@
             0,
             0});
 			this.nudSemest.Name = "nudSemest";
-			this.nudSemest.ReadOnly = true;
 			this.nudSemest.Size = new System.Drawing.Size(236, 20);
 			this.nudSemest.TabIndex = 33;
 			this.nudSemest.Value = new decimal(new int[] {
