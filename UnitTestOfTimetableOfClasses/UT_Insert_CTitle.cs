@@ -6,18 +6,18 @@ namespace UnitTestOfTimetableOfClasses
 {
 	
 	[TestClass]
-	public class UT_Insert_AcademicTitle
+	public class UT_Insert_CTitle
 	{
 
 		[TestMethod]
 		public void Task_361_1() //пустая таблица
 		{
 			//arrange
-			MTitle ma = new MTitle("Проф.", "Профессор");
+			Controllers.CTitle.Select().Clear();
+			MTitle ma = new MTitle("Профессор", "Проф.");
 			bool expected = true;
 			//act
-			CTitle ca = new CTitle();
-			bool actual = ca.Insert(ma);
+			bool actual = Controllers.CTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -26,13 +26,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			MTitle ma1 = new MTitle("Проф.", "Профессор");
-			MTitle ma = new MTitle("Проф.", "Доцент");
+			Controllers.CTitle.Select().Clear();
+			Task_361_1();
+			MTitle ma = new MTitle("Доцент", "Проф.");
 			bool expected = false;
 			//act
-			CTitle ca = new CTitle();
-			bool t = ca.Insert(ma1);
-			bool actual = ca.Insert(ma);
+			bool actual=Controllers.CTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -41,13 +40,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
 		{
 			//arrange
-			MTitle ma1 = new MTitle("Проф.", "Профессор");
-			MTitle ma = new MTitle("Доц.", "Профессор");
+			Controllers.CTitle.Select().Clear();
+			Task_361_1();
+			MTitle ma = new MTitle("Профессор", "Доц.");
 			bool expected = false;
 			//act
-			CTitle ca = new CTitle();
-			bool t = ca.Insert(ma1);
-			bool actual = ca.Insert(ma);
+			bool actual = Controllers.CTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
