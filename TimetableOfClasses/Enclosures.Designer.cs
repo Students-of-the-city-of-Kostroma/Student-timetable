@@ -59,6 +59,7 @@
             this.CPhone,
             this.CComment});
 			this.DG.Location = new System.Drawing.Point(12, 12);
+			this.DG.MultiSelect = false;
 			this.DG.Name = "DG";
 			this.DG.ReadOnly = true;
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
