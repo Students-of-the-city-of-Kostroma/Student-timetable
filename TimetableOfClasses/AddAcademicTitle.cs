@@ -17,9 +17,11 @@ namespace TimetableOfClasses
 	{
 
 		private MTitle title;
+		Random rand = new Random();
 		public AddAcademicTitle()
 		{
 			InitializeComponent();
+			Code.Text = Convert.ToString(rand.Next(100));
 			
 		}
 		public AddAcademicTitle(MTitle mTitle)
@@ -28,9 +30,10 @@ namespace TimetableOfClasses
 			this.Text = "Изменение уч. звания";
 			this.btCreateAndClean.Visible = false;
 			this.btCreateAndClose.Text = "Изменить";
+			this.Code.Enabled = false;
 			FullName.Text = mTitle.FullName;
 			Reduction.Text = mTitle.Reduction;
-			Reduction.Enabled = false;
+			Code.Text = Convert.ToString(mTitle.Code);
 			title = mTitle;
 		}
 
@@ -47,17 +50,24 @@ namespace TimetableOfClasses
 
 		private bool Add()
 		{
-
 			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
 					if (title == null)
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
-						return true;
+						try
+						{
+							MTitle Title = new MTitle(FullName.Text, Reduction.Text, Convert.ToInt32(Code.Text));
+							Controllers.CTitle.Insert(Title);
+							return true;
 
+						}
+						catch(FormatException)
+						{
+							MessageBox.Show("Недопустимые знаки", "Попробуйте еще раз", MessageBoxButtons.OK);
+							return false;
+						}
 					}
 					else
 					{
@@ -90,10 +100,12 @@ namespace TimetableOfClasses
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
 					
-					MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+					MTitle Title = new MTitle(FullName.Text, Reduction.Text, Convert.ToInt32(Code.Text));
 					Controllers.CTitle.Insert(Title);
 					FullName.Text = "";
 					Reduction.Text = "";
+					Code.Text = Convert.ToString(rand.Next(100));
+
 				}
 				else MessageBox.Show("Недопустимые знаки", "Попробуйте снова", MessageBoxButtons.OK);
 			}
@@ -118,6 +130,9 @@ namespace TimetableOfClasses
 			return true;
 		}
 
+		private void AddAcademicTitle_Load(object sender, EventArgs e)
+		{
 
+		}
 	}
 }

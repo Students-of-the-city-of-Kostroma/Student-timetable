@@ -18,6 +18,7 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			DG_AcademicTitle.DataSource = Controllers.CTitle.Select();
 			DG_AcademicTitle.AutoGenerateColumns = false;
+			
 		}
 
 
@@ -75,7 +76,7 @@ namespace TimetableOfClasses
 			if (DG_AcademicTitle.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
-				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
+				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"], (int)Row["Код уч. звания"]);
 				AddAcademicTitle add = new AddAcademicTitle(mTitle);
 				add.Owner = this;
 				add.ShowDialog();

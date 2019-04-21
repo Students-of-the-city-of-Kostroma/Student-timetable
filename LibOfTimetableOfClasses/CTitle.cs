@@ -13,15 +13,21 @@ namespace LibOfTimetableOfClasses
 		public CTitle() : base("Уч.звание")
 		{
 
-			DataColumn[] keys = new DataColumn[2];
+			DataColumn[] keys = new DataColumn[3];
 
 			DataColumn column = new DataColumn();
+			column.DataType = typeof(int);
+			column.ColumnName = "Код уч. звания";
+			column.Unique = true;
+			table.Columns.Add(column);
+			keys[2] = column;
+
+			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Сокращенная запись уч. звания";
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[0] = column;
-
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
@@ -29,6 +35,10 @@ namespace LibOfTimetableOfClasses
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[1] = column;
+
+			
+			
+
 		}
 
 		public override bool Delete(Model model)
@@ -53,6 +63,7 @@ namespace LibOfTimetableOfClasses
 				DataRow newRow = table.NewRow();
 				newRow["Полная запись уч. звания"] = mTitle.FullName;
 				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
+				newRow["Код уч. звания"] = mTitle.Code;
 				table.Rows.Add(newRow);
 				return true;
 			}
@@ -69,7 +80,7 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((mTitle.Reduction == (string)table.Rows[i]["Сокращенная запись уч. звания"]))
+				if ((mTitle.Code == (int)table.Rows[i]["Код уч. звания"]))
 				{
 					try
 					{
