@@ -17,6 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_AcademicTitle.DataSource = Controllers.CTitle.Select();
+			DG_AcademicTitle.AutoGenerateColumns = false;
 		}
 
 
@@ -25,10 +26,12 @@ namespace TimetableOfClasses
 			if (DG_AcademicTitle.SelectedCells.Count > 0)
 			{
 				Delete.Enabled = true;
+				Change.Enabled = true;
 			}
 			else
 			{
 				Delete.Enabled = false;
+				Change.Enabled = false;
 			}
 		}
 
@@ -72,61 +75,8 @@ namespace TimetableOfClasses
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
-		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			DataGridViewColumn newColumn = DG_AcademicTitle.Columns[e.ColumnIndex];
-			DataGridViewColumn oldColumn = DG_AcademicTitle.SortedColumn;
-			ListSortDirection direction;
 
-			if (DG_AcademicTitle.SelectedRows.Count == 0) return;
-			DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0]?.DataBoundItem)?.Row;
-			if (Row == null) return;
-
-			if (oldColumn != null)
-			{
-				if (oldColumn == newColumn &&
-					DG_AcademicTitle.SortOrder == SortOrder.Ascending)
-				{
-					direction = ListSortDirection.Descending;
-				}
-				else
-				{
-					direction = ListSortDirection.Ascending;
-					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-				}
-			}
-			else
-			{
-				direction = ListSortDirection.Ascending;
-			}
-
-			//сохраняем номер выделенной строки
-			List<object> arraySelectedRows = new List<object>();
-			foreach (DataGridViewRow item in DG_AcademicTitle.SelectedRows)
-			{
-				arraySelectedRows.Add(item.DataBoundItem);
-			}
-
-			DG_AcademicTitle.Sort(newColumn, direction);
-
-			foreach (DataGridViewRow item in DG_AcademicTitle.Rows)
-			{
-				if (arraySelectedRows.Contains(item.DataBoundItem))
-				{
-					item.Selected = true;
-				}
-			}
-		}
-
-		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-		{
-			foreach (DataGridViewColumn column in DG_AcademicTitle.Columns)
-			{
-				column.SortMode = DataGridViewColumnSortMode.Programmatic;
-			}
-		}
-
-		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		private void DG_Title_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
 		{
 			int index = e.RowIndex;
 			string indexStr = (index + 1).ToString();

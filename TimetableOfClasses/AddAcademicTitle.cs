@@ -28,7 +28,6 @@ namespace TimetableOfClasses
 			this.Text = "Изменение уч. звания";
 			this.btCreateAndClean.Visible = false;
 			this.btCreateAndClose.Text = "Изменить";
-			this.Reduction.Enabled = false;
 			FullName.Text = mTitle.FullName;
 			Reduction.Text = mTitle.Reduction;
 			update = true;
@@ -36,40 +35,24 @@ namespace TimetableOfClasses
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-			if (update)
-			{
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
-				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Update(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
-					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
-			}
+			if (String.IsNullOrWhiteSpace(FullName.Text) || String.IsNullOrWhiteSpace(Reduction.Text))
+				MessageBox.Show("Заполните все поля");
 			else
 			{
-
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				MTitle mtitle = new MTitle(FullName.Text, Reduction.Text);
+				try
 				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
-					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
+					if (!update)
+						Controllers.CTitle.Insert(mtitle);
+					else Controllers.CTitle.Update(mtitle);
+					Close();
 				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
+
 		}
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
