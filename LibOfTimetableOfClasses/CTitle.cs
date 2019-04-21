@@ -69,14 +69,17 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-
-				if (mTitle.Reduction == (string)this.table.Rows[i]["Сокращенная запись уч. звания"])
+				if ((mTitle.Reduction == (string)table.Rows[i]["Сокращенная запись уч. звания"]))
 				{
 					try
 					{
+
 						DataRow newRow = this.table.Rows[i];
+						newRow.BeginEdit();
 						newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
 						newRow["Полная запись уч. звания"] = mTitle.FullName;
+						newRow.AcceptChanges();
+						newRow.EndEdit();
 						return true;
 					}
 					catch (Exception ex)
@@ -86,6 +89,7 @@ namespace LibOfTimetableOfClasses
 					}
 				}
 			}
+
 			return false;
 		}
 

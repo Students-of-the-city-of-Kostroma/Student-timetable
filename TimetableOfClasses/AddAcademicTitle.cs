@@ -6,6 +6,7 @@
 	using System.Linq;
 	using System.Text;
 	using System.Text.RegularExpressions;
+	using System.Diagnostics;
 	using System.Threading.Tasks;
 	using System.Windows.Forms;
 	using LibOfTimetableOfClasses;
@@ -15,12 +16,12 @@ namespace TimetableOfClasses
 	public partial class AddAcademicTitle : Form
 	{
 
+		private MTitle title;
 		public AddAcademicTitle()
 		{
 			InitializeComponent();
-			update = false;
+			
 		}
-		bool update = false;
 		public AddAcademicTitle(MTitle mTitle)
 		{
 			InitializeComponent();
@@ -29,29 +30,56 @@ namespace TimetableOfClasses
 			this.btCreateAndClose.Text = "Изменить";
 			FullName.Text = mTitle.FullName;
 			Reduction.Text = mTitle.Reduction;
-			update = true;
+			Reduction.Enabled = false;
+			title = mTitle;
 		}
+
+
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-			if (String.IsNullOrWhiteSpace(FullName.Text) || String.IsNullOrWhiteSpace(Reduction.Text))
-				MessageBox.Show("Заполните все поля");
+			if (Add())
+			{
+				Close();
+			}
+			
+		}
+
+		private bool Add()
+		{
+
+			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+			{
+				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+				{
+					if (title == null)
+					{
+						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+						Controllers.CTitle.Insert(Title);
+						return true;
+
+					}
+					else
+					{
+						title.Reduction = Reduction.Text;
+						title.FullName = FullName.Text;
+						Controllers.CTitle.Update(title);
+						return true;
+					}
+				}
+				else
+				{
+					MessageBox.Show("Недопустимые знаки", "Попробуйте еще раз", MessageBoxButtons.OK);
+					return false;
+				}
+
+				
+			}
 			else
 			{
-				MTitle mtitle = new MTitle(FullName.Text, Reduction.Text);
-				try
-				{
-					if (!update)
-						Controllers.CTitle.Insert(mtitle);
-					else Controllers.CTitle.Update(mtitle);
-					Close();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-				}
+				MessageBox.Show("Пустые поля", "Попробуйте еще раз", MessageBoxButtons.OK);
+				return false;
 			}
-
 		}
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
@@ -61,14 +89,15 @@ namespace TimetableOfClasses
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
+					
 					MTitle Title = new MTitle(FullName.Text, Reduction.Text);
 					Controllers.CTitle.Insert(Title);
 					FullName.Text = "";
 					Reduction.Text = "";
 				}
-				else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+				else MessageBox.Show("Недопустимые знаки", "Попробуйте снова", MessageBoxButtons.OK);
 			}
-			else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Пустые поля", "Попробуйте снова", MessageBoxButtons.OK);
 		}
 
 		private void btCancel_Click(object sender, EventArgs e)

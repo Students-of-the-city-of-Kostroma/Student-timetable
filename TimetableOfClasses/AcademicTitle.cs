@@ -35,6 +35,13 @@ namespace TimetableOfClasses
 			}
 		}
 			
+
+
+
+
+
+
+
 		private void Add_Click(object sender, System.EventArgs e)
 		{
 			AddAcademicTitle addAcademicTitle = new AddAcademicTitle();
@@ -85,6 +92,10 @@ namespace TimetableOfClasses
 				this.DG_AcademicTitle.Rows[index].HeaderCell.Value = indexStr;
 		}
 	}
+
+
+
+
 }
 
 
