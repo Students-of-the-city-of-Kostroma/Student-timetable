@@ -15,7 +15,6 @@ namespace TimetableOfClasses
 	public partial class AddAcademicTitle : Form
 	{
 
-
 		public AddAcademicTitle()
 		{
 			InitializeComponent();

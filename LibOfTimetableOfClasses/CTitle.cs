@@ -8,7 +8,7 @@
 
 namespace LibOfTimetableOfClasses
 {
-	public class CTitle : Controller, IController
+	public class CTitle : Controller, IController	
 	{
 		public CTitle() : base("Уч.звание")
 		{
@@ -66,20 +66,17 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
-			if ((mTitle.FullName == null && mTitle.Reduction == null))
-				return false;
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
+
+				if (mTitle.Reduction == (string)this.table.Rows[i]["Сокращенная запись уч. звания"])
 				{
 					try
 					{
-						this.table.Rows[i].BeginEdit();
-						this.table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						this.table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
-						this.table.Rows[i].EndEdit();
-						this.table.Rows[i].AcceptChanges();
+						DataRow newRow = this.table.Rows[i];
+						newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
+						newRow["Полная запись уч. звания"] = mTitle.FullName;
 						return true;
 					}
 					catch (Exception ex)

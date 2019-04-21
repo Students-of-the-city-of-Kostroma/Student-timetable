@@ -34,7 +34,7 @@ namespace TimetableOfClasses
 				Change.Enabled = false;
 			}
 		}
-
+			
 		private void Add_Click(object sender, System.EventArgs e)
 		{
 			AddAcademicTitle addAcademicTitle = new AddAcademicTitle();
