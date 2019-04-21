@@ -26,6 +26,7 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полная запись уч. звания";
+			column.Unique = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 		}
