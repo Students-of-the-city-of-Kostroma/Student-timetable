@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			//////Controllers.CTitle.Select().Clear();
-			MTitle T_Title = new MTitle("Проф.", "Профессор");
+			MTitle T_Title = new MTitle("Проф.", "Профессор", 83);
 			bool ex = true;
 			CTitle T_T = new CTitle();
 			T_T.Insert(T_Title);
@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_362_2()
 		{
 			//arrange
-			MTitle T_Title = new MTitle("Профессор", "Проф.");
+			MTitle T_Title = new MTitle("Проф.", "Профессор", 83);
 			bool ex = false;
 			CTitle T_T = new CTitle();
 			bool act = T_T.Delete(T_Title);
