@@ -6,6 +6,7 @@
 	using System.Linq;
 	using System.Text;
 	using System.Text.RegularExpressions;
+	using System.Diagnostics;
 	using System.Threading.Tasks;
 	using System.Windows.Forms;
 	using LibOfTimetableOfClasses;
@@ -15,60 +16,79 @@ namespace TimetableOfClasses
 	public partial class AddAcademicTitle : Form
 	{
 
-
+		private MTitle title;
+		Random rand = new Random();
 		public AddAcademicTitle()
 		{
 			InitializeComponent();
-			update = false;
+			Code.Text = Convert.ToString(rand.Next(100));
+			
 		}
-		bool update = false;
 		public AddAcademicTitle(MTitle mTitle)
 		{
 			InitializeComponent();
 			this.Text = "Изменение уч. звания";
 			this.btCreateAndClean.Visible = false;
 			this.btCreateAndClose.Text = "Изменить";
-			this.Reduction.Enabled = false;
+			this.Code.Enabled = false;
 			FullName.Text = mTitle.FullName;
 			Reduction.Text = mTitle.Reduction;
-			update = true;
+			Code.Text = Convert.ToString(mTitle.Code);
+			title = mTitle;
 		}
+
+
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-			if (update)
+			if (Add())
 			{
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				Close();
+			}
+			
+		}
+
+		private bool Add()
+		{
+			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+			{
+				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+					if (title == null)
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Update(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
+						try
+						{
+							MTitle Title = new MTitle(FullName.Text, Reduction.Text, Convert.ToInt32(Code.Text));
+							Controllers.CTitle.Insert(Title);
+							return true;
+
+						}
+						catch(FormatException)
+						{
+							MessageBox.Show("Недопустимые знаки", "Попробуйте еще раз", MessageBoxButtons.OK);
+							return false;
+						}
 					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+					else
+					{
+						title.Reduction = Reduction.Text;
+						title.FullName = FullName.Text;
+						Controllers.CTitle.Update(title);
+						return true;
+					}
 				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+				else
+				{
+					MessageBox.Show("Недопустимые знаки", "Попробуйте еще раз", MessageBoxButtons.OK);
+					return false;
+				}
+
+				
 			}
 			else
 			{
-
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
-				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
-					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
-				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+				MessageBox.Show("Пустые поля", "Попробуйте еще раз", MessageBoxButtons.OK);
+				return false;
 			}
 		}
 
@@ -79,14 +99,17 @@ namespace TimetableOfClasses
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
-					MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+					
+					MTitle Title = new MTitle(FullName.Text, Reduction.Text, Convert.ToInt32(Code.Text));
 					Controllers.CTitle.Insert(Title);
 					FullName.Text = "";
 					Reduction.Text = "";
+					Code.Text = Convert.ToString(rand.Next(100));
+
 				}
-				else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+				else MessageBox.Show("Недопустимые знаки", "Попробуйте снова", MessageBoxButtons.OK);
 			}
-			else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Пустые поля", "Попробуйте снова", MessageBoxButtons.OK);
 		}
 
 		private void btCancel_Click(object sender, EventArgs e)
@@ -107,6 +130,9 @@ namespace TimetableOfClasses
 			return true;
 		}
 
+		private void AddAcademicTitle_Load(object sender, EventArgs e)
+		{
 
+		}
 	}
 }
