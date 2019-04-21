@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			bool expected = true;
 			//act
-			MTitle ma = new MTitle("Проф.", "Профессор");
+			MTitle ma = new MTitle("Проф.", "Профессор", 0);
 			CTitle ca = new CTitle();
 			bool actual = ca.Insert(ma);
 			//assert
@@ -26,8 +26,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			MTitle ma = new MTitle("Проф.", "Профессор");
-			MTitle ma1 = new MTitle("Проф.", "Доцент");
+			MTitle ma = new MTitle("Проф.", "Профессор", 0);
+			MTitle ma1 = new MTitle("Проф.", "Доцент", 0);
 			bool expected = false;
 			//act
 			CTitle ca = new CTitle();
@@ -41,8 +41,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
 		{
 			//arrange
-			MTitle ma = new MTitle("Проф.", "Профессор");
-			MTitle ma1 = new MTitle("Доц.", "Профессор");
+			MTitle ma = new MTitle("Проф.", "Профессор", 0);
+			MTitle ma1 = new MTitle("Доц.", "Профессор", 0);
 			bool expected = false;
 			//act
 			CTitle ca = new CTitle();
