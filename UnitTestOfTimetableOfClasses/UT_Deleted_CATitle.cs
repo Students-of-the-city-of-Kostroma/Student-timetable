@@ -11,14 +11,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_362_1()
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			//////Controllers.CTitle.Select().Clear();
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
 			bool ex = true;
-			//act
-			bool act;
-			MTitle T_Title = new MTitle("Профессор", "Проф.");
-			//int C1 = Controllers.CTitle.Rows.Count;
-			act = Controllers.CTitle.Insert(T_Title);
-			//int C2 = Controllers.CTitle.Rows.Count;
+			CTitle T_T = new CTitle();
+			T_T.Insert(T_Title);
+			bool act = T_T.Delete(T_Title);
 			//assert
 			Assert.AreEqual(ex, act);
 			//Assert.AreEqual(C1 + 1, C2);
@@ -28,17 +26,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_362_2()
 		{
 			//arrange
-			bool ex = false;
-			bool act;
-			//act
 			MTitle T_Title = new MTitle("Профессор", "Проф.");
-			//int C1 = Controllers.CTitle.Rows.Count;
-			act = Controllers.CTitle.Insert(T_Title);
-			//int C2 = Controllers.CTitle.Rows.Count;
+			bool ex = false;
+			CTitle T_T = new CTitle();
+			bool act = T_T.Delete(T_Title);
 			//assert
 			Assert.AreEqual(ex, act);
-			//Assert.AreEqual(C1, C2);
-
 		}
 	}
 }
