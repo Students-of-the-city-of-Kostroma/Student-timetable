@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
 {
 
 	[TestClass]
-	public class UT_Insert_СTitle
+	public class UT_Insert_CTitle
 	{
 
 		[TestMethod]
@@ -28,7 +28,7 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			Controllers.CTitle.Select().Clear();
 			Task_361_1();
-			MTitle ma = new MTitle("Доцент", "Проф.", 183);
+			MTitle ma = new MTitle("Доцент", "Проф.");
 			bool expected = false;
 			//act
 			bool actual = Controllers.CTitle.Insert(ma);
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			Controllers.CTitle.Select().Clear();
 			Task_361_1();
-			MTitle ma = new MTitle("Профессор", "Доц.", 83);
+			MTitle ma = new MTitle("Профессор", "Доц.");
 			bool expected = false;
 			//act
 			bool actual = Controllers.CTitle.Insert(ma);

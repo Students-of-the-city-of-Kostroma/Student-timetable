@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="UI_Delete_CTitle.cs" />
     <Compile Include="UT_Update_CTitle.cs" />
-    <Compile Include="UT_Insert_СTitle.cs" />
+    <Compile Include="UT_Insert_CTitle.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />
     <Compile Include="UT_CDiscipline.cs" />
