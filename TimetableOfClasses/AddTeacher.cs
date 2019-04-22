@@ -80,7 +80,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, patronymic.Text, department.Text, metodDays.Text, weekends.Text }))
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
 				if (Add())
 				{
