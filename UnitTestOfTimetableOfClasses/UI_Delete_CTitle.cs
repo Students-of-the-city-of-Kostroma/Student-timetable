@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_362_2()
 		{
 			//arrange
-			MTitle T_Title = new MTitle("Профессор", "Проф.");
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
 			bool ex = false;
 			CTitle T_T = new CTitle();
 			bool act = T_T.Delete(T_Title);
