@@ -1,0 +1,66 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using LibOfTimetableOfClasses;
+
+namespace UnitTestOfTimetableOfClasses
+{
+
+	[TestClass]
+	public class UT_Insert_СTitle
+	{
+
+		[TestMethod]
+		public void Task_361_1() //пустая таблица
+		{
+			//arrange
+			Controllers.CTitle.Select().Clear();
+			MTitle ma = new MTitle("Профессор", "Проф.", 83);
+			bool expected = true;
+			//act
+			bool actual = Controllers.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
+		{
+			//arrange
+			Controllers.CTitle.Select().Clear();
+			Task_361_1();
+			MTitle ma = new MTitle("Доцент", "Проф.", 183);
+			bool expected = false;
+			//act
+			bool actual = Controllers.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
+		{
+			//arrange
+			Controllers.CTitle.Select().Clear();
+			Task_361_1();
+			MTitle ma = new MTitle("Профессор", "Доц.", 183);
+			bool expected = false;
+			//act
+			bool actual = Controllers.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_361_4() //учёное звание с таким кодом звания уже есть в таблице
+		{
+			//arrange
+			Controllers.CTitle.Select().Clear();
+			Task_361_1();
+			MTitle ma = new MTitle("Профессор", "Доц.", 83);
+			bool expected = false;
+			//act
+			bool actual = Controllers.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+	}
+}
