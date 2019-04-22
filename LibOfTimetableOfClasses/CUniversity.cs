@@ -106,7 +106,7 @@ namespace LibOfTimetableOfClasses
 					newRow["FullName"] = mUniversity.FullName;
 					newRow["ActualAddress"] = mUniversity.ActualAddress;
 					newRow["LegalAddress"] = mUniversity.LegalAddress;
-					newRow["FullNameRector"] = mUniversity.FullName + "" + mUniversity.SurnameRector + "" + mUniversity.MiddleNameRector;
+					newRow["FullNameRector"] = mUniversity.FullName + " " + mUniversity.SurnameRector + " " + mUniversity.MiddleNameRector;
 					newRow["Email"] = mUniversity.Email;
 					newRow["Phone"] = mUniversity.Phone;
 					this.Rows.Add(newRow);
@@ -136,7 +136,7 @@ namespace LibOfTimetableOfClasses
 						newRow["FullName"] = mUniversity.FullName;
 						newRow["ActualAddress"] = mUniversity.ActualAddress;
 						newRow["LegalAddress"] = mUniversity.LegalAddress;
-						newRow["FullNameRector"] = mUniversity.FullName + "" + mUniversity.SurnameRector + "" + mUniversity.MiddleNameRector;
+						newRow["FullNameRector"] = mUniversity.FullName + " " + mUniversity.SurnameRector + " " + mUniversity.MiddleNameRector;
 						newRow["Email"] = mUniversity.Email;
 						newRow["Phone"] = mUniversity.Phone;
 						return true;
