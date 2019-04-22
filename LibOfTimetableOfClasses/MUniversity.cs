@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-	
+
 
 	/// <summary>
 	/// ВУЗ
@@ -110,11 +110,15 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				return _middleNameRector;
+				if (_middleNameRector == null) return "";
+				else
+					return _middleNameRector;
 			}
 			set
 			{
-				_middleNameRector = value;
+				if (value == "") _middleNameRector = null;
+				else
+					_middleNameRector = value;
 			}
 		}
 		public string Email
@@ -143,7 +147,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Создает экземпляр
 		/// </summary>
-		public MUniversity(string inn,string shortName,string fullName,string actualAddress,string legalAddress,string nameRector,string surnameRector,string middleNameRector,string email,string phone) : base()
+		public MUniversity(string inn, string shortName, string fullName, string actualAddress, string legalAddress, string nameRector, string surnameRector, string middleNameRector, string email, string phone) : base()
 		{
 			INN = inn;
 			ShortName = shortName;
