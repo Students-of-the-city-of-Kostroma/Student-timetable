@@ -121,7 +121,6 @@
 			this.patronymic.Name = "patronymic";
 			this.patronymic.Size = new System.Drawing.Size(239, 22);
 			this.patronymic.TabIndex = 6;
-			this.patronymic.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.patronymic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.patronymic.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
