@@ -8,26 +8,20 @@
 
 namespace LibOfTimetableOfClasses
 {
-	public class CTitle : Controller, IController	
+	public class CTitle : Controller, IController
 	{
 		public CTitle() : base("Уч.звание")
 		{
 
-			DataColumn[] keys = new DataColumn[3];
+			DataColumn[] keys = new DataColumn[2];
 
 			DataColumn column = new DataColumn();
-			column.DataType = typeof(int);
-			column.ColumnName = "Код уч. звания";
-			column.Unique = true;
-			table.Columns.Add(column);
-			keys[2] = column;
-
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Сокращенная запись уч. звания";
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[0] = column;
+
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
@@ -35,10 +29,6 @@ namespace LibOfTimetableOfClasses
 			column.Unique = true;
 			table.Columns.Add(column);
 			keys[1] = column;
-
-			
-			
-
 		}
 
 		public override bool Delete(Model model)
@@ -63,7 +53,6 @@ namespace LibOfTimetableOfClasses
 				DataRow newRow = table.NewRow();
 				newRow["Полная запись уч. звания"] = mTitle.FullName;
 				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
-				newRow["Код уч. звания"] = mTitle.Code;
 				table.Rows.Add(newRow);
 				return true;
 			}
@@ -77,20 +66,20 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
+			if ((mTitle.FullName == null && mTitle.Reduction == null))
+				return false;
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((mTitle.Code == (int)table.Rows[i]["Код уч. звания"]))
+				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
 					try
 					{
-
-						DataRow newRow = this.table.Rows[i];
-						newRow.BeginEdit();
-						newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						newRow["Полная запись уч. звания"] = mTitle.FullName;
-						newRow.AcceptChanges();
-						newRow.EndEdit();
+						this.table.Rows[i].BeginEdit();
+						this.table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
+						this.table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
+						this.table.Rows[i].EndEdit();
+						this.table.Rows[i].AcceptChanges();
 						return true;
 					}
 					catch (Exception ex)
@@ -100,7 +89,6 @@ namespace LibOfTimetableOfClasses
 					}
 				}
 			}
-
 			return false;
 		}
 
