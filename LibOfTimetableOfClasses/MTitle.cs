@@ -14,7 +14,7 @@
 		{
 			string _fullname;
 			string _reduction;
-		
+			int _code;
 
 			public string FullName
 			{
@@ -38,12 +38,24 @@
 				{
 					_reduction = value;
 				}
-			}		
+			}
+			public int Code
+			{
+				get
+				{
+					return _code;
+				}
+				set
+				{
+					_code = value;
+				}
+			}
 
-			public MTitle(string fullname, string reduction) : base()
+		public MTitle(string fullname, string reduction, int code) : base()
 			{
 				FullName = fullname;
 				Reduction = reduction;
+				Code = code;
 			}
 		}
 	}
