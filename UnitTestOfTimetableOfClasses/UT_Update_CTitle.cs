@@ -11,8 +11,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_363_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
 		{
 			//arrange
-			MTitle t = new MTitle("Проф.", "Профессор", 83);
-			MTitle t1 = new MTitle("Доц.", "Доцент", 183);
+			MTitle t = new MTitle("Проф.", "Профессор");
+			MTitle t1 = new MTitle("Доц.", "Доцент");
 			CTitle T = new CTitle();
 			T.Insert(t);
 			T.Insert(t1);
