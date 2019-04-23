@@ -70,9 +70,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbVixodnie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbVixodnie.Location = new System.Drawing.Point(11, 421);
+			this.tbVixodnie.MaxLength = 70;
 			this.tbVixodnie.Name = "tbVixodnie";
 			this.tbVixodnie.Size = new System.Drawing.Size(235, 22);
 			this.tbVixodnie.TabIndex = 28;
+			this.tbVixodnie.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbVixodnie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.tbVixodnie.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -106,9 +108,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbNaprav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbNaprav.Location = new System.Drawing.Point(11, 139);
+			this.tbNaprav.MaxLength = 100;
 			this.tbNaprav.Name = "tbNaprav";
 			this.tbNaprav.Size = new System.Drawing.Size(235, 22);
 			this.tbNaprav.TabIndex = 24;
+			this.tbNaprav.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbNaprav.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
 			this.tbNaprav.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
@@ -142,9 +146,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbNameGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbNameGroup.Location = new System.Drawing.Point(12, 29);
+			this.tbNameGroup.MaxLength = 10;
 			this.tbNameGroup.Name = "tbNameGroup";
 			this.tbNameGroup.Size = new System.Drawing.Size(235, 22);
 			this.tbNameGroup.TabIndex = 20;
+			this.tbNameGroup.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbNameGroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.tbNameGroup.Leave += new System.EventHandler(this.SelectionOfLetters1);
 			// 
