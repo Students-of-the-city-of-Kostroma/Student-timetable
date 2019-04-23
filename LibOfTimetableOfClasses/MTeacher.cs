@@ -22,29 +22,15 @@ namespace LibOfTimetableOfClasses
 		string _windows;
 		string _weekends;
 
-		public string fullName
-			{
-			get
-			{
-				return _fullName;
-			}
-			set
-			{
-				_fullName = value;
-			}
-		}
-
 		public string firstName
 		{
 			get
 			{
-				if (_firstName != null) return _firstName;
-				else return "";
+				return _firstName;
 			}
 			set
 			{
-				if (value != "") _firstName = value;
-				else _firstName = null;
+				_firstName = value;
 			}
 		}
 
@@ -52,13 +38,11 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				if (_secondName != null) return _secondName;
-				else return "";
+				return _secondName;
 			}
 			set
 			{
-				if (value != "") _secondName = value;
-				else _secondName = null;
+				_secondName = value;
 			}
 		}
 
