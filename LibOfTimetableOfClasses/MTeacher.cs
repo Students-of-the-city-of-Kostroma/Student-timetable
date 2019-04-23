@@ -12,25 +12,69 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MTeacher : Model
 	{
-		string _fullname;
+		string _fullName;
+		string _patronymic;
+		string _secondName;
+		string _firstName;
 		string _note;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
 		string _weekends;
 
-		public string FullName
-		{
+		public string fullName
+			{
 			get
 			{
-				return _fullname;
+				return _fullName;
 			}
 			set
 			{
-				_fullname = value;
+				_fullName = value;
 			}
 		}
 
+		public string firstName
+		{
+			get
+			{
+				if (_firstName != null) return _firstName;
+				else return "";
+			}
+			set
+			{
+				if (value != "") _firstName = value;
+				else _firstName = null;
+			}
+		}
+
+		public string secondName
+		{
+			get
+			{
+				if (_secondName != null) return _secondName;
+				else return "";
+			}
+			set
+			{
+				if (value != "") _secondName = value;
+				else _secondName = null;
+			}
+		}
+
+		public string patronymic
+		{
+			get
+			{
+				if (_patronymic != null) return _patronymic;
+				else return "";
+			}
+			set
+			{
+				if (value != "") _patronymic = value;
+				else _patronymic = null;
+			}
+		}
 		public string Departament
 		{
 			get
@@ -92,9 +136,11 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string fullname, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string patronymic, string note, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
-			FullName = fullname;
+			this.firstName = firstName;
+			this.secondName = secondName;
+			this.patronymic = patronymic;
 			Note = note;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
@@ -102,9 +148,23 @@ namespace LibOfTimetableOfClasses
 			Weekends = weekends;
 		}
 
-		public MTeacher(string fullname,string departament) : base()
+		public MTeacher(string firstName, string secondName, string note, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
-			FullName = fullname;
+			this.firstName = firstName;
+			this.secondName = secondName;
+			this.patronymic = null;
+			Note = note;
+			Departament = departament;
+			MetodicalDays = metodicalDays;
+			Windows = windows;
+			Weekends = weekends;
+		}
+
+		public MTeacher(string firstName, string secondName, string patronymic, string departament) : base()
+		{
+			this.firstName = firstName;
+			this.secondName = secondName;
+			this.patronymic = patronymic;
 			Departament = departament;
 		}
 	}
