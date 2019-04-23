@@ -49,17 +49,17 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			this.Text = "Изменение преподавателя";			
-			string[] split = mTeacher.FullName.Split(' ');
+
 
 			#region(FullName)
 
-			firstName.Text = split[1];
+			firstName.Text = mTeacher.firstName;
 			firstName.Enabled = false;
 
-			secondName.Text = split[0];
+			secondName.Text = mTeacher.secondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = split[2];
+			patronymic.Text = mTeacher.patronymic;
 			patronymic.Enabled = false;
 
 			#endregion
@@ -97,15 +97,14 @@ namespace TimetableOfClasses
 
 			if (Lehrer == null)
 			{
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
-
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				Lehrer.FullName = fullName;
+				Lehrer.firstName = firstName.Text;
+				Lehrer.secondName = secondName.Text;
+				Lehrer.patronymic = patronymic.Text;
 				Lehrer.Note = notes.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
