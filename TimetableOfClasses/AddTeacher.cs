@@ -248,7 +248,7 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' '  && l != ',' && (l < '0' || l > '9'))
+			if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.')
 			{
 				e.Handled = true;
 			}
