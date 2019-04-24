@@ -157,6 +157,11 @@ namespace TimetableOfClasses
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
+			if (R.Text.Length == 1)
+			{
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
+			}
 
 		}
 
