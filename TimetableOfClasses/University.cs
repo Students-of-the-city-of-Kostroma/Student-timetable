@@ -109,5 +109,11 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			AddUniversity a = new AddUniversity();
+			a.Show();
+		}
 	}
 }
