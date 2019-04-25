@@ -95,5 +95,11 @@ namespace TimetableOfClasses
 			Directory directory = new Directory();
 			directory.Show();
 		}
+
+		private void институтToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Institute institute = new Institute();
+			institute.Show();
+		}
 	}
 }
