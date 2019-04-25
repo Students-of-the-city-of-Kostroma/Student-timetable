@@ -22,12 +22,44 @@ namespace TimetableOfClasses
 
 		private void Add(object sender, EventArgs e)
 		{
-
+			AddUniversity t = new AddUniversity();
+			t.ShowDialog();
 		}
 
 		private void Update(object sender, EventArgs e)
 		{
-
+			if (DG.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				String[] fullName = ((string)Row["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+				MUniversity mUniversity;
+				if (fullName.Length == 3)
+				{
+					mUniversity = new MUniversity(	(string)Row["INN"], 
+													(string)Row["ShortName"], 
+													(string)Row["FullName"], 
+													(string)Row["ActualAddress"], 
+													(string)Row["LegalAddress"], 
+													fullName[1], fullName[0], fullName[2], 
+													(string)Row["Email"], 
+													(string)Row["Phone"]);
+				}
+				else
+				{
+					mUniversity = new MUniversity(	(string)Row["INN"], 
+													(string)Row["ShortName"], 
+													(string)Row["FullName"], 
+													(string)Row["ActualAddress"], 
+													(string)Row["LegalAddress"], 
+													fullName[1], fullName[0], fullName[2], 
+													(string)Row["Email"], 
+													(string)Row["Phone"]);
+				}
+				AddUniversity add = new AddUniversity(mUniversity);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
 
 		private void Delete(object sender, EventArgs e)

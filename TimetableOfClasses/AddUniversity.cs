@@ -33,6 +33,7 @@ namespace TimetableOfClasses
 
 		public AddUniversity(MUniversity model)
 		{
+			InitializeComponent();
 			this.Text = "Изменение университета";
 			tbShortTittle.Text = model.ShortName;
 			tbFullTitle.Text = model.FullName;
@@ -40,7 +41,7 @@ namespace TimetableOfClasses
 			tbLegalAddress.Text = model.LegalAddress;
 			tbPhone.Text = model.Phone;
 			tbMail.Text = model.Email;
-			tbRectorName.Text = model.NameRector + " " + model.MiddleNameRector + " " + model.SurnameRector;
+			tbRectorName.Text = model.SurnameRector + " " + model.NameRector + " " + model.MiddleNameRector;
 			cur = model;
 			tbINN.Text = model.INN;
 		}
@@ -204,7 +205,11 @@ namespace TimetableOfClasses
 		{
 			if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
 			{
-				//Add();
+				if (Add()) this.Close();
+				else
+				{
+					MessageBox.Show("Невозможно добавить этот университет");
+				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
 		}
@@ -221,8 +226,8 @@ namespace TimetableOfClasses
 															tbFullTitle.Text,
 															tbActualAddress.Text,
 															tbLegalAddress.Text,
-															splitedFullName[0],
 															splitedFullName[1],
+															splitedFullName[0],
 															splitedFullName[2],
 															tbMail.Text,
 															tbPhone.Text);
@@ -235,9 +240,9 @@ namespace TimetableOfClasses
 				cur.FullName = tbFullTitle.Text;
 				cur.ActualAddress = tbActualAddress.Text;
 				cur.LegalAddress = tbLegalAddress.Text;
-				cur.NameRector = splitedFullName[0];
+				cur.NameRector = splitedFullName[1];
 				cur.MiddleNameRector = splitedFullName[2];
-				cur.SurnameRector = splitedFullName[1];
+				cur.SurnameRector = splitedFullName[0];
 				cur.Email = tbMail.Text;
 				cur.Phone = tbPhone.Text;
 				return Controllers.CUniversity.Update(cur);
