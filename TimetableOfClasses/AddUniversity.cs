@@ -205,7 +205,11 @@ namespace TimetableOfClasses
 		{
 			if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
 			{
-				Add();
+				if (Add()) this.Close();
+				else
+				{
+					MessageBox.Show("Невозможно добавить этот университет");
+				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
 		}
