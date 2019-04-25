@@ -106,7 +106,7 @@
 			this.Text = "Направление подготовки";
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
-
+      this.components = new System.ComponentModel.Container();
 		}
 
 		#endregion

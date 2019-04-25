@@ -11,48 +11,66 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер для объекта Дисциплина
     /// </summary>
-    public class CDiscipline : Controller,IController
+    public class CDiscipline : DataTable,IController
     {
         public CDiscipline() : base("Дисциплина")
         {
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "Name";
-            column.ReadOnly = true;
+            column.ColumnName = "Fullname";
             column.Unique = true;
-            table.Columns.Add(column);
+            Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Code";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-        }
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Shortname";
+			Columns.Add(column);
 
-        public override bool Delete(Model model)
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "CycleofDiscipline";
+			Columns.Add(column);
+		}
+
+        public bool Delete(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
-            for (int i = 0; i < table.Rows.Count; i++)
+			
+            for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)table.Rows[i]["Name"] == mDiscipline.Name && (string)table.Rows[i]["Code"] == mDiscipline.Code)
-                {
-                    table.Rows[i].Delete();
+                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname 
+				&& (string)Rows[i]["Shortname"] == mDiscipline.Shortname 
+				&& (string)Rows[i]["CycleofDiscipline"] == mDiscipline.CycleofDiscipline)
+				{
+                    Rows[i].Delete();
                     return true;
                 }
             }
             return false;
         }
 
-        public override bool Insert(Model model)
+        public bool Insert(Model model)
         {
-            try
+			MDiscipline mDiscipline = (MDiscipline)model;
+			
+			if (mDiscipline.Fullname == null || mDiscipline.Shortname == null)
+				return false;
+				
+			for (int i = 0; i < Rows.Count; i++)
             {
-                MDiscipline mDiscipline = (MDiscipline)model;
-                DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
-                newRow["Name"] = mDiscipline.Name;
-                newRow["Code"] = mDiscipline.Code;
-                table.Rows.Add(newRow);
+                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname 
+				&& (string)Rows[i]["Shortname"] == mDiscipline.Shortname)
+					return false;
+            }
+			
+			try
+            {
+                DataRow newRow = NewRow();
+                //newRow["ID"] = Guid.NewGuid();
+                newRow["Fullname"] = mDiscipline.Fullname;
+				newRow["Shortname"] = mDiscipline.Shortname;
+				newRow["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
+				Rows.Add(newRow);
                 return true;
             }
             catch (Exception ex)
@@ -62,33 +80,39 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        public override bool Update(Model model)
+        public bool Update(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
-            for (int i = 0; i < table.Rows.Count; i++)
+
+			if ((mDiscipline.Fullname == null && mDiscipline.Shortname == null && mDiscipline.CycleofDiscipline == null))
+				return false;
+
+			for (int i = 0; i < Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mDiscipline.Id)
-                {
-                    if ((mDiscipline.Name != null && mDiscipline.Code != null ))
-                    {
-                        try
-                        {
-                            table.Rows[i].BeginEdit();
-                            table.Rows[i]["Name"] = mDiscipline.Name;
-                            table.Rows[i]["Code"] = mDiscipline.Code;
-                            table.Rows[i].EndEdit();
-                            table.Rows[i].AcceptChanges();
-                            return true;
-                        }
-                        catch (Exception ex)
-                        {
-                            Debug.WriteLine(ex.Source);
-                            return false;
-                        }
-                    }
-                }
+				if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname)
+				{
+					try
+					{
+						Rows[i].BeginEdit();
+						Rows[i]["Shortname"] = mDiscipline.Shortname;
+						Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
+						Rows[i].EndEdit();
+						Rows[i].AcceptChanges();
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
             }
             return false;
         }
-    }
+
+		public bool Update(DataRow row, Model model)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

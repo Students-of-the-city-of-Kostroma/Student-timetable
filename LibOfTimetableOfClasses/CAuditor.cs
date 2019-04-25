@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Контроллер объекта Аудитория.
     /// </summary>
-    public class CAuditor : Controller,IController
+    public class CAuditor :DataTable,IController
     {
 
         public CAuditor() : base("Аудитория")
@@ -19,109 +19,102 @@ namespace LibOfTimetableOfClasses
             DataColumn[] keys = new DataColumn[2];
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
-            column.ColumnName = "number";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+			column.ColumnName = "NameOfAuditor";
+            column.Unique = false;
+            Columns.Add(column);
             keys[0] = column;
 
             column = new DataColumn();
-            column.DataType = typeof(byte);
-            column.ColumnName = "floor";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
+			column.DataType = typeof(string);
+			column.ColumnName = "Cafedra";
+            column.Unique = false;
+            Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "building";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
-            keys[1] = column;
+			column.DataType = typeof(ushort);
+			column.ColumnName = "Spacious";
+            column.Unique = false;
+            Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(int);
-            column.ColumnName = "spacious";
-            column.ReadOnly = true;
-            column.Unique = true;
-            table.Columns.Add(column);
-            table.PrimaryKey = keys;
+			column = new DataColumn();
+			column.DataType = typeof(byte);
+			column.ColumnName = "Building";
+            column.Unique = false;
+            Columns.Add(column);
+			keys[1] = column;
+			PrimaryKey = keys;
         }
 
-        public override bool Insert(Model model)
+        public  bool Insert(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
-            if (mAuditor.Number != null && mAuditor.Building != null)
-            {
-                for (int i = 0; i < table.Rows.Count; i++)
-                if ((string)table.Rows[i]["Number"] != mAuditor.Number && (string)table.Rows[i]["Building"] != mAuditor.Building)
-                {
-                    try
-                    {
-                         DataRow newRow = table.NewRow();
-                         newRow["ID"] = Guid.NewGuid();
-                         newRow["Number"] = mAuditor.Number;
-                         newRow["Building"] = mAuditor.Building;
-                         newRow["Floor"] = mAuditor.Floor;
-                         newRow["Spacious"] = mAuditor.Spacious;
-                         table.Rows.Add(newRow);
-                         return true;
-                    }
-                    catch (Exception ex)
-                    {
-                            Debug.WriteLine(ex.Source);
-                            return false;
-                    }
-                }return false;
-            }return false;
+			if (mAuditor.NameOfAuditor == null)
+				return false;
+
+			try
+			{
+				DataRow newRow = NewRow();
+				//newRow["ID"] = Guid.NewGuid();
+				newRow["NameOfAuditor"] = mAuditor.NameOfAuditor;
+				newRow["Cafedra"] = mAuditor.Cafedra;
+				newRow["Spacious"] = mAuditor.Spacious;
+				newRow["Building"] = mAuditor.Building;
+				Rows.Add(newRow);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
         }
 
-        public override bool Update(Model model)
+        public  bool Update(Model model)
         {
             MAuditor mAuditor = (MAuditor)model;
-            for (int i = 0; i < table.Rows.Count; i++)
+
+			if (mAuditor.NameOfAuditor == null)
+				return false;
+
+			for (int i = 0; i < Rows.Count; i++)
             {
-                if ((Guid)table.Rows[i]["ID"] == mAuditor.Id && mAuditor.Number != null && mAuditor.Building != null)
-                {
-                    try
-                    {
-                        table.Rows[i].BeginEdit();
-                        table.Rows[i]["ID"] = mAuditor.Id;
-                        table.Rows[i]["Number"] = mAuditor.Number;
-                        table.Rows[i]["Floor"] = mAuditor.Floor;
-                        table.Rows[i]["Building"] = mAuditor.Building;
-                        table.Rows[i]["Spacious"] = mAuditor.Spacious;
-                        table.Rows[i].EndEdit();
-                        table.Rows[i].AcceptChanges();
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
-                }
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
+					&& (byte)Rows[i]["Building"] == mAuditor.Building)
+				{
+					try
+					{
+						Rows[i].BeginEdit();
+						Rows[i]["Cafedra"] = mAuditor.Cafedra;
+						Rows[i]["Spacious"] = mAuditor.Spacious;
+						Rows[i].EndEdit();
+						Rows[i].AcceptChanges();
+
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
             }
             return false;
         }
 
-        public override bool Delete(Model model)
+        public  bool Delete(Model model)
         {
 			MAuditor mAuditor = (MAuditor)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+
+			for (int i = 0; i < Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Name"] == mAuditor.Number &&
-					(byte)table.Rows[i]["Floor"] == mAuditor.Floor &&
-					(string)table.Rows[i]["Building"] == mAuditor.Building &&
-					(int)table.Rows[i]["Spacious"] == mAuditor.Spacious
-					)
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
+					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
-					table.Rows[i].Delete();
+					Rows[i].Delete();
 					return true;
 				}
 			}
 			return false;
-        }
+		}
     }
 }

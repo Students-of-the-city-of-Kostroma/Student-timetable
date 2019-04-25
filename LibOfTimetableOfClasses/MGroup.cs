@@ -6,57 +6,140 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    /// <summary>
-    /// Группа
-    /// </summary>
-    public class MGroup : Model
-    {
+	/// <summary>
+	/// Группа
+	/// </summary>
+	public class MGroup : Model
+	{
+		string _group;
+		ushort _semester;
+		string _specialty;
+		ushort _shift;
+		ushort _students;
+		ushort _minNumberOfClass;
+		ushort _maxNumberOfClass;
+		string _weekends;
 
-        string cipher;
-        /// <summary>
-        /// численность
-        /// </summary>
-        byte population;
-        /// <summary>
-        /// Создает экземпляр
-        /// </summary>
-        /// <param name="cipher">шифр</param>
-        /// <param name="population">численность</param>
-        public MGroup(string cipher, byte population):base()
-        {
-            Cipher = cipher;
-            Population = population;
-        }
-		
-        /// <summary>
-        /// Возвращает или задает шифр группы
-        /// </summary>
-        public string Cipher
-        {
-            get
-            {
-                return cipher;
-            }
+		public string Group
+		{
+			get
+			{
+				return _group;
+			}
+			set
+			{
+				_group = value;
+			}
+		}
 
-            set
-            {
-                cipher = value;
-            }
-        }
-        /// <summary>
-        /// Возвращает или задает численность группы
-        /// </summary>
-        public byte Population
-        {
-            get
-            {
-                return population;
-            }
+		public ushort Semester
+		{
+			get
+			{
+				return _semester;
+			}
+			set
+			{
+					_semester = value;
+			}
+		}
 
-            set
-            {
-                population = value;
-            }
-        }
-    }
+		public string Specialty
+		{
+			get
+			{
+				return _specialty;
+			}
+			set
+			{
+				_specialty = value;
+			}
+		}
+
+		public ushort Shift
+		{
+			get
+			{
+				return _shift;
+			}
+			set
+			{
+				_shift = value;
+			}
+		}
+
+		public ushort Students
+		{
+			get
+			{
+				return _students;
+			}
+			set
+			{
+				_students = value;
+			}
+			
+		}
+
+		public ushort MinNumberOfClass
+		{
+			get
+			{
+				return _minNumberOfClass;
+			}
+			set
+			{
+				_minNumberOfClass = value;
+			}
+		}
+
+		public ushort MaxNumberOfClass
+		{
+			get
+			{
+				return _maxNumberOfClass;
+			}
+			set
+			{
+				_maxNumberOfClass = value;
+			}
+		}
+
+		public string Weekends
+		{
+			get
+			{
+				return _weekends;
+			}
+			set
+			{
+				_weekends = value;
+			}
+		}
+
+
+		/// <summary>
+		/// Создает экземпляр
+		/// </summary>
+		/// <param name="cipher">шифр</param>
+		/// <param name="population">численность</param>
+		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
+		{
+			Group = group;
+			Semester = semester;
+			Shift = shift;
+			Specialty = specialty;
+			Students = students;
+			MinNumberOfClass = minNumberOfClass;
+			MaxNumberOfClass = maxNumberOfClass;
+			Weekends = weekends;
+		}
+
+		public MGroup(string group) : base()
+		{
+			Group = group;
+		}
+
+
+	}
 }

@@ -13,35 +13,71 @@ using LibOfTimetableOfClasses;
 namespace TimetableOfClasses
 {
 	public partial class AddDiscipline : Form
-	{
+	{ 
 		public AddDiscipline()
 		{
 			InitializeComponent();
+			bool itsupdate = false;
+		}
+		bool itsupdate = false;
+		public AddDiscipline(MDiscipline mDiscipline)
+		{
+			InitializeComponent();
+			Text = "Изменение дисциплины";
+			btCreateAndClean.Visible = false;
+			btCreateAndClose.Text = "Сохранить";
+			tbFullName.Text = mDiscipline.Fullname;
+			tbFullName.Enabled = false;
+			tbShortName.Text = mDiscipline.Shortname;
+			tbCycleOfDis.Text = mDiscipline.CycleofDiscipline;
+			itsupdate = true;
 		}
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
-			byte a;
-			if ((byte.TryParse(textCodeOfDiscipline.Text.ToString(), out a)) && (textCodeOfDiscipline.Text.Length != 0) && (textNameOfDiscipline.Text.Length != 0))
+			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text) || String.IsNullOrWhiteSpace(tbCycleOfDis.Text))
+				MessageBox.Show("Заполните все поля");
+			else
 			{
-				MDiscipline Discipline = new MDiscipline(textNameOfDiscipline.Text, textCodeOfDiscipline.Text);
-				Controllers.CDiscipline.Insert(Discipline);
-				textNameOfDiscipline.Text = "";
-				textCodeOfDiscipline.Text = "";
+				MDiscipline mDiscipline = new MDiscipline(tbFullName.Text, tbShortName.Text, tbCycleOfDis.Text);
+				try
+				{
+					Controllers.CDiscipline.Insert(mDiscipline);
+					tbFullName.Text = "";
+					tbShortName.Text = "";
+					tbCycleOfDis.Text = "";
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
-			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);
 		}
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-			byte a;
-			if ((byte.TryParse(textCodeOfDiscipline.Text.ToString(), out a)) && (textCodeOfDiscipline.Text.Length != 0) && (textNameOfDiscipline.Text.Length != 0))
+			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text) || String.IsNullOrWhiteSpace(tbCycleOfDis.Text))
+				MessageBox.Show("Заполните все поля");
+			else
 			{
-				MDiscipline Discipline = new MDiscipline(textNameOfDiscipline.Text, textCodeOfDiscipline.Text);
-				Controllers.CDiscipline.Insert(Discipline);
-				this.Close();
+				MDiscipline mDiscipline = new MDiscipline(tbFullName.Text, tbShortName.Text, tbCycleOfDis.Text);
+				try
+				{
+					if (!itsupdate)
+						Controllers.CDiscipline.Insert(mDiscipline);
+					else Controllers.CDiscipline.Update(mDiscipline);
+					Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
-			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);
+		}
+
+		private void btCancel_Click(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }

@@ -84,16 +84,15 @@ namespace TimetableOfClasses
 			academicDegree.Show();
 		}
 
-		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		private void корпусаToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
-			typesOfOccupations.Show();
+			Enclosures enclosures = new Enclosures();
+			enclosures.Show();
 		}
 
 		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			Directory directory = new Directory();
-			directory.UploadTable(Controllers.CAuditor.Select());
 			directory.Show();
 		}
 
@@ -101,6 +100,12 @@ namespace TimetableOfClasses
 		{
 			DirectionOfPreparation directionOfPreparation = new DirectionOfPreparation();
 			directionOfPreparation.Show();
+    }
+    
+		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
+			typesOfOccupations.Show();
 		}
 	}
 }

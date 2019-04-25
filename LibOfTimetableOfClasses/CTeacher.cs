@@ -8,116 +8,120 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
-    public class CTeacher : Controller,IController
-    {
-        public CTeacher() : base("Учитель")
-        {
-            DataColumn[] keys = new DataColumn[3];
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Surname";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[0] = column;
+	public class CTeacher : DataTable, IController
+	{
+		public CTeacher() : base("Учитель")
+		{
+			
+			DataColumn column = new DataColumn();
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "FullName";
+			column.Unique = true;
+			this.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Name";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[1] = column;
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Note";
+			this.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "MiddleName";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-            keys[2] = column;
-            table.PrimaryKey = keys;
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Departament";
+			this.Columns.Add(column);
+			
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "MetodicalDays";
+			this.Columns.Add(column);
+			
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Windows";
+			this.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "AcademicDegree";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Weekends";
+			this.Columns.Add(column);
+		}
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "AcademicRank";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
+		bool isValidKey(MTeacher mTeacher)
+		{
+			foreach(DataRow row in this.Rows)
+			{
+				if ((string)row["FullName"] == mTeacher.FullName )
+					return false;
+			}
+			return true;
+		}
+		
+		public bool Insert(Model model)
+		{
+			MTeacher mTeacher = (MTeacher)model;
+			if (isValidKey(mTeacher))
+			{
+				try
+				{
+					DataRow newRow = this.NewRow();
+					newRow["FullName"] = mTeacher.FullName;
+					newRow["Note"] = mTeacher.Note;
+					newRow["Departament"] = mTeacher.Departament;
+					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+					newRow["Windows"] = mTeacher.Windows;
+					newRow["Weekends"] = mTeacher.Weekends;
+					this.Rows.Add(newRow);
+					return true;
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.Source);
+					return false;
+				}
+			}
+			return false;
+		}
 
-            column = new DataColumn();
-            column.DataType = typeof(byte);
-            column.ColumnName = "SizeOfTeachingExperience";
-            column.ReadOnly = true;
-            table.Columns.Add(column);
-        }
-        public override bool Insert(Model model)
-        {
-            try
-            {
-                MTeacher mTeacher = (MTeacher)model;
-                DataRow newRow = table.NewRow();
-                newRow["ID"] = Guid.NewGuid();
-                newRow["Surname"] = mTeacher.Surname;
-                newRow["Name"] = mTeacher.Name;
-                newRow["MiddleName"] = mTeacher.MiddleName;
-                newRow["AcademicDegree"] = mTeacher.AcademicDegree;
-                newRow["AcademicRank"] = mTeacher.AcademicRank;
-                newRow["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
-                table.Rows.Add(newRow);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Source);
-                return false;
-            }
-        }
+		public bool Update(Model model)
+		{
+			MTeacher mTeacher = (MTeacher)model;
+			for (int i = 0; i < this.Rows.Count; i++)
+			{
+				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName)
+					try
+					{
+						DataRow newRow = this.Rows[i];
+						newRow["Note"] = mTeacher.Note;
+						newRow["Departament"] = mTeacher.Departament;
+						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+						newRow["Windows"] = mTeacher.Windows;
+						newRow["Weekends"] = mTeacher.Weekends;
+						return true;
+					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+			}
+			return false;
+		}
+		
 
-        public override bool Update(Model model)
-        {
-            MTeacher mTeacher = (MTeacher)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if ((Guid)table.Rows[i]["ID"] == model.Id && mTeacher.MiddleName != null && mTeacher.Name != null && mTeacher.Surname != null && mTeacher.AcademicDegree != null && mTeacher.AcademicRank != null)
-                {
-                    try
-                    {
-                        table.Rows[i].BeginEdit();
-                        table.Rows[i]["Surname"] = mTeacher.Surname;
-                        table.Rows[i]["Name"] = mTeacher.Name;
-                        table.Rows[i]["MiddleName"] = mTeacher.MiddleName;
-                        table.Rows[i]["AcademicDegree"] = mTeacher.AcademicDegree;
-                        table.Rows[i]["AcademicRank"] = mTeacher.AcademicRank;
-                        table.Rows[i]["SizeOfTeachingExperience"] = mTeacher.SizeOfTeachingExperience;
-                        table.Rows[i].EndEdit();
-                        table.Rows[i].AcceptChanges();
-                        return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
-                }
-            }
-            return false;
-        }
+		public bool Delete(Model model)
+		{
+			MTeacher mTeacher = (MTeacher)model;
+			for (int i = 0; i < this.Rows.Count; i++)
+			{
+				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
+				{
+					this.Rows[i].Delete();
+					//Recount(i);
+					return true;
+				}				
+			}
+			return false;
+		}
 
-        public override bool Delete(Model model)
-        {
-            MTeacher mTeacher = (MTeacher)model;
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if ((Guid)table.Rows[i]["ID"] == model.Id && mTeacher.Surname == (string)table.Rows[i]["Surname"] && mTeacher.Name == (string)table.Rows[i]["Name"] && mTeacher.MiddleName == (string)table.Rows[i]["MiddleName"])
-                {
-                    table.Rows[i].Delete();
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
+	}
 }

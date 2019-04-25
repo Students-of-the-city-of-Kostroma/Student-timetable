@@ -56,11 +56,35 @@
     <Compile Include="AcademicDegree.Designer.cs">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAcademicTitle.Designer.cs">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAuditor.Designer.cs">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddDiscipline.Designer.cs">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEnclosures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEnclosures.Designer.cs">
+      <DependentUpon>AddEnclosures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="AddOrEditDirectory.cs">
       <SubType>Form</SubType>
@@ -85,6 +109,12 @@
     </Compile>
     <Compile Include="Directory.Designer.cs">
       <DependentUpon>Directory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enclosures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enclosures.Designer.cs">
+      <DependentUpon>Enclosures.cs</DependentUpon>
     </Compile>
     <Compile Include="Groups.cs">
       <SubType>Form</SubType>
@@ -149,8 +179,20 @@
     <EmbeddedResource Include="AcademicDegree.resx">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddAcademicTitle.resx">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAuditor.resx">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEnclosures.resx">
+      <DependentUpon>AddEnclosures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
@@ -163,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Directory.resx">
+      <DependentUpon>Directory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enclosures.resx">
+      <DependentUpon>Enclosures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Groups.resx">
       <DependentUpon>Groups.cs</DependentUpon>
@@ -218,6 +266,9 @@
       <Project>{93a4d5cc-b39e-480d-9a5e-9f7bb97ff8a5}</Project>
       <Name>LibOfTimetableOfClasses</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
