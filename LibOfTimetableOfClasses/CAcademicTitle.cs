@@ -8,9 +8,9 @@
 
 namespace LibOfTimetableOfClasses
 {
-	public class CTitle : Controller, IController
+	public class CAcademicTitle : Controller, IController
 	{
-		public CTitle() : base("Уч.звание")
+		public CAcademicTitle() : base("Уч.звание")
 		{
 
 			DataColumn[] keys = new DataColumn[2];

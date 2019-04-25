@@ -10,7 +10,7 @@
 		/// <summary>
 		/// Уч. звание
 		/// </summary>
-		public class MTitle : Model
+		public class MAcademicTitle : Model
 		{
 			string _fullname;
 			string _reduction;
@@ -40,7 +40,7 @@
 				}
 			}		
 
-			public MTitle(string fullname, string reduction) : base()
+			public MAcademicTitle(string fullname, string reduction) : base()
 			{
 				FullName = fullname;
 				Reduction = reduction;

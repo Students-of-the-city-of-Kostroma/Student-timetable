@@ -58,7 +58,7 @@
     <Compile Include="CTeacher.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CTitle.cs" />
+    <Compile Include="CAcademicTitle.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
@@ -67,7 +67,7 @@
     <Compile Include="MGroup.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
-    <Compile Include="MTitle.cs" />
+    <Compile Include="MAcademicTitle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
