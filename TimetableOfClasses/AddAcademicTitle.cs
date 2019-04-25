@@ -22,7 +22,7 @@ namespace TimetableOfClasses
 			update = false;
 		}
 		bool update = false;
-		public AddAcademicTitle(MTitle mTitle)
+		public AddAcademicTitle(MAcademicTitle mTitle)
 		{
 			InitializeComponent();
 			this.Text = "Изменение уч. звания";
@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 				{
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+						MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
 						Controllers.CTitle.Update(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
@@ -59,7 +59,7 @@ namespace TimetableOfClasses
 				{
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+						MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
 						Controllers.CTitle.Insert(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
@@ -79,7 +79,7 @@ namespace TimetableOfClasses
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
-					MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+					MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
 					Controllers.CTitle.Insert(Title);
 					FullName.Text = "";
 					Reduction.Text = "";

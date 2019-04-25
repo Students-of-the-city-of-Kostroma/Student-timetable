@@ -33,7 +33,7 @@ namespace LibOfTimetableOfClasses
 
 		public override bool Delete(Model model)
 		{
-			MTitle mTitle = (MTitle)model;
+			MAcademicTitle mTitle = (MAcademicTitle)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
 				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
@@ -49,7 +49,7 @@ namespace LibOfTimetableOfClasses
 		{
 			try
 			{
-				MTitle mTitle = (MTitle)model;
+				MAcademicTitle mTitle = (MAcademicTitle)model;
 				DataRow newRow = table.NewRow();
 				newRow["Полная запись уч. звания"] = mTitle.FullName;
 				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
@@ -65,7 +65,7 @@ namespace LibOfTimetableOfClasses
 
 		public override bool Update(Model model)
 		{
-			MTitle mTitle = (MTitle)model;
+			MAcademicTitle mTitle = (MAcademicTitle)model;
 			if ((mTitle.FullName == null && mTitle.Reduction == null))
 				return false;
 

@@ -65,7 +65,7 @@ namespace TimetableOfClasses
 			if (DG_AcademicTitle.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
-				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
+				MAcademicTitle mTitle = new MAcademicTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
 				AddAcademicTitle add = new AddAcademicTitle(mTitle);
 				add.Owner = this;
 				add.ShowDialog();
