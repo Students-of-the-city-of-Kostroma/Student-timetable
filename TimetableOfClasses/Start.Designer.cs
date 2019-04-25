@@ -151,13 +151,6 @@
 			this.ученыеЗванияToolStripMenuItem.Text = "Ученые звания";
 			this.ученыеЗванияToolStripMenuItem.Click += new System.EventHandler(this.ученыеЗванияToolStripMenuItem_Click);
 			// 
-			// ученыеСтепениToolStripMenuItem
-			// 
-			this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
-			this.ученыеСтепениToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.ученыеСтепениToolStripMenuItem.Text = "Ученые степени";
-			this.ученыеСтепениToolStripMenuItem.Click += new System.EventHandler(this.ученыеСтепениToolStripMenuItem_Click);
-			// 
 			// расписаниеToolStripMenuItem
 			// 
 			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
