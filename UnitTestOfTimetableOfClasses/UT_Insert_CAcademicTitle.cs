@@ -6,18 +6,18 @@ namespace UnitTestOfTimetableOfClasses
 {
 
 	[TestClass]
-	public class UT_Insert_CTitle
+	public class UT_Insert_CAcademicTitle
 	{
 
 		[TestMethod]
 		public void Task_361_1() //пустая таблица
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
-			MTitle ma = new MTitle("Профессор", "Проф.");
+			Controllers.CAcademicTitle.Select().Clear();
+			MAcademicTitle ma = new MAcademicTitle("Профессор", "Проф.");
 			bool expected = true;
 			//act
-			bool actual = Controllers.CTitle.Insert(ma);
+			bool actual = Controllers.CAcademicTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -26,12 +26,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CAcademicTitle.Select().Clear();
 			Task_361_1();
-			MTitle ma = new MTitle("Доцент", "Проф.");
+			MAcademicTitle ma = new MAcademicTitle("Доцент", "Проф.");
 			bool expected = false;
 			//act
-			bool actual = Controllers.CTitle.Insert(ma);
+			bool actual = Controllers.CAcademicTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -40,12 +40,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CAcademicTitle.Select().Clear();
 			Task_361_1();
-			MTitle ma = new MTitle("Профессор", "Доц.");
+			MAcademicTitle ma = new MAcademicTitle("Профессор", "Доц.");
 			bool expected = false;
 			//act
-			bool actual = Controllers.CTitle.Insert(ma);
+			bool actual = Controllers.CAcademicTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -53,12 +53,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_4() //учёное звание с таким кодом звания уже есть в таблице
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CAcademicTitle.Select().Clear();
 			Task_361_1();
-			MTitle ma = new MTitle("Профессор", "Доц.");
+			MAcademicTitle ma = new MAcademicTitle("Профессор", "Доц.");
 			bool expected = false;
 			//act
-			bool actual = Controllers.CTitle.Insert(ma);
+			bool actual = Controllers.CAcademicTitle.Insert(ma);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}

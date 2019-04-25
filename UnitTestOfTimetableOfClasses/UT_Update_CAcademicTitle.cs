@@ -5,15 +5,15 @@ using LibOfTimetableOfClasses;
 namespace UnitTestOfTimetableOfClasses
 {
 	[TestClass]
-	public class UT_Update_CTitle
+	public class UT_Update_CAcademicTitle
 	{
 		[TestMethod]
 		public void Task_363_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
 		{
 			//arrange
-			MTitle t = new MTitle("Проф.", "Профессор");
-			MTitle t1 = new MTitle("Доц.", "Доцент");
-			CTitle T = new CTitle();
+			MAcademicTitle t = new MAcademicTitle("Проф.", "Профессор");
+			MAcademicTitle t1 = new MAcademicTitle("Доц.", "Доцент");
+			CAcademicTitle T = new CAcademicTitle();
 			T.Insert(t);
 			T.Insert(t1);
 			bool ex = true;

@@ -43,7 +43,7 @@ namespace TimetableOfClasses
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
 						MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Update(Title);
+						Controllers.CAcademicTitle.Update(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
 						Close();
@@ -60,7 +60,7 @@ namespace TimetableOfClasses
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
 						MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
+						Controllers.CAcademicTitle.Insert(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
 						Close();
@@ -80,7 +80,7 @@ namespace TimetableOfClasses
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
 					MAcademicTitle Title = new MAcademicTitle(FullName.Text, Reduction.Text);
-					Controllers.CTitle.Insert(Title);
+					Controllers.CAcademicTitle.Insert(Title);
 					FullName.Text = "";
 					Reduction.Text = "";
 				}
