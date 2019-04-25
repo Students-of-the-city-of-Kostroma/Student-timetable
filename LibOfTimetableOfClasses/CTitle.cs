@@ -8,6 +8,9 @@
 
 namespace LibOfTimetableOfClasses
 {
+	/// <summary>
+	/// Контроллер объекта Добавление ученого звания
+	/// </summary>
 	public class CTitle : Controller, IController
 	{
 		public CTitle() : base("Уч.звание")
