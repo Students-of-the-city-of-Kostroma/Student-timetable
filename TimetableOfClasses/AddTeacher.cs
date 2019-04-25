@@ -48,9 +48,8 @@ namespace TimetableOfClasses
 		public AddTeacher(MTeacher mTeacher)
 		{
 			InitializeComponent();
-			this.Text = "Изменение преподавателя";			
-
-
+			this.Text = "Изменение преподавателя";
+			checkPatronymic.Enabled = false;
 			#region(FullName)
 
 			firstName.Text = mTeacher.firstName;
@@ -281,6 +280,19 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+		}
+
+		private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkPatronymic.Checked)
+			{
+				patronymic.Text = "";
+				patronymic.Enabled = false;
+			}
+			else
+			{
+				patronymic.Enabled = true;
+			}
 		}
 	}
 }
