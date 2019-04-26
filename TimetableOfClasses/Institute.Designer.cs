@@ -28,50 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.Add = new System.Windows.Forms.Button();
-			this.Change = new System.Windows.Forms.Button();
-			this.Delete = new System.Windows.Forms.Button();
 			this.DG_Institute = new System.Windows.Forms.DataGridView();
+			this.btnAdd = new System.Windows.Forms.Button();
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.btnChange = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Institute)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// Add
-			// 
-			this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Add.Location = new System.Drawing.Point(623, 292);
-			this.Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Add.Name = "Add";
-			this.Add.Size = new System.Drawing.Size(86, 32);
-			this.Add.TabIndex = 1;
-			this.Add.Text = "Добавить";
-			this.Add.UseVisualStyleBackColor = true;
-			this.Add.Click += new System.EventHandler(this.Add_Click);
-			// 
-			// Change
-			// 
-
-			this.Change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Change.Location = new System.Drawing.Point(503, 292);
-			this.Change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Change.Name = "Change";
-			this.Change.Size = new System.Drawing.Size(86, 32);
-			this.Change.TabIndex = 2;
-			this.Change.Text = "Изменить";
-			this.Change.UseVisualStyleBackColor = true;
-			this.Change.Click += new System.EventHandler(this.Change_Click);
-			// 
-			// Delete
-			// 
-
-			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Delete.Location = new System.Drawing.Point(383, 292);
-			this.Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(86, 32);
-			this.Delete.TabIndex = 3;
-			this.Delete.Text = "Удалить";
-			this.Delete.UseVisualStyleBackColor = true;
-			this.Delete.Click += new System.EventHandler(this.Delete_Click);
 			// 
 			// DG_Institute
 			// 
@@ -82,22 +44,56 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_Institute.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Institute.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DG_Institute.Location = new System.Drawing.Point(10, 11);
+			this.DG_Institute.Location = new System.Drawing.Point(8, 12);
 			this.DG_Institute.Name = "DG_Institute";
 			this.DG_Institute.ReadOnly = true;
-			this.DG_Institute.Size = new System.Drawing.Size(544, 217);
+			this.DG_Institute.Size = new System.Drawing.Size(535, 217);
 			this.DG_Institute.TabIndex = 4;
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAdd.Location = new System.Drawing.Point(470, 245);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(75, 23);
+			this.btnAdd.TabIndex = 5;
+			this.btnAdd.Text = "Добавить";
+			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDelete.Location = new System.Drawing.Point(389, 245);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(75, 23);
+			this.btnDelete.TabIndex = 6;
+			this.btnDelete.Text = "Удалить";
+			this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
+			// btnChange
+			// 
+			this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnChange.Location = new System.Drawing.Point(308, 245);
+			this.btnChange.Name = "btnChange";
+			this.btnChange.Size = new System.Drawing.Size(75, 23);
+			this.btnChange.TabIndex = 7;
+			this.btnChange.Text = "Изменить";
+			this.btnChange.UseVisualStyleBackColor = true;
+			this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
 			// 
 			// Institute
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(564, 280);
+			this.ClientSize = new System.Drawing.Size(555, 280);
+			this.Controls.Add(this.btnChange);
+			this.Controls.Add(this.btnDelete);
+			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.DG_Institute);
-			this.Controls.Add(this.Delete);
-			this.Controls.Add(this.Change);
-			this.Controls.Add(this.Add);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Institute";
 			this.Text = "Институт";
 			((System.ComponentModel.ISupportInitialize)(this.DG_Institute)).EndInit();
@@ -106,9 +102,9 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Button Add;
-		private System.Windows.Forms.Button Change;
-		private System.Windows.Forms.Button Delete;
 		private System.Windows.Forms.DataGridView DG_Institute;
+		private System.Windows.Forms.Button btnAdd;
+		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.Button btnChange;
 	}
 }
