@@ -20,7 +20,7 @@ namespace TimetableOfClasses
 			DG_Institute.DataSource =Controllers.CInstitute.Select();
 		}
 
-		private void Add_Click(object sender, EventArgs e)
+		private void btnAdd_Click(object sender, EventArgs e)
 		{
 			AddInstitute addInstitute = new AddInstitute();
 			addInstitute.Show();
@@ -30,15 +30,15 @@ namespace TimetableOfClasses
 		{
 			if (DG_Institute.SelectedCells.Count > 0)
 			{
-				Delete.Enabled = true;
+				btnDelete.Enabled = true;
 			}
 			else
 			{
-				Delete.Enabled = false;
+				btnDelete.Enabled = false;
 			}
 		}
 
-		private void Change_Click(object sender, EventArgs e)
+		private void btnChange_Click(object sender, EventArgs e)
 		{
 			if (DG_Institute.SelectedRows.Count == 1)
 			{
@@ -113,7 +113,7 @@ namespace TimetableOfClasses
 				this.DG_Institute.Rows[index].HeaderCell.Value = indexStr;
 		}
 
-		private void Delete_Click(object sender, EventArgs e)
+		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			if (DG_Institute.Rows.Count == 0)
 			{
