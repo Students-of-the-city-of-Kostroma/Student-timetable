@@ -17,6 +17,7 @@ namespace LibOfTimetableOfClasses
 		public static CGroup CGroup = new CGroup();
 		public static CTitle CTitle = new CTitle();
 		public static СEnclosures СEnclosures = new СEnclosures();
+		public static CInstitute CInstitute = new CInstitute();
 	}
 
 }

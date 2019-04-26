@@ -15,6 +15,7 @@ namespace LibOfTimetableOfClasses
 			DataColumn[] keys = new DataColumn[3];
 
 			DataColumn column = new DataColumn();
+
 			column.DataType = typeof(string);
 			column.ColumnName = "Краткое название института";
 			column.Unique = true;
