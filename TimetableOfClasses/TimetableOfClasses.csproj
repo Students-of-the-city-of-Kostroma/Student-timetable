@@ -80,6 +80,12 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddInstitute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstitute.Designer.cs">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddInstitute.resx">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>

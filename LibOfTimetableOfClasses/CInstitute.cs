@@ -25,14 +25,12 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полное название института";
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Директор института";
-			column.Unique = true;
 			table.Columns.Add(column);
 			keys[2] = column;
 
