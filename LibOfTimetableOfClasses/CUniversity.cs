@@ -16,50 +16,42 @@ namespace LibOfTimetableOfClasses
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "INN";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "ShortName";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "ActualAddress";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "LegalAddress";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullNameRector";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Email";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;

@@ -74,7 +74,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mUniversity = new MUniversity((string)Row["INN"]);
-					Controllers.CTeacher.Delete(mUniversity);
+					Controllers.CUniversity.Delete(mUniversity);
 				}
 			}
 		}

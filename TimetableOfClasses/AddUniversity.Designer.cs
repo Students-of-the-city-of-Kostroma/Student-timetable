@@ -239,6 +239,7 @@
 			this.btCancel.TabIndex = 35;
 			this.btCancel.Text = "Отмена";
 			this.btCancel.UseVisualStyleBackColor = true;
+			this.btCancel.Click += new System.EventHandler(this.Cancel);
 			// 
 			// tbINN
 			// 
