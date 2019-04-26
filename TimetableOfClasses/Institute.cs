@@ -112,5 +112,27 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG_Institute.Rows[index].HeaderCell.Value = indexStr;
 		}
+
+		private void Delete_Click(object sender, EventArgs e)
+		{
+			if (DG_Institute.Rows.Count == 0)
+			{
+				MessageBox.Show("Таблица пуста", "Предупреждение");
+			}
+			else
+			{
+				string message = "Вы уверны что хотите удалить уч. звание?";
+				string caption = "Подтверждение удаления";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result;
+
+				result = MessageBox.Show(message, caption, buttons);
+				if (result == System.Windows.Forms.DialogResult.Yes)
+				{
+					DG_Institute.Rows.RemoveAt(DG_Institute.SelectedCells[0].RowIndex);
+				}
+
+			}
+		}
 	}
 }
