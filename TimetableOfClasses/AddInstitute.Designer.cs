@@ -103,7 +103,7 @@
 			// 
 			// btCreateAndClose
 			// 
-			this.btCreateAndClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btCreateAndClose.Location = new System.Drawing.Point(533, 179);
 			this.btCreateAndClose.Margin = new System.Windows.Forms.Padding(4);
 			this.btCreateAndClose.Name = "btCreateAndClose";
@@ -115,7 +115,7 @@
 			// 
 			// btCreateAndClean
 			// 
-			this.btCreateAndClean.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btCreateAndClean.Location = new System.Drawing.Point(425, 179);
 			this.btCreateAndClean.Margin = new System.Windows.Forms.Padding(4);
 			this.btCreateAndClean.Name = "btCreateAndClean";
@@ -127,7 +127,7 @@
 			// 
 			// btCancel
 			// 
-			this.btCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btCancel.Location = new System.Drawing.Point(317, 179);
 			this.btCancel.Margin = new System.Windows.Forms.Padding(4);
 			this.btCancel.Name = "btCancel";

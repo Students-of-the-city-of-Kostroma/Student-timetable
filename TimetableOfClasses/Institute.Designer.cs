@@ -37,11 +37,9 @@
 			// 
 			// Add
 			// 
-			this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.Add.Location = new System.Drawing.Point(467, 237);
-			this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Add.Location = new System.Drawing.Point(623, 292);
+			this.Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Add.Name = "Add";
 			this.Add.Size = new System.Drawing.Size(86, 32);
 			this.Add.TabIndex = 1;
@@ -51,24 +49,23 @@
 			// 
 			// Change
 			// 
-			this.Change.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.Change.Location = new System.Drawing.Point(377, 237);
-			this.Change.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+			this.Change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Change.Location = new System.Drawing.Point(503, 292);
+			this.Change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Change.Name = "Change";
 			this.Change.Size = new System.Drawing.Size(86, 32);
 			this.Change.TabIndex = 2;
 			this.Change.Text = "Изменить";
 			this.Change.UseVisualStyleBackColor = true;
+			this.Change.Click += new System.EventHandler(this.Change_Click);
 			// 
 			// Delete
 			// 
-			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.Delete.Location = new System.Drawing.Point(287, 237);
-			this.Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.Delete.Location = new System.Drawing.Point(383, 292);
+			this.Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Delete.Name = "Delete";
 			this.Delete.Size = new System.Drawing.Size(86, 32);
 			this.Delete.TabIndex = 3;
