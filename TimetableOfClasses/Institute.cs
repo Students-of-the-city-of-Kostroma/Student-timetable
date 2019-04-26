@@ -104,7 +104,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		private void DG_Institute_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
 		{
 			int index = e.RowIndex;
 			string indexStr = (index + 1).ToString();
