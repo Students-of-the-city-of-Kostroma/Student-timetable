@@ -25,5 +25,92 @@ namespace TimetableOfClasses
 			AddInstitute addInstitute = new AddInstitute();
 			addInstitute.Show();
 		}
+
+		private void DG_Institute_SelectionChanged(object sender, EventArgs e)
+		{
+			if (DG_Institute.SelectedCells.Count > 0)
+			{
+				Delete.Enabled = true;
+			}
+			else
+			{
+				Delete.Enabled = false;
+			}
+		}
+
+		private void Change_Click(object sender, EventArgs e)
+		{
+			if (DG_Institute.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG_Institute.SelectedRows[0].DataBoundItem).Row;
+				MInstitute mInstitute = new MInstitute((string)Row["Полное название института"], (string)Row["Краткое название института"],(string)Row["Директор института"]);
+				AddInstitute add = new AddInstitute(mInstitute);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+		}
+		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			DataGridViewColumn newColumn = DG_Institute.Columns[e.ColumnIndex];
+			DataGridViewColumn oldColumn = DG_Institute.SortedColumn;
+			ListSortDirection direction;
+
+			if (DG_Institute.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG_Institute.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
+
+			if (oldColumn != null)
+			{
+				if (oldColumn == newColumn &&
+					DG_Institute.SortOrder == SortOrder.Ascending)
+				{
+					direction = ListSortDirection.Descending;
+				}
+				else
+				{
+					direction = ListSortDirection.Ascending;
+					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+				}
+			}
+			else
+			{
+				direction = ListSortDirection.Ascending;
+			}
+
+			//сохраняем номер выделенной строки
+			List<object> arraySelectedRows = new List<object>();
+			foreach (DataGridViewRow item in DG_Institute.SelectedRows)
+			{
+				arraySelectedRows.Add(item.DataBoundItem);
+			}
+
+			DG_Institute.Sort(newColumn, direction);
+
+			foreach (DataGridViewRow item in DG_Institute.Rows)
+			{
+				if (arraySelectedRows.Contains(item.DataBoundItem))
+				{
+					item.Selected = true;
+				}
+			}
+		}
+
+		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		{
+			foreach (DataGridViewColumn column in DG_Institute.Columns)
+			{
+				column.SortMode = DataGridViewColumnSortMode.Programmatic;
+			}
+		}
+
+		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG_Institute.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG_Institute.Rows[index].HeaderCell.Value = indexStr;
+		}
 	}
 }
