@@ -121,8 +121,10 @@
 			this.Controls.Add(this.tbShortName);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.MaximumSize = new System.Drawing.Size(282, 202);
+			this.MinimumSize = new System.Drawing.Size(282, 202);
 			this.Name = "AddProfile";
-			this.Text = "AddProfile";
+			this.Text = "Добавить профиль ";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
