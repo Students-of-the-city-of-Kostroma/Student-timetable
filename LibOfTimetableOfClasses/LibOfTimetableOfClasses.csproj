@@ -49,10 +49,11 @@
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
-    <Compile Include="CUniversity.cs"/>
+    <Compile Include="CUniversity.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
+    <Compile Include="MDirectionOfPreparation.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="MTitle.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="СDirectionOfPreparation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
