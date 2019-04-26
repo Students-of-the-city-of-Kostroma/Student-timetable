@@ -16,8 +16,6 @@ namespace LibOfTimetableOfClasses
 		string _shortname;
 		string _director;
 
-
-
 		public string FullName
 		{
 			get

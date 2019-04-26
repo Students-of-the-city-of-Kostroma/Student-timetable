@@ -40,10 +40,10 @@
 			this.Add.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.Add.Location = new System.Drawing.Point(623, 292);
-			this.Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Add.Location = new System.Drawing.Point(467, 237);
+			this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Add.Name = "Add";
-			this.Add.Size = new System.Drawing.Size(115, 39);
+			this.Add.Size = new System.Drawing.Size(86, 32);
 			this.Add.TabIndex = 1;
 			this.Add.Text = "Добавить";
 			this.Add.UseVisualStyleBackColor = true;
@@ -54,10 +54,10 @@
 			this.Change.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.Change.Location = new System.Drawing.Point(503, 292);
-			this.Change.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Change.Location = new System.Drawing.Point(377, 237);
+			this.Change.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Change.Name = "Change";
-			this.Change.Size = new System.Drawing.Size(115, 39);
+			this.Change.Size = new System.Drawing.Size(86, 32);
 			this.Change.TabIndex = 2;
 			this.Change.Text = "Изменить";
 			this.Change.UseVisualStyleBackColor = true;
@@ -67,13 +67,14 @@
 			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.Delete.Location = new System.Drawing.Point(383, 292);
-			this.Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Delete.Location = new System.Drawing.Point(287, 237);
+			this.Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Delete.Name = "Delete";
-			this.Delete.Size = new System.Drawing.Size(115, 39);
+			this.Delete.Size = new System.Drawing.Size(86, 32);
 			this.Delete.TabIndex = 3;
 			this.Delete.Text = "Удалить";
 			this.Delete.UseVisualStyleBackColor = true;
+			this.Delete.Click += new System.EventHandler(this.Delete_Click);
 			// 
 			// DG_Institute
 			// 
@@ -84,23 +85,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_Institute.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Institute.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DG_Institute.Location = new System.Drawing.Point(13, 13);
-			this.DG_Institute.Margin = new System.Windows.Forms.Padding(4);
+			this.DG_Institute.Location = new System.Drawing.Point(10, 11);
 			this.DG_Institute.Name = "DG_Institute";
 			this.DG_Institute.ReadOnly = true;
-			this.DG_Institute.Size = new System.Drawing.Size(726, 267);
+			this.DG_Institute.Size = new System.Drawing.Size(544, 217);
 			this.DG_Institute.TabIndex = 4;
 			// 
 			// Institute
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(752, 345);
+			this.ClientSize = new System.Drawing.Size(564, 280);
 			this.Controls.Add(this.DG_Institute);
 			this.Controls.Add(this.Delete);
 			this.Controls.Add(this.Change);
 			this.Controls.Add(this.Add);
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "Institute";
 			this.Text = "Институт";
 			((System.ComponentModel.ISupportInitialize)(this.DG_Institute)).EndInit();
