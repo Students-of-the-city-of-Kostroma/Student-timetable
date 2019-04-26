@@ -282,6 +282,9 @@ namespace TimetableOfClasses
 				((TextBox)sender).Text = "";
 		}
 
-		
+		private void Cancel(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
