@@ -49,6 +49,7 @@
 			this.DG_AcademicTitle.Name = "DG_AcademicTitle";
 			this.DG_AcademicTitle.ReadOnly = true;
 			this.DG_AcademicTitle.Size = new System.Drawing.Size(749, 265);
+			this.DG_AcademicTitle.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_AcademicTitle_RowPrePaint);
 			this.DG_AcademicTitle.TabIndex = 0;
 			// 
 			// Add
