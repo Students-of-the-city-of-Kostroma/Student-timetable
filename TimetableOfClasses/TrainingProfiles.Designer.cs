@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.dgProfile = new System.Windows.Forms.DataGridView();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.AddProfile = new System.Windows.Forms.Button();
 			this.ChangeProfile = new System.Windows.Forms.Button();
 			this.DeleteProfile = new System.Windows.Forms.Button();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgProfile)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -57,6 +57,23 @@
 			this.dgProfile.TabIndex = 1;
 			this.dgProfile.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgProfile_RowPrePaint);
 			this.dgProfile.SelectionChanged += new System.EventHandler(this.dgProfile_SelectionChanged);
+			// 
+			// FullName
+			// 
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полное название профиля подготовки";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// ShortName
+			// 
+			this.ShortName.DataPropertyName = "ShortName";
+			this.ShortName.FillWeight = 200F;
+			this.ShortName.HeaderText = "Краткое название профиля подготовки";
+			this.ShortName.Name = "ShortName";
+			this.ShortName.ReadOnly = true;
+			this.ShortName.Width = 159;
 			// 
 			// AddProfile
 			// 
@@ -91,23 +108,6 @@
 			this.DeleteProfile.UseVisualStyleBackColor = true;
 			this.DeleteProfile.Click += new System.EventHandler(this.DeleteProfile_Click);
 			// 
-			// FullName
-			// 
-			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полное название профиля подготовки";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// ShortName
-			// 
-			this.ShortName.DataPropertyName = "ShortName";
-			this.ShortName.FillWeight = 200F;
-			this.ShortName.HeaderText = "Краткое название профиля подготовки";
-			this.ShortName.Name = "ShortName";
-			this.ShortName.ReadOnly = true;
-			this.ShortName.Width = 159;
-			// 
 			// TrainingProfiles
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +117,7 @@
 			this.Controls.Add(this.ChangeProfile);
 			this.Controls.Add(this.AddProfile);
 			this.Controls.Add(this.dgProfile);
+			this.MinimumSize = new System.Drawing.Size(507, 307);
 			this.Name = "TrainingProfiles";
 			this.Text = "Профиль подготовки";
 			((System.ComponentModel.ISupportInitialize)(this.dgProfile)).EndInit();

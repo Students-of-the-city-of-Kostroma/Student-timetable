@@ -18,6 +18,8 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			dgProfile.AutoGenerateColumns = false;
 			dgProfile.DataSource = Controllers.CTrainingProfile;
+			DeleteProfile.Enabled = false;
+			ChangeProfile.Enabled = false;
 		}
 
 		private void AddProfile_Click(object sender, EventArgs e)
@@ -36,17 +38,20 @@ namespace TimetableOfClasses
 			}
 			if (SelectedName.Length > 2)
 				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
-			DialogResult dr = MessageBox.Show("Удалить профиль - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-			if (dgProfile.SelectedRows.Count > 0 && dr == DialogResult.OK)
+			if (SelectedName != "")
 			{
-				int countSelected = dgProfile.SelectedRows.Count;
-
-				MTrainingProfile Profile;
-				foreach (DataGridViewRow row in dgProfile.SelectedRows)
+				DialogResult dr = MessageBox.Show("Удалить профиль - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+				if (dgProfile.SelectedRows.Count > 0 && dr == DialogResult.OK)
 				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
-					Controllers.CTrainingProfile.Delete(Profile);
+					int countSelected = dgProfile.SelectedRows.Count;
+
+					MTrainingProfile Profile;
+					foreach (DataGridViewRow row in dgProfile.SelectedRows)
+					{
+						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+						Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
+						Controllers.CTrainingProfile.Delete(Profile);
+					}
 				}
 			}
 		}
