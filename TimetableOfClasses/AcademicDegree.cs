@@ -26,10 +26,10 @@ namespace TimetableOfClasses
 				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
 				MAcademicDegree MAcademicDegree = new MAcademicDegree((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
 
-				//// AddAcademicDegree add = new AddAcademicDegree(MAcademicDegree); // Надо чтобы ден добавил )))  (То есть я)
+			AddAcademicDegree add = new AddAcademicDegree(MAcademicDegree);
 			
-			////add.Owner = this; // AddButton on second form
-			////add.ShowDialog(); // AddButton on second form
+			add.Owner = this;
+			add.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
@@ -57,12 +57,9 @@ namespace TimetableOfClasses
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
-		/*	
-		 *	К
-		 *	
-		 *	AddAcademicDegree addAcademicGegree = new AddAcademicGegree();
+
+		 	AddAcademicDegree addAcademicGegree = new AddAcademicDegree();
 			addAcademicGegree.ShowDialog();
-			*/
 		}
 
 		private void DG_AcademicDegree_SelectionChanged(object sender, EventArgs e)
@@ -105,7 +102,7 @@ namespace TimetableOfClasses
 				direction = ListSortDirection.Ascending;
 			}
 
-			//сохраняем номер выделенной строки
+
 			List<object> arraySelectedRows = new List<object>();
 			foreach (DataGridViewRow item in DG_AcademicDegree.SelectedRows)
 			{

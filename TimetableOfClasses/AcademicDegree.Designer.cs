@@ -37,19 +37,25 @@
 			// 
 			// DG_AcademicDegree
 			// 
+			this.DG_AcademicDegree.AllowUserToAddRows = false;
+			this.DG_AcademicDegree.AllowUserToDeleteRows = false;
 			this.DG_AcademicDegree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.DG_AcademicDegree.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_AcademicDegree.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DG_AcademicDegree.Location = new System.Drawing.Point(12, 12);
+			this.DG_AcademicDegree.Location = new System.Drawing.Point(16, 15);
+			this.DG_AcademicDegree.Margin = new System.Windows.Forms.Padding(4);
 			this.DG_AcademicDegree.Name = "DG_AcademicDegree";
-			this.DG_AcademicDegree.Size = new System.Drawing.Size(431, 237);
+			this.DG_AcademicDegree.ReadOnly = true;
+			this.DG_AcademicDegree.Size = new System.Drawing.Size(740, 359);
 			this.DG_AcademicDegree.TabIndex = 0;
-			this.DG_AcademicDegree.SelectionChanged += new System.EventHandler(this.DG_AcademicDegree_SelectionChanged);
 			// 
 			// AddButton
 			// 
-			this.AddButton.Location = new System.Drawing.Point(368, 255);
+			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddButton.Location = new System.Drawing.Point(647, 382);
+			this.AddButton.Margin = new System.Windows.Forms.Padding(4);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(75, 23);
 			this.AddButton.TabIndex = 1;
@@ -59,7 +65,9 @@
 			// 
 			// DeleteButton
 			// 
-			this.DeleteButton.Location = new System.Drawing.Point(287, 255);
+			this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.DeleteButton.Location = new System.Drawing.Point(566, 382);
+			this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
 			this.DeleteButton.Name = "DeleteButton";
 			this.DeleteButton.Size = new System.Drawing.Size(75, 23);
 			this.DeleteButton.TabIndex = 2;
@@ -69,8 +77,11 @@
 			// 
 			// ChangeButton
 			// 
-			this.ChangeButton.Location = new System.Drawing.Point(206, 255);
+			this.ChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.ChangeButton.Location = new System.Drawing.Point(485, 382);
+			this.ChangeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.ChangeButton.Name = "ChangeButton";
+			this.ChangeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.ChangeButton.Size = new System.Drawing.Size(75, 23);
 			this.ChangeButton.TabIndex = 3;
 			this.ChangeButton.Text = "Изменить";
@@ -81,11 +92,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(455, 280);
+			this.ClientSize = new System.Drawing.Size(769, 415);
 			this.Controls.Add(this.ChangeButton);
 			this.Controls.Add(this.DeleteButton);
 			this.Controls.Add(this.AddButton);
 			this.Controls.Add(this.DG_AcademicDegree);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "AcademicDegree";
 			this.Text = "Ученые степени";
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicDegree)).EndInit();
