@@ -18,9 +18,9 @@ namespace UnitTestOfTimetableOfClasses
             I.Insert(i1);
             bool ex = true;
             //act
-            i1.fullname = "Институт Автоматизированных систем и технологий";
-            i1.shortname = "ИАСТ";
-            i1.director = "Лустгартен Ю.Л.";
+            i1.FullName = "Институт Автоматизированных систем и технологий";
+            i1.ShortName = "ИАСТ";
+            i1.Director = "Лустгартен Ю.Л.";
             bool act = I.Update(i1);
             //assert
             Assert.AreEqual(ex, act);
