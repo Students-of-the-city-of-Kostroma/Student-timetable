@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,16 +42,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAuditor.cs" />
-    <Compile Include="CDiscipline.cs" />
-    <Compile Include="CEnclosures.cs"/>
-    <Compile Include="CGroup.cs"/>
+    <Compile Include="CAcademicDegree.cs" />
+    <Compile Include="CAuditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CDiscipline.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CEnclosures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CHEI.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
-    <Compile Include="CTeacher.cs" />
+    <Compile Include="CTeacher.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CTitle.cs" />
     <Compile Include="IController.cs" />
+    <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
     <Compile Include="MDiscipline.cs" />
