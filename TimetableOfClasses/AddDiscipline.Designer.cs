@@ -60,7 +60,7 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCancel.Location = new System.Drawing.Point(26, 148);
+			this.btCancel.Location = new System.Drawing.Point(26, 131);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 2;
@@ -71,7 +71,7 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCreateAndClean.Location = new System.Drawing.Point(143, 148);
+			this.btCreateAndClean.Location = new System.Drawing.Point(143, 131);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 3;
@@ -82,7 +82,7 @@
 			// btCreateAndClose
 			// 
 			this.btCreateAndClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCreateAndClose.Location = new System.Drawing.Point(260, 148);
+			this.btCreateAndClose.Location = new System.Drawing.Point(260, 131);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClose.TabIndex = 4;
@@ -130,7 +130,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(362, 197);
+			this.ClientSize = new System.Drawing.Size(362, 180);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.tbCycleOfDis);
 			this.Controls.Add(this.label2);
@@ -140,9 +140,10 @@
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.tbShortName);
 			this.Controls.Add(this.tbFullName);
-			this.MinimumSize = new System.Drawing.Size(378, 194);
+			this.MaximumSize = new System.Drawing.Size(378, 219);
+			this.MinimumSize = new System.Drawing.Size(378, 219);
 			this.Name = "AddDiscipline";
-			this.Text = "AddDiscipline";
+			this.Text = "Добавить дисциплину";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
