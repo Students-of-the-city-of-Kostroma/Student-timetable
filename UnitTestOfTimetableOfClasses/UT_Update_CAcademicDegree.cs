@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_Update_CAcademicDegree
 	{
 		[TestMethod]
-		public void Task_484_1()//Замена корректными данными всех полей таблицы, не дублируя существующие
+		public void Task_484_1()//Замена корректными данными всех полей таблицы не дублируя существующие
 		{
 			//arrange
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
