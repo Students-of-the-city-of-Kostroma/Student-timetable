@@ -5,31 +5,30 @@ using LibOfTimetableOfClasses;
 namespace UnitTestOfTimetableOfClasses
 {
 	[TestClass]
-	public class UT_Delete_CGroup
+	public class UT_Delete_CEnclosures
 	{
 		[TestMethod]
-		public void Task_248_1() //Удаление существующей строки 
+		public void task_395_1()
 		{
-			//arrange 
-			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			// arrange
+			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
 			bool expected = true;
 			//act 
-			CGroup cg = new CGroup();
+			СEnclosures cg = new СEnclosures();
 			cg.Insert(gr);
 			bool actual = cg.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
-
 		}
 
 		[TestMethod]
-		public void Task_248_2() //Удаление не существующей строки 
+		public void task_395_2() //Удаление не существующей строки 
 		{
 			//arrange 
-			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
 			bool expected = false;
 			//act 
-			CGroup cg = new CGroup();
+			СEnclosures cg = new СEnclosures();
 			bool actual = cg.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
