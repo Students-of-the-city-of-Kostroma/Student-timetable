@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Контроллер Добавления учёной степени
+	/// Контроллер объекта Добавление ученого звания
 	/// </summary>
-	/// 
 	public class CAcademicDegree : Controller, IController
 	{
 		public CAcademicDegree() : base("Учёная степень")
@@ -53,10 +52,10 @@ namespace LibOfTimetableOfClasses
 		{
 			try
 			{
-				MAcademicDegree MAcademicDegree = (MAcademicDegree)model;
+				MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
 				DataRow newRow = table.NewRow();
-				newRow["Полная запись учёной степени"] = MAcademicDegree.FullName;
-				newRow["Сокращенная запись учёной степени"] = MAcademicDegree.Reduction;
+				newRow["Полная запись учёной степени"] = mAcademicDegree.FullName;
+				newRow["Сокращенная запись учёной степени"] = mAcademicDegree.Reduction;
 				table.Rows.Add(newRow);
 				return true;
 			}
@@ -69,19 +68,19 @@ namespace LibOfTimetableOfClasses
 
 		public override bool Update(Model model)
 		{
-			MAcademicDegree MAcademicDegree = (MAcademicDegree)model;
-			if ((MAcademicDegree.FullName == null && MAcademicDegree.Reduction == null))
+			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
+			if ((mAcademicDegree.FullName == null && mAcademicDegree.Reduction == null))
 				return false;
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((string)this.table.Rows[i]["Сокращенная запись учёной степени"] == MAcademicDegree.Reduction)
+				if ((string)this.table.Rows[i]["Сокращенная запись учёной степени"] == mAcademicDegree.Reduction)
 				{
 					try
 					{
 						this.table.Rows[i].BeginEdit();
-						this.table.Rows[i]["Сокращенная запись учёной степени"] = MAcademicDegree.Reduction;
-						this.table.Rows[i]["Полная запись учёной степени"] = MAcademicDegree.FullName;
+						this.table.Rows[i]["Сокращенная запись учёной степени"] = mAcademicDegree.Reduction;
+						this.table.Rows[i]["Полная запись учёной степени"] = mAcademicDegree.FullName;
 						this.table.Rows[i].EndEdit();
 						this.table.Rows[i].AcceptChanges();
 						return true;
