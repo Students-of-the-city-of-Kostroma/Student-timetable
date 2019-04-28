@@ -42,10 +42,9 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(13, 9);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label1.Location = new System.Drawing.Point(10, 7);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(200, 17);
+			this.label1.Size = new System.Drawing.Size(153, 13);
 			this.label1.TabIndex = 7;
 			this.label1.Text = "Краткое название института";
 			// 
@@ -53,19 +52,17 @@
 			// 
 			this.ShortName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.ShortName.Location = new System.Drawing.Point(13, 30);
-			this.ShortName.Margin = new System.Windows.Forms.Padding(4);
+			this.ShortName.Location = new System.Drawing.Point(10, 24);
 			this.ShortName.Name = "ShortName";
-			this.ShortName.Size = new System.Drawing.Size(409, 22);
+			this.ShortName.Size = new System.Drawing.Size(308, 20);
 			this.ShortName.TabIndex = 8;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(13, 56);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Location = new System.Drawing.Point(10, 46);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(195, 17);
+			this.label2.Size = new System.Drawing.Size(149, 13);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Полное название института";
 			// 
@@ -74,10 +71,9 @@
 			this.FullName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.FullName.Location = new System.Drawing.Point(13, 77);
-			this.FullName.Margin = new System.Windows.Forms.Padding(4);
+			this.FullName.Location = new System.Drawing.Point(10, 63);
 			this.FullName.Name = "FullName";
-			this.FullName.Size = new System.Drawing.Size(409, 22);
+			this.FullName.Size = new System.Drawing.Size(308, 20);
 			this.FullName.TabIndex = 10;
 			// 
 			// Director
@@ -85,29 +81,26 @@
 			this.Director.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.Director.Location = new System.Drawing.Point(13, 124);
-			this.Director.Margin = new System.Windows.Forms.Padding(4);
+			this.Director.Location = new System.Drawing.Point(10, 101);
 			this.Director.Name = "Director";
-			this.Director.Size = new System.Drawing.Size(409, 22);
+			this.Director.Size = new System.Drawing.Size(308, 20);
 			this.Director.TabIndex = 11;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(13, 103);
-			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Location = new System.Drawing.Point(10, 84);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(144, 17);
+			this.label3.Size = new System.Drawing.Size(110, 13);
 			this.label3.TabIndex = 12;
 			this.label3.Text = "Директор института";
 			// 
 			// btCreateAndClose
 			// 
 			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClose.Location = new System.Drawing.Point(533, 179);
-			this.btCreateAndClose.Margin = new System.Windows.Forms.Padding(4);
+			this.btCreateAndClose.Location = new System.Drawing.Point(400, 145);
 			this.btCreateAndClose.Name = "btCreateAndClose";
-			this.btCreateAndClose.Size = new System.Drawing.Size(100, 46);
+			this.btCreateAndClose.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClose.TabIndex = 13;
 			this.btCreateAndClose.Text = "Создать и закрыть";
 			this.btCreateAndClose.UseVisualStyleBackColor = true;
@@ -116,10 +109,9 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(425, 179);
-			this.btCreateAndClean.Margin = new System.Windows.Forms.Padding(4);
+			this.btCreateAndClean.Location = new System.Drawing.Point(319, 145);
 			this.btCreateAndClean.Name = "btCreateAndClean";
-			this.btCreateAndClean.Size = new System.Drawing.Size(100, 46);
+			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 14;
 			this.btCreateAndClean.Text = "Создать и очистить";
 			this.btCreateAndClean.UseVisualStyleBackColor = true;
@@ -128,10 +120,9 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(317, 179);
-			this.btCancel.Margin = new System.Windows.Forms.Padding(4);
+			this.btCancel.Location = new System.Drawing.Point(238, 145);
 			this.btCancel.Name = "btCancel";
-			this.btCancel.Size = new System.Drawing.Size(100, 46);
+			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 15;
 			this.btCancel.Text = "Отмена";
 			this.btCancel.UseVisualStyleBackColor = true;
@@ -139,9 +130,9 @@
 			// 
 			// AddInstitute
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(646, 238);
+			this.ClientSize = new System.Drawing.Size(484, 193);
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.btCreateAndClean);
 			this.Controls.Add(this.btCreateAndClose);
@@ -151,8 +142,9 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.ShortName);
 			this.Controls.Add(this.label1);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "AddInstitute";
-			this.Text = "AddInstitute";
+			this.Text = "Добавление института";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
