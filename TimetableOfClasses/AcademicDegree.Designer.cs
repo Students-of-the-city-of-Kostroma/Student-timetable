@@ -37,6 +37,7 @@
 			// 
 			// DG_AcademicDegree
 			// 
+
 			this.DG_AcademicDegree.AllowUserToAddRows = false;
 			this.DG_AcademicDegree.AllowUserToDeleteRows = false;
 			this.DG_AcademicDegree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -48,13 +49,14 @@
 			this.DG_AcademicDegree.Margin = new System.Windows.Forms.Padding(4);
 			this.DG_AcademicDegree.Name = "DG_AcademicDegree";
 			this.DG_AcademicDegree.ReadOnly = true;
-			this.DG_AcademicDegree.Size = new System.Drawing.Size(740, 359);
+			this.DG_AcademicDegree.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
+			this.DG_AcademicDegree.Size = new System.Drawing.Size(492, 216);
 			this.DG_AcademicDegree.TabIndex = 0;
 			// 
 			// AddButton
 			// 
 			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.AddButton.Location = new System.Drawing.Point(647, 382);
+			this.AddButton.Location = new System.Drawing.Point(433, 239);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(4);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(75, 23);
@@ -66,7 +68,7 @@
 			// DeleteButton
 			// 
 			this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.DeleteButton.Location = new System.Drawing.Point(566, 382);
+			this.DeleteButton.Location = new System.Drawing.Point(350, 239);
 			this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
 			this.DeleteButton.Name = "DeleteButton";
 			this.DeleteButton.Size = new System.Drawing.Size(75, 23);
@@ -78,7 +80,7 @@
 			// ChangeButton
 			// 
 			this.ChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.ChangeButton.Location = new System.Drawing.Point(485, 382);
+			this.ChangeButton.Location = new System.Drawing.Point(267, 239);
 			this.ChangeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.ChangeButton.Name = "ChangeButton";
 			this.ChangeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -92,7 +94,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(769, 415);
+			this.ClientSize = new System.Drawing.Size(521, 272);
 			this.Controls.Add(this.ChangeButton);
 			this.Controls.Add(this.DeleteButton);
 			this.Controls.Add(this.AddButton);

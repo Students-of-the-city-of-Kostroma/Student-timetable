@@ -24,12 +24,11 @@ namespace TimetableOfClasses
 			if (DG_AcademicDegree.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
-				MAcademicDegree MAcademicDegree = new MAcademicDegree((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
+				MAcademicDegree mAcademicDegree = new MAcademicDegree((string)Row["Полная запись учёной степени"], (string)Row["Сокращенная запись учёной степени"]);
 
-			AddAcademicDegree add = new AddAcademicDegree(MAcademicDegree);
-			
-			add.Owner = this;
-			add.ShowDialog();
+				AddAcademicDegree add = new AddAcademicDegree(mAcademicDegree);
+				add.Owner = this;
+				add.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
@@ -74,7 +73,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		private void DG_AcademicDegree_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			DataGridViewColumn newColumn = DG_AcademicDegree.Columns[e.ColumnIndex];
 			DataGridViewColumn oldColumn = DG_AcademicDegree.SortedColumn;
@@ -120,7 +119,7 @@ namespace TimetableOfClasses
 			}
 		}
 
-		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		private void DG_AcademicDegree_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
 		{
 			foreach (DataGridViewColumn column in DG_AcademicDegree.Columns)
 			{
@@ -134,7 +133,7 @@ namespace TimetableOfClasses
 			string indexStr = (index + 1).ToString();
 			object header = this.DG_AcademicDegree.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
-				this.DG_AcademicDegree.Rows[index].HeaderCell.Value = indexStr;
+			this.DG_AcademicDegree.Rows[index].HeaderCell.Value = indexStr;
 		}
 
 
