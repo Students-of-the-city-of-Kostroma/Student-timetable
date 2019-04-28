@@ -216,9 +216,9 @@ namespace TimetableOfClasses
 
 		bool Add()
 		{
-			var splitedFullName = tbRectorName.Text.Split(new char[] { ' ' });
-			if (splitedFullName.Length != 3)
-				splitedFullName.ToList().Add("");
+			var splitedFullName = (tbRectorName.Text.Split(new char[] { ' ' })).ToList();
+			if (splitedFullName.Count != 3)
+				splitedFullName.Add("");
 			if (cur == null)
 			{
 				MUniversity mUniversity = new MUniversity(tbINN.Text,
