@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -121,7 +120,7 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-				string message = "Вы уверны что хотите удалить уч. звание?";
+				string message = "Вы уверны что хотите удалить институт?";
 				string caption = "Подтверждение удаления";
 				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 				DialogResult result;
