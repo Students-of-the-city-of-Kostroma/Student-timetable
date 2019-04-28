@@ -270,6 +270,9 @@
 		private System.Windows.Forms.ToolStripMenuItem видыЗанятийПодготовкиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem профильПодготовкиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem направлениеПодготовкиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem редактироватьЗаписьToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьToolStripMenuItem;
 	}
 }
 
