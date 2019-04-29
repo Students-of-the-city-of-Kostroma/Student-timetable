@@ -15,9 +15,9 @@ namespace LibOfTimetableOfClasses
         public static CAuditor CAuditor = new CAuditor();
         public static CDiscipline CDiscipline = new CDiscipline();
         public static CGroup CGroup = new CGroup();
-		public static CTitle CTitle = new CTitle();
+		    public static CTitle CTitle = new CTitle();
+    		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
         public static СEnclosures СEnclosures = new СEnclosures();
-		public static CUniversity CUniversity = new CUniversity();
-	}
-
+    		public static CUniversity CUniversity = new CUniversity();
+	  }
 }

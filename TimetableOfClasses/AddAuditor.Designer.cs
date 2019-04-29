@@ -181,8 +181,10 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.tbAuditor);
 			this.Controls.Add(this.label1);
+			this.MaximumSize = new System.Drawing.Size(282, 350);
+			this.MinimumSize = new System.Drawing.Size(282, 350);
 			this.Name = "AddAuditor";
-			this.Text = "AddAuditor";
+			this.Text = "Добавить аудиторию";
 			((System.ComponentModel.ISupportInitialize)(this.nuPlaces)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

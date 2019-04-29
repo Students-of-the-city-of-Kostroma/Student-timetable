@@ -96,6 +96,12 @@ namespace TimetableOfClasses
 			directory.Show();
 		}
 
+		private void профильПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TrainingProfiles trainingProfiles = new TrainingProfiles();
+			trainingProfiles.Show();
+    }
+
 		private void направлениеПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			DirectionOfPreparation directionOfPreparation = new DirectionOfPreparation();

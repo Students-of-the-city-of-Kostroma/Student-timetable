@@ -41,9 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAuditor.cs" />
-    <Compile Include="CDirectionOfPreparation.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CDirectionOfPreparation.cs" />
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CEnclosures.cs" />
     <Compile Include="CGroup.cs" />
@@ -52,6 +50,7 @@
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
+    <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="CUniversity.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
@@ -64,6 +63,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
