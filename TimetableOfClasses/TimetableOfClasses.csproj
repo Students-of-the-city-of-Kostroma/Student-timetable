@@ -103,6 +103,11 @@
     </Compile>
     <Compile Include="DirectionOfPreparation.Designer.cs">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    <Compile Include="AddUniversity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUniversity.Designer.cs">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </Compile>
     <Compile Include="Directory.cs">
       <SubType>Form</SubType>
@@ -202,6 +207,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    <EmbeddedResource Include="AddUniversity.resx">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
