@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_1() //Добавление в пустую таблицу
 		{
 			//arrange 
-			MTeacher tcher = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act
 			CTeacher T = new CTeacher();
@@ -25,8 +25,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_2() //Полностью отличные атрибуты
 		{
 			//arrange 
-			MTeacher tcher1 = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна",  "Людмила",  "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			bool expected = true;
 			//act
 			CTeacher T = new CTeacher();
@@ -40,8 +40,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_3() //Повторяющийся атрибут "ФИО"
 		{
 			//arrange 
-			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			bool expected = false;
 			//act
 			CTeacher T = new CTeacher();
@@ -55,8 +55,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_4_or_6() //Повторяющиеся атрибуты все кроме ФИО
 		{
 			//arrange 
-			MTeacher tcher1 = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act
 			CTeacher T = new CTeacher();
@@ -70,8 +70,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_7() //Все атрибуты повторяются
 		{
 			//arrange 
-			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher = new MTeacher("Киприна Людмила Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = false;
 			//act
 			CTeacher T = new CTeacher();

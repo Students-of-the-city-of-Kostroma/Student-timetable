@@ -51,14 +51,10 @@
 			this.ученыеСтепениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.видыЗанятийПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.направлениеПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.корпусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.видыЗанятийПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -226,13 +222,6 @@
 			this.рабочийToolStripMenuItem.Name = "рабочийToolStripMenuItem";
 			this.рабочийToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
 			this.рабочийToolStripMenuItem.Text = "Рабочие учебные планы";
-			// 
-			// видыЗанятийПодготовкиToolStripMenuItem
-			// 
-			this.видыЗанятийПодготовкиToolStripMenuItem.Name = "видыЗанятийПодготовкиToolStripMenuItem";
-			this.видыЗанятийПодготовкиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Виды занятий подготовки";
-			this.видыЗанятийПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.видыЗанятийПодготовкиToolStripMenuItem_Click);
 			// 
 			// Start
 			// 

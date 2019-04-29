@@ -12,8 +12,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_1()//изменение когда атрибуды не повторяются (ФИО и Кафедра изменить не возможно)
 		{
 			//arrange
-			MTeacher tcher = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			CTeacher T = new CTeacher();
 			T.Insert(tcher);
 			T.Insert(tcher1);
@@ -31,8 +31,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_5and7()//изменение при условии что примечание, кафедра и график работы дублируется
 		{
 			//arrange
-			MTeacher tcher = new MTeacher("Садовская Ольга Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна Людмила Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			CTeacher T = new CTeacher();
 			T.Insert(tcher);
 			T.Insert(tcher1);
