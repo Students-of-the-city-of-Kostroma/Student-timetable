@@ -35,7 +35,7 @@ namespace LibOfTimetableOfClasses
 			{
 				if (value >= 1 && value <= 60)
 					periodOfStudy = value;
-				else throw new AggregateException("Значение Периода обучения находится в недопустимом интервале");
+				else throw new ArgumentException("Значение Периода обучения находится в недопустимом интервале");
 			}
 
 			get { return periodOfStudy; }
