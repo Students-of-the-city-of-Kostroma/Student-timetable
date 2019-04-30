@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="DirectionOfPreparation.Designer.cs">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUniversity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +223,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUniversity.resx">
       <DependentUpon>AddUniversity.cs</DependentUpon>
     </EmbeddedResource>
