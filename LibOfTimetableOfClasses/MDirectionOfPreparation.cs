@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
@@ -21,7 +22,13 @@ namespace LibOfTimetableOfClasses
 
 		public string CodeOfDP
 		{
-			set { codeOfDP = value; }
+			set
+			{
+				if  (Regex.IsMatch(value, @"\d{2}.\d{2}.\d{2}", RegexOptions.IgnoreCase))
+					codeOfDP = value;
+				else throw new ArgumentException("Код не соответствует маске задания кода");
+			}
+				
 			get { return codeOfDP; }
 		}
 		public string NameOfDP
