@@ -43,6 +43,7 @@
 			this.ученыеЗванияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ученыеСтепениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.видыЗанятийПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.направлениеПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.корпусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +83,7 @@
             this.ученыеЗванияToolStripMenuItem,
             this.ученыеСтепениToolStripMenuItem,
             this.видыЗанятийПодготовкиToolStripMenuItem,
+            this.направлениеПодготовкиToolStripMenuItem,
             this.корпусаToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
@@ -172,7 +174,14 @@
 			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Виды занятий подготовки";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.видыЗанятийПодготовкиToolStripMenuItem_Click);
 			// 
-			// корпусаToolStripMenuItem
+			// направлениеПодготовкиToolStripMenuItem
+			// 
+			this.направлениеПодготовкиToolStripMenuItem.Name = "направлениеПодготовкиToolStripMenuItem";
+			this.направлениеПодготовкиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.направлениеПодготовкиToolStripMenuItem.Text = "Направление подготовки";
+			this.направлениеПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.направлениеПодготовкиToolStripMenuItem_Click);
+			//
+      // корпусаToolStripMenuItem
 			// 
 			this.корпусаToolStripMenuItem.Name = "корпусаToolStripMenuItem";
 			this.корпусаToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
@@ -237,6 +246,7 @@
 		private System.Windows.Forms.ToolStripMenuItem ученыеСтепениToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem корпусаToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem видыЗанятийПодготовкиToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem направлениеПодготовкиToolStripMenuItem;
 	}
 }
 

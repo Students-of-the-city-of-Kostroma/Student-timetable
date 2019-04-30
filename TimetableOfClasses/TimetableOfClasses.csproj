@@ -98,6 +98,11 @@
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="DirectionOfPreparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectionOfPreparation.Designer.cs">
+      <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
     <Compile Include="AddUniversity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +205,8 @@
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DirectionOfPreparation.resx">
+      <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
     <EmbeddedResource Include="AddUniversity.resx">
       <DependentUpon>AddUniversity.cs</DependentUpon>
     </EmbeddedResource>
