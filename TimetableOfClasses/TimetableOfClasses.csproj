@@ -92,6 +92,12 @@
     <Compile Include="AddOrEditDirectory.Designer.cs">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProfile.Designer.cs">
+      <DependentUpon>AddProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainingProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingProfiles.Designer.cs">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="University.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProfile.resx">
+      <DependentUpon>AddProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
@@ -247,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Timetable.resx">
       <DependentUpon>Timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingProfiles.resx">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="University.resx">
       <DependentUpon>University.cs</DependentUpon>
