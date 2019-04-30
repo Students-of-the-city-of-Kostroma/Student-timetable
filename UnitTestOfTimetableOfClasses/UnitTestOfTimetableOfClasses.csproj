@@ -41,6 +41,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UT_MDirectionOfPreparation.cs" />
+    <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
     <Compile Include="UT_CTrainingProfile.cs" />
     <Compile Include="UT_Delete_CTrainingProfile.cs" />
     <Compile Include="UT_MTrainingProfile.cs" />
