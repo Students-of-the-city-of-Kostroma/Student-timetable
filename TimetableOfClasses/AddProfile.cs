@@ -44,7 +44,11 @@ namespace TimetableOfClasses
 				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 				try
 				{
-					Controllers.CTrainingProfile.Insert(Profile);
+					if (!Controllers.CTrainingProfile.Insert(Profile))
+					{
+						MessageBox.Show("Невозможно добавить профиль подготовки");
+						return;
+					}
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 				}
@@ -65,7 +69,13 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						Controllers.CTrainingProfile.Insert(Profile);
+					{
+						if (!Controllers.CTrainingProfile.Insert(Profile))
+						{
+							MessageBox.Show("Невозможно добавить профиль подготовки");
+							return;
+						}
+					}
 					else Controllers.CTrainingProfile.Update(Profile);
 					Close();
 				}

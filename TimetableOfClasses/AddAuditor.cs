@@ -52,7 +52,11 @@ namespace TimetableOfClasses
 				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
 				try
 				{
-					Controllers.CAuditor.Insert(Auditor);
+					if (!Controllers.CAuditor.Insert(Auditor))
+					{
+						MessageBox.Show("Невозможно добавить аудиторию");
+						return;
+					}
 					tbAuditor.Text = "";
 					tbKaf.Text = "";
 					tbCorpus.Text = "";
@@ -75,7 +79,12 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						Controllers.CAuditor.Insert(Auditor);
+						{ if (!Controllers.CAuditor.Insert(Auditor))
+						{
+							MessageBox.Show("Невозможно добавить аудиторию");
+							return;
+						}
+					}
 					else Controllers.CAuditor.Update(Auditor);
 					Close();
 				}
