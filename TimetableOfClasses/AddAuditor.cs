@@ -26,7 +26,7 @@ namespace TimetableOfClasses
 		public AddAuditor(MAuditor mAuditor)
 		{
 			InitializeComponent();
-			this.Text = "Изменение дисциплины";
+			this.Text = "Изменение аудитории";
 			bt_Cr_n_Cl.Visible = false;
 			bt_Cr_n_Close.Text = "Сохранить";
 			tbAuditor.Text = mAuditor.NameOfAuditor;

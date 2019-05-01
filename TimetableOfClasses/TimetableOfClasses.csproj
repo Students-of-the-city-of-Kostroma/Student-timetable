@@ -68,6 +68,12 @@
     <Compile Include="AddAuditor.Designer.cs">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDirectionOfPreparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDirectionOfPreparation.Designer.cs">
+      <DependentUpon>AddDirectionOfPreparation.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiscipline.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddAuditor.resx">
       <DependentUpon>AddAuditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDirectionOfPreparation.resx">
+      <DependentUpon>AddDirectionOfPreparation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiscipline.resx">
       <DependentUpon>AddDiscipline.cs</DependentUpon>
