@@ -24,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
 		[TestMethod]
-		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты раздичаются
+		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты различаются
 		{
 			//arrange
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
@@ -71,7 +71,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
 		[TestMethod]
-		public void Task_251_from_3_or_9() // дублирование всех атрибутов, кроме атрибута "Группа"
+		public void Task_251_3() // дублирование Семестра
 		{
 			//arrange
 			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
@@ -79,7 +79,91 @@ namespace UnitTestOfTimetableOfClasses
 			bool g = cg.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, "ИСТ", 2, 2, 1, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_4() // дублирование напр. подготоаки
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСиТ", 2, 2, 1, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_5() // дублирование смены
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 1, 2, 1, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_6() // дублирование студентов
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 1, 1, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_7() // дублирование пар мин
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 0, 1, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_8() // дублирование пар макс
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 1, 0, "Суббота");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_9() // дублирование выходной
+		{
+			//arrange
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			CGroup cg = new CGroup();
+			bool g = cg.Insert(gr);
+			bool expected = true;
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 1, 1, "Воскресенье");
 			bool actual = cg.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);

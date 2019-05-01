@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
 		}
 
 		[TestMethod]
-		public void Task_397_2_4() //Дублирование телефона  примечания и улицы
+		public void Task_397_2() //Дублирование адреса
 		{
 			//arrange
 			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
@@ -29,7 +29,37 @@ namespace UnitTestOfTimetableOfClasses
 			bool expected = true;
 			bool g = cg.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Дзержинского", "111111", "1");
+			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Дзержинского", "111121", "2");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void Task_397_3() //Дублирование телефона
+		{
+			//arrange
+			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
+			СEnclosures cg = new СEnclosures();
+			bool expected = true;
+			bool g = cg.Insert(gr);
+			//act
+			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Ивановская", "111111", "2");
+			bool actual = cg.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void Task_397_4() //Дублирование примечания
+		{
+			//arrange
+			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
+			СEnclosures cg = new СEnclosures();
+			bool expected = true;
+			bool g = cg.Insert(gr);
+			//act
+			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Ивановская", "111121", "1");
 			bool actual = cg.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
