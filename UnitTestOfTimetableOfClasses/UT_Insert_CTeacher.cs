@@ -52,11 +52,39 @@ namespace UnitTestOfTimetableOfClasses
 		}
 
 		[TestMethod]
-		public void Task_246_4_or_6() //Повторяющиеся атрибуты все кроме ФИО
+		public void Task_246_4() //Повторяющиеся атрибут Примечание
 		{
 			//arrange 
 			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+			bool expected = true;
+			//act
+			CTeacher T = new CTeacher();
+			bool f = T.Insert(tcher1);
+			bool actual = T.Insert(tcher);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_246_5() //Повторяющиеся атрибут Кафедра
+		{
+			//arrange 
+			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Ученый", "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+			bool expected = true;
+			//act
+			CTeacher T = new CTeacher();
+			bool f = T.Insert(tcher1);
+			bool actual = T.Insert(tcher);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_246_6() //Повторяющиеся атрибуты гравик работы
+		{
+			//arrange 
+			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Ученый", "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act
 			CTeacher T = new CTeacher();
