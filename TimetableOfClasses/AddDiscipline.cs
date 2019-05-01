@@ -42,7 +42,11 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline(tbFullName.Text, tbShortName.Text, tbCycleOfDis.Text);
 				try
 				{
-					Controllers.CDiscipline.Insert(mDiscipline);
+					if (!Controllers.CDiscipline.Insert(mDiscipline))
+					{
+						MessageBox.Show("Невозможно добавить дисциплину");
+						return;
+					}
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 					tbCycleOfDis.Text = "";
@@ -64,7 +68,13 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						Controllers.CDiscipline.Insert(mDiscipline);
+					{
+						if (!Controllers.CDiscipline.Insert(mDiscipline))
+						{
+							MessageBox.Show("Невозможно добавить дисциплину");
+							return;
+						}
+					}
 					else Controllers.CDiscipline.Update(mDiscipline);
 					Close();
 				}
