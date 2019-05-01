@@ -45,7 +45,7 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
-			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text))
+			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
@@ -56,7 +56,7 @@ namespace TimetableOfClasses
 					tbAuditor.Text = "";
 					tbKaf.Text = "";
 					tbCorpus.Text = "";
-					nuPlaces.Value = 0;
+					nuPlaces.Value = 1;
 				}
 				catch (Exception ex)
 				{
@@ -67,7 +67,7 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
-			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text))
+			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
