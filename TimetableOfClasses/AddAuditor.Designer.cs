@@ -104,9 +104,19 @@
 			this.nuPlaces.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nuPlaces.Location = new System.Drawing.Point(13, 149);
+			this.nuPlaces.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nuPlaces.Name = "nuPlaces";
 			this.nuPlaces.Size = new System.Drawing.Size(241, 20);
 			this.nuPlaces.TabIndex = 5;
+			this.nuPlaces.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			// 
 			// label4
 			// 
