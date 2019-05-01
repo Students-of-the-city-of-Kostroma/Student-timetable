@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="UT_MDirectionOfPreparation.cs" />
     <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
+    <Compile Include="UT_CDirectionOfPreparation.cs" />
     <Compile Include="UT_CTrainingProfile.cs" />
     <Compile Include="UT_Delete_CTrainingProfile.cs" />
     <Compile Include="UT_MTrainingProfile.cs" />

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-	public class СDirectionOfPreparation : DataTable, IController
+	public class CDirectionOfPreparation : DataTable, IController
 	{
-		public СDirectionOfPreparation() : base("Направление подготовки")
+		public CDirectionOfPreparation() : base("Направление подготовки")
 		{
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
