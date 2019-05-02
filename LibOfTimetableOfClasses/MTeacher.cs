@@ -12,7 +12,6 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MTeacher : Model
 	{
-		string _fullName;
 		string _patronymic;
 		string _secondName;
 		string _firstName;
@@ -30,6 +29,11 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if(value != null || value != " ") throw new Exception("Строка не может быть пустой");
+				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+				char[] tmpMass = value.ToCharArray();
+				foreach (char c in tmpMass)
+					if (c >= 'А' || c <= 'я') throw new Exception("Можно использовать только русские буквы !");
 				_firstName = value;
 			}
 		}
@@ -42,6 +46,11 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value != null || value != " ") throw new Exception("Строка не может быть пустой");
+				if (value.Length > 50) throw new Exception("Кол-во символов превышает 50");
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
 				_secondName = value;
 			}
 		}
@@ -55,6 +64,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
+
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
+
 				if (value != "") _patronymic = value;
 				else _patronymic = null;
 			}
@@ -67,6 +82,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value != null || value != " ") throw new Exception("Строка не может быть пустой");
+
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if (l < 'А' || l > 'Я') throw new Exception("Можно использовать только русские буквы !");
+
 				_departament = value;
 			}
 		}
@@ -75,11 +96,19 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				return _note;
+				if (_note != null) return _note;
+				else return "";
 			}
 			set
 			{
-				_note = value;
+				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
+
+				if (value != "") _note = value;
+				else _note = null;
 			}
 		}
 
@@ -91,6 +120,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 				_metodicalDays = value;
 			}
 		}
@@ -99,11 +131,18 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				return _windows;
+				if (_windows != null) return _windows;
+				else return "";
 			}
 			set
 			{
-				_windows = value;
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
+
+				if (value != "") _windows = value;
+				else _windows = null;
+
 			}
 		}
 
@@ -115,6 +154,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				char[] tmpMass = value.ToCharArray();
+				foreach (char l in tmpMass)
+					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 				_weekends = value;
 			}
 		}
