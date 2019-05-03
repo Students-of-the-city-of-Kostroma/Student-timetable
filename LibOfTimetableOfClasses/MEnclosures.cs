@@ -50,14 +50,16 @@ namespace LibOfTimetableOfClasses
 			{
 				if (value == "") throw new Exception("Пустая строка университета");
 				if (value == null) throw new Exception("Null строка университета");
+				
 				foreach (char s in value)
 				{
-					if ((s < 'А' || s > 'Я'))
+					if ((s < 'А' || s > 'я'))
 					{
 						throw new Exception("Присутствует недопустимый символ в строке университета");
 					}
 				}
 				if (value.Length > 10) throw new Exception("Слишком длинная строка университета");
+				value = value.ToUpper();
 				_university = value;
 			}
 		}
