@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach(DataRow row in this.Rows)
 			{
-				string fullName = mTeacher.secondName + " " + mTeacher.firstName + " " + mTeacher.patronymic;
+				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 				if ((string)row["FullName"] == fullName )
 					return false;
 			}
@@ -65,7 +65,7 @@ namespace LibOfTimetableOfClasses
 			{
 				try
 				{
-					string fullName = mTeacher.secondName + " " + mTeacher.firstName + " " + mTeacher.patronymic;
+					string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 					DataRow newRow = this.NewRow();
 					newRow["FullName"] = fullName;
 					newRow["Note"] = mTeacher.Note;
@@ -88,7 +88,7 @@ namespace LibOfTimetableOfClasses
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			string fullName = mTeacher.secondName + " " + mTeacher.firstName + " " + mTeacher.patronymic;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
 				if ((string)this.Rows[i]["FullName"] == fullName)
@@ -115,7 +115,7 @@ namespace LibOfTimetableOfClasses
 		public bool Delete(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			string fullName = mTeacher.secondName + " " + mTeacher.firstName + " " + mTeacher.patronymic;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
 				if ((string)this.Rows[i]["FullName"] == fullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
