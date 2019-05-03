@@ -21,7 +21,7 @@ namespace LibOfTimetableOfClasses
 		string _windows;
 		string _weekends;
 
-		public string firstName
+		public string FirstName
 		{
 			get
 			{
@@ -43,7 +43,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string secondName
+		public string SecondName
 		{
 			get
 			{
@@ -64,7 +64,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string patronymic
+		public string Patronymic
 		{
 			get
 			{
@@ -73,6 +73,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null) throw new Exception("Строка не может быть null");
 				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
 				char[] tmpMass = value.ToCharArray();
@@ -116,6 +117,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null) throw new Exception("Строка не может быть null");
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
 				char[] tmpMass = value.ToCharArray();
@@ -171,6 +173,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null) throw new Exception("Строка не может быть null");
 				char[] tmpMass = value.ToCharArray();
 				foreach (char l in tmpMass)
 					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
@@ -199,9 +202,9 @@ namespace LibOfTimetableOfClasses
 
 		public MTeacher(string firstName, string secondName, string patronymic, string note, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
-			this.firstName = firstName;
-			this.secondName = secondName;
-			this.patronymic = patronymic;
+			this.FirstName = firstName;
+			this.SecondName = secondName;
+			this.Patronymic = patronymic;
 			Note = note;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
@@ -211,9 +214,9 @@ namespace LibOfTimetableOfClasses
 
 		public MTeacher(string firstName, string secondName, string note, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
-			this.firstName = firstName;
-			this.secondName = secondName;
-			this.patronymic = null;
+			this.FirstName = firstName;
+			this.SecondName = secondName;
+			this.Patronymic = null;
 			Note = note;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
@@ -223,9 +226,9 @@ namespace LibOfTimetableOfClasses
 
 		public MTeacher(string firstName, string secondName, string patronymic, string departament) : base()
 		{
-			this.firstName = firstName;
-			this.secondName = secondName;
-			this.patronymic = patronymic;
+			this.FirstName = firstName;
+			this.SecondName = secondName;
+			this.Patronymic = patronymic;
 			Departament = departament;
 		}
 	}
