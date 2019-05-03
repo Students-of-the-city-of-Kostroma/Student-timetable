@@ -107,7 +107,7 @@ namespace TimetableOfClasses
 
 		private void tbCod_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (tbCod.Text.Length < 8 && Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == 8)
+			if (tbCod.Text.Length < 8 && (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '.') || e.KeyChar == 8)
 			{
 				return;
 			}
