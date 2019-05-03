@@ -149,6 +149,7 @@ namespace LibOfTimetableOfClasses
 		/// <param name="population">численность</param>
 		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
 		{
+			if (maxNumberOfClass < minNumberOfClass) throw new Exception("Пар/день max должен быть больше пар/день min");
 			Group = group;
 			Semester = semester;
 			Shift = shift;
