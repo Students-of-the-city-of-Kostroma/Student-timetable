@@ -29,9 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.DG = new System.Windows.Forms.DataGridView();
-			this.delete = new System.Windows.Forms.Button();
-			this.add = new System.Windows.Forms.Button();
-			this.update = new System.Windows.Forms.Button();
 			this.INN = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fulltitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +37,9 @@
 			this.namerector = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.delete = new System.Windows.Forms.Button();
+			this.add = new System.Windows.Forms.Button();
+			this.update = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -71,39 +71,6 @@
 			this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
 			this.DG.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_DataBindingComplete);
 			this.DG.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
-			// 
-			// delete
-			// 
-			this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.delete.Location = new System.Drawing.Point(475, 327);
-			this.delete.Name = "delete";
-			this.delete.Size = new System.Drawing.Size(75, 23);
-			this.delete.TabIndex = 1;
-			this.delete.Text = "Удалить";
-			this.delete.UseVisualStyleBackColor = true;
-			this.delete.Click += new System.EventHandler(this.Delete);
-			// 
-			// add
-			// 
-			this.add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.add.Location = new System.Drawing.Point(637, 327);
-			this.add.Name = "add";
-			this.add.Size = new System.Drawing.Size(75, 23);
-			this.add.TabIndex = 2;
-			this.add.Text = "Добавить";
-			this.add.UseVisualStyleBackColor = true;
-			this.add.Click += new System.EventHandler(this.Add);
-			// 
-			// update
-			// 
-			this.update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.update.Location = new System.Drawing.Point(556, 327);
-			this.update.Name = "update";
-			this.update.Size = new System.Drawing.Size(75, 23);
-			this.update.TabIndex = 3;
-			this.update.Text = "Изменить";
-			this.update.UseVisualStyleBackColor = true;
-			this.update.Click += new System.EventHandler(this.Update);
 			// 
 			// INN
 			// 
@@ -160,6 +127,39 @@
 			this.phone.HeaderText = "Телефон";
 			this.phone.Name = "phone";
 			this.phone.ReadOnly = true;
+			// 
+			// delete
+			// 
+			this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.delete.Location = new System.Drawing.Point(475, 327);
+			this.delete.Name = "delete";
+			this.delete.Size = new System.Drawing.Size(75, 23);
+			this.delete.TabIndex = 1;
+			this.delete.Text = "Удалить";
+			this.delete.UseVisualStyleBackColor = true;
+			this.delete.Click += new System.EventHandler(this.Delete);
+			// 
+			// add
+			// 
+			this.add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.add.Location = new System.Drawing.Point(637, 327);
+			this.add.Name = "add";
+			this.add.Size = new System.Drawing.Size(75, 23);
+			this.add.TabIndex = 2;
+			this.add.Text = "Добавить";
+			this.add.UseVisualStyleBackColor = true;
+			this.add.Click += new System.EventHandler(this.Add);
+			// 
+			// update
+			// 
+			this.update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.update.Location = new System.Drawing.Point(556, 327);
+			this.update.Name = "update";
+			this.update.Size = new System.Drawing.Size(75, 23);
+			this.update.TabIndex = 3;
+			this.update.Text = "Изменить";
+			this.update.UseVisualStyleBackColor = true;
+			this.update.Click += new System.EventHandler(this.Update);
 			// 
 			// University
 			// 

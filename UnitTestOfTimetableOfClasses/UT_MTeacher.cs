@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MTeacher T = new MTeacher("", "", "", "", "", "", "", "");
-                Assert.AreEqual(typeof(String), T.firstName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.FirstName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
 			try
 			{
 				MTeacher T = new MTeacher("", "", "", "", "", "", "", "");
-				Assert.AreEqual(typeof(String), T.secondName.GetType(), "Ожидался тип поля String");
+				Assert.AreEqual(typeof(String), T.SecondName.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
 			{
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
 			try
 			{
 				MTeacher T = new MTeacher("", "", "", "", "", "", "", "");
-				Assert.AreEqual(typeof(String), T.patronymic.GetType(), "Ожидался тип поля String");
+				Assert.AreEqual(typeof(String), T.Patronymic.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
 			{
