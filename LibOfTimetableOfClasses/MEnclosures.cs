@@ -53,13 +53,12 @@ namespace LibOfTimetableOfClasses
 				
 				foreach (char s in value)
 				{
-					if ((s < 'А' || s > 'я'))
+					if ((s < 'А' || s > 'Я'))
 					{
 						throw new Exception("Присутствует недопустимый символ в строке университета");
 					}
 				}
 				if (value.Length > 10) throw new Exception("Слишком длинная строка университета");
-				value = value.ToUpper();
 				_university = value;
 			}
 		}
