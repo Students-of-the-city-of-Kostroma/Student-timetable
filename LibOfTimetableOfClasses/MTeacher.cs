@@ -137,6 +137,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
@@ -150,21 +151,20 @@ namespace LibOfTimetableOfClasses
 
 		private void CapitalizationCheck(string value)
 		{
-			if (value.IndexOf(",") > 0)
-			{
-				char p;
-				if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
+			if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
 
-				for (int i = 0; i < value.Length; i++)
+			for (int i = 1; i < value.Length; i++)
+			{
+				if (value[i] == ',')
 				{
-					if (value[i] == ',')
-					{
-						if (value[i + 2] < 'А' || value[i + 2] > 'Я') throw new Exception("Названия дней должны начинаться с заглавной буквы");
-					}
+					if(value[i + 1] != ' ') throw new Exception("После запятой должен идти пробел");
+					else if (value[i + 2] < 'А' || value[i + 2] > 'Я') throw new Exception("Названия дней должны начинаться с заглавной буквы");
 				}
-				_metodicalDays = value;
+				if (value[i] == ' ')
+				{
+					if (value[i + 1] < 'А' || value[i + 1] > 'Я') throw new Exception("Названия дней должны начинаться с заглавной буквы");
+				}
 			}
-			else if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
 
 		}
 
@@ -178,7 +178,7 @@ namespace LibOfTimetableOfClasses
 			set
 			{
 
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null) throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
