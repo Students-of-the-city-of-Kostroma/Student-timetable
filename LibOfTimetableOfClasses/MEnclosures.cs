@@ -80,7 +80,7 @@ namespace LibOfTimetableOfClasses
 						throw new Exception("Присутствует недопустимый символ в строке адреса");
 					}
 				}
-				if (value.Length > 255) throw new Exception("Слишком длинная строка адреса");
+				if (value.Length > 256) throw new Exception("Слишком длинная строка адреса");
 				_address = value;
 			}
 		}
@@ -116,6 +116,7 @@ namespace LibOfTimetableOfClasses
 			set
 			{
 				if (value == "") value = null;
+				if (value == null) throw new Exception("Null строка примечания");
 				foreach (char s in value)
 				{
 					if ((s < 'А' || s > 'я') && (s < 'A' || s > 'z') && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))
