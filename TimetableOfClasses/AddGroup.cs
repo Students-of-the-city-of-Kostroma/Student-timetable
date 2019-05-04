@@ -97,29 +97,31 @@ namespace TimetableOfClasses
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
-							{
-								if (group == null)
+								if (nudMaxPar.Value >= nudMinPar.Value)
 								{
-									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-									if (Controllers.CGroup.Insert(Group))
-										return true;
-									else errors = "Невозможно добавить эту группу";
+									if (group == null)
+									{
+										MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+										if (Controllers.CGroup.Insert(Group))
+											return true;
+										else errors = "Невозможно добавить эту группу";
+									}
+									else
+									{
+										group.Group = tbNameGroup.Text;
+										group.Semester = semest;
+										group.Specialty = tbNaprav.Text;
+										group.Shift = smena;
+										group.Students = countStudents;
+										group.MinNumberOfClass = minPar;
+										group.MaxNumberOfClass = maxPar;
+										group.Weekends = tbVixodnie.Text;
+										if (Controllers.CGroup.Update(group))
+											return true;
+										else errors = "Невозможно так изменить эту группу";
+									}
 								}
-								else
-								{
-									group.Group = tbNameGroup.Text;
-									group.Semester = semest;
-									group.Specialty = tbNaprav.Text;
-									group.Shift = smena;
-									group.Students = countStudents;
-									group.MinNumberOfClass = minPar;
-									group.MaxNumberOfClass = maxPar;
-									group.Weekends = tbVixodnie.Text;
-									if (Controllers.CGroup.Update(group))
-										return true;
-									else errors = "Невозможно так изменить эту группу";
-								}
-							}
+								else errors = "Пар/день max не может быть меньше Пар/день min";
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
 					else errors = "Введите корректное количество студентов!";
@@ -128,7 +130,6 @@ namespace TimetableOfClasses
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
-
 
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
@@ -240,5 +241,18 @@ namespace TimetableOfClasses
 				R.BackColor = Color.White;
 		}
 
+		private void nudMinPar_ValueChanged(object sender, EventArgs e)
+		{
+			if (nudMinPar.Value > nudMaxPar.Value)
+			{
+				nudMaxPar.BackColor = Color.Red;
+				nudMinPar.BackColor = Color.Red;
+			}
+			else
+			{
+				nudMaxPar.BackColor = Color.White;
+				nudMinPar.BackColor = Color.White;
+			}
+		}
 	}
 }
