@@ -27,7 +27,7 @@ namespace LibOfTimetableOfClasses
 			this.Columns.Add(column);
 
 			column = new DataColumn();
-			column.DataType = typeof(string);
+			column.DataType = typeof(MTrainingProfile);
 			column.ColumnName = "Specialty";
 			this.Columns.Add(column);
 

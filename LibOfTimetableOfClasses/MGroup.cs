@@ -13,7 +13,7 @@ namespace LibOfTimetableOfClasses
 	{
 		string _group;
 		ushort _semester;
-		string _specialty;
+		MTrainingProfile _specialty;
 		ushort _shift;
 		ushort _students;
 		ushort _minNumberOfClass;
@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string Specialty
+		public MTrainingProfile Specialty
 		{
 			get
 			{
@@ -147,7 +147,7 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		/// <param name="cipher">шифр</param>
 		/// <param name="population">численность</param>
-		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
+		public MGroup(string group, ushort semester, MTrainingProfile specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
 		{
 			if (maxNumberOfClass < minNumberOfClass) throw new Exception("Пар/день max должен быть больше пар/день min");
 			Group = group;
@@ -164,7 +164,6 @@ namespace LibOfTimetableOfClasses
 		{
 			Group = group;
 		}
-
 
 	}
 }
