@@ -33,12 +33,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null)
+					throw new Exception("Ошибка создания модели. В свойство INN получен null-объект");
 				if (!Regex.IsMatch(value, @"[0-9]"))
 					throw new Exception("Ошибка создания модели. В свойство INN получена строка содержащая недопустимые символы");
 				if (value.Length != 10)
 					throw new Exception("Ошибка создания модели. В свойство INN получена строка недопустимой длины");
-				if (value == null)
-					throw new Exception("Ошибка создания модели. В свойство INN получен null-объект");
 				_inn = value;
 			}
 		}
@@ -165,14 +165,15 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
-					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получен null-объект");
-				if (value.Length < 1 || value.Length > 85)
-					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка недопустимой длины");
-				if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
-					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка содержащая недопустимые символы");
-				if (!isLetterСaseNormal(value))
-					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка неверного формата");
+				if (value != null)
+				{
+					if (value.Length < 1 || value.Length > 85)
+						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка недопустимой длины");
+					if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
+						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка содержащая недопустимые символы");
+					if (!isLetterСaseNormal(value))
+						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка неверного формата");
+				}
 				if (value == "") _middleNameRector = null;
 				else
 					_middleNameRector = value;
