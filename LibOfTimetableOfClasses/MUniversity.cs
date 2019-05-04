@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство ShortName получен null-объект");
 				if (value.Length < 1 || value.Length > 10)
 					throw new Exception("Ошибка создания модели. В свойство ShortName получена строка недопустимой длины");
@@ -69,7 +69,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство FullName получен null-объект");
 				if (value.Length < 1 || value.Length > 256)
 					throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
@@ -88,7 +88,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство ActualAddress получен null-объект");
 				if (value.Length < 1 || value.Length > 256)
 					throw new Exception("Ошибка создания модели. В свойство ActualAddress получена строка недопустимой длины");
@@ -105,7 +105,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство LegalAddress получен null-объект");
 				if (value.Length < 1 || value.Length > 256)
 					throw new Exception("Ошибка создания модели. В свойство LegalAddress получена строка недопустимой длины");
@@ -123,7 +123,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство NameRector получен null-объект");
 				if (value.Length < 1 || value.Length > 85)
 					throw new Exception("Ошибка создания модели. В свойство NameRector получена строка недопустимой длины");
@@ -143,7 +143,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство SurnameRector получен null-объект");
 				if (value.Length < 1 || value.Length > 85)
 					throw new Exception("Ошибка создания модели. В свойство SurnameRector получена строка недопустимой длины");
@@ -187,7 +187,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство Email получен null-объект");
 				if (value.Length < 1 || value.Length > 256)
 					throw new Exception("Ошибка создания модели. В свойство Email получена строка недопустимой длины");
@@ -204,7 +204,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null)
+				if (value == null || value == "")
 					throw new Exception("Ошибка создания модели. В свойство Phone получен null-объект");
 				if (value.Length < 1 || value.Length > 11)
 					throw new Exception("Ошибка создания модели. В свойство Phone получена строка недопустимой длины");
