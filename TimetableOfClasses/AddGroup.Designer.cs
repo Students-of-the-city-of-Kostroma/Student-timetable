@@ -32,7 +32,6 @@
 			this.tbVixodnie = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.tbNaprav = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tbNameGroup = new System.Windows.Forms.TextBox();
@@ -46,6 +45,7 @@
 			this.nudCountStudents = new System.Windows.Forms.NumericUpDown();
 			this.nudSmena = new System.Windows.Forms.NumericUpDown();
 			this.label6 = new System.Windows.Forms.Label();
+			this.cbSpec = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxPar)).BeginInit();
@@ -101,20 +101,6 @@
 			this.label4.Size = new System.Drawing.Size(79, 16);
 			this.label4.TabIndex = 25;
 			this.label4.Text = "Студентов";
-			// 
-			// tbNaprav
-			// 
-			this.tbNaprav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbNaprav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbNaprav.Location = new System.Drawing.Point(11, 139);
-			this.tbNaprav.MaxLength = 100;
-			this.tbNaprav.Name = "tbNaprav";
-			this.tbNaprav.Size = new System.Drawing.Size(235, 22);
-			this.tbNaprav.TabIndex = 24;
-			this.tbNaprav.TextChanged += new System.EventHandler(this.fieldChanged);
-			this.tbNaprav.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.tbNaprav.Leave += new System.EventHandler(this.SelectionOfLetters2);
 			// 
 			// label3
 			// 
@@ -308,11 +294,20 @@
 			this.label6.TabIndex = 39;
 			this.label6.Text = "Направление подготовки";
 			// 
+			// cbSpec
+			// 
+			this.cbSpec.FormattingEnabled = true;
+			this.cbSpec.Location = new System.Drawing.Point(12, 140);
+			this.cbSpec.Name = "cbSpec";
+			this.cbSpec.Size = new System.Drawing.Size(235, 21);
+			this.cbSpec.TabIndex = 41;
+			// 
 			// AddGroup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(259, 497);
+			this.Controls.Add(this.cbSpec);
 			this.Controls.Add(this.nudSmena);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.nudCountStudents);
@@ -325,7 +320,6 @@
 			this.Controls.Add(this.tbVixodnie);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.tbNaprav);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.tbNameGroup);
@@ -333,6 +327,7 @@
 			this.Controls.Add(this.groupAdd);
 			this.Name = "AddGroup";
 			this.Text = "Добавление группы";
+			this.Load += new System.EventHandler(this.AddGroup_Load);
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxPar)).EndInit();
@@ -349,7 +344,6 @@
 		private System.Windows.Forms.TextBox tbVixodnie;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox tbNaprav;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbNameGroup;
@@ -363,5 +357,6 @@
 		private System.Windows.Forms.NumericUpDown nudCountStudents;
 		private System.Windows.Forms.NumericUpDown nudSmena;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.ComboBox cbSpec;
 	}
 }
