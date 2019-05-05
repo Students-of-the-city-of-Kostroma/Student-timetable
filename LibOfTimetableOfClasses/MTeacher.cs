@@ -83,8 +83,9 @@ namespace LibOfTimetableOfClasses
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 					for (int i = 1; i < value.Length; i++)
 						if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
+
+					_patronymic = value;
 				}
-				if (value != "") _patronymic = value;
 				else _patronymic = null;
 			}
 		}
