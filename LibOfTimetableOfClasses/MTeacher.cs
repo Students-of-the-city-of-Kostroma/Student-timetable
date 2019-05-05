@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "")
+				if (value != "" && value != null)
 				{
 					if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
