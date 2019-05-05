@@ -58,9 +58,9 @@ namespace TimetableOfClasses
 				AddUniversity add = new AddUniversity(mUniversity);
 				add.Owner = this;
 				add.ShowDialog();
-			} 
-			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-			else if (DG.SelectedRows.Count == 0) { MessageBox.Show("Для изменения выделите хотябы одну строку!"); }
+			}
+			else if(DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void Delete(object sender, EventArgs e)

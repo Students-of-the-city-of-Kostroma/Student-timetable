@@ -110,7 +110,8 @@ namespace TimetableOfClasses
 				addEnclosures.Owner = this;
 				addEnclosures.ShowDialog();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void Added(object sender, EventArgs e)

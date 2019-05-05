@@ -73,17 +73,19 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null) throw new Exception("Строка не может быть null");
-				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
+				if (value != "" && value != null)
+				{
+					if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
-				foreach (char l in value)
-					if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
+					foreach (char l in value)
+						if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
 
-				if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
-				for (int i = 1; i < value.Length; i++)
-					if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
+					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
+					for (int i = 1; i < value.Length; i++)
+						if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
 
-				if (value != "") _patronymic = value;
+					_patronymic = value;
+				}
 				else _patronymic = null;
 			}
 		}
@@ -157,7 +159,7 @@ namespace LibOfTimetableOfClasses
 			{
 				if (value[i] == ',')
 				{
-					if(value[i + 1] != ' ') throw new Exception("После запятой должен идти пробел");
+					if (value[i + 1] != ' ') throw new Exception("После запятой должен идти пробел");
 					else if (value[i + 2] < 'А' || value[i + 2] > 'Я') throw new Exception("Названия дней должны начинаться с заглавной буквы");
 				}
 				if (value[i] == ' ')
