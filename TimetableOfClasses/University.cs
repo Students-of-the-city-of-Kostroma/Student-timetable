@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CUniversity;
+			DG.DataSource = LibOfTimetableOfClasses.RefData.CUniversity;
 		}
 
 		private void Add(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mUniversity = new MUniversity((string)Row["INN"]);
-					Controllers.CUniversity.Delete(mUniversity);
+					LibOfTimetableOfClasses.RefData.CUniversity.Delete(mUniversity);
 				}
 			}
 		}

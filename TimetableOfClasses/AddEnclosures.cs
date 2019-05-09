@@ -106,7 +106,7 @@ namespace TimetableOfClasses
 			{
 				MEnclosures mEnclosures = new MEnclosures(name.Text, university.Text, address.Text, phoneNumber.Text, note.Text);
 
-				if (Controllers.СEnclosures.Insert(mEnclosures))
+				if (LibOfTimetableOfClasses.RefData.СEnclosures.Insert(mEnclosures))
 				{
 					this.Close();
 				}
@@ -121,7 +121,7 @@ namespace TimetableOfClasses
 				Enclosures.Phone = phoneNumber.Text;
 				Enclosures.Comment = note.Text;
 
-				if (Controllers.СEnclosures.Update(Enclosures))
+				if (LibOfTimetableOfClasses.RefData.СEnclosures.Update(Enclosures))
 				{
 					this.Close();
 				}

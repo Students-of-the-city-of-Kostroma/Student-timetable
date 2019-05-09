@@ -24,7 +24,7 @@ namespace TimetableOfClasses
 			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 			{
 				MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-				Controllers.CTitle.Insert(Title);
+				LibOfTimetableOfClasses.RefData.CTitle.Insert(Title);
 				this.Close();
 			}
 			else MessageBox.Show("Невозможно добавить эту дисциплину!", "Попробуйте снова", MessageBoxButtons.OK);
@@ -36,7 +36,7 @@ namespace TimetableOfClasses
 			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 			{
 				MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-				Controllers.CTitle.Insert(Title);
+				LibOfTimetableOfClasses.RefData.CTitle.Insert(Title);
 				FullName.Text = "";
 				Reduction.Text = "";
 			}

@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Disc.AutoGenerateColumns = false;
-			DG_Disc.DataSource = Controllers.CDiscipline;
+			DG_Disc.DataSource = LibOfTimetableOfClasses.RefData.CDiscipline;
 		}
 
 
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
-					Controllers.CDiscipline.Delete(mDiscipline);
+					LibOfTimetableOfClasses.RefData.CDiscipline.Delete(mDiscipline);
 				}
 			}
 

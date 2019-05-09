@@ -97,7 +97,7 @@ namespace TimetableOfClasses
 			if (Lehrer == null)
 			{
 				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				return LibOfTimetableOfClasses.RefData.CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
@@ -109,7 +109,7 @@ namespace TimetableOfClasses
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);
+				return LibOfTimetableOfClasses.RefData.CTeacher.Update(Lehrer);
 			}
 
 		}

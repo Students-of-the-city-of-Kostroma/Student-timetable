@@ -102,7 +102,7 @@ namespace TimetableOfClasses
 									if (group == null)
 									{
 										MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-										if (Controllers.CGroup.Insert(Group))
+										if (LibOfTimetableOfClasses.RefData.CGroup.Insert(Group))
 											return true;
 										else errors = "Невозможно добавить эту группу";
 									}
@@ -116,7 +116,7 @@ namespace TimetableOfClasses
 										group.MinNumberOfClass = minPar;
 										group.MaxNumberOfClass = maxPar;
 										group.Weekends = tbVixodnie.Text;
-										if (Controllers.CGroup.Update(group))
+										if (LibOfTimetableOfClasses.RefData.CGroup.Update(group))
 											return true;
 										else errors = "Невозможно так изменить эту группу";
 									}

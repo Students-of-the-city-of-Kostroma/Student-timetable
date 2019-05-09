@@ -152,7 +152,6 @@
     <Compile Include="Ministry.Designer.cs">
       <DependentUpon>Ministry.cs</DependentUpon>
     </Compile>
-    <Compile Include="RefData.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
