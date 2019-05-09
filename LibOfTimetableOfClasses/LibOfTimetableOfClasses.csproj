@@ -42,19 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAcademicDegree.cs" />
-    <Compile Include="CAuditor.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CDiscipline.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CEnclosures.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CGroup.cs">
-      <SubType>Component</SubType>
-    </Compile>
+
+    <Compile Include="CAuditor.cs" />
+    <Compile Include="CDiscipline.cs" />
+    <Compile Include="CEnclosures.cs" />
+    <Compile Include="CGroup.cs" />
+
     <Compile Include="CHEI.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
@@ -62,6 +55,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CTitle.cs" />
+    <Compile Include="CUniversity.cs"/>
     <Compile Include="IController.cs" />
     <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
@@ -73,6 +67,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
