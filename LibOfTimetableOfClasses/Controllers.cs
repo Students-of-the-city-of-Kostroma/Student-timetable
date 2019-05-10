@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
     /// <summary>
     /// В этом классе храняться все экземпляры контроллеров.
     /// </summary>
-    public static class Controllers
+    public class Controllers
     {
+		public static DataSet dataSet = new DataSet();
         public static CTeacher CTeacher = new CTeacher();
         public static CAuditor CAuditor = new CAuditor();
         public static CDiscipline CDiscipline = new CDiscipline();
@@ -19,5 +21,11 @@ namespace LibOfTimetableOfClasses
     		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
         public static СEnclosures СEnclosures = new СEnclosures();
     		public static CUniversity CUniversity = new CUniversity();
+		public Controllers()
+		{
+			dataSet.Tables.Add(CGroup);
+			dataSet.Tables.Add(CTrainingProfile);
+			dataSet.Relations.Add("Group-Training profile",CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
+		}
 	  }
 }
