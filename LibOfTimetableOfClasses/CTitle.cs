@@ -1,39 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.Data;
+	using System.Diagnostics;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-
+	/// <summary>
+	/// Контроллер объекта Добавление ученого звания
+	/// </summary>
 	public class CTitle : Controller, IController
 	{
-		public CTitle () : base("Уч.звание")
+		public CTitle() : base("Уч.звание")
 		{
+
+			DataColumn[] keys = new DataColumn[2];
+
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Сокращенная запись уч. звания";
-			column.ReadOnly = true;
 			column.Unique = true;
 			table.Columns.Add(column);
+			keys[0] = column;
 
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полная запись уч. звания";
-			column.ReadOnly = true;
+			column.Unique = true;
 			table.Columns.Add(column);
+			keys[1] = column;
 		}
 
 		public override bool Delete(Model model)
 		{
-			MTitle mTitle= (MTitle)model;
+			MTitle mTitle = (MTitle)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.Name && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
+				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
 					table.Rows[i].Delete();
 					return true;
@@ -48,7 +54,7 @@ namespace LibOfTimetableOfClasses
 			{
 				MTitle mTitle = (MTitle)model;
 				DataRow newRow = table.NewRow();
-				newRow["Полная запись уч. звания"] = mTitle.Name;
+				newRow["Полная запись уч. звания"] = mTitle.FullName;
 				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
 				table.Rows.Add(newRow);
 				return true;
@@ -63,17 +69,20 @@ namespace LibOfTimetableOfClasses
 		public override bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			if ((mTitle.FullName == null && mTitle.Reduction == null))
+				return false;
+
+			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
-				if ((mTitle.Name != null && mTitle.Reduction != null))
+				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
 					try
 					{
-						table.Rows[i].BeginEdit();
-						table.Rows[i]["Полная запись уч. звания"] = mTitle.Name;
-						table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						table.Rows[i].EndEdit();
-						table.Rows[i].AcceptChanges();
+						this.table.Rows[i].BeginEdit();
+						this.table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
+						this.table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
+						this.table.Rows[i].EndEdit();
+						this.table.Rows[i].AcceptChanges();
 						return true;
 					}
 					catch (Exception ex)

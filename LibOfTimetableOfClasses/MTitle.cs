@@ -1,43 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
 
-namespace LibOfTimetableOfClasses
-{
-	/// <summary>
-	/// Дисциплина
-	/// </summary>
-	public class MTitle : Model
+	namespace LibOfTimetableOfClasses
 	{
+
 		/// <summary>
-		/// Название дисциплины
+		/// Уч. звание
 		/// </summary>
-		protected string name;
-		/// <summary>
-		/// Код дисциплины
-		/// </summary>
-		protected string reduction;
-		/// <summary>
-		/// Создает экземпляр дисциплины
-		/// </summary>
-		/// <param name="name">Название дисциплины</param>
-		/// <param name="reduction">Код дисциплины</param>
-		public MTitle(string name, string reduction) : base()
+		public class MTitle : Model
 		{
-			Name = name;
-			Reduction = reduction;
+
+			/// <summary>
+			/// Полная запись ученого звания
+			/// </summary>
+			string _fullname;
+
+			/// <summary>
+			/// Сокращенная запись ученого звания
+			/// </summary>
+			string _reduction;
+		
+
+			public string FullName
+			{
+				get
+				{
+					return _fullname;
+				}
+				set
+				{
+					_fullname = value;
+				}
+			}
+
+			public string Reduction
+			{
+				get
+				{
+					return _reduction;
+				}
+				set
+				{
+					_reduction = value;
+				}
+			}
+
+			/// <summary>
+			/// Создание экземпляра уч. звания
+			/// </summary>
+			public MTitle(string fullname, string reduction) : base()
+			{
+				FullName = fullname;
+				Reduction = reduction;
+			}
 		}
-
-		/// <summary>
-		/// Возвращает или задает значение Name - название
-		/// </summary>
-		public string Name { set { name = value; } get { return name; } }
-
-		/// <summary>
-		/// Возвращает или задает значение Code - код
-		/// </summary>
-		public string Reduction { set { reduction = value; } get { return reduction; } }
 	}
-}
