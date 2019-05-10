@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Diagnostics;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.Data;
+	using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
@@ -19,7 +19,7 @@ namespace LibOfTimetableOfClasses
 			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "University";

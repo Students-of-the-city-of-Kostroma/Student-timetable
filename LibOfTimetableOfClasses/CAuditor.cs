@@ -8,46 +8,46 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    /// <summary>
-    /// Контроллер объекта Аудитория.
-    /// </summary>
-    public class CAuditor :DataTable,IController
-    {
+	/// <summary>
+	/// Контроллер объекта Аудитория.
+	/// </summary>
+	public class CAuditor : DataTable, IController
+	{
 
-        public CAuditor() : base("Аудитория")
-        {
-            DataColumn[] keys = new DataColumn[2];
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
+		public CAuditor() : base("Аудитория")
+		{
+			DataColumn[] keys = new DataColumn[2];
+			DataColumn column = new DataColumn();
+			column.DataType = typeof(string);
 			column.ColumnName = "NameOfAuditor";
-            column.Unique = false;
-            Columns.Add(column);
-            keys[0] = column;
+			column.Unique = false;
+			Columns.Add(column);
+			keys[0] = column;
 
-            column = new DataColumn();
+			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Cafedra";
-            column.Unique = false;
-            Columns.Add(column);
+			column.Unique = false;
+			Columns.Add(column);
 
-            column = new DataColumn();
+			column = new DataColumn();
 			column.DataType = typeof(ushort);
 			column.ColumnName = "Spacious";
-            column.Unique = false;
-            Columns.Add(column);
+			column.Unique = false;
+			Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(byte);
 			column.ColumnName = "Building";
-            column.Unique = false;
-            Columns.Add(column);
+			column.Unique = false;
+			Columns.Add(column);
 			keys[1] = column;
 			PrimaryKey = keys;
-        }
+		}
 
-        public  bool Insert(Model model)
-        {
-            MAuditor mAuditor = (MAuditor)model;
+		public bool Insert(Model model)
+		{
+			MAuditor mAuditor = (MAuditor)model;
 			if (mAuditor.NameOfAuditor == null)
 				return false;
 
@@ -67,17 +67,17 @@ namespace LibOfTimetableOfClasses
 				Debug.WriteLine(ex.Source);
 				return false;
 			}
-        }
+		}
 
-        public  bool Update(Model model)
-        {
-            MAuditor mAuditor = (MAuditor)model;
+		public bool Update(Model model)
+		{
+			MAuditor mAuditor = (MAuditor)model;
 
 			if (mAuditor.NameOfAuditor == null)
 				return false;
 
 			for (int i = 0; i < Rows.Count; i++)
-            {
+			{
 				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
 					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
@@ -97,17 +97,17 @@ namespace LibOfTimetableOfClasses
 						return false;
 					}
 				}
-            }
-            return false;
-        }
+			}
+			return false;
+		}
 
-        public  bool Delete(Model model)
-        {
+		public bool Delete(Model model)
+		{
 			MAuditor mAuditor = (MAuditor)model;
 
 			for (int i = 0; i < Rows.Count; i++)
 			{
-				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
 					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
 					Rows[i].Delete();
@@ -116,5 +116,5 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-    }
+	}
 }
