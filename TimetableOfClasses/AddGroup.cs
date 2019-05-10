@@ -16,11 +16,30 @@ namespace TimetableOfClasses
 	{
 		private MGroup group;
 
+
 		public AddGroup()
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
+			tbNaprav.Text = "Информационные системы";
 			tbVixodnie.Text = "Воскресенье";
+		}
+
+		private bool isEmpty(string[] strArgs)
+		{
+			foreach (var cur in strArgs)
+			{
+				if (cur.Length == 0)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private void message()
+		{
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		public AddGroup(MGroup mGroup)
@@ -53,12 +72,20 @@ namespace TimetableOfClasses
 			Close();
 		}
 
+
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (Add())
+			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
+			if (tbNaprav.Text.Length == 0)
+				tbNaprav.BackColor = Color.Red;
+			if (!isEmpty(args))
 			{
-				Close();
+				if (Add())
+				{
+					Close();
+				}
 			}
+			else message();
 		}
 
 		private bool Add()
@@ -146,16 +173,21 @@ namespace TimetableOfClasses
 			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
 
 			TextBox R = sender as TextBox;
+
+
 			if (!regex.IsMatch(R.Text))
 			{ R.Text = "00-ААаа-0а"; }
 			else
 			{ }
+
+
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+
 			while (R.Text.IndexOf("-") == 0)
 				R.Text = R.Text.Substring(1);
 			while (R.Text.IndexOf(" ") == 0)
@@ -173,6 +205,7 @@ namespace TimetableOfClasses
 			}
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
+
 		}
 
 		private static string FirstLetterToUpper(string str)
@@ -196,6 +229,15 @@ namespace TimetableOfClasses
 				return text;
 			}
 			return "";
+		}
+
+		private void fieldChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if (R.TextLength == 0)
+				R.BackColor = Color.Red;
+			else
+				R.BackColor = Color.White;
 		}
 
 	}
