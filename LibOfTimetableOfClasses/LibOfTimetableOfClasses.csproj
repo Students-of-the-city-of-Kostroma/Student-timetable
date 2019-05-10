@@ -43,18 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAcademicDegree.cs" />
-    <Compile Include="CAuditor.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CDiscipline.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CEnclosures.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CGroup.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CAuditor.cs" />
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CEnclosures.cs" />
