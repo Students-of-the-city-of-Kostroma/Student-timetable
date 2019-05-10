@@ -89,9 +89,10 @@ namespace LibOfTimetableOfClasses
 			Comment= comment;
 		}
 
-		public MEnclosures(string name) : base()
+		public MEnclosures(string name, string university) : base()
 		{
 			Name = name;
+			University = university;
 		}
 	}
 }
