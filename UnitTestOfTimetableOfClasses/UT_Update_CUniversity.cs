@@ -56,7 +56,7 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
-		[TestMethod]
+		/*[TestMethod]
 		public void Task_497_10()//дублирование ИНН
 		{
 			// arrange
@@ -72,5 +72,6 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+		*/
 	}
 }
