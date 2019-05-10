@@ -60,16 +60,19 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CTitle.cs" />
+    <Compile Include="CUniversity.cs"/>
     <Compile Include="IController.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />
+    <Compile Include="MHEI.cs" />
     <Compile Include="MInstitute.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
