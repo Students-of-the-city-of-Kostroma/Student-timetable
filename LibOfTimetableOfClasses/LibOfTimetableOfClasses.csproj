@@ -55,6 +55,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CTitle.cs" />
+    <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="CUniversity.cs"/>
     <Compile Include="IController.cs" />
     <Compile Include="MAcademicDegree.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
