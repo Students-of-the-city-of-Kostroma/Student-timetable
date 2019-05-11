@@ -28,7 +28,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка(группа) не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка(группа) не может быть пустой");
 				if (value.Length > 25) throw new Exception("Максимальная длина названия группы 25");
 				foreach (char l in value)
 				{
@@ -124,7 +124,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка(выходные) не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка(выходные) не может быть пустой");
 				foreach (char l in value)
 				{
 					if ((l < 'А' || l > 'я')  && (l !=' ') && (l != ',')) throw new Exception("Можно использовать только русские буквы, пробелы и запятые !");
@@ -164,7 +164,6 @@ namespace LibOfTimetableOfClasses
 		{
 			Group = group;
 		}
-
 
 	}
 }

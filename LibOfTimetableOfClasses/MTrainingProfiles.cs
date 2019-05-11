@@ -52,5 +52,10 @@ namespace LibOfTimetableOfClasses
 			FullName = fullname;
 			ShortName = shortname;
 		}
+
+		public override string ToString()
+		{
+			return this.ShortName;
+		}
 	}
 }

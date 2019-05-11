@@ -15,13 +15,14 @@ namespace TimetableOfClasses
 	public partial class AddGroup : Form
 	{
 		private MGroup group;
-
+		private CTrainingProfile TrainingProfile = Controllers.CTrainingProfile;
 
 		public AddGroup()
 		{
 			InitializeComponent();
+			cbSpec.DataSource = TrainingProfile;
+			cbSpec.DisplayMember = "Shortname";
 			tbNameGroup.Text = "00-ААаа-0а";
-			tbNaprav.Text = "Информационные системы";
 			tbVixodnie.Text = "Воскресенье";
 		}
 
@@ -46,12 +47,15 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 
+			cbSpec.DataSource = TrainingProfile.DefaultView;
+			cbSpec.DisplayMember = "Shortname";
+
 			tbNameGroup.Text = mGroup.Group;
 			tbNameGroup.Enabled = false;
 
 			nudSemest.Value = mGroup.Semester;
 
-			tbNaprav.Text = mGroup.Specialty;
+			cbSpec.Text = mGroup.Specialty;
 
 			nudSmena.Value = mGroup.Shift;
 
@@ -75,9 +79,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
-			if (tbNaprav.Text.Length == 0)
-				tbNaprav.BackColor = Color.Red;
+			string[] args = new string[] { tbNameGroup.Text, tbVixodnie.Text };
 			if (!isEmpty(args))
 			{
 				if (Add())
@@ -91,6 +93,12 @@ namespace TimetableOfClasses
 		private bool Add()
 		{
 			string errors = "";
+			if (cbSpec.Text.Length < 1)
+			{
+				errors = "Выберите направление подготовки";
+			} 
+			string fullname = (string)TrainingProfile.Rows[cbSpec.SelectedIndex]["Fullname"];
+
 			ushort semest, smena, countStudents, minPar, maxPar;
 			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
 				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 2 && smena > 0)
@@ -99,29 +107,25 @@ namespace TimetableOfClasses
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
 								if (nudMaxPar.Value >= nudMinPar.Value)
 								{
-									if (group == null)
-									{
-										MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-										if (Controllers.CGroup.Insert(Group))
-											return true;
-										else errors = "Невозможно добавить эту группу";
-									}
-									else
-									{
-										group.Group = tbNameGroup.Text;
-										group.Semester = semest;
-										group.Specialty = tbNaprav.Text;
-										group.Shift = smena;
-										group.Students = countStudents;
-										group.MinNumberOfClass = minPar;
-										group.MaxNumberOfClass = maxPar;
-										group.Weekends = tbVixodnie.Text;
-										if (Controllers.CGroup.Update(group))
-											return true;
-										else errors = "Невозможно так изменить эту группу";
-									}
+									MGroup Group = new MGroup(tbNameGroup.Text, semest, cbSpec.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+									if (Controllers.CGroup.Insert(Group))
+										return true;
+									else errors = "Невозможно добавить эту группу";
 								}
-								else errors = "Пар/день max не может быть меньше Пар/день min";
+								else
+								{
+									group.Group = tbNameGroup.Text;
+									group.Semester = semest;
+									group.Specialty = cbSpec.SelectedText;
+									group.Shift = smena;
+									group.Students = countStudents;
+									group.MinNumberOfClass = minPar;
+									group.MaxNumberOfClass = maxPar;
+									group.Weekends = tbVixodnie.Text;
+									if (Controllers.CGroup.Update(group))
+										return true;
+									else errors = "Невозможно так изменить эту группу";
+								}
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
 					else errors = "Введите корректное количество студентов!";
@@ -130,7 +134,6 @@ namespace TimetableOfClasses
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
-
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
@@ -241,17 +244,12 @@ namespace TimetableOfClasses
 				R.BackColor = Color.White;
 		}
 
-		private void nudMinPar_ValueChanged(object sender, EventArgs e)
+		private void AddGroup_Load(object sender, EventArgs e)
 		{
-			if (nudMinPar.Value > nudMaxPar.Value)
+			if (TrainingProfile.Rows.Count == 0)
 			{
-				nudMaxPar.BackColor = Color.Red;
-				nudMinPar.BackColor = Color.Red;
-			}
-			else
-			{
-				nudMaxPar.BackColor = Color.White;
-				nudMinPar.BackColor = Color.White;
+				MessageBox.Show("Отсутствуют профили подготовки!");
+				Close();
 			}
 		}
 	}

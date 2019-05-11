@@ -29,7 +29,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
 				foreach (char l in value)
@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 50) throw new Exception("Кол-во символов превышает 50");
 
 				foreach (char l in value)
@@ -73,20 +73,21 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != "" && value != null)
+				if (value == "" || value == null)
 				{
-					if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
+					_patronymic = null;
+					return;
+				}
 
+				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
+        
 					foreach (char l in value)
 						if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
 
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 					for (int i = 1; i < value.Length; i++)
 						if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
-
-					_patronymic = value;
-				}
-				else _patronymic = null;
+				 _patronymic = value;
 			}
 		}
 		public string Departament
@@ -97,7 +98,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 10) throw new Exception("Кол-во символов превышает 10");
 
 				foreach (char l in value)
@@ -118,16 +119,18 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null) throw new Exception("Строка не может быть null");
+				if (value == "" || value == null)
+				{
+					_note = null;
+					return;
+				}
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
 				foreach (char l in value)
 					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
 				if (value.Length > 0)
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
-
-				if (value != "") _note = value;
-				else _note = null;
+				_note = null;
 			}
 		}
 
@@ -139,7 +142,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
@@ -180,16 +183,18 @@ namespace LibOfTimetableOfClasses
 			set
 			{
 
-				if (value == null) throw new Exception("Строка не может быть пустой");
+				if (value == "" || value == null)
+				{
+					_windows = null;
+					return;
+				}
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
 					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 
 				CapitalizationCheck(value);
-
-				if (value != "") _windows = value;
-				else _windows = null;
+				 _windows = null;
 
 			}
 		}
@@ -202,7 +207,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
