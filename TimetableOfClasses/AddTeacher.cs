@@ -52,13 +52,13 @@ namespace TimetableOfClasses
 			checkPatronymic.Enabled = false;
 			#region(FullName)
 
-			firstName.Text = mTeacher.firstName;
+			firstName.Text = mTeacher.FirstName;
 			firstName.Enabled = false;
 
-			secondName.Text = mTeacher.secondName;
+			secondName.Text = mTeacher.SecondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = mTeacher.patronymic;
+			patronymic.Text = mTeacher.Patronymic;
 			patronymic.Enabled = false;
 
 			#endregion

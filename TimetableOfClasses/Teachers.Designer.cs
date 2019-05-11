@@ -61,6 +61,7 @@
 			this.DG.MultiSelect = false;
 			this.DG.Name = "DG";
 			this.DG.ReadOnly = true;
+			this.DG.RowHeadersWidth = 60;
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(690, 298);
 			this.DG.TabIndex = 0;

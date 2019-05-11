@@ -26,6 +26,16 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == "") throw new Exception("Пустая строка названия корпуса");
+				if (value == null) throw new Exception("Null строка названия корпуса");
+				foreach (char s in value)
+				{
+					if ((s < 'А' || s > 'я') && (s < 'A' || s > 'z') && s != '-' && (s < '0' || s > '9'))
+					{
+						throw new Exception("Присутствует недопустимый символ в строке названия корпуса");
+					}
+				}
+				if (value.Length>50) throw new Exception("Слишком длинная строка названия корпуса");
 				_name = value;
 			}
 		}
@@ -38,6 +48,17 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == "") throw new Exception("Пустая строка университета");
+				if (value == null) throw new Exception("Null строка университета");
+				
+				foreach (char s in value)
+				{
+					if ((s < 'А' || s > 'Я'))
+					{
+						throw new Exception("Присутствует недопустимый символ в строке университета");
+					}
+				}
+				if (value.Length > 10) throw new Exception("Слишком длинная строка университета");
 				_university = value;
 			}
 		}
@@ -50,6 +71,16 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == "") throw new Exception("Пустая строка адреса");
+				if (value == null) throw new Exception("Null строка адреса");
+				foreach (char s in value)
+				{
+					if ((s < 'А' || s > 'я')  && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))
+					{
+						throw new Exception("Присутствует недопустимый символ в строке адреса");
+					}
+				}
+				if (value.Length > 256) throw new Exception("Слишком длинная строка адреса");
 				_address = value;
 			}
 		}
@@ -61,6 +92,16 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == "") throw new Exception("Пустая строка телефона");
+				if (value == null) throw new Exception("Null строка телефона");
+				foreach (char s in value)
+				{
+					if ((s < '0' || s > '9'))
+					{
+						throw new Exception("Присутствует недопустимый символ в строке телефона");
+					}
+				}
+				if (value.Length > 11) throw new Exception("Слишком длинная строка телефона");
 				_phone = value;
 			}
 		}
@@ -68,10 +109,22 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				return _comment;
+				if (_comment != null)
+					return _comment;
+				else return ("");
 			}
 			set
 			{
+				if (value == "") value = null;
+				if (value == null) throw new Exception("Null строка примечания");
+				foreach (char s in value)
+				{
+					if ((s < 'А' || s > 'я') && (s < 'A' || s > 'z') && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))
+					{
+						throw new Exception("Присутствует недопустимый символ в строке примечания");
+					}
+				}
+				if (value.Length > 256) throw new Exception("Слишком длинная строка примечания");
 				_comment = value;
 			}
 		}
