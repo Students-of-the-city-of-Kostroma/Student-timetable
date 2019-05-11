@@ -15,6 +15,7 @@ namespace LibOfTimetableOfClasses
 		string _fullname;
 		string _shortname;
 		string _director;
+		string _VUS;
 
 		public string FullName
 		{
@@ -25,6 +26,18 @@ namespace LibOfTimetableOfClasses
 			set
 			{
 				_fullname = value;
+			}
+		}
+
+		public string VUS
+		{
+			get
+			{
+				return _VUS;
+			}
+			set
+			{
+				_VUS = value;
 			}
 		}
 
@@ -52,11 +65,12 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public MInstitute(string fullname, string shortname, string director) : base()
+		public MInstitute(string fullname, string shortname, string director, string vus) : base()
 		{
 			FullName = fullname;
 			ShortName = shortname;
 			Director = director;
+			VUS = vus;
 		}
 	}
 }
