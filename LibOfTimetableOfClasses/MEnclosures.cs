@@ -111,12 +111,16 @@ namespace LibOfTimetableOfClasses
 			{
 				if (_comment != null)
 					return _comment;
-				else return ("");
+				else return "";
 			}
 			set
 			{
-				if (value == "") value = null;
-				if (value == null) throw new Exception("Null строка примечания");
+				if (value == "" || value == null)
+				{
+					_comment = null;
+					return;
+				}
+
 				foreach (char s in value)
 				{
 					if ((s < 'А' || s > 'я') && (s < 'A' || s > 'z') && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))

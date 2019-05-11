@@ -73,7 +73,6 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null) throw new Exception("Строка не может быть null");
 				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
 				foreach (char l in value)
@@ -116,16 +115,18 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null) throw new Exception("Строка не может быть null");
+				if (value == "" || value == null)
+				{
+					_note = null;
+					return;
+				}
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
 				foreach (char l in value)
 					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
 				if (value.Length > 0)
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
-
-				if (value != "") _note = value;
-				else _note = null;
+				_note = null;
 			}
 		}
 
@@ -178,16 +179,18 @@ namespace LibOfTimetableOfClasses
 			set
 			{
 
-				if (value == null) throw new Exception("Строка не может быть пустой");
+				if (value == "" || value == null)
+				{
+					_windows = null;
+					return;
+				}
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
 					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 
 				CapitalizationCheck(value);
-
-				if (value != "") _windows = value;
-				else _windows = null;
+				 _windows = null;
 
 			}
 		}

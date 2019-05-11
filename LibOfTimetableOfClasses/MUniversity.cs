@@ -165,18 +165,19 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value != null)
+				if (value == "" || value == null)
 				{
-					if (value.Length < 1 || value.Length > 85)
-						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка недопустимой длины");
-					if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
-						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка содержащая недопустимые символы");
-					if (!isLetterСaseNormal(value))
-						throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка неверного формата");
+					_middleNameRector = null;
+					return;
 				}
-				if (value == "") _middleNameRector = null;
-				else
-					_middleNameRector = value;
+
+				if (value.Length < 1 || value.Length > 85)
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка содержащая недопустимые символы");
+				if (!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка неверного формата");
+				_middleNameRector = value;
 			}
 		}
 

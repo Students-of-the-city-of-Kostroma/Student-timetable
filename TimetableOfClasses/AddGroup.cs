@@ -20,7 +20,7 @@ namespace TimetableOfClasses
 		public AddGroup()
 		{
 			InitializeComponent();
-			cbSpec.DataSource = TrainingProfile.DefaultView;
+			cbSpec.DataSource = TrainingProfile;
 			cbSpec.DisplayMember = "Shortname";
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
 
 			nudSemest.Value = mGroup.Semester;
 
-			cbSpec.Text = mGroup.Specialty.ShortName;
+			cbSpec.Text = mGroup.Specialty;
 
 			nudSmena.Value = mGroup.Shift;
 
@@ -98,7 +98,7 @@ namespace TimetableOfClasses
 				errors = "Выберите направление подготовки";
 			} 
 			string fullname = (string)TrainingProfile.Rows[cbSpec.SelectedIndex]["Fullname"];
-			MTrainingProfile Sem = new MTrainingProfile(fullname, cbSpec.Text);
+
 			ushort semest, smena, countStudents, minPar, maxPar;
 			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
 				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 2 && smena > 0)
@@ -108,7 +108,7 @@ namespace TimetableOfClasses
 							{
 								if (group == null)
 								{
-									MGroup Group = new MGroup(tbNameGroup.Text, semest, Sem, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+									MGroup Group = new MGroup(tbNameGroup.Text, semest, cbSpec.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
 									if (Controllers.CGroup.Insert(Group))
 										return true;
 									else errors = "Невозможно добавить эту группу";
@@ -117,7 +117,7 @@ namespace TimetableOfClasses
 								{
 									group.Group = tbNameGroup.Text;
 									group.Semester = semest;
-									group.Specialty = Sem;
+									group.Specialty = cbSpec.SelectedText;
 									group.Shift = smena;
 									group.Students = countStudents;
 									group.MinNumberOfClass = minPar;
@@ -136,8 +136,6 @@ namespace TimetableOfClasses
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
-
-
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
@@ -252,7 +250,7 @@ namespace TimetableOfClasses
 		{
 			if (TrainingProfile.Rows.Count == 0)
 			{
-				MessageBox.Show("Отсутствуют профили подготовки");
+				MessageBox.Show("Отсутствуют профили подготовки!");
 				Close();
 			}
 		}

@@ -50,7 +50,7 @@ namespace TimetableOfClasses
 			if (DG_Group.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (MTrainingProfile)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
+				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
 				AddGroup addDiscipline = new AddGroup(mGroup);
 				addDiscipline.Owner = this;
 				addDiscipline.ShowDialog();
