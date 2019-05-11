@@ -136,9 +136,9 @@ namespace TimetableOfClasses
 		}
 		private void checkNumber()
 		{
-			if (phoneNumber.Text.Length != 6 && phoneNumber.Text.Length != 11)
+			if (phoneNumber.Text.Length > 11)
 			{
-				MessageBox.Show("Номер может быть длинной только 6 либо 11 символов!");
+				MessageBox.Show("Номер не может быть длинной больше 11 символов!");
 				phoneNumber.Text = "";
 			}
 		}
