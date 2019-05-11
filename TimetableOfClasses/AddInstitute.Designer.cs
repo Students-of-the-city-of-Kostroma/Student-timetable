@@ -37,6 +37,8 @@
 			this.btCreateAndClose = new System.Windows.Forms.Button();
 			this.btCreateAndClean = new System.Windows.Forms.Button();
 			this.btCancel = new System.Windows.Forms.Button();
+			this.VUS = new System.Windows.Forms.ComboBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -54,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.ShortName.Location = new System.Drawing.Point(10, 24);
 			this.ShortName.Name = "ShortName";
-			this.ShortName.Size = new System.Drawing.Size(308, 20);
+			this.ShortName.Size = new System.Drawing.Size(287, 20);
 			this.ShortName.TabIndex = 8;
 			// 
 			// label2
@@ -73,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.FullName.Location = new System.Drawing.Point(10, 63);
 			this.FullName.Name = "FullName";
-			this.FullName.Size = new System.Drawing.Size(308, 20);
+			this.FullName.Size = new System.Drawing.Size(287, 20);
 			this.FullName.TabIndex = 10;
 			// 
 			// Director
@@ -83,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Director.Location = new System.Drawing.Point(10, 101);
 			this.Director.Name = "Director";
-			this.Director.Size = new System.Drawing.Size(308, 20);
+			this.Director.Size = new System.Drawing.Size(287, 20);
 			this.Director.TabIndex = 11;
 			// 
 			// label3
@@ -98,7 +100,7 @@
 			// btCreateAndClose
 			// 
 			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClose.Location = new System.Drawing.Point(400, 145);
+			this.btCreateAndClose.Location = new System.Drawing.Point(230, 221);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClose.TabIndex = 13;
@@ -109,7 +111,7 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(319, 145);
+			this.btCreateAndClean.Location = new System.Drawing.Point(149, 221);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 14;
@@ -120,7 +122,7 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(238, 145);
+			this.btCancel.Location = new System.Drawing.Point(68, 221);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 15;
@@ -128,11 +130,35 @@
 			this.btCancel.UseVisualStyleBackColor = true;
 			this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
 			// 
+			// VUS
+			// 
+			this.VUS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.VUS.FormattingEnabled = true;
+			this.VUS.Location = new System.Drawing.Point(10, 148);
+			this.VUS.Name = "VUS";
+			this.VUS.Size = new System.Drawing.Size(287, 21);
+			this.VUS.TabIndex = 16;
+			// 
+			// label4
+			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(13, 126);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(29, 13);
+			this.label4.TabIndex = 17;
+			this.label4.Text = "ВУЗ";
+			// 
 			// AddInstitute
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(484, 193);
+			this.ClientSize = new System.Drawing.Size(314, 269);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.VUS);
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.btCreateAndClean);
 			this.Controls.Add(this.btCreateAndClose);
@@ -142,7 +168,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.ShortName);
 			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "AddInstitute";
 			this.Text = "Добавление института";
 			this.ResumeLayout(false);
@@ -161,5 +187,7 @@
 		private System.Windows.Forms.Button btCreateAndClose;
 		private System.Windows.Forms.Button btCreateAndClean;
 		private System.Windows.Forms.Button btCancel;
+		private System.Windows.Forms.ComboBox VUS;
+		private System.Windows.Forms.Label label4;
 	}
 }
