@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+
 	public class CTitle : Controller, IController
 	{
 		public CTitle () : base("Уч.звание")
