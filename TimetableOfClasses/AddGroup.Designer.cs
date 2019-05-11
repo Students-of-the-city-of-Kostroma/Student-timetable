@@ -201,6 +201,7 @@
 			this.nudMinPar.Name = "nudMinPar";
 			this.nudMinPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMinPar.TabIndex = 35;
+			this.nudMinPar.ValueChanged += new System.EventHandler(this.nudMinPar_ValueChanged);
 			this.nudMinPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label7
@@ -228,6 +229,7 @@
 			this.nudMaxPar.Name = "nudMaxPar";
 			this.nudMaxPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMaxPar.TabIndex = 37;
+			this.nudMaxPar.ValueChanged += new System.EventHandler(this.nudMinPar_ValueChanged);
 			this.nudMaxPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label8

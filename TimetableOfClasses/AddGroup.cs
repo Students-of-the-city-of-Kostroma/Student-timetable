@@ -105,8 +105,7 @@ namespace TimetableOfClasses
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
-							{
-								if (group == null)
+								if (nudMaxPar.Value >= nudMinPar.Value)
 								{
 									MGroup Group = new MGroup(tbNameGroup.Text, semest, cbSpec.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
 									if (Controllers.CGroup.Insert(Group))
