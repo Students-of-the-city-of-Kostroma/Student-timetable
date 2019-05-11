@@ -17,11 +17,12 @@ namespace TimetableOfClasses
 		public Teachers()
 		{
 			InitializeComponent();
+
 			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.CTeacher;
 		}
 
-		private void AddTeacher(object sender, EventArgs e)
+		private void AddTeacher(object sender, EventArgs e) 
 		{
 			AddTeacher t = new AddTeacher();
 			t.ShowDialog();
@@ -55,11 +56,11 @@ namespace TimetableOfClasses
 				MTeacher mTeacher;
 				if (fullName.Length == 3)
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["Note"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				else
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["Note"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["AcademicDegree"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;

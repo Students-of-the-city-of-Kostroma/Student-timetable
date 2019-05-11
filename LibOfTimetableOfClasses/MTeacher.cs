@@ -16,7 +16,7 @@ namespace LibOfTimetableOfClasses
 		string _patronymic;
 		string _secondName;
 		string _firstName;
-		string _note;
+		string _academicDegree;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
@@ -71,15 +71,15 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string Note
+		public string AcademicDegree
 		{
 			get
 			{
-				return _note;
+				return _academicDegree;
 			}
 			set
 			{
-				_note = value;
+				_academicDegree = value;
 			}
 		}
 
@@ -120,24 +120,24 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string firstName, string secondName, string patronymic, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.firstName = firstName;
 			this.secondName = secondName;
 			this.patronymic = patronymic;
-			Note = note;
+			AcademicDegree = academicDegree;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
 			Weekends = weekends;
 		}
 
-		public MTeacher(string firstName, string secondName, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.firstName = firstName;
 			this.secondName = secondName;
 			this.patronymic = null;
-			Note = note;
+			AcademicDegree = academicDegree;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;

@@ -36,7 +36,6 @@
 			this.patronymic = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.B_Сancel = new System.Windows.Forms.Button();
-			this.notes = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.department = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -47,12 +46,13 @@
 			this.weekends = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
+			this.academicDegree = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
 			// 
 			this.createAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClose.Location = new System.Drawing.Point(203, 439);
+			this.createAndClose.Location = new System.Drawing.Point(219, 481);
 			this.createAndClose.Name = "createAndClose";
 			this.createAndClose.Size = new System.Drawing.Size(75, 34);
 			this.createAndClose.TabIndex = 0;
@@ -80,7 +80,7 @@
 			this.firstName.Location = new System.Drawing.Point(12, 28);
 			this.firstName.MaxLength = 25;
 			this.firstName.Name = "firstName";
-			this.firstName.Size = new System.Drawing.Size(266, 22);
+			this.firstName.Size = new System.Drawing.Size(282, 22);
 			this.firstName.TabIndex = 2;
 			this.firstName.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
@@ -94,7 +94,7 @@
 			this.secondName.Location = new System.Drawing.Point(12, 84);
 			this.secondName.MaxLength = 50;
 			this.secondName.Name = "secondName";
-			this.secondName.Size = new System.Drawing.Size(266, 22);
+			this.secondName.Size = new System.Drawing.Size(282, 22);
 			this.secondName.TabIndex = 4;
 			this.secondName.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.secondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
@@ -120,7 +120,7 @@
 			this.patronymic.Location = new System.Drawing.Point(12, 137);
 			this.patronymic.MaxLength = 30;
 			this.patronymic.Name = "patronymic";
-			this.patronymic.Size = new System.Drawing.Size(266, 22);
+			this.patronymic.Size = new System.Drawing.Size(282, 22);
 			this.patronymic.TabIndex = 6;
 			this.patronymic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress1);
 			this.patronymic.Leave += new System.EventHandler(this.SelectionOfLetters2);
@@ -140,26 +140,13 @@
 			// B_Сancel
 			// 
 			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Сancel.Location = new System.Drawing.Point(127, 439);
+			this.B_Сancel.Location = new System.Drawing.Point(143, 481);
 			this.B_Сancel.Name = "B_Сancel";
 			this.B_Сancel.Size = new System.Drawing.Size(70, 34);
 			this.B_Сancel.TabIndex = 17;
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
-			// 
-			// notes
-			// 
-			this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.notes.Location = new System.Drawing.Point(12, 191);
-			this.notes.MaxLength = 256;
-			this.notes.Name = "notes";
-			this.notes.Size = new System.Drawing.Size(266, 22);
-			this.notes.TabIndex = 19;
-			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters4);
 			// 
 			// label4
 			// 
@@ -169,9 +156,9 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label4.Location = new System.Drawing.Point(12, 172);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(91, 16);
+			this.label4.Size = new System.Drawing.Size(112, 16);
 			this.label4.TabIndex = 18;
-			this.label4.Text = "Примечание";
+			this.label4.Text = "Учёная степень";
 			// 
 			// department
 			// 
@@ -181,7 +168,7 @@
 			this.department.Location = new System.Drawing.Point(12, 246);
 			this.department.MaxLength = 100;
 			this.department.Name = "department";
-			this.department.Size = new System.Drawing.Size(266, 22);
+			this.department.Size = new System.Drawing.Size(282, 22);
 			this.department.TabIndex = 21;
 			this.department.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.department.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
@@ -207,7 +194,7 @@
 			this.metodDays.Location = new System.Drawing.Point(12, 303);
 			this.metodDays.MaxLength = 70;
 			this.metodDays.Name = "metodDays";
-			this.metodDays.Size = new System.Drawing.Size(266, 22);
+			this.metodDays.Size = new System.Drawing.Size(282, 22);
 			this.metodDays.TabIndex = 23;
 			this.metodDays.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.metodDays.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
@@ -233,7 +220,7 @@
 			this.windows.Location = new System.Drawing.Point(12, 357);
 			this.windows.MaxLength = 70;
 			this.windows.Name = "windows";
-			this.windows.Size = new System.Drawing.Size(266, 22);
+			this.windows.Size = new System.Drawing.Size(282, 22);
 			this.windows.TabIndex = 25;
 			this.windows.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
 			this.windows.Leave += new System.EventHandler(this.SelectionOfLetters1);
@@ -258,7 +245,7 @@
 			this.weekends.Location = new System.Drawing.Point(12, 408);
 			this.weekends.MaxLength = 70;
 			this.weekends.Name = "weekends";
-			this.weekends.Size = new System.Drawing.Size(266, 22);
+			this.weekends.Size = new System.Drawing.Size(282, 22);
 			this.weekends.TabIndex = 27;
 			this.weekends.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.weekends.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress3);
@@ -279,7 +266,7 @@
 			// checkPatronymic
 			// 
 			this.checkPatronymic.AutoSize = true;
-			this.checkPatronymic.Location = new System.Drawing.Point(12, 449);
+			this.checkPatronymic.Location = new System.Drawing.Point(12, 453);
 			this.checkPatronymic.Name = "checkPatronymic";
 			this.checkPatronymic.Size = new System.Drawing.Size(93, 17);
 			this.checkPatronymic.TabIndex = 28;
@@ -287,12 +274,26 @@
 			this.checkPatronymic.UseVisualStyleBackColor = true;
 			this.checkPatronymic.CheckedChanged += new System.EventHandler(this.checkPatronymic_CheckedChanged);
 			// 
+			// academicDegree
+			// 
+			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.academicDegree.FormattingEnabled = true;
+			this.academicDegree.Items.AddRange(new object[] {
+            "Отсутствует",
+            "Кондидат наук",
+            "Доктор наук"});
+			this.academicDegree.Location = new System.Drawing.Point(12, 191);
+			this.academicDegree.Name = "academicDegree";
+			this.academicDegree.Size = new System.Drawing.Size(281, 24);
+			this.academicDegree.TabIndex = 30;
+			// 
 			// AddTeacher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(290, 475);
+			this.ClientSize = new System.Drawing.Size(306, 527);
+			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.checkPatronymic);
 			this.Controls.Add(this.weekends);
 			this.Controls.Add(this.label8);
@@ -302,7 +303,6 @@
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.department);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.notes);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.B_Сancel);
 			this.Controls.Add(this.patronymic);
@@ -332,7 +332,6 @@
         private System.Windows.Forms.TextBox patronymic;
         private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button B_Сancel;
-		private System.Windows.Forms.TextBox notes;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox department;
 		private System.Windows.Forms.Label label5;
@@ -343,5 +342,6 @@
 		private System.Windows.Forms.TextBox weekends;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.CheckBox checkPatronymic;
+		private System.Windows.Forms.ComboBox academicDegree;
 	}
 }

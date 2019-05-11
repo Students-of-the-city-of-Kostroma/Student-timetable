@@ -16,7 +16,7 @@ namespace TimetableOfClasses
 	{
 		private MTeacher Lehrer;
 
-		public AddTeacher()
+		public AddTeacher() 
 		{
 			InitializeComponent();
 			firstName.Text = "Иван";
@@ -28,7 +28,7 @@ namespace TimetableOfClasses
 			weekends.Text = "Сб, Вс";
 		}
 
-		private bool isEmpty(string[] strArgs)
+		private bool isEmpty(string[] strArgs) 
 		{
 			foreach(var cur in strArgs)
 			{
@@ -40,7 +40,7 @@ namespace TimetableOfClasses
 			return false;
 		}
 
-		private void message()
+		private void message() 
 		{
 			MessageBox.Show("Заполните все пустые строки", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
@@ -63,7 +63,7 @@ namespace TimetableOfClasses
 
 			#endregion
 
-			notes.Text = mTeacher.Note;
+			academicDegree.Text = mTeacher.AcademicDegree; 
 
 			department.Text = mTeacher.Departament;
 
@@ -77,7 +77,7 @@ namespace TimetableOfClasses
 
 		}
 
-		private void createAndClose_Click(object sender, EventArgs e)
+		private void createAndClose_Click(object sender, EventArgs e) 
 		{
 			if (!isEmpty(new string[] { secondName.Text, firstName.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
@@ -96,7 +96,7 @@ namespace TimetableOfClasses
 
 			if (Lehrer == null)
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, academicDegree.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
@@ -104,7 +104,7 @@ namespace TimetableOfClasses
 				Lehrer.firstName = firstName.Text;
 				Lehrer.secondName = secondName.Text;
 				Lehrer.patronymic = patronymic.Text;
-				Lehrer.Note = notes.Text;
+				Lehrer.AcademicDegree = academicDegree.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
