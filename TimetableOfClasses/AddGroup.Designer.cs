@@ -168,24 +168,12 @@
 			this.nudSemest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSemest.Location = new System.Drawing.Point(12, 85);
-			this.nudSemest.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-			this.nudSemest.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.nudSemest.Maximum = new decimal(new int[] {10,0, 0,0});
+			this.nudSemest.Minimum = new decimal(new int[] {1,0,0,0});
 			this.nudSemest.Name = "nudSemest";
 			this.nudSemest.Size = new System.Drawing.Size(236, 20);
 			this.nudSemest.TabIndex = 33;
-			this.nudSemest.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.nudSemest.Value = new decimal(new int[] {1,0,0,0});
 			this.nudSemest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// nudMinPar
@@ -193,15 +181,10 @@
 			this.nudMinPar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudMinPar.Location = new System.Drawing.Point(11, 305);
-			this.nudMinPar.Maximum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
+			this.nudMinPar.Maximum = new decimal(new int[] {6,0,0,0});
 			this.nudMinPar.Name = "nudMinPar";
 			this.nudMinPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMinPar.TabIndex = 35;
-			this.nudMinPar.ValueChanged += new System.EventHandler(this.nudMinPar_ValueChanged);
 			this.nudMinPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label7
@@ -229,7 +212,6 @@
 			this.nudMaxPar.Name = "nudMaxPar";
 			this.nudMaxPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMaxPar.TabIndex = 37;
-			this.nudMaxPar.ValueChanged += new System.EventHandler(this.nudMinPar_ValueChanged);
 			this.nudMaxPar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label8
@@ -264,24 +246,12 @@
 			this.nudSmena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSmena.Location = new System.Drawing.Point(11, 193);
-			this.nudSmena.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-			this.nudSmena.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.nudSmena.Maximum = new decimal(new int[] {2,0,0,0});
+			this.nudSmena.Minimum = new decimal(new int[] {1,0,0,0});
 			this.nudSmena.Name = "nudSmena";
 			this.nudSmena.Size = new System.Drawing.Size(236, 20);
 			this.nudSmena.TabIndex = 40;
-			this.nudSmena.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.nudSmena.Value = new decimal(new int[] {1,0,0,0});
 			this.nudSmena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label6
