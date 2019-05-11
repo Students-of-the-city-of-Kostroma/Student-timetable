@@ -5,10 +5,7 @@
 # https://dev.azure.com/silenok-86/Student-timetable/_build?definitionId=1&_a=summary
 
 trigger:
-- Testing
-- task-*
-- 17-*
-- Union-*
+- *
 
 pool:
   vmImage: 'VS2017-Win2016'
