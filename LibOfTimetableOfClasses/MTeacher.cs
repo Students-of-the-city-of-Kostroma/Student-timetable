@@ -29,7 +29,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
 				foreach (char l in value)
@@ -51,7 +51,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 50) throw new Exception("Кол-во символов превышает 50");
 
 				foreach (char l in value)
@@ -73,6 +73,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == "" || value == null)
+				{
+					_patronymic = null;
+					return;
+				}
+
 				if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
 				foreach (char l in value)
@@ -82,8 +88,7 @@ namespace LibOfTimetableOfClasses
 				for (int i = 1; i < value.Length; i++)
 					if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
 
-				if (value != "") _patronymic = value;
-				else _patronymic = null;
+				 _patronymic = value;
 			}
 		}
 		public string Departament
@@ -94,7 +99,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 10) throw new Exception("Кол-во символов превышает 10");
 
 				foreach (char l in value)
@@ -138,7 +143,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
@@ -203,7 +208,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == null || value == " ") throw new Exception("Строка не может быть пустой");
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				if (value.Length > 70) throw new Exception("Кол-во символов превышает 70");
 
 				foreach (char l in value)
