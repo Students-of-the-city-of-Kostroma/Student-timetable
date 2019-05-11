@@ -16,7 +16,7 @@ namespace LibOfTimetableOfClasses
         public static CDiscipline CDiscipline = new CDiscipline();
 	public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
         public static CGroup CGroup = new CGroup();
-
+	public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 	public static CTitle CTitle = new CTitle();
         public static СEnclosures СEnclosures = new СEnclosures();
 	public static CUniversity CUniversity = new CUniversity();
