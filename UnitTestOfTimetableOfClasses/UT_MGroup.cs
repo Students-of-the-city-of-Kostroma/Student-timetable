@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(string), G.Group.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(ushort), G.Semester.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -41,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(string), G.Specialty.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(ushort), G.Shift.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(ushort), G.Students.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -83,7 +83,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(ushort), G.MinNumberOfClass.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -97,7 +97,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(ushort), G.MaxNumberOfClass.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -111,7 +111,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MGroup G = new MGroup("", 0, "", 0, 0, 0, 0, "");
+				MGroup G = new MGroup("17-ИСбо-2б", 0, "ИАСТ", 0, 0, 0, 0, "Воскресенье");
 				Assert.AreEqual(typeof(string), G.Weekends.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
