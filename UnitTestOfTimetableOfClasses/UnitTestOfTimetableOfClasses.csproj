@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="UT_Delete_CEnclosures.cs" />
     <Compile Include="UT_Delete_CUniversity.cs" />
-    <Compile Include="UI_Delete_CTitle.cs" />
+    <Compile Include="UT_Delete_CTitle.cs" />
     <Compile Include="UT_Delete_CInstitute.cs" />
     <Compile Include="UT_Insert_CInstitute.cs" />
     <Compile Include="UT_Update_CInstitute.cs" />
