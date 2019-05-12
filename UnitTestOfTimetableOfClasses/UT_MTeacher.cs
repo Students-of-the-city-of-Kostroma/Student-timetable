@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
 				MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-				Assert.AreEqual(typeof(String), T.Note.GetType(), "Ожидался тип поля String");
+				Assert.AreEqual(typeof(String), T.AcademicDegree.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

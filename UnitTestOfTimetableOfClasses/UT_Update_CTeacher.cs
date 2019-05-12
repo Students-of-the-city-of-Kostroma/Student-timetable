@@ -19,7 +19,7 @@ namespace UnitTestOfTimetableOfClasses
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
-			tcher1.Note = "Ученый";
+			tcher1.AcademicDegree = "Ученый";
 			tcher1.MetodicalDays = "Чт, Сб";
 			tcher1.Windows = "Сб, Пн";
 			tcher1.Weekends = "Пятница";
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
-			tcher1.Note = "Кандидат наук";
+			tcher1.AcademicDegree = "Кандидат наук";
 			bool actual = Controllers.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -88,7 +88,7 @@ namespace UnitTestOfTimetableOfClasses
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
-			tcher1.Note = "Кандидат наук";
+			tcher1.AcademicDegree = "Кандидат наук";
 			tcher1.Departament = "ФАСТ";
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";

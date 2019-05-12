@@ -36,7 +36,6 @@
 			this.patronymic = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.B_Сancel = new System.Windows.Forms.Button();
-			this.notes = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.department = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
 			this.weekends = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
+			this.academicDegree = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
@@ -148,19 +148,6 @@
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
 			// 
-			// notes
-			// 
-			this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.notes.Location = new System.Drawing.Point(12, 191);
-			this.notes.MaxLength = 256;
-			this.notes.Name = "notes";
-			this.notes.Size = new System.Drawing.Size(266, 22);
-			this.notes.TabIndex = 19;
-			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters4);
-			// 
 			// label4
 			// 
 			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -169,9 +156,9 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label4.Location = new System.Drawing.Point(12, 172);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(91, 16);
+			this.label4.Size = new System.Drawing.Size(104, 16);
 			this.label4.TabIndex = 18;
-			this.label4.Text = "Примечание";
+			this.label4.Text = "Уёная степень";
 			// 
 			// department
 			// 
@@ -287,12 +274,26 @@
 			this.checkPatronymic.UseVisualStyleBackColor = true;
 			this.checkPatronymic.CheckedChanged += new System.EventHandler(this.checkPatronymic_CheckedChanged);
 			// 
+			// academicDegree
+			// 
+			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.academicDegree.FormattingEnabled = true;
+			this.academicDegree.Items.AddRange(new object[] {
+            "Отсутствует",
+            "Кандидат наук",
+            "Доктор наук"});
+			this.academicDegree.Location = new System.Drawing.Point(12, 192);
+			this.academicDegree.Name = "academicDegree";
+			this.academicDegree.Size = new System.Drawing.Size(266, 24);
+			this.academicDegree.TabIndex = 29;
+			// 
 			// AddTeacher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(290, 475);
+			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.checkPatronymic);
 			this.Controls.Add(this.weekends);
 			this.Controls.Add(this.label8);
@@ -302,7 +303,6 @@
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.department);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.notes);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.B_Сancel);
 			this.Controls.Add(this.patronymic);
@@ -332,7 +332,6 @@
         private System.Windows.Forms.TextBox patronymic;
         private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button B_Сancel;
-		private System.Windows.Forms.TextBox notes;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox department;
 		private System.Windows.Forms.Label label5;
@@ -343,5 +342,6 @@
 		private System.Windows.Forms.TextBox weekends;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.CheckBox checkPatronymic;
+		private System.Windows.Forms.ComboBox academicDegree;
 	}
 }
