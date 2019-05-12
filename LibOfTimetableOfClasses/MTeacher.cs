@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
 		string _patronymic;
 		string _secondName;
 		string _firstName;
-		string _note;
+		string _academicDegree;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
@@ -107,11 +107,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string Note
+		public string AcademicDegree
 		{
 			get
 			{
-				if (_note != null) return _note;
+				if (_academicDegree != null) return _academicDegree;
 				else return "";
 			}
 			set
@@ -124,8 +124,8 @@ namespace LibOfTimetableOfClasses
 				if (value.Length > 0)
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 
-				if (value != "") _note = value;
-				else _note = null;
+				if (value != "") _academicDegree = value;
+				else _academicDegree = null;
 			}
 		}
 
@@ -213,24 +213,24 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string firstName, string secondName, string patronymic, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = patronymic;
-			Note = note;
+			AcademicDegree = academicDegree;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
 			Weekends = weekends;
 		}
 
-		public MTeacher(string firstName, string secondName, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = null;
-			Note = note;
+			AcademicDegree = academicDegree;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;

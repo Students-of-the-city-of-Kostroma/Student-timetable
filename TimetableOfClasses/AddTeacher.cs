@@ -63,7 +63,7 @@ namespace TimetableOfClasses
 
 			#endregion
 
-			notes.Text = mTeacher.Note;
+			academicDegree.Text = mTeacher.AcademicDegree;
 
 			department.Text = mTeacher.Departament;
 
@@ -96,7 +96,7 @@ namespace TimetableOfClasses
 
 			if (Lehrer == null)
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, academicDegree.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
@@ -104,7 +104,7 @@ namespace TimetableOfClasses
 				Lehrer.FirstName = firstName.Text;
 				Lehrer.SecondName = secondName.Text;
 				Lehrer.Patronymic = patronymic.Text;
-				Lehrer.Note = notes.Text;
+				Lehrer.AcademicDegree = academicDegree.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
