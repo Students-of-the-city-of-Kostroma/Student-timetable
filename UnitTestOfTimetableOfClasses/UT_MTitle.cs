@@ -2,13 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LibOfTimetableOfClasses;
 
+
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_MTitle
     {
         [TestMethod]
-        public void Issue_646_1()
+        public void Issue_646_1() 
         {
             try
             {
