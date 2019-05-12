@@ -8,9 +8,10 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Update_CInstitute
     {
         [TestMethod]
-        public void Task_513_1()
+        public void Task_513_1() //замена всех атрибутов
         {
             //arrange
+            Controllers.CInstitute.Select().Clear();
             MInstitute i = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.");
             MInstitute i1 = new MInstitute("Факультет Автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.");
             CInstitute I = new CInstitute();

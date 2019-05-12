@@ -11,12 +11,12 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_515_1() //Добавление в пустую таблицу
 		{
-			//arrange 
-			MInstitute inst = new MInstitute("ИАСТ", "Институт Автоматизированных систем и технологий", "Лустгартен Ю.Л.");
+            //arrange 
+            Controllers.CInstitute.Select().Clear();
+            MInstitute inst = new MInstitute("ИАСТ", "Институт Автоматизированных систем и технологий", "Лустгартен Ю.Л.");
 			bool expected = true;
-			//act
-			CInstitute I = new CInstitute();
-			bool actual = I.Insert(inst);
+            //act
+            bool actual = Controllers.CInstitute.Insert(inst);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}

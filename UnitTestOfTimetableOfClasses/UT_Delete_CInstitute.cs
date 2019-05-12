@@ -14,9 +14,9 @@ namespace UnitTestOfTimetableOfClasses
             Controllers.CInstitute.Select().Clear();
             MInstitute I_IInstitute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.");
             bool ex = true;
-            CInstitute I_I = new CInstitute();
-            I_I.Insert(I_IInstitute);
-            bool act = I_I.Delete(I_IInstitute);
+            //act
+            Controllers.CInstitute.Insert(I_IInstitute);
+            bool act = Controllers.CInstitute.Delete(I_IInstitute);
             //assert
             Assert.AreEqual(ex, act);
         }
@@ -25,10 +25,11 @@ namespace UnitTestOfTimetableOfClasses
         public void task_513_2()
         {
             //arrange
+            Controllers.CTitle.Select().Clear();
+            //act
             MInstitute I_IInstitute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.");
             bool ex = false;
-            CInstitute I_I = new CInstitute();
-            bool act = I_I.Delete(I_IInstitute);
+            bool act = Controllers.CInstitute.Delete(I_IInstitute);
             //assert
             Assert.AreEqual(ex, act);
         }
