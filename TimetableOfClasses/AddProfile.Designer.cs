@@ -34,7 +34,7 @@
 			this.bt_Cr_n_Close = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Cl = new System.Windows.Forms.Button();
 			this.btCancel = new System.Windows.Forms.Button();
-			this.tbFullName = new System.Windows.Forms.TextBox();
+			this.cbFullName = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -100,21 +100,22 @@
 			this.btCancel.UseVisualStyleBackColor = true;
 			this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
 			// 
-			// tbFullName
+			// cbFullName
 			// 
-			this.tbFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.cbFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbFullName.Location = new System.Drawing.Point(15, 33);
-			this.tbFullName.Name = "tbFullName";
-			this.tbFullName.Size = new System.Drawing.Size(237, 20);
-			this.tbFullName.TabIndex = 15;
+			this.cbFullName.FormattingEnabled = true;
+			this.cbFullName.Location = new System.Drawing.Point(16, 33);
+			this.cbFullName.Name = "cbFullName";
+			this.cbFullName.Size = new System.Drawing.Size(238, 21);
+			this.cbFullName.TabIndex = 15;
 			// 
 			// AddProfile
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(266, 163);
-			this.Controls.Add(this.tbFullName);
+			this.Controls.Add(this.cbFullName);
 			this.Controls.Add(this.bt_Cr_n_Close);
 			this.Controls.Add(this.bt_Cr_n_Cl);
 			this.Controls.Add(this.btCancel);
@@ -138,6 +139,6 @@
 		private System.Windows.Forms.Button bt_Cr_n_Close;
 		private System.Windows.Forms.Button bt_Cr_n_Cl;
 		private System.Windows.Forms.Button btCancel;
-		private System.Windows.Forms.TextBox tbFullName;
+		private System.Windows.Forms.ComboBox cbFullName;
 	}
 }

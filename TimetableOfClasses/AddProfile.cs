@@ -15,8 +15,15 @@ namespace TimetableOfClasses
 	{
 		bool itsupdate = false;
 		public AddProfile()
-		{
+		{			
 			InitializeComponent();
+			cbFullName.Items.Clear();
+			DirectionOfPreparation dpForm = new DirectionOfPreparation();
+			foreach (DataGridViewRow row in dpForm.dgDirectionOfPreparation.Rows)
+			{
+				string s = row.Cells[1].Value.ToString();
+				cbFullName.Items.Add(s);
+			}
 			itsupdate = false;
 		}
 		public AddProfile(MTrainingProfile mProfile)
@@ -25,8 +32,8 @@ namespace TimetableOfClasses
 			Text = "Изменение профиля подготовки";
 			bt_Cr_n_Cl.Visible = false;
 			bt_Cr_n_Close.Text = "Сохранить";
-			tbFullName.Text = mProfile.FullName;
-			tbFullName.Enabled = false;
+			cbFullName.Text = mProfile.FullName;
+			cbFullName.Enabled = false;
 			tbShortName.Text = mProfile.ShortName;
 			itsupdate = true;
 		}
@@ -37,11 +44,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
-			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
+			if (String.IsNullOrWhiteSpace(cbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
+				MTrainingProfile Profile = new MTrainingProfile(cbFullName.Text, tbShortName.Text);
 				try
 				{
 					if (!Controllers.CTrainingProfile.Insert(Profile))
@@ -49,7 +56,7 @@ namespace TimetableOfClasses
 						MessageBox.Show("Невозможно добавить профиль подготовки");
 						return;
 					}
-					tbFullName.Text = "";
+					cbFullName.Text = "";
 					tbShortName.Text = "";
 				}
 				catch (Exception ex)
@@ -61,11 +68,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
-			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
+			if (String.IsNullOrWhiteSpace(cbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
+				MTrainingProfile Profile = new MTrainingProfile(cbFullName.Text, tbShortName.Text);
 				try
 				{
 					if (!itsupdate)
