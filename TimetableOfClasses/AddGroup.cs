@@ -16,11 +16,30 @@ namespace TimetableOfClasses
 	{
 		private MGroup group;
 
+
 		public AddGroup()
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
+			tbNaprav.Text = "Информационные системы";
 			tbVixodnie.Text = "Воскресенье";
+		}
+
+		private bool isEmpty(string[] strArgs)
+		{
+			foreach (var cur in strArgs)
+			{
+				if (cur.Length == 0)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private void message()
+		{
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		public AddGroup(MGroup mGroup)
@@ -53,12 +72,20 @@ namespace TimetableOfClasses
 			Close();
 		}
 
+
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (Add())
+			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
+			if (tbNaprav.Text.Length == 0)
+				tbNaprav.BackColor = Color.Red;
+			if (!isEmpty(args))
 			{
-				Close();
+				if (Add())
+				{
+					Close();
+				}
 			}
+			else message();
 		}
 
 		private bool Add()
@@ -70,29 +97,31 @@ namespace TimetableOfClasses
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
-							{
-								if (group == null)
+								if (nudMaxPar.Value >= nudMinPar.Value)
 								{
-									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-									if (Controllers.CGroup.Insert(Group))
-										return true;
-									else errors = "Невозможно добавить эту группу";
+									if (group == null)
+									{
+										MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+										if (Controllers.CGroup.Insert(Group))
+											return true;
+										else errors = "Невозможно добавить эту группу";
+									}
+									else
+									{
+										group.Group = tbNameGroup.Text;
+										group.Semester = semest;
+										group.Specialty = tbNaprav.Text;
+										group.Shift = smena;
+										group.Students = countStudents;
+										group.MinNumberOfClass = minPar;
+										group.MaxNumberOfClass = maxPar;
+										group.Weekends = tbVixodnie.Text;
+										if (Controllers.CGroup.Update(group))
+											return true;
+										else errors = "Невозможно так изменить эту группу";
+									}
 								}
-								else
-								{
-									group.Group = tbNameGroup.Text;
-									group.Semester = semest;
-									group.Specialty = tbNaprav.Text;
-									group.Shift = smena;
-									group.Students = countStudents;
-									group.MinNumberOfClass = minPar;
-									group.MaxNumberOfClass = maxPar;
-									group.Weekends = tbVixodnie.Text;
-									if (Controllers.CGroup.Update(group))
-										return true;
-									else errors = "Невозможно так изменить эту группу";
-								}
-							}
+								else errors = "Пар/день max не может быть меньше Пар/день min";
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
 					else errors = "Введите корректное количество студентов!";
@@ -101,7 +130,6 @@ namespace TimetableOfClasses
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
-
 
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
@@ -146,16 +174,21 @@ namespace TimetableOfClasses
 			Regex regex = new Regex(pattern, RegexOptions.IgnorePatternWhitespace);
 
 			TextBox R = sender as TextBox;
+
+
 			if (!regex.IsMatch(R.Text))
 			{ R.Text = "00-ААаа-0а"; }
 			else
 			{ }
+
+
 		}
 
 		private void SelectionOfLetters2(object sender, EventArgs e)
 		{
 			TextBox R = sender as TextBox;
 			R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+
 			while (R.Text.IndexOf("-") == 0)
 				R.Text = R.Text.Substring(1);
 			while (R.Text.IndexOf(" ") == 0)
@@ -173,6 +206,7 @@ namespace TimetableOfClasses
 			}
 			R.Text = R.Text.ToLower();
 			R.Text = FirstLetterToUpper(R.Text);
+
 		}
 
 		private static string FirstLetterToUpper(string str)
@@ -198,5 +232,27 @@ namespace TimetableOfClasses
 			return "";
 		}
 
+		private void fieldChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if (R.TextLength == 0)
+				R.BackColor = Color.Red;
+			else
+				R.BackColor = Color.White;
+		}
+
+		private void nudMinPar_ValueChanged(object sender, EventArgs e)
+		{
+			if (nudMinPar.Value > nudMaxPar.Value)
+			{
+				nudMaxPar.BackColor = Color.Red;
+				nudMinPar.BackColor = Color.Red;
+			}
+			else
+			{
+				nudMaxPar.BackColor = Color.White;
+				nudMinPar.BackColor = Color.White;
+			}
+		}
 	}
 }

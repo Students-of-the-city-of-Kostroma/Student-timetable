@@ -33,7 +33,7 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Departament = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MetodicalDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Windows = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
 			this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullName,
-            this.Note,
+            this.AcademicDegree,
             this.Departament,
             this.MetodicalDays,
             this.Windows,
@@ -61,6 +61,7 @@
 			this.DG.MultiSelect = false;
 			this.DG.Name = "DG";
 			this.DG.ReadOnly = true;
+			this.DG.RowHeadersWidth = 60;
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(690, 298);
 			this.DG.TabIndex = 0;
@@ -105,20 +106,23 @@
 			// FullName
 			// 
 			this.FullName.DataPropertyName = "FullName";
+			this.FullName.FillWeight = 95.63452F;
 			this.FullName.HeaderText = "ФИО";
 			this.FullName.Name = "FullName";
 			this.FullName.ReadOnly = true;
 			// 
-			// Note
+			// AcademicDegree
 			// 
-			this.Note.DataPropertyName = "Note";
-			this.Note.HeaderText = "Примечание";
-			this.Note.Name = "Note";
-			this.Note.ReadOnly = true;
+			this.AcademicDegree.DataPropertyName = "AcademicDegree";
+			this.AcademicDegree.FillWeight = 121.8274F;
+			this.AcademicDegree.HeaderText = "Учёная степень";
+			this.AcademicDegree.Name = "AcademicDegree";
+			this.AcademicDegree.ReadOnly = true;
 			// 
 			// Departament
 			// 
 			this.Departament.DataPropertyName = "Departament";
+			this.Departament.FillWeight = 95.63452F;
 			this.Departament.HeaderText = "Кафедра";
 			this.Departament.Name = "Departament";
 			this.Departament.ReadOnly = true;
@@ -126,6 +130,7 @@
 			// MetodicalDays
 			// 
 			this.MetodicalDays.DataPropertyName = "MetodicalDays";
+			this.MetodicalDays.FillWeight = 95.63452F;
 			this.MetodicalDays.HeaderText = "Метод. дни";
 			this.MetodicalDays.Name = "MetodicalDays";
 			this.MetodicalDays.ReadOnly = true;
@@ -133,6 +138,7 @@
 			// Windows
 			// 
 			this.Windows.DataPropertyName = "Windows";
+			this.Windows.FillWeight = 95.63452F;
 			this.Windows.HeaderText = "Окна";
 			this.Windows.Name = "Windows";
 			this.Windows.ReadOnly = true;
@@ -140,6 +146,7 @@
 			// Weekends
 			// 
 			this.Weekends.DataPropertyName = "Weekends";
+			this.Weekends.FillWeight = 95.63452F;
 			this.Weekends.HeaderText = "Выходные";
 			this.Weekends.Name = "Weekends";
 			this.Weekends.ReadOnly = true;
@@ -155,7 +162,7 @@
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.DG);
 			this.Name = "Teachers";
-			this.Text = "Teachers";
+			this.Text = "Преподаватели";
 			((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
 			this.ResumeLayout(false);
 
@@ -167,7 +174,7 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Departament;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MetodicalDays;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Windows;

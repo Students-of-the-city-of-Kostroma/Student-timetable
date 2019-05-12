@@ -12,6 +12,8 @@ namespace LibOfTimetableOfClasses
 	{
 		public СEnclosures() : base("Корпус")
 		{
+			if (Controllers.СEnclosures != null) throw new Exception("Контроллер уже существует");
+
 			DataColumn[] keys = new DataColumn[2];
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
@@ -30,19 +32,19 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Address";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
-			column.DataType = typeof(int);
+			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Comment";
-			column.ReadOnly = true;
+			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
