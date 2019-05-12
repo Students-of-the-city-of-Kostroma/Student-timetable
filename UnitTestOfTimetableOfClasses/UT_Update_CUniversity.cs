@@ -61,16 +61,15 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			// arrange
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-			CUniversity cg = new CUniversity();
-			cg.Insert(gr);
-			MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
-			cg.Insert(gr1);
-			bool expected = false;
-			//act 
-			gr1.INN = "4401006286";
-			bool actual = cg.Update(gr1);
-			//assert 
-			Assert.AreEqual(expected, actual);
-		}
+
+            Controllers.CUniversity.Clear();
+            Controllers.CUniversity.Insert(gr);
+
+			gr = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
+			
+			bool result = Controllers.CUniversity.Update(gr);
+
+            Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
+        }
 	}
 }
