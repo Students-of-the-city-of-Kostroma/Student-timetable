@@ -19,6 +19,7 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			cbFullName.Items.Clear();
 			DirectionOfPreparation dpForm = new DirectionOfPreparation();
+			cbFullName.DropDownStyle = ComboBoxStyle.DropDownList;
 			foreach (DataGridViewRow row in dpForm.dgDirectionOfPreparation.Rows)
 			{
 				string s = row.Cells[1].Value.ToString();
