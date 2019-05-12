@@ -41,10 +41,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-
+    <Compile Include="UT_Delete_CAcademicDegree.cs" />
     <Compile Include="UT_Delete_CEnclosures.cs" />
     <Compile Include="UT_Delete_CUniversity.cs" />
-
     <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />
     <Compile Include="UT_CDiscipline.cs" />
