@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+﻿//using System;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -35,3 +35,4 @@ namespace UnitTestOfTimetableOfClasses
         }
     }
 }
+

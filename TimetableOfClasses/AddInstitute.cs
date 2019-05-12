@@ -9,6 +9,7 @@
 	using System.Threading.Tasks;
 	using System.Windows.Forms;
 	using LibOfTimetableOfClasses;
+using System.Diagnostics;
 
 namespace TimetableOfClasses
 {
@@ -16,10 +17,18 @@ namespace TimetableOfClasses
 	{
 
 
+		private void fillingOutTheList()
+		{
+			for (int i = 0; i < Controllers.CUniversity.Rows.Count; i++)
+				VUS.Items.Add(Controllers.CUniversity.Rows[i]["FullName"]);
+		}
+
 		public AddInstitute()
 		{
 			InitializeComponent();
 			update = false;
+			fillingOutTheList();
+			
 		}
 		bool update = false;
 		public AddInstitute(MInstitute mInstitute)
@@ -32,23 +41,33 @@ namespace TimetableOfClasses
 			FullName.Text = mInstitute.FullName;
 			ShortName.Text = mInstitute.ShortName;
 			Director.Text = mInstitute.Director;
+			fillingOutTheList();
 			update = true;
 		}
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
+		
+
 			if (update)
 			{
 				if ((ShortName.Text.Length != 0) && (FullName.Text.Length != 0) && (Director.Text.Length!=0))
 				{
 					if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text) &&(Director.Text.Length!=0))
 					{
-						MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text);
-						Controllers.CInstitute.Update(Institute);
-						FullName.Text = "";
-						ShortName.Text = "";
-						Director.Text = "";
-						Close();
+						try
+						{
+							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+							Controllers.CInstitute.Update(Institute);
+							FullName.Text = "";
+							ShortName.Text = "";
+							Director.Text = "";
+							Close();
+						}
+						catch
+						{
+							MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
+						}
 					}
 					else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
 				}
@@ -61,12 +80,19 @@ namespace TimetableOfClasses
 				{
 					if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text)&&isNumberDontContains(Director.Text))
 					{
-						MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text);
-						Controllers.CInstitute.Insert(Institute);
-						FullName.Text = "";
-						ShortName.Text = "";
-						Director.Text = "";
-						Close();
+						try
+						{
+							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+							Controllers.CInstitute.Insert(Institute);
+							FullName.Text = "";
+							ShortName.Text = "";
+							Director.Text = "";
+							Close();
+						}
+						catch
+						{
+							MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
+						}
 					}
 					else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
 
@@ -89,15 +115,23 @@ namespace TimetableOfClasses
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
+			
 			if ((ShortName.Text.Length != 0) && (FullName.Text.Length != 0) &&(Director.Text.Length!=0))
 			{
 				if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text) &&isNumberDontContains(Director.Text))
 				{
-					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text);
-					Controllers.CInstitute.Insert(Institute);
-					FullName.Text = "";
-					ShortName.Text = "";
-					Director.Text = "";
+					try
+					{
+						MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+						Controllers.CInstitute.Insert(Institute);
+						FullName.Text = "";
+						ShortName.Text = "";
+						Director.Text = "";
+					}
+					catch
+					{
+						MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
+					}
 				}
 				else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
 			}

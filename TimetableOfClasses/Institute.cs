@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 			if (DG_Institute.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Institute.SelectedRows[0].DataBoundItem).Row;
-				MInstitute mInstitute = new MInstitute((string)Row["Полное название института"], (string)Row["Краткое название института"],(string)Row["Директор института"]);
+				MInstitute mInstitute = new MInstitute((string)Row["Полное название института"], (string)Row["Краткое название института"],(string)Row["Директор института"], (string)Row["ВУЗ"]);
 				AddInstitute add = new AddInstitute(mInstitute);
 				add.Owner = this;
 				add.ShowDialog();
@@ -129,6 +129,7 @@ namespace TimetableOfClasses
 				if (result == System.Windows.Forms.DialogResult.Yes)
 				{
 					DG_Institute.Rows.RemoveAt(DG_Institute.SelectedCells[0].RowIndex);
+
 				}
 
 			}

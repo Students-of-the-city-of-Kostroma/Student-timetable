@@ -1,6 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+﻿//using System;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using LibOfTimetableOfClasses;
+
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -25,7 +26,6 @@ namespace UnitTestOfTimetableOfClasses
             bool act = I.Update(i1);
             //assert
             Assert.AreEqual(ex, act);
-
-        }
-    }
+      }
+  }
 }

@@ -12,7 +12,7 @@ namespace LibOfTimetableOfClasses
 	{
 		public CInstitute() : base("Институт")
 		{
-			DataColumn[] keys = new DataColumn[3];
+			DataColumn[] keys = new DataColumn[4];
 
 			DataColumn column = new DataColumn();
 
@@ -34,6 +34,12 @@ namespace LibOfTimetableOfClasses
 			table.Columns.Add(column);
 			keys[2] = column;
 
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "ВУЗ";
+			table.Columns.Add(column);
+			keys[3] = column;
+
 		}
 
 		public override bool Delete(Model model)
@@ -43,7 +49,8 @@ namespace LibOfTimetableOfClasses
 			{
 				if ((string)table.Rows[i]["Краткое название института"] == mInstitute.ShortName
 					&& (string)table.Rows[i]["Полное название института"] == mInstitute.FullName
-					&& (string)table.Rows[i]["Директор института"] == mInstitute.Director)
+					&& (string)table.Rows[i]["Директор института"] == mInstitute.Director
+					&& (string)table.Rows[i]["ВУЗ"] == mInstitute.VUS)
 				{
 					table.Rows[i].Delete();
 					return true;
@@ -61,7 +68,7 @@ namespace LibOfTimetableOfClasses
 				newRow["Краткое название института"] = mInstitute.ShortName;
 				newRow["Полное название института"] = mInstitute.FullName;
 				newRow["Директор института"] = mInstitute.Director;
-
+				newRow["ВУЗ"] = mInstitute.VUS;
 				table.Rows.Add(newRow);
 				return true;
 			}
@@ -77,7 +84,8 @@ namespace LibOfTimetableOfClasses
 			MInstitute mInstitute = (MInstitute)model;
 			if (mInstitute.ShortName == null
 				&& mInstitute.FullName == null
-				&& mInstitute.Director == null)
+				&& mInstitute.Director == null
+				&& mInstitute.VUS == null)
 				return false;
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
@@ -90,6 +98,7 @@ namespace LibOfTimetableOfClasses
 						this.table.Rows[i]["Краткое название института"] = mInstitute.ShortName;
 						this.table.Rows[i]["Полное название института"] = mInstitute.FullName;
 						this.table.Rows[i]["Директор института"] = mInstitute.Director;
+						this.table.Rows[i]["ВУЗ"] = mInstitute.VUS;
 						this.table.Rows[i].EndEdit();
 						this.table.Rows[i].AcceptChanges();
 						return true;
