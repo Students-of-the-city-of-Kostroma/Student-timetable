@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_486_1()//Ввод корректных данных в пустую таблицу
 		{
-			//arrange
+			//arrange 
 			Controllers.CAcademicDegree.Select().Clear();
 			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
@@ -20,8 +20,9 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 		}
 
+
 		[TestMethod]
-		public void Task_486_2and3()////учёная степень с такой сокращённой записью уже есть в таблице
+		public void Task_486_2()////учёная степень с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
 			Controllers.CAcademicDegree.Select().Clear();
