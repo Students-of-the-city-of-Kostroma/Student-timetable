@@ -110,7 +110,7 @@ namespace LibOfTimetableOfClasses
 				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
 					&& (byte)Rows[i]["Building"] == mAuditor.Building)
 				{
-					Rows[i].Delete();
+					Rows.Remove(Rows[i]);
 					return true;
 				}
 			}
