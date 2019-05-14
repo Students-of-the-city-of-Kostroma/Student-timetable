@@ -45,29 +45,3 @@ steps:
     targetPath: # Required when publishLocation == FilePath
   #parallel: false # Optional
   #parallelCount: # Optional
-
-- task: DownloadBuildArtifacts@0
-  displayName: 'Download Build Artifacts'
-  inputs:
-    artifactName: drop
-    itemPattern: '*.exe'
-
-- task: ArchiveFiles@2
-  displayName: 'Archive $(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\SimpleChatClient\bin\Release\'
-  inputs:
-    rootFolderOrFile: '$(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\SimpleChatClient\bin\Release\'
-    archiveFile: '$(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\$(Build.BuildId).zip'
-    verbose: true
-
-- task: GitHubRelease@0
-  displayName: 'GitHub release (create)'
-  inputs:
-    gitHubConnection: dnszaikin
-    repositoryName: Students-of-the-city-of-Kostroma/Student-timetable
-    tagSource: manual
-    tag: '$(Release.ReleaseName)'
-    title: '$(Release.ReleaseName)'
-    releaseNotesSource: input
-    releaseNotes: '$(Release.ReleaseName)'
-    assets: |
-     $(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\*.zip
