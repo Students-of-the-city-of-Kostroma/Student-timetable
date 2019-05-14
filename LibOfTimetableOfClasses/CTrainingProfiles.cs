@@ -36,7 +36,7 @@ namespace LibOfTimetableOfClasses
 				if ((string)Rows[i]["Fullname"] == mTrainingProfile.FullName
 				&& (string)Rows[i]["Shortname"] == mTrainingProfile.ShortName)
 				{
-					Rows[i].Delete();
+					Rows.Remove(Rows[i]);
 					return true;
 				}
 			}
