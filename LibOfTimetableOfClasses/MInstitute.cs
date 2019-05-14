@@ -63,7 +63,7 @@ namespace LibOfTimetableOfClasses
                 if (!Regex.IsMatch(value, @"[А-Я]"))
                     throw new Exception("Поле Короткое назавание института содержит недопустимые символы");
                 if (value.Length < 1 || value.Length > 10)
-                    throw new Exception("Поле Короткое название института недопустиммой длины");
+                    throw new Exception("Поле Короткое название института недопустимой длины");
                     _shortname = value;
 			}
 		}
