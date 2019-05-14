@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E04A57B-7C6F-436C-B9F7-40B669DDD55A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimetableOfClasses</RootNamespace>
+    <AssemblyName>TimetableOfClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicTitle.Designer.cs">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcademicDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicDegree.Designer.cs">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAcademicTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAcademicTitle.Designer.cs">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAuditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAuditor.Designer.cs">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiscipline.Designer.cs">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEnclosures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEnclosures.Designer.cs">
+      <DependentUpon>AddEnclosures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrEditDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrEditDirectory.Designer.cs">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTeacher.Designer.cs">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectionOfPreparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectionOfPreparation.Designer.cs">
+      <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Directory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Directory.Designer.cs">
+      <DependentUpon>Directory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enclosures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enclosures.Designer.cs">
+      <DependentUpon>Enclosures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discipline.Designer.cs">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditor.Designer.cs">
+      <DependentUpon>Auditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ministry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ministry.Designer.cs">
+      <DependentUpon>Ministry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefData.cs" />
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teachers.Designer.cs">
+      <DependentUpon>Teachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timetable.Designer.cs">
+      <DependentUpon>Timetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="University.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="University.Designer.cs">
+      <DependentUpon>University.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypesOfOccupations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypesOfOccupations.Designer.cs">
+      <DependentUpon>TypesOfOccupations.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AcademicTitle.resx">
+      <DependentUpon>AcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcademicDegree.resx">
+      <DependentUpon>AcademicDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAcademicTitle.resx">
+      <DependentUpon>AddAcademicTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAuditor.resx">
+      <DependentUpon>AddAuditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDiscipline.resx">
+      <DependentUpon>AddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEnclosures.resx">
+      <DependentUpon>AddEnclosures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTeacher.resx">
+      <DependentUpon>AddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrEditDirectory.resx">
+      <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectionOfPreparation.resx">
+      <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Directory.resx">
+      <DependentUpon>Directory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enclosures.resx">
+      <DependentUpon>Enclosures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discipline.resx">
+      <DependentUpon>Discipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditor.resx">
+      <DependentUpon>Auditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ministry.resx">
+      <DependentUpon>Ministry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Teachers.resx">
+      <DependentUpon>Teachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timetable.resx">
+      <DependentUpon>Timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="University.resx">
+      <DependentUpon>University.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypesOfOccupations.resx">
+      <DependentUpon>TypesOfOccupations.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
+      <Project>{93a4d5cc-b39e-480d-9a5e-9f7bb97ff8a5}</Project>
+      <Name>LibOfTimetableOfClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
