@@ -51,10 +51,6 @@ namespace TimetableOfClasses
 
 			if (update)
 			{
-				if ((ShortName.Text.Length != 0) && (FullName.Text.Length != 0) && (Director.Text.Length!=0))
-				{
-					if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text) &&(Director.Text.Length!=0))
-					{
 						try
 						{
 							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
@@ -64,22 +60,16 @@ namespace TimetableOfClasses
 							Director.Text = "";
 							Close();
 						}
-						catch
+						catch(Exception)
 						{
-							MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
+							MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
 						}
-					}
-					else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
-				}
-				else MessageBox.Show("Невозможно добавить этот институт!", "Попробуйте снова");
+					
 			}
 			else
 			{
 
-				if ((ShortName.Text.Length != 0) && (FullName.Text.Length != 0)&&(Director.Text.Length!=0))
-				{
-					if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text)&&isNumberDontContains(Director.Text))
-					{
+				
 						try
 						{
 							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
@@ -89,37 +79,20 @@ namespace TimetableOfClasses
 							Director.Text = "";
 							Close();
 						}
-						catch
+						catch(Exception)
 						{
-							MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
-						}
-					}
-					else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
+                    MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
+                }
 
-				}
-				else MessageBox.Show("Невозможно добавить этот институт!", "Попробуйте снова");
-			}
+            }
 		}		
 
-		static bool isNumberDontContains(string input)
-		{
-			foreach (char c in input)
-				if (Char.IsNumber(c) || Char.IsPunctuation(c) || Char.IsSymbol(c))
-				{
-					if (c == '.')
-						continue;
-					return false;
-				}
-			return true;
-		}
+		
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
 			
-			if ((ShortName.Text.Length != 0) && (FullName.Text.Length != 0) &&(Director.Text.Length!=0))
-			{
-				if (isNumberDontContains(ShortName.Text) && isNumberDontContains(FullName.Text) &&isNumberDontContains(Director.Text))
-				{
+			
 					try
 					{
 						MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
@@ -128,15 +101,12 @@ namespace TimetableOfClasses
 						ShortName.Text = "";
 						Director.Text = "";
 					}
-					catch
+					catch(Exception)
 					{
-						MessageBox.Show("Выберите пожалуйста ВУЗ!", "Попробуйте снова", MessageBoxButtons.OK);
-					}
-				}
-				else MessageBox.Show("Можно вводить только буквы", "Попробуйте снова");
-			}
-			else MessageBox.Show("Невозможно добавить этот институт!", "Попробуйте снова", MessageBoxButtons.OK);
-		}
+                MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
+            }
+
+        }
 
 		private void btCancel_Click(object sender, EventArgs e)
 		{

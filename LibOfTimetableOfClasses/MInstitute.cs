@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
@@ -17,7 +18,9 @@ namespace LibOfTimetableOfClasses
 		string _director;
 		string _VUS;
 
-		public string FullName
+       
+
+        public string FullName
 		{
 			get
 			{
@@ -25,6 +28,10 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+                if (value == null)
+                    throw new Exception("Поле Полное название института пустое");
+                if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
+                    throw new Exception("Поле Полное название института содержит недопустимые символы");
 				_fullname = value;
 			}
 		}
@@ -37,7 +44,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				_VUS = value;
+                if (value == null)
+                    throw new Exception("Поле ВУЗ пустое");
+                _VUS = value;
 			}
 		}
 
@@ -49,7 +58,13 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				_shortname = value;
+                if (value == null || value == "")
+                    throw new Exception("Поле Короткое название иннститута пустое");
+                if (!Regex.IsMatch(value, @"[А-Я]"))
+                    throw new Exception("Поле Короткое назавание института содержит недопустимые символы");
+                if (value.Length < 1 || value.Length > 10)
+                    throw new Exception("Поле Короткое название института недопустиммой длины");
+                    _shortname = value;
 			}
 		}
 
@@ -61,7 +76,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				_director = value;
+
+                if (value == null || value == "")
+                    throw new Exception("Поле Директор пустое");
+                if (!Regex.IsMatch(value, @"[а-яА-Я\-\' ']"))
+                    throw new Exception("Поле Директор содержит недопустимые символы");
+                _director = value;
 			}
 		}
 
