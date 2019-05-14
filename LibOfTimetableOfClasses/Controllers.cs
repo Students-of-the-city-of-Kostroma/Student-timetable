@@ -9,7 +9,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// В этом классе храняться все экземпляры контроллеров.
     /// </summary>
-    public static class Controllers
+    public static class RefData
     {
         public static CTeacher CTeacher = new CTeacher();
         public static CAuditor CAuditor = new CAuditor();

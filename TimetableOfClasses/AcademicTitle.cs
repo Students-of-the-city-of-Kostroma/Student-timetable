@@ -16,7 +16,7 @@ namespace TimetableOfClasses
 		public AcademicTitle()
 		{
 			InitializeComponent();
-			DG_AcademicTitle.DataSource = Controllers.CTitle.Select();
+			DG_AcademicTitle.DataSource = RefData.CTitle.Select();
 		}
 
 

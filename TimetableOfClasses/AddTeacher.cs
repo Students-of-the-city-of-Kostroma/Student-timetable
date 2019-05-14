@@ -99,7 +99,7 @@ namespace TimetableOfClasses
 			{
 				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
 				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				return RefData.CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
@@ -111,7 +111,7 @@ namespace TimetableOfClasses
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;
 				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);
+				return RefData.CTeacher.Update(Lehrer);
 			}
 
 		}
