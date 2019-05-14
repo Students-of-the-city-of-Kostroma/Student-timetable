@@ -52,7 +52,6 @@ steps:
     artifactName: drop
     itemPattern: '*.exe'
 
-steps:
 - task: ArchiveFiles@2
   displayName: 'Archive $(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\SimpleChatClient\bin\Release\'
   inputs:
@@ -60,7 +59,6 @@ steps:
     archiveFile: '$(Agent.ReleaseDirectory)\Students-of-the-city-of-Kostroma.Student-timetable\drop\$(Build.BuildId).zip'
     verbose: true
 
-steps:
 - task: GitHubRelease@0
   displayName: 'GitHub release (create)'
   inputs:
