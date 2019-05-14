@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange 	
 			Controllers.CInstitute.Select().Clear();
-			MInstitute inst = new MInstitute("ИАСТ", "Институт Автоматизированных систем и технологий", "Лустгартен Ю.Л.", "КГУ");
+			MInstitute inst = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 			bool expected = true;
 			//act	
 			bool actual = Controllers.CInstitute.Insert(inst);
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("ИАСТ", "Институт Неавтоматизированных систем и технологий", "Голубева Ю.А.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ИАСТ", "Голубева Ю.А.", "КГУ");
             int C1 = Controllers.CInstitute.Select().Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Select().Rows.Count;
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("ФАСТ", "Институт Автоматизированных систем и технологий", "Голубева Ю.А.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "КГУ");
             int C1 = Controllers.CInstitute.Select().Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Select().Rows.Count;
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("ФАСТ", "Институт Неавтоматизированных систем и технологий", "Лустгартен Ю.Л.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "КГУ");
             int C1 = Controllers.CInstitute.Select().Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Select().Rows.Count;

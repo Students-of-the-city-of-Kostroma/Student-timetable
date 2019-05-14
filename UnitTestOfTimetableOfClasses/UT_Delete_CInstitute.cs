@@ -10,10 +10,10 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_Delete_CInstitute
 	{
 		[TestMethod]
-		public void Task_513_1()
+        public void Task_513_1()
 		{
 			Controllers.CInstitute.Select().Clear();
-			MInstitute I_IInstitute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
+            MInstitute I_IInstitute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 			bool ex = true;
 			Controllers.CInstitute.Insert(I_IInstitute);
 			bool act = Controllers.CInstitute.Delete(I_IInstitute);
