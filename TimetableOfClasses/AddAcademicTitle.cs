@@ -100,7 +100,7 @@ namespace TimetableOfClasses
 			foreach (char c in input)
 				if (Char.IsNumber(c) || Char.IsPunctuation(c) || Char.IsSymbol(c))
 				{
-					if (c == '.')
+					if (c == '.' || c == '-')
 						continue;
 					return false;
 				}
