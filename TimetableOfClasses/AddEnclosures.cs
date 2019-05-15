@@ -161,9 +161,6 @@ namespace TimetableOfClasses
 		private void btAddUniversity_Click(object sender, EventArgs e)
 		{
 			University university = new University(true);
-			university.add.Enabled = false;
-			university.update.Enabled = false;
-			university.delete.Enabled = false;
 			university.ShowDialog();
 			this.university.Text = university.ShortName;
 		}
