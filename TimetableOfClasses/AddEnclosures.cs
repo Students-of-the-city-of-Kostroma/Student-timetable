@@ -157,5 +157,15 @@ namespace TimetableOfClasses
 			if ((sender as TextBox).Text.Length==0) (sender as TextBox).BackColor = Color.Red;
 			else (sender as TextBox).BackColor = Color.White;
 		}
+
+		private void btAddUniversity_Click(object sender, EventArgs e)
+		{
+			University university = new University(true);
+			university.add.Enabled = false;
+			university.update.Enabled = false;
+			university.delete.Enabled = false;
+			university.ShowDialog();
+			this.university.Text = University.ShortName;
+		}
 	}
 }
