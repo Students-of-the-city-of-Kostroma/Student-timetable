@@ -13,7 +13,7 @@ namespace TimetableOfClasses
 {
 	public partial class University : Form
 	{
-		internal protected static string ShortName = "";
+		internal protected string ShortName = "";
 		private bool IsPicking = false; 
 		public University(bool isPicking)
 		{

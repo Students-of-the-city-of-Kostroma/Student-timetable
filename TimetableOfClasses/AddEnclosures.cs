@@ -165,7 +165,7 @@ namespace TimetableOfClasses
 			university.update.Enabled = false;
 			university.delete.Enabled = false;
 			university.ShowDialog();
-			this.university.Text = University.ShortName;
+			this.university.Text = university.ShortName;
 		}
 	}
 }
