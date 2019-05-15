@@ -18,7 +18,6 @@ namespace LibOfTimetableOfClasses
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Name";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
 			
@@ -31,19 +30,16 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Address";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Comment";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
