@@ -25,7 +25,6 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "University";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[1] = column;
 
