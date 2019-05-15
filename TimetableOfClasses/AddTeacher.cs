@@ -52,18 +52,18 @@ namespace TimetableOfClasses
 			checkPatronymic.Enabled = false;
 			#region(FullName)
 
-			firstName.Text = mTeacher.firstName;
+			firstName.Text = mTeacher.FirstName;
 			firstName.Enabled = false;
 
-			secondName.Text = mTeacher.secondName;
+			secondName.Text = mTeacher.SecondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = mTeacher.patronymic;
+			patronymic.Text = mTeacher.Patronymic;
 			patronymic.Enabled = false;
 
 			#endregion
 
-			notes.Text = mTeacher.Note;
+			academicDegree.Text = mTeacher.AcademicDegree;
 
 			department.Text = mTeacher.Departament;
 
@@ -96,15 +96,15 @@ namespace TimetableOfClasses
 
 			if (Lehrer == null)
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, academicDegree.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
-				Lehrer.firstName = firstName.Text;
-				Lehrer.secondName = secondName.Text;
-				Lehrer.patronymic = patronymic.Text;
-				Lehrer.Note = notes.Text;
+				Lehrer.FirstName = firstName.Text;
+				Lehrer.SecondName = secondName.Text;
+				Lehrer.Patronymic = patronymic.Text;
+				Lehrer.AcademicDegree = academicDegree.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;

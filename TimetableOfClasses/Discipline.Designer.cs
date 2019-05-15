@@ -128,6 +128,7 @@ namespace TimetableOfClasses
 			this.Controls.Add(this.btCreateDiscipline);
 			this.Controls.Add(this.Delete);
 			this.Controls.Add(this.DG_Disc);
+			this.MinimumSize = new System.Drawing.Size(433, 242);
 			this.Name = "Discipline";
 			this.Text = "Дисциплины";
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).EndInit();

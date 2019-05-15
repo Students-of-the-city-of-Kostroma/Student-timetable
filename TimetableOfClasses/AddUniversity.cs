@@ -22,7 +22,7 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			tbShortTittle.CharacterCasing = CharacterCasing.Upper;
 			tbShortTittle.Text = "КГУ";
-			tbFullTitle.Text = "Костромской Государственный университет";
+			tbFullTitle.Text = "Костромской Государственный Университет";
 			tbActualAddress.Text = "156005, Костромская область, г. Кострома, ул. Дзержинского, 17";
 			tbLegalAddress.Text = "156005, Костромская область, г. Кострома, ул. Дзержинского, 17";
 			tbPhone.Text = "84942317960";
@@ -34,6 +34,7 @@ namespace TimetableOfClasses
 		public AddUniversity(MUniversity model)
 		{
 			InitializeComponent();
+			tbINN.Enabled = false;
 			this.Text = "Изменение университета";
 			tbShortTittle.Text = model.ShortName;
 			tbFullTitle.Text = model.FullName;

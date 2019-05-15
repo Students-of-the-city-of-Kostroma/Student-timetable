@@ -41,22 +41,25 @@ namespace TimetableOfClasses
 			Auditor audit = new Auditor();
 			audit.Show();
 		}
-
+    
 		private void расписаниеToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Timetable tt = new Timetable();
 			tt.Show();
 		}
+    
 		private void вУЗыToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			University university = new University();
 			university.Show();
 		}
+    
 		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Ministry ministry = new Ministry();
 			ministry.Show();
 		}
+    
 		private void редактироватьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AddOrEditDirectory addOrEditDirectory = new AddOrEditDirectory();
@@ -70,8 +73,7 @@ namespace TimetableOfClasses
 			addOrEditDirectory.NewRow(null);
 			addOrEditDirectory.Show();
 		}
-
-
+    
 		private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AcademicTitle academicTitle = new AcademicTitle();
@@ -95,7 +97,18 @@ namespace TimetableOfClasses
 			Directory directory = new Directory();
 			directory.Show();
 		}
+    
+		private void профильПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TrainingProfiles trainingProfiles = new TrainingProfiles();
+			trainingProfiles.Show();
+    }
 
+		private void направлениеПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			DirectionOfPreparation directionOfPreparation = new DirectionOfPreparation();
+			directionOfPreparation.Show();
+    }
 
 		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
