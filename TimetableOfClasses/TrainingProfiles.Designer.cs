@@ -57,6 +57,7 @@
 			this.dgProfile.TabIndex = 1;
 			this.dgProfile.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgProfile_RowPrePaint);
 			this.dgProfile.SelectionChanged += new System.EventHandler(this.dgProfile_SelectionChanged);
+			this.dgProfile.DoubleClick += new System.EventHandler(this.DgProfile_DoubleClick);
 			// 
 			// FullName
 			// 
