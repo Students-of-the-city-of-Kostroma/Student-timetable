@@ -69,6 +69,7 @@
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(700, 309);
 			this.DG.TabIndex = 0;
+			this.DG.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_CellDoubleClick);
 			this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
 			this.DG.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_DataBindingComplete);
 			this.DG.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
@@ -181,9 +182,6 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView DG;
-		private System.Windows.Forms.Button delete;
-		private System.Windows.Forms.Button add;
-		private System.Windows.Forms.Button update;
 		private System.Windows.Forms.DataGridViewTextBoxColumn INN;
 		private System.Windows.Forms.DataGridViewTextBoxColumn shortname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fulltitle;
@@ -192,5 +190,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn namerector;
 		private System.Windows.Forms.DataGridViewTextBoxColumn mail;
 		private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+		protected internal System.Windows.Forms.Button delete;
+		protected internal System.Windows.Forms.Button add;
+		protected internal System.Windows.Forms.Button update;
 	}
 }
