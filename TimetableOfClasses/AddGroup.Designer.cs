@@ -45,7 +45,8 @@
 			this.nudCountStudents = new System.Windows.Forms.NumericUpDown();
 			this.nudSmena = new System.Windows.Forms.NumericUpDown();
 			this.label6 = new System.Windows.Forms.Label();
-			this.cbSpec = new System.Windows.Forms.ComboBox();
+			this.cbSpec = new System.Windows.Forms.TextBox();
+			this.SelectNP = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudSemest)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMinPar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudMaxPar)).BeginInit();
@@ -168,12 +169,24 @@
 			this.nudSemest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSemest.Location = new System.Drawing.Point(12, 85);
-			this.nudSemest.Maximum = new decimal(new int[] {10,0, 0,0});
-			this.nudSemest.Minimum = new decimal(new int[] {1,0,0,0});
+			this.nudSemest.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			this.nudSemest.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudSemest.Name = "nudSemest";
 			this.nudSemest.Size = new System.Drawing.Size(236, 20);
 			this.nudSemest.TabIndex = 33;
-			this.nudSemest.Value = new decimal(new int[] {1,0,0,0});
+			this.nudSemest.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudSemest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// nudMinPar
@@ -181,7 +194,11 @@
 			this.nudMinPar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudMinPar.Location = new System.Drawing.Point(11, 305);
-			this.nudMinPar.Maximum = new decimal(new int[] {6,0,0,0});
+			this.nudMinPar.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
 			this.nudMinPar.Name = "nudMinPar";
 			this.nudMinPar.Size = new System.Drawing.Size(236, 20);
 			this.nudMinPar.TabIndex = 35;
@@ -246,12 +263,24 @@
 			this.nudSmena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.nudSmena.Location = new System.Drawing.Point(11, 193);
-			this.nudSmena.Maximum = new decimal(new int[] {2,0,0,0});
-			this.nudSmena.Minimum = new decimal(new int[] {1,0,0,0});
+			this.nudSmena.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+			this.nudSmena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudSmena.Name = "nudSmena";
 			this.nudSmena.Size = new System.Drawing.Size(236, 20);
 			this.nudSmena.TabIndex = 40;
-			this.nudSmena.Value = new decimal(new int[] {1,0,0,0});
+			this.nudSmena.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudSmena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// label6
@@ -268,17 +297,29 @@
 			// 
 			// cbSpec
 			// 
-			this.cbSpec.FormattingEnabled = true;
-			this.cbSpec.Location = new System.Drawing.Point(12, 140);
+			this.cbSpec.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.cbSpec.Location = new System.Drawing.Point(11, 139);
 			this.cbSpec.Name = "cbSpec";
-			this.cbSpec.Size = new System.Drawing.Size(235, 21);
+			this.cbSpec.ReadOnly = true;
+			this.cbSpec.Size = new System.Drawing.Size(171, 20);
 			this.cbSpec.TabIndex = 41;
+			// 
+			// SelectNP
+			// 
+			this.SelectNP.Location = new System.Drawing.Point(188, 139);
+			this.SelectNP.Name = "SelectNP";
+			this.SelectNP.Size = new System.Drawing.Size(60, 20);
+			this.SelectNP.TabIndex = 42;
+			this.SelectNP.Text = "Выбрать";
+			this.SelectNP.UseVisualStyleBackColor = true;
+			this.SelectNP.Click += new System.EventHandler(this.SelectNP_Click);
 			// 
 			// AddGroup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(259, 497);
+			this.Controls.Add(this.SelectNP);
 			this.Controls.Add(this.cbSpec);
 			this.Controls.Add(this.nudSmena);
 			this.Controls.Add(this.label6);
@@ -329,6 +370,7 @@
 		private System.Windows.Forms.NumericUpDown nudCountStudents;
 		private System.Windows.Forms.NumericUpDown nudSmena;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.ComboBox cbSpec;
+		private System.Windows.Forms.TextBox cbSpec;
+		private System.Windows.Forms.Button SelectNP;
 	}
 }

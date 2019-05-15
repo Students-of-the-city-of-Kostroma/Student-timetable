@@ -16,12 +16,13 @@ namespace TimetableOfClasses
 	{
 		private MGroup group;
 		private CTrainingProfile TrainingProfile = Controllers.CTrainingProfile;
+		public string shortNameSpec;
 
 		public AddGroup()
 		{
 			InitializeComponent();
-			cbSpec.DataSource = TrainingProfile;
-			cbSpec.DisplayMember = "Shortname";
+			//cbSpec.DataSource = TrainingProfile;
+			//cbSpec.DisplayMember = "Shortname";
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
 		}
@@ -47,8 +48,8 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 
-			cbSpec.DataSource = TrainingProfile.DefaultView;
-			cbSpec.DisplayMember = "Shortname";
+			//cbSpec.DataSource = TrainingProfile.DefaultView;
+			//cbSpec.DisplayMember = "Shortname";
 
 			tbNameGroup.Text = mGroup.Group;
 			tbNameGroup.Enabled = false;
@@ -97,7 +98,7 @@ namespace TimetableOfClasses
 			{
 				errors = "Выберите направление подготовки";
 			} 
-			string fullname = (string)TrainingProfile.Rows[cbSpec.SelectedIndex]["Fullname"];
+			
 
 			ushort semest, smena, countStudents, minPar, maxPar;
 			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
@@ -251,6 +252,14 @@ namespace TimetableOfClasses
 				MessageBox.Show("Отсутствуют профили подготовки!");
 				Close();
 			}
+		}
+
+		private void SelectNP_Click(object sender, EventArgs e)
+		{
+			TrainingProfiles selectNP = new TrainingProfiles(2);
+			selectNP.Owner = this;
+			selectNP.ShowDialog();
+			cbSpec.Text = shortNameSpec;
 		}
 	}
 }

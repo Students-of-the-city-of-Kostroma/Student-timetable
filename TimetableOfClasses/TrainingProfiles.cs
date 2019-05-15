@@ -22,6 +22,17 @@ namespace TimetableOfClasses
 			ChangeProfile.Enabled = false;
 		}
 
+		public TrainingProfiles(int tmp)
+		{
+			InitializeComponent();
+			dgProfile.AutoGenerateColumns = false;
+			dgProfile.DataSource = Controllers.CTrainingProfile;
+			DeleteProfile.Visible = false;
+			ChangeProfile.Visible = false;
+			AddProfile.Visible = false;
+			this.Name = "ВЫбор профиля";
+		}
+
 		private void AddProfile_Click(object sender, EventArgs e)
 		{
 			AddProfile p = new AddProfile();
@@ -91,6 +102,11 @@ namespace TimetableOfClasses
 				DeleteProfile.Enabled = false;
 				ChangeProfile.Enabled = false;
 			}
+		}
+
+		private void DgProfile_DoubleClick(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
