@@ -40,6 +40,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.cancel = new System.Windows.Forms.Button();
 			this.save = new System.Windows.Forms.Button();
+			this.btAddUniversity = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// name
@@ -57,6 +58,7 @@
 			this.university.Location = new System.Drawing.Point(12, 85);
 			this.university.MaxLength = 10;
 			this.university.Name = "university";
+			this.university.ReadOnly = true;
 			this.university.Size = new System.Drawing.Size(188, 20);
 			this.university.TabIndex = 1;
 			this.university.TextChanged += new System.EventHandler(this.name_TextChanged);
@@ -65,7 +67,7 @@
 			// 
 			// address
 			// 
-			this.address.Location = new System.Drawing.Point(12, 138);
+			this.address.Location = new System.Drawing.Point(12, 168);
 			this.address.MaxLength = 255;
 			this.address.Name = "address";
 			this.address.Size = new System.Drawing.Size(188, 20);
@@ -75,7 +77,7 @@
 			// 
 			// note
 			// 
-			this.note.Location = new System.Drawing.Point(12, 250);
+			this.note.Location = new System.Drawing.Point(12, 280);
 			this.note.MaxLength = 256;
 			this.note.Name = "note";
 			this.note.Size = new System.Drawing.Size(188, 20);
@@ -84,7 +86,7 @@
 			// 
 			// phoneNumber
 			// 
-			this.phoneNumber.Location = new System.Drawing.Point(12, 197);
+			this.phoneNumber.Location = new System.Drawing.Point(12, 227);
 			this.phoneNumber.MaxLength = 11;
 			this.phoneNumber.Name = "phoneNumber";
 			this.phoneNumber.Size = new System.Drawing.Size(188, 20);
@@ -114,7 +116,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(12, 122);
+			this.label3.Location = new System.Drawing.Point(12, 152);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(38, 13);
 			this.label3.TabIndex = 7;
@@ -123,7 +125,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(12, 181);
+			this.label4.Location = new System.Drawing.Point(12, 211);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(52, 13);
 			this.label4.TabIndex = 8;
@@ -132,7 +134,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(9, 234);
+			this.label5.Location = new System.Drawing.Point(9, 264);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(70, 13);
 			this.label5.TabIndex = 9;
@@ -140,7 +142,7 @@
 			// 
 			// cancel
 			// 
-			this.cancel.Location = new System.Drawing.Point(12, 287);
+			this.cancel.Location = new System.Drawing.Point(12, 306);
 			this.cancel.Name = "cancel";
 			this.cancel.Size = new System.Drawing.Size(91, 32);
 			this.cancel.TabIndex = 10;
@@ -150,7 +152,7 @@
 			// 
 			// save
 			// 
-			this.save.Location = new System.Drawing.Point(109, 288);
+			this.save.Location = new System.Drawing.Point(109, 306);
 			this.save.Name = "save";
 			this.save.Size = new System.Drawing.Size(91, 32);
 			this.save.TabIndex = 11;
@@ -158,11 +160,22 @@
 			this.save.UseVisualStyleBackColor = true;
 			this.save.Click += new System.EventHandler(this.save_Click);
 			// 
+			// btAddUniversity
+			// 
+			this.btAddUniversity.Location = new System.Drawing.Point(12, 121);
+			this.btAddUniversity.Name = "btAddUniversity";
+			this.btAddUniversity.Size = new System.Drawing.Size(188, 23);
+			this.btAddUniversity.TabIndex = 12;
+			this.btAddUniversity.Text = "Добавить ВУЗ";
+			this.btAddUniversity.UseVisualStyleBackColor = true;
+			this.btAddUniversity.Click += new System.EventHandler(this.btAddUniversity_Click);
+			// 
 			// AddEnclosures
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(216, 332);
+			this.ClientSize = new System.Drawing.Size(216, 346);
+			this.Controls.Add(this.btAddUniversity);
 			this.Controls.Add(this.save);
 			this.Controls.Add(this.cancel);
 			this.Controls.Add(this.label5);
@@ -185,7 +198,6 @@
 		#endregion
 
 		private System.Windows.Forms.TextBox name;
-		private System.Windows.Forms.TextBox university;
 		private System.Windows.Forms.TextBox address;
 		private System.Windows.Forms.TextBox note;
 		private System.Windows.Forms.TextBox phoneNumber;
@@ -196,5 +208,7 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button cancel;
 		private System.Windows.Forms.Button save;
+		private System.Windows.Forms.Button btAddUniversity;
+		protected internal System.Windows.Forms.TextBox university;
 	}
 }

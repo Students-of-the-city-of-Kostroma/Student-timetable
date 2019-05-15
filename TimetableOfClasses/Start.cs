@@ -49,7 +49,7 @@ namespace TimetableOfClasses
 		}
 		private void вУЗыToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			University university = new University();
+			University university = new University(false);
 			university.Show();
 		}
 		private void министерстваToolStripMenuItem_Click(object sender, EventArgs e)

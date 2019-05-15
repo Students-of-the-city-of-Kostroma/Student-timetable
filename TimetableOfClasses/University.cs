@@ -13,9 +13,12 @@ namespace TimetableOfClasses
 {
 	public partial class University : Form
 	{
-		public University()
+		internal protected string ShortName = "";
+		private bool IsPicking = false; 
+		public University(bool isPicking)
 		{
 			InitializeComponent();
+			this.IsPicking = isPicking; 
 			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.CUniversity;
 		}
@@ -64,7 +67,7 @@ namespace TimetableOfClasses
 		}
 
 		private void Delete(object sender, EventArgs e)
-		{
+		{ 
 			if (DG.SelectedRows.Count == 0) return;
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -147,6 +150,13 @@ namespace TimetableOfClasses
 		{
 			AddUniversity a = new AddUniversity();
 			a.Show();
+		}
+
+		private void DG_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			ShortName = (string)Controllers.CUniversity.Rows[e.RowIndex]["ShortName"];
+			if(IsPicking)
+				this.Close();
 		}
 	}
 }
