@@ -42,11 +42,18 @@ namespace TimetableOfClasses
 				{
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Update(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
+						try
+						{
+							MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+							Controllers.CTitle.Update(Title);
+							FullName.Text = "";
+							Reduction.Text = "";
+							Close();
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
 					}
 					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 				}
@@ -59,11 +66,18 @@ namespace TimetableOfClasses
 				{
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 					{
-						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
+						try
+						{
+							MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+							Controllers.CTitle.Insert(Title);
+							FullName.Text = "";
+							Reduction.Text = "";
+							Close();
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
 					}
 					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 
@@ -79,10 +93,17 @@ namespace TimetableOfClasses
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
-					MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-					Controllers.CTitle.Insert(Title);
-					FullName.Text = "";
-					Reduction.Text = "";
+					try
+					{
+						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+						Controllers.CTitle.Insert(Title);
+						FullName.Text = "";
+						Reduction.Text = "";
+					}
+					catch (Exception)
+					{
+						MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+					}
 				}
 				else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 			}
