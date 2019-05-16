@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MTitle T_Title = new MTitle("", "");
+                MTitle T_Title = new MTitle(" ", " ");
                 Assert.AreEqual(typeof(String), T_Title.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MTitle T_Title = new MTitle("", "");
+                MTitle T_Title = new MTitle(" ", " ");
                 Assert.AreEqual(typeof(String), T_Title.Reduction.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)

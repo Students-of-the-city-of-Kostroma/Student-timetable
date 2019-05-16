@@ -6,7 +6,7 @@
 
 trigger:
 - Testing
-- task-*
+- task*
 - 17-*
 - Alliance-*
 pool:

@@ -32,7 +32,8 @@
 				}
 				set
 				{
-					_fullname = value;
+				if (value[0] == '.') throw new Exception("Точка ставится после слова");
+				_fullname = value;
 				}
 			}
 
@@ -44,7 +45,8 @@
 				}
 				set
 				{
-					_reduction = value;
+				if (value[0] == '.') throw new Exception("Точка ставится после слова");
+				_reduction = value;
 				}
 			}
 
