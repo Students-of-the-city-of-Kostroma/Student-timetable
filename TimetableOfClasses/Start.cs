@@ -86,7 +86,17 @@ namespace TimetableOfClasses
 
 		private void корпусаToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+
 			Enclosures enclosures = new Enclosures();
+			University university = new University(true);
+
+			if (Controllers.CUniversity.Rows.Count == 0)
+			{
+				var DialogResult = MessageBox.Show("Создать новый?", "Отсутствует корпус", MessageBoxButtons.OK);
+				if (DialogResult == DialogResult.OK)
+					university.ShowDialog();
+			}
+
 			enclosures.Show();
 		}
 
@@ -95,19 +105,19 @@ namespace TimetableOfClasses
 			Directory directory = new Directory();
 			directory.Show();
 		}
-    
+
 		private void профильПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			TrainingProfiles trainingProfiles = new TrainingProfiles();
 			trainingProfiles.Show();
-    }
+		}
 
 		private void направлениеПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			DirectionOfPreparation directionOfPreparation = new DirectionOfPreparation();
 			directionOfPreparation.Show();
-    }
-    
+		}
+
 		private void видыЗанятийПодготовкиToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();

@@ -19,6 +19,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			this.IsPicking = isPicking; 
+
 			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.CUniversity;
 		}
