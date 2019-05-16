@@ -28,7 +28,7 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			update = false;
 			fillingOutTheList();
-			
+
 		}
 		bool update = false;
 		public AddInstitute(MInstitute mInstitute)
@@ -47,66 +47,68 @@ namespace TimetableOfClasses
 
 		private void btCreateAndClose_Click(object sender, EventArgs e)
 		{
-		
+
 
 			if (update)
 			{
-						try
-						{
-							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
-							Controllers.CInstitute.Update(Institute);
-							FullName.Text = "";
-							ShortName.Text = "";
-							Director.Text = "";
-							Close();
-						}
-						catch(Exception)
-						{
-							MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
-						}
-					
+				try
+				{
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					Controllers.CInstitute.Update(Institute);
+					FullName.Text = "";
+					ShortName.Text = "";
+					Director.Text = "";
+					Close();
+				}
+				catch (Exception)
+				{
+					MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
+				}
+
+
+
 			}
 			else
 			{
 
-				
-						try
-						{
-							MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
-							Controllers.CInstitute.Insert(Institute);
-							FullName.Text = "";
-							ShortName.Text = "";
-							Director.Text = "";
-							Close();
-						}
-						catch(Exception)
-						{
-                    MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
-                }
 
-            }
-		}		
+				try
+				{
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					Controllers.CInstitute.Insert(Institute);
+					FullName.Text = "";
+					ShortName.Text = "";
+					Director.Text = "";
+					Close();
+				}
+				catch (Exception)
+				{
+					MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
+				}
 
-		
+			}
+		}
+
+
 
 		private void btCreateAndClean_Click(object sender, EventArgs e)
 		{
-			
-			
-					try
-					{
-						MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
-						Controllers.CInstitute.Insert(Institute);
-						FullName.Text = "";
-						ShortName.Text = "";
-						Director.Text = "";
-					}
-					catch(Exception)
-					{
-                MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
-            }
 
-        }
+
+			try
+			{
+				MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+				Controllers.CInstitute.Insert(Institute);
+				FullName.Text = "";
+				ShortName.Text = "";
+				Director.Text = "";
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
+			}
+
+		}
 
 		private void btCancel_Click(object sender, EventArgs e)
 		{
