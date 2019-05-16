@@ -13,24 +13,22 @@ namespace TimetableOfClasses
 {
 	public partial class TrainingProfiles : Form
 	{
-		public TrainingProfiles()
+		public TrainingProfiles(bool forChoice = false)
 		{
 			InitializeComponent();
 			dgProfile.AutoGenerateColumns = false;
 			dgProfile.DataSource = Controllers.CTrainingProfile;
-			DeleteProfile.Enabled = false;
-			ChangeProfile.Enabled = false;
+
+			if (forChoice)
+			{				
+				this.Name = "ВЫбор профиля";
+			}			
 		}
 
 		public TrainingProfiles(int tmp)
 		{
 			InitializeComponent();
-			dgProfile.AutoGenerateColumns = false;
-			dgProfile.DataSource = Controllers.CTrainingProfile;
-			DeleteProfile.Visible = false;
-			ChangeProfile.Visible = false;
-			AddProfile.Visible = false;
-			this.Name = "ВЫбор профиля";
+			
 		}
 
 		private void AddProfile_Click(object sender, EventArgs e)

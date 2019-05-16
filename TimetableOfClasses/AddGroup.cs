@@ -21,8 +21,6 @@ namespace TimetableOfClasses
 		public AddGroup()
 		{
 			InitializeComponent();
-			//cbSpec.DataSource = TrainingProfile;
-			//cbSpec.DisplayMember = "Shortname";
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
 		}
@@ -47,9 +45,6 @@ namespace TimetableOfClasses
 		public AddGroup(MGroup mGroup)
 		{
 			InitializeComponent();
-
-			//cbSpec.DataSource = TrainingProfile.DefaultView;
-			//cbSpec.DisplayMember = "Shortname";
 
 			tbNameGroup.Text = mGroup.Group;
 			tbNameGroup.Enabled = false;
@@ -179,12 +174,10 @@ namespace TimetableOfClasses
 
 			TextBox R = sender as TextBox;
 
-
 			if (!regex.IsMatch(R.Text))
-			{ R.Text = "00-ААаа-0а"; }
-			else
-			{ }
-
+			{
+				R.Text = "00-ААаа-0а";
+			}
 
 		}
 
@@ -247,16 +240,16 @@ namespace TimetableOfClasses
 
 		private void AddGroup_Load(object sender, EventArgs e)
 		{
-			if (TrainingProfile.Rows.Count == 0)
+			/*if (TrainingProfile.Rows.Count == 0)
 			{
 				MessageBox.Show("Отсутствуют профили подготовки!");
 				Close();
-			}
+			}*/
 		}
 
 		private void SelectNP_Click(object sender, EventArgs e)
 		{
-			TrainingProfiles selectNP = new TrainingProfiles(2);
+			TrainingProfiles selectNP = new TrainingProfiles(true);
 			selectNP.Owner = this;
 			selectNP.ShowDialog();
 			cbSpec.Text = shortNameSpec;
