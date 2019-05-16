@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		private void btAddDirection_Click(object sender, EventArgs e)
 		{
 			AddDirectionOfPreparation d = new AddDirectionOfPreparation();
-			d.ShowDialog();
+			d.Show();
 		}
 
 		private void btDeleteDirection_Click(object sender, EventArgs e)

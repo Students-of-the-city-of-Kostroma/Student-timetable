@@ -24,7 +24,7 @@ namespace TimetableOfClasses
 		private void btAddAuditor_Click(object sender, EventArgs e)
 		{
 			AddAuditor a = new AddAuditor();
-			a.ShowDialog();
+			a.Show();
 		}
 
 		private void btDelAuditor_Click(object sender, EventArgs e)

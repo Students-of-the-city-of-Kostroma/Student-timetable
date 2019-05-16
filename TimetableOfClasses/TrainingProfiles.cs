@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		private void AddProfile_Click(object sender, EventArgs e)
 		{
 			AddProfile p = new AddProfile();
-			p.ShowDialog();
+			p.Show();
 		}
 
 		private void DeleteProfile_Click(object sender, EventArgs e)
