@@ -118,7 +118,7 @@ namespace TimetableOfClasses
 		{
 			AddEnclosures addEnclosures = new AddEnclosures();
 			addEnclosures.Owner = this;
-			addEnclosures.ShowDialog();
+			addEnclosures.Show();
 		}
 	}
 }

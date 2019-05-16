@@ -22,7 +22,8 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
-			tbVixodnie.Text = "Воскресенье";
+			tbVixodnie.Text = "Воскресенье";	
+			
 		}
 
 		private bool isEmpty(string[] strArgs)
@@ -240,11 +241,15 @@ namespace TimetableOfClasses
 
 		private void AddGroup_Load(object sender, EventArgs e)
 		{
-			/*if (TrainingProfile.Rows.Count == 0)
+			TrainingProfiles formTr = new TrainingProfiles(true);
+			if (Controllers.CTrainingProfile.Rows.Count == 0)
 			{
-				MessageBox.Show("Отсутствуют профили подготовки!");
-				Close();
-			}*/
+				MessageBox.Show("Создать новый ?", "Отсутствуют профили подготовки!", MessageBoxButtons.OK);
+				if (this.DialogResult == DialogResult.None)
+				{
+					formTr.Show();
+				}
+			}
 		}
 
 		private void SelectNP_Click(object sender, EventArgs e)

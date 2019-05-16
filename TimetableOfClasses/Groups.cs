@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 		{
 			AddGroup addDiscipline = new AddGroup();
 			addDiscipline.Owner = this;
-			addDiscipline.ShowDialog();
+			addDiscipline.Show();
 		}
 
 		private void Update(object sender, EventArgs e)

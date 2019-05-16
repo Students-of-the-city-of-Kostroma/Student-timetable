@@ -25,8 +25,9 @@ namespace TimetableOfClasses
 
 		private void Add(object sender, EventArgs e)
 		{
-			AddUniversity t = new AddUniversity();
-			t.ShowDialog();
+			AddUniversity addUniversity = new AddUniversity();
+			addUniversity.Owner = this;
+			addUniversity.Show();
 		}
 
 		private void Update(object sender, EventArgs e)
