@@ -11,78 +11,92 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// Контроллер объекта Добавление ученого звания
 	/// </summary>
-	public class CAcademicDegree : Controller, IController
+	public class CAcademicDegree : DataTable, IController
 	{
 		public CAcademicDegree() : base("Учёная степень")
 		{
 
-			DataColumn[] keys = new DataColumn[2];
-
 			DataColumn column = new DataColumn();
+			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Сокращенная запись учёной степени";
+			column.ColumnName = "FullName";
 			column.Unique = true;
-			table.Columns.Add(column);
-			keys[0] = column;
+			this.Columns.Add(column);
 
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Полная запись учёной степени";
+			column.ColumnName = "Reduction";
 			column.Unique = true;
-			table.Columns.Add(column);
-			keys[1] = column;
+			this.Columns.Add(column);
+
 		}
 
-		public override bool Delete(Model model)
+		public bool Delete(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Полная запись учёной степени"] == mAcademicDegree.FullName && (string)table.Rows[i]["Сокращенная запись учёной степени"] == mAcademicDegree.Reduction)
+				if ((string)this.Rows[i]["FullName"] == mAcademicDegree.FullName && (string)this.Rows[i]["Reduction"] == mAcademicDegree.Reduction)
 				{
-					table.Rows[i].Delete();
+					this.Rows[i].Delete();
 					return true;
 				}
 			}
 			return false;
 		}
 
-		public override bool Insert(Model model)
+		private bool isValidKey(MAcademicDegree mAcademicDegree)
 		{
-			try
+			foreach (DataRow Row in this.Rows)
 			{
-				MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
-				DataRow newRow = table.NewRow();
-				newRow["Полная запись учёной степени"] = mAcademicDegree.FullName;
-				newRow["Сокращенная запись учёной степени"] = mAcademicDegree.Reduction;
-				table.Rows.Add(newRow);
-				return true;
+				if (mAcademicDegree.FullName == (string)Row["FullName"])
+					return false;
 			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.Source);
-				return false;
-			}
+			return true;
 		}
 
-		public override bool Update(Model model)
+		public bool Insert(Model model)
+		{
+			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
+
+			if (isValidKey(mAcademicDegree))
+			{
+				try
+				{
+		
+					DataRow newRow = this.NewRow();
+					newRow["FullName"] = mAcademicDegree.FullName;
+					newRow["Reduction"] = mAcademicDegree.Reduction;
+					this.Rows.Add(newRow);
+					return true;
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.Source);
+					return false;
+				}
+			}
+			return false;
+		}
+
+		public bool Update(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
 			if ((mAcademicDegree.FullName == null && mAcademicDegree.Reduction == null))
 				return false;
 
-			for (int i = 0; i < this.table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.table.Rows[i]["Сокращенная запись учёной степени"] == mAcademicDegree.Reduction)
+				if ((string)this.Rows[i]["Reduction"] == mAcademicDegree.Reduction)
 				{
 					try
 					{
-						this.table.Rows[i].BeginEdit();
-						this.table.Rows[i]["Сокращенная запись учёной степени"] = mAcademicDegree.Reduction;
-						this.table.Rows[i]["Полная запись учёной степени"] = mAcademicDegree.FullName;
-						this.table.Rows[i].EndEdit();
-						this.table.Rows[i].AcceptChanges();
+						this.Rows[i].BeginEdit();
+						this.Rows[i]["Reduction"] = mAcademicDegree.Reduction;
+						this.Rows[i]["FullName"] = mAcademicDegree.FullName;
+						this.Rows[i].EndEdit();
+						this.Rows[i].AcceptChanges();
 						return true;
 					}
 					catch (Exception ex)

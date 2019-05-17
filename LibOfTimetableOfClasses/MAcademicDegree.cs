@@ -22,7 +22,20 @@ namespace LibOfTimetableOfClasses
 		/// Сокращенная запись учёной степени
 		/// </summary>
 		string _reduction;
+		string _academicDegree;
 
+		public string AcademicDegree
+		{
+			get
+			{
+				return _academicDegree;
+			}
+			set
+			{
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+				_academicDegree = value;
+			}
+		}
 
 		public string FullName
 		{
@@ -32,6 +45,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				_fullname = value;
 			}
 		}
@@ -44,18 +58,23 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
 				_reduction = value;
 			}
 		}
 
 		/// <summary>
 		/// Создание экземпляра учёной степени
-		/// </summary>
-		/// 
+		/// </summary> 
 		public MAcademicDegree(string fullname, string reduction) : base()
 		{
 			FullName = fullname;
 			Reduction = reduction;
+		}
+
+		public MAcademicDegree(string academicDegree) : base()
+		{
+			AcademicDegree = academicDegree;
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         	public void Task_484_1()//Ввод иных корректных данных в поле атрибута "Полная запись учёной степени"
         	{
             		//arrange
-            		Controllers.CAcademicDegree.Select().Clear();
+            		Controllers.CAcademicDegree.Clear();
             		MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             		Controllers.CAcademicDegree.Insert(MAcademic);
             		bool ex = true;

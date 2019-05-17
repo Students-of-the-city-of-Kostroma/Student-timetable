@@ -6,38 +6,55 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+
 	/// <summary>
-	/// Дисциплина
+	/// Уч. звание
 	/// </summary>
 	public class MTitle : Model
 	{
+
 		/// <summary>
-		/// Название дисциплины
+		/// Полная запись ученого звания
 		/// </summary>
-		protected string name;
+		string _fullname;
+
 		/// <summary>
-		/// Код дисциплины
+		/// Сокращенная запись ученого звания
 		/// </summary>
-		protected string reduction;
-		/// <summary>
-		/// Создает экземпляр дисциплины
-		/// </summary>
-		/// <param name="name">Название дисциплины</param>
-		/// <param name="reduction">Код дисциплины</param>
-		public MTitle(string name, string reduction) : base()
+		string _reduction;
+
+
+		public string FullName
 		{
-			Name = name;
-			Reduction = reduction;
+			get
+			{
+				return _fullname;
+			}
+			set
+			{
+				_fullname = value;
+			}
+		}
+
+		public string Reduction
+		{
+			get
+			{
+				return _reduction;
+			}
+			set
+			{
+				_reduction = value;
+			}
 		}
 
 		/// <summary>
-		/// Возвращает или задает значение Name - название
+		/// Создание экземпляра уч. звания
 		/// </summary>
-		public string Name { set { name = value; } get { return name; } }
-
-		/// <summary>
-		/// Возвращает или задает значение Code - код
-		/// </summary>
-		public string Reduction { set { reduction = value; } get { return reduction; } }
+		public MTitle(string fullname, string reduction) : base()
+		{
+			FullName = fullname;
+			Reduction = reduction;
+		}
 	}
 }

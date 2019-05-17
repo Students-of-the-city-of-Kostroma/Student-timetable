@@ -28,6 +28,11 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
+			column.ColumnName = "AcademicTitle";
+			this.Columns.Add(column);
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
 			this.Columns.Add(column);
 			
@@ -69,6 +74,7 @@ namespace LibOfTimetableOfClasses
 					DataRow newRow = this.NewRow();
 					newRow["FullName"] = fullName;
 					newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+					newRow["AcademicTitle"] = mTeacher.AcademicTitle;
 					newRow["Departament"] = mTeacher.Departament;
 					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 					newRow["Windows"] = mTeacher.Windows;
@@ -96,6 +102,7 @@ namespace LibOfTimetableOfClasses
 					{
 						DataRow newRow = this.Rows[i];
 						newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+						newRow["AcademicTitle"] = mTeacher.AcademicTitle;
 						newRow["Departament"] = mTeacher.Departament;
 						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 						newRow["Windows"] = mTeacher.Windows;

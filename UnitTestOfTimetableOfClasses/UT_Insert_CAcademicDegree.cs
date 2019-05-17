@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_1()//Ввод корректных данных в пустую таблицу
 		{
 			//arrange 
-			Controllers.CAcademicDegree.Select().Clear();
+			Controllers.CAcademicDegree.Clear();
 			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
 			//act
@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_2()////учёная степень с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			Controllers.CAcademicDegree.Select().Clear();
+			Controllers.CAcademicDegree.Clear();
 			Task_486_1();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool expected = false;

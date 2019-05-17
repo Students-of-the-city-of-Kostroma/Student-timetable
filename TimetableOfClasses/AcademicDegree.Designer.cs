@@ -32,26 +32,31 @@
 			this.AddButton = new System.Windows.Forms.Button();
 			this.DeleteButton = new System.Windows.Forms.Button();
 			this.ChangeButton = new System.Windows.Forms.Button();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Reduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicDegree)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// DG_AcademicDegree
 			// 
-
 			this.DG_AcademicDegree.AllowUserToAddRows = false;
 			this.DG_AcademicDegree.AllowUserToDeleteRows = false;
 			this.DG_AcademicDegree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_AcademicDegree.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.DG_AcademicDegree.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicDegree.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DG_AcademicDegree.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FullName,
+            this.Reduction});
 			this.DG_AcademicDegree.Location = new System.Drawing.Point(16, 15);
 			this.DG_AcademicDegree.Margin = new System.Windows.Forms.Padding(4);
 			this.DG_AcademicDegree.Name = "DG_AcademicDegree";
 			this.DG_AcademicDegree.ReadOnly = true;
-			this.DG_AcademicDegree.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
 			this.DG_AcademicDegree.Size = new System.Drawing.Size(492, 216);
 			this.DG_AcademicDegree.TabIndex = 0;
+			this.DG_AcademicDegree.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
 			// 
 			// AddButton
 			// 
@@ -90,6 +95,20 @@
 			this.ChangeButton.UseVisualStyleBackColor = true;
 			this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
 			// 
+			// FullName
+			// 
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полная запись ученой степени";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Reduction
+			// 
+			this.Reduction.DataPropertyName = "Reduction";
+			this.Reduction.HeaderText = "Сокращенная запись учёной степени";
+			this.Reduction.Name = "Reduction";
+			this.Reduction.ReadOnly = true;
+			// 
 			// AcademicDegree
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,7 +123,6 @@
 			this.Text = "Ученые степени";
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicDegree)).EndInit();
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
@@ -113,5 +131,7 @@
 		private System.Windows.Forms.Button AddButton;
 		private System.Windows.Forms.Button DeleteButton;
 		private System.Windows.Forms.Button ChangeButton;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Reduction;
 	}
 }

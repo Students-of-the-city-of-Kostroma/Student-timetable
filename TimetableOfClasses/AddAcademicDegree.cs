@@ -51,39 +51,22 @@ namespace TimetableOfClasses
 
 		private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
 		{
-			if (update)
-			{
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
-				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-					{
-						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-						Controllers.CAcademicDegree.Update(AcademicDegree);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
-					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-				}
-				else MessageBox.Show("Невозможно добавить эту учёную степень", "Попробуйте снова");
-			}
+			if (String.IsNullOrWhiteSpace(FullName.Text) || String.IsNullOrWhiteSpace(Reduction.Text))
+				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+				try
 				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-					{
-						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+					if (!update)
 						Controllers.CAcademicDegree.Insert(AcademicDegree);
-						FullName.Text = "";
-						Reduction.Text = "";
-						Close();
-					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
+					else Controllers.CAcademicDegree.Update(AcademicDegree);
+					Close();
 				}
-				else MessageBox.Show("Невозможно добавить эту учёную степень", "Попробуйте снова");
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
 			}
 		}
 
@@ -91,6 +74,7 @@ namespace TimetableOfClasses
 		{
 			this.Close();
 		}
+
 		static bool isNumberDontContains(string input)
 		{
 			foreach (char c in input)
