@@ -123,6 +123,7 @@
 			// 
 			// aTitle
 			// 
+			this.aTitle.DataPropertyName = "AcademicTitle";
 			this.aTitle.HeaderText = "Учёное звание";
 			this.aTitle.Name = "aTitle";
 			this.aTitle.ReadOnly = true;

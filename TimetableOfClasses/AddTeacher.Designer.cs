@@ -48,7 +48,7 @@
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
 			this.academicDegree = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.AcademicTitle = new System.Windows.Forms.ComboBox();
+			this.academicTitle = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
@@ -297,14 +297,14 @@
 			this.label9.TabIndex = 30;
 			this.label9.Text = "Учёное звание";
 			// 
-			// AcademicTitle
+			// academicTitle
 			// 
-			this.AcademicTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.AcademicTitle.FormattingEnabled = true;
-			this.AcademicTitle.Location = new System.Drawing.Point(12, 250);
-			this.AcademicTitle.Name = "AcademicTitle";
-			this.AcademicTitle.Size = new System.Drawing.Size(266, 24);
-			this.AcademicTitle.TabIndex = 31;
+			this.academicTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.academicTitle.FormattingEnabled = true;
+			this.academicTitle.Location = new System.Drawing.Point(12, 250);
+			this.academicTitle.Name = "academicTitle";
+			this.academicTitle.Size = new System.Drawing.Size(266, 24);
+			this.academicTitle.TabIndex = 31;
 			// 
 			// AddTeacher
 			// 
@@ -312,7 +312,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(290, 568);
-			this.Controls.Add(this.AcademicTitle);
+			this.Controls.Add(this.academicTitle);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.checkPatronymic);
@@ -365,6 +365,6 @@
 		private System.Windows.Forms.CheckBox checkPatronymic;
 		private System.Windows.Forms.ComboBox academicDegree;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.ComboBox AcademicTitle;
+		private System.Windows.Forms.ComboBox academicTitle;
 	}
 }
