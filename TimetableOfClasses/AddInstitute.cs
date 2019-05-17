@@ -15,6 +15,8 @@ namespace TimetableOfClasses
 {
 	public partial class AddInstitute : Form
 	{
+		private CUniversity University = Controllers.CUniversity;
+
 
 
 		private void fillingOutTheList()
@@ -27,7 +29,8 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			update = false;
-			fillingOutTheList();
+			VUS.DataSource = University;
+			//fillingOutTheList();
 
 		}
 		bool update = false;

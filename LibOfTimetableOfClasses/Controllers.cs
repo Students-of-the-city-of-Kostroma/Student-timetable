@@ -3,13 +3,14 @@
 	using System.Linq;
 	using System.Text;
 	using System.Threading.Tasks;
+using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
 	/// В этом классе храняться все экземпляры контроллеров.
 	/// </summary>
-	public static class Controllers
+	public class Controllers
 	{
 		public static CTeacher CTeacher = new CTeacher();
 		public static CAuditor CAuditor = new CAuditor();
@@ -19,6 +20,19 @@ namespace LibOfTimetableOfClasses
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CInstitute CInstitute = new CInstitute();
     public static CUniversity CUniversity = new CUniversity();
+
+		public static DataSet dataSet = new DataSet();
+
+		public Controllers()
+		{
+			dataSet.Tables.Add(CUniversity);
+			dataSet.Tables.Add(CInstitute);
+			dataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["ВУЗ"]);
+
+		}
+
+
+
 	}
 
 }

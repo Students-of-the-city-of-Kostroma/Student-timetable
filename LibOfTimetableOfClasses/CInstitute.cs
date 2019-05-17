@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-	public class CInstitute : Controller, IController
+	public class CInstitute : DataTable, IController
 	{
 		public CInstitute() : base("Институт")
 		{
@@ -19,57 +19,57 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Краткое название института";
 			column.Unique = true;
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полное название института";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Директор института";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "ВУЗ";
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[3] = column;
 
 		}
 
-		public override bool Delete(Model model)
+		public bool Delete(Model model)
 		{
 			MInstitute mInstitute = (MInstitute)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Краткое название института"] == mInstitute.ShortName
-					&& (string)table.Rows[i]["Полное название института"] == mInstitute.FullName
-					&& (string)table.Rows[i]["Директор института"] == mInstitute.Director
-					&& (string)table.Rows[i]["ВУЗ"] == mInstitute.VUS)
+				if ((string)this.Rows[i]["Краткое название института"] == mInstitute.ShortName
+					&& (string)this.Rows[i]["Полное название института"] == mInstitute.FullName
+					&& (string)this.Rows[i]["Директор института"] == mInstitute.Director
+					&& (string)this.Rows[i]["ВУЗ"] == mInstitute.VUS)
 				{
-					table.Rows[i].Delete();
+					this.Rows[i].Delete();
 					return true;
 				}
 			}
 			return false;
 		}
 
-		public override bool Insert(Model model)
+		public bool Insert(Model model)
 		{
 			try
 			{
 				MInstitute mInstitute = (MInstitute)model;
-				DataRow newRow = table.NewRow();
+				DataRow newRow = this.NewRow();
 				newRow["Краткое название института"] = mInstitute.ShortName;
 				newRow["Полное название института"] = mInstitute.FullName;
 				newRow["Директор института"] = mInstitute.Director;
 				newRow["ВУЗ"] = mInstitute.VUS;
-				table.Rows.Add(newRow);
+				this.Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
@@ -79,7 +79,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public override bool Update(Model model)
+		public bool Update(Model model)
 		{
 			MInstitute mInstitute = (MInstitute)model;
 			if (mInstitute.ShortName == null
@@ -88,19 +88,19 @@ namespace LibOfTimetableOfClasses
 				&& mInstitute.VUS == null)
 				return false;
 
-			for (int i = 1; i < this.table.Rows.Count; i++)
+			for (int i = 1; i < this.Rows.Count; i++)
 			{
-				if ((string)this.table.Rows[i]["Краткое название института"] == mInstitute.ShortName)
+				if ((string)this.Rows[i]["Краткое название института"] == mInstitute.ShortName)
 				{
 					try
 					{
-						this.table.Rows[i].BeginEdit();
-						this.table.Rows[i]["Краткое название института"] = mInstitute.ShortName;
-						this.table.Rows[i]["Полное название института"] = mInstitute.FullName;
-						this.table.Rows[i]["Директор института"] = mInstitute.Director;
-						this.table.Rows[i]["ВУЗ"] = mInstitute.VUS;
-						this.table.Rows[i].EndEdit();
-						this.table.Rows[i].AcceptChanges();
+						this.Rows[i].BeginEdit();
+						this.Rows[i]["Краткое название института"] = mInstitute.ShortName;
+						this.Rows[i]["Полное название института"] = mInstitute.FullName;
+						this.Rows[i]["Директор института"] = mInstitute.Director;
+						this.Rows[i]["ВУЗ"] = mInstitute.VUS;
+						this.Rows[i].EndEdit();
+						this.Rows[i].AcceptChanges();
 						return true;
 					}
 					catch (Exception ex)
