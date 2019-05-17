@@ -27,7 +27,7 @@ namespace LibOfTimetableOfClasses
 		{
 			dataSet.Tables.Add(CUniversity);
 			dataSet.Tables.Add(CInstitute);
-			dataSet.Relations.Add("University-Institute", CUniversity.Columns["ShortName"], CInstitute.Columns["ВУЗ"]);
+			dataSet.Relations.Add("University-Institute", CUniversity.Columns["ShortName"], CInstitute.Columns["University"]);
 
 		}
 

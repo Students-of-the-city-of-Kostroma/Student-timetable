@@ -17,26 +17,26 @@ namespace LibOfTimetableOfClasses
 			DataColumn column = new DataColumn();
 
 			column.DataType = typeof(string);
-			column.ColumnName = "Краткое название института";
+			column.ColumnName = "ShortName";
 			column.Unique = true;
 			this.Columns.Add(column);
 			keys[0] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Полное название института";
+			column.ColumnName = "FullName";
 			this.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Директор института";
+			column.ColumnName = "Director";
 			this.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "ВУЗ";
+			column.ColumnName = "University";
 			this.Columns.Add(column);
 			keys[3] = column;
 
@@ -47,10 +47,10 @@ namespace LibOfTimetableOfClasses
 			MInstitute mInstitute = (MInstitute)model;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["Краткое название института"] == mInstitute.ShortName
-					&& (string)this.Rows[i]["Полное название института"] == mInstitute.FullName
-					&& (string)this.Rows[i]["Директор института"] == mInstitute.Director
-					&& (string)this.Rows[i]["ВУЗ"] == mInstitute.VUS)
+				if ((string)this.Rows[i]["ShortName"] == mInstitute.ShortName
+					&& (string)this.Rows[i]["FullName"] == mInstitute.FullName
+					&& (string)this.Rows[i]["Director"] == mInstitute.Director
+					&& (string)this.Rows[i]["University"] == mInstitute.VUS)
 				{
 					this.Rows[i].Delete();
 					return true;
@@ -65,10 +65,10 @@ namespace LibOfTimetableOfClasses
 			{
 				MInstitute mInstitute = (MInstitute)model;
 				DataRow newRow = this.NewRow();
-				newRow["Краткое название института"] = mInstitute.ShortName;
-				newRow["Полное название института"] = mInstitute.FullName;
-				newRow["Директор института"] = mInstitute.Director;
-				newRow["ВУЗ"] = mInstitute.VUS;
+				newRow["ShortName"] = mInstitute.ShortName;
+				newRow["FullName"] = mInstitute.FullName;
+				newRow["Director"] = mInstitute.Director;
+				newRow["University"] = mInstitute.VUS;
 				this.Rows.Add(newRow);
 				return true;
 			}
@@ -90,15 +90,15 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 1; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["Краткое название института"] == mInstitute.ShortName)
+				if ((string)this.Rows[i]["ShortName"] == mInstitute.ShortName)
 				{
 					try
 					{
 						this.Rows[i].BeginEdit();
-						this.Rows[i]["Краткое название института"] = mInstitute.ShortName;
-						this.Rows[i]["Полное название института"] = mInstitute.FullName;
-						this.Rows[i]["Директор института"] = mInstitute.Director;
-						this.Rows[i]["ВУЗ"] = mInstitute.VUS;
+						this.Rows[i]["ShortName"] = mInstitute.ShortName;
+						this.Rows[i]["FullName"] = mInstitute.FullName;
+						this.Rows[i]["Director"] = mInstitute.Director;
+						this.Rows[i]["University"] = mInstitute.VUS;
 						this.Rows[i].EndEdit();
 						this.Rows[i].AcceptChanges();
 						return true;

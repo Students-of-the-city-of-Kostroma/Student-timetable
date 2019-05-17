@@ -32,6 +32,10 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.btnChange = new System.Windows.Forms.Button();
+			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Director = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Institute)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -44,12 +48,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_Institute.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Institute.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DG_Institute.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ShortName,
+            this.FullName,
+            this.Director,
+            this.University});
 			this.DG_Institute.Location = new System.Drawing.Point(8, 12);
 			this.DG_Institute.Name = "DG_Institute";
 			this.DG_Institute.ReadOnly = true;
 			this.DG_Institute.Size = new System.Drawing.Size(535, 217);
-			this.DG_Institute.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Institute_RowPrePaint);
 			this.DG_Institute.TabIndex = 4;
+			this.DG_Institute.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Institute_RowPrePaint);
 			// 
 			// btnAdd
 			// 
@@ -85,6 +94,34 @@
 			this.btnChange.UseVisualStyleBackColor = true;
 			this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
 			// 
+			// ShortName
+			// 
+			this.ShortName.DataPropertyName = "ShortName";
+			this.ShortName.HeaderText = "Краткое название института";
+			this.ShortName.Name = "ShortName";
+			this.ShortName.ReadOnly = true;
+			// 
+			// FullName
+			// 
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полное название института";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Director
+			// 
+			this.Director.DataPropertyName = "Director";
+			this.Director.HeaderText = "Директор института";
+			this.Director.Name = "Director";
+			this.Director.ReadOnly = true;
+			// 
+			// University
+			// 
+			this.University.DataPropertyName = "University";
+			this.University.HeaderText = "ВУЗ";
+			this.University.Name = "University";
+			this.University.ReadOnly = true;
+			// 
 			// Institute
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,5 +144,9 @@
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.Button btnChange;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ShortName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Director;
+		private System.Windows.Forms.DataGridViewTextBoxColumn University;
 	}
 }
