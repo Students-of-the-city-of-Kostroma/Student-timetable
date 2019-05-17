@@ -2,7 +2,8 @@
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
-	using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 	namespace LibOfTimetableOfClasses
 	{
@@ -33,6 +34,8 @@
 				set
 				{
 				if (value[0] == '.') throw new Exception("Точка ставится после слова");
+				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
+					throw new Exception("Поле Полное название института содержит недопустимые символы");
 				_fullname = value;
 				}
 			}
@@ -45,6 +48,8 @@
 				}
 				set
 				{
+				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
+					throw new Exception("Поле Полное название института содержит недопустимые символы");
 				if (value[0] == '.') throw new Exception("Точка ставится после слова");
 				_reduction = value;
 				}
