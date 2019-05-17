@@ -90,14 +90,15 @@ namespace TimetableOfClasses
 			Enclosures enclosures = new Enclosures();
 			University university = new University(true);
 
+			enclosures.Show();
 			if (Controllers.CUniversity.Rows.Count == 0)
 			{
-				var DialogResult = MessageBox.Show("Создать новый?", "Отсутствует корпус", MessageBoxButtons.OK);
-				if (DialogResult == DialogResult.OK)
-					university.ShowDialog();
+				var DialogResult = MessageBox.Show("Добавить?", "Отсутствуют записи в таблице ВУЗы", MessageBoxButtons.YesNo);
+				if (DialogResult == DialogResult.Yes)
+					university.Show();
 			}
 
-			enclosures.Show();
+			
 		}
 
 		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)
