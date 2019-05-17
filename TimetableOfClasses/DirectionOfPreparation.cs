@@ -78,7 +78,7 @@ namespace TimetableOfClasses
 				MDirectionOfPreparation Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
 				AddDirectionOfPreparation add = new AddDirectionOfPreparation(Direction);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}

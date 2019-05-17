@@ -65,7 +65,7 @@ namespace TimetableOfClasses
 				MTrainingProfile Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
 				AddProfile add = new AddProfile(Profile);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
