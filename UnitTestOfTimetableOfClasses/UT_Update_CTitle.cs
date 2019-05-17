@@ -4,39 +4,39 @@ using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]
-    public class UT_Update_CTitle
-    {
-        [TestMethod]
-        public void Task_363_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
-        {
+	[TestClass]
+	public class UT_Update_CTitle
+	{
+		[TestMethod]
+		public void Task_363_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
+		{
 
-            MTitle T_Title = new MTitle("Проф.", "Профессор");
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-            Controllers.CTitle.Select().Clear();
-            Controllers.CTitle.Insert(T_Title);
+			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Insert(T_Title);
 
-            T_Title = new MTitle("Доц.", "Доцент");
+			T_Title = new MTitle("Доц.", "Доцент");
 
-            bool result = Controllers.CTitle.Update(T_Title);
-            //assert
-            Assert.IsFalse(result, "Ожидаем, что Модель изменится");
+			bool result = Controllers.CTitle.Update(T_Title);
+			//assert
+			Assert.IsFalse(result, "Ожидаем, что Модель изменится");
 
-        }
+		}
 
-        [TestMethod]
-        public void Task_363_2()
-        {
-            MTitle T_Title = new MTitle("Проф.", "Профессор");
+		[TestMethod]
+		public void Task_363_2()
+		{
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-            Controllers.CTitle.Select().Clear();
-            Controllers.CInstitute.Insert(T_Title);
+			Controllers.CTitle.Select().Clear();
+			Controllers.CInstitute.Insert(T_Title);
 
-            T_Title = new MTitle("Проф.", "Доцент");
+			T_Title = new MTitle("Проф.", "Доцент");
 
-            bool result = Controllers.CTitle.Update(T_Title);
+			bool result = Controllers.CTitle.Update(T_Title);
 
-            Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-        }
-    }
+			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
+		}
+	}
 }
