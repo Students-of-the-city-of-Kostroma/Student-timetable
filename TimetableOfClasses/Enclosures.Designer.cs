@@ -149,6 +149,7 @@
 			this.Controls.Add(this.DG);
 			this.Name = "Enclosures";
 			this.Text = "Корпуса";
+			this.Load += new System.EventHandler(this.Enclosures_Load);
 			((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.сEnclosuresBindingSource)).EndInit();
 			this.ResumeLayout(false);
