@@ -15,7 +15,7 @@ namespace TimetableOfClasses
 	{
 		internal protected string ShortName = "";
 		private bool IsPicking = false; 
-		public University(bool isPicking)
+		public University(bool isPicking = false)
 		{
 			InitializeComponent();
 			this.IsPicking = isPicking; 

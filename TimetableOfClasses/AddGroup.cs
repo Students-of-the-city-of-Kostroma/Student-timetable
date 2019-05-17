@@ -255,7 +255,7 @@ namespace TimetableOfClasses
 					"Отсутствуют записи в таблице Профили подготовки!", MessageBoxButtons.YesNo);
 				if (resultNotification == DialogResult.Yes)
 				{
-					TrainingProfiles formTr = new TrainingProfiles(true);
+					TrainingProfiles formTr = new TrainingProfiles();
 					formTr.Owner = this;
 					formTr.Show();
 				}
