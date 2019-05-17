@@ -239,25 +239,27 @@ namespace TimetableOfClasses
 				R.BackColor = Color.White;
 		}
 
-		private void AddGroup_Load(object sender, EventArgs e)
-		{
-			TrainingProfiles formTr = new TrainingProfiles(true);
-			if (Controllers.CTrainingProfile.Rows.Count == 0)
-			{
-				MessageBox.Show("Создать новый ?", "Отсутствуют профили подготовки!", MessageBoxButtons.OK);
-				if (this.DialogResult == DialogResult.None)
-				{
-					formTr.Show();
-				}
-			}
-		}
-
 		private void SelectNP_Click(object sender, EventArgs e)
 		{
 			TrainingProfiles selectNP = new TrainingProfiles(true);
 			selectNP.Owner = this;
 			selectNP.ShowDialog();
 			cbSpec.Text = shortNameSpec;
+		}
+
+		private void AddGroup_Shown(object sender, EventArgs e)
+		{
+			if (Controllers.CTrainingProfile.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("Добавить?",
+					"Отсутствуют записи в таблице Профили подготовки!", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+				{
+					TrainingProfiles formTr = new TrainingProfiles(true);
+					formTr.Owner = this;
+					formTr.Show();
+				}
+			}
 		}
 	}
 }
