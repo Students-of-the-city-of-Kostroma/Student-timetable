@@ -17,9 +17,7 @@ namespace TimetableOfClasses
 	{
 		private CUniversity University = Controllers.CUniversity;
 
-
-
-		private void fillingOutTheList()
+		private void fillingOutTheList()//Костыль :)
 		{
 			for (int i = 0; i < Controllers.CUniversity.Rows.Count; i++)
 				VUS.Items.Add(Controllers.CUniversity.Rows[i]["FullName"]);
@@ -44,7 +42,8 @@ namespace TimetableOfClasses
 			FullName.Text = mInstitute.FullName;
 			ShortName.Text = mInstitute.ShortName;
 			Director.Text = mInstitute.Director;
-			fillingOutTheList();
+			//fillingOutTheList();
+			VUS.DataSource = University;
 			update = true;
 		}
 
@@ -56,7 +55,7 @@ namespace TimetableOfClasses
 			{
 				try
 				{
-					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 					Controllers.CInstitute.Update(Institute);
 					FullName.Text = "";
 					ShortName.Text = "";
@@ -77,7 +76,7 @@ namespace TimetableOfClasses
 
 				try
 				{
-					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 					Controllers.CInstitute.Insert(Institute);
 					FullName.Text = "";
 					ShortName.Text = "";
@@ -100,7 +99,7 @@ namespace TimetableOfClasses
 
 			try
 			{
-				MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+				MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 				Controllers.CInstitute.Insert(Institute);
 				FullName.Text = "";
 				ShortName.Text = "";

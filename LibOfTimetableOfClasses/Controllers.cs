@@ -19,7 +19,7 @@ namespace LibOfTimetableOfClasses
 		public static CTitle CTitle = new CTitle();
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CInstitute CInstitute = new CInstitute();
-    public static CUniversity CUniversity = new CUniversity();
+		public static CUniversity CUniversity = new CUniversity();
 
 		public static DataSet dataSet = new DataSet();
 
@@ -27,7 +27,7 @@ namespace LibOfTimetableOfClasses
 		{
 			dataSet.Tables.Add(CUniversity);
 			dataSet.Tables.Add(CInstitute);
-			dataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["ВУЗ"]);
+			dataSet.Relations.Add("University-Institute", CUniversity.Columns["ShortName"], CInstitute.Columns["ВУЗ"]);
 
 		}
 
