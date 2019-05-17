@@ -16,6 +16,7 @@ namespace LibOfTimetableOfClasses
 		string _secondName;
 		string _firstName;
 		string _academicDegree;
+		string _academicTitle;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
@@ -126,6 +127,28 @@ namespace LibOfTimetableOfClasses
 
 				if (value != "") _academicDegree = value;
 				else _academicDegree = null;
+			}
+		}
+
+		public string AcademicTitle
+		{
+			get
+			{
+				if (_academicTitle != null) return _academicTitle;
+				else return "";
+			}
+			set
+			{
+				if (value == null) throw new Exception("Строка не может быть null");
+				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+
+				foreach (char l in value)
+					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
+				if (value.Length > 0)
+					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
+
+				if (value != "") _academicTitle = value;
+				else _academicTitle = null;
 			}
 		}
 

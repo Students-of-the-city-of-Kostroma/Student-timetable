@@ -15,6 +15,7 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
+		private CAcademicDegree AcademicDegree = Controllers.CAcademicDegree;
 
 		public AddTeacher()
 		{
@@ -22,6 +23,8 @@ namespace TimetableOfClasses
 			firstName.Text = "Иван";
 			secondName.Text = "Иванов";
 			patronymic.Text = "Иванович";
+			academicDegree.DataSource = AcademicDegree;
+			academicDegree.DisplayMember = "Reduction";
 			department.Text = "ФАСТ";
 			metodDays.Text = "Пн, Вт";
 			windows.Text = "Ср, Чт, Пт";
@@ -63,6 +66,9 @@ namespace TimetableOfClasses
 
 			#endregion
 
+			academicDegree.DataSource = AcademicDegree;
+			academicDegree.DisplayMember = "Reduction";
+
 			academicDegree.Text = mTeacher.AcademicDegree;
 
 			department.Text = mTeacher.Departament;
@@ -92,8 +98,6 @@ namespace TimetableOfClasses
 
 		private bool Add()
 		{
-
-
 			if (Lehrer == null)
 			{
 				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, academicDegree.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);

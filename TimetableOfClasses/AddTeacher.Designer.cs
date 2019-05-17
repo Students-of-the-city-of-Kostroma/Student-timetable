@@ -280,10 +280,6 @@
 			// 
 			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.academicDegree.FormattingEnabled = true;
-			this.academicDegree.Items.AddRange(new object[] {
-            "Отсутствует",
-            "Кандидат наук",
-            "Доктор наук"});
 			this.academicDegree.Location = new System.Drawing.Point(12, 192);
 			this.academicDegree.Name = "academicDegree";
 			this.academicDegree.Size = new System.Drawing.Size(266, 24);
