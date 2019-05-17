@@ -54,14 +54,14 @@ namespace TimetableOfClasses
 				result = MessageBox.Show(message, caption, buttons);
 				if (result == System.Windows.Forms.DialogResult.Yes)
 				{
-                    try
-                    {
-                        DG_AcademicTitle.Rows.RemoveAt(DG_AcademicTitle.SelectedCells[0].RowIndex);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Выберите строку для удаления", "Предупреждение");
-                    }
+					try
+					{
+						DG_AcademicTitle.Rows.RemoveAt(DG_AcademicTitle.SelectedCells[0].RowIndex);
+					}
+					catch
+					{
+						MessageBox.Show("Выберите строку для удаления", "Предупреждение");
+					}
 				}
 
 			}

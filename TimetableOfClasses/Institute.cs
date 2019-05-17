@@ -16,7 +16,7 @@ namespace TimetableOfClasses
 		public Institute()
 		{
 			InitializeComponent();
-			DG_Institute.DataSource =Controllers.CInstitute.Select();
+			DG_Institute.DataSource = Controllers.CInstitute.Select();
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 			if (DG_Institute.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_Institute.SelectedRows[0].DataBoundItem).Row;
-				MInstitute mInstitute = new MInstitute((string)Row["Полное название института"], (string)Row["Краткое название института"],(string)Row["Директор института"], (string)Row["ВУЗ"]);
+				MInstitute mInstitute = new MInstitute((string)Row["Полное название института"], (string)Row["Краткое название института"], (string)Row["Директор института"], (string)Row["ВУЗ"]);
 				AddInstitute add = new AddInstitute(mInstitute);
 				add.Owner = this;
 				add.ShowDialog();
