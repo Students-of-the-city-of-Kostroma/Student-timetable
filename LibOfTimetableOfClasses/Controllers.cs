@@ -28,8 +28,10 @@ namespace LibOfTimetableOfClasses
 		{
 			dataSet.Tables.Add(CTeacher);
 			dataSet.Tables.Add(CAcademicDegree);
+			dataSet.Tables.Add(CTitle);
 
 			dataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
+			dataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
 		}
 
 	}

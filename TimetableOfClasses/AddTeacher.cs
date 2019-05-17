@@ -16,6 +16,7 @@ namespace TimetableOfClasses
 	{
 		private MTeacher Lehrer;
 		private CAcademicDegree AcademicDegree = Controllers.CAcademicDegree;
+		private CTitle AcademicTitle = Controllers.CTitle;
 
 		public AddTeacher()
 		{
@@ -25,6 +26,8 @@ namespace TimetableOfClasses
 			patronymic.Text = "Иванович";
 			academicDegree.DataSource = AcademicDegree;
 			academicDegree.DisplayMember = "Reduction";
+			academicTitle.DataSource = AcademicTitle;
+			academicTitle.DisplayMember = "Reduction";
 			department.Text = "ФАСТ";
 			metodDays.Text = "Пн, Вт";
 			windows.Text = "Ср, Чт, Пт";
@@ -68,8 +71,11 @@ namespace TimetableOfClasses
 
 			academicDegree.DataSource = AcademicDegree;
 			academicDegree.DisplayMember = "Reduction";
-
 			academicDegree.Text = mTeacher.AcademicDegree;
+
+			academicTitle.DataSource = AcademicTitle;
+			academicTitle.DisplayMember = "Reduction";
+			academicTitle.Text = mTeacher.AcademicTitle;
 
 			department.Text = mTeacher.Departament;
 
@@ -100,7 +106,7 @@ namespace TimetableOfClasses
 		{
 			if (Lehrer == null)
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, academicDegree.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
@@ -109,6 +115,7 @@ namespace TimetableOfClasses
 				Lehrer.SecondName = secondName.Text;
 				Lehrer.Patronymic = patronymic.Text;
 				Lehrer.AcademicDegree = academicDegree.Text;
+				Lehrer.AcademicTitle = academicTitle.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
 				Lehrer.Windows = windows.Text;

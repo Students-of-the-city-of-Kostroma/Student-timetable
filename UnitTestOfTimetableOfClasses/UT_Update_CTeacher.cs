@@ -13,8 +13,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Академик", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			Controllers.CTeacher.Insert(tcher);
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
@@ -32,8 +32,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Академик", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			Controllers.CTeacher.Insert(tcher);
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
@@ -48,8 +48,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Академик", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			Controllers.CTeacher.Insert(tcher);
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
@@ -64,8 +64,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Академик", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			Controllers.CTeacher.Insert(tcher);
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;
@@ -82,8 +82,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Академик", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			Controllers.CTeacher.Insert(tcher);
 			Controllers.CTeacher.Insert(tcher1);
 			bool expected = true;

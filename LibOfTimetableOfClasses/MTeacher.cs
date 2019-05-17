@@ -88,6 +88,7 @@ namespace LibOfTimetableOfClasses
 				else _patronymic = null;
 			}
 		}
+
 		public string Departament
 		{
 			get
@@ -236,24 +237,26 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = patronymic;
 			AcademicDegree = academicDegree;
+			AcademicTitle = academicTitle;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
 			Weekends = weekends;
 		}
 
-		public MTeacher(string firstName, string secondName, string academicDegree, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = null;
 			AcademicDegree = academicDegree;
+			AcademicTitle = academicTitle;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
