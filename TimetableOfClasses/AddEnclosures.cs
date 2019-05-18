@@ -164,5 +164,15 @@ namespace TimetableOfClasses
 			university.ShowDialog();
 			this.university.Text = university.ShortName;
 		}
+
+		private void AddEnclosures_Shown(object sender, EventArgs e)
+		{
+			if (Controllers.CUniversity.Rows.Count == 0)
+			{
+				var DialogResult = MessageBox.Show("Создать новый?", "Отсутствует корпус", MessageBoxButtons.OK);
+				if (DialogResult == DialogResult.OK)
+					university.Show();
+			}
+		}
 	}
 }

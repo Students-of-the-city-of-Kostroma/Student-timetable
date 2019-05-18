@@ -90,13 +90,6 @@ namespace TimetableOfClasses
 			Enclosures enclosures = new Enclosures();
 			University university = new University(true);
 
-			if (Controllers.CUniversity.Rows.Count == 0)
-			{
-				var DialogResult = MessageBox.Show("Создать новый?", "Отсутствует корпус", MessageBoxButtons.OK);
-				if (DialogResult == DialogResult.OK)
-					university.ShowDialog();
-			}
-
 			enclosures.Show();
 		}
 
