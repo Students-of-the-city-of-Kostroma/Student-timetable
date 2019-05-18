@@ -30,8 +30,28 @@ namespace LibOfTimetableOfClasses
 			dataSet.Tables.Add(CAcademicDegree);
 			dataSet.Tables.Add(CTitle);
 
+			//ForeignKeyConstraint idKeyRestraint = new ForeignKeyConstraint(dataSet.Tables["CAcademicDegree"].Columns["Reduction"],dataSet.Tables["CTeacher"].Columns["academicDegree"]);
+
+			//idKeyRestraint.DeleteRule = Rule.SetNull;
+			//idKeyRestraint.UpdateRule = Rule.Cascade;
+
+			//dataSet.Tables["Reduction"].Constraints.Add(idKeyRestraint);
+			//dataSet.EnforceConstraints = true;
+
 			dataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
 			dataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
+
+			//ForeignKeyConstraint foreignKey = new ForeignKeyConstraint(CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"])
+			//{
+			//	ConstraintName = "AcademicDegreeTeacherForeignKey",
+			//	DeleteRule = Rule.SetNull,
+			//	UpdateRule = Rule.Cascade
+			//};
+			//// добавляем внешний ключ в dataset
+			//dataSet.Tables[CTeacher].Constraints.Add(foreignKey);
+			//// применяем внешний ключ
+			//dataSet.EnforceConstraints = true;
+
 		}
 
 	}

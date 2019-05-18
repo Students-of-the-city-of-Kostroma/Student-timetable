@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.DG_AcademicTitle = new System.Windows.Forms.DataGridView();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Reduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Add = new System.Windows.Forms.Button();
 			this.Delete = new System.Windows.Forms.Button();
 			this.Change = new System.Windows.Forms.Button();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Reduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicTitle)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -46,15 +46,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_AcademicTitle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_AcademicTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DG_AcademicTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicTitle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullName,
             this.Reduction});
 			this.DG_AcademicTitle.Location = new System.Drawing.Point(12, 12);
 			this.DG_AcademicTitle.Name = "DG_AcademicTitle";
 			this.DG_AcademicTitle.ReadOnly = true;
+			this.DG_AcademicTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicTitle.Size = new System.Drawing.Size(562, 215);
 			this.DG_AcademicTitle.TabIndex = 0;
+			// 
+			// FullName
+			// 
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полная запись ученого звания";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Reduction
+			// 
+			this.Reduction.DataPropertyName = "Reduction";
+			this.Reduction.HeaderText = "Сокращенная запись ученого звания";
+			this.Reduction.Name = "Reduction";
+			this.Reduction.ReadOnly = true;
 			// 
 			// Add
 			// 
@@ -88,20 +102,7 @@
 			this.Change.TabIndex = 3;
 			this.Change.Text = "Изменить";
 			this.Change.UseVisualStyleBackColor = true;
-			// 
-			// FullName
-			// 
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полная запись ученого звания";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// Reduction
-			// 
-			this.Reduction.DataPropertyName = "Reduction";
-			this.Reduction.HeaderText = "Сокращенная запись ученого звания";
-			this.Reduction.Name = "Reduction";
-			this.Reduction.ReadOnly = true;
+			this.Change.Click += new System.EventHandler(this.Change_Click);
 			// 
 			// AcademicTitle
 			// 

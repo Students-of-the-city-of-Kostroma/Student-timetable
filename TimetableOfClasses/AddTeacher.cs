@@ -91,7 +91,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, department.Text, metodDays.Text, weekends.Text }))
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
 				if (Add())
 				{
@@ -100,29 +100,38 @@ namespace TimetableOfClasses
 				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
 			else message();		
+
+
 		}
 
 		private bool Add()
 		{
-			if (Lehrer == null)
+			try
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				if (Lehrer == null)
+				{
+					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+					return Controllers.CTeacher.Insert(Prepodavatel);
+				}
+				else
+				{
+					Lehrer.FirstName = firstName.Text;
+					Lehrer.SecondName = secondName.Text;
+					Lehrer.Patronymic = patronymic.Text;
+					Lehrer.AcademicDegree = academicDegree.Text;
+					Lehrer.AcademicTitle = academicTitle.Text;
+					Lehrer.Departament = department.Text;
+					Lehrer.MetodicalDays = metodDays.Text;
+					Lehrer.Windows = windows.Text;
+					Lehrer.Weekends = weekends.Text;
+					return Controllers.CTeacher.Update(Lehrer);
+				}
 			}
-			else
+			catch (Exception)
 			{
-				Lehrer.FirstName = firstName.Text;
-				Lehrer.SecondName = secondName.Text;
-				Lehrer.Patronymic = patronymic.Text;
-				Lehrer.AcademicDegree = academicDegree.Text;
-				Lehrer.AcademicTitle = academicTitle.Text;
-				Lehrer.Departament = department.Text;
-				Lehrer.MetodicalDays = metodDays.Text;
-				Lehrer.Windows = windows.Text;
-				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);
+				MessageBox.Show("Заполенены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
+				return false;
 			}
-
 		}
 
 		/// <summary>
@@ -291,6 +300,13 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+
+			//ComboBox T = sender as ComboBox;
+			//if (T.SelectedItem == null)
+			//	T.BackColor = Color.Red;
+			//else
+			//	T.BackColor = Color.White;
+
 		}
 
 		private void checkPatronymic_CheckedChanged(object sender, EventArgs e)

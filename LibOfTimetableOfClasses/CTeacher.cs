@@ -62,7 +62,7 @@ namespace LibOfTimetableOfClasses
 			}
 			return true;
 		}
-		
+
 		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;

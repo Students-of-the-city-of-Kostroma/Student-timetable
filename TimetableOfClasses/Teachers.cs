@@ -24,7 +24,7 @@ namespace TimetableOfClasses
 		private void AddTeacher(object sender, EventArgs e)
 		{
 			AddTeacher t = new AddTeacher();
-			t.ShowDialog();
+			t.Show();
 		}
 
 		private void RemoveTeacher(object sender, EventArgs e)
