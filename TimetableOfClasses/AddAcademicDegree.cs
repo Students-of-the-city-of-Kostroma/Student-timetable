@@ -39,34 +39,73 @@ namespace TimetableOfClasses
 			{
 				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
 				{
-					MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-					Controllers.CAcademicDegree.Insert(AcademicDegree);
-					FullName.Text = "";
-					Reduction.Text = "";
+					try
+					{
+						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+						Controllers.CAcademicDegree.Insert(AcademicDegree);
+						FullName.Text = "";
+						Reduction.Text = "";
+					}
+					catch (Exception)
+					{
+						MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+					}
 				}
 				else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 			}
-			else MessageBox.Show("Невозможно добавить это учёную степень", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
 		}
 
 		private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
 		{
-			if (String.IsNullOrWhiteSpace(FullName.Text) || String.IsNullOrWhiteSpace(Reduction.Text))
-				MessageBox.Show("Заполните все поля корректно");
+
+			if (update)
+			{
+				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				{
+					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+					{
+						try
+						{
+							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+							Controllers.CAcademicDegree.Update(AcademicDegree);
+							FullName.Text = "";
+							Reduction.Text = "";
+							Close();
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
+					}
+					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+				}
+				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+			}
 			else
 			{
-				MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-				try
+
+				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 				{
-					if (!update)
-						Controllers.CAcademicDegree.Insert(AcademicDegree);
-					else Controllers.CAcademicDegree.Update(AcademicDegree);
-					Close();
+					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+					{
+						try
+						{
+							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+							Controllers.CAcademicDegree.Insert(AcademicDegree);
+							FullName.Text = "";
+							Reduction.Text = "";
+							Close();
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
+					}
+					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+
 				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-				}
+				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
 			}
 		}
 
