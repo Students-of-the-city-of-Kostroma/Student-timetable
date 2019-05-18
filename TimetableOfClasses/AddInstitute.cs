@@ -28,6 +28,7 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			update = false;
 			VUS.DataSource = University;
+			VUS.DisplayMember = "FullName";
 			//fillingOutTheList();
 
 		}
