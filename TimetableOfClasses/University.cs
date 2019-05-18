@@ -154,11 +154,15 @@ namespace TimetableOfClasses
 			a.Show();
 		}
 
-		private void DG_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+		private void DG_DoubleClick(object sender, EventArgs e)
 		{
-			ShortName = (string)Controllers.CUniversity.Rows[e.RowIndex]["ShortName"];
-			if(IsPicking)
+			if (IsPicking)
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				ShortName = (string)Row["ShortName"];
 				this.Close();
+			}
 		}
 	}
 }
