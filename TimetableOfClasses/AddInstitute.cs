@@ -17,19 +17,13 @@ namespace TimetableOfClasses
 	{
 		private CUniversity University = Controllers.CUniversity;
 
-		private void fillingOutTheList()//Костыль :)
-		{
-			for (int i = 0; i < Controllers.CUniversity.Rows.Count; i++)
-				VUS.Items.Add(Controllers.CUniversity.Rows[i]["FullName"]);
-		}
-
 		public AddInstitute()
 		{
 			InitializeComponent();
 			update = false;
 			VUS.DataSource = University;
 			VUS.DisplayMember = "FullName";
-			//fillingOutTheList();
+		
 
 		}
 		bool update = false;
@@ -43,8 +37,8 @@ namespace TimetableOfClasses
 			FullName.Text = mInstitute.FullName;
 			ShortName.Text = mInstitute.ShortName;
 			Director.Text = mInstitute.Director;
-			//fillingOutTheList();
 			VUS.DataSource = University;
+			VUS.Text = mInstitute.VUS;
 			update = true;
 		}
 
