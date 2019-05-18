@@ -27,9 +27,9 @@ namespace TimetableOfClasses
 				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
 				MAcademicDegree mAcademicDegree = new MAcademicDegree((string)Row["FullName"], (string)Row["Reduction"]);
 
-				AddAcademicDegree add = new AddAcademicDegree(mAcademicDegree);
-				add.Owner = this;
-				add.ShowDialog();
+				AddAcademicDegree addAcademicDegree = new AddAcademicDegree(mAcademicDegree);
+				addAcademicDegree.Owner = this;
+				addAcademicDegree.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку"); }
 		}

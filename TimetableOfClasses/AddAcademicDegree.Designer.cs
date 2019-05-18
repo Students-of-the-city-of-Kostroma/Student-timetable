@@ -42,18 +42,18 @@
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(13, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(206, 13);
+			this.label1.Size = new System.Drawing.Size(197, 13);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Сокращённая запись  учённая степень";
+			this.label1.Text = "Сокращённая запись учёной степени";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(13, 67);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(171, 13);
+			this.label2.Size = new System.Drawing.Size(165, 13);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Полная запись учённая степень";
+			this.label2.Text = "Полная запись учёной степени";
 			// 
 			// button1
 			// 
