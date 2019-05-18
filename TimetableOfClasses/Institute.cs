@@ -16,6 +16,7 @@ namespace TimetableOfClasses
 		public Institute()
 		{
 			InitializeComponent();
+			DG_Institute.AutoGenerateColumns = false;
 			DG_Institute.DataSource = Controllers.CInstitute;
 		}
 
