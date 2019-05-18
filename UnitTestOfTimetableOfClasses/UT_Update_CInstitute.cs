@@ -13,8 +13,10 @@ namespace UnitTestOfTimetableOfClasses
 
 			MInstitute T_Institute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 
-			Controllers.CInstitute.Select().Clear();
-			Controllers.CInstitute.Insert(T_Institute);
+
+            Controllers.CInstitute.Clear();
+            Controllers.CInstitute.Insert(T_Institute);
+
 
 			T_Institute = new MInstitute("Факультет Автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "КГТУ");
 			bool result = Controllers.CInstitute.Update(T_Institute);
@@ -29,8 +31,9 @@ namespace UnitTestOfTimetableOfClasses
 
 			MInstitute T_Institute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 
-			Controllers.CInstitute.Select().Clear();
-			Controllers.CInstitute.Insert(T_Institute);
+
+            Controllers.CInstitute.Clear();
+            Controllers.CInstitute.Insert(T_Institute);
 
 			T_Institute = new MInstitute("Институт Автоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "КГУ");
 			bool result = Controllers.CInstitute.Update(T_Institute);

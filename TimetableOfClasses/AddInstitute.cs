@@ -15,19 +15,15 @@ namespace TimetableOfClasses
 {
 	public partial class AddInstitute : Form
 	{
-
-
-		private void fillingOutTheList()
-		{
-			for (int i = 0; i < Controllers.CUniversity.Rows.Count; i++)
-				VUS.Items.Add(Controllers.CUniversity.Rows[i]["FullName"]);
-		}
+		private CUniversity University = Controllers.CUniversity;
 
 		public AddInstitute()
 		{
 			InitializeComponent();
 			update = false;
-			fillingOutTheList();
+			VUS.DataSource = University;
+			VUS.DisplayMember = "FullName";
+		
 
 		}
 		bool update = false;
@@ -41,7 +37,8 @@ namespace TimetableOfClasses
 			FullName.Text = mInstitute.FullName;
 			ShortName.Text = mInstitute.ShortName;
 			Director.Text = mInstitute.Director;
-			fillingOutTheList();
+			VUS.DataSource = University;
+			VUS.Text = mInstitute.VUS;
 			update = true;
 		}
 
@@ -53,7 +50,7 @@ namespace TimetableOfClasses
 			{
 				try
 				{
-					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 					Controllers.CInstitute.Update(Institute);
 					FullName.Text = "";
 					ShortName.Text = "";
@@ -74,7 +71,7 @@ namespace TimetableOfClasses
 
 				try
 				{
-					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+					MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 					Controllers.CInstitute.Insert(Institute);
 					FullName.Text = "";
 					ShortName.Text = "";
@@ -97,7 +94,7 @@ namespace TimetableOfClasses
 
 			try
 			{
-				MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.SelectedItem.ToString());
+				MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
 				Controllers.CInstitute.Insert(Institute);
 				FullName.Text = "";
 				ShortName.Text = "";
