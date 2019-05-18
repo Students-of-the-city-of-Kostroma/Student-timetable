@@ -37,7 +37,7 @@ namespace LibOfTimetableOfClasses
             Columns.Add(column);
 
 			column = new DataColumn();
-			column.DataType = typeof(byte);
+			column.DataType = typeof(string);
 			column.ColumnName = "Building";
             column.Unique = false;
             Columns.Add(column);
@@ -54,7 +54,6 @@ namespace LibOfTimetableOfClasses
 			try
 			{
 				DataRow newRow = NewRow();
-				//newRow["ID"] = Guid.NewGuid();
 				newRow["NameOfAuditor"] = mAuditor.NameOfAuditor;
 				newRow["Cafedra"] = mAuditor.Cafedra;
 				newRow["Spacious"] = mAuditor.Spacious;
@@ -79,7 +78,7 @@ namespace LibOfTimetableOfClasses
 			for (int i = 0; i < Rows.Count; i++)
             {
 				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
-					&& (byte)Rows[i]["Building"] == mAuditor.Building)
+					&& (string)Rows[i]["Building"] == mAuditor.Building)
 				{
 					try
 					{
@@ -108,7 +107,7 @@ namespace LibOfTimetableOfClasses
 			for (int i = 0; i < Rows.Count; i++)
 			{
 				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
-					&& (byte)Rows[i]["Building"] == mAuditor.Building)
+					&& (string)Rows[i]["Building"] == mAuditor.Building)
 				{
 					Rows.Remove(Rows[i]);
 					return true;

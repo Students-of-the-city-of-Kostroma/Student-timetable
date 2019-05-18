@@ -15,10 +15,18 @@ namespace TimetableOfClasses
 	{
 
 		MAuditor mAuditor;
+		private СEnclosures СEnclosures = Controllers.СEnclosures;
 
 		public AddAuditor()
 		{
 			InitializeComponent();
+			СEnclosures cEsourse = Controllers.СEnclosures;
+			cbCorpus.DropDownStyle = ComboBoxStyle.DropDownList;
+			foreach (DataRow row in cEsourse.Rows)
+			{
+				string s = Convert.ToString(row["Name"]);
+				cbCorpus.Items.Add(s);
+			}
 			itsupdate = false;
 		}
 		byte a;
@@ -32,8 +40,8 @@ namespace TimetableOfClasses
 			tbAuditor.Text = mAuditor.NameOfAuditor;
 			tbAuditor.Enabled = false;
 			tbKaf.Text = mAuditor.Cafedra;
-			tbCorpus.Text = Convert.ToString(mAuditor.Building);
-			tbCorpus.Enabled = false;
+			cbCorpus.Text = Convert.ToString(mAuditor.Building);
+			cbCorpus.Enabled = false;
 			nuPlaces.Value = mAuditor.Spacious;
 			itsupdate = true;
 		}
@@ -45,11 +53,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
-			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
+			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(cbCorpus.Text) || String.IsNullOrWhiteSpace(cbCorpus.Text) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
+				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, cbCorpus.Text);
 				try
 				{
 					if (!Controllers.CAuditor.Insert(Auditor))
@@ -59,7 +67,7 @@ namespace TimetableOfClasses
 					}
 					tbAuditor.Text = "";
 					tbKaf.Text = "";
-					tbCorpus.Text = "";
+					cbCorpus.Text = "";
 					nuPlaces.Value = 1;
 				}
 				catch (Exception ex)
@@ -71,11 +79,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
-			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(tbCorpus.Text) || !byte.TryParse(tbCorpus.Text, out a) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
+			if (String.IsNullOrWhiteSpace(tbAuditor.Text) || String.IsNullOrWhiteSpace(tbKaf.Text) || String.IsNullOrWhiteSpace(cbCorpus.Text) || String.IsNullOrWhiteSpace(cbCorpus.Text) || String.IsNullOrWhiteSpace(nuPlaces.Text) || nuPlaces.Value == 0)
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
+				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, cbCorpus.Text);
 				try
 				{
 					if (!itsupdate)

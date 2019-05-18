@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -14,7 +15,8 @@ namespace TimetableOfClasses
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+			new Controllers();
+			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());
         }
