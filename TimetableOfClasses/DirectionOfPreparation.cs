@@ -13,13 +13,17 @@ namespace TimetableOfClasses
 {
 	public partial class DirectionOfPreparation : Form
 	{
-		public DirectionOfPreparation()
+		public DirectionOfPreparation(bool forChoice = false)
 		{
 			InitializeComponent();
 			dgDirectionOfPreparation.AutoGenerateColumns = false;
 			dgDirectionOfPreparation.DataSource = Controllers.CDirectionOfPreparation;
 			btDeleteDirection.Enabled = false;
 			btChangeDirection.Enabled = false;
+			if (forChoice)
+			{
+				Name = "Выбор кода";
+			}
 		}
 
 		private void btAddDirection_Click(object sender, EventArgs e)
@@ -30,6 +34,18 @@ namespace TimetableOfClasses
 
 		private void btDeleteDirection_Click(object sender, EventArgs e)
 		{
+			TrainingProfiles tpForm = new TrainingProfiles();
+			foreach (DataGridViewRow row2 in dgDirectionOfPreparation.SelectedRows)
+			{
+				foreach (DataGridViewRow row in tpForm.dgProfile.Rows)
+				{
+					if (row.Cells[0].Value.ToString() == row2.Cells[0].Value.ToString())
+					{
+						MessageBox.Show("Код данного направления используется в талице 'Профиль подготовки'");
+						return;
+					}
+				}
+			}
 			string SelectedName = "";
 			foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
 			{
@@ -37,14 +53,14 @@ namespace TimetableOfClasses
 				SelectedName += (string)Row["NameOfDP"] + ", ";
 			}
 			if (SelectedName.Length > 2)
-				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
+				SelectedName = SelectedName.Remove(SelectedName.Length - 2);			
 			if (SelectedName != "")
 			{
 				DialogResult dr = MessageBox.Show("Удалить направление - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 				if (dgDirectionOfPreparation.SelectedRows.Count > 0 && dr == DialogResult.OK)
 				{
 					int countSelected = dgDirectionOfPreparation.SelectedRows.Count;
-
+					
 					MDirectionOfPreparation Direction;
 					foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
 					{
@@ -90,6 +106,16 @@ namespace TimetableOfClasses
 			object header = dgDirectionOfPreparation.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
 				dgDirectionOfPreparation.Rows[index].HeaderCell.Value = indexStr;
+		}
+
+		private void dgDirectionOfPreparation_DoubleClick(object sender, EventArgs e)
+		{
+			if (Name == "Выбор кода")
+			{
+				DataRow Row = ((DataRowView)dgDirectionOfPreparation.SelectedRows[0].DataBoundItem).Row;
+				(Owner as AddProfile).codeSpec = (string)Row["CodeOfDP"];
+				Close();
+			}
 		}
 	}
 }

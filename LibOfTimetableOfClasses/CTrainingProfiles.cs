@@ -25,6 +25,12 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Shortname";
 			Columns.Add(column);
+			
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "Shiphr";
+			//column.Unique = true;
+			Columns.Add(column);
 		}
 
 		public bool Delete(Model model)
@@ -34,7 +40,8 @@ namespace LibOfTimetableOfClasses
 			for (int i = 0; i < Rows.Count; i++)
 			{
 				if ((string)Rows[i]["Fullname"] == mTrainingProfile.FullName
-				&& (string)Rows[i]["Shortname"] == mTrainingProfile.ShortName)
+				&& (string)Rows[i]["Shortname"] == mTrainingProfile.ShortName
+				&& (string)Rows[i]["Shiphr"] == mTrainingProfile.Shiphr)
 				{
 					Rows.Remove(Rows[i]);
 					return true;
@@ -53,6 +60,7 @@ namespace LibOfTimetableOfClasses
 				DataRow newRow = NewRow();
 				newRow["FullName"] = mTrainingProfile.FullName;
 				newRow["ShortName"] = mTrainingProfile.ShortName;
+				newRow["Shiphr"] = mTrainingProfile.Shiphr;
 				Rows.Add(newRow);
 				return true;
 			}
@@ -77,6 +85,7 @@ namespace LibOfTimetableOfClasses
 					{
 						Rows[i].BeginEdit();
 						Rows[i]["ShortName"] = mTrainingProfile.ShortName;
+						Rows[i]["Shiphr"] = mTrainingProfile.Shiphr;
 						Rows[i].EndEdit();
 						Rows[i].AcceptChanges();
 
