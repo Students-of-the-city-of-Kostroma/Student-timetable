@@ -3,7 +3,7 @@
 	using System.Linq;
 	using System.Text;
 	using System.Threading.Tasks;
-using System.Data;
+	using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -27,8 +27,7 @@ namespace LibOfTimetableOfClasses
 		{
 			dataSet.Tables.Add(CUniversity);
 			dataSet.Tables.Add(CInstitute);
-			dataSet.Relations.Add("University-Institute", CUniversity.Columns["ShortName"], CInstitute.Columns["University"]);
-
+			dataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 		}
 
 

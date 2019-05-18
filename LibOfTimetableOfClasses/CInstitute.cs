@@ -10,7 +10,7 @@ namespace LibOfTimetableOfClasses
 {
 	public class CInstitute : DataTable, IController
 	{
-		public CInstitute() : base("Институт")
+		public CInstitute() : base("Institute")
 		{
 			DataColumn[] keys = new DataColumn[4];
 
