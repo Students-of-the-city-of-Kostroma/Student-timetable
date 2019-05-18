@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		private void btAddDirection_Click(object sender, EventArgs e)
 		{
 			AddDirectionOfPreparation d = new AddDirectionOfPreparation();
-			d.ShowDialog();
+			d.Show();
 		}
 
 		private void btDeleteDirection_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace TimetableOfClasses
 				MDirectionOfPreparation Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
 				AddDirectionOfPreparation add = new AddDirectionOfPreparation(Direction);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}

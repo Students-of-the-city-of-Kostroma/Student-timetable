@@ -24,7 +24,7 @@ namespace TimetableOfClasses
 		private void btAddAuditor_Click(object sender, EventArgs e)
 		{
 			AddAuditor a = new AddAuditor();
-			a.ShowDialog();
+			a.Show();
 		}
 
 		private void btDelAuditor_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace TimetableOfClasses
 				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
 				AddAuditor add = new AddAuditor(mAuditor);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
