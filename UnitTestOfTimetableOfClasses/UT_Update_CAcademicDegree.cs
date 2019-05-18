@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
         	public void Task_484_1()//Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
         	{
-            		//arrange
+            		//arrange 
             		Controllers.CAcademicDegree.Clear();
             		MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             		Controllers.CAcademicDegree.Insert(MAcademic);
