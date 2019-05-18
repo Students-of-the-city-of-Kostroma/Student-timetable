@@ -61,6 +61,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(C1, C2);
         }
     }
+
 }
 
 

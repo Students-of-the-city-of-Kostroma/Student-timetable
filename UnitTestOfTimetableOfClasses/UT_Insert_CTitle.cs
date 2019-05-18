@@ -49,6 +49,6 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
-		
+
 	}
 }
