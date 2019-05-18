@@ -161,9 +161,5 @@ namespace LibOfTimetableOfClasses
 			Phone = phone;
 		}
 
-		//public MUniversity(string inn) : base()
-		//{
-		//	INN = inn;
-		//}
 	}
 }
