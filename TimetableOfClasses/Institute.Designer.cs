@@ -58,6 +58,7 @@
 			this.DG_Institute.ReadOnly = true;
 			this.DG_Institute.Size = new System.Drawing.Size(535, 217);
 			this.DG_Institute.TabIndex = 4;
+			this.DG_Institute.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Institute.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Institute_RowPrePaint);
 			// 
 			// btnAdd

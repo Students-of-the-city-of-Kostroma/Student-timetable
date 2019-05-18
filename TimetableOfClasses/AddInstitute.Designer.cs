@@ -32,13 +32,15 @@
 			this.ShortName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.FullName = new System.Windows.Forms.TextBox();
-			this.Director = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btCreateAndClose = new System.Windows.Forms.Button();
 			this.btCreateAndClean = new System.Windows.Forms.Button();
 			this.btCancel = new System.Windows.Forms.Button();
 			this.VUS = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
+			this.Director = new System.Windows.Forms.ComboBox();
+			this.Open_Teacher = new System.Windows.Forms.Button();
+			this.Open_University = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -78,16 +80,6 @@
 			this.FullName.Size = new System.Drawing.Size(287, 20);
 			this.FullName.TabIndex = 10;
 			// 
-			// Director
-			// 
-			this.Director.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.Director.Location = new System.Drawing.Point(10, 101);
-			this.Director.Name = "Director";
-			this.Director.Size = new System.Drawing.Size(287, 20);
-			this.Director.TabIndex = 11;
-			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
@@ -100,7 +92,7 @@
 			// btCreateAndClose
 			// 
 			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClose.Location = new System.Drawing.Point(230, 221);
+			this.btCreateAndClose.Location = new System.Drawing.Point(230, 249);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClose.TabIndex = 13;
@@ -111,7 +103,7 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(149, 221);
+			this.btCreateAndClean.Location = new System.Drawing.Point(149, 249);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 14;
@@ -122,7 +114,7 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(68, 221);
+			this.btCancel.Location = new System.Drawing.Point(68, 249);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 15;
@@ -135,7 +127,7 @@
 			this.VUS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.VUS.FormattingEnabled = true;
-			this.VUS.Location = new System.Drawing.Point(10, 148);
+			this.VUS.Location = new System.Drawing.Point(10, 173);
 			this.VUS.Name = "VUS";
 			this.VUS.Size = new System.Drawing.Size(287, 21);
 			this.VUS.TabIndex = 16;
@@ -146,24 +138,57 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(13, 126);
+			this.label4.Location = new System.Drawing.Point(10, 157);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(29, 13);
 			this.label4.TabIndex = 17;
 			this.label4.Text = "ВУЗ";
 			// 
+			// Director
+			// 
+			this.Director.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.Director.FormattingEnabled = true;
+			this.Director.Location = new System.Drawing.Point(10, 102);
+			this.Director.Name = "Director";
+			this.Director.Size = new System.Drawing.Size(287, 21);
+			this.Director.TabIndex = 18;
+			// 
+			// Open_Teacher
+			// 
+			this.Open_Teacher.Location = new System.Drawing.Point(10, 130);
+			this.Open_Teacher.Name = "Open_Teacher";
+			this.Open_Teacher.Size = new System.Drawing.Size(287, 23);
+			this.Open_Teacher.TabIndex = 19;
+			this.Open_Teacher.Text = "Добавить";
+			this.Open_Teacher.UseVisualStyleBackColor = true;
+			this.Open_Teacher.Click += new System.EventHandler(this.Open_Teacher_Click);
+			// 
+			// Open_University
+			// 
+			this.Open_University.Location = new System.Drawing.Point(10, 200);
+			this.Open_University.Name = "Open_University";
+			this.Open_University.Size = new System.Drawing.Size(284, 23);
+			this.Open_University.TabIndex = 20;
+			this.Open_University.Text = "Добавить ВУЗ";
+			this.Open_University.UseVisualStyleBackColor = true;
+			this.Open_University.Click += new System.EventHandler(this.Open_University_Click);
+			// 
 			// AddInstitute
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(314, 269);
+			this.ClientSize = new System.Drawing.Size(314, 297);
+			this.Controls.Add(this.Open_University);
+			this.Controls.Add(this.Open_Teacher);
+			this.Controls.Add(this.Director);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.VUS);
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.btCreateAndClean);
 			this.Controls.Add(this.btCreateAndClose);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.Director);
 			this.Controls.Add(this.FullName);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.ShortName);
@@ -182,12 +207,14 @@
 		private System.Windows.Forms.TextBox ShortName;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox FullName;
-		private System.Windows.Forms.TextBox Director;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button btCreateAndClose;
 		private System.Windows.Forms.Button btCreateAndClean;
 		private System.Windows.Forms.Button btCancel;
 		private System.Windows.Forms.ComboBox VUS;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.ComboBox Director;
+		private System.Windows.Forms.Button Open_Teacher;
+		private System.Windows.Forms.Button Open_University;
 	}
 }
