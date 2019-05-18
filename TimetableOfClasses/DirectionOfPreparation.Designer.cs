@@ -136,7 +136,7 @@
 
 		#endregion
 
-		public System.Windows.Forms.DataGridView dgDirectionOfPreparation;
+		private System.Windows.Forms.DataGridView dgDirectionOfPreparation;
 		private System.Windows.Forms.Button btAddDirection;
 		private System.Windows.Forms.Button btDeleteDirection;
 		private System.Windows.Forms.Button btChangeDirection;

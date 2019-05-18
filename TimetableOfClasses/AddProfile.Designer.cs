@@ -34,7 +34,7 @@
 			this.bt_Cr_n_Close = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Cl = new System.Windows.Forms.Button();
 			this.btCancel = new System.Windows.Forms.Button();
-			this.cbFullName = new System.Windows.Forms.ComboBox();
+			this.tbFullName = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -43,9 +43,9 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label1.Location = new System.Drawing.Point(13, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(111, 16);
+			this.label1.Size = new System.Drawing.Size(186, 16);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Выбор профиля";
+			this.label1.Text = "Полное название профиля";
 			// 
 			// label2
 			// 
@@ -100,22 +100,21 @@
 			this.btCancel.UseVisualStyleBackColor = true;
 			this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
 			// 
-			// cbFullName
+			// tbFullName
 			// 
-			this.cbFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.tbFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.cbFullName.FormattingEnabled = true;
-			this.cbFullName.Location = new System.Drawing.Point(16, 33);
-			this.cbFullName.Name = "cbFullName";
-			this.cbFullName.Size = new System.Drawing.Size(238, 21);
-			this.cbFullName.TabIndex = 15;
+			this.tbFullName.Location = new System.Drawing.Point(15, 33);
+			this.tbFullName.Name = "tbFullName";
+			this.tbFullName.Size = new System.Drawing.Size(237, 20);
+			this.tbFullName.TabIndex = 15;
 			// 
 			// AddProfile
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(266, 163);
-			this.Controls.Add(this.cbFullName);
+			this.Controls.Add(this.tbFullName);
 			this.Controls.Add(this.bt_Cr_n_Close);
 			this.Controls.Add(this.bt_Cr_n_Cl);
 			this.Controls.Add(this.btCancel);
@@ -139,6 +138,6 @@
 		private System.Windows.Forms.Button bt_Cr_n_Close;
 		private System.Windows.Forms.Button bt_Cr_n_Cl;
 		private System.Windows.Forms.Button btCancel;
-		private System.Windows.Forms.ComboBox cbFullName;
+		private System.Windows.Forms.TextBox tbFullName;
 	}
 }
