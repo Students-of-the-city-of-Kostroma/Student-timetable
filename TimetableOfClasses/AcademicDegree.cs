@@ -36,32 +36,45 @@ namespace TimetableOfClasses
 
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
-			if (DG_AcademicDegree.SelectedRows.Count == 0) 
+			if (DG_AcademicDegree.SelectedRows.Count == 0)
 			{
 				MessageBox.Show("Выделите строчку", "Предупреждение");
 				return;
 			}
-
 			else
 			{
-				string message = "Вы уверны что хотите удалить ученую степень?";
-				string caption = "Подтверждение удаления";
-				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-				DialogResult result;
-				result = MessageBox.Show(message, caption, buttons);
+				//if (== true)
+				//{
+				//	string message = "Нельзя удалить данную учёную степень. Данная учёная степень используется в таблице Преподователь";
+				//	string caption = "Сообщение";
+				//	MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				//	DialogResult result;
+				//	result = MessageBox.Show(message, caption, buttons);
+				//}
+				//else
+				//{
+					string message = "Вы уверны что хотите удалить ученую степень?";
+					string caption = "Подтверждение удаления";
+					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+					DialogResult result;
+					result = MessageBox.Show(message, caption, buttons);
 
-				if (result == System.Windows.Forms.DialogResult.Yes)
-				{
-					MAcademicDegree mAcademicDegree;
-					foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
+					if (result == System.Windows.Forms.DialogResult.Yes)
 					{
-						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-						mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
-						Controllers.CAcademicDegree.Delete(mAcademicDegree);
+						MAcademicDegree mAcademicDegree;
+						foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
+						{
+							DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+							mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
+							Controllers.CAcademicDegree.Delete(mAcademicDegree);
+						}
+						DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
 					}
-					DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
-				}
+				//}
 			}
+
+
+
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
@@ -69,7 +82,7 @@ namespace TimetableOfClasses
 
 		 	AddAcademicDegree addAcademicGegree = new AddAcademicDegree();
 			addAcademicGegree.Owner = this;
-			addAcademicGegree.ShowDialog();
+			addAcademicGegree.Show();
 		}
 
 		private void DG_AcademicDegree_SelectionChanged(object sender, EventArgs e)

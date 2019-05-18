@@ -63,9 +63,12 @@ namespace LibOfTimetableOfClasses
 		public bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
+			if ((mTitle.FullName == null && mTitle.Reduction == null))
+				return false;
+
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((mTitle.FullName != null && mTitle.Reduction != null))
+				if ((string)this.Rows[i]["Reduction"] == mTitle.Reduction)
 				{
 					try
 					{

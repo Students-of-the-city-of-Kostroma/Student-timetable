@@ -278,6 +278,7 @@
 			// 
 			// academicDegree
 			// 
+			this.academicDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.academicDegree.FormattingEnabled = true;
 			this.academicDegree.Location = new System.Drawing.Point(12, 192);
@@ -299,6 +300,7 @@
 			// 
 			// academicTitle
 			// 
+			this.academicTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.academicTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.academicTitle.FormattingEnabled = true;
 			this.academicTitle.Location = new System.Drawing.Point(12, 250);
