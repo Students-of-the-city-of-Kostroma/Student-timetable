@@ -91,14 +91,6 @@ namespace TimetableOfClasses
 			University university = new University(true);
 
 			enclosures.Show();
-			if (Controllers.CUniversity.Rows.Count == 0)
-			{
-				var DialogResult = MessageBox.Show("Добавить?", "Отсутствуют записи в таблице ВУЗы", MessageBoxButtons.YesNo);
-				if (DialogResult == DialogResult.Yes)
-					university.Show();
-			}
-
-			
 		}
 
 		private void справочникиToolStripMenuItem1_Click(object sender, EventArgs e)

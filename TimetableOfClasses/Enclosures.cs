@@ -120,10 +120,5 @@ namespace TimetableOfClasses
 			addEnclosures.Owner = this;
 			addEnclosures.Show();
 		}
-
-		private void Enclosures_Load(object sender, EventArgs e)
-		{
-			
-		}
 	}
 }

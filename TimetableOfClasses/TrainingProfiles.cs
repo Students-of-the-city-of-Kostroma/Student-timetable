@@ -13,6 +13,8 @@ namespace TimetableOfClasses
 {
 	public partial class TrainingProfiles : Form
 	{
+		public string ChoseShortNameTrainingProfile;
+
 		public TrainingProfiles(bool forChoice = false)
 		{
 			InitializeComponent();
@@ -107,7 +109,7 @@ namespace TimetableOfClasses
 			if (this.Name == "ВЫбор профиля")
 			{
 				DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
-				(this.Owner as AddGroup).shortNameSpec = (string)Row["ShortName"];
+				ChoseShortNameTrainingProfile = (string)Row["ShortName"];
 				Close();
 			}
 		}

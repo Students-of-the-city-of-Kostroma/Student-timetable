@@ -15,7 +15,6 @@ namespace TimetableOfClasses
 	public partial class AddGroup : Form
 	{
 		private MGroup group;
-		private CTrainingProfile TrainingProfile = Controllers.CTrainingProfile;
 		public string shortNameSpec;
 
 		public AddGroup()
@@ -241,25 +240,34 @@ namespace TimetableOfClasses
 
 		private void SelectNP_Click(object sender, EventArgs e)
 		{
-			TrainingProfiles selectNP = new TrainingProfiles(true);
-			selectNP.Owner = this;
-			selectNP.ShowDialog();
-			cbSpec.Text = shortNameSpec;
+			CreateFormForEditAndChoiceUnviversity();
 		}
 
 		private void AddGroup_Shown(object sender, EventArgs e)
 		{
 			if (Controllers.CTrainingProfile.Rows.Count == 0)
 			{
-				var resultNotification = MessageBox.Show("Добавить?",
-					"Отсутствуют записи в таблице Профили подготовки!", MessageBoxButtons.YesNo);
+				var resultNotification = MessageBox.Show("В созависимом справочнике Профили подготовки отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Профили подготовки?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
 				if (resultNotification == DialogResult.Yes)
-				{
-					TrainingProfiles formTr = new TrainingProfiles();
-					formTr.Owner = this;
-					formTr.Show();
-				}
+					CreateFormForEditAndChoiceUnviversity();
 			}
+		}
+
+		private void CreateFormForEditAndChoiceUnviversity()
+		{
+			TrainingProfiles selectNP = new TrainingProfiles(true);
+			selectNP.Owner = this;
+			selectNP.FormClosed += SelectNP_FormClosed;
+			selectNP.Show();
+		}
+
+		private void SelectNP_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string shortNameSpeciality = (sender as TrainingProfiles).ChoseShortNameTrainingProfile;
+			if(shortNameSpeciality!=null)
+				cbSpec.Text = shortNameSpeciality;
 		}
 	}
 }

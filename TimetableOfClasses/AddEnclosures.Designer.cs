@@ -190,6 +190,7 @@
 			this.Controls.Add(this.name);
 			this.Name = "AddEnclosures";
 			this.Text = "AddEnclosures";
+			this.Shown += new System.EventHandler(this.AddEnclosures_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
