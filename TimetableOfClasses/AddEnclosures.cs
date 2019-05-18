@@ -160,19 +160,34 @@ namespace TimetableOfClasses
 
 		private void btAddUniversity_Click(object sender, EventArgs e)
 		{
-			University university = new University(true);
-			university.ShowDialog();
-			this.university.Text = university.ShortName;
+			CreateFormForEditAndChoiceUnviversity();
 		}
 
 		private void AddEnclosures_Shown(object sender, EventArgs e)
 		{
 			if (Controllers.CUniversity.Rows.Count == 0)
 			{
-				var DialogResult = MessageBox.Show("Создать новый?", "Отсутствует корпус", MessageBoxButtons.OK);
-				if (DialogResult == DialogResult.OK)
-					university.Show();
+				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника ВУЗы?", 
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (DialogResult == DialogResult.Yes)
+					CreateFormForEditAndChoiceUnviversity();
 			}
+		}
+
+		private void CreateFormForEditAndChoiceUnviversity()
+		{
+			University university = new University(true);
+			university.FormClosed += University_FormClosed;
+			university.Owner = this;
+			university.Show();
+		}
+
+		private void University_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string choseUniversity = (sender as University).ShortName;
+			if (choseUniversity != null)
+				this.university.Text = choseUniversity;
 		}
 	}
 }
