@@ -35,10 +35,10 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.nuPlaces = new System.Windows.Forms.NumericUpDown();
 			this.label4 = new System.Windows.Forms.Label();
-			this.tbCorpus = new System.Windows.Forms.TextBox();
 			this.btCancel = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Cl = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Close = new System.Windows.Forms.Button();
+			this.cbCorpus = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.nuPlaces)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -130,17 +130,6 @@
 			this.label4.TabIndex = 6;
 			this.label4.Text = "Корпус";
 			// 
-			// tbCorpus
-			// 
-			this.tbCorpus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.tbCorpus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbCorpus.Location = new System.Drawing.Point(13, 201);
-			this.tbCorpus.Name = "tbCorpus";
-			this.tbCorpus.Size = new System.Drawing.Size(241, 22);
-			this.tbCorpus.TabIndex = 7;
-			this.tbCorpus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCorpus_KeyPress);
-			// 
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -175,15 +164,23 @@
 			this.bt_Cr_n_Close.UseVisualStyleBackColor = true;
 			this.bt_Cr_n_Close.Click += new System.EventHandler(this.bt_Cr_n_Close_Click);
 			// 
+			// cbCorpus
+			// 
+			this.cbCorpus.FormattingEnabled = true;
+			this.cbCorpus.Location = new System.Drawing.Point(13, 201);
+			this.cbCorpus.Name = "cbCorpus";
+			this.cbCorpus.Size = new System.Drawing.Size(242, 21);
+			this.cbCorpus.TabIndex = 11;
+			// 
 			// AddAuditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(266, 311);
+			this.Controls.Add(this.cbCorpus);
 			this.Controls.Add(this.bt_Cr_n_Close);
 			this.Controls.Add(this.bt_Cr_n_Cl);
 			this.Controls.Add(this.btCancel);
-			this.Controls.Add(this.tbCorpus);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.nuPlaces);
 			this.Controls.Add(this.label3);
@@ -210,9 +207,9 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.NumericUpDown nuPlaces;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox tbCorpus;
 		private System.Windows.Forms.Button btCancel;
 		private System.Windows.Forms.Button bt_Cr_n_Cl;
 		private System.Windows.Forms.Button bt_Cr_n_Close;
+		private System.Windows.Forms.ComboBox cbCorpus;
 	}
 }
