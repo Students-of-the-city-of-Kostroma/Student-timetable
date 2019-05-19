@@ -33,19 +33,7 @@ namespace TimetableOfClasses
 		}
 
 		private void btDeleteDirection_Click(object sender, EventArgs e)
-		{
-			TrainingProfiles tpForm = new TrainingProfiles();
-			foreach (DataGridViewRow row2 in dgDirectionOfPreparation.SelectedRows)
-			{
-				foreach (DataGridViewRow row in tpForm.dgProfile.Rows)
-				{
-					if (row.Cells[0].Value.ToString() == row2.Cells[0].Value.ToString())
-					{
-						MessageBox.Show("Код данного направления используется в талице 'Профиль подготовки'");
-						return;
-					}
-				}
-			}
+		{			
 			string SelectedName = "";
 			foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
 			{
