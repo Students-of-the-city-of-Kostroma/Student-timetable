@@ -86,6 +86,12 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddInstitute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstitute.Designer.cs">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     </Compile>
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Institute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Institute.Designer.cs">
+      <DependentUpon>Institute.cs</DependentUpon>
     </Compile>
     <Compile Include="Ministry.cs">
       <SubType>Form</SubType>
@@ -212,6 +224,8 @@
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddInstitute.resx">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
     <EmbeddedResource Include="AddProfile.resx">
       <DependentUpon>AddProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auditor.resx">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Institute.resx">
+      <DependentUpon>Institute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ministry.resx">
       <DependentUpon>Ministry.cs</DependentUpon>

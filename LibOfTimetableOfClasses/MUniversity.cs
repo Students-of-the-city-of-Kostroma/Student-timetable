@@ -233,12 +233,7 @@ namespace LibOfTimetableOfClasses
 			Phone = phone;
 		}
 
-		public MUniversity(string inn) : base()
-		{
-			INN = inn;
-		}
-
-		private bool isLetterСaseNormal(string input)
+private bool isLetterСaseNormal(string input)
 		{
 			input = Regex.Replace(input, @"\s+", " ");
 			input = Regex.Replace(input, @"-+", "-");
@@ -260,6 +255,7 @@ namespace LibOfTimetableOfClasses
 			}
 			return true;
 		}
+
 	}
 	
 }
