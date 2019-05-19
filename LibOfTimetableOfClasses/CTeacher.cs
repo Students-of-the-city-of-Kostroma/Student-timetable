@@ -12,9 +12,9 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTeacher() : base("Учитель")
 		{
-			
+			if (Controllers.CTeacher != null) throw new Exception("Контроллер уже существует");
+
 			DataColumn column = new DataColumn();
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
 			column.Unique = true;
@@ -50,7 +50,8 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach(DataRow row in this.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName )
+				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
+				if ((string)row["FullName"] == fullName )
 					return false;
 			}
 			return true;
@@ -63,8 +64,9 @@ namespace LibOfTimetableOfClasses
 			{
 				try
 				{
+					string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 					DataRow newRow = this.NewRow();
-					newRow["FullName"] = mTeacher.FullName;
+					newRow["FullName"] = fullName;
 					newRow["Note"] = mTeacher.Note;
 					newRow["Departament"] = mTeacher.Departament;
 					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
@@ -85,9 +87,10 @@ namespace LibOfTimetableOfClasses
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName)
+				if ((string)this.Rows[i]["FullName"] == fullName)
 					try
 					{
 						DataRow newRow = this.Rows[i];
@@ -111,9 +114,10 @@ namespace LibOfTimetableOfClasses
 		public bool Delete(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
+				if ((string)this.Rows[i]["FullName"] == fullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
 				{
 					this.Rows[i].Delete();
 					//Recount(i);
