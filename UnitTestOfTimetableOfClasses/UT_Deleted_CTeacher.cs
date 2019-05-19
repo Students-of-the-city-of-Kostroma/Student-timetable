@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange 
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act 
 			Controllers.CTeacher.Insert(tcher);
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange 
 			Controllers.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = false;
 			//act 
 			bool actual = Controllers.CTeacher.Delete(tcher);
