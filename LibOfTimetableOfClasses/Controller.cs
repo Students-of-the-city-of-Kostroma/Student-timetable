@@ -66,5 +66,72 @@ namespace LibOfTimetableOfClasses
             table.DefaultView.Sort = columnName + " " + ((order)?"ASC":"DESC");
             return table;
         }
+        public static bool TableCompare(DataTable table1, DataTable table2)
+        {
+            DataTable dt;
+            dt = GetDifferentRecords(table1, table2);
+
+            if (dt.Rows.Count == 0)
+                return true;
+            else
+                return false;
+        }
+        private static DataTable GetDifferentRecords(DataTable table1, DataTable table2)
+        {
+            //Create Empty Table     
+            DataTable ResultDataTable = new DataTable("ResultDataTable");
+
+            //use a Dataset to make use of a DataRelation object     
+            using (DataSet ds = new DataSet())
+            {
+                //Add tables     
+                ds.Tables.AddRange(new DataTable[] { table1.Copy(), table2.Copy() });
+
+                //Get Columns for DataRelation     
+                DataColumn[] firstColumns = new DataColumn[ds.Tables[0].Columns.Count];
+                for (int i = 0; i < firstColumns.Length; i++)
+                {
+                    firstColumns[i] = ds.Tables[0].Columns[i];
+                }
+
+                DataColumn[] secondColumns = new DataColumn[ds.Tables[1].Columns.Count];
+                for (int i = 0; i < secondColumns.Length; i++)
+                {
+                    secondColumns[i] = ds.Tables[1].Columns[i];
+                }
+
+                //Create DataRelation     
+                DataRelation r1 = new DataRelation(string.Empty, firstColumns, secondColumns, false);
+                ds.Relations.Add(r1);
+
+                DataRelation r2 = new DataRelation(string.Empty, secondColumns, firstColumns, false);
+                ds.Relations.Add(r2);
+
+                //Create columns for return table     
+                for (int i = 0; i < table1.Columns.Count; i++)
+                {
+                    ResultDataTable.Columns.Add(table1.Columns[i].ColumnName, table2.Columns[i].DataType);
+                }
+
+                //If FirstDataTable Row not in SecondDataTable, Add to ResultDataTable.     
+                ResultDataTable.BeginLoadData();
+                foreach (DataRow parentrow in ds.Tables[0].Rows)
+                {
+                    DataRow[] childrows = parentrow.GetChildRows(r1);
+                    if (childrows == null || childrows.Length == 0)
+                        ResultDataTable.LoadDataRow(parentrow.ItemArray, true);
+                }
+
+                //If SecondDataTable Row not in FirstDataTable, Add to ResultDataTable.     
+                foreach (DataRow parentrow in ds.Tables[1].Rows)
+                {
+                    DataRow[] childrows = parentrow.GetChildRows(r2);
+                    if (childrows == null || childrows.Length == 0)
+                        ResultDataTable.LoadDataRow(parentrow.ItemArray, true);
+                }
+                ResultDataTable.EndLoadData();
+            }
+            return ResultDataTable;
+        }
     }
 }

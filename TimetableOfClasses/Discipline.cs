@@ -44,6 +44,29 @@ namespace TimetableOfClasses
 			AddDiscipline addDiscipline = new AddDiscipline();
 			addDiscipline.ShowDialog();
 		}
+
+		private void btChange_Click(object sender, EventArgs e)
+		{
+			if (DG_Disc.SelectedRows.Count == 1)
+			{
+				DataRow Row = ((DataRowView)DG_Disc.SelectedRows[0].DataBoundItem).Row;
+				MDiscipline mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
+				AddDiscipline add = new AddDiscipline(mDiscipline);
+				add.Owner = this;
+				add.ShowDialog();
+			}
+			else if (DG_Disc.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+		}
+
+		private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG_Disc.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG_Disc.Rows[index].HeaderCell.Value = indexStr;
+		}
 	}
 }
 

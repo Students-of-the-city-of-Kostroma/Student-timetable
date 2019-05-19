@@ -95,7 +95,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"]);
-					Controllers.CTeacher.Delete(mEnclosures);
+					Controllers.СEnclosures.Delete(mEnclosures);
 				}
 			}
 		}
@@ -110,14 +110,15 @@ namespace TimetableOfClasses
 				addEnclosures.Owner = this;
 				addEnclosures.ShowDialog();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void Added(object sender, EventArgs e)
 		{
 			AddEnclosures addEnclosures = new AddEnclosures();
 			addEnclosures.Owner = this;
-			addEnclosures.ShowDialog();
+			addEnclosures.Show();
 		}
 	}
 }

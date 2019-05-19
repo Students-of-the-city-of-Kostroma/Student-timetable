@@ -1,3 +1,4 @@
+
 ﻿	using System;
 	using System.Collections.Generic;
 	using System.Linq;
@@ -20,7 +21,7 @@ namespace LibOfTimetableOfClasses
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CInstitute CInstitute = new CInstitute();
 		public static CUniversity CUniversity = new CUniversity();
-
+    public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 		public static DataSet dataSet = new DataSet();
 
 		public Controllers()
@@ -30,10 +31,13 @@ namespace LibOfTimetableOfClasses
 			dataSet.Tables.Add(CTeacher);
 			dataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			dataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
+      
+			dataSet.Tables.Add(CGroup);
+			dataSet.Tables.Add(CTrainingProfile);
+			dataSet.Relations.Add("Group-Training profile",CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
+			dataSet.Tables.Add(СEnclosures);
+			dataSet.Tables.Add(CUniversity);
+			dataSet.Relations.Add("University-Enclosures", CUniversity.Columns["ShortName"], СEnclosures.Columns["University"]);
 		}
-
-
-
 	}
-
 }
