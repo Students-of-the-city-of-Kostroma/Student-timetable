@@ -23,8 +23,9 @@ namespace TimetableOfClasses
 
 		private void AddTeacher(object sender, EventArgs e)
 		{
-			AddTeacher t = new AddTeacher();
-			t.ShowDialog();
+			AddTeacher addTeacher = new AddTeacher();
+			addTeacher.Owner = this;
+			addTeacher.Show();
 		}
 
 		private void RemoveTeacher(object sender, EventArgs e)
@@ -40,7 +41,9 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+					if(fullName.Length==3)
 					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2],(string)Row["Departament"]);
+					else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["Departament"]);
 					Controllers.CTeacher.Delete(mTeacher);
 				}
 			}
@@ -65,7 +68,8 @@ namespace TimetableOfClasses
 				add.Owner = this;
 				add.ShowDialog();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void DG_SelectionChanged(object sender, EventArgs e)

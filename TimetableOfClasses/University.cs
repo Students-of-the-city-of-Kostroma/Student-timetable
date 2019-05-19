@@ -13,17 +13,22 @@ namespace TimetableOfClasses
 {
 	public partial class University : Form
 	{
-		public University()
+		internal protected string ShortName = "";
+		private bool IsPicking = false; 
+		public University(bool isPicking = false)
 		{
 			InitializeComponent();
+			this.IsPicking = isPicking; 
+
 			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.CUniversity;
 		}
 
 		private void Add(object sender, EventArgs e)
 		{
-			AddUniversity t = new AddUniversity();
-			t.ShowDialog();
+			AddUniversity addUniversity = new AddUniversity();
+			addUniversity.Owner = this;
+			addUniversity.Show();
 		}
 
 		private void Update(object sender, EventArgs e)
@@ -59,10 +64,12 @@ namespace TimetableOfClasses
 				add.Owner = this;
 				add.ShowDialog();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if(DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void Delete(object sender, EventArgs e)
+
 		{
 			DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 			String[] fullName = ((string)Row["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -156,6 +163,17 @@ namespace TimetableOfClasses
 		{
 			AddUniversity a = new AddUniversity();
 			a.Show();
+		}
+
+
+		private void DG_DoubleClick(object sender, EventArgs e)
+		{
+			if (IsPicking)
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				ShortName = (string)Row["ShortName"];
+				this.Close();
+			}
 		}
 	}
 }

@@ -65,6 +65,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_334_1()
 		{
+			Controllers.CAuditor.Clear();
 			bool ex = true;
 			bool act;
 			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);

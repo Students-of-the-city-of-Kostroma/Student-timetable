@@ -136,9 +136,9 @@ namespace TimetableOfClasses
 		}
 		private void checkNumber()
 		{
-			if (phoneNumber.Text.Length != 6 && phoneNumber.Text.Length != 11)
+			if (phoneNumber.Text.Length > 11)
 			{
-				MessageBox.Show("Номер может быть длинной только 6 либо 11 символов!");
+				MessageBox.Show("Номер не может быть длинной больше 11 символов!");
 				phoneNumber.Text = "";
 			}
 		}
@@ -156,6 +156,38 @@ namespace TimetableOfClasses
 		{
 			if ((sender as TextBox).Text.Length==0) (sender as TextBox).BackColor = Color.Red;
 			else (sender as TextBox).BackColor = Color.White;
+		}
+
+		private void btAddUniversity_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceUnviversity();
+		}
+
+		private void AddEnclosures_Shown(object sender, EventArgs e)
+		{
+			if (Controllers.CUniversity.Rows.Count == 0)
+			{
+				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника ВУЗы?", 
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (DialogResult == DialogResult.Yes)
+					CreateFormForEditAndChoiceUnviversity();
+			}
+		}
+
+		private void CreateFormForEditAndChoiceUnviversity()
+		{
+			University university = new University(true);
+			university.FormClosed += University_FormClosed;
+			university.Owner = this;
+			university.Show();
+		}
+
+		private void University_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string choseUniversity = (sender as University).ShortName;
+			if (choseUniversity != null)
+				this.university.Text = choseUniversity;
 		}
 	}
 }

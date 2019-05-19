@@ -52,13 +52,13 @@ namespace TimetableOfClasses
 			checkPatronymic.Enabled = false;
 			#region(FullName)
 
-			firstName.Text = mTeacher.firstName;
+			firstName.Text = mTeacher.FirstName;
 			firstName.Enabled = false;
 
-			secondName.Text = mTeacher.secondName;
+			secondName.Text = mTeacher.SecondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = mTeacher.patronymic;
+			patronymic.Text = mTeacher.Patronymic;
 			patronymic.Enabled = false;
 
 			#endregion
@@ -101,9 +101,9 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-				Lehrer.firstName = firstName.Text;
-				Lehrer.secondName = secondName.Text;
-				Lehrer.patronymic = patronymic.Text;
+				Lehrer.FirstName = firstName.Text;
+				Lehrer.SecondName = secondName.Text;
+				Lehrer.Patronymic = patronymic.Text;
 				Lehrer.Note = notes.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
