@@ -15,7 +15,6 @@ namespace LibOfTimetableOfClasses
 			if (Controllers.CTeacher != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn column = new DataColumn();
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
 			column.Unique = true;

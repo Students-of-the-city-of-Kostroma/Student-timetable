@@ -57,6 +57,7 @@
 			this.dgProfile.TabIndex = 1;
 			this.dgProfile.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgProfile_RowPrePaint);
 			this.dgProfile.SelectionChanged += new System.EventHandler(this.dgProfile_SelectionChanged);
+			this.dgProfile.DoubleClick += new System.EventHandler(this.DgProfile_DoubleClick);
 			// 
 			// FullName
 			// 
@@ -78,7 +79,7 @@
 			// AddProfile
 			// 
 			this.AddProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.AddProfile.Location = new System.Drawing.Point(242, 242);
+			this.AddProfile.Location = new System.Drawing.Point(404, 241);
 			this.AddProfile.Name = "AddProfile";
 			this.AddProfile.Size = new System.Drawing.Size(75, 23);
 			this.AddProfile.TabIndex = 1;
@@ -100,7 +101,7 @@
 			// DeleteProfile
 			// 
 			this.DeleteProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.DeleteProfile.Location = new System.Drawing.Point(404, 241);
+			this.DeleteProfile.Location = new System.Drawing.Point(242, 242);
 			this.DeleteProfile.Name = "DeleteProfile";
 			this.DeleteProfile.Size = new System.Drawing.Size(75, 23);
 			this.DeleteProfile.TabIndex = 3;
