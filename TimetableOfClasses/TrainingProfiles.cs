@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		private void AddProfile_Click(object sender, EventArgs e)
 		{
 			AddProfile p = new AddProfile();
-			p.ShowDialog();
+			p.Show();
 		}
 
 		private void DeleteProfile_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace TimetableOfClasses
 				MTrainingProfile Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"], (string)Row["Shiphr"]);
 				AddProfile add = new AddProfile(Profile);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}

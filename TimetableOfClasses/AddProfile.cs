@@ -16,16 +16,8 @@ namespace TimetableOfClasses
 		public string codeSpec;
 		bool itsupdate = false;
 		public AddProfile()
-		{			
+		{
 			InitializeComponent();
-			//cbFullName.Items.Clear();
-			//DirectionOfPreparation dpForm = new DirectionOfPreparation();
-			//cbFullName.DropDownStyle = ComboBoxStyle.DropDownList;
-			//foreach (DataGridViewRow row in dpForm.dgDirectionOfPreparation.Rows)
-			//{
-			//	string s = row.Cells[1].Value.ToString();
-			//	cbFullName.Items.Add(s);
-			//}
 			itsupdate = false;
 		}
 		public AddProfile(MTrainingProfile mProfile)
