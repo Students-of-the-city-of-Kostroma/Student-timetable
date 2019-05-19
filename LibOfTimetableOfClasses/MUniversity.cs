@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
@@ -32,6 +33,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null)
+					throw new Exception("Ошибка создания модели. В свойство INN получен null-объект");
+				if (!Regex.IsMatch(value, @"[0-9]"))
+					throw new Exception("Ошибка создания модели. В свойство INN получена строка содержащая недопустимые символы");
+				if (value.Length != 10)
+					throw new Exception("Ошибка создания модели. В свойство INN получена строка недопустимой длины");
 				_inn = value;
 			}
 		}
@@ -44,6 +51,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство ShortName получен null-объект");
+				if (value.Length < 1 || value.Length > 10)
+					throw new Exception("Ошибка создания модели. В свойство ShortName получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[А-Я]"))
+					throw new Exception("Ошибка создания модели. В свойство ShortName получена строка содержащая недопустимые символы");
 				_shortName = value;
 			}
 		}
@@ -56,6 +69,14 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство FullName получен null-объект");
+				if (value.Length < 1 || value.Length > 256)
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[А-Яа-я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка содержащая недопустимые символы");
+				if (!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка неверного формата");
 				_fullName = value;
 			}
 		}
@@ -67,6 +88,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство ActualAddress получен null-объект");
+				if (value.Length < 1 || value.Length > 256)
+					throw new Exception("Ошибка создания модели. В свойство ActualAddress получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]"))
+					throw new Exception("Ошибка создания модели. В свойство ActualAddress получена строка содержащая недопустимые символы");
 				_actualAddress = value;
 			}
 		}
@@ -78,6 +105,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство LegalAddress получен null-объект");
+				if (value.Length < 1 || value.Length > 256)
+					throw new Exception("Ошибка создания модели. В свойство LegalAddress получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]"))
+					throw new Exception("Ошибка создания модели. В свойство LegalAddress получена строка содержащая недопустимые символы");
 				_legalAddress = value;
 			}
 		}
@@ -90,6 +123,14 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство NameRector получен null-объект");
+				if (value.Length < 1 || value.Length > 85)
+					throw new Exception("Ошибка создания модели. В свойство NameRector получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство NameRector получена строка содержащая недопустимые символы");
+				if(!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство NameRector получена строка неверного формата");
 				_nameRector = value;
 			}
 		}
@@ -102,6 +143,14 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство SurnameRector получен null-объект");
+				if (value.Length < 1 || value.Length > 85)
+					throw new Exception("Ошибка создания модели. В свойство SurnameRector получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство SurnameRector получена строка содержащая недопустимые символы");
+				if (!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство SurnameRector получена строка неверного формата");
 				_surnameRector = value;
 			}
 		}
@@ -116,11 +165,22 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == "") _middleNameRector = null;
-				else
-					_middleNameRector = value;
+				if (value == "" || value == null)
+				{
+					_middleNameRector = null;
+					return;
+				}
+
+				if (value.Length < 1 || value.Length > 85)
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка содержащая недопустимые символы");
+				if (!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство MiddleNameRector получена строка неверного формата");
+				_middleNameRector = value;
 			}
 		}
+
 		public string Email
 		{
 			get
@@ -129,6 +189,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство Email получен null-объект");
+				if (value.Length < 1 || value.Length > 256)
+					throw new Exception("Ошибка создания модели. В свойство Email получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+					throw new Exception("Ошибка создания модели. В свойство Email получена строка содержащая недопустимые символы");
 				_email = value;
 			}
 		}
@@ -140,6 +206,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство Phone получен null-объект");
+				if (value.Length < 1 || value.Length > 11)
+					throw new Exception("Ошибка создания модели. В свойство Phone получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[0-9]"))
+					throw new Exception("Ошибка создания модели. В свойство Phone получена строка содержащая недопустимые символы");
 				_phone = value;
 			}
 		}
@@ -161,5 +233,30 @@ namespace LibOfTimetableOfClasses
 			Phone = phone;
 		}
 
+
+		private bool isLetterСaseNormal(string input)
+		{
+			input = Regex.Replace(input, @"\s+", " ");
+			input = Regex.Replace(input, @"-+", "-");
+			input = Regex.Replace(input, @" - ", "-");
+			input = Regex.Replace(input, @"- -", " ");
+			bool isSpacePressed = true;
+			foreach (var ch in input)
+			{
+				if (isSpacePressed)
+				{
+					if (Char.IsLower(ch))
+						return false;
+					isSpacePressed = false;
+				}
+				else if (Char.IsUpper(ch))
+					return false;
+				if (ch == ' ' || ch == '-')
+					isSpacePressed = true;
+			}
+			return true;
+		}
+
 	}
+	
 }
