@@ -92,6 +92,12 @@
     <Compile Include="AddOrEditDirectory.Designer.cs">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProfile.Designer.cs">
+      <DependentUpon>AddProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="DirectionOfPreparation.Designer.cs">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUniversity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUniversity.Designer.cs">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </Compile>
     <Compile Include="Directory.cs">
       <SubType>Form</SubType>
@@ -161,6 +173,12 @@
     <Compile Include="Timetable.Designer.cs">
       <DependentUpon>Timetable.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainingProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingProfiles.Designer.cs">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="University.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +212,9 @@
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProfile.resx">
+      <DependentUpon>AddProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUniversity.resx">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
@@ -238,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Timetable.resx">
       <DependentUpon>Timetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingProfiles.resx">
+      <DependentUpon>TrainingProfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="University.resx">
       <DependentUpon>University.cs</DependentUpon>

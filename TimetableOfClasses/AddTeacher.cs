@@ -48,18 +48,17 @@ namespace TimetableOfClasses
 		public AddTeacher(MTeacher mTeacher)
 		{
 			InitializeComponent();
-			this.Text = "Изменение преподавателя";			
-			string[] split = mTeacher.FullName.Split(' ');
-
+			this.Text = "Изменение преподавателя";
+			checkPatronymic.Enabled = false;
 			#region(FullName)
 
-			firstName.Text = split[1];
+			firstName.Text = mTeacher.FirstName;
 			firstName.Enabled = false;
 
-			secondName.Text = split[0];
+			secondName.Text = mTeacher.SecondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = split[2];
+			patronymic.Text = mTeacher.Patronymic;
 			patronymic.Enabled = false;
 
 			#endregion
@@ -97,15 +96,14 @@ namespace TimetableOfClasses
 
 			if (Lehrer == null)
 			{
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 				return Controllers.CTeacher.Insert(Prepodavatel);
 			}
 			else
 			{
-
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				Lehrer.FullName = fullName;
+				Lehrer.FirstName = firstName.Text;
+				Lehrer.SecondName = secondName.Text;
+				Lehrer.Patronymic = patronymic.Text;
 				Lehrer.Note = notes.Text;
 				Lehrer.Departament = department.Text;
 				Lehrer.MetodicalDays = metodDays.Text;
@@ -155,6 +153,11 @@ namespace TimetableOfClasses
 					R.Text = R.Text.Substring(1);
 				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
 					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
+			}
+			if (R.Text.Length == 1)
+			{
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
@@ -249,7 +252,7 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' '  && l != ',' && (l < '0' || l > '9'))
+			if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.')
 			{
 				e.Handled = true;
 			}
@@ -277,6 +280,19 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+		}
+
+		private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkPatronymic.Checked)
+			{
+				patronymic.Text = "";
+				patronymic.Enabled = false;
+			}
+			else
+			{
+				patronymic.Enabled = true;
+			}
 		}
 	}
 }

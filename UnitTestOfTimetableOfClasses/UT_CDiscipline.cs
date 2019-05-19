@@ -38,6 +38,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_339_2()
 		{
+			Controllers.CDiscipline.Clear();
 			bool ex = false;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");

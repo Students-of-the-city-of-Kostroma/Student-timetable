@@ -15,14 +15,14 @@ namespace TimetableOfClasses
 	public partial class AddGroup : Form
 	{
 		private MGroup group;
-
+		public string shortNameSpec;
 
 		public AddGroup()
 		{
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
-			tbNaprav.Text = "Информационные системы";
-			tbVixodnie.Text = "Воскресенье";
+			tbVixodnie.Text = "Воскресенье";	
+			
 		}
 
 		private bool isEmpty(string[] strArgs)
@@ -51,7 +51,7 @@ namespace TimetableOfClasses
 
 			nudSemest.Value = mGroup.Semester;
 
-			tbNaprav.Text = mGroup.Specialty;
+			cbSpec.Text = mGroup.Specialty;
 
 			nudSmena.Value = mGroup.Shift;
 
@@ -75,9 +75,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			string[] args = new string[]{tbNameGroup.Text, tbNaprav.Text, tbVixodnie.Text };
-			if (tbNaprav.Text.Length == 0)
-				tbNaprav.BackColor = Color.Red;
+			string[] args = new string[] { tbNameGroup.Text, tbVixodnie.Text };
 			if (!isEmpty(args))
 			{
 				if (Add())
@@ -91,16 +89,21 @@ namespace TimetableOfClasses
 		private bool Add()
 		{
 			string errors = "";
+			if (cbSpec.Text.Length < 1)
+			{
+				errors = "Выберите направление подготовки";
+			} 
+			
+
 			ushort semest, smena, countStudents, minPar, maxPar;
 			if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
 				if (ushort.TryParse(nudSmena.Value.ToString(), out smena) && smena <= 2 && smena > 0)
 					if (ushort.TryParse(nudCountStudents.Value.ToString(), out countStudents))
 						if (ushort.TryParse(nudMinPar.Value.ToString(), out minPar))
 							if (ushort.TryParse(nudMaxPar.Value.ToString(), out maxPar))
-							{
-								if (group == null)
+								if (nudMaxPar.Value >= nudMinPar.Value)
 								{
-									MGroup Group = new MGroup(tbNameGroup.Text, semest, tbNaprav.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
+									MGroup Group = new MGroup(tbNameGroup.Text, semest, cbSpec.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
 									if (Controllers.CGroup.Insert(Group))
 										return true;
 									else errors = "Невозможно добавить эту группу";
@@ -109,7 +112,7 @@ namespace TimetableOfClasses
 								{
 									group.Group = tbNameGroup.Text;
 									group.Semester = semest;
-									group.Specialty = tbNaprav.Text;
+									group.Specialty = cbSpec.SelectedText;
 									group.Shift = smena;
 									group.Students = countStudents;
 									group.MinNumberOfClass = minPar;
@@ -119,7 +122,6 @@ namespace TimetableOfClasses
 										return true;
 									else errors = "Невозможно так изменить эту группу";
 								}
-							}
 							else errors = "Введите корректное максимальное количество пар!";
 						else errors = "Введите корректное минимальное количество пар!";
 					else errors = "Введите корректное количество студентов!";
@@ -128,8 +130,6 @@ namespace TimetableOfClasses
 			if (errors != "") MessageBox.Show(errors, "Попробуйте еще раз");
 			return false;
 		}
-
-
 
 		private void KeyPress1(object sender, KeyPressEventArgs e)
 		{
@@ -174,12 +174,10 @@ namespace TimetableOfClasses
 
 			TextBox R = sender as TextBox;
 
-
 			if (!regex.IsMatch(R.Text))
-			{ R.Text = "00-ААаа-0а"; }
-			else
-			{ }
-
+			{
+				R.Text = "00-ААаа-0а";
+			}
 
 		}
 
@@ -240,5 +238,36 @@ namespace TimetableOfClasses
 				R.BackColor = Color.White;
 		}
 
+		private void SelectNP_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceUnviversity();
+		}
+
+		private void AddGroup_Shown(object sender, EventArgs e)
+		{
+			if (Controllers.CTrainingProfile.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("В созависимом справочнике Профили подготовки отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Профили подготовки?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+					CreateFormForEditAndChoiceUnviversity();
+			}
+		}
+
+		private void CreateFormForEditAndChoiceUnviversity()
+		{
+			TrainingProfiles selectNP = new TrainingProfiles(true);
+			selectNP.Owner = this;
+			selectNP.FormClosed += SelectNP_FormClosed;
+			selectNP.Show();
+		}
+
+		private void SelectNP_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string shortNameSpeciality = (sender as TrainingProfiles).ChoseShortNameTrainingProfile;
+			if(shortNameSpeciality!=null)
+				cbSpec.Text = shortNameSpeciality;
+		}
 	}
 }
