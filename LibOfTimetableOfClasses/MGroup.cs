@@ -28,6 +28,12 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка(группа) не может быть пустой");
+				if (value.Length > 25) throw new Exception("Максимальная длина названия группы 25");
+				foreach (char l in value)
+				{
+					if ((l < 'А' || l > 'я') && (l > '9' || l < '0') && (l != '-')) throw new Exception("Можно использовать только русские буквы, цифры и тире!");
+				}
 				_group = value;
 			}
 		}
@@ -40,7 +46,8 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-					_semester = value;
+				if (value < 1 && value > 10) throw new Exception("Номер семестра находится не в диапазоне от 1 до 10");
+				_semester = value;
 			}
 		}
 
@@ -64,6 +71,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value < 1 && value > 2) throw new Exception("Порядок смены находится не в диапазоне от 1 до 2");
 				_shift = value;
 			}
 		}
@@ -76,6 +84,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value < 1 && value > 50) throw new Exception("Кол-во судентов не в диапазоне от 1 до 50");
 				_students = value;
 			}
 			
@@ -89,6 +98,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value < 0 && value > 6) throw new Exception("Пар/день min не в диапазоне от 0 до 6");
 				_minNumberOfClass = value;
 			}
 		}
@@ -101,6 +111,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value < 1 && value > 6) throw new Exception("Пар/день max не в диапазоне от 1 до 6");
 				_maxNumberOfClass = value;
 			}
 		}
@@ -113,6 +124,19 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка(выходные) не может быть пустой");
+				foreach (char l in value)
+				{
+					if ((l < 'А' || l > 'я')  && (l !=' ') && (l != ',')) throw new Exception("Можно использовать только русские буквы, пробелы и запятые !");
+				}
+				string[] mas = value.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+
+				foreach (string k in mas)
+				{
+					if (k[0] < 'А' || k[0] > 'Я') throw new Exception("Первые буквы каждого слова должны быть заглавными !");
+					for (int i = 1; i < k.Length; i++)
+						if (k[i] < 'а' || k[i] > 'я') throw new Exception("Все буквы, кроме первой буквы слова, не могут быть заглавными !");
+				}
 				_weekends = value;
 			}
 		}
@@ -125,6 +149,7 @@ namespace LibOfTimetableOfClasses
 		/// <param name="population">численность</param>
 		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
 		{
+			if (maxNumberOfClass < minNumberOfClass) throw new Exception("Пар/день max должен быть больше пар/день min");
 			Group = group;
 			Semester = semester;
 			Shift = shift;
@@ -139,7 +164,6 @@ namespace LibOfTimetableOfClasses
 		{
 			Group = group;
 		}
-
 
 	}
 }

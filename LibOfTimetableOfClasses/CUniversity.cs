@@ -12,6 +12,9 @@ namespace LibOfTimetableOfClasses
 	{
 		public CUniversity() : base("ВУЗ")
 		{
+
+			if (Controllers.CUniversity != null) throw new Exception("Контроллер уже существует");
+
 			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
@@ -128,7 +131,7 @@ namespace LibOfTimetableOfClasses
 						newRow["FullName"] = mUniversity.FullName;
 						newRow["ActualAddress"] = mUniversity.ActualAddress;
 						newRow["LegalAddress"] = mUniversity.LegalAddress;
-						newRow["FullNameRector"] = mUniversity.FullName + " " + mUniversity.SurnameRector + " " + mUniversity.MiddleNameRector;
+						newRow["FullNameRector"] = mUniversity.SurnameRector + " " + mUniversity.NameRector + " " + mUniversity.MiddleNameRector;
 						newRow["Email"] = mUniversity.Email;
 						newRow["Phone"] = mUniversity.Phone;
 						return true;
