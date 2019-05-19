@@ -73,6 +73,10 @@ namespace TimetableOfClasses
 					VUS.Text = "";
 					Close();
 				}
+				catch (DeletedRowInaccessibleException)
+				{
+					MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
+				}
 				catch (Exception)
 				{
 					MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
@@ -94,6 +98,10 @@ namespace TimetableOfClasses
 					Director.Text = "";
 					VUS.Text = "";
 					Close();
+				}
+				catch (DeletedRowInaccessibleException)
+				{
+					MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
 				}
 				catch (Exception)
 				{
@@ -117,6 +125,10 @@ namespace TimetableOfClasses
 				ShortName.Text = "";
 				Director.Text = "";
 				VUS.Text = "";
+			}
+			catch (DeletedRowInaccessibleException)
+			{
+				MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
 			}
 			catch (Exception)
 			{

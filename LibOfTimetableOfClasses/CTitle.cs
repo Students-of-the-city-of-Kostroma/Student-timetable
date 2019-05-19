@@ -72,7 +72,7 @@ namespace LibOfTimetableOfClasses
 			if ((mTitle.FullName == null && mTitle.Reduction == null))
 				return false;
 
-			for (int i = 1; i < this.table.Rows.Count; i++)
+			for (int i = 0; i < this.table.Rows.Count; i++)
 			{
 				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{

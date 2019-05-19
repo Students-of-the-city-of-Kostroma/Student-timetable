@@ -50,10 +50,15 @@ namespace TimetableOfClasses
 							Reduction.Text = "";
 							Close();
 						}
+						catch (DeletedRowInaccessibleException)
+						{
+							MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
+						}
 						catch (Exception)
 						{
 							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
 						}
+						
 					}
 					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 				}
@@ -73,6 +78,10 @@ namespace TimetableOfClasses
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
+						}
+						catch (DeletedRowInaccessibleException)
+						{
+							MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
 						}
 						catch (Exception)
 						{
@@ -99,6 +108,10 @@ namespace TimetableOfClasses
 						Controllers.CTitle.Insert(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
+					}
+					catch (DeletedRowInaccessibleException)
+					{
+						MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
 					}
 					catch (Exception)
 					{

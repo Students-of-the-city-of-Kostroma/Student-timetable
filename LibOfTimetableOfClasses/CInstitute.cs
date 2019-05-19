@@ -88,7 +88,7 @@ namespace LibOfTimetableOfClasses
 				&& mInstitute.VUS == null)
 				return false;
 
-			for (int i = 1; i < this.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
 				if ((string)this.Rows[i]["ShortName"] == mInstitute.ShortName)
 				{
