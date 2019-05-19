@@ -36,7 +36,6 @@
 			this.patronymic = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.B_Сancel = new System.Windows.Forms.Button();
-			this.notes = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.department = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -47,12 +46,15 @@
 			this.weekends = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
+			this.academicDegree = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.academicTitle = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
 			// 
 			this.createAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.createAndClose.Location = new System.Drawing.Point(203, 439);
+			this.createAndClose.Location = new System.Drawing.Point(203, 532);
 			this.createAndClose.Name = "createAndClose";
 			this.createAndClose.Size = new System.Drawing.Size(75, 34);
 			this.createAndClose.TabIndex = 0;
@@ -140,26 +142,13 @@
 			// B_Сancel
 			// 
 			this.B_Сancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.B_Сancel.Location = new System.Drawing.Point(127, 439);
+			this.B_Сancel.Location = new System.Drawing.Point(127, 532);
 			this.B_Сancel.Name = "B_Сancel";
 			this.B_Сancel.Size = new System.Drawing.Size(70, 34);
 			this.B_Сancel.TabIndex = 17;
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.B_Сancel_Click);
-			// 
-			// notes
-			// 
-			this.notes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.notes.Location = new System.Drawing.Point(12, 191);
-			this.notes.MaxLength = 256;
-			this.notes.Name = "notes";
-			this.notes.Size = new System.Drawing.Size(266, 22);
-			this.notes.TabIndex = 19;
-			this.notes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress2);
-			this.notes.Leave += new System.EventHandler(this.SelectionOfLetters4);
 			// 
 			// label4
 			// 
@@ -169,16 +158,16 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label4.Location = new System.Drawing.Point(12, 172);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(91, 16);
+			this.label4.Size = new System.Drawing.Size(112, 16);
 			this.label4.TabIndex = 18;
-			this.label4.Text = "Примечание";
+			this.label4.Text = "Учёная степень";
 			// 
 			// department
 			// 
 			this.department.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.department.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.department.Location = new System.Drawing.Point(12, 246);
+			this.department.Location = new System.Drawing.Point(12, 305);
 			this.department.MaxLength = 100;
 			this.department.Name = "department";
 			this.department.Size = new System.Drawing.Size(266, 22);
@@ -193,7 +182,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label5.Location = new System.Drawing.Point(12, 227);
+			this.label5.Location = new System.Drawing.Point(12, 286);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(67, 16);
 			this.label5.TabIndex = 20;
@@ -204,7 +193,7 @@
 			this.metodDays.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.metodDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.metodDays.Location = new System.Drawing.Point(12, 303);
+			this.metodDays.Location = new System.Drawing.Point(12, 362);
 			this.metodDays.MaxLength = 70;
 			this.metodDays.Name = "metodDays";
 			this.metodDays.Size = new System.Drawing.Size(266, 22);
@@ -219,7 +208,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label6.Location = new System.Drawing.Point(12, 284);
+			this.label6.Location = new System.Drawing.Point(12, 343);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(131, 16);
 			this.label6.TabIndex = 22;
@@ -230,7 +219,7 @@
 			this.windows.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.windows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.windows.Location = new System.Drawing.Point(12, 357);
+			this.windows.Location = new System.Drawing.Point(12, 416);
 			this.windows.MaxLength = 70;
 			this.windows.Name = "windows";
 			this.windows.Size = new System.Drawing.Size(266, 22);
@@ -244,7 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label7.Location = new System.Drawing.Point(12, 338);
+			this.label7.Location = new System.Drawing.Point(12, 397);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(41, 16);
 			this.label7.TabIndex = 24;
@@ -255,7 +244,7 @@
 			this.weekends.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.weekends.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.weekends.Location = new System.Drawing.Point(12, 408);
+			this.weekends.Location = new System.Drawing.Point(12, 467);
 			this.weekends.MaxLength = 70;
 			this.weekends.Name = "weekends";
 			this.weekends.Size = new System.Drawing.Size(266, 22);
@@ -270,7 +259,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label8.Location = new System.Drawing.Point(12, 389);
+			this.label8.Location = new System.Drawing.Point(12, 448);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(73, 16);
 			this.label8.TabIndex = 26;
@@ -279,7 +268,7 @@
 			// checkPatronymic
 			// 
 			this.checkPatronymic.AutoSize = true;
-			this.checkPatronymic.Location = new System.Drawing.Point(12, 449);
+			this.checkPatronymic.Location = new System.Drawing.Point(12, 508);
 			this.checkPatronymic.Name = "checkPatronymic";
 			this.checkPatronymic.Size = new System.Drawing.Size(93, 17);
 			this.checkPatronymic.TabIndex = 28;
@@ -287,12 +276,47 @@
 			this.checkPatronymic.UseVisualStyleBackColor = true;
 			this.checkPatronymic.CheckedChanged += new System.EventHandler(this.checkPatronymic_CheckedChanged);
 			// 
+			// academicDegree
+			// 
+			this.academicDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.academicDegree.FormattingEnabled = true;
+			this.academicDegree.Location = new System.Drawing.Point(12, 192);
+			this.academicDegree.Name = "academicDegree";
+			this.academicDegree.Size = new System.Drawing.Size(266, 24);
+			this.academicDegree.TabIndex = 29;
+			// 
+			// label9
+			// 
+			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label9.Location = new System.Drawing.Point(12, 230);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(108, 16);
+			this.label9.TabIndex = 30;
+			this.label9.Text = "Учёное звание";
+			// 
+			// academicTitle
+			// 
+			this.academicTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.academicTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.academicTitle.FormattingEnabled = true;
+			this.academicTitle.Location = new System.Drawing.Point(12, 250);
+			this.academicTitle.Name = "academicTitle";
+			this.academicTitle.Size = new System.Drawing.Size(266, 24);
+			this.academicTitle.TabIndex = 31;
+			// 
 			// AddTeacher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.ClientSize = new System.Drawing.Size(290, 475);
+			this.ClientSize = new System.Drawing.Size(290, 568);
+			this.Controls.Add(this.academicTitle);
+			this.Controls.Add(this.label9);
+			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.checkPatronymic);
 			this.Controls.Add(this.weekends);
 			this.Controls.Add(this.label8);
@@ -302,7 +326,6 @@
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.department);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.notes);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.B_Сancel);
 			this.Controls.Add(this.patronymic);
@@ -332,7 +355,6 @@
         private System.Windows.Forms.TextBox patronymic;
         private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button B_Сancel;
-		private System.Windows.Forms.TextBox notes;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox department;
 		private System.Windows.Forms.Label label5;
@@ -343,5 +365,8 @@
 		private System.Windows.Forms.TextBox weekends;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.CheckBox checkPatronymic;
+		private System.Windows.Forms.ComboBox academicDegree;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.ComboBox academicTitle;
 	}
 }

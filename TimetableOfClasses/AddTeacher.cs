@@ -15,6 +15,8 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
+		private CAcademicDegree AcademicDegree = Controllers.CAcademicDegree;
+		private CTitle AcademicTitle = Controllers.CTitle;
 
 		public AddTeacher()
 		{
@@ -22,6 +24,10 @@ namespace TimetableOfClasses
 			firstName.Text = "Иван";
 			secondName.Text = "Иванов";
 			patronymic.Text = "Иванович";
+			academicDegree.DataSource = AcademicDegree;
+			academicDegree.DisplayMember = "Reduction";
+			academicTitle.DataSource = AcademicTitle;
+			academicTitle.DisplayMember = "Reduction";
 			department.Text = "ФАСТ";
 			metodDays.Text = "Пн, Вт";
 			windows.Text = "Ср, Чт, Пт";
@@ -63,7 +69,13 @@ namespace TimetableOfClasses
 
 			#endregion
 
-			notes.Text = mTeacher.Note;
+			academicDegree.DataSource = AcademicDegree;
+			academicDegree.DisplayMember = "Reduction";
+			academicDegree.Text = mTeacher.AcademicDegree;
+
+			academicTitle.DataSource = AcademicTitle;
+			academicTitle.DisplayMember = "Reduction";
+			academicTitle.Text = mTeacher.AcademicTitle;
 
 			department.Text = mTeacher.Departament;
 
@@ -79,7 +91,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, department.Text, metodDays.Text, weekends.Text }))
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
 				if (Add())
 				{
@@ -88,30 +100,38 @@ namespace TimetableOfClasses
 				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
 			else message();		
+
+
 		}
 
 		private bool Add()
 		{
-
-
-			if (Lehrer == null)
+			try
 			{
-				MTeacher Prepodavatel = new MTeacher(firstName.Text,secondName.Text, patronymic.Text, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				if (Lehrer == null)
+				{
+					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+					return Controllers.CTeacher.Insert(Prepodavatel);
+				}
+				else
+				{
+					Lehrer.FirstName = firstName.Text;
+					Lehrer.SecondName = secondName.Text;
+					Lehrer.Patronymic = patronymic.Text;
+					Lehrer.AcademicDegree = academicDegree.Text;
+					Lehrer.AcademicTitle = academicTitle.Text;
+					Lehrer.Departament = department.Text;
+					Lehrer.MetodicalDays = metodDays.Text;
+					Lehrer.Windows = windows.Text;
+					Lehrer.Weekends = weekends.Text;
+					return Controllers.CTeacher.Update(Lehrer);
+				}
 			}
-			else
+			catch (Exception)
 			{
-				Lehrer.FirstName = firstName.Text;
-				Lehrer.SecondName = secondName.Text;
-				Lehrer.Patronymic = patronymic.Text;
-				Lehrer.Note = notes.Text;
-				Lehrer.Departament = department.Text;
-				Lehrer.MetodicalDays = metodDays.Text;
-				Lehrer.Windows = windows.Text;
-				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);
+				MessageBox.Show("Заполенены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
+				return false;
 			}
-
 		}
 
 		/// <summary>
@@ -280,6 +300,13 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+
+			//ComboBox T = sender as ComboBox;
+			//if (T.SelectedItem == null)
+			//	T.BackColor = Color.Red;
+			//else
+			//	T.BackColor = Color.White;
+
 		}
 
 		private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
