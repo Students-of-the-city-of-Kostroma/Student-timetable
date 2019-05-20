@@ -131,6 +131,7 @@ namespace TimetableOfClasses
 				if (splitedFullName.Length > 3 || splitedFullName.Length < 2)
 					tbRectorName.Text = "";
 			}
+			else ((TextBox)sender).Text = input;
 		}
 
 		private void tbMail_Leave(object sender, EventArgs e)

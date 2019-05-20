@@ -51,9 +51,7 @@
     <Compile Include="CHEI.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
-    <Compile Include="CTeacher.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
     <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="CUniversity.cs"/>
