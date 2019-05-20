@@ -69,17 +69,28 @@ namespace TimetableOfClasses
 		}
 
 		private void Delete(object sender, EventArgs e)
-		{ 
+
+		{
+			DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+			String[] fullName = ((string)Row["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
 			if (DG.SelectedRows.Count == 0) return;
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			MUniversity mUniversity;
 			if (dr == DialogResult.Yes)
 			{
+				
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mUniversity = new MUniversity((string)Row["INN"]);
+					mUniversity = new MUniversity((string)Row["INN"],
+													(string)Row["ShortName"],
+													(string)Row["FullName"],
+													(string)Row["ActualAddress"],
+													(string)Row["LegalAddress"],
+													fullName[1], fullName[0], fullName[2],
+													(string)Row["Email"],
+													(string)Row["Phone"]);
 					Controllers.CUniversity.Delete(mUniversity);
 				}
 			}

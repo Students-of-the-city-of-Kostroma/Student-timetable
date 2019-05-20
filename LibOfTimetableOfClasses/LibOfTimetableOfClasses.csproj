@@ -40,14 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAuditor.cs" />
-    <Compile Include="CDiscipline.cs" />
-    <Compile Include="CEnclosures.cs" />
-    <Compile Include="CGroup.cs" />
+    <Compile Include="CAuditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CDiscipline.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CEnclosures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CHEI.cs" />
+    <Compile Include="CInstitute.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
-    <Compile Include="CTeacher.cs" />
+    <Compile Include="CTeacher.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CTitle.cs" />
     <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="CUniversity.cs"/>
@@ -58,6 +69,7 @@
     <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />
     <Compile Include="MHEI.cs" />
+    <Compile Include="MInstitute.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
