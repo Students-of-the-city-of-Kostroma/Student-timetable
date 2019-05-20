@@ -149,8 +149,8 @@ namespace TimetableOfClasses
 		#endregion
 
 		private System.Windows.Forms.DataGridView DG_Disc;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button btCreateDiscipline;
+		private System.Windows.Forms.Button Delete;
+		private System.Windows.Forms.Button btCreateDiscipline;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;

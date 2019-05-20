@@ -36,7 +36,6 @@ namespace LibOfTimetableOfClasses
 			dataSet.Tables.Add(CTrainingProfile);
 			dataSet.Relations.Add("Group-Training profile",CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			dataSet.Tables.Add(СEnclosures);
-			dataSet.Tables.Add(CUniversity);
 			dataSet.Relations.Add("University-Enclosures", CUniversity.Columns["ShortName"], СEnclosures.Columns["University"]);
 		}
 	}
