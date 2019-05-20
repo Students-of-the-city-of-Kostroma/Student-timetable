@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibOfTimetableOfClasses;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.Data;
+	using System.Drawing;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.Windows.Forms;
+	using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -16,7 +16,9 @@ namespace TimetableOfClasses
 		public AcademicTitle()
 		{
 			InitializeComponent();
+			DG_AcademicTitle.AutoGenerateColumns = false;
 			DG_AcademicTitle.DataSource = Controllers.CTitle;
+
 		}
 
 		private void DG_AcademicTitle_SelectionChanged(object sender, EventArgs e)
@@ -70,7 +72,9 @@ namespace TimetableOfClasses
 			if (DG_AcademicTitle.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
-				MTitle mTitle = new MTitle((string)Row["FullName"], (string)Row["Reduction"]);
+
+				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
+
 				AddAcademicTitle add = new AddAcademicTitle(mTitle);
 				add.Owner = this;
 				add.ShowDialog();

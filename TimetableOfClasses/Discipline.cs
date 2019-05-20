@@ -16,8 +16,7 @@ namespace TimetableOfClasses
 		public Discipline()
 		{
 			InitializeComponent();
-			DG_Disc.AutoGenerateColumns = false;
-			DG_Disc.DataSource = Controllers.CDiscipline;
+			DG_Disc.DataSource = Controllers.CDiscipline.Select();
 		}
 
 
@@ -26,40 +25,19 @@ namespace TimetableOfClasses
             if (DG_Disc.SelectedCells.Count > 0)
             {
                 Delete.Enabled = true;
-				btChange.Enabled = true;
-			}
+            }
             else
             {
                 Delete.Enabled = false;
-				btChange.Enabled = false;
-			}
+            }
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-			string SelectedName = "";
-			foreach (DataGridViewRow row in DG_Disc.SelectedRows)
-			{
-				DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-				SelectedName += (string)Row["Fullname"] + ", ";
-			}
-			if (SelectedName.Length > 2)
-				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
-			DialogResult dr = MessageBox.Show("Удалить дисциплину - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-			if (DG_Disc.SelectedRows.Count > 0 && dr == DialogResult.OK)
-			{
-				int countSelected = DG_Disc.SelectedRows.Count;
+            try { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
+            catch{}
 
-				MDiscipline mDiscipline;
-				foreach (DataGridViewRow row in DG_Disc.SelectedRows)
-				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
-					Controllers.CDiscipline.Delete(mDiscipline);
-				}
-			}
-
-		}
+        }
 
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
 		{

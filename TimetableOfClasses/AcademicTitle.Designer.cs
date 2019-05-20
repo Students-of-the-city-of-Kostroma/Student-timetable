@@ -52,6 +52,7 @@
 			this.DG_AcademicTitle.Location = new System.Drawing.Point(12, 12);
 			this.DG_AcademicTitle.Name = "DG_AcademicTitle";
 			this.DG_AcademicTitle.ReadOnly = true;
+			this.DG_AcademicTitle.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_AcademicTitle_RowPrePaint);
 			this.DG_AcademicTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicTitle.Size = new System.Drawing.Size(562, 215);
 			this.DG_AcademicTitle.TabIndex = 0;
