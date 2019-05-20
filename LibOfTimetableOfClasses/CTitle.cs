@@ -17,30 +17,26 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTitle() : base("Уч.звание")
 		{
-
-			DataColumn[] keys = new DataColumn[2];
-
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Сокращенная запись уч. звания";
+			column.ColumnName = "Reduction";
 			column.Unique = true;
-			table.Columns.Add(column);
-			keys[0] = column;
-
+			this.Columns.Add(column);
+			
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Полная запись уч. звания";
+			column.ColumnName = "FullName";
 			column.Unique = true;
-			table.Columns.Add(column);
-			keys[1] = column;
+			this.Columns.Add(column);
+
 		}
 
 		public bool Delete(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
-			for (int i = 0; i < table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
+				if ((string)this.Rows[i]["FullName"] == mTitle.FullName && (string)this.Rows[i]["Reduction"] == mTitle.Reduction)
 				{
 					this.Rows[i].Delete();
 					return true;
@@ -54,10 +50,10 @@ namespace LibOfTimetableOfClasses
 			try
 			{
 				MTitle mTitle = (MTitle)model;
-				DataRow newRow = table.NewRow();
-				newRow["Полная запись уч. звания"] = mTitle.FullName;
-				newRow["Сокращенная запись уч. звания"] = mTitle.Reduction;
-				table.Rows.Add(newRow);
+				DataRow newRow = this.NewRow();
+				newRow["FullName"] = mTitle.FullName;
+				newRow["Reduction"] = mTitle.Reduction;
+				this.Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
@@ -74,17 +70,17 @@ namespace LibOfTimetableOfClasses
 				return false;
 
 
-			for (int i = 0; i < this.table.Rows.Count; i++)
+			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
+				if ((string)this.Rows[i]["Reduction"] == mTitle.Reduction)
 				{
 					try
 					{
-						this.table.Rows[i].BeginEdit();
-						this.table.Rows[i]["Сокращенная запись уч. звания"] = mTitle.Reduction;
-						this.table.Rows[i]["Полная запись уч. звания"] = mTitle.FullName;
-						this.table.Rows[i].EndEdit();
-						this.table.Rows[i].AcceptChanges();
+						this.Rows[i].BeginEdit();
+						this.Rows[i]["Reduction"] = mTitle.Reduction;
+						this.Rows[i]["FullName"] = mTitle.FullName;
+						this.Rows[i].EndEdit();
+						this.Rows[i].AcceptChanges();
 						return true;
 					}
 					catch (Exception ex)

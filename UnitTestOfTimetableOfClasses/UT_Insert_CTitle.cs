@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_1() //пустая таблица
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			MTitle ma = new MTitle("Профессор", "Проф.");
 			bool expected = true;
 			//act
@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			Task_361_1();
 			MTitle ma = new MTitle("Доцент", "Проф.");
 			bool expected = false;
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
 		{
 			//arrange
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			Task_361_1();
 			MTitle ma = new MTitle("Профессор", "Доц.");
 			bool expected = false;

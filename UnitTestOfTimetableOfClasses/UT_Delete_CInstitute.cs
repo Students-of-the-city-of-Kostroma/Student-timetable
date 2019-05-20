@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_513_2()
 		{
 			//arrange	
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Институт Автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 			bool ex = false;

@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
 
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			Controllers.CTitle.Insert(T_Title);
 
 			T_Title = new MTitle("Доц.", "Доцент");
@@ -29,7 +29,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-			Controllers.CTitle.Select().Clear();
+			Controllers.CTitle.Clear();
 			Controllers.CInstitute.Insert(T_Title);
 
 			T_Title = new MTitle("Проф.", "Доцент");
