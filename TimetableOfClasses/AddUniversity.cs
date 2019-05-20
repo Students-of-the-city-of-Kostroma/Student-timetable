@@ -47,6 +47,7 @@ namespace TimetableOfClasses
 			tbINN.Text = model.INN;
 		}
 
+
 		private void FullTitle_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			Regex regex = new Regex(@"[а-яА-Я\- ]");
@@ -188,6 +189,7 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+			TextChanged(sender, e);
 		}
 
 		private bool isEmpty(string[] strArgs)
@@ -286,6 +288,19 @@ namespace TimetableOfClasses
 		private void Cancel(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void TextChanged(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			if (R.Focused)
+			{
+				string clipdata = Clipboard.GetText();
+				if (R.Text.Contains(clipdata))
+				{
+					R.Text.Replace(clipdata,"");
+				}
+			}
 		}
 	}
 }
