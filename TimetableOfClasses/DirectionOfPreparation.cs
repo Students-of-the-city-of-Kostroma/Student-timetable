@@ -13,6 +13,7 @@ namespace TimetableOfClasses
 {
 	public partial class DirectionOfPreparation : Form
 	{
+		public string selectDirectionOfPreparation;
 		public DirectionOfPreparation(bool forChoice = false)
 		{
 			InitializeComponent();
@@ -101,7 +102,7 @@ namespace TimetableOfClasses
 			if (Name == "Выбор кода")
 			{
 				DataRow Row = ((DataRowView)dgDirectionOfPreparation.SelectedRows[0].DataBoundItem).Row;
-				(Owner as AddProfile).codeSpec = (string)Row["CodeOfDP"];
+				selectDirectionOfPreparation = (string)Row["CodeOfDP"];
 				Close();
 			}
 		}

@@ -93,9 +93,17 @@ namespace TimetableOfClasses
 		private void btCodeSpec_Click(object sender, EventArgs e)
 		{
 			DirectionOfPreparation selectCode = new DirectionOfPreparation(true);
-			selectCode.Owner = this;
-			selectCode.ShowDialog();
-			tbCodeSpec.Text = codeSpec;
+			//selectCode.Owner = this;
+			//selectCode.ShowDialog();
+			//tbCodeSpec.Text = codeSpec;
+			selectCode.FormClosing += SelectCode_FormClosing;
+			selectCode.Show();
+		}
+
+		private void SelectCode_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			DirectionOfPreparation selectCode = (DirectionOfPreparation)sender;
+			tbCodeSpec.Text = selectCode.selectDirectionOfPreparation;
 		}
 	}
 }
