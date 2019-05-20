@@ -224,16 +224,12 @@
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AddInstitute.resx">
       <DependentUpon>AddInstitute.cs</DependentUpon>
-
-    <EmbeddedResource Include="AddProfile.resx">
-      <DependentUpon>AddProfile.cs</DependentUpon>
-      
     </EmbeddedResource>
-      
-      
+    <EmbeddedResource Include="AddProfile.resx">
+      <DependentUpon>AddProfile.cs</DependentUpon> 
+    </EmbeddedResource> 
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>

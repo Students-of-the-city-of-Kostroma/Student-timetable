@@ -87,7 +87,7 @@
             this.ученыеСтепениToolStripMenuItem,
             this.видыЗанятийПодготовкиToolStripMenuItem,
             this.корпусаToolStripMenuItem,
-            this.институтToolStripMenuItem});
+            this.институтToolStripMenuItem,
             this.профильПодготовкиToolStripMenuItem,
             this.направлениеПодготовкиToolStripMenuItem,
             this.корпусаToolStripMenuItem});

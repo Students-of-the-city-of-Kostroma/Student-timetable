@@ -136,15 +136,15 @@ namespace TimetableOfClasses
 
         }
 
-		private void btChange_Click(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
+		//private void btChange_Click(object sender, EventArgs e)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-		private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-		{
-			throw new NotImplementedException();
-		}
+		//private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
 		#endregion
 
