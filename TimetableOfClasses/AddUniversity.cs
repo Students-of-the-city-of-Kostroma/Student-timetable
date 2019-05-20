@@ -47,6 +47,7 @@ namespace TimetableOfClasses
 			tbINN.Text = model.INN;
 		}
 
+
 		private void FullTitle_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			Regex regex = new Regex(@"[а-яА-Я\- ]");
@@ -130,6 +131,7 @@ namespace TimetableOfClasses
 				if (splitedFullName.Length > 3 || splitedFullName.Length < 2)
 					tbRectorName.Text = "";
 			}
+			else ((TextBox)sender).Text = input;
 		}
 
 		private void tbMail_Leave(object sender, EventArgs e)
@@ -204,6 +206,8 @@ namespace TimetableOfClasses
 
 		private void btSave_Click(object sender, EventArgs e)
 		{
+			try
+			{
 			if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
 			{
 				if (Add()) this.Close();
@@ -213,6 +217,8 @@ namespace TimetableOfClasses
 				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
+			}
+			catch (Exception err) { MessageBox.Show(err.Message); }
 		}
 
 		bool Add()
@@ -285,7 +291,8 @@ namespace TimetableOfClasses
 
 		private void Cancel(object sender, EventArgs e)
 		{
-			this.Close();
+			this.Close(); 
 		}
+
 	}
 }
