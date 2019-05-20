@@ -40,6 +40,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
+			if (tbShortName.Text.Length > tbFullName.Text.Length)
+			{
+				MessageBox.Show("Длина поля 'Краткое название профиля' должно быть меньше длины поля 'Полное название профиля'");
+				return;
+			}
 			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text) || String.IsNullOrWhiteSpace(tbCodeSpec.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
@@ -65,6 +70,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
+			if (tbShortName.Text.Length > tbFullName.Text.Length)
+			{
+				MessageBox.Show("Длина поля 'Краткое название профиля' должно быть меньше длины поля 'Полное название профиля'");
+				return;
+			}
 			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else

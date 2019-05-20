@@ -65,6 +65,7 @@
 			this.tbShortName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbShortName.Location = new System.Drawing.Point(13, 85);
+			this.tbShortName.MaxLength = 40;
 			this.tbShortName.Name = "tbShortName";
 			this.tbShortName.Size = new System.Drawing.Size(241, 20);
 			this.tbShortName.TabIndex = 3;
@@ -108,6 +109,7 @@
 			this.tbFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbFullName.Location = new System.Drawing.Point(13, 38);
+			this.tbFullName.MaxLength = 40;
 			this.tbFullName.Name = "tbFullName";
 			this.tbFullName.Size = new System.Drawing.Size(241, 20);
 			this.tbFullName.TabIndex = 16;
