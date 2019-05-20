@@ -287,7 +287,7 @@ namespace TimetableOfClasses
 
 		private void Cancel(object sender, EventArgs e)
 		{
-			this.Close();
+			this.Close(); 
 		}
 
 		private void TextChanged(object sender, EventArgs e)
