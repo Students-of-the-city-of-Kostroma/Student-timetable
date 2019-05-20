@@ -139,6 +139,7 @@
 			this.ученыеЗванияToolStripMenuItem.Text = "Ученые звания";
 			this.ученыеЗванияToolStripMenuItem.Click += new System.EventHandler(this.ученыеЗванияToolStripMenuItem_Click);
 			// 
+
 			// ученыеСтепениToolStripMenuItem
 			// 
 			this.ученыеСтепениToolStripMenuItem.Name = "ученыеСтепениToolStripMenuItem";
@@ -174,6 +175,7 @@
 			this.корпусаToolStripMenuItem.Text = "Корпуса";
 			this.корпусаToolStripMenuItem.Click += new System.EventHandler(this.корпусаToolStripMenuItem_Click);
 			// 
+
 			// расписаниеToolStripMenuItem
 			// 
 			this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";

@@ -131,20 +131,18 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 		[TestMethod]
-		public void Task_497_8()//дублирование телефона
+public void Task_496_10() //дублирование всех атрибутов
 		{
-			// arrange
-			Controllers.CUniversity.Rows.Clear();
-			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-			Controllers.CUniversity.Insert(gr);
-			MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
-			Controllers.CUniversity.Insert(gr1);
-			bool expected = true;
-			//act 
-			gr1.Phone = "84942317960";
-			bool actual = Controllers.CUniversity.Update(gr1);
-			//assert 
-			Assert.AreEqual(expected, actual);
+		// arrange
+		Controllers.CUniversity.Rows.Clear();
+		MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
+		Controllers.CUniversity.Insert(gr);
+		bool expected = false;
+		//act 
+		MUniversity gr1 = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
+		bool actual = Controllers.CUniversity.Insert(gr1);
+		//assert 
+		Assert.AreEqual(expected, actual);
 		}
 	}
 }
