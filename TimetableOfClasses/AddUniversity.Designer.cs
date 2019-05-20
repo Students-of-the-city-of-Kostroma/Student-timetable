@@ -69,7 +69,6 @@
 			this.tbShortTittle.Name = "tbShortTittle";
 			this.tbShortTittle.Size = new System.Drawing.Size(232, 20);
 			this.tbShortTittle.TabIndex = 21;
-			this.tbShortTittle.TextChanged += new System.EventHandler(this.TextChanged);
 			this.tbShortTittle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShortTitle_KeyPress);
 			this.tbShortTittle.Leave += new System.EventHandler(this.tbShortTittle_Leave);
 			// 
@@ -82,7 +81,6 @@
 			this.tbFullTitle.Name = "tbFullTitle";
 			this.tbFullTitle.Size = new System.Drawing.Size(232, 20);
 			this.tbFullTitle.TabIndex = 23;
-			this.tbFullTitle.TextChanged += new System.EventHandler(this.TextChanged);
 			this.tbFullTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullTitle_KeyPress);
 			this.tbFullTitle.Leave += new System.EventHandler(this.tbFullTitle_Leave);
 			// 
@@ -107,7 +105,6 @@
 			this.tbActualAddress.Name = "tbActualAddress";
 			this.tbActualAddress.Size = new System.Drawing.Size(232, 20);
 			this.tbActualAddress.TabIndex = 25;
-			this.tbActualAddress.TextChanged += new System.EventHandler(this.TextChanged);
 			this.tbActualAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbActualAddress_KeyPress);
 			this.tbActualAddress.Leave += new System.EventHandler(this.tbActualAddress_Leave);
 			// 
@@ -132,7 +129,6 @@
 			this.tbLegalAddress.Name = "tbLegalAddress";
 			this.tbLegalAddress.Size = new System.Drawing.Size(232, 20);
 			this.tbLegalAddress.TabIndex = 27;
-			this.tbLegalAddress.TextChanged += new System.EventHandler(this.TextChanged);
 			this.tbLegalAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbActualAddress_KeyPress);
 			this.tbLegalAddress.Leave += new System.EventHandler(this.tbActualAddress_Leave);
 			// 

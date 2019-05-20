@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibOfTimetableOfClasses
 {
@@ -221,16 +222,16 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public MUniversity(string inn, string shortName, string fullName, string actualAddress, string legalAddress, string nameRector, string surnameRector, string middleNameRector, string email, string phone) : base()
 		{
-			INN = inn;
-			ShortName = shortName;
-			FullName = fullName;
-			ActualAddress = actualAddress;
-			LegalAddress = legalAddress;
-			NameRector = nameRector;
-			SurnameRector = surnameRector;
-			MiddleNameRector = middleNameRector;
-			Email = email;
-			Phone = phone;
+				INN = inn;
+				ShortName = shortName;
+				FullName = fullName;
+				ActualAddress = actualAddress;
+				LegalAddress = legalAddress;
+				NameRector = nameRector;
+				SurnameRector = surnameRector;
+				MiddleNameRector = middleNameRector;
+				Email = email;
+				Phone = phone;
 		}
 
 		public MUniversity(string inn) : base()

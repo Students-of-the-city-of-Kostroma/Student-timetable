@@ -189,7 +189,6 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
-			TextChanged(sender, e);
 		}
 
 		private bool isEmpty(string[] strArgs)
@@ -206,6 +205,8 @@ namespace TimetableOfClasses
 
 		private void btSave_Click(object sender, EventArgs e)
 		{
+			try
+			{
 			if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
 			{
 				if (Add()) this.Close();
@@ -215,6 +216,8 @@ namespace TimetableOfClasses
 				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
+			}
+			catch (Exception err) { MessageBox.Show(err.Message); }
 		}
 
 		bool Add()
@@ -290,17 +293,5 @@ namespace TimetableOfClasses
 			this.Close(); 
 		}
 
-		private void TextChanged(object sender, EventArgs e)
-		{
-			TextBox R = sender as TextBox;
-			if (R.Focused)
-			{
-				string clipdata = Clipboard.GetText();
-				if (R.Text.Contains(clipdata))
-				{
-					R.Text.Replace(clipdata,"");
-				}
-			}
-		}
 	}
 }
