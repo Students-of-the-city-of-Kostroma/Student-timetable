@@ -157,7 +157,7 @@
 			this.tbRectorName.Name = "tbRectorName";
 			this.tbRectorName.Size = new System.Drawing.Size(232, 20);
 			this.tbRectorName.TabIndex = 29;
-			this.tbRectorName.TextChanged += new System.EventHandler(this.TextChanged);
+			this.tbRectorName.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbRectorName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullTitle_KeyPress);
 			this.tbRectorName.Leave += new System.EventHandler(this.tbFullTitle_Leave);
 			// 
@@ -182,7 +182,7 @@
 			this.tbPhone.Name = "tbPhone";
 			this.tbPhone.Size = new System.Drawing.Size(232, 20);
 			this.tbPhone.TabIndex = 33;
-			this.tbPhone.TextChanged += new System.EventHandler(this.TextChanged);
+			this.tbPhone.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
 			this.tbPhone.Leave += new System.EventHandler(this.tbPhone_Leave);
 			// 
@@ -254,7 +254,7 @@
 			this.tbINN.Name = "tbINN";
 			this.tbINN.Size = new System.Drawing.Size(232, 20);
 			this.tbINN.TabIndex = 37;
-			this.tbINN.TextChanged += new System.EventHandler(this.TextChanged);
+			this.tbINN.TextChanged += new System.EventHandler(this.fieldChanged);
 			this.tbINN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
 			this.tbINN.Leave += new System.EventHandler(this.tbINN_Leave);
 			// 
