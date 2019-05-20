@@ -16,9 +16,8 @@ namespace TimetableOfClasses
 		public AcademicTitle()
 		{
 			InitializeComponent();
-			DG_AcademicTitle.DataSource = Controllers.CTitle.Select();
+			DG_AcademicTitle.DataSource = Controllers.CTitle;
 		}
-
 
 		private void DG_AcademicTitle_SelectionChanged(object sender, EventArgs e)
 		{
@@ -63,7 +62,6 @@ namespace TimetableOfClasses
 						MessageBox.Show("Выберите строку для удаления", "Предупреждение");
 					}
 				}
-
 			}
 		}
 
@@ -72,13 +70,16 @@ namespace TimetableOfClasses
 			if (DG_AcademicTitle.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
+
 				MTitle mTitle = new MTitle((string)Row["Полная запись уч. звания"], (string)Row["Сокращенная запись уч. звания"]);
+
 				AddAcademicTitle add = new AddAcademicTitle(mTitle);
 				add.Owner = this;
 				add.ShowDialog();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
+
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			DataGridViewColumn newColumn = DG_AcademicTitle.Columns[e.ColumnIndex];
@@ -143,6 +144,8 @@ namespace TimetableOfClasses
 		}
 	}
 }
+	
+
 
 
 

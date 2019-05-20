@@ -15,7 +15,8 @@ namespace LibOfTimetableOfClasses
 		string _patronymic;
 		string _secondName;
 		string _firstName;
-		string _note;
+		string _academicDegree;
+		string _academicTitle;
 		string _departament;
 		string _metodicalDays;
 		string _windows;
@@ -90,6 +91,7 @@ namespace LibOfTimetableOfClasses
 				 _patronymic = value;
 			}
 		}
+
 		public string Departament
 		{
 			get
@@ -110,18 +112,40 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public string Note
+		public string AcademicDegree
 		{
 			get
 			{
-				if (_note != null) return _note;
+				if (_academicDegree != null) return _academicDegree;
+				else return "";
+			}
+			set
+			{
+				if (value == null) throw new Exception("Строка не может быть null");
+				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+
+				foreach (char l in value)
+					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
+				if (value.Length > 0)
+					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
+
+				if (value != "") _academicDegree = value;
+				else _academicDegree = null;
+			}
+		}
+
+		public string AcademicTitle
+		{
+			get
+			{
+				if (_academicTitle != null) return _academicTitle;
 				else return "";
 			}
 			set
 			{
 				if (value == "" || value == null)
 				{
-					_note = null;
+					_academicTitle = null;
 					return;
 				}
 				if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
@@ -130,7 +154,8 @@ namespace LibOfTimetableOfClasses
 					if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
 				if (value.Length > 0)
 					if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
-				_note = null;
+				if (value != "") _academicTitle = value;
+				else _academicTitle = null;
 			}
 		}
 
@@ -220,24 +245,26 @@ namespace LibOfTimetableOfClasses
 		}
 
 
-		public MTeacher(string firstName, string secondName, string patronymic, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = patronymic;
-			Note = note;
+			AcademicDegree = academicDegree;
+			AcademicTitle = academicTitle;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;
 			Weekends = weekends;
 		}
 
-		public MTeacher(string firstName, string secondName, string note, string departament, string metodicalDays, string windows, string weekends) : base()
+		public MTeacher(string firstName, string secondName, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
 			this.SecondName = secondName;
 			this.Patronymic = null;
-			Note = note;
+			AcademicDegree = academicDegree;
+			AcademicTitle = academicTitle;
 			Departament = departament;
 			MetodicalDays = metodicalDays;
 			Windows = windows;

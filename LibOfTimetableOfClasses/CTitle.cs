@@ -11,7 +11,9 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// Контроллер объекта Добавление ученого звания
 	/// </summary>
-	public class CTitle : Controller, IController
+
+
+	public class CTitle : DataTable, IController
 	{
 		public CTitle() : base("Уч.звание")
 		{
@@ -25,7 +27,6 @@ namespace LibOfTimetableOfClasses
 			table.Columns.Add(column);
 			keys[0] = column;
 
-
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Полная запись уч. звания";
@@ -34,21 +35,21 @@ namespace LibOfTimetableOfClasses
 			keys[1] = column;
 		}
 
-		public override bool Delete(Model model)
+		public bool Delete(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
 			for (int i = 0; i < table.Rows.Count; i++)
 			{
 				if ((string)table.Rows[i]["Полная запись уч. звания"] == mTitle.FullName && (string)table.Rows[i]["Сокращенная запись уч. звания"] == mTitle.Reduction)
 				{
-					table.Rows[i].Delete();
+					this.Rows[i].Delete();
 					return true;
 				}
 			}
 			return false;
 		}
 
-		public override bool Insert(Model model)
+		public bool Insert(Model model)
 		{
 			try
 			{
@@ -66,11 +67,12 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public override bool Update(Model model)
+		public bool Update(Model model)
 		{
 			MTitle mTitle = (MTitle)model;
 			if ((mTitle.FullName == null && mTitle.Reduction == null))
 				return false;
+
 
 			for (int i = 0; i < this.table.Rows.Count; i++)
 			{

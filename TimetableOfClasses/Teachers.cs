@@ -23,9 +23,8 @@ namespace TimetableOfClasses
 
 		private void AddTeacher(object sender, EventArgs e)
 		{
-			AddTeacher addTeacher = new AddTeacher();
-			addTeacher.Owner = this;
-			addTeacher.Show();
+			AddTeacher t = new AddTeacher();
+			t.Show();
 		}
 
 		private void RemoveTeacher(object sender, EventArgs e)
@@ -58,11 +57,11 @@ namespace TimetableOfClasses
 				MTeacher mTeacher;
 				if (fullName.Length == 3)
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["Note"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				else
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["Note"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
