@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Группа
+	/// Класс со свойствами определяющими университетскую группу
 	/// </summary>
 	public class MGroup : Model
 	{
