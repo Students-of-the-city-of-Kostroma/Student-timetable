@@ -122,10 +122,10 @@ namespace TimetableOfClasses
 		private void btCorpus_Click(object sender, EventArgs e)
 		{
 			Enclosures selectCorpus = new Enclosures(true);
-			selectCorpus.FormClosing += SelectCode_FormClosing;
+			selectCorpus.FormClosing += SelectCorpus_FormClosing;
 			selectCorpus.Show();
 		}
-		private void SelectCode_FormClosing(object sender, FormClosingEventArgs e)
+		private void SelectCorpus_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Enclosures selectCorpus = (Enclosures)sender;
 			tbCorpus.Text = selectCorpus.selectEnclosures;
