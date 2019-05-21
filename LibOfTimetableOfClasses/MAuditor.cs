@@ -27,10 +27,10 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// корпус
 		/// </summary>                 
-		string building;
+		byte building;
 
 
-		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, string building) : base()
+		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, byte building) : base()
 		{
 			NameOfAuditor = nameOfAuditor;
 			Cafedra = cafedra;
@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Возвращает или задает building - корпус
 		/// </summary>
-		public string Building
+		public byte Building
 		{
 			get
 			{
