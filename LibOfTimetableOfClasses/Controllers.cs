@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -29,6 +30,9 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("Direction_TrainingProfile",
 				CDirectionOfPreparation.Columns["CodeOfDP"],
 				CTrainingProfile.Columns["Shiphr"]);
+			DataSet.Tables.Add(CAuditor);
+			DataSet.Tables.Add(СEnclosures);
+			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 		}
 	}
 }

@@ -7,26 +7,26 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAuditor
     {
-        //[TestMethod]
-    //    public void Task_274_1()
+		//[TestMethod]
+		//public void Task_274_1()
 
-    //    {
-    //        try
-    //        {
-				//MAuditor T_Auditor = new MAuditor("", "", 0, 0);
-				//Assert.AreEqual(typeof(Guid), T_Auditor.Id.GetType(), "Ожидался тип поля Guid");
-    //        }
-    //        catch(Exception ex)
-    //        {
-    //            Assert.Fail(ex.Message);
-    //        }
-    //    }
+		//{
+		//	try
+		//	{
+		//		MAuditor T_Auditor = new MAuditor("", "", 0, 0);
+		//		Assert.AreEqual(typeof(Guid), T_Auditor.Id.GetType(), "Ожидался тип поля Guid");
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		Assert.Fail(ex.Message);
+		//	}
+		//}
 		[TestMethod]
 		public void Task_274_2()
 		{
 			try
 			{
-				MAuditor T_Auditor = new MAuditor("", "", 0, 0);
+				MAuditor T_Auditor = new MAuditor("", "", 0, "");
 				Assert.AreEqual(typeof(String), T_Auditor.NameOfAuditor.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MAuditor T_Auditor = new MAuditor("", "", 0, 0);
+				MAuditor T_Auditor = new MAuditor("", "", 0,"");
 				Assert.AreEqual(typeof(String), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
 			}
 			catch (Exception ex)
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MAuditor T_Auditor = new MAuditor("", "", 0, 0);
+				MAuditor T_Auditor = new MAuditor("", "", 0,"");
 				Assert.AreEqual(typeof(ushort), T_Auditor.Spacious.GetType(), "Ожидался тип поля ushort");
 			}
 			catch (Exception ex)
@@ -66,8 +66,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MAuditor T_Auditor = new MAuditor("", "", 0, 0);
-				Assert.AreEqual(typeof(byte), T_Auditor.Building.GetType(), "Ожидался тип поля byte");
+				MAuditor T_Auditor = new MAuditor("", "", 0, "");
+				Assert.AreEqual(typeof(String), T_Auditor.Building.GetType(), "Ожидался тип поля ushort");
 			}
 			catch (Exception ex)
 			{
