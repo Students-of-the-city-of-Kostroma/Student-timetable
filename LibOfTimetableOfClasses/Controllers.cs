@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -12,7 +13,9 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class Controllers
     {
+
 		public static DataSet DataSet = new DataSet();
+
 		public static CTeacher CTeacher = new CTeacher();
         public static CAuditor CAuditor = new CAuditor();
         public static CDiscipline CDiscipline = new CDiscipline();
@@ -24,6 +27,9 @@ namespace LibOfTimetableOfClasses
 		public static CUniversity CUniversity = new CUniversity();
 		public Controllers()
 		{
+			DataSet.Tables.Add(CAuditor);
+			DataSet.Tables.Add(СEnclosures);
+			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Relations.Add("Direction_TrainingProfile",
