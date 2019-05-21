@@ -66,7 +66,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Метод удаления 
 		/// </summary>
-		/// <param name="model"></param>
+		/// <param name="model">Модель</param>
 		/// <returns></returns>
 		public bool Delete(Model model)
 
@@ -95,7 +95,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Метод добавления
 		/// </summary>
-		/// <param name="model"></param>
+		/// <param name="model">Модель</param>
 		/// <returns></returns>
 		public bool Insert(Model model)
 		{
@@ -131,7 +131,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Метод обновления о существующем ВУЗе
 		/// </summary>
-		/// <param name="model"></param>
+		/// <param name="model">Модель</param>
 		/// <returns></returns>
 		public bool Update(Model model)
 		{

@@ -260,7 +260,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Конструктор класса
 		/// </summary>
-		/// <param name="inn"></param>
+		/// <param name="inn">ИНН</param>
 		public MUniversity(string inn) : base()
 		{
 			INN = inn;
