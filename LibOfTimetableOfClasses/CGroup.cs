@@ -7,7 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
-{
+{	
+	/// <summary>
+	/// Таблица со строками, хранящими данные о разных учебных группах в Университете
+	/// </summary>
 	public class CGroup : DataTable, IController
 	{
 		/// <summary>
