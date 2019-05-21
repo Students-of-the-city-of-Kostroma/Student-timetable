@@ -10,6 +10,11 @@ namespace LibOfTimetableOfClasses
 {
 	public class CGroup : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью поля Group.
+		/// </summary>
 		public CGroup() : base("Группа")
 		{
 
@@ -57,7 +62,14 @@ namespace LibOfTimetableOfClasses
 			this.Columns.Add(column);
 		}
 
-
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CGroup.
+		/// В таблице CGroup ищется строка с полем "Group" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка. 
+		/// </summary>
+		/// <param name="model">Модель, выбранной строки в таблице</param>
+		/// <returns>Результат удаления переданной строки из CGroup</returns>
 		public bool Delete(Model model)
 
 		{
@@ -75,6 +87,12 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
+		/// <summary>
+		/// Проверка начилия переданной модели в таблице CGroup
+		/// Наличие определяется наличием строки CGroup с полем "Group" соответсвующим свойству "Group" модели mGroup.
+		/// </summary>
+		/// <param name="mGroup">Проверяеммая модель группы</param>
+		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
 		private bool isValidKey(MGroup mGroup)
 		{
 			foreach (DataRow Row in this.Rows)
@@ -85,6 +103,13 @@ namespace LibOfTimetableOfClasses
 			return true;
 		}
 
+
+		/// <summary>
+		/// Метод вставки переданной модели MGroup в таблицу CGroup
+		/// в случае уникальности свойства Group модели для таблицы CGroup
+		/// </summary>
+		/// <param name="model">Вставляемая в CGroup модель</param>
+		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
@@ -117,6 +142,13 @@ namespace LibOfTimetableOfClasses
 
 		}
 
+
+		/// <summary>
+		/// Обновление свойств строки в таблице CGroup из переданной модели MGroup
+		/// Поиск изменяемой строки CGroup осуществляется по полю "Group"
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		public bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
