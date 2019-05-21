@@ -22,7 +22,6 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			tbNameGroup.Text = "00-ААаа-0а";
 			tbVixodnie.Text = "Воскресенье";
-
 		}
 
 		private bool isEmpty(string[] strArgs)
