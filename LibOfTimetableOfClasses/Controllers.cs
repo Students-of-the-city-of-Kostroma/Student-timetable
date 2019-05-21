@@ -15,26 +15,28 @@ namespace LibOfTimetableOfClasses
 	public class Controllers
 	{
 		public static CTeacher CTeacher = new CTeacher();
-		public static CAuditor CAuditor = new CAuditor();
+        public static CStudyWeek CStudyWeek = new CStudyWeek();
+        public static CAuditor CAuditor = new CAuditor();
 		public static CDiscipline CDiscipline = new CDiscipline();
 		public static CGroup CGroup = new CGroup();
 		public static CTitle CTitle = new CTitle();
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CInstitute CInstitute = new CInstitute();
 		public static CUniversity CUniversity = new CUniversity();
-    public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
-    public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+        public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
+        public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
 		public static DataSet dataSet = new DataSet();
 
 		public Controllers()
 		{
 			dataSet.Tables.Add(CUniversity);
 			dataSet.Tables.Add(CInstitute);
-      dataSet.Tables.Add(CTeacher);
+            dataSet.Tables.Add(CTeacher);
 			dataSet.Tables.Add(CAcademicDegree);
 			dataSet.Tables.Add(CTitle);
-      dataSet.Tables.Add(CGroup);
-      
+            dataSet.Tables.Add(CGroup);
+            dataSet.Tables.Add(CStudyWeek);
+
 			dataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
 			dataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
 			dataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);

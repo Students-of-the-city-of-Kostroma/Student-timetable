@@ -122,5 +122,11 @@ namespace TimetableOfClasses
 			Institute institute = new Institute();
 			institute.Show();
 		}
-	}
+
+        private void учебныеНеделиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudyWeek studyWeek = new StudyWeek();
+            studyWeek.Show();
+        }
+    }
 }
