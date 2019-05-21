@@ -26,6 +26,9 @@ namespace LibOfTimetableOfClasses
 		string _email;
 		string _phone;
 
+		/// <summary>
+		/// Ввод ИНН
+		/// </summary>
 		public string INN
 		{
 			get
@@ -43,7 +46,9 @@ namespace LibOfTimetableOfClasses
 				_inn = value;
 			}
 		}
-
+		/// <summary>
+		/// Ввод краткого наименования
+		/// </summary>
 		public string ShortName
 		{
 			get
@@ -61,7 +66,9 @@ namespace LibOfTimetableOfClasses
 				_shortName = value;
 			}
 		}
-
+		/// <summary>
+		/// Ввод полного наименования
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -81,6 +88,9 @@ namespace LibOfTimetableOfClasses
 				_fullName = value;
 			}
 		}
+		/// <summary>
+		/// Ввод текущего адреса
+		/// </summary>
 		public string ActualAddress
 		{
 			get
@@ -98,6 +108,9 @@ namespace LibOfTimetableOfClasses
 				_actualAddress = value;
 			}
 		}
+		/// <summary>
+		/// Ввод юридического адреса
+		/// </summary>
 		public string LegalAddress
 		{
 			get
@@ -115,7 +128,9 @@ namespace LibOfTimetableOfClasses
 				_legalAddress = value;
 			}
 		}
-
+		/// <summary>
+		/// Ввод имени ректора
+		/// </summary>
 		public string NameRector
 		{
 			get
@@ -135,7 +150,9 @@ namespace LibOfTimetableOfClasses
 				_nameRector = value;
 			}
 		}
-
+		/// <summary>
+		/// Ввод фамилии ректора
+		/// </summary>
 		public string SurnameRector
 		{
 			get
@@ -155,7 +172,9 @@ namespace LibOfTimetableOfClasses
 				_surnameRector = value;
 			}
 		}
-
+		/// <summary>
+		///  Ввод Отчества ректора
+		/// </summary>
 		public string MiddleNameRector
 		{
 			get
@@ -181,7 +200,9 @@ namespace LibOfTimetableOfClasses
 				_middleNameRector = value;
 			}
 		}
-
+		/// <summary>
+		/// Ввод Электронной почты 
+		/// </summary>
 		public string Email
 		{
 			get
@@ -199,6 +220,9 @@ namespace LibOfTimetableOfClasses
 				_email = value;
 			}
 		}
+		/// <summary>
+		/// Ввод номера телефона
+		/// </summary>
 		public string Phone
 		{
 			get

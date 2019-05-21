@@ -10,6 +10,7 @@ namespace LibOfTimetableOfClasses
 {
 	public class CUniversity : DataTable, IController
 	{
+
 		public CUniversity() : base("ВУЗ")
 		{
 
@@ -60,7 +61,11 @@ namespace LibOfTimetableOfClasses
 			this.PrimaryKey = keys;
 		}
 
-
+		/// <summary>
+		/// Метод удаления 
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		public bool Delete(Model model)
 
 		{
@@ -85,7 +90,11 @@ namespace LibOfTimetableOfClasses
 			}
 			return true;
 		}
-
+		/// <summary>
+		/// Метод добавления
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		public bool Insert(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;
@@ -117,7 +126,11 @@ namespace LibOfTimetableOfClasses
 			return false;
 
 		}
-
+		/// <summary>
+		/// Метод обновления о существующем ВУЗе
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns></returns>
 		public bool Update(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;
