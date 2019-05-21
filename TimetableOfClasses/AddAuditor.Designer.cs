@@ -38,7 +38,8 @@
 			this.btCancel = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Cl = new System.Windows.Forms.Button();
 			this.bt_Cr_n_Close = new System.Windows.Forms.Button();
-			this.cbCorpus = new System.Windows.Forms.ComboBox();
+			this.btCorpus = new System.Windows.Forms.Button();
+			this.tbCorpus = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.nuPlaces)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -164,20 +165,35 @@
 			this.bt_Cr_n_Close.UseVisualStyleBackColor = true;
 			this.bt_Cr_n_Close.Click += new System.EventHandler(this.bt_Cr_n_Close_Click);
 			// 
-			// cbCorpus
+			// btCorpus
 			// 
-			this.cbCorpus.FormattingEnabled = true;
-			this.cbCorpus.Location = new System.Drawing.Point(13, 201);
-			this.cbCorpus.Name = "cbCorpus";
-			this.cbCorpus.Size = new System.Drawing.Size(242, 21);
-			this.cbCorpus.TabIndex = 11;
+			this.btCorpus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCorpus.Location = new System.Drawing.Point(176, 201);
+			this.btCorpus.Name = "btCorpus";
+			this.btCorpus.Size = new System.Drawing.Size(75, 23);
+			this.btCorpus.TabIndex = 21;
+			this.btCorpus.Text = "Выбрать";
+			this.btCorpus.UseVisualStyleBackColor = true;
+			this.btCorpus.Click += new System.EventHandler(this.btCorpus_Click);
+			// 
+			// tbCorpus
+			// 
+			this.tbCorpus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbCorpus.Location = new System.Drawing.Point(12, 201);
+			this.tbCorpus.Name = "tbCorpus";
+			this.tbCorpus.ReadOnly = true;
+			this.tbCorpus.Size = new System.Drawing.Size(158, 20);
+			this.tbCorpus.TabIndex = 20;
 			// 
 			// AddAuditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(266, 311);
-			this.Controls.Add(this.cbCorpus);
+			this.Controls.Add(this.btCorpus);
+			this.Controls.Add(this.tbCorpus);
 			this.Controls.Add(this.bt_Cr_n_Close);
 			this.Controls.Add(this.bt_Cr_n_Cl);
 			this.Controls.Add(this.btCancel);
@@ -210,6 +226,7 @@
 		private System.Windows.Forms.Button btCancel;
 		private System.Windows.Forms.Button bt_Cr_n_Cl;
 		private System.Windows.Forms.Button bt_Cr_n_Close;
-		private System.Windows.Forms.ComboBox cbCorpus;
+		private System.Windows.Forms.Button btCorpus;
+		private System.Windows.Forms.TextBox tbCorpus;
 	}
 }

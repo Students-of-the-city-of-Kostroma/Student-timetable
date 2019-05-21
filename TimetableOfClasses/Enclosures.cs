@@ -13,11 +13,17 @@ namespace TimetableOfClasses
 {
 	public partial class Enclosures : Form
 	{
-		public Enclosures()
+		public string selectEnclosures;
+		
+		public Enclosures(bool forChoice = false)
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
 			DG.DataSource = Controllers.СEnclosures;
+			if (forChoice)
+			{
+				Name = "Выбор корпуса";
+			}
 		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -118,6 +124,16 @@ namespace TimetableOfClasses
 			AddEnclosures addEnclosures = new AddEnclosures();
 			addEnclosures.Owner = this;
 			addEnclosures.ShowDialog();
+		}
+
+		private void DG_DoubleClick(object sender, EventArgs e)
+		{
+			if (Name == "Выбор корпуса")
+			{
+				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+				selectEnclosures = (string)Row["Name"];
+				Close();
+			}
 		}
 	}
 }
