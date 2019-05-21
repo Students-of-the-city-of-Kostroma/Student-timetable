@@ -64,7 +64,7 @@ namespace TimetableOfClasses
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
 		{
 			AddDiscipline addDiscipline = new AddDiscipline();
-			addDiscipline.ShowDialog();
+			addDiscipline.Show();
 		}
 
 		private void btChange_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
 				AddDiscipline add = new AddDiscipline(mDiscipline);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}

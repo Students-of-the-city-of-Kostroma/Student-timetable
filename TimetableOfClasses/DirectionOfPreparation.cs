@@ -13,23 +13,28 @@ namespace TimetableOfClasses
 {
 	public partial class DirectionOfPreparation : Form
 	{
-		public DirectionOfPreparation()
+		public string selectDirectionOfPreparation;
+		public DirectionOfPreparation(bool forChoice = false)
 		{
 			InitializeComponent();
 			dgDirectionOfPreparation.AutoGenerateColumns = false;
 			dgDirectionOfPreparation.DataSource = Controllers.CDirectionOfPreparation;
 			btDeleteDirection.Enabled = false;
 			btChangeDirection.Enabled = false;
+			if (forChoice)
+			{
+				Name = "Выбор кода";
+			}
 		}
 
 		private void btAddDirection_Click(object sender, EventArgs e)
 		{
 			AddDirectionOfPreparation d = new AddDirectionOfPreparation();
-			d.ShowDialog();
+			d.Show();
 		}
 
 		private void btDeleteDirection_Click(object sender, EventArgs e)
-		{
+		{			
 			string SelectedName = "";
 			foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
 			{
@@ -37,14 +42,14 @@ namespace TimetableOfClasses
 				SelectedName += (string)Row["NameOfDP"] + ", ";
 			}
 			if (SelectedName.Length > 2)
-				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
+				SelectedName = SelectedName.Remove(SelectedName.Length - 2);			
 			if (SelectedName != "")
 			{
 				DialogResult dr = MessageBox.Show("Удалить направление - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 				if (dgDirectionOfPreparation.SelectedRows.Count > 0 && dr == DialogResult.OK)
 				{
 					int countSelected = dgDirectionOfPreparation.SelectedRows.Count;
-
+					
 					MDirectionOfPreparation Direction;
 					foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
 					{
@@ -78,7 +83,7 @@ namespace TimetableOfClasses
 				MDirectionOfPreparation Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
 				AddDirectionOfPreparation add = new AddDirectionOfPreparation(Direction);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
@@ -90,6 +95,16 @@ namespace TimetableOfClasses
 			object header = dgDirectionOfPreparation.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
 				dgDirectionOfPreparation.Rows[index].HeaderCell.Value = indexStr;
+		}
+
+		private void dgDirectionOfPreparation_DoubleClick(object sender, EventArgs e)
+		{
+			if (Name == "Выбор кода")
+			{
+				DataRow Row = ((DataRowView)dgDirectionOfPreparation.SelectedRows[0].DataBoundItem).Row;
+				selectDirectionOfPreparation = (string)Row["CodeOfDP"];
+				Close();
+			}
 		}
 	}
 }

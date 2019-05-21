@@ -22,6 +22,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Возвращает или задает fullname - Полное название профиля подготовки
 		/// </summary>
+		string shiphr;
 		public string FullName
 		{
 			get
@@ -47,10 +48,22 @@ namespace LibOfTimetableOfClasses
 				shortname = value;
 			}
 		}
-		public MTrainingProfile(string fullname, string shortname):base()
+		public string Shiphr
+		{
+			get
+			{
+				return shiphr;
+			}
+			set
+			{
+				shiphr = value;
+			}
+		}
+		public MTrainingProfile(string fullname, string shortname, string shiphr) :base()
 		{
 			FullName = fullname;
 			ShortName = shortname;
+			Shiphr = shiphr;
 		}
 	}
 }
