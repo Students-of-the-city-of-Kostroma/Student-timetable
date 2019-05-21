@@ -10,7 +10,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// В этом классе храняться все экземпляры контроллеров.
     /// </summary>
-    public class Controllers
+    public class RefData
     {
 		public static DataSet dataSet = new DataSet();
         public static CTeacher CTeacher = new CTeacher();
@@ -24,7 +24,7 @@ namespace LibOfTimetableOfClasses
         public static СEnclosures СEnclosures = new СEnclosures();
 		public static CUniversity CUniversity = new CUniversity();
 
-		public Controllers()
+		public RefData()
 		{
 			dataSet.Tables.Add(CTeacher);
 			dataSet.Tables.Add(CAcademicDegree);
