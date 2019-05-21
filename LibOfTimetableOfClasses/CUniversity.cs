@@ -10,7 +10,9 @@ namespace LibOfTimetableOfClasses
 {
 	public class CUniversity : DataTable, IController
 	{
-
+		/// <summary>
+		/// Контроллер ВУЗа
+		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{
 

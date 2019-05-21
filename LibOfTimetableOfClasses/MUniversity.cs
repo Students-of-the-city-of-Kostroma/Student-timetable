@@ -257,7 +257,10 @@ namespace LibOfTimetableOfClasses
 				Email = email;
 				Phone = phone;
 		}
-
+		/// <summary>
+		/// Конструктор класса
+		/// </summary>
+		/// <param name="inn"></param>
 		public MUniversity(string inn) : base()
 		{
 			INN = inn;
