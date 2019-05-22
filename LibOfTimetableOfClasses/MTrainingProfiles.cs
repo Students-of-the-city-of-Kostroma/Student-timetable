@@ -65,5 +65,10 @@ namespace LibOfTimetableOfClasses
 			ShortName = shortname;
 			Shiphr = shiphr;
 		}
+
+		public override string ToString()
+		{
+			return this.ShortName;
+		}
 	}
 }

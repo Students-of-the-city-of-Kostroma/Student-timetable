@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Diagnostics;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.Data;
+	using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
@@ -12,37 +12,34 @@ namespace LibOfTimetableOfClasses
 	{
 		public СEnclosures() : base("Корпус")
 		{
+			if (Controllers.СEnclosures != null) throw new Exception("Контроллер уже существует");
+
 			DataColumn[] keys = new DataColumn[2];
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Name";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "University";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Address";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Comment";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;

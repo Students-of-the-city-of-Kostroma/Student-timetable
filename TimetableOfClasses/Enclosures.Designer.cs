@@ -51,7 +51,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
 			this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CName,
             this.CUniversity,
@@ -62,6 +62,7 @@
 			this.DG.MultiSelect = false;
 			this.DG.Name = "DG";
 			this.DG.ReadOnly = true;
+			this.DG.RowHeadersWidth = 60;
 			this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG.Size = new System.Drawing.Size(672, 283);
 			this.DG.TabIndex = 0;
@@ -137,10 +138,6 @@
 			this.Create1.Text = "Добавить";
 			this.Create1.UseVisualStyleBackColor = true;
 			this.Create1.Click += new System.EventHandler(this.Added);
-			// 
-			// сEnclosuresBindingSource
-			// 
-			this.сEnclosuresBindingSource.DataSource = typeof(LibOfTimetableOfClasses.СEnclosures);
 			// 
 			// Enclosures
 			// 

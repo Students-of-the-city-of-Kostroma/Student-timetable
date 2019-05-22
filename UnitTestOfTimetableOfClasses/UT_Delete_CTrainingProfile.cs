@@ -38,6 +38,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_422_2()
 		{
+			Controllers.CTrainingProfile.Clear();
 			bool ex = false;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");

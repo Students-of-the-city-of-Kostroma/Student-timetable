@@ -12,9 +12,9 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTeacher() : base("Учитель")
 		{
-			
+			if (Controllers.CTeacher != null) throw new Exception("Контроллер уже существует");
+
 			DataColumn column = new DataColumn();
-			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
 			column.Unique = true;
@@ -22,7 +22,12 @@ namespace LibOfTimetableOfClasses
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Note";
+			column.ColumnName = "AcademicDegree";
+			this.Columns.Add(column);
+
+			column = new DataColumn();
+			column.DataType = typeof(string);
+			column.ColumnName = "AcademicTitle";
 			this.Columns.Add(column);
 
 			column = new DataColumn();
@@ -50,12 +55,13 @@ namespace LibOfTimetableOfClasses
 		{
 			foreach(DataRow row in this.Rows)
 			{
-				if ((string)row["FullName"] == mTeacher.FullName )
+				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
+				if ((string)row["FullName"] == fullName )
 					return false;
 			}
 			return true;
 		}
-		
+
 		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
@@ -63,9 +69,11 @@ namespace LibOfTimetableOfClasses
 			{
 				try
 				{
+					string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 					DataRow newRow = this.NewRow();
-					newRow["FullName"] = mTeacher.FullName;
-					newRow["Note"] = mTeacher.Note;
+					newRow["FullName"] = fullName;
+					newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+					newRow["AcademicTitle"] = mTeacher.AcademicTitle;
 					newRow["Departament"] = mTeacher.Departament;
 					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 					newRow["Windows"] = mTeacher.Windows;
@@ -85,13 +93,15 @@ namespace LibOfTimetableOfClasses
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName)
+				if ((string)this.Rows[i]["FullName"] == fullName)
 					try
 					{
 						DataRow newRow = this.Rows[i];
-						newRow["Note"] = mTeacher.Note;
+						newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+						newRow["AcademicTitle"] = mTeacher.AcademicTitle;
 						newRow["Departament"] = mTeacher.Departament;
 						newRow["MetodicalDays"] = mTeacher.MetodicalDays;
 						newRow["Windows"] = mTeacher.Windows;
@@ -111,9 +121,10 @@ namespace LibOfTimetableOfClasses
 		public bool Delete(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
+			string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
 			for (int i = 0; i < this.Rows.Count; i++)
 			{
-				if ((string)this.Rows[i]["FullName"] == mTeacher.FullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
+				if ((string)this.Rows[i]["FullName"] == fullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
 				{
 					this.Rows[i].Delete();
 					//Recount(i);

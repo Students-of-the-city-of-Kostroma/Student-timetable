@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,12 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="CAuditor.cs" />
     <Compile Include="CDirectionOfPreparation.cs" />
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CEnclosures.cs" />
     <Compile Include="CGroup.cs" />
+    <Compile Include="CAcademicDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CHEI.cs" />
+    <Compile Include="CInstitute.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
     <Compile Include="CTeacher.cs" />
@@ -53,6 +62,7 @@
     <Compile Include="CTrainingProfiles.cs" />
     <Compile Include="CUniversity.cs" />
     <Compile Include="IController.cs" />
+    <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
     <Compile Include="MDirectionOfPreparation.cs" />
@@ -60,6 +70,7 @@
     <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />
     <Compile Include="MHEI.cs" />
+    <Compile Include="MInstitute.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />

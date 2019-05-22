@@ -13,13 +13,24 @@ namespace TimetableOfClasses
 {
 	public partial class TrainingProfiles : Form
 	{
-		public TrainingProfiles()
+		public string ChoseShortNameTrainingProfile;
+
+		public TrainingProfiles(bool forChoice = false)
 		{
 			InitializeComponent();
 			dgProfile.AutoGenerateColumns = false;
 			dgProfile.DataSource = Controllers.CTrainingProfile;
-			DeleteProfile.Enabled = false;
-			ChangeProfile.Enabled = false;
+
+			if (forChoice)
+			{				
+				this.Name = "ВЫбор профиля";
+			}			
+		}
+
+		public TrainingProfiles(int tmp)
+		{
+			InitializeComponent();
+			
 		}
 
 		private void AddProfile_Click(object sender, EventArgs e)
@@ -90,6 +101,16 @@ namespace TimetableOfClasses
 			{
 				DeleteProfile.Enabled = false;
 				ChangeProfile.Enabled = false;
+			}
+		}
+
+		private void DgProfile_DoubleClick(object sender, EventArgs e)
+		{
+			if (this.Name == "ВЫбор профиля")
+			{
+				DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
+				ChoseShortNameTrainingProfile = (string)Row["ShortName"];
+				Close();
 			}
 		}
 	}

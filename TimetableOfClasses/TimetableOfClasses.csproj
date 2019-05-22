@@ -56,6 +56,12 @@
     <Compile Include="AcademicDegree.Designer.cs">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAcademicDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAcademicDegree.Designer.cs">
+      <DependentUpon>AddAcademicDegree.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddAcademicTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     <Compile Include="AddGroup.Designer.cs">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddInstitute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstitute.Designer.cs">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrEditDirectory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </Compile>
     <Compile Include="DirectionOfPreparation.Designer.cs">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUniversity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUniversity.Designer.cs">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </Compile>
     <Compile Include="Directory.cs">
       <SubType>Form</SubType>
@@ -145,6 +163,12 @@
     </Compile>
     <Compile Include="Auditor.Designer.cs">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Institute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Institute.Designer.cs">
+      <DependentUpon>Institute.cs</DependentUpon>
     </Compile>
     <Compile Include="Ministry.cs">
       <SubType>Form</SubType>
@@ -197,6 +221,9 @@
     <EmbeddedResource Include="AcademicDegree.resx">
       <DependentUpon>AcademicDegree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddAcademicDegree.resx">
+      <DependentUpon>AddAcademicDegree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddAcademicTitle.resx">
       <DependentUpon>AddAcademicTitle.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,9 +242,12 @@
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddProfile.resx">
-      <DependentUpon>AddProfile.cs</DependentUpon>
+    <EmbeddedResource Include="AddInstitute.resx">
+      <DependentUpon>AddInstitute.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProfile.resx">
+      <DependentUpon>AddProfile.cs</DependentUpon> 
+    </EmbeddedResource> 
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUniversity.resx">
+      <DependentUpon>AddUniversity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
@@ -241,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auditor.resx">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Institute.resx">
+      <DependentUpon>Institute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ministry.resx">
       <DependentUpon>Ministry.cs</DependentUpon>

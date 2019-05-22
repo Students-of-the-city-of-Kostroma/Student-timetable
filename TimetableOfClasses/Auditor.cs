@@ -76,7 +76,8 @@ namespace TimetableOfClasses
 				add.Owner = this;
 				add.Show();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DataGridAuditor.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void DataGridAuditor_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

@@ -4,7 +4,8 @@ using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]
+
+	[TestClass]
     public class UT_MAuditor
     {
 		//[TestMethod]
@@ -21,6 +22,7 @@ namespace UnitTestOfTimetableOfClasses
 		//		Assert.Fail(ex.Message);
 		//	}
 		//}
+
 		[TestMethod]
 		public void Task_274_2()
 		{
@@ -34,6 +36,7 @@ namespace UnitTestOfTimetableOfClasses
 				Assert.Fail(ex.Message);
 			}
 		}
+
 		[TestMethod]
 		public void Task_274_3()
 		{
@@ -74,6 +77,5 @@ namespace UnitTestOfTimetableOfClasses
 				Assert.Fail(ex.Message);
 			}
 		}
-
 	}
 }
