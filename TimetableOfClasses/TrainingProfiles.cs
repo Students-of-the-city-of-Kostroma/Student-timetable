@@ -106,12 +106,12 @@ namespace TimetableOfClasses
 
 		private void DgProfile_DoubleClick(object sender, EventArgs e)
 		{
-            if (dgProfile.SelectedRows.Count == 1 && this.Name == "ВЫбор профиля")
-            {
-                DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
-                ChoseShortNameTrainingProfile = (string)Row["ShortName"];
-                Close();
-            }
+			if (dgProfile.SelectedRows.Count == 1 && this.Name == "ВЫбор профиля")
+			{
+				DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
+				ChoseShortNameTrainingProfile = (string)Row["ShortName"];
+				Close();
+			}
 		}
 	}
 }
