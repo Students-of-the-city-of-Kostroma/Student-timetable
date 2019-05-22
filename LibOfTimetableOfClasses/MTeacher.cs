@@ -245,7 +245,7 @@ namespace LibOfTimetableOfClasses
 		{
 			get
 			{
-				if (_windows != null) return _windows;
+				if (_windows != null) return _windows; 
 				else return "";
 			}
 			set
@@ -262,7 +262,7 @@ namespace LibOfTimetableOfClasses
 					if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 
 				CapitalizationCheck(value);
-				 _windows = null;
+				 _windows = value;
 
 			}
 		}
