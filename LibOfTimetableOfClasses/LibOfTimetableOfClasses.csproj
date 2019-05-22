@@ -45,6 +45,9 @@
     <Compile Include="CAuditor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CDirectionOfPreparation.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CDiscipline.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -79,6 +82,7 @@
     <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
+    <Compile Include="MDirectionOfPreparation.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MEnclosures.cs" />
     <Compile Include="MGroup.cs" />

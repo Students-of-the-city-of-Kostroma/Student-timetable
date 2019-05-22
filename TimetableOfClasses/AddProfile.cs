@@ -13,6 +13,7 @@ namespace TimetableOfClasses
 {
 	public partial class AddProfile : Form
 	{
+		public string codeSpec;
 		bool itsupdate = false;
 		public AddProfile()
 		{
@@ -22,12 +23,14 @@ namespace TimetableOfClasses
 		public AddProfile(MTrainingProfile mProfile)
 		{
 			InitializeComponent();
+			tbCodeSpec.ReadOnly = true;
 			Text = "Изменение профиля подготовки";
 			bt_Cr_n_Cl.Visible = false;
 			bt_Cr_n_Close.Text = "Сохранить";
 			tbFullName.Text = mProfile.FullName;
 			tbFullName.Enabled = false;
 			tbShortName.Text = mProfile.ShortName;
+			tbCodeSpec.Text = mProfile.Shiphr;
 			itsupdate = true;
 		}
 		private void btCancel_Click(object sender, EventArgs e)// отмена
@@ -37,16 +40,26 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
-			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
+			if (tbShortName.Text.Length > tbFullName.Text.Length)
+			{
+				MessageBox.Show("Длина поля 'Краткое название профиля' должно быть меньше длины поля 'Полное название профиля'");
+				return;
+			}
+			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text) || String.IsNullOrWhiteSpace(tbCodeSpec.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
+				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text, tbCodeSpec.Text);
 				try
 				{
-					Controllers.CTrainingProfile.Insert(Profile);
+					if (!Controllers.CTrainingProfile.Insert(Profile))
+					{
+						MessageBox.Show("Невозможно добавить профиль подготовки");
+						return;
+					}
 					tbFullName.Text = "";
 					tbShortName.Text = "";
+					tbCodeSpec.Text = "";
 				}
 				catch (Exception ex)
 				{
@@ -57,15 +70,26 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
 		{
+			if (tbShortName.Text.Length > tbFullName.Text.Length)
+			{
+				MessageBox.Show("Длина поля 'Краткое название профиля' должно быть меньше длины поля 'Полное название профиля'");
+				return;
+			}
 			if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
+				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text, tbCodeSpec.Text);
 				try
 				{
 					if (!itsupdate)
-						Controllers.CTrainingProfile.Insert(Profile);
+					{
+						if (!Controllers.CTrainingProfile.Insert(Profile))
+						{
+							MessageBox.Show("Невозможно добавить профиль подготовки");
+							return;
+						}
+					}
 					else Controllers.CTrainingProfile.Update(Profile);
 					Close();
 				}
@@ -74,6 +98,22 @@ namespace TimetableOfClasses
 					MessageBox.Show(ex.Message);
 				}
 			}
+		}
+
+		private void btCodeSpec_Click(object sender, EventArgs e)
+		{
+			DirectionOfPreparation selectCode = new DirectionOfPreparation(true);
+			//selectCode.Owner = this;
+			//selectCode.ShowDialog();
+			//tbCodeSpec.Text = codeSpec;
+			selectCode.FormClosing += SelectCode_FormClosing;
+			selectCode.Show();
+		}
+
+		private void SelectCode_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			DirectionOfPreparation selectCode = (DirectionOfPreparation)sender;
+			tbCodeSpec.Text = selectCode.selectDirectionOfPreparation;
 		}
 	}
 }
