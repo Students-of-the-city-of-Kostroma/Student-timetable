@@ -150,8 +150,8 @@ namespace LibOfTimetableOfClasses
 		/// Обновление свойств строки в таблице CGroup из переданной модели MGroup
 		/// Поиск изменяемой строки CGroup осуществляется по полю "Group"
 		/// </summary>
-		/// <param name="model"></param>
-		/// <returns></returns>
+		/// <param name="model">Модель по которой нужно обновить записи в таблице</param>
+		/// <returns>Успешность выполнения операции</returns>
 		public bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
