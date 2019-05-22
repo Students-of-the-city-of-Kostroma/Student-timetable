@@ -27,7 +27,7 @@ namespace LibOfTimetableOfClasses
 		string _phone;
 
 		/// <summary>
-		/// Ввод ИНН
+		/// Свойство ввода/вывода ИНН
 		/// </summary>
 		public string INN
 		{
@@ -47,7 +47,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод краткого наименования
+		/// Свойство ввода/вывода краткого наименования ВУЗа
 		/// </summary>
 		public string ShortName
 		{
@@ -67,7 +67,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод полного наименования
+		/// Свойство ввода/вывода полного наименования ВУЗа
 		/// </summary>
 		public string FullName
 		{
@@ -89,7 +89,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод текущего адреса
+		/// Свойство ввода/вывода текущего адреса
 		/// </summary>
 		public string ActualAddress
 		{
@@ -109,7 +109,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод юридического адреса
+		/// Свойство ввода/вывода юридического адреса
 		/// </summary>
 		public string LegalAddress
 		{
@@ -129,7 +129,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод имени ректора
+		/// Свойство ввода/вывода имени ректора
 		/// </summary>
 		public string NameRector
 		{
@@ -151,7 +151,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод фамилии ректора
+		/// Свойство ввода/вывода фамилии ректора
 		/// </summary>
 		public string SurnameRector
 		{
@@ -173,7 +173,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		///  Ввод Отчества ректора
+		///  Свойство ввода/вывода отчества ректора
 		/// </summary>
 		public string MiddleNameRector
 		{
@@ -201,7 +201,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод Электронной почты 
+		/// Свойство ввода/вывода электронной почты
 		/// </summary>
 		public string Email
 		{
@@ -221,7 +221,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Ввод номера телефона
+		/// Свойство передачи в модель номера телефона
 		/// </summary>
 		public string Phone
 		{
@@ -242,7 +242,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Создает экземпляр
+		/// Конструктор класса ВУЗ, создаёт экземлпяр класса со всеми полями
 		/// </summary>
 		public MUniversity(string inn, string shortName, string fullName, string actualAddress, string legalAddress, string nameRector, string surnameRector, string middleNameRector, string email, string phone) : base()
 		{
@@ -258,7 +258,7 @@ namespace LibOfTimetableOfClasses
 				Phone = phone;
 		}
 		/// <summary>
-		/// Конструктор класса
+		/// Конструктор класса вуза, передаёт в модель только ИНН
 		/// </summary>
 		/// <param name="inn">ИНН</param>
 		public MUniversity(string inn) : base()

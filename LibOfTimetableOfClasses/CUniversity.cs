@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
 	public class CUniversity : DataTable, IController
 	{
 		/// <summary>
-		/// Контроллер ВУЗа
+		/// Создаёт один экзепляр контроллера ВУЗа
 		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{
@@ -64,10 +64,10 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Метод удаления 
+		/// Метод удаления строки ВУЗа из таблицы
 		/// </summary>
-		/// <param name="model">Модель</param>
-		/// <returns></returns>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если удаление прошло успешно, то истина, иначе ложь</returns>
 		public bool Delete(Model model)
 
 		{
@@ -93,10 +93,10 @@ namespace LibOfTimetableOfClasses
 			return true;
 		}
 		/// <summary>
-		/// Метод добавления
+		/// Метод добавления строки ВУЗа в таблицу
 		/// </summary>
-		/// <param name="model">Модель</param>
-		/// <returns></returns>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если добавление прошло успешно, то истина, иначе ложь</returns>
 		public bool Insert(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;
@@ -129,10 +129,10 @@ namespace LibOfTimetableOfClasses
 
 		}
 		/// <summary>
-		/// Метод обновления о существующем ВУЗе
+		/// Метод обновления информации строки ВУЗа в таблице
 		/// </summary>
-		/// <param name="model">Модель</param>
-		/// <returns></returns>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если изменение прошло успешно, то истина, иначе ложь</returns>
 		public bool Update(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;
