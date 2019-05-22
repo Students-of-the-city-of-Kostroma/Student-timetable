@@ -8,7 +8,7 @@ namespace LibOfTimetableOfClasses
 {
 
 	/// <summary>
-	/// Класс со свойствами определяющими корпус
+	/// Класс со свойствами определяющими запись о корпусе в справочнике Корпуса
 	/// </summary>
 	public class MEnclosures : Model
 	{
@@ -164,8 +164,13 @@ namespace LibOfTimetableOfClasses
 
 
 		/// <summary>
-		/// Создает экземпляр
+		/// Конструктор класса MEnclosures.
 		/// </summary>
+		/// <param name="name">Название Корпуса</param>
+		/// <param name="university">Краткое название универститета, к которому относится корпус</param>
+		/// <param name="address">Адресс корпуса </param>
+		/// <param name="phone">Телефон корпуса</param>
+		/// <param name="comment">Примечание к записи таблицы</param>
 		public MEnclosures(string name,string university,string address,string phone,string comment): base()
 		{
 			Name= name;

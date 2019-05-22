@@ -59,7 +59,7 @@ namespace LibOfTimetableOfClasses
 		/// переданной в качестве параметра.
 		///	В случае успеха поиска удаляется найденная строка.
 		/// </summary>
-		/// <param name="model">Модель, выбранной строки в таблице</param>
+		/// <param name="model">Модель, хранящая выбранную строку в таблице</param>
 		/// <returns>Результат удаления переданной строки из CGroup</returns>
 		public bool Delete(Model model)
 		{
@@ -89,7 +89,7 @@ namespace LibOfTimetableOfClasses
 		/// Метод вставки переданной модели MEnclosures в таблицу CEnclosures
 		/// в случае уникальности свойства Name и University модели для таблицы CGroup
 		/// </summary>
-		/// <param name="model">Вставляемая в CEnclosures модель</param>
+		/// <param name="model">Модель хранящая добавляемую запись таблицы</param>
 		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
@@ -124,7 +124,7 @@ namespace LibOfTimetableOfClasses
 		/// Обновление свойств строки в таблице CEnclosures из переданной модели MEnclosures
 		/// Поиск изменяемой строки  CEnclosures осуществляется по полю "Name" и "University"
 		/// </summary>
-		/// <param name="model">Переданная модель с изменёнными данными</param>
+		/// <param name="model">Модель хранящая обновляемую запись таблицы</param>
 		/// <returns>Результат обновления</returns>
 		public bool Update(Model model)
 		{
