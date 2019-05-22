@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
 			Controllers.CTrainingProfile.Clear();
 			bool ex = true;
 			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ");
+			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
 			int C1 = Controllers.CTrainingProfile.Rows.Count;
 			act = Controllers.CTrainingProfile.Insert(T_TrainingProfile);
 			int C2 = Controllers.CTrainingProfile.Rows.Count;
@@ -28,7 +28,7 @@ namespace UnitTestOfTimetableOfClasses
 			Pre_condition_Del();
 			bool ex = true;
 			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ");
+			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
 			int C1 = Controllers.CTrainingProfile.Rows.Count;
 			act = Controllers.CTrainingProfile.Delete(T_TrainingProfile);
 			int C2 = Controllers.CTrainingProfile.Rows.Count;
@@ -41,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
 			Controllers.CTrainingProfile.Clear();
 			bool ex = false;
 			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ");
+			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
 			int C1 = Controllers.CTrainingProfile.Rows.Count;
 			act = Controllers.CTrainingProfile.Delete(T_TrainingProfile);
 			int C2 = Controllers.CTrainingProfile.Rows.Count;

@@ -16,7 +16,8 @@ namespace TimetableOfClasses
 		public Discipline()
 		{
 			InitializeComponent();
-			DG_Disc.DataSource = Controllers.CDiscipline.Select();
+			DG_Disc.AutoGenerateColumns = false;
+			DG_Disc.DataSource = Controllers.CDiscipline;
 		}
 
 
@@ -25,24 +26,45 @@ namespace TimetableOfClasses
             if (DG_Disc.SelectedCells.Count > 0)
             {
                 Delete.Enabled = true;
-            }
+				btChange.Enabled = true;
+			}
             else
             {
                 Delete.Enabled = false;
-            }
+				btChange.Enabled = false;
+			}
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            try { DG_Disc.Rows.RemoveAt(DG_Disc.SelectedCells[0].RowIndex); }
-            catch{}
+			string SelectedName = "";
+			foreach (DataGridViewRow row in DG_Disc.SelectedRows)
+			{
+				DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+				SelectedName += (string)Row["Fullname"] + ", ";
+			}
+			if (SelectedName.Length > 2)
+				SelectedName = SelectedName.Remove(SelectedName.Length - 2);
+			DialogResult dr = MessageBox.Show("Удалить дисциплину - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+			if (DG_Disc.SelectedRows.Count > 0 && dr == DialogResult.OK)
+			{
+				int countSelected = DG_Disc.SelectedRows.Count;
 
-        }
+				MDiscipline mDiscipline;
+				foreach (DataGridViewRow row in DG_Disc.SelectedRows)
+				{
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
+					Controllers.CDiscipline.Delete(mDiscipline);
+				}
+			}
+
+		}
 
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
 		{
 			AddDiscipline addDiscipline = new AddDiscipline();
-			addDiscipline.ShowDialog();
+			addDiscipline.Show();
 		}
 
 		private void btChange_Click(object sender, EventArgs e)
@@ -53,10 +75,9 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
 				AddDiscipline add = new AddDiscipline(mDiscipline);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
-			else if (DG_Disc.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}
 
 		private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

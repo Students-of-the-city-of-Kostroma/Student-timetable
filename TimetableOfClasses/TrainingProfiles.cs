@@ -36,7 +36,7 @@ namespace TimetableOfClasses
 		private void AddProfile_Click(object sender, EventArgs e)
 		{
 			AddProfile p = new AddProfile();
-			p.ShowDialog();
+			p.Show();
 		}
 
 		private void DeleteProfile_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace TimetableOfClasses
 					foreach (DataGridViewRow row in dgProfile.SelectedRows)
 					{
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-						Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
+						Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"], (string)Row["Shiphr"]);
 						Controllers.CTrainingProfile.Delete(Profile);
 					}
 				}
@@ -73,10 +73,10 @@ namespace TimetableOfClasses
 			if (dgProfile.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
-				MTrainingProfile Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
+				MTrainingProfile Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"], (string)Row["Shiphr"]);
 				AddProfile add = new AddProfile(Profile);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
 		}

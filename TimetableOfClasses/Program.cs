@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace TimetableOfClasses
         static void Main()
         {
 			new Controllers();
-            Application.EnableVisualStyles();
+			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());
         }

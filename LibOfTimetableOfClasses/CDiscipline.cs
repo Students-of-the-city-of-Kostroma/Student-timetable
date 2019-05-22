@@ -42,8 +42,8 @@ namespace LibOfTimetableOfClasses
 				&& (string)Rows[i]["Shortname"] == mDiscipline.Shortname 
 				&& (string)Rows[i]["CycleofDiscipline"] == mDiscipline.CycleofDiscipline)
 				{
-                    Rows[i].Delete();
-                    return true;
+					Rows.Remove(Rows[i]);
+					return true;
                 }
             }
             return false;
