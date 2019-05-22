@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Таблица со строками, хранящими данные о преподавателях в Университете
+	/// Класс хранящий таблицу со строками, хранящими данные о преподавателях в Университете
 	/// </summary>
 	public class CTeacher : DataTable, IController
 	{
@@ -115,7 +115,7 @@ namespace LibOfTimetableOfClasses
 		/// Поиск изменяемой строки CTeacher осуществляется по полю "FullName"
 		/// </summary>
 		/// <param name="model"></param>
-		/// <returns></returns>
+		/// <returns>Результат изменения</returns>
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
