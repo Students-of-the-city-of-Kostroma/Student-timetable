@@ -213,7 +213,7 @@ namespace TimetableOfClasses
 				if (Add()) this.Close();
 				else
 				{
-					MessageBox.Show("Невозможно добавить этот университет");
+					MessageBox.Show("Не удалось добавить/обновить запись. Вуз с таким ИНН, телефоном или почтовым адресом уже есть в таблице ");
 				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
