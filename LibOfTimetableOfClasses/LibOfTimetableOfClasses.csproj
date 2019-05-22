@@ -48,9 +48,7 @@
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CEnclosures.cs" />
     <Compile Include="CGroup.cs" />
-    <Compile Include="CAcademicDegree.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CAcademicDegree.cs"/>
     <Compile Include="CHEI.cs" />
     <Compile Include="CInstitute.cs">
       <SubType>Component</SubType>
