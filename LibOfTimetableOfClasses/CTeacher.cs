@@ -115,7 +115,7 @@ namespace LibOfTimetableOfClasses
 		/// Поиск изменяемой строки CTeacher осуществляется по полю "FullName"
 		/// </summary>
 		/// <param name="model"></param>
-		/// <returns></returns>
+		/// <returns>Успешность выполнения операции</returns>
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
