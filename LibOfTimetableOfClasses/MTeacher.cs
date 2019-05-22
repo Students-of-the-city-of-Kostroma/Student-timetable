@@ -8,7 +8,7 @@ namespace LibOfTimetableOfClasses
 {
 
 	/// <summary>
-	/// Преподаватель
+	/// Класс со свойствами определяющими преподавателя
 	/// </summary>
 	public class MTeacher : Model
 	{
@@ -22,6 +22,12 @@ namespace LibOfTimetableOfClasses
 		string _windows;
 		string _weekends;
 
+		/// <summary>
+		/// R/W свойства FirstName модели MTeacher
+		/// В случае записи свойства проводятся проверки переданнаго значения:
+		/// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+		/// Имя преподавателя(Семантически)
+		/// </summary>
 		public string FirstName
 		{
 			get
@@ -44,6 +50,12 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства SecondName модели MTeacher
+		/// В случае записи свойства проводятся проверки переданнаго значения:
+		/// Строка должна быть: не-null, не более 50 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+		/// Фамилия преподавателя(Семантически)
+		/// </summary>
 		public string SecondName
 		{
 			get
@@ -65,6 +77,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Patronymic модели MTeacher
+		/// Строка должна быть: не более 30 символов, содержать только А-Я,а-я, начинаться с заглавной
+		/// Отчество преподавателя(Семантически)
+		/// </summary>
 		public string Patronymic
 		{
 			get
@@ -92,6 +109,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Departament модели MTeacher
+		/// Строка должна быть: не-null, не более 10 символов, содержать только А-Я, не пустой
+		/// Кафедра преподавателя(Семантически)
+		/// </summary>
 		public string Departament
 		{
 			get
@@ -112,6 +134,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства AcademicDegree модели MTeacher
+		/// Строка должна быть: не-null, не более 25символов, содержать только А-Я,а-я,-, ,,,0-9,., начинаться с заглавной
+		/// Ученая степень преподавателя(Семантически)
+		/// </summary>
 		public string AcademicDegree
 		{
 			get
@@ -134,6 +161,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства AcademicTitle модели MTeacher
+		/// Строка должна быть: не более 25 символов, содержать только А-Я,а-я,-, ,,,0-9,., начинаться с заглавной
+		/// Учёное звание преподавателя(Семантически)
+		/// </summary>
 		public string AcademicTitle
 		{
 			get
@@ -159,6 +191,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства MetodicalDays модели MTeacher
+		/// Строка должна быть: не-null, не более 70 символов, содержать только А-Я,а-я, ,,, начинаться с заглавной, не пустой, после запятой пробел, названия дней начинаться с заглавной буквы
+		/// Методические дни преподавателя(Семантически)
+		/// </summary>
 		public string MetodicalDays
 		{
 			get
@@ -179,6 +216,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		
 		private void CapitalizationCheck(string value)
 		{
 			if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
@@ -198,6 +236,11 @@ namespace LibOfTimetableOfClasses
 
 		}
 
+		/// <summary>
+		/// R/W свойства Windows модели MTeacher
+		/// Строка должна быть: не более 70 символов, содержать только А-Я,а-я, ,,, начинаться с заглавной, после запятой пробел, названия дней начинаться с заглавной буквы
+		/// Окна преподавателя(Семантически)
+		/// </summary>
 		public string Windows
 		{
 			get
@@ -224,6 +267,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Weekends модели MTeacher
+		/// Строка должна быть: не-null, не более 70 символов, содержать только А-Я,а-я, ,,, начинаться с заглавной, не пустой, после запятой пробел, названия дней начинаться с заглавной буквы
+		/// Выходные преподавателя(Семантически)
+		/// </summary>
 		public string Weekends
 		{
 			get
@@ -244,7 +292,18 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-
+		/// <summary>
+		/// Конструктор класса MTeacher с отчеством.
+		/// </summary>
+		/// <param name="firstName">Имя преподавателя</param>
+		/// <param name="secondName">Фамилия преподавателя</param>
+		/// <param name="patronymic">Отчество преподавателя</param>
+		/// <param name="academicDegree">Ученая степень преподавателя</param>
+		/// <param name="academicTitle">Ученое звание преподавателя</param>
+		/// <param name="departament">Департамент преподавателя</param>
+		/// <param name="metodicalDays">Методические дни преподавателя</param>
+		/// <param name="windows">Окна преподавателя</param>
+		/// <param name="weekends">Выходные преподавателя</param>
 		public MTeacher(string firstName, string secondName, string patronymic, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
@@ -258,6 +317,17 @@ namespace LibOfTimetableOfClasses
 			Weekends = weekends;
 		}
 
+		/// <summary>
+		/// Конструктор класса MTeacher без отчества.
+		/// </summary>
+		/// <param name="firstName">Имя преподавателя</param>
+		/// <param name="secondName">Фамилия преподавателя</param>
+		/// <param name="academicDegree">Ученая степень преподавателя</param>
+		/// <param name="academicTitle">Ученое звание преподавателя</param>
+		/// <param name="departament">Департамент преподавателя</param>
+		/// <param name="metodicalDays">Методические дни преподавателя</param>
+		/// <param name="windows">Окна преподавателя</param>
+		/// <param name="weekends">Выходные преподавателя</param>
 		public MTeacher(string firstName, string secondName, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
 		{
 			this.FirstName = firstName;
@@ -271,6 +341,14 @@ namespace LibOfTimetableOfClasses
 			Weekends = weekends;
 		}
 
+		/// <summary>
+		/// Конструктор для создания такой MTeacher, которую можно было бы передать параметром
+		/// в методы контроллера которые основаны на проверке уникальности
+		/// </summary>
+		/// <param name="firstName">Имя преподавателя</param>
+		/// <param name="secondName">Фамилия преподавателя</param>
+		/// <param name="patronymic">Отчество преподавателя</param>
+		/// <param name="departament">Департамент преподавателя</param>
 		public MTeacher(string firstName, string secondName, string patronymic, string departament) : base()
 		{
 			this.FirstName = firstName;
