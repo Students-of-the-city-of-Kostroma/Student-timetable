@@ -69,7 +69,7 @@ namespace TimetableOfClasses
 		}
 
 		private void Delete(object sender, EventArgs e)
-		{ 
+		{
 			if (DG.SelectedRows.Count == 0) return;
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -83,6 +83,7 @@ namespace TimetableOfClasses
 					RefData.CUniversity.Delete(mUniversity);
 				}
 			}
+
 		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
