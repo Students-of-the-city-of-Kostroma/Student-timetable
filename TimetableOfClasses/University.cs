@@ -157,7 +157,7 @@ namespace TimetableOfClasses
 
 		private void DG_DoubleClick(object sender, EventArgs e)
 		{
-			if (IsPicking)
+			if (DG.SelectedRows.Count == 1 && IsPicking)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 				ShortName = (string)Row["ShortName"];
