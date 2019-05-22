@@ -75,12 +75,6 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		/// <summary>
-		/// Проверка начилия переданной модели в таблице CEnclosures.
-		/// Наличие определяется наличием строки CEnclosures с полем "Name" и "University" соответсвующим свойству "Name" модели mGroup.
-		/// </summary>
-		/// <param name="mEnclosures">Проверяеммая модель группы</param>
-		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
 		private bool isValidKey(MEnclosures mEnclosures)
 		{
 			foreach (DataRow row in this.Rows)
@@ -130,8 +124,8 @@ namespace LibOfTimetableOfClasses
 		/// Обновление свойств строки в таблице CEnclosures из переданной модели MEnclosures
 		/// Поиск изменяемой строки  CEnclosures осуществляется по полю "Name" и "University"
 		/// </summary>
-		/// <param name="model"></param>
-		/// <returns></returns>
+		/// <param name="model">Переданная модель с изменёнными данными</param>
+		/// <returns>Результат обновления</returns>
 		public bool Update(Model model)
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;
