@@ -116,5 +116,10 @@ namespace TimetableOfClasses
 			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
 			typesOfOccupations.Show();
 		}
+
+		private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Departments departments = new Departments();
+			departments.Show();
+		}
 	}
 }
