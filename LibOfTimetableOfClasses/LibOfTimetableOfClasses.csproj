@@ -42,23 +42,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="CAuditor.cs" />
-    <Compile Include="CDirectionOfPreparation.cs" />
-    <Compile Include="CDiscipline.cs" />
-    <Compile Include="CEnclosures.cs" />
-    <Compile Include="CGroup.cs" />
-    <Compile Include="CAcademicDegree.cs"/>
+    <Compile Include="CAuditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CDirectionOfPreparation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CDiscipline.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CEnclosures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CAcademicDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CHEI.cs" />
     <Compile Include="CInstitute.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="Controllers.cs" />
-    <Compile Include="CTeacher.cs" />
-    <Compile Include="CTitle.cs" />
-    <Compile Include="CTrainingProfiles.cs" />
-    <Compile Include="CUniversity.cs" />
+    <Compile Include="CTeacher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CTitle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CTrainingProfiles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CUniversity.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IController.cs" />
     <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
