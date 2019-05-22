@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Группа
+	/// Класс со свойствами определяющими университетскую группу
 	/// </summary>
 	public class MGroup : Model
 	{
@@ -20,6 +20,13 @@ namespace LibOfTimetableOfClasses
 		ushort _maxNumberOfClass;
 		string _weekends;
 
+		/// <summary>
+		/// R/W свойства Group модели MGroup
+		/// В случае записи свойства проводятся проверки переданнаго значения:
+		/// Проверка нулевой строки, проверка длины строки, проверка допустимости введенных символов
+		/// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, 1-9, -
+		/// Наименование группы(Семантически)
+		/// </summary>
 		public string Group
 		{
 			get
@@ -38,6 +45,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Semester модели MGroup. 
+		/// Число должно быть в пределах от 1 до 10
+		/// Семестр текущей группы(Семантически)
+		/// </summary>
 		public ushort Semester
 		{
 			get
@@ -51,6 +63,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+
+		/// <summary>
+		/// R/W свойства Specialty модели MGroup. 
+		/// Специальность текущей группы(Семантически)
+		/// </summary>
 		public string Specialty
 		{
 			get
@@ -63,6 +80,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Shift модели MGroup. 
+		/// Число должно быть в пределах от 1 до 2
+		/// Смена текущей группы(Семантически)
+		/// </summary>
 		public ushort Shift
 		{
 			get
@@ -76,6 +98,11 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// R/W свойства Students модели MGroup. 
+		/// Число должно быть в пределах от 1 до 50
+		/// Количество студентов в текущей группе(Семантически)
+		/// </summary>
 		public ushort Students
 		{
 			get
@@ -90,6 +117,11 @@ namespace LibOfTimetableOfClasses
 			
 		}
 
+		/// <summary>
+		/// R/W свойства MinNumberOfClass модели MGroup. 
+		/// Число должно быть в пределах от 0 до 6
+		/// Минимальное количество пар в день(Семантически)
+		/// </summary>
 		public ushort MinNumberOfClass
 		{
 			get
@@ -103,6 +135,12 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+
+		/// <summary>
+		/// R/W свойства MaxNumberOfClass модели MGroup. 
+		/// Число должно быть в пределах от 1 до 6
+		/// Максимальное количество пар в день(Семантически)
+		/// </summary>
 		public ushort MaxNumberOfClass
 		{
 			get
@@ -116,6 +154,12 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+
+		/// <summary>
+		/// R/W свойства Weekends модели MGroup. 
+		/// Требования: символы A-Я, а-я, " ", ","; заглавные буквы для слов отделяемых по ", "
+		/// Выходные(Семантически)
+		/// </summary>
 		public string Weekends
 		{
 			get
@@ -143,10 +187,16 @@ namespace LibOfTimetableOfClasses
 
 
 		/// <summary>
-		/// Создает экземпляр
+		/// Конструктор класса MGroup.
 		/// </summary>
-		/// <param name="cipher">шифр</param>
-		/// <param name="population">численность</param>
+		/// <param name="group">Название группы</param>
+		/// <param name="semester">Текущий семестр</param>
+		/// <param name="specialty">Специальность для заданной группы</param>
+		/// <param name="shift">Смена</param>
+		/// <param name="students">Количество студентов</param>
+		/// <param name="minNumberOfClass">Минимальное количество пар</param>
+		/// <param name="maxNumberOfClass">Максимальное количество пар</param>
+		/// <param name="weekends">Дни определенные как выходные</param>
 		public MGroup(string group, ushort semester, string specialty, ushort shift, ushort students, ushort minNumberOfClass, ushort maxNumberOfClass, string weekends) : base()
 		{
 			if (maxNumberOfClass < minNumberOfClass) throw new Exception("Пар/день max должен быть больше пар/день min");
@@ -160,6 +210,11 @@ namespace LibOfTimetableOfClasses
 			Weekends = weekends;
 		}
 
+		/// <summary>
+		/// Конструктор для создания такой MGroup, которую можно было бы передать параметром
+		/// в методы контроллера которые основаны на проверке уникальности
+		/// </summary>
+		/// <param name="group">Название группы</param>
 		public MGroup(string group) : base()
 		{
 			Group = group;
