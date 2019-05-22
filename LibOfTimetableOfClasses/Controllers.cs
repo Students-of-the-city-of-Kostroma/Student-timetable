@@ -23,7 +23,10 @@ namespace LibOfTimetableOfClasses
 		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CUniversity CUniversity = new CUniversity();
-		public Controllers()
+        public static CInstitute CInstitute = new CInstitute();
+        public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+
+        public Controllers()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
