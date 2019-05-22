@@ -21,7 +21,7 @@ namespace TimetableOfClasses
 			this.IsPicking = isPicking; 
 
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CUniversity;
+			DG.DataSource = RefData.CUniversity;
 		}
 
 		private void Add(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mUniversity = new MUniversity((string)Row["INN"]);
-					Controllers.CUniversity.Delete(mUniversity);
+					RefData.CUniversity.Delete(mUniversity);
 				}
 			}
 		}

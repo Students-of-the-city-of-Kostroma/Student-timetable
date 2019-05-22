@@ -106,7 +106,7 @@ namespace TimetableOfClasses
 			{
 				MEnclosures mEnclosures = new MEnclosures(name.Text, university.Text, address.Text, phoneNumber.Text, note.Text);
 
-				if (Controllers.СEnclosures.Insert(mEnclosures))
+				if (RefData.СEnclosures.Insert(mEnclosures))
 				{
 					this.Close();
 				}
@@ -121,7 +121,7 @@ namespace TimetableOfClasses
 				Enclosures.Phone = phoneNumber.Text;
 				Enclosures.Comment = note.Text;
 
-				if (Controllers.СEnclosures.Update(Enclosures))
+				if (RefData.СEnclosures.Update(Enclosures))
 				{
 					this.Close();
 				}
@@ -165,7 +165,7 @@ namespace TimetableOfClasses
 
 		private void AddEnclosures_Shown(object sender, EventArgs e)
 		{
-			if (Controllers.CUniversity.Rows.Count == 0)
+			if (RefData.CUniversity.Rows.Count == 0)
 			{
 				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
 					"Отрыть форму для редкатирования справочника ВУЗы?", 

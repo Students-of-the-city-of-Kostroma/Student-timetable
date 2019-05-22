@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Group.AutoGenerateColumns = false;
-			DG_Group.DataSource = Controllers.CGroup;
+			DG_Group.DataSource = RefData.CGroup;
 		}
 
 		private void DeleteRow(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mGroup = new MGroup((string)Row["Group"]);
-					Controllers.CGroup.Delete(mGroup);
+					RefData.CGroup.Delete(mGroup);
 				}
 			}
 

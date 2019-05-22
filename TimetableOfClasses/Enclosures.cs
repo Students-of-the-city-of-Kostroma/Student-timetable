@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.СEnclosures;
+			DG.DataSource = RefData.СEnclosures;
 		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -95,7 +95,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"]);
-					Controllers.СEnclosures.Delete(mEnclosures);
+					RefData.СEnclosures.Delete(mEnclosures);
 				}
 			}
 		}

@@ -47,14 +47,13 @@
     <Compile Include="CDiscipline.cs" />
     <Compile Include="CEnclosures.cs" />
     <Compile Include="CGroup.cs" />
-
     <Compile Include="CHEI.cs" />
     <Compile Include="Controller.cs" />
-    <Compile Include="Controllers.cs" />
+    <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs" />
     <Compile Include="CTitle.cs" />
     <Compile Include="CTrainingProfiles.cs" />
-    <Compile Include="CUniversity.cs"/>
+    <Compile Include="CUniversity.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
