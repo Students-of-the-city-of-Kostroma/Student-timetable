@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
 
 			if (Controllers.CUniversity != null) throw new Exception("Контроллер уже существует");
 
-			DataColumn[] keys = new DataColumn[3];
+			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "INN";
@@ -50,14 +50,14 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Email";
+			column.Unique = true;
 			this.Columns.Add(column);
-			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
+			column.Unique = true;
 			this.Columns.Add(column);
-			keys[2] = column;
 
 			this.PrimaryKey = keys;
 		}
