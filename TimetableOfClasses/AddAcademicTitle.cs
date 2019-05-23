@@ -169,6 +169,9 @@ namespace TimetableOfClasses
 			if (Reduction.Text.Length > 25)
 				errorProvider1.SetError(Reduction, "Слишком длинное значение (не более 25)");
 
+			if (Reduction.Text.Length <= 1)
+				errorProvider1.SetError(Reduction, "Слишком короткое значение");
+
 		}
 
 		private void FullName_Validating(object sender, CancelEventArgs e)
@@ -181,6 +184,9 @@ namespace TimetableOfClasses
 
 			if (FullName.Text.Length > 25)
 				errorProvider1.SetError(FullName, "Слишком длинное значение (не более 25)");
+
+			if (FullName.Text.Length <= 1)
+				errorProvider1.SetError(FullName, "Слишком короткое значение");
 
 		}
 	}

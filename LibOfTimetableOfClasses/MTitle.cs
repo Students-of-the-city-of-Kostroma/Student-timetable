@@ -41,6 +41,8 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Поле Полное наименование уч. степени содержит недопустимые символы");
 				if(value.Length > 25)
 					throw new Exception("Слишком Длинное значение");
+				if (value.Length <= 1)
+					throw new Exception("Слишком короткое значение");
 
 				_fullname = value;
 			}
@@ -61,6 +63,8 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Поле Сокращенное наименование уч. звания содержит недопустимые символы");
 				if (value.Length > 25)
 					throw new Exception("Слишком Длинное значение");
+				if (value.Length <= 1)
+					throw new Exception("Слишком короткое значение");
 
 				_reduction = value;
 			}
