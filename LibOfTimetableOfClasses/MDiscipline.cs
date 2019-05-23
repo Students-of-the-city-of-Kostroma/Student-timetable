@@ -47,7 +47,7 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public string Shortname { set { shortName = value; } get { return shortName; } }
 		/// <summary>
-		/// 
+		/// Возвращает или задает значение CycleofDiscipline - цикла дисциплины
 		/// </summary>
 		public string CycleofDiscipline { set { cycleOfDiscipline = value; } get { return cycleOfDiscipline; } }
 	}

@@ -29,7 +29,13 @@ namespace LibOfTimetableOfClasses
 		/// </summary>                 
 		string building;
 
-
+		/// <summary>
+		/// Создает экземпляр Аудитории
+		/// </summary>
+		/// <param name="nameOfAuditor">Название аудитории</param>
+		/// <param name="cafedra">Кафедра</param>
+		/// <param name="spacious">Вместительность</param>
+		/// <param name="building">Корпус</param>
 		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, string building) : base()
 		{
 			NameOfAuditor = nameOfAuditor;
