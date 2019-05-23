@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
 	public class CUniversity : DataTable, IController
 	{
 		/// <summary>
-		/// Создаёт один экзепляр контроллера ВУЗа
+		/// Контроллер для объекта ВУЗ
 		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{

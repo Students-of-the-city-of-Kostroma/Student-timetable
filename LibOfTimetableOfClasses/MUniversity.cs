@@ -15,19 +15,58 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MUniversity : Model
 	{
+		/// <summary>
+		/// ИНН
+		/// </summary>
 		string _inn;
+
+		/// <summary>
+		/// Краткое название ВУЗа
+		/// </summary>
 		string _shortName;
+
+		/// <summary>
+		/// Полное название ВУЗа
+		/// </summary>
 		string _fullName;
+
+		/// <summary>
+		/// Текущий адресс ВУЗа
+		/// </summary>
 		string _actualAddress;
+
+		/// <summary>
+		/// Юридический адресс ВУЗа
+		/// </summary>
 		string _legalAddress;
+
+		/// <summary>
+		/// Имя реактора ВУЗа
+		/// </summary>
 		string _nameRector;
+
+		/// <summary>
+		/// Фамилия ректора ВУЗа
+		/// </summary>
 		string _surnameRector;
+
+		/// <summary>
+		/// Отчество ректора ВУЗа
+		/// </summary>
 		string _middleNameRector;
+
+		/// <summary>
+		/// Электронная почта ВУЗа
+		/// </summary>
 		string _email;
+
+		/// <summary>
+		/// Номер телефона ВУЗа
+		/// </summary>
 		string _phone;
 
 		/// <summary>
-		/// Свойство ввода/вывода ИНН
+		/// Возвращает или задаёт ИНН ВУЗа
 		/// </summary>
 		public string INN
 		{
@@ -47,7 +86,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода краткого наименования ВУЗа
+		/// Возвращает или задаёт краткое название ВУЗа
 		/// </summary>
 		public string ShortName
 		{
@@ -67,7 +106,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода полного наименования ВУЗа
+		/// Возвращает или задаёт полное наименование ВУЗа
 		/// </summary>
 		public string FullName
 		{
@@ -89,7 +128,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода текущего адреса
+		/// Возвращает или задаёт текущий адрес
 		/// </summary>
 		public string ActualAddress
 		{
@@ -109,7 +148,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода юридического адреса
+		/// Возвращает или задаёт юридический адрес
 		/// </summary>
 		public string LegalAddress
 		{
@@ -129,7 +168,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода имени ректора
+		/// Возвращает или задаёт имя ректора
 		/// </summary>
 		public string NameRector
 		{
@@ -151,7 +190,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода фамилии ректора
+		/// Возвращает или задаёт фамилию ректора
 		/// </summary>
 		public string SurnameRector
 		{
@@ -173,7 +212,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		///  Свойство ввода/вывода отчества ректора
+		///  Возвращает или задаёт отчество ректора
 		/// </summary>
 		public string MiddleNameRector
 		{
@@ -201,7 +240,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство ввода/вывода электронной почты
+		/// Возвращает или задаёт адрес электронной почты
 		/// </summary>
 		public string Email
 		{
@@ -221,7 +260,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Свойство передачи в модель номера телефона
+		/// Возвращает или задаёт номер телефона
 		/// </summary>
 		public string Phone
 		{
@@ -242,7 +281,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Конструктор класса ВУЗ, создаёт экземлпяр класса со всеми полями
+		/// Создаёт экземлпяр класса ВУЗ со всеми полями
 		/// </summary>
 		public MUniversity(string inn, string shortName, string fullName, string actualAddress, string legalAddress, string nameRector, string surnameRector, string middleNameRector, string email, string phone) : base()
 		{
@@ -258,7 +297,7 @@ namespace LibOfTimetableOfClasses
 				Phone = phone;
 		}
 		/// <summary>
-		/// Конструктор класса вуза, передаёт в модель только ИНН
+		/// Создаёт  экземлпяр класса только с полем ИНН
 		/// </summary>
 		/// <param name="inn">ИНН</param>
 		public MUniversity(string inn) : base()
