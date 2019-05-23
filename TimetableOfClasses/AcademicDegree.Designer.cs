@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.DG_AcademicDegree = new System.Windows.Forms.DataGridView();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Reduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.DeleteButton = new System.Windows.Forms.Button();
 			this.ChangeButton = new System.Windows.Forms.Button();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Reduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicDegree)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -45,7 +45,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_AcademicDegree.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.DG_AcademicDegree.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicDegree.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_AcademicDegree.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullName,
@@ -54,9 +53,24 @@
 			this.DG_AcademicDegree.Margin = new System.Windows.Forms.Padding(4);
 			this.DG_AcademicDegree.Name = "DG_AcademicDegree";
 			this.DG_AcademicDegree.ReadOnly = true;
+			this.DG_AcademicDegree.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicDegree.Size = new System.Drawing.Size(492, 216);
 			this.DG_AcademicDegree.TabIndex = 0;
 			this.DG_AcademicDegree.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
+			// 
+			// FullName
+			// 
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полная запись ученой степени";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Reduction
+			// 
+			this.Reduction.DataPropertyName = "Reduction";
+			this.Reduction.HeaderText = "Сокращенная запись учёной степени";
+			this.Reduction.Name = "Reduction";
+			this.Reduction.ReadOnly = true;
 			// 
 			// AddButton
 			// 
@@ -73,7 +87,7 @@
 			// DeleteButton
 			// 
 			this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.DeleteButton.Location = new System.Drawing.Point(350, 239);
+			this.DeleteButton.Location = new System.Drawing.Point(267, 239);
 			this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
 			this.DeleteButton.Name = "DeleteButton";
 			this.DeleteButton.Size = new System.Drawing.Size(75, 23);
@@ -85,7 +99,7 @@
 			// ChangeButton
 			// 
 			this.ChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.ChangeButton.Location = new System.Drawing.Point(267, 239);
+			this.ChangeButton.Location = new System.Drawing.Point(350, 239);
 			this.ChangeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.ChangeButton.Name = "ChangeButton";
 			this.ChangeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -94,20 +108,6 @@
 			this.ChangeButton.Text = "Изменить";
 			this.ChangeButton.UseVisualStyleBackColor = true;
 			this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
-			// 
-			// FullName
-			// 
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полная запись ученой степени";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// Reduction
-			// 
-			this.Reduction.DataPropertyName = "Reduction";
-			this.Reduction.HeaderText = "Сокращенная запись учёной степени";
-			this.Reduction.Name = "Reduction";
-			this.Reduction.ReadOnly = true;
 			// 
 			// AcademicDegree
 			// 
@@ -123,6 +123,7 @@
 			this.Text = "Ученые степени";
 			((System.ComponentModel.ISupportInitialize)(this.DG_AcademicDegree)).EndInit();
 			this.ResumeLayout(false);
+
 		}
 
 		#endregion
