@@ -41,9 +41,9 @@ namespace TimetableOfClasses
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 				try
 				{
+					MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 					RefData.CTrainingProfile.Insert(Profile);
 					tbFullName.Text = "";
 					tbShortName.Text = "";
@@ -61,9 +61,9 @@ namespace TimetableOfClasses
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 				try
 				{
+					MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 					if (!itsupdate)
 						RefData.CTrainingProfile.Insert(Profile);
 					else RefData.CTrainingProfile.Update(Profile);
@@ -74,6 +74,20 @@ namespace TimetableOfClasses
 					MessageBox.Show(ex.Message);
 				}
 			}
+		}
+
+		private void tbFullName_Leave(object sender, EventArgs e)
+		{
+			var R = sender as TextBox;
+			if (R.Text.Length != 0)
+				R.Text = R.Text.First().ToString().ToUpper() + R.Text.Substring(1);
+
+		}
+
+		private void tbShortName_Leave(object sender, EventArgs e)
+		{
+			var R = sender as TextBox;
+			R.Text = R.Text.ToUpper();
 		}
 	}
 }
