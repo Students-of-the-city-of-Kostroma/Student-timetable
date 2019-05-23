@@ -51,7 +51,6 @@ namespace LibOfTimetableOfClasses
 				if (value.Length > 25)
 					throw new Exception("Недопустимое количество символов");
 				_fullname = value;
-
 			}
 		}
 
