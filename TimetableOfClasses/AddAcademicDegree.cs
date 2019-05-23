@@ -41,8 +41,6 @@ namespace TimetableOfClasses
 				{
 					if (FullName.Text.Length != 0)
 					{
-						if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-						{
 							try
 							{
 								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
@@ -54,8 +52,6 @@ namespace TimetableOfClasses
 							{
 								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
 							}
-						}
-						else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 					}
 					else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
@@ -75,8 +71,6 @@ namespace TimetableOfClasses
 					{
 						if (FullName.Text.Length != 0)
 						{
-							if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-							{
 								try
 								{
 									MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
@@ -89,8 +83,6 @@ namespace TimetableOfClasses
 								{
 									MessageBox.Show("Некорректно заполнены поля", "Ошибка");
 								}
-							}
-							else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
 						}
 						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
@@ -107,22 +99,18 @@ namespace TimetableOfClasses
 					{
 						if (FullName.Text.Length != 0)
 						{
-							if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+							try
 							{
-								try
-								{
-									MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-									Controllers.CAcademicDegree.Insert(AcademicDegree);
-									FullName.Text = "";
-									Reduction.Text = "";
-									Close();
-								}
-								catch (Exception)
-								{
-									MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-								}
+								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+								Controllers.CAcademicDegree.Insert(AcademicDegree);
+								FullName.Text = "";
+								Reduction.Text = "";
+								Close();
 							}
-							else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+							catch (Exception)
+							{
+								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+							}
 						}
 						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
@@ -135,18 +123,6 @@ namespace TimetableOfClasses
 		private void Button3_Click(object sender, EventArgs e) //Отмена
 		{
 			this.Close();
-		}
-
-		static bool isNumberDontContains(string input)
-		{
-			foreach (char c in input)
-				if (Char.IsNumber(c) || Char.IsPunctuation(c) || Char.IsSymbol(c))
-				{
-					if (c == '.')
-						continue;
-					return false;
-				}
-			return true;
 		}
 
 		private void Reduction_KeyPress(object sender, KeyPressEventArgs e)
