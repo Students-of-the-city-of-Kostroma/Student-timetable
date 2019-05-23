@@ -39,6 +39,8 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Точка ставится после слова");
 				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
 					throw new Exception("Поле Полное наименование уч. степени содержит недопустимые символы");
+				if(value.Length > 25)
+					throw new Exception("Слишком Длинное значение");
 
 				_fullname = value;
 			}
@@ -57,6 +59,8 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Точка ставится после слова");
 				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
 					throw new Exception("Поле Сокращенное наименование уч. звания содержит недопустимые символы");
+				if (value.Length > 25)
+					throw new Exception("Слишком Длинное значение");
 
 				_reduction = value;
 			}

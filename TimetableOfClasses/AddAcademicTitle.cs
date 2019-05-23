@@ -143,6 +143,45 @@ namespace TimetableOfClasses
 			return true;
 		}
 
+		private void Reduction_TextChanged(object sender, EventArgs e)
+		{
+			if (((TextBox)sender).Text.Length == 1)
+				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
 
+		}
+
+		private void FullName_TextChanged(object sender, EventArgs e)
+		{
+			if (((TextBox)sender).Text.Length == 1)
+				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
+		}
+
+		private void Reduction_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(FullName.Text))
+				errorProvider1.SetError(FullName, "Пустое поле");
+
+			if (!Regex.IsMatch(Reduction.Text, @"[А-Яа-я\-\' ']"))
+				errorProvider1.SetError(Reduction, "Можно вводить только силволы русского алфавита и тире");
+
+			if (Reduction.Text.Length > 25)
+				errorProvider1.SetError(Reduction, "Слишком длинное значение (не более 25)");
+
+		}
+
+		private void FullName_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(FullName.Text))
+				errorProvider1.SetError(FullName, "Пустое поле");
+
+			if (!Regex.IsMatch(FullName.Text, @"[А-Яа-я\-\' ']"))
+				errorProvider1.SetError(FullName, "Можно вводить только силволы русского алфавита и тире");
+
+			if (FullName.Text.Length > 25)
+				errorProvider1.SetError(FullName, "Слишком длинное значение (не более 25)");
+
+		}
 	}
 }
