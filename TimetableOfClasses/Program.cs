@@ -1,14 +1,9 @@
-﻿using LibOfTimetableOfClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
-    static class Program
+	static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -16,7 +11,6 @@ namespace TimetableOfClasses
         [STAThread]
         static void Main()
         {
-			new Controllers();
 			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());
