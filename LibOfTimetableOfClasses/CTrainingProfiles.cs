@@ -33,6 +33,8 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < Rows.Count; i++)
 			{
+				if (Rows[i].RowState == DataRowState.Deleted)
+					continue;
 				if ((string)Rows[i]["Fullname"] == mTrainingProfile.FullName
 				&& (string)Rows[i]["Shortname"] == mTrainingProfile.ShortName)
 				{
@@ -71,6 +73,8 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < Rows.Count; i++)
 			{
+				if (Rows[i].RowState == DataRowState.Deleted)
+					continue;
 				if ((string)Rows[i]["FullName"] == mTrainingProfile.FullName)
 				{
 					try
