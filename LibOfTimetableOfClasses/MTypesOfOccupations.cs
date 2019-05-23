@@ -6,42 +6,42 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    /// <summary>
-    /// Вид занятий
-    /// </summary>
-    public class MTypesOfOccupations : Model
-    {
-        string _fullName;
-        string _shortName;
+	/// <summary>
+	/// Дисциплина
+	/// </summary>
+	public class MTypesOfOccupations : Model
+	{
+		/// <summary>
+		/// Полное название вида занятий
+		/// </summary>
+		protected string fullName;
+		/// <summary>
+		/// Краткое название вида занятий
+		/// </summary>
+		protected string shortName;
+		/// <summary>
+		/// Создает экземпляр вида занятий
+		/// </summary>
+		/// <param name="fullName">Полное название вида занятий</param>
+		/// <param name="shortName">Краткое название вида занятий</param>
 
-        public string FullName
-        {
-            get
-            {
-                return _fullName;
-            }
-            set
-            {
-                _fullName = value;
-            }
-        }
+		public MTypesOfOccupations(string fullName, string shortName) : base()
+		{
+			Fullname = fullName;
+			Shortname = shortName;
+		}
 
-        public string ShortName
-        {
-            get
-            {
-                return _shortName;
-            }
-            set
-            {
-                _shortName = value;
-            }
-        }
+		/// <summary>
+		/// Возвращает или задает значение Name - полное название
+		/// </summary>
+		public string Fullname { set { fullName = value; } get { return fullName; } }
 
-        public MTypesOfOccupations(string fullname, string shortname) : base()
-        {
-            FullName = fullname;
-            ShortName = shortname;
-        }
-    }
+		/// <summary>
+		/// Возвращает или задает значение Shortname - краткому названию
+		/// </summary>
+		public string Shortname { set { shortName = value; } get { return shortName; } }
+
+	}
 }
+
+
