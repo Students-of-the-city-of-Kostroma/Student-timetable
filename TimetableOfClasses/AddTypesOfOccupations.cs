@@ -27,9 +27,9 @@ namespace TimetableOfClasses
             Text = "Изменение вида занятия";
             btCreateAndClean.Visible = false;
             btCreateAndClose.Text = "Сохранить";
-            tbFullName.Text = mTypesOfOccupations.Fullname;
+            tbFullName.Text = mTypesOfOccupations.FullName;
             tbFullName.Enabled = false;
-            tbShortName.Text = mTypesOfOccupations.Shortname;
+            tbShortName.Text = mTypesOfOccupations.ShortName;
             itsupdate = true;
         }
 

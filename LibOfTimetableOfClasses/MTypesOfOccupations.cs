@@ -27,19 +27,19 @@ namespace LibOfTimetableOfClasses
 
 		public MTypesOfOccupations(string fullName, string shortName) : base()
 		{
-			Fullname = fullName;
-			Shortname = shortName;
+			FullName = fullName;
+			ShortName = shortName;
 		}
 
 		/// <summary>
 		/// Возвращает или задает значение Name - полное название
 		/// </summary>
-		public string Fullname { set { fullName = value; } get { return fullName; } }
+		public string FullName { set { fullName = value; } get { return fullName; } }
 
 		/// <summary>
 		/// Возвращает или задает значение Shortname - краткому названию
 		/// </summary>
-		public string Shortname { set { shortName = value; } get { return shortName; } }
+		public string ShortName { set { shortName = value; } get { return shortName; } }
 
 	}
 }
