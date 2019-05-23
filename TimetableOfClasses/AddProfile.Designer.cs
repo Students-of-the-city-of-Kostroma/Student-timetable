@@ -65,6 +65,8 @@
 			this.tbShortName.Name = "tbShortName";
 			this.tbShortName.Size = new System.Drawing.Size(241, 20);
 			this.tbShortName.TabIndex = 3;
+			this.tbShortName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbShortName_KeyPress);
+			this.tbShortName.Leave += new System.EventHandler(this.tbShortName_Leave);
 			// 
 			// bt_Cr_n_Close
 			// 
@@ -108,6 +110,8 @@
 			this.tbFullName.Name = "tbFullName";
 			this.tbFullName.Size = new System.Drawing.Size(237, 20);
 			this.tbFullName.TabIndex = 15;
+			this.tbFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFullName_KeyPress);
+			this.tbFullName.Leave += new System.EventHandler(this.tbFullName_Leave);
 			// 
 			// AddProfile
 			// 
