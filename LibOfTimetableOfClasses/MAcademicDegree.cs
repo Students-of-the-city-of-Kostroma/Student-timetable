@@ -48,11 +48,10 @@ namespace LibOfTimetableOfClasses
 			{
 				if (value[0] == '.')
 					throw new Exception("Точка ставится после слова");
-				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
-					throw new Exception("Поле Полное название института содержит недопустимые символы");
 				if (value.Length > 25)
 					throw new Exception("Недопустимое количество символов");
 				_fullname = value;
+
 			}
 		}
 
@@ -66,11 +65,9 @@ namespace LibOfTimetableOfClasses
 			{
 				if (value[0] == '.')
 					throw new Exception("Точка ставится после слова");
-				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
-					throw new Exception("Поле Полное название института содержит недопустимые символы");
-				_reduction = value;
 				if (value.Length > 25)
 					throw new Exception("Недопустимое количество символов");
+				_reduction = value;
 			}
 		}
 
