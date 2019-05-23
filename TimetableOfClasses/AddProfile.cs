@@ -89,6 +89,7 @@ namespace TimetableOfClasses
 		private void tbShortName_Leave(object sender, EventArgs e)
 		{
 			var R = sender as TextBox;
+			R.Text = R.Text.ToUpper();
 			R.Text = Regex.Replace(R.Text, @"[^А-Я]", "");
 		}
 
@@ -104,7 +105,7 @@ namespace TimetableOfClasses
 
 		private void tbShortName_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			Regex regex = new Regex(@"[А-Я]");
+			Regex regex = new Regex(@"[А-Яа-я]");
 			if (!regex.IsMatch(e.KeyChar.ToString()) && e.KeyChar != (char)Keys.Back)
 			{
 				e.Handled = true;
