@@ -50,11 +50,13 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Email";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
