@@ -34,6 +34,7 @@ namespace TimetableOfClasses
 		public AddUniversity(MUniversity model)
 		{
 			InitializeComponent();
+			tbShortTittle.CharacterCasing = CharacterCasing.Upper;
 			tbINN.Enabled = false;
 			this.Text = "Изменение университета";
 			tbShortTittle.Text = model.ShortName;
