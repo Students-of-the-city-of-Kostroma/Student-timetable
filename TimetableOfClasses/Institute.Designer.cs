@@ -29,13 +29,13 @@
 		private void InitializeComponent()
 		{
 			this.DG_Institute = new System.Windows.Forms.DataGridView();
-			this.btnAdd = new System.Windows.Forms.Button();
-			this.btnDelete = new System.Windows.Forms.Button();
-			this.btnChange = new System.Windows.Forms.Button();
 			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Director = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnAdd = new System.Windows.Forms.Button();
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.btnChange = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Institute)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -56,44 +56,10 @@
 			this.DG_Institute.Location = new System.Drawing.Point(8, 12);
 			this.DG_Institute.Name = "DG_Institute";
 			this.DG_Institute.ReadOnly = true;
+			this.DG_Institute.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Institute.Size = new System.Drawing.Size(535, 217);
 			this.DG_Institute.TabIndex = 4;
-			this.DG_Institute.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Institute.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Institute_RowPrePaint);
-			// 
-			// btnAdd
-			// 
-			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAdd.Location = new System.Drawing.Point(470, 245);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(75, 23);
-			this.btnAdd.TabIndex = 5;
-			this.btnAdd.Text = "Добавить";
-			this.btnAdd.UseVisualStyleBackColor = true;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDelete.Location = new System.Drawing.Point(389, 245);
-			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(75, 23);
-			this.btnDelete.TabIndex = 6;
-			this.btnDelete.Text = "Удалить";
-			this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnDelete.UseVisualStyleBackColor = true;
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-			// 
-			// btnChange
-			// 
-			this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnChange.Location = new System.Drawing.Point(308, 245);
-			this.btnChange.Name = "btnChange";
-			this.btnChange.Size = new System.Drawing.Size(75, 23);
-			this.btnChange.TabIndex = 7;
-			this.btnChange.Text = "Изменить";
-			this.btnChange.UseVisualStyleBackColor = true;
-			this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
 			// 
 			// ShortName
 			// 
@@ -122,6 +88,40 @@
 			this.University.HeaderText = "ВУЗ";
 			this.University.Name = "University";
 			this.University.ReadOnly = true;
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAdd.Location = new System.Drawing.Point(470, 245);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(75, 23);
+			this.btnAdd.TabIndex = 5;
+			this.btnAdd.Text = "Добавить";
+			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnDelete.Location = new System.Drawing.Point(308, 245);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(75, 23);
+			this.btnDelete.TabIndex = 6;
+			this.btnDelete.Text = "Удалить";
+			this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
+			// btnChange
+			// 
+			this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnChange.Location = new System.Drawing.Point(389, 245);
+			this.btnChange.Name = "btnChange";
+			this.btnChange.Size = new System.Drawing.Size(75, 23);
+			this.btnChange.TabIndex = 7;
+			this.btnChange.Text = "Изменить";
+			this.btnChange.UseVisualStyleBackColor = true;
+			this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
 			// 
 			// Institute
 			// 

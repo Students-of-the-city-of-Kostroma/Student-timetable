@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.ShortName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
 			this.Director = new System.Windows.Forms.ComboBox();
 			this.Open_Teacher = new System.Windows.Forms.Button();
 			this.Open_University = new System.Windows.Forms.Button();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -60,6 +63,8 @@
 			this.ShortName.Name = "ShortName";
 			this.ShortName.Size = new System.Drawing.Size(287, 20);
 			this.ShortName.TabIndex = 8;
+			this.ShortName.TextChanged += new System.EventHandler(this.ShortName_TextChanged);
+			this.ShortName.Validating += new System.ComponentModel.CancelEventHandler(this.ShortName_Validating);
 			// 
 			// label2
 			// 
@@ -79,6 +84,8 @@
 			this.FullName.Name = "FullName";
 			this.FullName.Size = new System.Drawing.Size(287, 20);
 			this.FullName.TabIndex = 10;
+			this.FullName.TextChanged += new System.EventHandler(this.FullName_TextChanged);
+			this.FullName.Validating += new System.ComponentModel.CancelEventHandler(this.FullName_Validating);
 			// 
 			// label3
 			// 
@@ -131,6 +138,8 @@
 			this.VUS.Name = "VUS";
 			this.VUS.Size = new System.Drawing.Size(287, 21);
 			this.VUS.TabIndex = 16;
+			this.VUS.SelectedValueChanged += new System.EventHandler(this.VUS_SelectedValueChanged);
+			this.VUS.Validating += new System.ComponentModel.CancelEventHandler(this.VUS_Validating);
 			// 
 			// label4
 			// 
@@ -154,6 +163,8 @@
 			this.Director.Name = "Director";
 			this.Director.Size = new System.Drawing.Size(287, 21);
 			this.Director.TabIndex = 18;
+			this.Director.SelectedValueChanged += new System.EventHandler(this.Director_SelectedValueChanged);
+			this.Director.Validating += new System.ComponentModel.CancelEventHandler(this.Director_Validating);
 			// 
 			// Open_Teacher
 			// 
@@ -174,6 +185,10 @@
 			this.Open_University.Text = "Добавить ВУЗ";
 			this.Open_University.UseVisualStyleBackColor = true;
 			this.Open_University.Click += new System.EventHandler(this.Open_University_Click);
+			// 
+			// errorProvider1
+			// 
+			this.errorProvider1.ContainerControl = this;
 			// 
 			// AddInstitute
 			// 
@@ -196,6 +211,7 @@
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "AddInstitute";
 			this.Text = "Добавление института";
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -216,5 +232,6 @@
 		private System.Windows.Forms.ComboBox Director;
 		private System.Windows.Forms.Button Open_Teacher;
 		private System.Windows.Forms.Button Open_University;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }
