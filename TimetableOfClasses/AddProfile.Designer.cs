@@ -61,6 +61,7 @@
 			// 
 			this.tbShortName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbShortName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.tbShortName.Location = new System.Drawing.Point(13, 85);
 			this.tbShortName.Name = "tbShortName";
 			this.tbShortName.Size = new System.Drawing.Size(241, 20);

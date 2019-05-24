@@ -64,6 +64,7 @@
 			// 
 			this.tbShortTittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbShortTittle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.tbShortTittle.Location = new System.Drawing.Point(15, 29);
 			this.tbShortTittle.MaxLength = 10;
 			this.tbShortTittle.Name = "tbShortTittle";
