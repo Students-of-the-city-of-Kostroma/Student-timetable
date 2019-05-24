@@ -13,11 +13,17 @@ namespace TimetableOfClasses
 {
 	public partial class AcademicDegree : Form
 	{
-		public AcademicDegree()
+		public string ChoseReductionAcademicDegree;
+		public AcademicDegree(bool forChoice = false)
 		{
 			InitializeComponent();
 			DG_AcademicDegree.AutoGenerateColumns = false;
 			DG_AcademicDegree.DataSource = RefData.CAcademicDegree;
+
+			if (forChoice)
+			{
+				this.Name = "Выбор степени";
+			}
 		}
 
 		private void ChangeButton_Click(object sender, EventArgs e)
@@ -160,6 +166,14 @@ namespace TimetableOfClasses
 				this.DG_AcademicDegree.Rows[index].HeaderCell.Value = indexStr;
 		}
 
-
+		private void DG_AcademicDegree_DoubleClick(object sender, EventArgs e)
+		{
+			if (DG_AcademicDegree.SelectedRows.Count == 1 && this.Name == "Выбор степени")
+			{
+				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
+				ChoseReductionAcademicDegree = (string)Row["Reduction"];
+				Close();
+			}
+		}
 	}
 }
