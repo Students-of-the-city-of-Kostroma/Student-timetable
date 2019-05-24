@@ -15,8 +15,6 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
-		private CAcademicDegree AcademicDegree = RefData.CAcademicDegree;
-		private CTitle AcademicTitle = RefData.CTitle;
 
 		public AddTeacher()
 		{
@@ -80,7 +78,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academikDegree.Text, academikTitle.Text, department.Text, metodDays.Text, weekends.Text }))
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
 				if (Add())
 				{
@@ -99,7 +97,7 @@ namespace TimetableOfClasses
 			{
 				if (Lehrer == null)
 				{
-					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academikDegree.Text, academikTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
 					return RefData.CTeacher.Insert(Prepodavatel);
 				}
 				else
@@ -107,8 +105,8 @@ namespace TimetableOfClasses
 					Lehrer.FirstName = firstName.Text;
 					Lehrer.SecondName = secondName.Text;
 					Lehrer.Patronymic = patronymic.Text;
-					Lehrer.AcademicDegree = academikDegree.Text;
-					Lehrer.AcademicTitle = academikTitle.Text;
+					Lehrer.AcademicDegree = academicDegree.Text;
+					Lehrer.AcademicTitle = academicTitle.Text;
 					Lehrer.Departament = department.Text;
 					Lehrer.MetodicalDays = metodDays.Text;
 					Lehrer.Windows = windows.Text;
@@ -333,7 +331,7 @@ namespace TimetableOfClasses
 		{
 			string reduction = (sender as AcademicTitle).ChoseReductionAcademicTitle;
 			if (reduction != null)
-				academikTitle.Text = reduction;
+				academicTitle.Text = reduction;
 		}
 
 		private void CreateFormForEditAndChoiceAD()
@@ -348,7 +346,7 @@ namespace TimetableOfClasses
 		{
 			string reduction = (sender as AcademicDegree).ChoseReductionAcademicDegree;
 			if (reduction != null)
-				academikDegree.Text = reduction;
+				academicDegree.Text = reduction;
 		}
 
 		private void AddTeacher_Shown(object sender, EventArgs e)

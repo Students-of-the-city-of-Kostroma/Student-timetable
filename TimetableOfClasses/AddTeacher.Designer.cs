@@ -48,9 +48,9 @@
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.SelectAD = new System.Windows.Forms.Button();
-			this.academikDegree = new System.Windows.Forms.TextBox();
+			this.academicDegree = new System.Windows.Forms.TextBox();
 			this.SelectAT = new System.Windows.Forms.Button();
-			this.academikTitle = new System.Windows.Forms.TextBox();
+			this.academicTitle = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
@@ -300,14 +300,14 @@
 			this.SelectAD.UseVisualStyleBackColor = true;
 			this.SelectAD.Click += new System.EventHandler(this.SelectAD_Click);
 			// 
-			// academikDegree
+			// academicDegree
 			// 
-			this.academikDegree.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.academikDegree.Location = new System.Drawing.Point(12, 191);
-			this.academikDegree.Name = "academikDegree";
-			this.academikDegree.ReadOnly = true;
-			this.academikDegree.Size = new System.Drawing.Size(200, 20);
-			this.academikDegree.TabIndex = 43;
+			this.academicDegree.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.academicDegree.Location = new System.Drawing.Point(12, 191);
+			this.academicDegree.Name = "academicDegree";
+			this.academicDegree.ReadOnly = true;
+			this.academicDegree.Size = new System.Drawing.Size(200, 20);
+			this.academicDegree.TabIndex = 43;
 			// 
 			// SelectAT
 			// 
@@ -319,14 +319,14 @@
 			this.SelectAT.UseVisualStyleBackColor = true;
 			this.SelectAT.Click += new System.EventHandler(this.SelectAT_Click);
 			// 
-			// academikTitle
+			// academicTitle
 			// 
-			this.academikTitle.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.academikTitle.Location = new System.Drawing.Point(12, 249);
-			this.academikTitle.Name = "academikTitle";
-			this.academikTitle.ReadOnly = true;
-			this.academikTitle.Size = new System.Drawing.Size(200, 20);
-			this.academikTitle.TabIndex = 45;
+			this.academicTitle.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.academicTitle.Location = new System.Drawing.Point(12, 249);
+			this.academicTitle.Name = "academicTitle";
+			this.academicTitle.ReadOnly = true;
+			this.academicTitle.Size = new System.Drawing.Size(200, 20);
+			this.academicTitle.TabIndex = 45;
 			// 
 			// AddTeacher
 			// 
@@ -335,9 +335,9 @@
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(290, 568);
 			this.Controls.Add(this.SelectAT);
-			this.Controls.Add(this.academikTitle);
+			this.Controls.Add(this.academicTitle);
 			this.Controls.Add(this.SelectAD);
-			this.Controls.Add(this.academikDegree);
+			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.checkPatronymic);
 			this.Controls.Add(this.weekends);
@@ -390,8 +390,8 @@
 		private System.Windows.Forms.CheckBox checkPatronymic;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button SelectAD;
-		private System.Windows.Forms.TextBox academikDegree;
+		private System.Windows.Forms.TextBox academicDegree;
 		private System.Windows.Forms.Button SelectAT;
-		private System.Windows.Forms.TextBox academikTitle;
+		private System.Windows.Forms.TextBox academicTitle;
 	}
 }
