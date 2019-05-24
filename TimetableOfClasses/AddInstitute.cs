@@ -141,5 +141,67 @@ namespace TimetableOfClasses
 		{
 			this.Close();
 		}
+
+		private void ShortName_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(ShortName.Text))
+				errorProvider1.SetError(ShortName, "Пустое поле");
+
+			if (!Regex.IsMatch(ShortName.Text, @"[А-Я]"))
+				errorProvider1.SetError(ShortName, "Можно вводить только заглавные силволы русского алфавита");
+
+			if (ShortName.Text.Length > 10)
+				errorProvider1.SetError(ShortName, "Слишком длинное значение (не более 10)");
+
+			if (ShortName.Text.Length <= 1)
+				errorProvider1.SetError(ShortName, "Слишком короткое значение");
+		}
+
+		private void FullName_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(FullName.Text))
+				errorProvider1.SetError(FullName, "Пустое поле");
+
+			if (!Regex.IsMatch(FullName.Text, @"[А-Яа-я]"))
+				errorProvider1.SetError(FullName, "Можно вводить только силволы русского алфавита");
+
+			if (FullName.Text.Length > 50)
+				errorProvider1.SetError(FullName, "Слишком длинное значение (не более 50)");
+
+			if (FullName.Text.Length <= 1)
+				errorProvider1.SetError(FullName, "Слишком короткое значение");
+		}
+
+		private void Director_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(Director.Text))
+				errorProvider1.SetError(Director, "Пустое поле");
+		}
+
+		private void VUS_Validating(object sender, CancelEventArgs e)
+		{
+			if (String.IsNullOrEmpty(VUS.Text))
+				errorProvider1.SetError(VUS, "Пустое поле");
+		}
+
+		private void ShortName_TextChanged(object sender, EventArgs e)
+		{
+			errorProvider1.Clear();
+		}
+
+		private void FullName_TextChanged(object sender, EventArgs e)
+		{
+			errorProvider1.Clear();
+		}
+
+		private void Director_SelectedValueChanged(object sender, EventArgs e)
+		{
+			errorProvider1.Clear();
+		}
+
+		private void VUS_SelectedValueChanged(object sender, EventArgs e)
+		{
+			errorProvider1.Clear();
+		}
 	}
 }

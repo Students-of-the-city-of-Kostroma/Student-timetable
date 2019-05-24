@@ -32,6 +32,10 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Поле Полное название института пустое");
 				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
 					throw new Exception("Поле Полное название института содержит недопустимые символы");
+				if (value.Length > 50)
+					throw new Exception("Слишком длинное значение (не более 50)");
+				if (value.Length <= 1)
+					throw new Exception("Слишком короткое значение");
 				_fullname = value;
 			}
 		}

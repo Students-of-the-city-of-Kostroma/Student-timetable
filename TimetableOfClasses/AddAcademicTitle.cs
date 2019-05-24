@@ -145,6 +145,7 @@ namespace TimetableOfClasses
 
 		private void Reduction_TextChanged(object sender, EventArgs e)
 		{
+			errorProvider1.Clear();
 			if (((TextBox)sender).Text.Length == 1)
 				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
 			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
@@ -153,6 +154,7 @@ namespace TimetableOfClasses
 
 		private void FullName_TextChanged(object sender, EventArgs e)
 		{
+			errorProvider1.Clear();
 			if (((TextBox)sender).Text.Length == 1)
 				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
 			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
@@ -160,8 +162,8 @@ namespace TimetableOfClasses
 
 		private void Reduction_Validating(object sender, CancelEventArgs e)
 		{
-			if (String.IsNullOrEmpty(FullName.Text))
-				errorProvider1.SetError(FullName, "Пустое поле");
+			if (String.IsNullOrEmpty(Reduction.Text))
+				errorProvider1.SetError(Reduction, "Пустое поле");
 
 			if (!Regex.IsMatch(Reduction.Text, @"[А-Яа-я\-\' ']"))
 				errorProvider1.SetError(Reduction, "Можно вводить только силволы русского алфавита и тире");
