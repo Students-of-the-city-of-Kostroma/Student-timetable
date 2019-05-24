@@ -20,7 +20,6 @@ namespace TimetableOfClasses
 		public AddUniversity()
 		{
 			InitializeComponent();
-			tbShortTittle.CharacterCasing = CharacterCasing.Upper;
 			tbShortTittle.Text = "КГУ";
 			tbFullTitle.Text = "Костромской Государственный Университет";
 			tbActualAddress.Text = "156005, Костромская область, г. Кострома, ул. Дзержинского, 17";
