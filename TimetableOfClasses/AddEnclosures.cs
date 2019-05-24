@@ -125,7 +125,7 @@ namespace TimetableOfClasses
 				{
 					this.Close();
 				}
-				else MessageBox.Show("Упс, невозможно обновить информацию об этом корпусе!");
+				else MessageBox.Show("Не удалось добавить запись: название корпуса, адрес и телефон должны быть уникальными!");
 			}
 
 		}
