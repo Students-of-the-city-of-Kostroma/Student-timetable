@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
-			bool expected = true;
+			bool expected = false;
 			RefData.СEnclosures.Insert(gr);
 			//act
 			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Дзержинского", "111121", "2");
@@ -41,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
-			bool expected = true;
+			bool expected = false;
 			RefData.СEnclosures.Insert(gr);
 			//act
 			MEnclosures gr1 = new MEnclosures("Б", "КГТУ", "Ивановская", "111111", "2");
