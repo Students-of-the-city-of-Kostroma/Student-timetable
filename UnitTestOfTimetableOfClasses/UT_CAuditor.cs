@@ -175,7 +175,7 @@ namespace UnitTestOfTimetableOfClasses
 		}
 		public MAuditor Pre_condition_Update()
 		{
-			Controllers.CAuditor.Clear();
+			Controllers.CAuditor.Rows.Clear(); 
 			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			Controllers.CAuditor.Insert(T_Auditor);
 			return T_Auditor;
@@ -184,6 +184,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_336_1()
 		{
+			
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "5");
 			bool result = Controllers.CAuditor.Update(T_Auditor);
