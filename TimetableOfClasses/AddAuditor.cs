@@ -14,7 +14,6 @@ namespace TimetableOfClasses
 	public partial class AddAuditor : Form
 	{
 
-		MAuditor mAuditor;
 		private СEnclosures СEnclosures = Controllers.СEnclosures;
 
 		public AddAuditor()
@@ -22,7 +21,6 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			itsupdate = false;
 		}
-		byte a;
 		bool itsupdate = false;
 		public AddAuditor(MAuditor mAuditor)
 		{
