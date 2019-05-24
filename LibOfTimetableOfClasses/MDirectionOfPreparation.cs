@@ -34,7 +34,7 @@ namespace LibOfTimetableOfClasses
 			PeriodOfStudy = periodOfStudy;
 		}
 		/// <summary>
-		/// Возвращает или задает CodeOfDP - код напраления подготовки
+		/// codeOfDP - код напраления подготовки
 		/// </summary>
 		public string CodeOfDP
 		{
@@ -48,7 +48,7 @@ namespace LibOfTimetableOfClasses
 			get { return codeOfDP; }
 		}
 		/// <summary>
-		/// Возвращает или задает NameOfDP - название напраления подготовки
+		/// nameOfDP - название напраления подготовки
 		/// </summary>
 		public string NameOfDP
 		{
@@ -56,7 +56,7 @@ namespace LibOfTimetableOfClasses
 			get { return nameOfDP; }
 		}
 		/// <summary>
-		/// Возвращает или задает PeriodOfStudy - период обучения
+		/// periodOfStudy - период обучения
 		/// </summary>
 		public ushort PeriodOfStudy
 		{

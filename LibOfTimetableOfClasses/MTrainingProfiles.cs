@@ -23,6 +23,9 @@ namespace LibOfTimetableOfClasses
 		/// Шифр направления
 		/// </summary>
 		string shiphr;
+		/// <summary>
+		/// fullname - Полное название профиля подготовки
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -35,7 +38,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Возвращает или задает shortname - Краткое название профиля подготовки
+		/// shortname - Краткое название профиля подготовки
 		/// </summary>
 		public string ShortName
 		{
@@ -49,7 +52,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Возвращает или задает shiphr - Шифр напраления подготовки
+		/// shiphr - Шифр напраления подготовки
 		/// </summary>
 		public string Shiphr
 		{

@@ -45,7 +45,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает nameofaud - название аудитории
+		/// nameofaud - название аудитории
 		/// </summary>
 		public string NameOfAuditor
 		{
@@ -61,7 +61,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает cafedra - кафедру
+		/// cafedra - кафедру
 		/// </summary>
 		public string Cafedra
 		{
@@ -77,7 +77,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает building - корпус
+		/// building - корпус
 		/// </summary>
 		public string Building
 		{
@@ -93,7 +93,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает spacious - вместительность
+		/// spacious - вместительность
 		/// </summary>
 		public ushort Spacious
 		{
