@@ -25,8 +25,8 @@ namespace LibOfTimetableOfClasses
 		public static CUniversity CUniversity = new CUniversity();
         public static CInstitute CInstitute = new CInstitute();
         public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
-
-        public Controllers()
+		private static Controllers controllers = new Controllers();
+		public Controllers()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
@@ -48,7 +48,6 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 
-			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Relations.Add("Group-Training profile",CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Tables.Add(СEnclosures);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["ShortName"], СEnclosures.Columns["University"]);
