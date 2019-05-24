@@ -46,9 +46,11 @@
 			this.weekends = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.checkPatronymic = new System.Windows.Forms.CheckBox();
-			this.academicDegree = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.academicTitle = new System.Windows.Forms.ComboBox();
+			this.SelectAD = new System.Windows.Forms.Button();
+			this.academikDegree = new System.Windows.Forms.TextBox();
+			this.SelectAT = new System.Windows.Forms.Button();
+			this.academikTitle = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// createAndClose
@@ -276,16 +278,6 @@
 			this.checkPatronymic.UseVisualStyleBackColor = true;
 			this.checkPatronymic.CheckedChanged += new System.EventHandler(this.checkPatronymic_CheckedChanged);
 			// 
-			// academicDegree
-			// 
-			this.academicDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.academicDegree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.academicDegree.FormattingEnabled = true;
-			this.academicDegree.Location = new System.Drawing.Point(12, 192);
-			this.academicDegree.Name = "academicDegree";
-			this.academicDegree.Size = new System.Drawing.Size(266, 24);
-			this.academicDegree.TabIndex = 29;
-			// 
 			// label9
 			// 
 			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -298,15 +290,43 @@
 			this.label9.TabIndex = 30;
 			this.label9.Text = "Учёное звание";
 			// 
-			// academicTitle
+			// SelectAD
 			// 
-			this.academicTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.academicTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.academicTitle.FormattingEnabled = true;
-			this.academicTitle.Location = new System.Drawing.Point(12, 250);
-			this.academicTitle.Name = "academicTitle";
-			this.academicTitle.Size = new System.Drawing.Size(266, 24);
-			this.academicTitle.TabIndex = 31;
+			this.SelectAD.Location = new System.Drawing.Point(218, 191);
+			this.SelectAD.Name = "SelectAD";
+			this.SelectAD.Size = new System.Drawing.Size(60, 20);
+			this.SelectAD.TabIndex = 44;
+			this.SelectAD.Text = "Выбрать";
+			this.SelectAD.UseVisualStyleBackColor = true;
+			this.SelectAD.Click += new System.EventHandler(this.SelectAD_Click);
+			// 
+			// academikDegree
+			// 
+			this.academikDegree.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.academikDegree.Location = new System.Drawing.Point(12, 191);
+			this.academikDegree.Name = "academikDegree";
+			this.academikDegree.ReadOnly = true;
+			this.academikDegree.Size = new System.Drawing.Size(200, 20);
+			this.academikDegree.TabIndex = 43;
+			// 
+			// SelectAT
+			// 
+			this.SelectAT.Location = new System.Drawing.Point(218, 249);
+			this.SelectAT.Name = "SelectAT";
+			this.SelectAT.Size = new System.Drawing.Size(60, 20);
+			this.SelectAT.TabIndex = 46;
+			this.SelectAT.Text = "Выбрать";
+			this.SelectAT.UseVisualStyleBackColor = true;
+			this.SelectAT.Click += new System.EventHandler(this.SelectAT_Click);
+			// 
+			// academikTitle
+			// 
+			this.academikTitle.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.academikTitle.Location = new System.Drawing.Point(12, 249);
+			this.academikTitle.Name = "academikTitle";
+			this.academikTitle.ReadOnly = true;
+			this.academikTitle.Size = new System.Drawing.Size(200, 20);
+			this.academikTitle.TabIndex = 45;
 			// 
 			// AddTeacher
 			// 
@@ -314,9 +334,11 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.ClientSize = new System.Drawing.Size(290, 568);
-			this.Controls.Add(this.academicTitle);
+			this.Controls.Add(this.SelectAT);
+			this.Controls.Add(this.academikTitle);
+			this.Controls.Add(this.SelectAD);
+			this.Controls.Add(this.academikDegree);
 			this.Controls.Add(this.label9);
-			this.Controls.Add(this.academicDegree);
 			this.Controls.Add(this.checkPatronymic);
 			this.Controls.Add(this.weekends);
 			this.Controls.Add(this.label8);
@@ -340,6 +362,7 @@
 			this.Name = "AddTeacher";
 			this.Text = "Добавить преподавателя";
 			this.Load += new System.EventHandler(this.AddTeacher_Load);
+			this.Shown += new System.EventHandler(this.AddTeacher_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -365,8 +388,10 @@
 		private System.Windows.Forms.TextBox weekends;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.CheckBox checkPatronymic;
-		private System.Windows.Forms.ComboBox academicDegree;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.ComboBox academicTitle;
+		private System.Windows.Forms.Button SelectAD;
+		private System.Windows.Forms.TextBox academikDegree;
+		private System.Windows.Forms.Button SelectAT;
+		private System.Windows.Forms.TextBox academikTitle;
 	}
 }
