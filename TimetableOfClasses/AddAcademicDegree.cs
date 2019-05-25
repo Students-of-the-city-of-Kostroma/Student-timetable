@@ -156,6 +156,63 @@ namespace TimetableOfClasses
 				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
 			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
 		}
+		private static string PeriodLetterToUpper(string str)
+		{
+			if (str.Length > 0)
+			{
+				if (str.IndexOf(",") > 0)
+				{
+					char p;
+					str = Char.ToUpper(str[0]) + str.Substring(1);
+					for (int i = 0; i < str.Length; i++)
+					{
+						if (str[i] == ',')
+						{
+							p = Char.ToUpper(str[i + 2]);
+							str = str.Remove(i + 2, 1);
+							str = str.Insert(i + 2, "" + p);
+						}
+					}
+					return str;
+				}
+				else
+					return Char.ToUpper(str[0]) + str.Substring(1);
+			}
+			return "";
+		}
+		private void Reduction_Leave(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
+			}
+		}
+
+		private void FullName_Leave(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
+			}
+		}
 	}
 }
 
