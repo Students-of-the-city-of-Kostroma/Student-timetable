@@ -175,19 +175,20 @@ namespace UnitTestOfTimetableOfClasses
 		}
 		public MAuditor Pre_condition_Update()
 		{
-			Controllers.CAuditor.Rows.Clear(); 
+			CAuditor y = new CAuditor();
+			y.Rows.Clear(); 
 			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
-			Controllers.CAuditor.Insert(T_Auditor);
+			y.Insert(T_Auditor);
 			return T_Auditor;
 		}
 
 		[TestMethod]
 		public void Task_336_1()
 		{
-			
+			CAuditor y = new CAuditor();
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "5");
-			bool result = Controllers.CAuditor.Update(T_Auditor);
+			bool result = y.Update(T_Auditor);
 
 			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
 		}
@@ -195,9 +196,10 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_336_2()
 		{
+			CAuditor y = new CAuditor();
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "4");
-			bool result = Controllers.CAuditor.Update(T_Auditor);
+			bool result = y.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}
@@ -205,9 +207,10 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_336_3()
 		{
+			CAuditor y = new CAuditor();
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("302", "каф. Дизайна", 20, "4");
-			bool result = Controllers.CAuditor.Update(T_Auditor);
+			bool result = y.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}
@@ -215,9 +218,10 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_336_4()
 		{
+			CAuditor y = new CAuditor();
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, "4");
-			bool result = Controllers.CAuditor.Update(T_Auditor);
+			bool result = y.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}
@@ -225,9 +229,10 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_336_5()
 		{
+			CAuditor y = new CAuditor();
 			MAuditor T_Auditor = Pre_condition_Update();
 			T_Auditor = new MAuditor("302", "каф. Дизайна", 30, "5");
-			bool result = Controllers.CAuditor.Update(T_Auditor);
+			bool result = y.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}

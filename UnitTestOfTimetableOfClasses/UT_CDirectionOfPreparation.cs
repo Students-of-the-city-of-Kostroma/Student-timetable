@@ -11,11 +11,12 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_552_1()
 		{
-			Controllers.CDirectionOfPreparation.Clear();
+			CDirectionOfPreparation y = new CDirectionOfPreparation();
+			y.Clear();
 
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Филология", 20);
-			bool result = Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
-			int tableRows = Controllers.CDirectionOfPreparation.Rows.Count;
+			bool result = y.Insert(directionOfPreparation);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 1, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, true);
@@ -24,15 +25,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_552_2()
 		{
-			Controllers.CDirectionOfPreparation.Clear();
+			CDirectionOfPreparation y = new CDirectionOfPreparation();
+			y.Clear();
 
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Филология", 20);
-			Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
+			y.Insert(directionOfPreparation);
 			
 			directionOfPreparation = new MDirectionOfPreparation("30.30.30", "Философия", 40);
 
-			bool result = Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
-			int tableRows = Controllers.CDirectionOfPreparation.Rows.Count;
+			bool result = y.Insert(directionOfPreparation);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 2, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, true);
@@ -41,15 +43,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_552_3()
 		{
-			Controllers.CDirectionOfPreparation.Clear();
+			CDirectionOfPreparation y = new CDirectionOfPreparation();
+			y.Clear();
 
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Филология", 20);
-			Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
+			y.Insert(directionOfPreparation);
 
 			directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Туризм", 40);
 
-			bool result = Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
-			int tableRows = Controllers.CDirectionOfPreparation.Rows.Count;
+			bool result = y.Insert(directionOfPreparation);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 1, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, false);
@@ -58,15 +61,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_552_4()
 		{
-			Controllers.CDirectionOfPreparation.Clear();
+			CDirectionOfPreparation y = new CDirectionOfPreparation();
+			y.Clear();
 
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Филология", 20);
-			Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
+			y.Insert(directionOfPreparation);
 
 			directionOfPreparation = new MDirectionOfPreparation("30.30.30", "Туризм", 20);
 
-			bool result = Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
-			int tableRows = Controllers.CDirectionOfPreparation.Rows.Count;
+			bool result = y.Insert(directionOfPreparation);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 2, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, true);
@@ -75,15 +79,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_552_5()
 		{
-			Controllers.CDirectionOfPreparation.Clear();
+			CDirectionOfPreparation y = new CDirectionOfPreparation();
+			y.Clear();
 
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("24.24.24", "Филология", 20);
-			Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
+			y.Insert(directionOfPreparation);
 
 			directionOfPreparation = new MDirectionOfPreparation("30.30.30", "Туризм", 40);
 
-			bool result = Controllers.CDirectionOfPreparation.Insert(directionOfPreparation);
-			int tableRows = Controllers.CDirectionOfPreparation.Rows.Count;
+			bool result = y.Insert(directionOfPreparation);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 2, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, true);
