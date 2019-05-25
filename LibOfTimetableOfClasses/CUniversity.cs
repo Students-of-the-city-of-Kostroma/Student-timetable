@@ -33,6 +33,7 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();

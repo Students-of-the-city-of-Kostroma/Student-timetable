@@ -186,7 +186,7 @@ namespace TimetableOfClasses
 
 		private void University_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			string choseUniversity = (sender as University).ShortName;
+			string choseUniversity = (sender as University).FullName;
 			if (choseUniversity != null)
 				this.university.Text = choseUniversity;
 		}

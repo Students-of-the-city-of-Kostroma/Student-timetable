@@ -13,7 +13,7 @@ namespace TimetableOfClasses
 {
 	public partial class University : Form
 	{
-		internal protected string ShortName = "";
+		internal protected string FullName = "";
 		private bool IsPicking = false; 
 		public University(bool isPicking = false)
 		{
@@ -171,7 +171,7 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 1 && IsPicking)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				ShortName = (string)Row["ShortName"];
+				FullName = (string)Row["FullName"];
 				this.Close();
 			}
 		}
