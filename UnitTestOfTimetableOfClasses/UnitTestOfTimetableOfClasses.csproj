@@ -44,6 +44,7 @@
     <Compile Include="UT_Delete_CAcademicDegree.cs" />
     <Compile Include="UT_Delete_CEnclosures.cs" />
     <Compile Include="UT_Delete_CUniversity.cs" />
+    <Compile Include="UT_Viborka.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />
