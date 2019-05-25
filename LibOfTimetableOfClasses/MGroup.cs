@@ -209,16 +209,5 @@ namespace LibOfTimetableOfClasses
 			MaxNumberOfClass = maxNumberOfClass;
 			Weekends = weekends;
 		}
-
-		/// <summary>
-		/// Конструктор для создания такой MGroup, которую можно было бы передать параметром
-		/// в методы контроллера которые основаны на проверке уникальности
-		/// </summary>
-		/// <param name="group">Название группы</param>
-		public MGroup(string group) : base()
-		{
-			Group = group;
-		}
-
 	}
 }

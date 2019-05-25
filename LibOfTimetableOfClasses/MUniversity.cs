@@ -296,14 +296,6 @@ namespace LibOfTimetableOfClasses
 				Email = email;
 				Phone = phone;
 		}
-		/// <summary>
-		/// Создаёт  экземлпяр класса только с полем ИНН
-		/// </summary>
-		/// <param name="inn">ИНН</param>
-		public MUniversity(string inn) : base()
-		{
-			INN = inn;
-		}
 
 		private bool isLetterСaseNormal(string input)
 		{

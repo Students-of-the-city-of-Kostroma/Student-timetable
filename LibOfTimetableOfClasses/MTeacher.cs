@@ -340,21 +340,5 @@ namespace LibOfTimetableOfClasses
 			Windows = windows;
 			Weekends = weekends;
 		}
-
-		/// <summary>
-		/// Конструктор для создания такой MTeacher, которую можно было бы передать параметром
-		/// в методы контроллера которые основаны на проверке уникальности
-		/// </summary>
-		/// <param name="firstName">Имя преподавателя</param>
-		/// <param name="secondName">Фамилия преподавателя</param>
-		/// <param name="patronymic">Отчество преподавателя</param>
-		/// <param name="departament">Департамент преподавателя</param>
-		public MTeacher(string firstName, string secondName, string patronymic, string departament) : base()
-		{
-			this.FirstName = firstName;
-			this.SecondName = secondName;
-			this.Patronymic = patronymic;
-			Departament = departament;
-		}
 	}
 }
