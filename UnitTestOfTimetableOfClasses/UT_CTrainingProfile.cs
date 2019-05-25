@@ -10,11 +10,12 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_420_1()
 		{
-			Controllers.CTrainingProfile.Clear();
+			CTrainingProfile y = new CTrainingProfile();
+			y.Clear();
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
 
-			bool result = Controllers.CTrainingProfile.Insert(T_TrainingProfile);
-			int tableRows = Controllers.CTrainingProfile.Rows.Count;
+			bool result = y.Insert(T_TrainingProfile);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 1, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, true);
@@ -23,13 +24,14 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_420_2()
 		{
-			Controllers.CTrainingProfile.Clear();
+			CTrainingProfile y = new CTrainingProfile();
+			y.Clear();
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			Controllers.CTrainingProfile.Insert(T_TrainingProfile);
+			y.Insert(T_TrainingProfile);
 
 			T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИВТ", "01.02.11");
-			bool result = Controllers.CTrainingProfile.Insert(T_TrainingProfile);
-			int tableRows = Controllers.CTrainingProfile.Rows.Count;
+			bool result = y.Insert(T_TrainingProfile);
+			int tableRows = y.Rows.Count;
 
 			Assert.AreEqual(tableRows, 1, "ожидается добавление данных в таблицу");
 			Assert.AreEqual(result, false);
