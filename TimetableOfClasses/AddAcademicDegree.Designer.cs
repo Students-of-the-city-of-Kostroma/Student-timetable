@@ -91,20 +91,24 @@
 			// Reduction
 			// 
 			this.Reduction.Location = new System.Drawing.Point(13, 30);
+			this.Reduction.MaxLength = 25;
 			this.Reduction.Name = "Reduction";
 			this.Reduction.Size = new System.Drawing.Size(260, 20);
 			this.Reduction.TabIndex = 7;
 			this.Reduction.TextChanged += new System.EventHandler(this.Reduction_TextChanged);
 			this.Reduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Reduction_KeyPress);
+			this.Reduction.Leave += new System.EventHandler(this.Reduction_Leave);
 			// 
 			// FullName
 			// 
 			this.FullName.Location = new System.Drawing.Point(13, 84);
+			this.FullName.MaxLength = 25;
 			this.FullName.Name = "FullName";
 			this.FullName.Size = new System.Drawing.Size(260, 20);
 			this.FullName.TabIndex = 8;
 			this.FullName.TextChanged += new System.EventHandler(this.FullName_TextChanged);
 			this.FullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullName_KeyPress);
+			this.FullName.Leave += new System.EventHandler(this.FullName_Leave);
 			// 
 			// AddAcademicDegree
 			// 
