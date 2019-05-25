@@ -109,39 +109,42 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_335_1()
 		{
-			Controllers.CDiscipline.Clear();
+			CDiscipline y = new CDiscipline();
+			y.Clear();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = y.Rows.Count;
+			act = y.Insert(T_Discipline);
+			int C2 = y.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
 		[TestMethod]
 		public void Task_335_2()
 		{
+			CDiscipline y = new CDiscipline();
 			Task_335_1();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Физ.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = y.Rows.Count;
+			act = y.Insert(T_Discipline);
+			int C2 = y.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
 		[TestMethod]
 		public void Task_335_3()
 		{
+			CDiscipline y = new CDiscipline();
 			Task_335_1();
 			bool ex = false;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Физ.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = y.Rows.Count;
+			act = y.Insert(T_Discipline);
+			int C2 = y.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}
@@ -174,13 +177,14 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_271_5()
 		{
+			CDiscipline y = new CDiscipline();
 			Task_335_1();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Мат.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = y.Rows.Count;
+			act = y.Insert(T_Discipline);
+			int C2 = y.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
