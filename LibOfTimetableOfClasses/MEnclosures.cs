@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
@@ -60,20 +61,19 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value == "") throw new Exception("Пустая строка университета");
-				if (value == null) throw new Exception("Null строка университета");
-				
-				foreach (char s in value)
-				{
-					if ((s < 'А' || s > 'Я'))
-					{
-						throw new Exception("Присутствует недопустимый символ в строке университета");
-					}
-				}
-				if (value.Length > 10) throw new Exception("Слишком длинная строка университета");
+				if (value == null || value == "")
+					throw new Exception("Ошибка создания модели. В свойство FullName получен null-объект");
+				if (value.Length < 1 || value.Length > 256)
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
+				if (!Regex.IsMatch(value, @"[А-Яа-я\- ]"))
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка содержащая недопустимые символы");
+				if (!isLetterСaseNormal(value))
+					throw new Exception("Ошибка создания модели. В свойство FullName получена строка неверного формата");
 				_university = value;
 			}
 		}
+
+
 		/// <summary>
 		/// Адрес корпуса
 		/// В случае записи свойства проводятся проверки переданнаго значения:
@@ -178,6 +178,29 @@ namespace LibOfTimetableOfClasses
 			Address = address;
 			Phone= phone;
 			Comment= comment;
+		}
+
+		private bool isLetterСaseNormal(string input)
+		{
+			input = Regex.Replace(input, @"\s+", " ");
+			input = Regex.Replace(input, @"-+", "-");
+			input = Regex.Replace(input, @" - ", "-");
+			input = Regex.Replace(input, @"- -", " ");
+			bool isSpacePressed = true;
+			foreach (var ch in input)
+			{
+				if (isSpacePressed)
+				{
+					if (Char.IsLower(ch))
+						return false;
+					isSpacePressed = false;
+				}
+				else if (Char.IsUpper(ch))
+					return false;
+				if (ch == ' ' || ch == '-')
+					isSpacePressed = true;
+			}
+			return true;
 		}
 	}
 }
