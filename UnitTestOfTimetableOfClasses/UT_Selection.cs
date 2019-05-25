@@ -5,7 +5,7 @@ using LibOfTimetableOfClasses;
 namespace UnitTestOfTimetableOfClasses
 {
 	[TestClass]
-	public class UT_Viborka
+	public class UT_Selection
 	{
 		[TestMethod]
 		public void Task_835_1()
