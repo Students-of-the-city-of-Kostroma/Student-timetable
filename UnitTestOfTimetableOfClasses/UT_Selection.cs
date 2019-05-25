@@ -46,7 +46,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.СEnclosures.Rows.Clear();
 			MUniversity un = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(un);
-			MEnclosures gr = new MEnclosures("А", un.ShortName, "Дзержинского", "111111", "1");
+			MEnclosures gr = new MEnclosures("А", un.FullName, "Дзержинского", "111111", "1");
 			bool expected = true;
 			//act
 			bool actual = RefData.СEnclosures.Insert(gr);

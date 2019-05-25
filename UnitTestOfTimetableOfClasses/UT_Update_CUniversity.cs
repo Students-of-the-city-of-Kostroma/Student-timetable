@@ -57,7 +57,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.CUniversity.Insert(gr);
 			MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
 			RefData.CUniversity.Insert(gr1);
-			bool expected = true;
+			bool expected = false;
 			//act 
 			gr1.FullName = "Костромкой Государственный Университет";
 			bool actual = RefData.CUniversity.Update(gr1);
