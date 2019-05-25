@@ -317,44 +317,5 @@ namespace LibOfTimetableOfClasses
 			Weekends = weekends;
 		}
 
-		/// <summary>
-		/// Конструктор класса MTeacher без отчества.
-		/// </summary>
-		/// <param name="firstName">Имя преподавателя</param>
-		/// <param name="secondName">Фамилия преподавателя</param>
-		/// <param name="academicDegree">Ученая степень преподавателя</param>
-		/// <param name="academicTitle">Ученое звание преподавателя</param>
-		/// <param name="departament">Департамент преподавателя</param>
-		/// <param name="metodicalDays">Методические дни преподавателя</param>
-		/// <param name="windows">Окна преподавателя</param>
-		/// <param name="weekends">Выходные преподавателя</param>
-		public MTeacher(string firstName, string secondName, string academicDegree, string academicTitle, string departament, string metodicalDays, string windows, string weekends) : base()
-		{
-			this.FirstName = firstName;
-			this.SecondName = secondName;
-			this.Patronymic = null;
-			AcademicDegree = academicDegree;
-			AcademicTitle = academicTitle;
-			Departament = departament;
-			MetodicalDays = metodicalDays;
-			Windows = windows;
-			Weekends = weekends;
-		}
-
-		/// <summary>
-		/// Конструктор для создания такой MTeacher, которую можно было бы передать параметром
-		/// в методы контроллера которые основаны на проверке уникальности
-		/// </summary>
-		/// <param name="firstName">Имя преподавателя</param>
-		/// <param name="secondName">Фамилия преподавателя</param>
-		/// <param name="patronymic">Отчество преподавателя</param>
-		/// <param name="departament">Департамент преподавателя</param>
-		public MTeacher(string firstName, string secondName, string patronymic, string departament) : base()
-		{
-			this.FirstName = firstName;
-			this.SecondName = secondName;
-			this.Patronymic = patronymic;
-			Departament = departament;
-		}
 	}
 }

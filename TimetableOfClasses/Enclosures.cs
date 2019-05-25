@@ -94,7 +94,7 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"]);
+					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"], (string)Row["Adress"], (string)Row["Phone"], (string)Row["Comment"]);
 					RefData.СEnclosures.Delete(mEnclosures);
 				}
 			}

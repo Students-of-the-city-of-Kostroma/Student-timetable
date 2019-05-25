@@ -74,12 +74,22 @@ namespace TimetableOfClasses
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			MUniversity mUniversity;
+			DataRow FirstRow = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+			String[] fullName = ((string)FirstRow["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 			if (dr == DialogResult.Yes)
 			{
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mUniversity = new MUniversity((string)Row["INN"]);
+					mUniversity = new MUniversity((string)Row["INN"],
+													(string)Row["ShortName"],
+													(string)Row["FullName"],
+													(string)Row["ActualAddress"],
+													(string)Row["LegalAddress"],
+													fullName[1], fullName[0], fullName[2],
+													(string)Row["Email"],
+													(string)Row["Phone"]);
+					
 					RefData.CUniversity.Delete(mUniversity);
 				}
 			}

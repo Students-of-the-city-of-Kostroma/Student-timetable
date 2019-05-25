@@ -31,7 +31,7 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DG_Group.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mGroup = new MGroup((string)Row["Group"]);
+					mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
 					RefData.CGroup.Delete(mGroup);
 				}
 			}

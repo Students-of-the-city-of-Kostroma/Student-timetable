@@ -179,15 +179,6 @@ namespace LibOfTimetableOfClasses
 			Phone= phone;
 			Comment= comment;
 		}
-
-		/// <summary>
-		/// Экземпляр с другими атрибутами 
-		/// </summary>
-		public MEnclosures(string name, string university) : base()
-		{
-			Name = name;
-			University = university;
-		}
 	}
 }
 
