@@ -61,7 +61,7 @@ namespace TimetableOfClasses
 				}
 				else
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
