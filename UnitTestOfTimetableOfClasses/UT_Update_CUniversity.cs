@@ -131,7 +131,7 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 		[TestMethod]
-public void Task_496_10() //дублирование всех атрибутов
+		public void Task_496_10() //дублирование всех атрибутов
 		{
 		// arrange
 		RefData.CUniversity.Rows.Clear();
