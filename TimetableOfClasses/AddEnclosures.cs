@@ -23,14 +23,15 @@ namespace TimetableOfClasses
 		public AddEnclosures(MEnclosures mEnclosures)
 		{
 			InitializeComponent();
-			Enclosures = mEnclosures;
-			name.Text = Enclosures.Name;
-			name.Enabled = false;
-			university.Text = Enclosures.University;
-			university.Enabled = false;
-			address.Text = Enclosures.Address;
-			phoneNumber.Text = Enclosures.Phone;
-			note.Text = Enclosures.Comment;
+				Enclosures = mEnclosures;
+				name.Text = Enclosures.Name;
+				name.Enabled = false;
+				university.Text = Enclosures.University;
+				university.Enabled = false;
+				address.Text = Enclosures.Address;
+				phoneNumber.Text = Enclosures.Phone;
+				note.Text = Enclosures.Comment;
+				btAddUniversity.Enabled = false;
 		}
 
 		private void name_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Названия корпуса
