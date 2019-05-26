@@ -18,7 +18,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			dgDirectionOfPreparation.AutoGenerateColumns = false;
-			dgDirectionOfPreparation.DataSource = Controllers.CDirectionOfPreparation;
+			dgDirectionOfPreparation.DataSource = RefData.CDirectionOfPreparation;
 			btDeleteDirection.Enabled = false;
 			btChangeDirection.Enabled = false;
 			if (forChoice)
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
 					{
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 						Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
-						Controllers.CDirectionOfPreparation.Delete(Direction);
+						RefData.CDirectionOfPreparation.Delete(Direction);
 					}
 				}
 			}

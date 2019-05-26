@@ -13,12 +13,12 @@ namespace UnitTestOfTimetableOfClasses
 
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-			Controllers.CTitle.Clear();
-			Controllers.CTitle.Insert(T_Title);
+			RefData.CTitle.Clear();
+			RefData.CTitle.Insert(T_Title);
 
 			T_Title = new MTitle("Доц.", "Доцент");
 
-			bool result = Controllers.CTitle.Update(T_Title);
+			bool result = RefData.CTitle.Update(T_Title);
 			//assert
 			Assert.IsFalse(result, "Ожидаем, что Модель изменится");
 
@@ -29,12 +29,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 
-			Controllers.CTitle.Clear();
-			Controllers.CInstitute.Insert(T_Title);
+			RefData.CTitle.Clear();
+			RefData.CInstitute.Insert(T_Title);
 
 			T_Title = new MTitle("Проф.", "Доцент");
 
-			bool result = Controllers.CTitle.Update(T_Title);
+			bool result = RefData.CTitle.Update(T_Title);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}

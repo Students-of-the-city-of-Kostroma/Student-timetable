@@ -19,7 +19,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			dgProfile.AutoGenerateColumns = false;
-			dgProfile.DataSource = Controllers.CTrainingProfile;
+			dgProfile.DataSource = RefData.CTrainingProfile;
 
 			if (forChoice)
 			{				
@@ -61,7 +61,7 @@ namespace TimetableOfClasses
 					{
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 						Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"], (string)Row["Shiphr"]);
-						Controllers.CTrainingProfile.Delete(Profile);
+						RefData.CTrainingProfile.Delete(Profile);
 					}
 				}
 			}
@@ -106,7 +106,7 @@ namespace TimetableOfClasses
 
 		private void DgProfile_DoubleClick(object sender, EventArgs e)
 		{
-			if (this.Name == "ВЫбор профиля")
+			if (dgProfile.SelectedRows.Count == 1 && this.Name == "ВЫбор профиля")
 			{
 				DataRow Row = ((DataRowView)dgProfile.SelectedRows[0].DataBoundItem).Row;
 				ChoseShortNameTrainingProfile = (string)Row["ShortName"];

@@ -13,7 +13,7 @@ namespace TimetableOfClasses
 {
 	public partial class University : Form
 	{
-		internal protected string ShortName = "";
+		internal protected string FullName = "";
 		private bool IsPicking = false; 
 		public University(bool isPicking = false)
 		{
@@ -21,7 +21,7 @@ namespace TimetableOfClasses
 			this.IsPicking = isPicking; 
 
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CUniversity;
+			DG.DataSource = RefData.CUniversity;
 		}
 
 		private void Add(object sender, EventArgs e)
@@ -69,20 +69,20 @@ namespace TimetableOfClasses
 		}
 
 		private void Delete(object sender, EventArgs e)
-
 		{
-			DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-			String[] fullName = ((string)Row["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
 			if (DG.SelectedRows.Count == 0) return;
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			MUniversity mUniversity;
+			DataRow FirstRow = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+			String[] fullName = ((string)FirstRow["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 			if (dr == DialogResult.Yes)
 			{
 				
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
+
+					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mUniversity = new MUniversity((string)Row["INN"],
 													(string)Row["ShortName"],
 													(string)Row["FullName"],
@@ -91,9 +91,11 @@ namespace TimetableOfClasses
 													fullName[1], fullName[0], fullName[2],
 													(string)Row["Email"],
 													(string)Row["Phone"]);
-					Controllers.CUniversity.Delete(mUniversity);
+		
+					RefData.CUniversity.Delete(mUniversity);
 				}
 			}
+
 		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -168,10 +170,10 @@ namespace TimetableOfClasses
 
 		private void DG_DoubleClick(object sender, EventArgs e)
 		{
-			if (IsPicking)
+			if (DG.SelectedRows.Count == 1 && IsPicking)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				ShortName = (string)Row["ShortName"];
+				FullName = (string)Row["FullName"];
 				this.Close();
 			}
 		}

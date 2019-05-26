@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibOfTimetableOfClasses;
@@ -49,14 +50,16 @@ namespace TimetableOfClasses
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
+
 				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text, tbCodeSpec.Text);
 				try
 				{
-					if (!Controllers.CTrainingProfile.Insert(Profile))
+					if (!RefData.CTrainingProfile.Insert(Profile))
 					{
 						MessageBox.Show("Невозможно добавить профиль подготовки");
 						return;
 					}
+
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 					tbCodeSpec.Text = "";
@@ -84,13 +87,13 @@ namespace TimetableOfClasses
 				{
 					if (!itsupdate)
 					{
-						if (!Controllers.CTrainingProfile.Insert(Profile))
+						if (!RefData.CTrainingProfile.Insert(Profile))
 						{
 							MessageBox.Show("Невозможно добавить профиль подготовки");
 							return;
 						}
 					}
-					else Controllers.CTrainingProfile.Update(Profile);
+					else RefData.CTrainingProfile.Update(Profile);
 					Close();
 				}
 				catch (Exception ex)
@@ -99,6 +102,7 @@ namespace TimetableOfClasses
 				}
 			}
 		}
+
 
 		private void btCodeSpec_Click(object sender, EventArgs e)
 		{
@@ -114,6 +118,42 @@ namespace TimetableOfClasses
 		{
 			DirectionOfPreparation selectCode = (DirectionOfPreparation)sender;
 			tbCodeSpec.Text = selectCode.selectDirectionOfPreparation;
+		}
+
+		private void tbFullName_Leave(object sender, EventArgs e)
+		{
+			var R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, @"[^А-Яа-я ]", "");
+			if (R.Text.Length != 0)
+				R.Text = R.Text.First().ToString().ToUpper() + R.Text.Substring(1);
+
+		}
+
+		private void tbShortName_Leave(object sender, EventArgs e)
+		{
+			var R = sender as TextBox;
+			R.Text = R.Text.ToUpper();
+			R.Text = Regex.Replace(R.Text, @"[^А-Я]", "");
+		}
+
+		private void tbFullName_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			Regex regex = new Regex(@"[а-яА-Я ]");
+			if (!regex.IsMatch(e.KeyChar.ToString()) && e.KeyChar != (char)Keys.Back)
+			{
+				e.Handled = true;
+				return;
+			}
+		}
+
+		private void tbShortName_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			Regex regex = new Regex(@"[А-Яа-я]");
+			if (!regex.IsMatch(e.KeyChar.ToString()) && e.KeyChar != (char)Keys.Back)
+			{
+				e.Handled = true;
+				return;
+			}
 		}
 	}
 }

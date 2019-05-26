@@ -64,11 +64,14 @@
 			// 
 			this.tbShortName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.tbShortName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.tbShortName.Location = new System.Drawing.Point(13, 85);
 			this.tbShortName.MaxLength = 40;
 			this.tbShortName.Name = "tbShortName";
 			this.tbShortName.Size = new System.Drawing.Size(241, 20);
 			this.tbShortName.TabIndex = 3;
+			this.tbShortName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbShortName_KeyPress);
+			this.tbShortName.Leave += new System.EventHandler(this.tbShortName_Leave);
 			// 
 			// bt_Cr_n_Close
 			// 
@@ -113,6 +116,8 @@
 			this.tbFullName.Name = "tbFullName";
 			this.tbFullName.Size = new System.Drawing.Size(241, 20);
 			this.tbFullName.TabIndex = 16;
+			this.tbFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFullName_KeyPress);
+			this.tbFullName.Leave += new System.EventHandler(this.tbFullName_Leave);
 			// 
 			// label3
 			// 
