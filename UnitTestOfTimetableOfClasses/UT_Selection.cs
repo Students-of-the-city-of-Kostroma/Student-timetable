@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.CGroup.Rows.Clear();
 			bool expected = true;
 			RefData.CTrainingProfile.Clear();
-			MTrainingProfile gh = new MTrainingProfile("Вычислительная Техника", "ВТ");
+			MTrainingProfile gh = new MTrainingProfile("Вычислительная Техника", "ВТ", "445154");
 			RefData.CTrainingProfile.Insert(gh);
 			//act
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, gh.ShortName, 1, 1, 0, 0, "Воскресенье");

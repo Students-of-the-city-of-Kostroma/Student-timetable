@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			
-			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Delete(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -32,7 +32,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			
-			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -47,7 +47,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 			
-			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("208", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Delete(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -62,7 +62,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -77,7 +77,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -93,7 +93,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 30, 5);
+			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 30, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -109,7 +109,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, 4);
+			MAuditor T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, "4");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -125,7 +125,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 20, 4);
+			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 20, "4");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -141,7 +141,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 4);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "4");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -157,7 +157,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 30, 4);
+			MAuditor T_Auditor = new MAuditor("302", "каф. Дизайна", 30, "4");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -173,7 +173,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -189,7 +189,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 
-			MAuditor T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 5);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "5");
 			int C1 = RefData.CAuditor.Rows.Count;
 			act = RefData.CAuditor.Insert(T_Auditor);
 			int C2 = RefData.CAuditor.Rows.Count;
@@ -201,7 +201,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 
 			RefData.CAuditor.Clear();
-			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, 5);
+			MAuditor T_Auditor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			RefData.CAuditor.Insert(T_Auditor);
 
 			return T_Auditor;
@@ -211,7 +211,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_336_1()
 		{
 			MAuditor T_Auditor = Pre_condition_Update();
-			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 5);
+			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "5");
 			bool result = RefData.CAuditor.Update(T_Auditor);
 
 			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
@@ -221,7 +221,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_336_2()
 		{
 			MAuditor T_Auditor = Pre_condition_Update();
-			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, 4);
+			T_Auditor = new MAuditor("502", "каф. Дизайна", 30, "4");
 			bool result = RefData.CAuditor.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
@@ -231,7 +231,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_336_3()
 		{
 			MAuditor T_Auditor = Pre_condition_Update();
-			T_Auditor = new MAuditor("302", "каф. Дизайна", 20, 4);
+			T_Auditor = new MAuditor("302", "каф. Дизайна", 20, "4");
 			bool result = RefData.CAuditor.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
@@ -241,7 +241,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_336_4()
 		{
 			MAuditor T_Auditor = Pre_condition_Update();
-			T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, 4);
+			T_Auditor = new MAuditor("302", "каф. Иностранных языков", 30, "4");
 			bool result = RefData.CAuditor.Update(T_Auditor);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
@@ -251,7 +251,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_336_5()
 		{
 			MAuditor T_Auditor = Pre_condition_Update();	
-			T_Auditor = new MAuditor("302", "каф. Дизайна", 30, 5);
+			T_Auditor = new MAuditor("302", "каф. Дизайна", 30, "5");
 			bool result = RefData.CAuditor.Update(T_Auditor);
 
 

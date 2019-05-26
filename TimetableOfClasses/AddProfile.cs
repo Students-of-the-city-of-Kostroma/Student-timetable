@@ -83,10 +83,8 @@ namespace TimetableOfClasses
 			else
 			{
 				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text, tbCodeSpec.Text);
-
 				try
 				{
-					MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 					if (!itsupdate)
 					{
 						if (!RefData.CTrainingProfile.Insert(Profile))
@@ -120,6 +118,7 @@ namespace TimetableOfClasses
 		{
 			DirectionOfPreparation selectCode = (DirectionOfPreparation)sender;
 			tbCodeSpec.Text = selectCode.selectDirectionOfPreparation;
+		}
 
 		private void tbFullName_Leave(object sender, EventArgs e)
 		{

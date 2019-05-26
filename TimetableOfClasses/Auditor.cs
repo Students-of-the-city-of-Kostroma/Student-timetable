@@ -46,7 +46,7 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DataGridAuditor.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
+					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
 					RefData.CAuditor.Delete(mAuditor);
 				}
 			}

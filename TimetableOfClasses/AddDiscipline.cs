@@ -13,13 +13,15 @@ using LibOfTimetableOfClasses;
 namespace TimetableOfClasses
 {
 	public partial class AddDiscipline : Form
-	{ 
+	{
+		bool itsupdate = false;
+
 		public AddDiscipline()
 		{
 			InitializeComponent();
 			bool itsupdate = false;
 		}
-		bool itsupdate = false;
+		
 		public AddDiscipline(MDiscipline mDiscipline)
 		{
 			InitializeComponent();
