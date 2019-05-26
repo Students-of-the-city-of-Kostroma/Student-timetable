@@ -86,6 +86,8 @@
 			this.FullName.TabIndex = 10;
 			this.FullName.TextChanged += new System.EventHandler(this.FullName_TextChanged);
 			this.FullName.Validating += new System.ComponentModel.CancelEventHandler(this.FullName_Validating);
+			this.FullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullName_Keypress);
+
 			// 
 			// label3
 			// 

@@ -203,5 +203,13 @@ namespace TimetableOfClasses
 		{
 			errorProvider1.Clear();
 		}
+
+		private void FullName_Keypress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == '\"')
+				e.Handled = true;
+			else
+				return;
+		}
 	}
 }
