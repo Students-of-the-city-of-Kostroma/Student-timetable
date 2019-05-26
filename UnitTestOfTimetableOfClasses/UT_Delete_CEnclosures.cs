@@ -11,12 +11,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_395_1()
 		{
 			// arrange
-			RefData.СEnclosures.Rows.Clear();
+			Controllers.СEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
 			bool expected = true;
 			//act 
-			RefData.СEnclosures.Insert(gr);
-			bool actual = RefData.СEnclosures.Delete(gr);
+			Controllers.СEnclosures.Insert(gr);
+			bool actual = Controllers.СEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
@@ -25,11 +25,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_395_2() //Удаление не существующей строки 
 		{
 			//arrange 
-			RefData.СEnclosures.Rows.Clear();
+			Controllers.СEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
 			bool expected = false;
 			//act 
-			bool actual = RefData.СEnclosures.Delete(gr);
+			bool actual = Controllers.СEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}

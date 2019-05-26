@@ -15,7 +15,7 @@ namespace TimetableOfClasses
         [STAThread]
         static void Main()
         {
-			new LibOfTimetableOfClasses.RefData();
+			new Controllers();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());

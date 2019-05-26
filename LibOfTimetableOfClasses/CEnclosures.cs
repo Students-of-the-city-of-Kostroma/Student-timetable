@@ -12,7 +12,7 @@ namespace LibOfTimetableOfClasses
 	{
 		public СEnclosures() : base("Корпус")
 		{
-			if (RefData.СEnclosures != null) throw new Exception("Контроллер уже существует");
+			if (Controllers.СEnclosures != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[2];
 			DataColumn column = new DataColumn();

@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline(tbFullName.Text, tbShortName.Text, tbCycleOfDis.Text);
 				try
 				{
-					LibOfTimetableOfClasses.RefData.CDiscipline.Insert(mDiscipline);
+					Controllers.CDiscipline.Insert(mDiscipline);
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 					tbCycleOfDis.Text = "";
@@ -64,8 +64,8 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						LibOfTimetableOfClasses.RefData.CDiscipline.Insert(mDiscipline);
-					else LibOfTimetableOfClasses.RefData.CDiscipline.Update(mDiscipline);
+						Controllers.CDiscipline.Insert(mDiscipline);
+					else Controllers.CDiscipline.Update(mDiscipline);
 					Close();
 				}
 				catch (Exception ex)

@@ -11,11 +11,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_1()//Ввод корректных данных в пустую таблицу
 		{
 			//arrange 
-			RefData.CAcademicDegree.Clear();
+			Controllers.CAcademicDegree.Clear();
 			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
 			//act
-			bool act = RefData.CAcademicDegree.Insert(ma);
+			bool act = Controllers.CAcademicDegree.Insert(ma);
 			//assert
 			Assert.AreEqual(ex, act);
 		}
@@ -25,12 +25,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_2()////учёная степень с такой сокращённой записью уже есть в таблице
 		{
 			//arrange
-			RefData.CAcademicDegree.Clear();
+			Controllers.CAcademicDegree.Clear();
 			Task_486_1();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool expected = false;
 			//act
-			bool actual = RefData.CAcademicDegree.Insert(MAcademic);
+			bool actual = Controllers.CAcademicDegree.Insert(MAcademic);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}

@@ -232,7 +232,7 @@ namespace TimetableOfClasses
 															splitedFullName[2],
 															tbMail.Text,
 															tbPhone.Text);
-				return LibOfTimetableOfClasses.RefData.CUniversity.Insert(mUniversity);
+				return Controllers.CUniversity.Insert(mUniversity);
 			}
 			else
 			{
@@ -246,7 +246,7 @@ namespace TimetableOfClasses
 				cur.SurnameRector = splitedFullName[0];
 				cur.Email = tbMail.Text;
 				cur.Phone = tbPhone.Text;
-				return LibOfTimetableOfClasses.RefData.CUniversity.Update(cur);
+				return Controllers.CUniversity.Update(cur);
 			}
 		
 		}

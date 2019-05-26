@@ -42,7 +42,7 @@ namespace TimetableOfClasses
 					try
 					{
 						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-						LibOfTimetableOfClasses.RefData.CAcademicDegree.Insert(AcademicDegree);
+						Controllers.CAcademicDegree.Insert(AcademicDegree);
 						FullName.Text = "";
 						Reduction.Text = "";
 					}
@@ -68,7 +68,7 @@ namespace TimetableOfClasses
 						try
 						{
 							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							LibOfTimetableOfClasses.RefData.CAcademicDegree.Update(AcademicDegree);
+							Controllers.CAcademicDegree.Update(AcademicDegree);
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
@@ -92,7 +92,7 @@ namespace TimetableOfClasses
 						try
 						{
 							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							LibOfTimetableOfClasses.RefData.CAcademicDegree.Insert(AcademicDegree);
+							Controllers.CAcademicDegree.Insert(AcademicDegree);
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
