@@ -10,11 +10,11 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_Insert_CInstitute
 	{
 		[TestMethod]
-		public void Task_483_1() //Добавление в пустую таблицу	
+		public void Task_616_1() //Добавление в пустую таблицу	
 		{
 			//arrange 	
 			Controllers.CInstitute.Clear();
-			MInstitute inst = new MInstitute("Институт Автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
+			MInstitute inst = new MInstitute("Институт Автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 			bool expected = true;
 			//act	
 			bool actual = Controllers.CInstitute.Insert(inst);
@@ -23,11 +23,11 @@ namespace UnitTestOfTimetableOfClasses
 		}
 
         [TestMethod]
-        public void Task_483_2()
-        {
+        public void Task_616_2() //краткое название дублируется
+		{
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Неавтоматиз", "ИАСТ", "Голубева Ю.А.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Неавтоматиз", "ИАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;
@@ -36,11 +36,11 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_483_3()
-        {
+        public void Task_616_3() // полное название дублируется
+		{
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Автоматизирован", "ФАСТ", "Голубева Ю.А.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Автоматизирован", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;
@@ -49,18 +49,31 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_483_4()
+        public void Task_616_4() // директор дублируется
         {
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "КГУ");
+            MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "Тюменский Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
             Assert.AreEqual(C1, C2);
         }
-    }
+
+		[TestMethod]
+		public void Task_616_5() // наименование ВУЗа дублируется
+		{
+			bool ex = false;
+			bool act;
+			MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+			int C1 = Controllers.CInstitute.Rows.Count;
+			act = Controllers.CInstitute.Delete(T_Institute);
+			int C2 = Controllers.CInstitute.Rows.Count;
+			Assert.AreEqual(ex, act);
+			Assert.AreEqual(C1, C2);
+		}
+	}
 
 }
 
