@@ -45,7 +45,7 @@ namespace TimetableOfClasses
 						try
 						{
 							MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-							Controllers.CTitle.Update(Title);
+							LibOfTimetableOfClasses.RefData.CTitle.Update(Title);
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
@@ -75,7 +75,7 @@ namespace TimetableOfClasses
 						try
 						{
 							MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-							Controllers.CTitle.Insert(Title);
+							LibOfTimetableOfClasses.RefData.CTitle.Insert(Title);
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
@@ -106,7 +106,7 @@ namespace TimetableOfClasses
 					try
 					{
 						MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-						Controllers.CTitle.Insert(Title);
+						LibOfTimetableOfClasses.RefData.CTitle.Insert(Title);
 						FullName.Text = "";
 						Reduction.Text = "";
 					}

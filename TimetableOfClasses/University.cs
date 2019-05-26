@@ -21,7 +21,7 @@ namespace TimetableOfClasses
 			this.IsPicking = isPicking; 
 
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CUniversity;
+			DG.DataSource = LibOfTimetableOfClasses.RefData.CUniversity;
 		}
 
 		private void Add(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace TimetableOfClasses
 													fullName[1], fullName[0], fullName[2],
 													(string)Row["Email"],
 													(string)Row["Phone"]);
-					Controllers.CUniversity.Delete(mUniversity);
+					LibOfTimetableOfClasses.RefData.CUniversity.Delete(mUniversity);
 				}
 			}
 		}

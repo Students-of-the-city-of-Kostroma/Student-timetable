@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_AcademicDegree.AutoGenerateColumns = false;
-			DG_AcademicDegree.DataSource = Controllers.CAcademicDegree;
+			DG_AcademicDegree.DataSource = LibOfTimetableOfClasses.RefData.CAcademicDegree;
 		}
 
 		private void ChangeButton_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace TimetableOfClasses
 						{
 							DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 							mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
-							Controllers.CAcademicDegree.Delete(mAcademicDegree);
+						LibOfTimetableOfClasses.RefData.CAcademicDegree.Delete(mAcademicDegree);
 						}
 						DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
 					}

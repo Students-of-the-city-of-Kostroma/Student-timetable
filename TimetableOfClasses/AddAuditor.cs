@@ -52,7 +52,7 @@ namespace TimetableOfClasses
 				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, Convert.ToByte(tbCorpus.Text));
 				try
 				{
-					Controllers.CAuditor.Insert(Auditor);
+					LibOfTimetableOfClasses.RefData.CAuditor.Insert(Auditor);
 					tbAuditor.Text = "";
 					tbKaf.Text = "";
 					tbCorpus.Text = "";
@@ -75,8 +75,8 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						Controllers.CAuditor.Insert(Auditor);
-					else Controllers.CAuditor.Update(Auditor);
+						LibOfTimetableOfClasses.RefData.CAuditor.Insert(Auditor);
+					else LibOfTimetableOfClasses.RefData.CAuditor.Update(Auditor);
 					Close();
 				}
 				catch (Exception ex)

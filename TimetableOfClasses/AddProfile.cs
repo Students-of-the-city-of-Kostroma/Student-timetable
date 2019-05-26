@@ -44,7 +44,7 @@ namespace TimetableOfClasses
 				MTrainingProfile Profile = new MTrainingProfile(tbFullName.Text, tbShortName.Text);
 				try
 				{
-					Controllers.CTrainingProfile.Insert(Profile);
+					LibOfTimetableOfClasses.RefData.CTrainingProfile.Insert(Profile);
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 				}
@@ -65,8 +65,8 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						Controllers.CTrainingProfile.Insert(Profile);
-					else Controllers.CTrainingProfile.Update(Profile);
+						LibOfTimetableOfClasses.RefData.CTrainingProfile.Insert(Profile);
+					else LibOfTimetableOfClasses.RefData.CTrainingProfile.Update(Profile);
 					Close();
 				}
 				catch (Exception ex)

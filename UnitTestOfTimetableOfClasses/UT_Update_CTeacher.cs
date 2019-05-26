@@ -12,11 +12,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_1()//изменение когда атрибуты не повторяются (ФИО изменить не возможно)
 		{
 			//arrange
-			Controllers.CTeacher.Rows.Clear();
+			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			Controllers.CTeacher.Insert(tcher);
-			Controllers.CTeacher.Insert(tcher1);
+			RefData.CTeacher.Insert(tcher);
+			RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
 			tcher1.AcademicDegree = "Доктор наук";
@@ -24,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
 			tcher1.MetodicalDays = "Чт, Сб";
 			tcher1.Windows = "Сб, Пн";
 			tcher1.Weekends = "Пятница";
-			bool actual = Controllers.CTeacher.Update(tcher1);
+			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -32,16 +32,16 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_5()//дублируется уч. степень и уч. звание
 		{
 			//arrange
-			Controllers.CTeacher.Rows.Clear();
+			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			Controllers.CTeacher.Insert(tcher);
-			Controllers.CTeacher.Insert(tcher1);
+			RefData.CTeacher.Insert(tcher);
+			RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
 			tcher1.AcademicDegree = "Кандидат наук";
 			tcher1.AcademicTitle = "Доцент";
-			bool actual = Controllers.CTeacher.Update(tcher1);
+			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -49,15 +49,15 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_6()//дублируется кафедра 
 		{
 			//arrange
-			Controllers.CTeacher.Rows.Clear();
+			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			Controllers.CTeacher.Insert(tcher);
-			Controllers.CTeacher.Insert(tcher1);
+			RefData.CTeacher.Insert(tcher);
+			RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
 			tcher1.Departament = "ФАСТ";
-			bool actual = Controllers.CTeacher.Update(tcher1);
+			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -65,17 +65,17 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_7()//дублируется график
 		{
 			//arrange
-			Controllers.CTeacher.Rows.Clear();
+			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			Controllers.CTeacher.Insert(tcher);
-			Controllers.CTeacher.Insert(tcher1);
+			RefData.CTeacher.Insert(tcher);
+			RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
 			tcher1.Weekends = "Воскресенье";
-			bool actual = Controllers.CTeacher.Update(tcher1);
+			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -83,11 +83,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_8()//дублируется всё кроме ФИО
 		{
 			//arrange
-			Controllers.CTeacher.Rows.Clear();
+			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
-			Controllers.CTeacher.Insert(tcher);
-			Controllers.CTeacher.Insert(tcher1);
+			RefData.CTeacher.Insert(tcher);
+			RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
 			//act
 			tcher1.AcademicDegree = "Кандидат наук";
@@ -96,7 +96,7 @@ namespace UnitTestOfTimetableOfClasses
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
 			tcher1.Weekends = "Воскресенье";
-			bool actual = Controllers.CTeacher.Update(tcher1);
+			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
