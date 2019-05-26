@@ -8,20 +8,12 @@ using System.Text.RegularExpressions;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Модель учёной степени
+	/// Класс со свойствами, определяющими модель Ученой степени
 	/// </summary>
-
 	public class MAcademicDegree : Model
 	{
 
-		/// <summary>
-		/// Полная запись учёной степени
-		/// </summary>
 		string _fullname;
-
-		/// <summary>
-		/// Сокращенная запись учёной степени
-		/// </summary>
 		string _reduction;
 		string _academicDegree;
 
@@ -38,6 +30,9 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// Полная запись учёной степени
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -50,6 +45,9 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// Сокращенная запись учёной степени
+		/// </summary>
 		public string Reduction
 		{
 			get
