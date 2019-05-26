@@ -67,9 +67,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
-			int C1 = Controllers.CInstitute.Rows.Count;
-			act = Controllers.CInstitute.Delete(T_Institute);
-			int C2 = Controllers.CInstitute.Rows.Count;
+			int C1 = RefData.CInstitute.Rows.Count;
+			act = RefData.CInstitute.Delete(T_Institute);
+			int C2 = RefData.CInstitute.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}

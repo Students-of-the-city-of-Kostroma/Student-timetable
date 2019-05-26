@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
 			T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
-			bool result = Controllers.CInstitute.Update(T_Institute);
+			bool result = RefData.CInstitute.Update(T_Institute);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 

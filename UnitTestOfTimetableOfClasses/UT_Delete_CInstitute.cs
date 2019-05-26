@@ -13,8 +13,8 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_617_1() //Удалить запись при совпадении всех атрибутов
 		{
 
-      RefData.CInstitute.Clear();
-      MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");	
+			RefData.CInstitute.Clear();
+			MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");	
 			bool ex = true;
 			RefData.CInstitute.Insert(I_IInstitute);
 			bool act = RefData.CInstitute.Delete(I_IInstitute);
@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Любой институт", "ИАСТ", "Иванов Ю.Л.", "Политехнический колледж");
 			bool ex = false;
-			bool act = Controllers.CInstitute.Delete(I_IInstitute);
+			bool act = RefData.CInstitute.Delete(I_IInstitute);
 			//assert	
 			Assert.AreEqual(ex, act);
 		}
@@ -39,11 +39,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_617_3() //при совпадении атрибута Полное название
 		{
 			//arrange	
-			Controllers.CTitle.Clear();
+			RefData.CTitle.Clear();
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
 			bool ex = false;
-			bool act = Controllers.CInstitute.Delete(I_IInstitute);
+			bool act = RefData.CInstitute.Delete(I_IInstitute);
 			//assert	
 			Assert.AreEqual(ex, act);
 		}
@@ -52,11 +52,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_617_4() //при совпадении атрибута  Директор
 		{
 			//arrange	
-			Controllers.CTitle.Clear();
+			RefData.CTitle.Clear();
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
 			bool ex = false;
-			bool act = Controllers.CInstitute.Delete(I_IInstitute);
+			bool act = RefData.CInstitute.Delete(I_IInstitute);
 			//assert	
 			Assert.AreEqual(ex, act);
 		}
@@ -65,11 +65,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_617_5() //при совпадении атрибута Наименование ВУЗа
 		{
 			//arrange	
-			Controllers.CTitle.Clear();
+			RefData.CTitle.Clear();
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Костромской Государственный Университет");
 			bool ex = false;
-			bool act = Controllers.CInstitute.Delete(I_IInstitute);
+			bool act = RefData.CInstitute.Delete(I_IInstitute);
 			//assert	
 			Assert.AreEqual(ex, act);
 		}
@@ -78,7 +78,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_617_6() //Удаление несуществующих данных из таблицы
 		{
 			//arrange	
-			Controllers.CTitle.Clear();
+			RefData.CTitle.Clear();
 			//act	
 			MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
 			bool ex = false;
