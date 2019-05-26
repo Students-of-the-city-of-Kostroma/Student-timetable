@@ -13,12 +13,17 @@ namespace TimetableOfClasses
 {
 	public partial class AcademicTitle : Form
 	{
-		public AcademicTitle()
+		public string ChoseReductionAcademicTitle;
+		public AcademicTitle(bool forChoice = false)
 		{
 			InitializeComponent();
 			DG_AcademicTitle.AutoGenerateColumns = false;
-			DG_AcademicTitle.DataSource = Controllers.CTitle;
+			DG_AcademicTitle.DataSource = RefData.CTitle;
 
+			if (forChoice)
+			{
+				this.Name = "Выбор звания";
+			}
 		}
 
 		private void DG_AcademicTitle_SelectionChanged(object sender, EventArgs e)
@@ -143,6 +148,16 @@ namespace TimetableOfClasses
 			object header = this.DG_AcademicTitle.Rows[index].HeaderCell.Value;
 			if (header == null || !header.Equals(indexStr))
 				this.DG_AcademicTitle.Rows[index].HeaderCell.Value = indexStr;
+		}
+
+		private void DG_AcademicTitle_DoubleClick(object sender, EventArgs e)
+		{
+			if (DG_AcademicTitle.SelectedRows.Count == 1 && this.Name == "Выбор звания")
+			{
+				DataRow Row = ((DataRowView)DG_AcademicTitle.SelectedRows[0].DataBoundItem).Row;
+				ChoseReductionAcademicTitle = (string)Row["Reduction"];
+				Close();
+			}
 		}
 	}
 }

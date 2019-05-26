@@ -56,6 +56,7 @@
 			this.DG_AcademicTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicTitle.Size = new System.Drawing.Size(562, 215);
 			this.DG_AcademicTitle.TabIndex = 0;
+			this.DG_AcademicTitle.DoubleClick += new System.EventHandler(this.DG_AcademicTitle_DoubleClick);
 			// 
 			// FullName
 			// 

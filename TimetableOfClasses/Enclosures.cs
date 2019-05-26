@@ -19,7 +19,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.СEnclosures;
+			DG.DataSource = RefData.СEnclosures;
 			if (forChoice)
 			{
 				Name = "Выбор корпуса";
@@ -100,8 +100,8 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"]);
-					Controllers.СEnclosures.Delete(mEnclosures);
+					mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"], (string)Row["Adress"], (string)Row["Phone"], (string)Row["Comment"]);
+					RefData.СEnclosures.Delete(mEnclosures);
 				}
 			}
 		}

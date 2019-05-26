@@ -18,7 +18,7 @@ namespace TimetableOfClasses
      {
       InitializeComponent();
 			DataGridAuditor.AutoGenerateColumns = false;
-			DataGridAuditor.DataSource = Controllers.CAuditor;
+			DataGridAuditor.DataSource = RefData.CAuditor;
 		 }
 
 		private void btAddAuditor_Click(object sender, EventArgs e)
@@ -46,8 +46,8 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DataGridAuditor.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
-					Controllers.CAuditor.Delete(mAuditor);
+					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
+					RefData.CAuditor.Delete(mAuditor);
 				}
 			}
 			
