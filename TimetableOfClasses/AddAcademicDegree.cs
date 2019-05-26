@@ -41,14 +41,17 @@ namespace TimetableOfClasses
 				{
 					if (FullName.Text.Length != 0)
 					{
-						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-						RefData.CAcademicDegree.Insert(AcademicDegree);
-						FullName.Text = "";
-						Reduction.Text = "";
-					}
-					catch (Exception)
-					{
-						MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						try
+						{
+							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+							RefData.CAcademicDegree.Insert(AcademicDegree);
+							FullName.Text = "";
+							Reduction.Text = "";
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
 					}
 					else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
@@ -66,15 +69,19 @@ namespace TimetableOfClasses
 					{
 						if (FullName.Text.Length != 0)
 						{
-							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							RefData.CAcademicDegree.Update(AcademicDegree);
-							FullName.Text = "";
-							Reduction.Text = "";
-							Close();
-						}
-						catch (Exception)
-						{
-							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+							try
+							{
+								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+								RefData.CAcademicDegree.Update(AcademicDegree);
+								FullName.Text = "";
+								Reduction.Text = "";
+								Close();
+							}
+							catch (Exception)
+							{
+								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+							}
+							
 						}
 						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
@@ -83,26 +90,18 @@ namespace TimetableOfClasses
 				else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
 			}
 			else
-			{
+{
 
 				if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
 				{
 					if (Reduction.Text.Length != 0)
 					{
-						try
-						{
-							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							RefData.CAcademicDegree.Insert(AcademicDegree);
-							FullName.Text = "";
-							Reduction.Text = "";
-							Close();
-						}
-						catch (Exception)
+						if (FullName.Text.Length != 0)
 						{
 							try
 							{
 								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-								Controllers.CAcademicDegree.Insert(AcademicDegree);
+								RefData.CAcademicDegree.Insert(AcademicDegree);
 								FullName.Text = "";
 								Reduction.Text = "";
 								Close();
