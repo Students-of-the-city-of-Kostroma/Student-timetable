@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange 	
 			Controllers.CInstitute.Clear();
-			MInstitute inst = new MInstitute("Институт Автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+			MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 			bool expected = true;
 			//act	
 			bool actual = Controllers.CInstitute.Insert(inst);
@@ -27,7 +27,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Неавтоматиз", "ИАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+
+            MInstitute T_Institute = new MInstitute("Институт неавтоматиз", "ИАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;
@@ -40,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Автоматизирован", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;
@@ -53,7 +54,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт Неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "Тюменский Государственный Университет");
+
+            MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "Тюменский Государственный Университет");
             int C1 = Controllers.CInstitute.Rows.Count;
             act = Controllers.CInstitute.Delete(T_Institute);
             int C2 = Controllers.CInstitute.Rows.Count;

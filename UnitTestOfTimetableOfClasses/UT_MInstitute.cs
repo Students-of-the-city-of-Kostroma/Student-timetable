@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MInstitute T_Institute = new MInstitute("ИИ", "ИИ", "ИИ ", "ИИ ");
+				MInstitute T_Institute = new MInstitute("Ии", "Ии", "Ии ", "Ии ");
 				Assert.AreEqual(typeof(String), T_Institute.FullName.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MInstitute T_Institute = new MInstitute("ИИ", "ИИ", "ИИ ", "ИИ ");
+				MInstitute T_Institute = new MInstitute("Ии", "Ии", "Ии ", "Ии");
 				Assert.AreEqual(typeof(String), T_Institute.ShortName.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MInstitute T_Institute = new MInstitute("ИИ ", "ИИ", "ИИ ", "ИИ ");
+				MInstitute T_Institute = new MInstitute("Ии ", "Ии", "Ии ", "Ии ");
 				Assert.AreEqual(typeof(String), T_Institute.Director.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			try
 			{
-				MInstitute T_Institute = new MInstitute("ИИ ", "ИИ", "ИИ ", "ИИ ");
+				MInstitute T_Institute = new MInstitute("Ии ", "Ии", "Ии ", "Ии ");
 				Assert.AreEqual(typeof(String), T_Institute.VUS.GetType(), "Ожидался тип поля String");
 			}
 			catch (Exception ex)
