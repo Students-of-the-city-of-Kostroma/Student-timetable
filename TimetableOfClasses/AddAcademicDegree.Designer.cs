@@ -57,7 +57,8 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(227, 244);
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.Location = new System.Drawing.Point(220, 222);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(131, 23);
 			this.button1.TabIndex = 4;
@@ -67,7 +68,8 @@
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(364, 244);
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(357, 222);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(128, 23);
 			this.button2.TabIndex = 5;
@@ -77,7 +79,8 @@
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(498, 244);
+			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button3.Location = new System.Drawing.Point(491, 222);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 6;
@@ -88,22 +91,30 @@
 			// Reduction
 			// 
 			this.Reduction.Location = new System.Drawing.Point(13, 30);
+			this.Reduction.MaxLength = 25;
 			this.Reduction.Name = "Reduction";
 			this.Reduction.Size = new System.Drawing.Size(260, 20);
 			this.Reduction.TabIndex = 7;
+			this.Reduction.TextChanged += new System.EventHandler(this.Reduction_TextChanged);
+			this.Reduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Reduction_KeyPress);
+			this.Reduction.Leave += new System.EventHandler(this.Reduction_Leave);
 			// 
 			// FullName
 			// 
 			this.FullName.Location = new System.Drawing.Point(13, 84);
+			this.FullName.MaxLength = 25;
 			this.FullName.Name = "FullName";
 			this.FullName.Size = new System.Drawing.Size(260, 20);
 			this.FullName.TabIndex = 8;
+			this.FullName.TextChanged += new System.EventHandler(this.FullName_TextChanged);
+			this.FullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullName_KeyPress);
+			this.FullName.Leave += new System.EventHandler(this.FullName_Leave);
 			// 
 			// AddAcademicDegree
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(585, 279);
+			this.ClientSize = new System.Drawing.Size(578, 257);
 			this.Controls.Add(this.FullName);
 			this.Controls.Add(this.Reduction);
 			this.Controls.Add(this.button3);
@@ -112,7 +123,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "AddAcademicDegree";
-			this.Text = "AddAcademicDegree";
+			this.Text = "Добавление ученой степени";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

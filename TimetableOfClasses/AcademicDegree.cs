@@ -26,6 +26,10 @@ namespace TimetableOfClasses
 			}
 		}
 
+
+		/// <summary>
+		/// Кнопка изменения ученой степени
+		/// </summary>
 		private void ChangeButton_Click(object sender, EventArgs e)
 		{
 			if (DG_AcademicDegree.SelectedRows.Count == 1)
@@ -40,6 +44,9 @@ namespace TimetableOfClasses
 			else { MessageBox.Show("Для изменения выделите только одну строку"); }
 		}
 
+		/// <summary>
+		/// Кнопка удаления ученой степени
+		/// </summary>
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
 			if (DG_AcademicDegree.SelectedRows.Count == 0)
@@ -49,16 +56,6 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-				//if (== true)
-				//{
-				//	string message = "Нельзя удалить данную учёную степень. Данная учёная степень используется в таблице Преподователь";
-				//	string caption = "Сообщение";
-				//	MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-				//	DialogResult result;
-				//	result = MessageBox.Show(message, caption, buttons);
-				//}
-				//else
-				//{
 					string message = "Вы уверны что хотите удалить ученую степень?";
 					string caption = "Подтверждение удаления";
 					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -76,13 +73,12 @@ namespace TimetableOfClasses
 						}
 						DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
 					}
-				//}
 			}
-
-
-
 		}
 
+		/// <summary>
+		/// Кнопка добавления ученой степени
+		/// </summary>
 		private void AddButton_Click(object sender, EventArgs e)
 		{
 
