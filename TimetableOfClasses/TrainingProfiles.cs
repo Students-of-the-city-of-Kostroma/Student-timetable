@@ -19,7 +19,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			dgProfile.AutoGenerateColumns = false;
-			dgProfile.DataSource = Controllers.CTrainingProfile;
+			dgProfile.DataSource = LibOfTimetableOfClasses.RefData.CTrainingProfile;
 
 			if (forChoice)
 			{				
@@ -61,7 +61,7 @@ namespace TimetableOfClasses
 					{
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 						Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"]);
-						Controllers.CTrainingProfile.Delete(Profile);
+						LibOfTimetableOfClasses.RefData.CTrainingProfile.Delete(Profile);
 					}
 				}
 			}
