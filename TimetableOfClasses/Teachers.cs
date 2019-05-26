@@ -18,7 +18,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = LibOfTimetableOfClasses.RefData.CTeacher;
+			DG.DataSource = Controllers.CTeacher;
 		}
 
 		private void AddTeacher(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace TimetableOfClasses
 					if(fullName.Length==3)
 					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2],(string)Row["Departament"]);
 					else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["Departament"]);
-					LibOfTimetableOfClasses.RefData.CTeacher.Delete(mTeacher);
+					Controllers.CTeacher.Delete(mTeacher);
 				}
 			}
 		}

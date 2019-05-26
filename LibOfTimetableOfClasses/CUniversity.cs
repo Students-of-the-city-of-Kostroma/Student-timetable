@@ -13,7 +13,7 @@ namespace LibOfTimetableOfClasses
 		public CUniversity() : base("ВУЗ")
 		{
 
-			if (RefData.CUniversity != null) throw new Exception("Контроллер уже существует");
+			if (Controllers.CUniversity != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn();

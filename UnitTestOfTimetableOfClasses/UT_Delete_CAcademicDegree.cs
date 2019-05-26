@@ -13,14 +13,14 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_485_1()//Удаление существующих данных таблицы
 		{
 			//arrange
-			RefData.CAcademicDegree.Clear();
+			Controllers.CAcademicDegree.Clear();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
 
 
 			//act
-			RefData.CAcademicDegree.Insert(MAcademic);
-			bool act = RefData.CAcademicDegree.Delete(MAcademic);
+			Controllers.CAcademicDegree.Insert(MAcademic);
+			bool act = Controllers.CAcademicDegree.Delete(MAcademic);
 
 			//assert 
 			Assert.AreEqual(ex, act);
@@ -30,12 +30,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_485_2()//Удаление несуществующих данных из таблицы
 		{
 			//arrange 
-			RefData.CAcademicDegree.Clear();
+			Controllers.CAcademicDegree.Clear();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = false;
 
 			//act
-			bool act = RefData.CAcademicDegree.Delete(MAcademic);
+			bool act = Controllers.CAcademicDegree.Delete(MAcademic);
 
 			//assert
 			Assert.AreEqual(ex, act);

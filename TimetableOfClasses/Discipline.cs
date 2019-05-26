@@ -16,7 +16,7 @@ namespace TimetableOfClasses
 		public Discipline()
 		{
 			InitializeComponent();
-			DG_Disc.DataSource = LibOfTimetableOfClasses.RefData.CDiscipline.Select();
+			DG_Disc.DataSource = Controllers.CDiscipline.Select();
 		}
 
 

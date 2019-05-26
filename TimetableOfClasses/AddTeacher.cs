@@ -15,8 +15,8 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
-		private CAcademicDegree AcademicDegree = LibOfTimetableOfClasses.RefData.CAcademicDegree;
-		private CTitle AcademicTitle = LibOfTimetableOfClasses.RefData.CTitle;
+		private CAcademicDegree AcademicDegree = Controllers.CAcademicDegree;
+		private CTitle AcademicTitle = Controllers.CTitle;
 
 		public AddTeacher()
 		{
@@ -111,7 +111,7 @@ namespace TimetableOfClasses
 				if (Lehrer == null)
 				{
 					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-					return LibOfTimetableOfClasses.RefData.CTeacher.Insert(Prepodavatel);
+					return Controllers.CTeacher.Insert(Prepodavatel);
 				}
 				else
 				{
@@ -124,7 +124,7 @@ namespace TimetableOfClasses
 					Lehrer.MetodicalDays = metodDays.Text;
 					Lehrer.Windows = windows.Text;
 					Lehrer.Weekends = weekends.Text;
-					return LibOfTimetableOfClasses.RefData.CTeacher.Update(Lehrer);
+					return Controllers.CTeacher.Update(Lehrer);
 				}
 			}
 			catch (Exception)
