@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibOfTimetableOfClasses
 {
@@ -18,8 +19,7 @@ namespace LibOfTimetableOfClasses
 		string _director;
 		string _VUS;
 
-
-
+		
 		public string FullName
 		{
 			get
@@ -32,6 +32,12 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Поле Полное название института пустое");
 				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
 					throw new Exception("Поле Полное название института содержит недопустимые символы");
+				if (value.Length > 50)
+					throw new Exception("Слишком длинное значение (не более 50)");
+				if (value.Length <= 1)
+					throw new Exception("Слишком короткое значение");
+				for (int i = 1; i < value.Length; i++)
+					if ((value[i] < 'а' || value[i] > 'я') && value[i] != ' ') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
 				_fullname = value;
 			}
 		}
