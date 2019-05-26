@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
@@ -22,6 +23,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Возвращает или задает fullname - Полное название профиля подготовки
 		/// </summary>
+		string shiphr;
 		public string FullName
 		{
 			get
@@ -30,6 +32,9 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+				if (!Regex.IsMatch(value, @"[А-Яа-я\ ]"))
+					throw new Exception("Ошибка создания модели. В свойство Полное имя получена строка содержащая недопустимые символы");
 				fullname = value;
 			}
 		}
@@ -44,13 +49,28 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
+				if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+				if (!Regex.IsMatch(value, @"[А-Я]"))
+					throw new Exception("Ошибка создания модели. В свойство Короткое имя получена строка содержащая недопустимые символы");
 				shortname = value;
 			}
 		}
-		public MTrainingProfile(string fullname, string shortname):base()
+		public string Shiphr
+		{
+			get
+			{
+				return shiphr;
+			}
+			set
+			{
+				shiphr = value;
+			}
+		}
+		public MTrainingProfile(string fullname, string shortname, string shiphr) :base()
 		{
 			FullName = fullname;
 			ShortName = shortname;
+			Shiphr = shiphr;
 		}
 
 		public override string ToString()

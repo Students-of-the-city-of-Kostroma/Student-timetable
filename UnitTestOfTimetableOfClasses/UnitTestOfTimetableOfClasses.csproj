@@ -41,6 +41,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UT_MDirectionOfPreparation.cs" />
+    <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
+    <Compile Include="UT_CDirectionOfPreparation.cs" />
+
     <Compile Include="UT_MTitle.cs" />
     <Compile Include="UT_MInstitute.cs" />
     <Compile Include="UT_CTrainingProfile.cs" />
@@ -55,6 +59,7 @@
     <Compile Include="UT_Update_CTitle.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />
     <Compile Include="UT_Delete_CAcademicDegree.cs" />
+    <Compile Include="UT_Selection.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />

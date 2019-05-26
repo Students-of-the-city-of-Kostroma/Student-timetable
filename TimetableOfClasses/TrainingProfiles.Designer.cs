@@ -29,11 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.dgProfile = new System.Windows.Forms.DataGridView();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.AddProfile = new System.Windows.Forms.Button();
 			this.ChangeProfile = new System.Windows.Forms.Button();
 			this.DeleteProfile = new System.Windows.Forms.Button();
+			this.Shiphr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgProfile)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -47,6 +48,7 @@
 			this.dgProfile.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dgProfile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgProfile.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Shiphr,
             this.FullName,
             this.ShortName});
 			this.dgProfile.Location = new System.Drawing.Point(12, 12);
@@ -58,23 +60,6 @@
 			this.dgProfile.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgProfile_RowPrePaint);
 			this.dgProfile.SelectionChanged += new System.EventHandler(this.dgProfile_SelectionChanged);
 			this.dgProfile.DoubleClick += new System.EventHandler(this.DgProfile_DoubleClick);
-			// 
-			// FullName
-			// 
-			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полное название профиля подготовки";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// ShortName
-			// 
-			this.ShortName.DataPropertyName = "ShortName";
-			this.ShortName.FillWeight = 200F;
-			this.ShortName.HeaderText = "Краткое название профиля подготовки";
-			this.ShortName.Name = "ShortName";
-			this.ShortName.ReadOnly = true;
-			this.ShortName.Width = 159;
 			// 
 			// AddProfile
 			// 
@@ -109,6 +94,31 @@
 			this.DeleteProfile.UseVisualStyleBackColor = true;
 			this.DeleteProfile.Click += new System.EventHandler(this.DeleteProfile_Click);
 			// 
+			// Shiphr
+			// 
+			this.Shiphr.DataPropertyName = "Shiphr";
+			this.Shiphr.HeaderText = "Ширф направления подготовки";
+			this.Shiphr.Name = "Shiphr";
+			this.Shiphr.ReadOnly = true;
+			this.Shiphr.Width = 174;
+			// 
+			// FullName
+			// 
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полное название профиля подготовки";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// ShortName
+			// 
+			this.ShortName.DataPropertyName = "ShortName";
+			this.ShortName.FillWeight = 200F;
+			this.ShortName.HeaderText = "Краткое название профиля подготовки";
+			this.ShortName.Name = "ShortName";
+			this.ShortName.ReadOnly = true;
+			this.ShortName.Width = 159;
+			// 
 			// TrainingProfiles
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,10 +138,11 @@
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dgProfile;
+		public System.Windows.Forms.DataGridView dgProfile;
 		private System.Windows.Forms.Button AddProfile;
 		private System.Windows.Forms.Button ChangeProfile;
 		private System.Windows.Forms.Button DeleteProfile;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Shiphr;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ShortName;
 	}

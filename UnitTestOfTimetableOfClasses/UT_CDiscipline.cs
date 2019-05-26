@@ -14,9 +14,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Delete(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Delete(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 - 1, C2);
 		}
@@ -25,26 +25,26 @@ namespace UnitTestOfTimetableOfClasses
 		/// </summary>
 		public void Pre_condition_Del()
 		{
-			Controllers.CDiscipline.Clear();
+			RefData.CDiscipline.Clear();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
 		[TestMethod]
 		public void Task_339_2()
 		{
-			Controllers.CDiscipline.Clear();
+			RefData.CDiscipline.Clear();
 			bool ex = false;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Delete(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Delete(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}
@@ -54,11 +54,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
 
-			Controllers.CDiscipline.Clear();
-			Controllers.CDiscipline.Insert(T_Discipline);
+			RefData.CDiscipline.Clear();
+			RefData.CDiscipline.Insert(T_Discipline);
 
 			T_Discipline = new MDiscipline("Физика", "Физ.", "33");
-			bool result = Controllers.CDiscipline.Update(T_Discipline);
+			bool result = RefData.CDiscipline.Update(T_Discipline);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}
@@ -68,11 +68,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
 
-			Controllers.CDiscipline.Clear();
-			Controllers.CDiscipline.Insert(T_Discipline);
+			RefData.CDiscipline.Clear();
+			RefData.CDiscipline.Insert(T_Discipline);
 
 			T_Discipline = new MDiscipline("Математика", "Физ.", "33");
-			bool result = Controllers.CDiscipline.Update(T_Discipline);
+			bool result = RefData.CDiscipline.Update(T_Discipline);
 
 			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
 		}
@@ -82,11 +82,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
 
-			Controllers.CDiscipline.Clear();
-			Controllers.CDiscipline.Insert(T_Discipline);
+			RefData.CDiscipline.Clear();
+			RefData.CDiscipline.Insert(T_Discipline);
 
 			T_Discipline = new MDiscipline("Физика", "Мат.", "33");
-			bool result = Controllers.CDiscipline.Update(T_Discipline);
+			bool result = RefData.CDiscipline.Update(T_Discipline);
 
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменится");
@@ -97,11 +97,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
 
-			Controllers.CDiscipline.Clear();
-			Controllers.CDiscipline.Insert(T_Discipline);
+			RefData.CDiscipline.Clear();
+			RefData.CDiscipline.Insert(T_Discipline);
 
 			T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			bool result = Controllers.CDiscipline.Update(T_Discipline);
+			bool result = RefData.CDiscipline.Update(T_Discipline);
 
 
 			Assert.IsTrue(result, "Ожидаем, что Модель изменится");
@@ -109,13 +109,13 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_335_1()
 		{
-			Controllers.CDiscipline.Clear();
+			RefData.CDiscipline.Clear();
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Мат.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
@@ -126,9 +126,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Физ.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
@@ -139,9 +139,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Математика", "Физ.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}
@@ -152,9 +152,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Физ.", "42");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
@@ -165,9 +165,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Мат.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
@@ -178,9 +178,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MDiscipline T_Discipline = new MDiscipline("Физика", "Мат.", "33");
-			int C1 = Controllers.CDiscipline.Rows.Count;
-			act = Controllers.CDiscipline.Insert(T_Discipline);
-			int C2 = Controllers.CDiscipline.Rows.Count;
+			int C1 = RefData.CDiscipline.Rows.Count;
+			act = RefData.CDiscipline.Insert(T_Discipline);
+			int C2 = RefData.CDiscipline.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
