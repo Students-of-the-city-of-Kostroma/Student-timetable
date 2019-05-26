@@ -37,7 +37,7 @@ namespace LibOfTimetableOfClasses
 				if (value.Length <= 1)
 					throw new Exception("Слишком короткое значение");
 				for (int i = 1; i < value.Length; i++)
-					if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
+					if ((value[i] < 'а' || value[i] > 'я') && value[i] != ' ') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
 				_fullname = value;
 			}
 		}

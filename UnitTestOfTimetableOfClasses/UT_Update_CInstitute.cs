@@ -11,14 +11,14 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_513_1() //замена всех атрибутов
 		{
 
-			MInstitute T_Institute = new MInstitute("Институт Автоматизированных", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
+			MInstitute T_Institute = new MInstitute("Институт автоматизированных", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 
 
             Controllers.CInstitute.Clear();
             Controllers.CInstitute.Insert(T_Institute);
 
 
-			T_Institute = new MInstitute("Факультет Автоматизированных", "ФАСТ", "Голубева Ю.А.", "КГТУ");
+			T_Institute = new MInstitute("Факультет автоматизированных", "ФАСТ", "Голубева Ю.А.", "КГТУ");
 			bool result = Controllers.CInstitute.Update(T_Institute);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
@@ -29,13 +29,13 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_513_2() //замена атрибутов Полное название
 		{
 
-			MInstitute T_Institute = new MInstitute("Институт Автоматизированных", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
+			MInstitute T_Institute = new MInstitute("Институт автоматизированных", "ИАСТ", "Лустгартен Ю.Л.", "КГУ");
 
 
             Controllers.CInstitute.Clear();
             Controllers.CInstitute.Insert(T_Institute);
 
-			T_Institute = new MInstitute("Институт Автоматизированны", "ФАСТ", "Лустгартен Ю.Л.", "КГУ");
+			T_Institute = new MInstitute("Институт автоматизированны", "ФАСТ", "Лустгартен Ю.Л.", "КГУ");
 			bool result = Controllers.CInstitute.Update(T_Institute);
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
