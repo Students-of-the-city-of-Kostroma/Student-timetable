@@ -73,6 +73,20 @@
 			this.Reduction.Name = "Reduction";
 			this.Reduction.ReadOnly = true;
 			// 
+			// FullName
+			// 
+			this.FullName.DataPropertyName = "FullName";
+			this.FullName.HeaderText = "Полная запись ученой степени";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Reduction
+			// 
+			this.Reduction.DataPropertyName = "Reduction";
+			this.Reduction.HeaderText = "Сокращенная запись учёной степени";
+			this.Reduction.Name = "Reduction";
+			this.Reduction.ReadOnly = true;
+			// 
 			// AddButton
 			// 
 			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,7 +102,7 @@
 			// DeleteButton
 			// 
 			this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.DeleteButton.Location = new System.Drawing.Point(350, 239);
+			this.DeleteButton.Location = new System.Drawing.Point(267, 239);
 			this.DeleteButton.Margin = new System.Windows.Forms.Padding(4);
 			this.DeleteButton.Name = "DeleteButton";
 			this.DeleteButton.Size = new System.Drawing.Size(75, 23);
@@ -100,7 +114,7 @@
 			// ChangeButton
 			// 
 			this.ChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.ChangeButton.Location = new System.Drawing.Point(267, 239);
+			this.ChangeButton.Location = new System.Drawing.Point(350, 239);
 			this.ChangeButton.Margin = new System.Windows.Forms.Padding(4);
 			this.ChangeButton.Name = "ChangeButton";
 			this.ChangeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
