@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibOfTimetableOfClasses
 {
@@ -18,8 +19,7 @@ namespace LibOfTimetableOfClasses
 		string _director;
 		string _VUS;
 
-
-
+		
 		public string FullName
 		{
 			get
@@ -36,6 +36,8 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Слишком длинное значение (не более 50)");
 				if (value.Length <= 1)
 					throw new Exception("Слишком короткое значение");
+				
+
 				_fullname = value;
 			}
 		}
