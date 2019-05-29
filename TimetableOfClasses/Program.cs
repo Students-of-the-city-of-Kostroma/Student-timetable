@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
