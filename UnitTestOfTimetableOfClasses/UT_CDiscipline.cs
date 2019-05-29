@@ -171,18 +171,5 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
-		[TestMethod]
-		public void Task_271_5()
-		{
-			Task_335_1();
-			bool ex = true;
-			bool act;
-			MDiscipline T_Discipline = new MDiscipline("Физика", "Мат.", "33");
-			int C1 = RefData.CDiscipline.Rows.Count;
-			act = RefData.CDiscipline.Insert(T_Discipline);
-			int C2 = RefData.CDiscipline.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1 + 1, C2);
-		}
 	}
 }
