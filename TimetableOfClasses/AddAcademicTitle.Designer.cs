@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Reduction = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -35,10 +36,14 @@
 			this.btCancel = new System.Windows.Forms.Button();
 			this.btCreateAndClean = new System.Windows.Forms.Button();
 			this.btCreateAndClose = new System.Windows.Forms.Button();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
 			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(13, 9);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -54,13 +59,18 @@
 			this.Reduction.Location = new System.Drawing.Point(13, 30);
 			this.Reduction.Margin = new System.Windows.Forms.Padding(4);
 			this.Reduction.Name = "Reduction";
-			this.Reduction.Size = new System.Drawing.Size(409, 22);
+			this.Reduction.Size = new System.Drawing.Size(397, 22);
 			this.Reduction.TabIndex = 7;
+			this.Reduction.TextChanged += new System.EventHandler(this.Reduction_TextChanged);
+			this.Reduction.Validating += new System.ComponentModel.CancelEventHandler(this.Reduction_Validating);
 			// 
 			// label2
 			// 
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(13, 99);
+			this.label2.Location = new System.Drawing.Point(13, 56);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(180, 17);
@@ -69,19 +79,20 @@
 			// 
 			// FullName
 			// 
-			this.FullName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.FullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.FullName.Location = new System.Drawing.Point(13, 120);
+			this.FullName.Location = new System.Drawing.Point(13, 77);
 			this.FullName.Margin = new System.Windows.Forms.Padding(4);
 			this.FullName.Name = "FullName";
-			this.FullName.Size = new System.Drawing.Size(409, 22);
+			this.FullName.Size = new System.Drawing.Size(397, 22);
 			this.FullName.TabIndex = 9;
+			this.FullName.TextChanged += new System.EventHandler(this.FullName_TextChanged);
+			this.FullName.Validating += new System.ComponentModel.CancelEventHandler(this.FullName_Validating);
 			// 
 			// btCancel
 			// 
-			this.btCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCancel.Location = new System.Drawing.Point(93, 166);
+			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCancel.Location = new System.Drawing.Point(246, 191);
 			this.btCancel.Margin = new System.Windows.Forms.Padding(4);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(100, 46);
@@ -92,8 +103,8 @@
 			// 
 			// btCreateAndClean
 			// 
-			this.btCreateAndClean.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCreateAndClean.Location = new System.Drawing.Point(205, 166);
+			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCreateAndClean.Location = new System.Drawing.Point(354, 191);
 			this.btCreateAndClean.Margin = new System.Windows.Forms.Padding(4);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(100, 46);
@@ -104,8 +115,8 @@
 			// 
 			// btCreateAndClose
 			// 
-			this.btCreateAndClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btCreateAndClose.Location = new System.Drawing.Point(313, 166);
+			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCreateAndClose.Location = new System.Drawing.Point(462, 191);
 			this.btCreateAndClose.Margin = new System.Windows.Forms.Padding(4);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(100, 46);
@@ -114,11 +125,15 @@
 			this.btCreateAndClose.UseVisualStyleBackColor = true;
 			this.btCreateAndClose.Click += new System.EventHandler(this.btCreateAndClose_Click);
 			// 
+			// errorProvider1
+			// 
+			this.errorProvider1.ContainerControl = this;
+			// 
 			// AddAcademicTitle
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(586, 225);
+			this.ClientSize = new System.Drawing.Size(575, 250);
 			this.Controls.Add(this.btCreateAndClose);
 			this.Controls.Add(this.btCreateAndClean);
 			this.Controls.Add(this.btCancel);
@@ -126,10 +141,14 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.Reduction);
 			this.Controls.Add(this.label1);
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "AddAcademicTitle";
 			this.Text = "Добавление уч. звания";
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
 
 		}
 
@@ -142,5 +161,6 @@
 		private System.Windows.Forms.Button btCancel;
 		private System.Windows.Forms.Button btCreateAndClean;
 		private System.Windows.Forms.Button btCreateAndClose;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }

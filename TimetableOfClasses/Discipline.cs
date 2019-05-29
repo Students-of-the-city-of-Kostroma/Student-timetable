@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Disc.AutoGenerateColumns = false;
-			DG_Disc.DataSource = Controllers.CDiscipline;
+			DG_Disc.DataSource = RefData.CDiscipline;
 		}
 
 
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
-					Controllers.CDiscipline.Delete(mDiscipline);
+					RefData.CDiscipline.Delete(mDiscipline);
 				}
 			}
 
@@ -77,7 +77,8 @@ namespace TimetableOfClasses
 				add.Owner = this;
 				add.Show();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DG_Disc.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

@@ -13,12 +13,14 @@ using LibOfTimetableOfClasses;
 namespace TimetableOfClasses
 {
 	public partial class AddDiscipline : Form
-	{ 
+	{
+		bool itsupdate = false;
+
 		public AddDiscipline()
 		{
 			InitializeComponent();
 		}
-		bool itsupdate = false;
+		
 		public AddDiscipline(MDiscipline mDiscipline)
 		{
 			InitializeComponent();
@@ -41,11 +43,13 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline(tbFullName.Text, tbShortName.Text, tbCycleOfDis.Text);
 				try
 				{
-					if (!Controllers.CDiscipline.Insert(mDiscipline))
+
+					if (!RefData.CDiscipline.Insert(mDiscipline))
 					{
 						MessageBox.Show("Невозможно добавить дисциплину");
 						return;
 					}
+
 					tbFullName.Text = "";
 					tbShortName.Text = "";
 					tbCycleOfDis.Text = "";
@@ -68,13 +72,13 @@ namespace TimetableOfClasses
 				{
 					if (!itsupdate)
 					{
-						if (!Controllers.CDiscipline.Insert(mDiscipline))
+						if (!RefData.CDiscipline.Insert(mDiscipline))
 						{
 							MessageBox.Show("Невозможно добавить дисциплину");
 							return;
 						}
 					}
-					else Controllers.CDiscipline.Update(mDiscipline);
+					else RefData.CDiscipline.Update(mDiscipline);
 					Close();
 				}
 				catch (Exception ex)

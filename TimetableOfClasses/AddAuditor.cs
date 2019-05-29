@@ -13,15 +13,14 @@ namespace TimetableOfClasses
 {
 	public partial class AddAuditor : Form
 	{
-
-		private СEnclosures СEnclosures = Controllers.СEnclosures;
+		bool itsupdate = false;
 
 		public AddAuditor()
 		{
 			InitializeComponent();
 			itsupdate = false;
 		}
-		bool itsupdate = false;
+
 		public AddAuditor(MAuditor mAuditor)
 		{
 			InitializeComponent();
@@ -51,11 +50,13 @@ namespace TimetableOfClasses
 				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, tbCorpus.Text);
 				try
 				{
-					if (!Controllers.CAuditor.Insert(Auditor))
+
+					if (!RefData.CAuditor.Insert(Auditor))
 					{
 						MessageBox.Show("Невозможно добавить аудиторию");
 						return;
 					}
+
 					tbAuditor.Text = "";
 					tbKaf.Text = "";
 					tbCorpus.Text = "";
@@ -78,13 +79,14 @@ namespace TimetableOfClasses
 				try
 				{
 					if (!itsupdate)
-						{ if (!Controllers.CAuditor.Insert(Auditor))
+					{ 
+						if (!RefData.CAuditor.Insert(Auditor))
 						{
 							MessageBox.Show("Невозможно добавить аудиторию");
 							return;
 						}
 					}
-					else Controllers.CAuditor.Update(Auditor);
+					else RefData.CAuditor.Update(Auditor);
 					Close();
 				}
 				catch (Exception ex)

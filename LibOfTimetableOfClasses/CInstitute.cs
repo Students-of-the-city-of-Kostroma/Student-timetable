@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Создаёт экзампляр контроллера для сущности Институт
+/// </summary>
 namespace LibOfTimetableOfClasses
 {
 	public class CInstitute : DataTable, IController

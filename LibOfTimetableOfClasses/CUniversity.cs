@@ -10,10 +10,13 @@ namespace LibOfTimetableOfClasses
 {
 	public class CUniversity : DataTable, IController
 	{
+		/// <summary>
+		/// Контроллер для объекта ВУЗ
+		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{
 
-			if (Controllers.CUniversity != null) throw new Exception("Контроллер уже существует");
+			if (RefData.CUniversity != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn();
@@ -30,6 +33,7 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
@@ -50,17 +54,23 @@ namespace LibOfTimetableOfClasses
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Email";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
 		}
 
-
+		/// <summary>
+		/// Метод удаления строки ВУЗа из таблицы
+		/// </summary>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если удаление прошло успешно, то истина, иначе ложь</returns>
 		public bool Delete(Model model)
 
 		{
@@ -85,7 +95,11 @@ namespace LibOfTimetableOfClasses
 			}
 			return true;
 		}
-
+		/// <summary>
+		/// Метод добавления строки ВУЗа в таблицу
+		/// </summary>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если добавление прошло успешно, то истина, иначе ложь</returns>
 		public bool Insert(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;
@@ -117,7 +131,11 @@ namespace LibOfTimetableOfClasses
 			return false;
 
 		}
-
+		/// <summary>
+		/// Метод обновления информации строки ВУЗа в таблице
+		/// </summary>
+		/// <param name="model">Модель с данными</param>
+		/// <returns>Если изменение прошло успешно, то истина, иначе ложь</returns>
 		public bool Update(Model model)
 		{
 			MUniversity mUniversity = (MUniversity)model;

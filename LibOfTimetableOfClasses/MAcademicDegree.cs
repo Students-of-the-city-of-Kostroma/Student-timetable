@@ -8,20 +8,12 @@ using System.Text.RegularExpressions;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Модель учёной степени
+	/// Класс со свойствами, определяющими модель Ученой степени
 	/// </summary>
-
 	public class MAcademicDegree : Model
 	{
 
-		/// <summary>
-		/// Полная запись учёной степени
-		/// </summary>
 		string _fullname;
-
-		/// <summary>
-		/// Сокращенная запись учёной степени
-		/// </summary>
 		string _reduction;
 		string _academicDegree;
 
@@ -38,6 +30,9 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
+		/// <summary>
+		/// Полная запись учёной степени
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -46,16 +41,13 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value[0] == '.')
-					throw new Exception("Точка ставится после слова");
-				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
-					throw new Exception("Поле Полное название института содержит недопустимые символы");
-				if (value.Length > 25)
-					throw new Exception("Недопустимое количество символов");
 				_fullname = value;
 			}
 		}
 
+		/// <summary>
+		/// Сокращенная запись учёной степени
+		/// </summary>
 		public string Reduction
 		{
 			get
@@ -64,13 +56,7 @@ namespace LibOfTimetableOfClasses
 			}
 			set
 			{
-				if (value[0] == '.')
-					throw new Exception("Точка ставится после слова");
-				if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
-					throw new Exception("Поле Полное название института содержит недопустимые символы");
 				_reduction = value;
-				if (value.Length > 25)
-					throw new Exception("Недопустимое количество символов");
 			}
 		}
 

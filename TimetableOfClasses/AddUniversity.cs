@@ -20,7 +20,6 @@ namespace TimetableOfClasses
 		public AddUniversity()
 		{
 			InitializeComponent();
-			tbShortTittle.CharacterCasing = CharacterCasing.Upper;
 			tbShortTittle.Text = "КГУ";
 			tbFullTitle.Text = "Костромской Государственный Университет";
 			tbActualAddress.Text = "156005, Костромская область, г. Кострома, ул. Дзержинского, 17";
@@ -34,6 +33,7 @@ namespace TimetableOfClasses
 		public AddUniversity(MUniversity model)
 		{
 			InitializeComponent();
+			tbShortTittle.CharacterCasing = CharacterCasing.Upper;
 			tbINN.Enabled = false;
 			this.Text = "Изменение университета";
 			tbShortTittle.Text = model.ShortName;
@@ -46,6 +46,7 @@ namespace TimetableOfClasses
 			cur = model;
 			tbINN.Text = model.INN;
 		}
+
 
 		private void FullTitle_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -130,6 +131,7 @@ namespace TimetableOfClasses
 				if (splitedFullName.Length > 3 || splitedFullName.Length < 2)
 					tbRectorName.Text = "";
 			}
+			else ((TextBox)sender).Text = input;
 		}
 
 		private void tbMail_Leave(object sender, EventArgs e)
@@ -204,15 +206,19 @@ namespace TimetableOfClasses
 
 		private void btSave_Click(object sender, EventArgs e)
 		{
+			try
+			{
 			if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
 			{
 				if (Add()) this.Close();
 				else
 				{
-					MessageBox.Show("Невозможно добавить этот университет");
+					MessageBox.Show("Не удалось добавить/обновить запись. Вуз с таким ИНН, телефоном, Полным названием или почтовым адресом уже есть в таблице ");
 				}
 			}
 			else MessageBox.Show("Не все поля заполнены");
+			}
+			catch (Exception err) { MessageBox.Show(err.Message); }
 		}
 
 		bool Add()
@@ -232,7 +238,7 @@ namespace TimetableOfClasses
 															splitedFullName[2],
 															tbMail.Text,
 															tbPhone.Text);
-				return Controllers.CUniversity.Insert(mUniversity);
+				return RefData.CUniversity.Insert(mUniversity);
 			}
 			else
 			{
@@ -246,7 +252,7 @@ namespace TimetableOfClasses
 				cur.SurnameRector = splitedFullName[0];
 				cur.Email = tbMail.Text;
 				cur.Phone = tbPhone.Text;
-				return Controllers.CUniversity.Update(cur);
+				return RefData.CUniversity.Update(cur);
 			}
 		
 		}
@@ -285,7 +291,8 @@ namespace TimetableOfClasses
 
 		private void Cancel(object sender, EventArgs e)
 		{
-			this.Close();
+			this.Close(); 
 		}
+
 	}
 }
