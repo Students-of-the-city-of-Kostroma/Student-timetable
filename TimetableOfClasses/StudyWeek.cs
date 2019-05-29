@@ -23,7 +23,7 @@ namespace TimetableOfClasses
 
 		private void AddStudyWeek(object sender, EventArgs e)
 		{
-            AddStudyWeek t = new AddStudyWeek();
+			AddStudyWeek t = new AddStudyWeek();
 			t.Show();
 		}
 
@@ -33,15 +33,15 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 0) return;
 
 			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            MStudyWeek mStudyWeek;
+			MStudyWeek mStudyWeek;
 			if (dr == DialogResult.Yes)
 			{
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					int number = int.Parse(Row["Number"].ToString());
-                    String name = Row["Name"].ToString();
-                    mStudyWeek = new MStudyWeek(number, name);
+					String name = Row["Name"].ToString();
+					mStudyWeek = new MStudyWeek(number, name);
 					Controllers.CStudyWeek.Delete(mStudyWeek);
 				}
 			}
@@ -54,19 +54,14 @@ namespace TimetableOfClasses
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
 				MStudyWeek mStudyWeek;
 
-                mStudyWeek = new MStudyWeek(int.Parse(Row["Number"].ToString()), Row["Name"].ToString());
+				mStudyWeek = new MStudyWeek(int.Parse(Row["Number"].ToString()), Row["Name"].ToString());
 
-                AddStudyWeek add = new AddStudyWeek(mStudyWeek);
+				AddStudyWeek add = new AddStudyWeek(mStudyWeek);
 				add.Owner = this;
 				add.ShowDialog();
 			}
 			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
 			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
-		}
-
-		private void DG_SelectionChanged(object sender, EventArgs e)
-		{
-			//button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
 		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -131,10 +126,5 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
-
-        private void DG_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-    }
+	}
 }

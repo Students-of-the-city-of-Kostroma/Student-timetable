@@ -23,7 +23,7 @@ namespace TimetableOfClasses
 
 		private bool isEmpty(string[] strArgs)
 		{
-			foreach(var cur in strArgs)
+			foreach (var cur in strArgs)
 			{
 				if (cur.Length == 0)
 				{
@@ -35,7 +35,7 @@ namespace TimetableOfClasses
 
 		private void message()
 		{
-			MessageBox.Show("Заполните все пустые строки", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show("Заполните все пустые строки", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		public AddStudyWeek(MStudyWeek mStudyWeek)
@@ -43,56 +43,56 @@ namespace TimetableOfClasses
 			InitializeComponent();
 			this.Text = "Изменение учебной недели";
 			Lehrer = mStudyWeek;
-            txtName.Text = Lehrer.Name;
-            txtNumber.Text = Lehrer.Number.ToString();
+			txtName.Text = Lehrer.Name;
+			txtNumber.Text = Lehrer.Number.ToString();
 		}
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-            if (!isEmpty(new string[] {
-                txtNumber.Text, txtName.Text}))
-            {
-                if (Add())
-                {
-                    Close();
-                }
-            }
-            else message();
-        }
+			if (!isEmpty(new string[] {
+				txtNumber.Text, txtName.Text}))
+			{
+				if (Add())
+				{
+					Close();
+				}
+			}
+			else message();
+		}
 
 		private bool Add()
 		{
-            try
-            {
-                if (Lehrer == null)
-                {
-                    string name = txtName.Text;
-                    int _number;
-                    if (int.TryParse(txtNumber.Text, out _number))
-                    {
-                        Lehrer = new MStudyWeek(_number, name);
-                        return Controllers.CStudyWeek.Insert(Lehrer);
-                    }
-                    else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
-                }
-                else
-                {
-                    Lehrer.Name = txtName.Text;
-                    int _number;
-                    if (int.TryParse(txtNumber.Text, out _number))
-                    {
-                        Lehrer.Number = _number;
-                        return Controllers.CStudyWeek.Update(Lehrer);
-                    }
-                    else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK);
-            }
-            return false;
-        }
+			try
+			{
+				if (Lehrer == null)
+				{
+					string name = txtName.Text;
+					int _number;
+					if (int.TryParse(txtNumber.Text, out _number))
+					{
+						Lehrer = new MStudyWeek(_number, name);
+						return Controllers.CStudyWeek.Insert(Lehrer);
+					}
+					else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
+				}
+				else
+				{
+					Lehrer.Name = txtName.Text;
+					int _number;
+					if (int.TryParse(txtNumber.Text, out _number))
+					{
+						Lehrer.Number = _number;
+						return Controllers.CStudyWeek.Update(Lehrer);
+					}
+					else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
+				}
+			}
+			catch (Exception err)
+			{
+				MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK);
+			}
+			return false;
+		}
 
 		/// <summary>
 		/// Здесь должны быть комментарии
@@ -101,12 +101,12 @@ namespace TimetableOfClasses
 		/// <param name="e"></param>
 		private void AddTeacher_Load(object sender, EventArgs e)
 		{
-			
+
 		}
 
-        private void B_Сancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-    }
+		private void B_Сancel_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
+	}
 }

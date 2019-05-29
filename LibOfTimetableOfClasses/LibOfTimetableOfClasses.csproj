@@ -62,7 +62,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller.cs" />
-    <Compile Include="Controllers.cs" />
+    <Compile Include="RefData.cs" />
     <Compile Include="CStudyWeek.cs">
       <SubType>Component</SubType>
     </Compile>
