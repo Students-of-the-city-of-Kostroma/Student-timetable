@@ -13,7 +13,7 @@ namespace LibOfTimetableOfClasses
 		public CGroup() : base("Группа")
 		{
 
-			if (RefData.CGroup != null) throw new Exception("Контроллер уже существует");
+			if (Controllers.CGroup != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
