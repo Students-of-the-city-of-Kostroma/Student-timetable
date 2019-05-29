@@ -28,16 +28,16 @@ namespace LibOfTimetableOfClasses
 		public RefData()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
-			DataSet.Tables.Add(CDirectionOfPreparation);	
+			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Tables.Add(CAuditor);
-			DataSet.Tables.Add(СEnclosures);			
+			DataSet.Tables.Add(СEnclosures);
 			DataSet.Tables.Add(CUniversity);
 			DataSet.Tables.Add(CInstitute);
 			DataSet.Tables.Add(CTeacher);
 			DataSet.Tables.Add(CAcademicDegree);
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
-      
+
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
 			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 			DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);

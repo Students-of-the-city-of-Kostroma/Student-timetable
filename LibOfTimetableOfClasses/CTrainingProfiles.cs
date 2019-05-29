@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Контроллер класса объекта Профили подготовки
+	/// Таблица со строками, хранящими данные о разных профилях подготовки Университета.
 	/// </summary>
 	public class CTrainingProfile : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью полей Fullname и Shortname
+		/// </summary>
 		public CTrainingProfile() : base("Профиль подготовки")
         {
 			DataColumn column = new DataColumn();
@@ -32,7 +37,14 @@ namespace LibOfTimetableOfClasses
 			//column.Unique = true;
 			Columns.Add(column);
 		}
-
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CTrainingProfile.
+		/// В таблице CTrainingProfile ищется строка с полем "Fullname" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка.
+		/// </summary>
+		/// <param name="model">Модель, хранящая выбранную строку в таблице</param>
+		/// <returns>Результат удаления переданной строки из CTrainingProfile</returns>
 		public bool Delete(Model model)
 		{
 			MTrainingProfile mTrainingProfile = (MTrainingProfile)model;
@@ -51,6 +63,12 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
+		/// <summary>
+		/// Метод вставки переданной модели MTrainingProfile в таблицу CTrainingProfile
+		/// в случае уникальности поля Fullname
+		/// </summary>
+		/// <param name="model">Модель хранящая добавляемую запись таблицы</param>
+		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
 			MTrainingProfile mTrainingProfile = (MTrainingProfile)model;
@@ -72,6 +90,12 @@ namespace LibOfTimetableOfClasses
 				return false;
 			}
 		}
+		/// <summary>
+		/// Обновление свойств строки в таблице CTrainingProfile из переданной модели MTrainingProfile
+		/// Поиск изменяемой строки CTrainingProfile осуществляется по полю "FullName"
+		/// </summary>
+		/// <param name="model">Модель хранящая обновляемую запись таблицы</param>
+		/// <returns>Результат обновления</returns>
 		public bool Update(Model model)
 		{
 			MTrainingProfile mTrainingProfile = (MTrainingProfile)model;
