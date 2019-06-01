@@ -41,8 +41,12 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.4.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +55,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicTitle.cs">
@@ -130,6 +137,12 @@
     </Compile>
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Characteristic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Characteristic.Designer.cs">
+      <DependentUpon>Characteristic.cs</DependentUpon>
     </Compile>
     <Compile Include="DirectionOfPreparation.cs">
       <SubType>Form</SubType>
@@ -261,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Characteristic.resx">
+      <DependentUpon>Characteristic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
