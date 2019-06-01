@@ -177,7 +177,8 @@ namespace LibOfTimetableOfClasses {
 			string[] validations = ValidateUtils.ValidationsStack(
 				ValidateUtils.NonEmpty(str),
 				ValidateUtils.MaxLength(str, 64),
-				ValidateUtils.OnlyRusChars(str)//,
+				ValidateUtils.OnlyRusChars(str),
+				ValidateUtils.FirstCharUpperCase(str)
 				//ValidateUtils.WoFirstCharLowerCase(str)
 			);
 			if (validations.Length == 0) {
