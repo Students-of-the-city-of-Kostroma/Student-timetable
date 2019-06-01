@@ -24,13 +24,13 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.DepartmentGridView = new System.Windows.Forms.DataGridView();
-			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DepartmentHead = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Institute = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.UpdateBtn = new System.Windows.Forms.Button();
 			this.AddBtn = new System.Windows.Forms.Button();
 			this.DeleteBtn = new System.Windows.Forms.Button();
+			this.ShortTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FullTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DepartmentHead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Institute = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DepartmentGridView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -44,8 +44,8 @@
 			this.DepartmentGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DepartmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DepartmentGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ShortName,
-            this.FullName,
+            this.ShortTitle,
+            this.FullTitle,
             this.DepartmentHead,
             this.Institute});
 			this.DepartmentGridView.Location = new System.Drawing.Point(12, 12);
@@ -56,41 +56,6 @@
 			this.DepartmentGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DepartmentGridView.Size = new System.Drawing.Size(460, 408);
 			this.DepartmentGridView.TabIndex = 1;
-			// 
-			// ShortName
-			// 
-			this.ShortName.DataPropertyName = "ShortName";
-			this.ShortName.FillWeight = 70F;
-			this.ShortName.HeaderText = "Сокращенное название";
-			this.ShortName.MinimumWidth = 70;
-			this.ShortName.Name = "ShortName";
-			this.ShortName.ReadOnly = true;
-			// 
-			// FullName
-			// 
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полное название";
-			this.FullName.MinimumWidth = 100;
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// DepartmentHead
-			// 
-			this.DepartmentHead.DataPropertyName = "DepartmentHead";
-			this.DepartmentHead.FillWeight = 60F;
-			this.DepartmentHead.HeaderText = "Заведующий кафедрой";
-			this.DepartmentHead.MinimumWidth = 60;
-			this.DepartmentHead.Name = "DepartmentHead";
-			this.DepartmentHead.ReadOnly = true;
-			// 
-			// Institute
-			// 
-			this.Institute.DataPropertyName = "Institute";
-			this.Institute.FillWeight = 60F;
-			this.Institute.HeaderText = "Институт";
-			this.Institute.MinimumWidth = 60;
-			this.Institute.Name = "Institute";
-			this.Institute.ReadOnly = true;
 			// 
 			// UpdateBtn
 			// 
@@ -125,6 +90,41 @@
 			this.DeleteBtn.UseVisualStyleBackColor = true;
 			this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtnClick);
 			// 
+			// ShortTitle
+			// 
+			this.ShortTitle.DataPropertyName = "ShortName";
+			this.ShortTitle.FillWeight = 70F;
+			this.ShortTitle.HeaderText = "Сокращенное название";
+			this.ShortTitle.MinimumWidth = 70;
+			this.ShortTitle.Name = "ShortTitle";
+			this.ShortTitle.ReadOnly = true;
+			// 
+			// FullTitle
+			// 
+			this.FullTitle.DataPropertyName = "FullName";
+			this.FullTitle.HeaderText = "Полное название";
+			this.FullTitle.MinimumWidth = 100;
+			this.FullTitle.Name = "FullTitle";
+			this.FullTitle.ReadOnly = true;
+			// 
+			// DepartmentHead
+			// 
+			this.DepartmentHead.DataPropertyName = "DepartmentHead";
+			this.DepartmentHead.FillWeight = 60F;
+			this.DepartmentHead.HeaderText = "Заведующий кафедрой";
+			this.DepartmentHead.MinimumWidth = 60;
+			this.DepartmentHead.Name = "DepartmentHead";
+			this.DepartmentHead.ReadOnly = true;
+			// 
+			// Institute
+			// 
+			this.Institute.DataPropertyName = "Institute";
+			this.Institute.FillWeight = 60F;
+			this.Institute.HeaderText = "Институт";
+			this.Institute.MinimumWidth = 60;
+			this.Institute.Name = "Institute";
+			this.Institute.ReadOnly = true;
+			// 
 			// Departments
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,8 +148,8 @@
 		private System.Windows.Forms.Button UpdateBtn;
 		private System.Windows.Forms.Button AddBtn;
 		private System.Windows.Forms.Button DeleteBtn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ShortName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ShortTitle;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FullTitle;
 		private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentHead;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Institute;
 	}

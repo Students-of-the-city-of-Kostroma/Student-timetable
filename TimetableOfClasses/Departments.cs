@@ -26,8 +26,14 @@ namespace TimetableOfClasses {
 			// Do
 		}
 
+		/// <summary>
+		/// Открывает форму добавления кафедры
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void AddBtnClick(object sender, EventArgs e) {
-			// Do
+			AddDepartment addDepartment = new AddDepartment();
+			addDepartment.Show();
 		}
 	}
 }
