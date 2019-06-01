@@ -83,6 +83,7 @@ namespace LibOfTimetableOfClasses {
 		public static string[] ValidateShortTitle(string str, bool throwErr = false) {
 			// Regex.IsMatch(value, @"\d\d\.\d\d\.\d\d")
 			string[] validations = ValidateUtils.ValidationsStack(
+				ValidateUtils.NonEmpty(str),
 				ValidateUtils.MaxLength(str, 10),
 				ValidateUtils.OnlyRusChars(str),
 				ValidateUtils.FirstCharUpperCase(str)
@@ -176,7 +177,8 @@ namespace LibOfTimetableOfClasses {
 			string[] validations = ValidateUtils.ValidationsStack(
 				ValidateUtils.NonEmpty(str),
 				ValidateUtils.MaxLength(str, 64),
-				ValidateUtils.OnlyRusChars(str)//,
+				ValidateUtils.OnlyRusChars(str),
+				ValidateUtils.FirstCharUpperCase(str)
 				//ValidateUtils.WoFirstCharLowerCase(str)
 			);
 			if (validations.Length == 0) {
