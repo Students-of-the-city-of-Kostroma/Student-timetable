@@ -20,20 +20,26 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public CDirectionOfPreparation() : base("Направление подготовки")
 		{
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "CodeOfDP";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "CodeOfDP",
+				Unique = true
+			};
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "NameOfDP";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "NameOfDP"
+			};
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "PeriodOfStudy";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "PeriodOfStudy"
+			};
 			Columns.Add(column);
 		}
 		/// <summary>
@@ -122,13 +128,6 @@ namespace LibOfTimetableOfClasses
 				}
 			}
 			return false;
-		}
-		/// <summary>
-		/// Какая-то заглушка
-		/// </summary>
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

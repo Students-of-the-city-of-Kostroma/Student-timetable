@@ -14,9 +14,9 @@ namespace LibOfTimetableOfClasses
     {
 		public static DataSet DataSet = new DataSet();
 		public static CTeacher CTeacher = new CTeacher();
-        public static CAuditor CAuditor = new CAuditor();
-        public static CDiscipline CDiscipline = new CDiscipline();
-        public static CGroup CGroup = new CGroup();
+		public static CAuditor CAuditor = new CAuditor();
+		public static CDiscipline CDiscipline = new CDiscipline();
+		public static CGroup CGroup = new CGroup();
 		public static CTitle CTitle = new CTitle();
 		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
@@ -27,7 +27,6 @@ namespace LibOfTimetableOfClasses
 		public static CStudyWeek CStudyWeek = new CStudyWeek();
 
 		private static RefData rd = new RefData();
-
 		private RefData()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
