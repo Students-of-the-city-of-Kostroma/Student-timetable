@@ -52,10 +52,11 @@
 			this.DG_AcademicTitle.Location = new System.Drawing.Point(12, 12);
 			this.DG_AcademicTitle.Name = "DG_AcademicTitle";
 			this.DG_AcademicTitle.ReadOnly = true;
-			this.DG_AcademicTitle.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_AcademicTitle_RowPrePaint);
 			this.DG_AcademicTitle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_AcademicTitle.Size = new System.Drawing.Size(562, 215);
 			this.DG_AcademicTitle.TabIndex = 0;
+			this.DG_AcademicTitle.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_AcademicTitle_RowPrePaint);
+			this.DG_AcademicTitle.DoubleClick += new System.EventHandler(this.DG_AcademicTitle_DoubleClick);
 			// 
 			// FullName
 			// 
@@ -85,7 +86,7 @@
 			// Delete
 			// 
 			this.Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Delete.Location = new System.Drawing.Point(418, 233);
+			this.Delete.Location = new System.Drawing.Point(337, 233);
 			this.Delete.Name = "Delete";
 			this.Delete.Size = new System.Drawing.Size(75, 23);
 			this.Delete.TabIndex = 2;
@@ -96,7 +97,7 @@
 			// Change
 			// 
 			this.Change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Change.Location = new System.Drawing.Point(337, 233);
+			this.Change.Location = new System.Drawing.Point(418, 233);
 			this.Change.Name = "Change";
 			this.Change.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.Change.Size = new System.Drawing.Size(75, 23);

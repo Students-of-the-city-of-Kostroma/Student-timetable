@@ -27,10 +27,16 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// корпус
 		/// </summary>                 
-		byte building;
+		string building;
 
-
-		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, byte building) : base()
+		/// <summary>
+		/// Создает экземпляр Аудитории
+		/// </summary>
+		/// <param name="nameOfAuditor">Название аудитории</param>
+		/// <param name="cafedra">Кафедра</param>
+		/// <param name="spacious">Вместительность</param>
+		/// <param name="building">Корпус</param>
+		public MAuditor(string nameOfAuditor, string cafedra, ushort spacious, string building) : base()
 		{
 			NameOfAuditor = nameOfAuditor;
 			Cafedra = cafedra;
@@ -39,7 +45,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает nameofaud - название аудитории
+		/// nameofaud - название аудитории
 		/// </summary>
 		public string NameOfAuditor
 		{
@@ -55,7 +61,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает cafedra - кафедру
+		/// cafedra - кафедру
 		/// </summary>
 		public string Cafedra
 		{
@@ -71,9 +77,9 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает building - корпус
+		/// building - корпус
 		/// </summary>
-		public byte Building
+		public string Building
 		{
 			get
 			{
@@ -87,7 +93,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает spacious - вместительность
+		/// spacious - вместительность
 		/// </summary>
 		public ushort Spacious
 		{

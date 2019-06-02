@@ -18,7 +18,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CTeacher;
+			DG.DataSource = RefData.CTeacher;
 		}
 
 		private void AddTeacher(object sender, EventArgs e)
@@ -41,9 +41,9 @@ namespace TimetableOfClasses
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 					if(fullName.Length==3)
-					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2],(string)Row["Departament"]);
-					else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["Departament"]);
-					Controllers.CTeacher.Delete(mTeacher);
+					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					else mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					RefData.CTeacher.Delete(mTeacher);
 				}
 			}
 		}
@@ -61,7 +61,7 @@ namespace TimetableOfClasses
 				}
 				else
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					 mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
 				}
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;

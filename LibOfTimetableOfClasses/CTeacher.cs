@@ -8,11 +8,19 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
+	/// <summary>
+	/// Таблица со строками, хранящими данные о преподавателях в Университете
+	/// </summary>
 	public class CTeacher : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью поля FullName.
+		/// </summary>
 		public CTeacher() : base("Учитель")
 		{
-			if (Controllers.CTeacher != null) throw new Exception("Контроллер уже существует");
+			if (RefData.CTeacher != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
@@ -51,6 +59,12 @@ namespace LibOfTimetableOfClasses
 			this.Columns.Add(column);
 		}
 
+		/// <summary>
+		/// Проверка начилия переданной модели в таблице CTeacher
+		/// Наличие определяется наличием строки CGroup с полем "FullName" соответсвующим данным модели mTeacher.
+		/// </summary>
+		/// <param name="mTeacher">Проверяеммая модель группы</param>
+		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
 		bool isValidKey(MTeacher mTeacher)
 		{
 			foreach(DataRow row in this.Rows)
@@ -62,6 +76,12 @@ namespace LibOfTimetableOfClasses
 			return true;
 		}
 
+		/// <summary>
+		/// Метод вставки переданной модели MTeacher в таблицу CTeacher
+		/// в случае уникальности свойства FullName модели для таблицы CTeacher
+		/// </summary>
+		/// <param name="model">Вставляемая в CTeacher модель</param>
+		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
@@ -90,6 +110,12 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
+		/// <summary>
+		/// Обновление свойств строки в таблице CTeacher из переданной модели MTeacher
+		/// Поиск изменяемой строки CTeacher осуществляется по полю "FullName"
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns>Успешность выполнения операции</returns>
 		public bool Update(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
@@ -116,8 +142,15 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-		
 
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CTeacher.
+		/// В таблице CTeacher ищется строка с полями "FullName" и "Departament" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка. 
+		/// </summary>
+		/// <param name="model">Модель, выбранной строки в таблице</param>
+		/// <returns>Результат удаления переданной строки из CTeacher</returns>
 		public bool Delete(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;

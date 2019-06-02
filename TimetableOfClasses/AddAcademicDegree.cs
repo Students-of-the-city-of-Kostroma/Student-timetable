@@ -35,77 +35,87 @@ namespace TimetableOfClasses
 
 		private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
 		{
-			if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+			if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
 			{
-				if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+				if (Reduction.Text.Length != 0)
 				{
-					try
+					if (FullName.Text.Length != 0)
 					{
-						MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-						Controllers.CAcademicDegree.Insert(AcademicDegree);
-						FullName.Text = "";
-						Reduction.Text = "";
+						try
+						{
+							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+							RefData.CAcademicDegree.Insert(AcademicDegree);
+							FullName.Text = "";
+							Reduction.Text = "";
+						}
+						catch (Exception)
+						{
+							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						}
 					}
-					catch (Exception)
-					{
-						MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-					}
+					else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
-				else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+				else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 			}
-			else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
+			else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
 		}
-
-		private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
+			private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
 		{
-
 			if (update)
 			{
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
 				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+					if (Reduction.Text.Length != 0)
 					{
-						try
+						if (FullName.Text.Length != 0)
 						{
-							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							Controllers.CAcademicDegree.Update(AcademicDegree);
-							FullName.Text = "";
-							Reduction.Text = "";
-							Close();
+							try
+							{
+								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+								RefData.CAcademicDegree.Update(AcademicDegree);
+								FullName.Text = "";
+								Reduction.Text = "";
+								Close();
+							}
+							catch (Exception)
+							{
+								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+							}
+							
 						}
-						catch (Exception)
-						{
-							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-						}
+						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+					else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+				else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
 			}
 			else
-			{
+{
 
-				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+				if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
 				{
-					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+					if (Reduction.Text.Length != 0)
 					{
-						try
+						if (FullName.Text.Length != 0)
 						{
-							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							Controllers.CAcademicDegree.Insert(AcademicDegree);
-							FullName.Text = "";
-							Reduction.Text = "";
-							Close();
+							try
+							{
+								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+								RefData.CAcademicDegree.Insert(AcademicDegree);
+								FullName.Text = "";
+								Reduction.Text = "";
+								Close();
+							}
+							catch (Exception)
+							{
+								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+							}
 						}
-						catch (Exception)
-						{
-							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-						}
+						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
-					else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
+					else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
-				else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+				else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
 			}
 		}
 
@@ -114,16 +124,94 @@ namespace TimetableOfClasses
 			this.Close();
 		}
 
-		static bool isNumberDontContains(string input)
+		private void Reduction_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			foreach (char c in input)
-				if (Char.IsNumber(c) || Char.IsPunctuation(c) || Char.IsSymbol(c))
+			char l = e.KeyChar;
+			if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != '-')
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void FullName_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			char l = e.KeyChar;
+			if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != '-')
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void Reduction_TextChanged(object sender, EventArgs e)
+		{
+			if (((TextBox)sender).Text.Length == 1)
+				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
+		}
+
+		private void FullName_TextChanged(object sender, EventArgs e)
+		{
+			if (((TextBox)sender).Text.Length == 1)
+				((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+			((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
+		}
+		private static string PeriodLetterToUpper(string str)
+		{
+			if (str.Length > 0)
+			{
+				if (str.IndexOf(",") > 0)
 				{
-					if (c == '.')
-						continue;
-					return false;
+					char p;
+					str = Char.ToUpper(str[0]) + str.Substring(1);
+					for (int i = 0; i < str.Length; i++)
+					{
+						if (str[i] == ',')
+						{
+							p = Char.ToUpper(str[i + 2]);
+							str = str.Remove(i + 2, 1);
+							str = str.Insert(i + 2, "" + p);
+						}
+					}
+					return str;
 				}
-			return true;
+				else
+					return Char.ToUpper(str[0]) + str.Substring(1);
+			}
+			return "";
+		}
+		private void Reduction_Leave(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
+			}
+		}
+
+		private void FullName_Leave(object sender, EventArgs e)
+		{
+			TextBox R = sender as TextBox;
+			R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
+			R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
+
+			if (R.Text.Length > 2)
+			{
+				if (R.Text.IndexOf(", ") == 0)
+					R.Text = R.Text.Substring(1);
+				if (R.Text.LastIndexOf(", ") == R.Text.Length - 1)
+					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = PeriodLetterToUpper(R.Text);
+			}
 		}
 	}
 }
+

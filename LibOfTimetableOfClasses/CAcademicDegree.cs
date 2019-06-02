@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Контроллер объекта Добавление ученого звания
+	/// Таблица со строками, хранящими данные об Ученых степенях
 	/// </summary>
 	public class CAcademicDegree : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы.
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью поля FullName.
+		/// </summary>
 		public CAcademicDegree() : base("Учёная степень")
 		{
 
@@ -32,6 +37,12 @@ namespace LibOfTimetableOfClasses
 
 		}
 
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CAcademicDegree.
+		/// В таблице CAcademicDegree ищется строка с полями "FullName" и "Reduction" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка. 
+		/// </summary>
 		public bool Delete(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
@@ -46,6 +57,10 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
+		/// <summary>
+		/// Проверка начилия переданной модели в таблице CAcademicDegree.
+		/// Наличие определяется наличием строки с полем "FullName" соответсвующим данным модели mAcademicDegree.
+		/// </summary>
 		private bool isValidKey(MAcademicDegree mAcademicDegree)
 		{
 			foreach (DataRow Row in this.Rows)
@@ -56,6 +71,10 @@ namespace LibOfTimetableOfClasses
 			return true;
 		}
 
+		/// <summary>
+		/// Метод добавления переданной модели MAcademicDegree в таблицу CAcademicDegree
+		/// в случае уникальности свойства FullName модели для таблицы CAcademicDegree
+		/// </summary>
 		public bool Insert(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
@@ -80,6 +99,10 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
+		/// <summary>
+		/// Обновление строки в таблице CAcademicDegree из переданной модели MAcademicDegree.
+		/// Поиск изменяемой строки CTeacher осуществляется по полю "FullName"
+		/// </summary>
 		public bool Update(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
