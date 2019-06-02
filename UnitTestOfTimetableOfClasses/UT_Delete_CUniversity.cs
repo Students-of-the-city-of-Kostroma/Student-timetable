@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_Delete_CUniversity
 	{
 		[TestMethod]
-		public void task_498_1() //удаление существующего вуза
+		public void Task_498_1() //удаление существующего вуза
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 		[TestMethod]
-		public void task_498_2() //удаление не существующего вуза
+		public void Task_498_2() //удаление не существующего вуза
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();

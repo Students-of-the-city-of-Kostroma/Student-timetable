@@ -15,9 +15,6 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{
-
-			if (RefData.CUniversity != null) throw new Exception("Контроллер уже существует");
-
 			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn
 			{
