@@ -78,16 +78,26 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
+			try
 			{
-				if (Add())
+				if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 				{
-					Close();
+					if (Add())
+					{
+						Close();
+					}
+					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 				}
-				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+				else message();
 			}
-			else message();		
-
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+			finally
+			{
+				Logs.SetInfo("Пользователь нажал кнопку Сохранить на форме добавления Преподавателя");
+			}
 
 		}
 
@@ -277,7 +287,18 @@ namespace TimetableOfClasses
 
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
-			Close();
+			try
+			{
+				Close();
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+			finally
+			{
+				Logs.SetInfo("Пользователь нажал кнопку Отменить на форме добавления Преподавателя");
+			}
 		}
 
 		private void fieldChanged(object sender, EventArgs e)
