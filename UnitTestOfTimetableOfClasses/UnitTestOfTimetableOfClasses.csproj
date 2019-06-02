@@ -43,11 +43,8 @@
   <ItemGroup>
     <Compile Include="UT_MDirectionOfPreparation.cs" />
     <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
-    <Compile Include="UT_CDirectionOfPreparation.cs" />
-
     <Compile Include="UT_MTitle.cs" />
     <Compile Include="UT_MInstitute.cs" />
-    <Compile Include="UT_CTrainingProfile.cs" />
     <Compile Include="UT_Delete_CTrainingProfile.cs" />
     <Compile Include="UT_MTrainingProfile.cs" />
     <Compile Include="UT_Delete_CEnclosures.cs" />
@@ -59,12 +56,8 @@
     <Compile Include="UT_Update_CTitle.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />
     <Compile Include="UT_Delete_CAcademicDegree.cs" />
-    <Compile Include="UT_Selection.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
-    <Compile Include="UT_CAuditor.cs" />
-    <Compile Include="UT_CDiscipline.cs" />
-    <Compile Include="UT_CGroup.cs" />
     <Compile Include="UT_Deleted_CTeacher.cs" />
     <Compile Include="UT_Delete_CGroup.cs" />
     <Compile Include="UT_Insert_CEnclosurse.cs" />
@@ -92,11 +85,6 @@
       <Project>{8e04a57b-7c6f-436c-b9f7-40b669ddd55a}</Project>
       <Name>TimetableOfClasses</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
