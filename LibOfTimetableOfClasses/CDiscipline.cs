@@ -131,12 +131,5 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
-		/// <summary>
-		/// Какая-то заглушка
-		/// </summary>
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

@@ -42,12 +42,12 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Departament";
 			this.Columns.Add(column);
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "MetodicalDays";
 			this.Columns.Add(column);
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Windows";
@@ -57,23 +57,6 @@ namespace LibOfTimetableOfClasses
 			column.DataType = typeof(string);
 			column.ColumnName = "Weekends";
 			this.Columns.Add(column);
-		}
-
-		/// <summary>
-		/// Проверка начилия переданной модели в таблице CTeacher
-		/// Наличие определяется наличием строки CGroup с полем "FullName" соответсвующим данным модели mTeacher.
-		/// </summary>
-		/// <param name="mTeacher">Проверяеммая модель группы</param>
-		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
-		bool isValidKey(MTeacher mTeacher)
-		{
-			foreach(DataRow row in this.Rows)
-			{
-				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
-				if ((string)row["FullName"] == fullName )
-					return false;
-			}
-			return true;
 		}
 
 		/// <summary>
@@ -162,10 +145,9 @@ namespace LibOfTimetableOfClasses
 					this.Rows[i].Delete();
 					//Recount(i);
 					return true;
-				}				
+				}
 			}
 			return false;
 		}
-
 	}
 }

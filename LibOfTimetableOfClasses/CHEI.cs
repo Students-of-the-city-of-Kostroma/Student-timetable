@@ -81,10 +81,5 @@ namespace LibOfTimetableOfClasses
         {
             throw new NotImplementedException();
         }
-
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

@@ -84,13 +84,5 @@ namespace LibOfTimetableOfClasses
 			ShortName = shortname;
 			Shiphr = shiphr;
 		}
-		/// <summary>
-		/// Возвращает string краткое название профиля подготовки
-		/// </summary>
-		/// <returns></returns>
-		public override string ToString()
-		{
-			return this.ShortName;
-		}
 	}
 }

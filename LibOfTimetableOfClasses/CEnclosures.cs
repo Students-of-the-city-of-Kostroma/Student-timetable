@@ -77,16 +77,6 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MEnclosures mEnclosures)
-		{
-			foreach (DataRow row in this.Rows)
-			{
-				if ((string)row["Name"] == mEnclosures.Name && (string)row["University"] == mEnclosures.University)
-					return false;
-			}
-			return true;
-		}
-
 		/// <summary>
 		/// Метод вставки переданной модели MEnclosures в таблицу CEnclosures
 		/// в случае уникальности свойства Name и University модели для таблицы CGroup
@@ -97,26 +87,25 @@ namespace LibOfTimetableOfClasses
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;
 
-			if (isValidKey(mEnclosures))
-			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["Name"] = mEnclosures.Name;
-					newRow["University"] = mEnclosures.University;
-					newRow["Address"] = mEnclosures.Address;
-					newRow["Phone"] = mEnclosures.Phone;
-					newRow["Comment"] = mEnclosures.Comment;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+			try
+			{
+
+				DataRow newRow = this.NewRow();
+				newRow["Name"] = mEnclosures.Name;
+				newRow["University"] = mEnclosures.University;
+				newRow["Address"] = mEnclosures.Address;
+				newRow["Phone"] = mEnclosures.Phone;
+				newRow["Comment"] = mEnclosures.Comment;
+				this.Rows.Add(newRow);
+				return true;
 			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
+
 
 			return false;
 
@@ -150,6 +139,5 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-
 	}
 }

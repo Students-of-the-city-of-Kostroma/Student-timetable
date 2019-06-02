@@ -22,7 +22,7 @@ namespace LibOfTimetableOfClasses
 			column.ColumnName = "Reduction";
 			column.Unique = true;
 			this.Columns.Add(column);
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "FullName";
@@ -91,11 +91,6 @@ namespace LibOfTimetableOfClasses
 				}
 			}
 			return false;
-		}
-
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

@@ -86,15 +86,6 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MUniversity mUniversity)
-		{
-			foreach (DataRow row in this.Rows)
-			{
-				if ((string)row["INN"] == mUniversity.INN)
-					return false;
-			}
-			return true;
-		}
 		/// <summary>
 		/// Метод добавления строки ВУЗа в таблицу
 		/// </summary>
@@ -104,32 +95,27 @@ namespace LibOfTimetableOfClasses
 		{
 			MUniversity mUniversity = (MUniversity)model;
 
-			if (isValidKey(mUniversity))
+			try
 			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["INN"] = mUniversity.INN;
-					newRow["ShortName"] = mUniversity.ShortName;
-					newRow["FullName"] = mUniversity.FullName;
-					newRow["ActualAddress"] = mUniversity.ActualAddress;
-					newRow["LegalAddress"] = mUniversity.LegalAddress;
-					newRow["FullNameRector"] =  mUniversity.SurnameRector + " " + mUniversity.NameRector + " " + mUniversity.MiddleNameRector;
-					newRow["Email"] = mUniversity.Email;
-					newRow["Phone"] = mUniversity.Phone;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				DataRow newRow = this.NewRow();
+				newRow["INN"] = mUniversity.INN;
+				newRow["ShortName"] = mUniversity.ShortName;
+				newRow["FullName"] = mUniversity.FullName;
+				newRow["ActualAddress"] = mUniversity.ActualAddress;
+				newRow["LegalAddress"] = mUniversity.LegalAddress;
+				newRow["FullNameRector"] = mUniversity.SurnameRector + " " + mUniversity.NameRector + " " + mUniversity.MiddleNameRector;
+				newRow["Email"] = mUniversity.Email;
+				newRow["Phone"] = mUniversity.Phone;
+				this.Rows.Add(newRow);
+				return true;
 			}
-
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 			return false;
-
 		}
 		/// <summary>
 		/// Метод обновления информации строки ВУЗа в таблице
@@ -162,6 +148,5 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-
 	}
 }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
-{	
+{
 	/// <summary>
 	/// Таблица со строками, хранящими данные о разных учебных группах в Университете
 	/// </summary>
@@ -91,23 +91,6 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Проверка начилия переданной модели в таблице CGroup
-		/// Наличие определяется наличием строки CGroup с полем "Group" соответсвующим свойству "Group" модели mGroup.
-		/// </summary>
-		/// <param name="mGroup">Проверяеммая модель группы</param>
-		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
-		private bool isValidKey(MGroup mGroup)
-		{
-			foreach (DataRow Row in this.Rows)
-			{
-				if (mGroup.Group == (string)Row["Group"])
-					return false;					
-			}
-			return true;
-		}
-
-
-		/// <summary>
 		/// Метод вставки переданной модели MGroup в таблицу CGroup
 		/// в случае уникальности свойства Group модели для таблицы CGroup
 		/// </summary>
@@ -117,32 +100,27 @@ namespace LibOfTimetableOfClasses
 		{
 			MGroup mGroup = (MGroup)model;
 
-			if (isValidKey(mGroup))
+			try
 			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["Group"] = mGroup.Group;
-					newRow["Semestr"] = mGroup.Semester;
-					newRow["Specialty"] = mGroup.Specialty;
-					newRow["Shift"] = mGroup.Shift;
-					newRow["Students"] = mGroup.Students;
-					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-					newRow["Weekends"] = mGroup.Weekends;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				DataRow newRow = this.NewRow();
+				newRow["Group"] = mGroup.Group;
+				newRow["Semestr"] = mGroup.Semester;
+				newRow["Specialty"] = mGroup.Specialty;
+				newRow["Shift"] = mGroup.Shift;
+				newRow["Students"] = mGroup.Students;
+				newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+				newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+				newRow["Weekends"] = mGroup.Weekends;
+				this.Rows.Add(newRow);
+				return true;
 			}
-
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 			return false;
-
 		}
 
 
@@ -156,32 +134,31 @@ namespace LibOfTimetableOfClasses
 		{
 			MGroup mGroup = (MGroup)model;
 
-				for (int i = 0; i < this.Rows.Count; i++)
-				{
+			for (int i = 0; i < this.Rows.Count; i++)
+			{
 
-					if (mGroup.Group == (string)this.Rows[i]["Group"])
+				if (mGroup.Group == (string)this.Rows[i]["Group"])
+				{
+					try
 					{
-						try
-						{
-							DataRow newRow = this.Rows[i];
-							newRow["Semestr"] = mGroup.Semester;
-							newRow["Specialty"] = mGroup.Specialty;
-							newRow["Shift"] = mGroup.Shift;
-							newRow["Students"] = mGroup.Students;
-							newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-							newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-							newRow["Weekends"] = mGroup.Weekends;
-							return true;
-						}
-						catch (Exception ex)
-						{
-							Debug.WriteLine(ex.Source);
-							return false;
-						}
+						DataRow newRow = this.Rows[i];
+						newRow["Semestr"] = mGroup.Semester;
+						newRow["Specialty"] = mGroup.Specialty;
+						newRow["Shift"] = mGroup.Shift;
+						newRow["Students"] = mGroup.Students;
+						newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+						newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+						newRow["Weekends"] = mGroup.Weekends;
+						return true;
 					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
 			}
 			return false;
 		}
-
 	}
 }
