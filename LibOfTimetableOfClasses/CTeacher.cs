@@ -68,29 +68,25 @@ namespace LibOfTimetableOfClasses
 		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			if (isValidKey(mTeacher))
+			try
 			{
-				try
-				{
-					string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
-					DataRow newRow = this.NewRow();
-					newRow["FullName"] = fullName;
-					newRow["AcademicDegree"] = mTeacher.AcademicDegree;
-					newRow["AcademicTitle"] = mTeacher.AcademicTitle;
-					newRow["Departament"] = mTeacher.Departament;
-					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
-					newRow["Windows"] = mTeacher.Windows;
-					newRow["Weekends"] = mTeacher.Weekends;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
+				DataRow newRow = this.NewRow();
+				newRow["FullName"] = fullName;
+				newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+				newRow["AcademicTitle"] = mTeacher.AcademicTitle;
+				newRow["Departament"] = mTeacher.Departament;
+				newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+				newRow["Windows"] = mTeacher.Windows;
+				newRow["Weekends"] = mTeacher.Weekends;
+				this.Rows.Add(newRow);
+				return true;
 			}
-			return false;
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
 		/// <summary>

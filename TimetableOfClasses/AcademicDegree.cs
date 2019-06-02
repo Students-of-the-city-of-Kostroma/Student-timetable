@@ -56,23 +56,23 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-					string message = "Вы уверны что хотите удалить ученую степень?";
-					string caption = "Подтверждение удаления";
-					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-					DialogResult result;
-					result = MessageBox.Show(message, caption, buttons);
+				string message = "Вы уверны что хотите удалить ученую степень?";
+				string caption = "Подтверждение удаления";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result;
+				result = MessageBox.Show(message, caption, buttons);
 
-					if (result == System.Windows.Forms.DialogResult.Yes)
-					{
-						MAcademicDegree mAcademicDegree;
-						foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
-						{
-							DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-							mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
-							RefData.CAcademicDegree.Delete(mAcademicDegree);
-						}
-						DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
-					}
+				if (result == System.Windows.Forms.DialogResult.Yes)
+				{
+					//MAcademicDegree mAcademicDegree;
+					//foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
+					//{
+					//	DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					//	mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
+					//	RefData.CAcademicDegree.Delete(mAcademicDegree);
+					//}
+					//DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
+				}
 			}
 		}
 

@@ -120,7 +120,6 @@ namespace LibOfTimetableOfClasses
 				Debug.WriteLine(ex.Source);
 				return false;
 			}
-			return false;
 		}
 
 
