@@ -24,8 +24,11 @@ namespace LibOfTimetableOfClasses
 		public static CUniversity CUniversity = new CUniversity();
         public static CInstitute CInstitute = new CInstitute();
         public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+		public static CStudyWeek CStudyWeek = new CStudyWeek();
 
-		public RefData()
+		private static RefData rd = new RefData();
+
+		private RefData()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
@@ -37,6 +40,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CAcademicDegree);
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
+			DataSet.Tables.Add(CStudyWeek);
 
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
 			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);

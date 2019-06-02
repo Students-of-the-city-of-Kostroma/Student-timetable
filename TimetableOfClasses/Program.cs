@@ -1,5 +1,4 @@
-﻿using LibOfTimetableOfClasses;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace TimetableOfClasses
@@ -13,8 +12,6 @@ namespace TimetableOfClasses
         static void Main()
         {		
             Application.EnableVisualStyles();
-			new RefData();
-
 			Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());
         }

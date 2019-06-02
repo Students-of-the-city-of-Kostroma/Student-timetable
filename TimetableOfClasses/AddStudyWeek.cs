@@ -71,7 +71,7 @@ namespace TimetableOfClasses
 					if (int.TryParse(txtNumber.Text, out _number))
 					{
 						Lehrer = new MStudyWeek(_number, name);
-						return Controllers.CStudyWeek.Insert(Lehrer);
+						return RefData.CStudyWeek.Insert(Lehrer);
 					}
 					else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
 				}
@@ -82,7 +82,7 @@ namespace TimetableOfClasses
 					if (int.TryParse(txtNumber.Text, out _number))
 					{
 						Lehrer.Number = _number;
-						return Controllers.CStudyWeek.Update(Lehrer);
+						return RefData.CStudyWeek.Update(Lehrer);
 					}
 					else MessageBox.Show("Номер должен являться числом", "Попробуйте снова");
 				}
