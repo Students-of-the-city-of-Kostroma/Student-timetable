@@ -15,38 +15,48 @@ namespace LibOfTimetableOfClasses
 		public CHEI() : base("ВУЗ")
 		{
 			DataColumn[] keys = new DataColumn[5];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.ReadOnly = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				ReadOnly = true
+			};
 			table.Columns.Add(column);
 			keys[0] = column;
 			table.PrimaryKey = keys;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "AbbreviatedName";
-			column.ReadOnly = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "AbbreviatedName",
+				ReadOnly = true
+			};
 			table.Columns.Add(column);
 			keys[1] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Rector";
-			column.ReadOnly = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Rector",
+				ReadOnly = true
+			};
 			table.Columns.Add(column);
 			keys[2] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(int);
-			column.ColumnName = "Phone";
-			column.ReadOnly = true;
+			column = new DataColumn
+			{
+				DataType = typeof(int),
+				ColumnName = "Phone",
+				ReadOnly = true
+			};
 			table.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Email";
-			column.ReadOnly = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Email",
+				ReadOnly = true
+			};
 			table.Columns.Add(column);
 
 		}
@@ -81,10 +91,5 @@ namespace LibOfTimetableOfClasses
         {
             throw new NotImplementedException();
         }
-
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

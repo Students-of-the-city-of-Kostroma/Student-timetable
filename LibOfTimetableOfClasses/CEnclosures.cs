@@ -23,33 +23,43 @@ namespace LibOfTimetableOfClasses
 			if (RefData.СEnclosures != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[2];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Name";
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Name"
+			};
 			this.Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "University";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "University"
+			};
 			this.Columns.Add(column);
 			keys[1] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Address";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Address",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Phone";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Phone",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Comment";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Comment"
+			};
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
@@ -77,16 +87,6 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MEnclosures mEnclosures)
-		{
-			foreach (DataRow row in this.Rows)
-			{
-				if ((string)row["Name"] == mEnclosures.Name && (string)row["University"] == mEnclosures.University)
-					return false;
-			}
-			return true;
-		}
-
 		/// <summary>
 		/// Метод вставки переданной модели MEnclosures в таблицу CEnclosures
 		/// в случае уникальности свойства Name и University модели для таблицы CGroup
@@ -97,29 +97,24 @@ namespace LibOfTimetableOfClasses
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;
 
-			if (isValidKey(mEnclosures))
+
+			try
 			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["Name"] = mEnclosures.Name;
-					newRow["University"] = mEnclosures.University;
-					newRow["Address"] = mEnclosures.Address;
-					newRow["Phone"] = mEnclosures.Phone;
-					newRow["Comment"] = mEnclosures.Comment;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				DataRow newRow = this.NewRow();
+				newRow["Name"] = mEnclosures.Name;
+				newRow["University"] = mEnclosures.University;
+				newRow["Address"] = mEnclosures.Address;
+				newRow["Phone"] = mEnclosures.Phone;
+				newRow["Comment"] = mEnclosures.Comment;
+				this.Rows.Add(newRow);
+				return true;
 			}
-
-			return false;
-
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
 		/// <summary>
@@ -150,6 +145,5 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-
 	}
 }

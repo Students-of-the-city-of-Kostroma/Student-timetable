@@ -17,16 +17,20 @@ namespace LibOfTimetableOfClasses
 	{
 		public CTitle() : base("Уч.звание")
 		{
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Reduction";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Reduction",
+				Unique = true
+			};
 			this.Columns.Add(column);
-			
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 		}
@@ -91,11 +95,6 @@ namespace LibOfTimetableOfClasses
 				}
 			}
 			return false;
-		}
-
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

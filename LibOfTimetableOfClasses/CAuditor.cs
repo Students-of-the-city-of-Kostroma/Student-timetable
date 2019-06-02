@@ -21,29 +21,37 @@ namespace LibOfTimetableOfClasses
 		public CAuditor() : base("Аудитория")
 		{
 			DataColumn[] keys = new DataColumn[2];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "NameOfAuditor";
-			column.Unique = false;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "NameOfAuditor",
+				Unique = false
+			};
 			Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Cafedra";
-			column.Unique = false;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Cafedra",
+				Unique = false
+			};
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Spacious";
-			column.Unique = false;
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Spacious",
+				Unique = false
+			};
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Building";
-			column.Unique = false;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Building",
+				Unique = false
+			};
 			Columns.Add(column);
 			keys[1] = column;
 			PrimaryKey = keys;

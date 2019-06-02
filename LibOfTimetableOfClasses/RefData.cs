@@ -24,7 +24,11 @@ namespace LibOfTimetableOfClasses
 		public static CUniversity CUniversity = new CUniversity();
 		public static CInstitute CInstitute = new CInstitute();
 		public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+#pragma warning disable IDE0044 // Добавить модификатор только для чтения
+#pragma warning disable IDE0052 // Удалить непрочитанные закрытые члены
 		private static RefData rd = new RefData();
+#pragma warning restore IDE0052 // Удалить непрочитанные закрытые члены
+#pragma warning restore IDE0044 // Добавить модификатор только для чтения
 		private RefData()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
