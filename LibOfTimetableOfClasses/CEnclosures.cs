@@ -23,33 +23,43 @@ namespace LibOfTimetableOfClasses
 			if (RefData.СEnclosures != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[2];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Name";
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Name"
+			};
 			this.Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "University";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "University"
+			};
 			this.Columns.Add(column);
 			keys[1] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Address";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Address",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Phone";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Phone",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Comment";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Comment"
+			};
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;

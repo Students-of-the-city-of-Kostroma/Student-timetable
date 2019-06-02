@@ -22,40 +22,54 @@ namespace LibOfTimetableOfClasses
 		{
 			if (RefData.CTeacher != null) throw new Exception("Контроллер уже существует");
 
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "AcademicDegree";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "AcademicDegree"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "AcademicTitle";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "AcademicTitle"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Departament";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Departament"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "MetodicalDays";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "MetodicalDays"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Windows";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Windows"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Weekends"
+			};
 			this.Columns.Add(column);
 		}
 

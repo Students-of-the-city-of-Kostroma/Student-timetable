@@ -23,45 +23,61 @@ namespace LibOfTimetableOfClasses
 
 			if (RefData.CGroup != null) throw new Exception("Контроллер уже существует");
 
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Group";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Group",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Semestr";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Semestr"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Specialty";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Specialty"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Shift";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Shift"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Students";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Students"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "MinNumberOfClass";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "MinNumberOfClass"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "MaxNumberOfClass";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "MaxNumberOfClass"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Weekends"
+			};
 			this.Columns.Add(column);
 		}
 

@@ -20,20 +20,26 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public CDiscipline() : base("Дисциплина")
         {
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Fullname";
-            column.Unique = true;
-            Columns.Add(column);
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Shortname";
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Fullname",
+				Unique = true
+			};
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "CycleofDiscipline";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Shortname"
+			};
+			Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "CycleofDiscipline"
+			};
 			Columns.Add(column);
 		}
 		/// <summary>

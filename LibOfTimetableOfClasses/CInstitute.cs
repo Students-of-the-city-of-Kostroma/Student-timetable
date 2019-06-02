@@ -17,29 +17,36 @@ namespace LibOfTimetableOfClasses
 		{
 			DataColumn[] keys = new DataColumn[4];
 
-			DataColumn column = new DataColumn();
-
-			column.DataType = typeof(string);
-			column.ColumnName = "ShortName";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "ShortName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName"
+			};
 			this.Columns.Add(column);
 			keys[1] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Director";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Director"
+			};
 			this.Columns.Add(column);
 			keys[2] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "University";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "University"
+			};
 			this.Columns.Add(column);
 			keys[3] = column;
 

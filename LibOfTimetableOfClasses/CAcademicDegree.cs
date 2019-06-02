@@ -21,18 +21,21 @@ namespace LibOfTimetableOfClasses
 		public CAcademicDegree() : base("Учёная степень")
 		{
 
-			DataColumn column = new DataColumn();
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Reduction";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Reduction",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 		}
@@ -58,20 +61,6 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Проверка начилия переданной модели в таблице CAcademicDegree.
-		/// Наличие определяется наличием строки с полем "FullName" соответсвующим данным модели mAcademicDegree.
-		/// </summary>
-		private bool isValidKey(MAcademicDegree mAcademicDegree)
-		{
-			foreach (DataRow Row in this.Rows)
-			{
-				if (mAcademicDegree.FullName == (string)Row["FullName"])
-					return false;
-			}
-			return true;
-		}
-
-		/// <summary>
 		/// Метод добавления переданной модели MAcademicDegree в таблицу CAcademicDegree
 		/// в случае уникальности свойства FullName модели для таблицы CAcademicDegree
 		/// </summary>
@@ -79,24 +68,20 @@ namespace LibOfTimetableOfClasses
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
 
-			if (isValidKey(mAcademicDegree))
+			try
 			{
-				try
-				{
-		
-					DataRow newRow = this.NewRow();
-					newRow["FullName"] = mAcademicDegree.FullName;
-					newRow["Reduction"] = mAcademicDegree.Reduction;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+
+				DataRow newRow = this.NewRow();
+				newRow["FullName"] = mAcademicDegree.FullName;
+				newRow["Reduction"] = mAcademicDegree.Reduction;
+				this.Rows.Add(newRow);
+				return true;
 			}
-			return false;
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
 		/// <summary>

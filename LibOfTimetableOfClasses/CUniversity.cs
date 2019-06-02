@@ -19,48 +19,64 @@ namespace LibOfTimetableOfClasses
 			if (RefData.CUniversity != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[1];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "INN";
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "INN"
+			};
 			this.Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "ShortName";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "ShortName"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "ActualAddress";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "ActualAddress"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "LegalAddress";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "LegalAddress"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullNameRector";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullNameRector"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Email";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Email",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Phone";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Phone",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
