@@ -67,6 +67,8 @@
     <Compile Include="CStudyWeek.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controller.cs" />
+    <Compile Include="Logs.cs" />
     <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs">
       <SubType>Component</SubType>
