@@ -80,6 +80,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
+				Logs.SetInfo("Click button Save in AddTeacher");
 				if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 				{
 					if (Add())
@@ -94,11 +95,6 @@ namespace TimetableOfClasses
 			{
 				Logs.GetError(ex);
 			}
-			finally
-			{
-				Logs.SetInfo("Пользователь нажал кнопку Сохранить на форме добавления Преподавателя");
-			}
-
 		}
 
 		private bool Add()
@@ -289,15 +285,12 @@ namespace TimetableOfClasses
 		{
 			try
 			{
+				Logs.SetInfo("Click button Cancel in AddTeacher");
 				Close();
 			}
 			catch (Exception ex)
 			{
 				Logs.GetError(ex);
-			}
-			finally
-			{
-				Logs.SetInfo("Пользователь нажал кнопку Отменить на форме добавления Преподавателя");
 			}
 		}
 
