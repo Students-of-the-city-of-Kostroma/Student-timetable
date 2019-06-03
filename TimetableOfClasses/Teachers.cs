@@ -25,6 +25,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
+				Logs.SetInfo("Click button Open in AddTeacher");
 				AddTeacher t = new AddTeacher();
 				t.Show();
 			}
@@ -32,16 +33,13 @@ namespace TimetableOfClasses
 			{
 				Logs.GetError(ex);
 			}
-			finally
-			{
-				Logs.SetInfo("Пользователь нажал кнопку Добавить на форме Преподаватель");
-			}
 		}
 	
 		private void RemoveTeacher(object sender, EventArgs e)
 		{
 			try
 			{
+				Logs.SetInfo("Click button Delete in Teacher");
 				//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
 				if (DG.SelectedRows.Count == 0) return;
 				
@@ -52,7 +50,6 @@ namespace TimetableOfClasses
 				{
 					foreach (DataGridViewRow row in DG.SelectedRows)
 					{
-						Logs.SetInfo("Пользователь нажал кнопку Удалить - строка в таблице Преподаватель удалилась");
 						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 						String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 						if (fullName.Length == 3)
@@ -66,16 +63,13 @@ namespace TimetableOfClasses
 			{
 				Logs.GetError(ex);
 			}
-			finally
-			{
-				Logs.SetInfo("Пользователь нажал кнопку Удалить на форме Преподаватель");
-			}
 		}
 
 		private void Update(object sender, EventArgs e)
 		{
 			try
 			{
+				Logs.SetInfo("Click button Change is Teacher");
 				if (DG.SelectedRows.Count == 1)
 				{
 					
@@ -100,10 +94,6 @@ namespace TimetableOfClasses
 			catch (Exception ex)
 			{
 				Logs.GetError(ex);
-			}
-			finally
-			{
-				Logs.SetInfo("Пользователь нажал кнопку Изменить на форме Преподаватель");
 			}
 		}
 
