@@ -1,6 +1,6 @@
-﻿using System;
+
+using System;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -12,11 +12,9 @@ namespace TimetableOfClasses
         [STAThread]
         static void Main()
         {		
-            Application.EnableVisualStyles();
-			new RefData();
-
-			Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start());
+		Application.EnableVisualStyles();
+		Application.SetCompatibleTextRenderingDefault(false);
+		Application.Run(new Start());
         }
     }
 }

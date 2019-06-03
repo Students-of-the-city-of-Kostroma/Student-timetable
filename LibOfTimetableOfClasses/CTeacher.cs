@@ -22,58 +22,55 @@ namespace LibOfTimetableOfClasses
 		{
 			if (RefData.CTeacher != null) throw new Exception("Контроллер уже существует");
 
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
-			this.Columns.Add(column);
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "AcademicDegree";
-			this.Columns.Add(column);
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "AcademicTitle";
-			this.Columns.Add(column);
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Departament";
-			this.Columns.Add(column);
-			
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "MetodicalDays";
-			this.Columns.Add(column);
-			
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Windows";
-			this.Columns.Add(column);
-
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
-			this.Columns.Add(column);
-		}
-
-		/// <summary>
-		/// Проверка начилия переданной модели в таблице CTeacher
-		/// Наличие определяется наличием строки CGroup с полем "FullName" соответсвующим данным модели mTeacher.
-		/// </summary>
-		/// <param name="mTeacher">Проверяеммая модель группы</param>
-		/// <returns>Результат проверки наличия(true - не найдено, false - найдено)</returns>
-		bool isValidKey(MTeacher mTeacher)
-		{
-			foreach(DataRow row in this.Rows)
+			DataColumn column = new DataColumn
 			{
-				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
-				if ((string)row["FullName"] == fullName )
-					return false;
-			}
-			return true;
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "AcademicDegree"
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "AcademicTitle"
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Departament"
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "MetodicalDays"
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Windows"
+			};
+			this.Columns.Add(column);
+
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Weekends"
+			};
+			this.Columns.Add(column);
 		}
 
 		/// <summary>
@@ -85,29 +82,25 @@ namespace LibOfTimetableOfClasses
 		public bool Insert(Model model)
 		{
 			MTeacher mTeacher = (MTeacher)model;
-			if (isValidKey(mTeacher))
+			try
 			{
-				try
-				{
-					string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
-					DataRow newRow = this.NewRow();
-					newRow["FullName"] = fullName;
-					newRow["AcademicDegree"] = mTeacher.AcademicDegree;
-					newRow["AcademicTitle"] = mTeacher.AcademicTitle;
-					newRow["Departament"] = mTeacher.Departament;
-					newRow["MetodicalDays"] = mTeacher.MetodicalDays;
-					newRow["Windows"] = mTeacher.Windows;
-					newRow["Weekends"] = mTeacher.Weekends;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
+				DataRow newRow = this.NewRow();
+				newRow["FullName"] = fullName;
+				newRow["AcademicDegree"] = mTeacher.AcademicDegree;
+				newRow["AcademicTitle"] = mTeacher.AcademicTitle;
+				newRow["Departament"] = mTeacher.Departament;
+				newRow["MetodicalDays"] = mTeacher.MetodicalDays;
+				newRow["Windows"] = mTeacher.Windows;
+				newRow["Weekends"] = mTeacher.Weekends;
+				this.Rows.Add(newRow);
+				return true;
 			}
-			return false;
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
 		/// <summary>
@@ -162,10 +155,9 @@ namespace LibOfTimetableOfClasses
 					this.Rows[i].Delete();
 					//Recount(i);
 					return true;
-				}				
+				}
 			}
 			return false;
 		}
-
 	}
 }

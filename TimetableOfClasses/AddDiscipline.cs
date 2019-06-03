@@ -19,7 +19,6 @@ namespace TimetableOfClasses
 		public AddDiscipline()
 		{
 			InitializeComponent();
-			bool itsupdate = false;
 		}
 		
 		public AddDiscipline(MDiscipline mDiscipline)
