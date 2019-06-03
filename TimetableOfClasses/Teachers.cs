@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.SetInfo("Click button Open in AddTeacher");
+				Logs.GetInfo("Click button Open in AddTeacher");
 				AddTeacher t = new AddTeacher();
 				t.Show();
 			}
@@ -39,7 +39,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.SetInfo("Click button Delete in Teacher");
+				Logs.GetInfo("Click button Delete in Teacher");
 				//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
 				if (DG.SelectedRows.Count == 0) return;
 				
@@ -69,7 +69,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.SetInfo("Click button Change is Teacher");
+				Logs.GetInfo("Click button Change is Teacher");
 				if (DG.SelectedRows.Count == 1)
 				{
 					

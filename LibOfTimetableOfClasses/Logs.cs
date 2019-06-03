@@ -23,22 +23,32 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		static public void GetError(Exception ex)
 		{
-			error = string.Format("  [HResult: {0}]  [Data: {1}]  [TargetSite.DeclaringType: {2}]  [TargetSite.Name: {3}]  [Message: {4}]", ex.HResult, ex.Data, ex.TargetSite.DeclaringType, ex.TargetSite.Name, ex.Message);
+			string time = string.Format("{0:dd.MM.yyy HH:mm:ss.fff}", DateTime.Now);
+			error = string.Format("DEBUG | {0} | [HResult: {1}]  [Message: {2}]  [TargetSite.DeclaringType: {3}]  [TargetSite.Name: {4}]  [Data: {5}]",
+				time, ex.HResult, ex.Message, ex.TargetSite.DeclaringType, ex.TargetSite.Name, ex.Data);
+			Write(error);
 		}
 
 		/// <summary>
 		/// Метод получает информацию о дествии пользователя
-		/// и выводит в файл Logs.txt
 		/// </summary>
-		static public void SetInfo(string _info)
+		static public void GetInfo(string _info)
+		{
+			string time = string.Format("{0:dd.MM.yyy HH:mm:ss.fff}", DateTime.Now);
+			info = string.Format("INFO  | {0} | {1}", time, _info);
+			Write(info);
+		}
+
+		/// <summary>
+		/// <para>Метод получает INFO или ERROR и записывает в файл Logs.txt</para>
+		/// Путь к файлу: TimetableOfClasses\bin\Debug\Logs.txt
+		/// </summary>
+		static public void Write(string msg)
 		{
 			string path = @"Logs.txt";
-			info = _info;
-			string time = string.Format("{0:dd.MM.yyy HH:mm:ss.fff}", DateTime.Now );
-
 			using (FileStream file = new FileStream(path, FileMode.Append))
-			using (StreamWriter stream = new StreamWriter(file))
-				stream.WriteLine("INFO | " + time + " | " + info + " " + error);
+			using (StreamWriter writeInfo = new StreamWriter(file))
+				writeInfo.WriteLine(msg);
 		}
 	}
 }
