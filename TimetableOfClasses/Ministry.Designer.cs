@@ -42,13 +42,14 @@
 			this.DG_Ministry.AllowUserToAddRows = false;
 			this.DG_Ministry.AllowUserToDeleteRows = false;
 			this.DG_Ministry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.DG_Ministry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Ministry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_Ministry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Kod,
-			this.Naim,
-			this.Description});
+            this.Kod,
+            this.Naim,
+            this.Description});
 			this.DG_Ministry.Location = new System.Drawing.Point(12, 12);
 			this.DG_Ministry.Name = "DG_Ministry";
 			this.DG_Ministry.ReadOnly = true;
@@ -77,27 +78,21 @@
 			// 
 			// Kod
 			// 
-			this.Kod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
 			this.Kod.HeaderText = "Код";
 			this.Kod.Name = "Kod";
 			this.Kod.ReadOnly = true;
-			this.Kod.Width = 51;
 			// 
 			// Naim
 			// 
-			this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
 			this.Naim.HeaderText = "Наименование";
 			this.Naim.Name = "Naim";
 			this.Naim.ReadOnly = true;
-			this.Naim.Width = 205;
 			// 
 			// Description
 			// 
-			this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
 			this.Description.HeaderText = "Описание";
 			this.Description.Name = "Description";
 			this.Description.ReadOnly = true;
-			this.Description.Width = 263;
 			// 
 			// Ministry
 			// 
@@ -122,5 +117,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Kod;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-    }
+	}
 }
