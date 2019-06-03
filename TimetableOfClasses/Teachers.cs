@@ -23,52 +23,88 @@ namespace TimetableOfClasses
 
 		private void AddTeacher(object sender, EventArgs e)
 		{
-			AddTeacher t = new AddTeacher();
-			t.Show();
+			try
+			{
+				AddTeacher t = new AddTeacher();
+				t.Show();
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+			finally
+			{
+				Logs.SetInfo("Пользователь нажал кнопку Добавить на форме Преподаватель");
+			}
 		}
-
+	
 		private void RemoveTeacher(object sender, EventArgs e)
 		{
-			//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
-			if (DG.SelectedRows.Count == 0) return;
-
-			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			MTeacher mTeacher;
-			if (dr == DialogResult.Yes)
+			try
 			{
-				foreach (DataGridViewRow row in DG.SelectedRows)
+				//DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
+				if (DG.SelectedRows.Count == 0) return;
+				
+				DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				MTeacher mTeacher;
+
+				if (dr == DialogResult.Yes)
 				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-					if(fullName.Length==3)
-					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-					else mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-					RefData.CTeacher.Delete(mTeacher);
+					foreach (DataGridViewRow row in DG.SelectedRows)
+					{
+						Logs.SetInfo("Пользователь нажал кнопку Удалить - строка в таблице Преподаватель удалилась");
+						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+						String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+						if (fullName.Length == 3)
+							mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+						else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+						RefData.CTeacher.Delete(mTeacher);
+					}
 				}
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+			finally
+			{
+				Logs.SetInfo("Пользователь нажал кнопку Удалить на форме Преподаватель");
 			}
 		}
 
 		private void Update(object sender, EventArgs e)
 		{
-			if (DG.SelectedRows.Count == 1)
+			try
 			{
-				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-				MTeacher mTeacher;
-				if (fullName.Length == 3)
+				if (DG.SelectedRows.Count == 1)
 				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					
+					DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+					MTeacher mTeacher;
+					if (fullName.Length == 3)
+					{
+						mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					}
+					else
+					{
+						mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					}
+					AddTeacher add = new AddTeacher(mTeacher);
+					add.Owner = this;
+					add.ShowDialog();
 				}
-				else
-				{
-					 mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-				}
-				AddTeacher add = new AddTeacher(mTeacher);
-				add.Owner = this;
-				add.ShowDialog();
+				else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+				else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 			}
-			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+			finally
+			{
+				Logs.SetInfo("Пользователь нажал кнопку Изменить на форме Преподаватель");
+			}
 		}
 
 		private void DG_SelectionChanged(object sender, EventArgs e)
@@ -138,5 +174,6 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
+
 	}
 }
