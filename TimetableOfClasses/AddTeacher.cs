@@ -80,7 +80,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.SetInfo("Click button Save in AddTeacher");
+				Logs.GetInfo("Click button Save in AddTeacher");
 				if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 				{
 					if (Add())
@@ -285,7 +285,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.SetInfo("Click button Cancel in AddTeacher");
+				Logs.GetInfo("Click button Cancel in AddTeacher");
 				Close();
 			}
 			catch (Exception ex)
