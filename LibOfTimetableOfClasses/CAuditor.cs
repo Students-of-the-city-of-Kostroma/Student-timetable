@@ -99,8 +99,8 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < Rows.Count; i++)
 			{
-				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
-					&& (string)Rows[i]["Building"] == mAuditor.Building)
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor)
+				
 				{
 					try
 					{
@@ -135,8 +135,8 @@ namespace LibOfTimetableOfClasses
 
 			for (int i = 0; i < Rows.Count; i++)
 			{
-				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
-					&& (string)Rows[i]["Building"] == mAuditor.Building)
+				if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor)
+			
 				{
 					Rows.Remove(Rows[i]);
 					return true;

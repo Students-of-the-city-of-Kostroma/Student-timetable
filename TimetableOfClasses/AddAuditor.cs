@@ -47,7 +47,8 @@ namespace TimetableOfClasses
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, tbCorpus.Text);
+               
+                MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, byte.Parse(tbCorpus.Text));
 				try
 				{
 
@@ -75,8 +76,8 @@ namespace TimetableOfClasses
 				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, tbCorpus.Text);
-				try
+				MAuditor Auditor = new MAuditor(tbAuditor.Text, tbKaf.Text, (ushort)nuPlaces.Value, byte.Parse(tbCorpus.Text));
+                try
 				{
 					if (!itsupdate)
 					{ 

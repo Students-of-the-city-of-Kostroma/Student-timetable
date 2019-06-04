@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.CAuditor.Clear();
 			bool expected = true;
 			//act
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool actual = ca.Insert(aud);
 			//assert
@@ -28,12 +28,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = true;
 			//act
-			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 30, "4");
+			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 30, 4);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -45,12 +45,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = false;
 			//act
-			MAuditor aud1 = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud1 = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -62,12 +62,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = true;
 			//act
-			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 30, "5");
+			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 30, 5);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -77,12 +77,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = true;
 			//act
-			MAuditor aud1 = new MAuditor("302", "каф.  Иностранных языков", 30, "4");
+			MAuditor aud1 = new MAuditor("302", "каф.  Иностранных языков", 30, 4);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -92,12 +92,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = true;
 			//act
-			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 20, "4");
+			MAuditor aud1 = new MAuditor("302", "каф. Дизайна", 20, 4);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -107,12 +107,12 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CAuditor.Clear();
-			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, 5);
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
 			bool expected = false;
 			//act
-			MAuditor aud1 = new MAuditor("502", "каф. Дизайна", 20, "5");
+			MAuditor aud1 = new MAuditor("502", "каф. Дизайна", 20, 5);
 			bool actual = ca.Insert(aud1);
 			//assert
 			Assert.AreEqual(expected, actual);

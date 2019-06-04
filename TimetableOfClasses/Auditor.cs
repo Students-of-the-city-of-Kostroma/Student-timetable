@@ -46,7 +46,7 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DataGridAuditor.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
+					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], byte.Parse( (string)Row["Building"]));
 					RefData.CAuditor.Delete(mAuditor);
 				}
 			}
@@ -71,8 +71,8 @@ namespace TimetableOfClasses
 			if (DataGridAuditor.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DataGridAuditor.SelectedRows[0].DataBoundItem).Row;
-				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
-				AddAuditor add = new AddAuditor(mAuditor);
+				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], byte.Parse((string)Row["Building"]));
+                AddAuditor add = new AddAuditor(mAuditor);
 				add.Owner = this;
 				add.Show();
 			}
