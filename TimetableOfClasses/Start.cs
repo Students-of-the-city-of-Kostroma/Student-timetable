@@ -122,5 +122,11 @@ namespace TimetableOfClasses
 			Institute institute = new Institute();
 			institute.Show();
 		}
+
+		private void CharacteristicStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			Characteristic Characteristic = new Characteristic();
+			Characteristic.Show();
+		}
 	}
 }
