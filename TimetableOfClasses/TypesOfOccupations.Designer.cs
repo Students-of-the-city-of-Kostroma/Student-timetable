@@ -32,8 +32,10 @@
 			this.btAdd = new System.Windows.Forms.Button();
 			this.btDelete = new System.Windows.Forms.Button();
 			this.btChange = new System.Windows.Forms.Button();
-			this.TypeOfOccupation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.BriefTypeOfOccupation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
 			((System.ComponentModel.ISupportInitialize)(this.DG_TypesOfOccupations)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -44,10 +46,13 @@
 			this.DG_TypesOfOccupations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
+			this.DG_TypesOfOccupations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_TypesOfOccupations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_TypesOfOccupations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TypeOfOccupation,
-            this.BriefTypeOfOccupation});
+            this.FullName,
+            this.ShortName});
+      
 			this.DG_TypesOfOccupations.Location = new System.Drawing.Point(9, 9);
 			this.DG_TypesOfOccupations.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
 			this.DG_TypesOfOccupations.Name = "DG_TypesOfOccupations";
@@ -92,19 +97,24 @@
 			this.btChange.UseVisualStyleBackColor = true;
 			this.btChange.Click += new System.EventHandler(this.btChange_Click);
 			// 
-			// TypeOfOccupation
+
+			// FullName
 			// 
-			this.TypeOfOccupation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.TypeOfOccupation.HeaderText = "Вид занятия";
-			this.TypeOfOccupation.Name = "TypeOfOccupation";
-			this.TypeOfOccupation.ReadOnly = true;
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "fullName";
+			this.FullName.HeaderText = "Вид занятия";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
 			// 
-			// BriefTypeOfOccupation
+			// ShortName
 			// 
-			this.BriefTypeOfOccupation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.BriefTypeOfOccupation.HeaderText = "Краткий вид занятия";
-			this.BriefTypeOfOccupation.Name = "BriefTypeOfOccupation";
-			this.BriefTypeOfOccupation.ReadOnly = true;
+			this.ShortName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ShortName.DataPropertyName = "shortName";
+			this.ShortName.HeaderText = "Краткий вид занятия";
+			this.ShortName.Name = "ShortName";
+			this.ShortName.ReadOnly = true;
+      
+
 			// 
 			// TypesOfOccupations
 			// 
@@ -128,7 +138,9 @@
 		private System.Windows.Forms.Button btAdd;
 		private System.Windows.Forms.Button btDelete;
 		private System.Windows.Forms.Button btChange;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TypeOfOccupation;
-		private System.Windows.Forms.DataGridViewTextBoxColumn BriefTypeOfOccupation;
+    
+		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ShortName;
+
 	}
 }
