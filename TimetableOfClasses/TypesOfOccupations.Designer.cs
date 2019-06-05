@@ -32,8 +32,10 @@
 			this.btAdd = new System.Windows.Forms.Button();
 			this.btDelete = new System.Windows.Forms.Button();
 			this.btChange = new System.Windows.Forms.Button();
+
 			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ShortName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
 			((System.ComponentModel.ISupportInitialize)(this.DG_TypesOfOccupations)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -44,11 +46,13 @@
 			this.DG_TypesOfOccupations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
 			this.DG_TypesOfOccupations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_TypesOfOccupations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_TypesOfOccupations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullName,
             this.ShortName});
+      
 			this.DG_TypesOfOccupations.Location = new System.Drawing.Point(9, 9);
 			this.DG_TypesOfOccupations.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
 			this.DG_TypesOfOccupations.Name = "DG_TypesOfOccupations";
@@ -93,6 +97,7 @@
 			this.btChange.UseVisualStyleBackColor = true;
 			this.btChange.Click += new System.EventHandler(this.btChange_Click);
 			// 
+
 			// FullName
 			// 
 			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -108,6 +113,8 @@
 			this.ShortName.HeaderText = "Краткий вид занятия";
 			this.ShortName.Name = "ShortName";
 			this.ShortName.ReadOnly = true;
+      
+
 			// 
 			// TypesOfOccupations
 			// 
@@ -131,7 +138,9 @@
 		private System.Windows.Forms.Button btAdd;
 		private System.Windows.Forms.Button btDelete;
 		private System.Windows.Forms.Button btChange;
+    
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ShortName;
+
 	}
 }
