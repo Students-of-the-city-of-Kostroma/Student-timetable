@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UT_Delete_CEnclosures.cs" />
+    <Compile Include="UT_Delete_CTypesOfOccupation.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
     <Compile Include="UT_CAuditor.cs" />
     <Compile Include="UT_CDiscipline.cs" />
