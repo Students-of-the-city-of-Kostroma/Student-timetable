@@ -60,7 +60,7 @@ namespace UnitTestOfTimetableOfClasses
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
             CTypesOfOccupations ct = new CTypesOfOccupations();
             bool t = ct.Insert(tp);
-            bool expected = false;
+            bool expected = true;
             //act
             MTypesOfOccupations tp1 = new MTypesOfOccupations("Лабораторная ", "Лаб");
             bool actual = ct.Insert(tp1);
@@ -76,7 +76,7 @@ namespace UnitTestOfTimetableOfClasses
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
             CTypesOfOccupations ct = new CTypesOfOccupations();
             bool t = ct.Insert(tp);
-            bool expected = true;
+            bool expected = false;
             //act
             MTypesOfOccupations tp1 = new MTypesOfOccupations("Лекция", "Л");
             bool actual = ct.Insert(tp1);
