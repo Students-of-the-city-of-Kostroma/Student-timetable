@@ -52,6 +52,7 @@
     <Compile Include="UT_Insert_CEnclosurse.cs" />
     <Compile Include="UT_Insert_CTeacher.cs" />
     <Compile Include="UT_Insert_CGroup.cs" />
+    <Compile Include="UT_Insert_CTypesOfOccupation.cs" />
     <Compile Include="UT_MDiscipline.cs" />
     <Compile Include="UT_MAuditor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
