@@ -121,5 +121,11 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
 		}
+
+		private void DG_Group_DoubleClick(object sender, EventArgs e)
+		{
+			AddGroup addGroup = new AddGroup();
+			addGroup.Show();
+		}
 	}
 }
