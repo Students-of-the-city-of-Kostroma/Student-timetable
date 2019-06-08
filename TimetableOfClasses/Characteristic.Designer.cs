@@ -36,6 +36,9 @@
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.Day = new System.Windows.Forms.TabPage();
+			this.label6 = new System.Windows.Forms.Label();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.SecondPair = new System.Windows.Forms.CheckBox();
 			this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
 			this.label5 = new System.Windows.Forms.Label();
 			this.Changes = new System.Windows.Forms.GroupBox();
@@ -48,16 +51,26 @@
 			this.First = new System.Windows.Forms.DomainUpDown();
 			this.Most = new System.Windows.Forms.DomainUpDown();
 			this.Date = new System.Windows.Forms.TabPage();
+			this.label10 = new System.Windows.Forms.Label();
+			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.Bells = new System.Windows.Forms.TabPage();
 			this.Cycles = new System.Windows.Forms.TabPage();
 			this.Etc = new System.Windows.Forms.TabPage();
-			this.SecondPair = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.label6 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.Numeration.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.Day.SuspendLayout();
 			this.Changes.SuspendLayout();
+			this.Date.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Ok
@@ -157,6 +170,49 @@
 			this.Day.TabIndex = 0;
 			this.Day.Text = "День";
 			this.Day.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label6.AutoSize = true;
+			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label6.Location = new System.Drawing.Point(13, 125);
+			this.label6.MaximumSize = new System.Drawing.Size(325, 30);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(309, 28);
+			this.label6.TabIndex = 9;
+			this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
+    "и преподавателей:";
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox1.Location = new System.Drawing.Point(13, 95);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(317, 17);
+			this.checkBox1.TabIndex = 8;
+			this.checkBox1.Text = "Перемены достаточно для перехода из корпуса в корпус";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// SecondPair
+			// 
+			this.SecondPair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.SecondPair.AutoSize = true;
+			this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SecondPair.Location = new System.Drawing.Point(13, 72);
+			this.SecondPair.Name = "SecondPair";
+			this.SecondPair.Size = new System.Drawing.Size(232, 17);
+			this.SecondPair.TabIndex = 7;
+			this.SecondPair.Text = "Группа может приходить ко второй паре";
+			this.SecondPair.UseVisualStyleBackColor = true;
 			// 
 			// domainUpDown1
 			// 
@@ -284,20 +340,119 @@
 			// 
 			// Date
 			// 
+			this.Date.Controls.Add(this.button1);
+			this.Date.Controls.Add(this.label10);
+			this.Date.Controls.Add(this.listBox1);
+			this.Date.Controls.Add(this.domainUpDown2);
+			this.Date.Controls.Add(this.groupBox1);
+			this.Date.Controls.Add(this.checkBox2);
+			this.Date.Controls.Add(this.label7);
 			this.Date.Location = new System.Drawing.Point(4, 22);
 			this.Date.Name = "Date";
 			this.Date.Padding = new System.Windows.Forms.Padding(3);
-			this.Date.Size = new System.Drawing.Size(371, 489);
+			this.Date.Size = new System.Drawing.Size(349, 363);
 			this.Date.TabIndex = 1;
 			this.Date.Text = "Даты";
 			this.Date.UseVisualStyleBackColor = true;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(6, 210);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(143, 13);
+			this.label10.TabIndex = 8;
+			this.label10.Text = "Список праздничных дней:";
+			// 
+			// listBox1
+			// 
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.Location = new System.Drawing.Point(6, 229);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.ScrollAlwaysVisible = true;
+			this.listBox1.Size = new System.Drawing.Size(337, 121);
+			this.listBox1.TabIndex = 7;
+			// 
+			// domainUpDown2
+			// 
+			this.domainUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.domainUpDown2.Location = new System.Drawing.Point(291, 36);
+			this.domainUpDown2.Name = "domainUpDown2";
+			this.domainUpDown2.Size = new System.Drawing.Size(52, 20);
+			this.domainUpDown2.TabIndex = 6;
+			this.domainUpDown2.Text = "10";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.dateTimePicker2);
+			this.groupBox1.Controls.Add(this.dateTimePicker1);
+			this.groupBox1.Controls.Add(this.label9);
+			this.groupBox1.Controls.Add(this.label8);
+			this.groupBox1.Location = new System.Drawing.Point(6, 112);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(337, 65);
+			this.groupBox1.TabIndex = 2;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Учебный период";
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Location = new System.Drawing.Point(185, 36);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
+			this.dateTimePicker2.TabIndex = 7;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Location = new System.Drawing.Point(185, 13);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
+			this.dateTimePicker1.TabIndex = 7;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(14, 42);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(92, 13);
+			this.label9.TabIndex = 0;
+			this.label9.Text = "Дата окончания:";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(14, 20);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(74, 13);
+			this.label8.TabIndex = 0;
+			this.label8.Text = "Дата начала:";
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.Location = new System.Drawing.Point(6, 77);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(171, 17);
+			this.checkBox2.TabIndex = 1;
+			this.checkBox2.Text = "Учитывать нулевой семестр";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(85, 38);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(176, 13);
+			this.label7.TabIndex = 0;
+			this.label7.Text = "Максимальный номер семестра:";
 			// 
 			// Bells
 			// 
 			this.Bells.Location = new System.Drawing.Point(4, 22);
 			this.Bells.Name = "Bells";
 			this.Bells.Padding = new System.Windows.Forms.Padding(3);
-			this.Bells.Size = new System.Drawing.Size(371, 489);
+			this.Bells.Size = new System.Drawing.Size(349, 363);
 			this.Bells.TabIndex = 2;
 			this.Bells.Text = "Звонки";
 			this.Bells.UseVisualStyleBackColor = true;
@@ -307,7 +462,7 @@
 			this.Cycles.Location = new System.Drawing.Point(4, 22);
 			this.Cycles.Name = "Cycles";
 			this.Cycles.Padding = new System.Windows.Forms.Padding(3);
-			this.Cycles.Size = new System.Drawing.Size(371, 489);
+			this.Cycles.Size = new System.Drawing.Size(349, 363);
 			this.Cycles.TabIndex = 3;
 			this.Cycles.Text = "Циклы";
 			this.Cycles.UseVisualStyleBackColor = true;
@@ -317,53 +472,19 @@
 			this.Etc.Location = new System.Drawing.Point(4, 22);
 			this.Etc.Name = "Etc";
 			this.Etc.Padding = new System.Windows.Forms.Padding(3);
-			this.Etc.Size = new System.Drawing.Size(371, 489);
+			this.Etc.Size = new System.Drawing.Size(349, 363);
 			this.Etc.TabIndex = 4;
 			this.Etc.Text = "Прочее";
 			this.Etc.UseVisualStyleBackColor = true;
 			// 
-			// SecondPair
+			// button1
 			// 
-			this.SecondPair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.SecondPair.AutoSize = true;
-			this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SecondPair.Location = new System.Drawing.Point(13, 72);
-			this.SecondPair.Name = "SecondPair";
-			this.SecondPair.Size = new System.Drawing.Size(232, 17);
-			this.SecondPair.TabIndex = 7;
-			this.SecondPair.Text = "Группа может приходить ко второй паре";
-			this.SecondPair.UseVisualStyleBackColor = true;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(13, 95);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(317, 17);
-			this.checkBox1.TabIndex = 8;
-			this.checkBox1.Text = "Перемены достаточно для перехода из корпуса в корпус";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// label6
-			// 
-			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label6.AutoSize = true;
-			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label6.Location = new System.Drawing.Point(13, 125);
-			this.label6.MaximumSize = new System.Drawing.Size(325, 30);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(309, 28);
-			this.label6.TabIndex = 9;
-			this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
-    "и преподавателей:";
+			this.button1.Location = new System.Drawing.Point(318, 204);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(25, 25);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "+";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// Characteristic
 			// 
@@ -383,6 +504,10 @@
 			this.Day.PerformLayout();
 			this.Changes.ResumeLayout(false);
 			this.Changes.PerformLayout();
+			this.Date.ResumeLayout(false);
+			this.Date.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -415,5 +540,16 @@
 		private System.Windows.Forms.CheckBox SecondPair;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.DomainUpDown domainUpDown2;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Button button1;
 	}
 }
