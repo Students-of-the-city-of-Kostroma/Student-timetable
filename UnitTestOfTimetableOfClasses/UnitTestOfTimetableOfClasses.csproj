@@ -61,6 +61,7 @@
     <Compile Include="UT_Update_CEnclosurse.cs" />
     <Compile Include="UT_Update_CTeacher.cs" />
     <Compile Include="UT_Update_CGroup.cs" />
+    <Compile Include="UT_Update_CTypesOfOccupation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
