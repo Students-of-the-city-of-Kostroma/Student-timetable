@@ -15,8 +15,12 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			bool expected = true;
-			//act
-			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+			//act		
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MGroup gr = new MGroup("17-ИСбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			bool actual = RefData.CGroup.Insert(gr);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -43,11 +47,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ЮФбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ЮФбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ЮФбо-2б", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ЮФбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -75,11 +87,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, "ИСТ", 2, 2, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, tp1.ShortName, 2, 2, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -89,11 +109,17 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСиТ", 2, 2, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp.ShortName, 2, 2, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -103,11 +129,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 1, 2, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 1, 2, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -117,11 +151,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 1, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 1, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -131,11 +173,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 0, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 0, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -145,11 +195,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 1, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 1, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 1, 1, "Суббота");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Суббота");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -159,11 +217,19 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, "ИСТ", 2, 2, 1, 1, "Воскресенье");
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Воскресенье");
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
