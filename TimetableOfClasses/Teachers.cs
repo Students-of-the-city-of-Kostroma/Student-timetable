@@ -25,7 +25,7 @@ namespace TimetableOfClasses
 		{
 			try
 			{
-				Logs.GetInfo("Click button Open in AddTeacher");
+				Logs.GetInfo("Click button Create in Teacher");
 				AddTeacher t = new AddTeacher();
 				t.Show();
 			}
