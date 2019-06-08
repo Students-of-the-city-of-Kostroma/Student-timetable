@@ -43,7 +43,7 @@ namespace LibOfTimetableOfClasses
 		/// <para>Метод получает INFO или ERROR и записывает в файл Logs.txt</para>
 		/// Путь к файлу: TimetableOfClasses\bin\Debug\Logs.txt
 		/// </summary>
-		static public void Write(string msg)
+		static private void Write(string msg)
 		{
 			string path = @"Logs.txt";
 			using (FileStream file = new FileStream(path, FileMode.Append))
