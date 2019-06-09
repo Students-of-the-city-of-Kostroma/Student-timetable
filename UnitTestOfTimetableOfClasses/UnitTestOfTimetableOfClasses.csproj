@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="UT_Logs.cs" />
+    <Compile Include="UT_MAcademicDegree.cs" />
     <Compile Include="UT_MDirectionOfPreparation.cs" />
     <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
     <Compile Include="UT_CDirectionOfPreparation.cs" />
