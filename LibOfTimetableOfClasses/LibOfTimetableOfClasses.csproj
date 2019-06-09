@@ -87,7 +87,7 @@
     <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidateUtils.cs" />
+    <Compile Include="Validate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
