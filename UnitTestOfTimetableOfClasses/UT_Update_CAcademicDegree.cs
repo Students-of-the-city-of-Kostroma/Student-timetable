@@ -49,7 +49,7 @@ namespace UnitTestOfTimetableOfClasses
 		
 			}
 		/// <summary>
-		/// Замена корректными данными всех полей пустыми строками
+		/// Замена всех полей пустыми строками
 		/// </summary>
 		[TestMethod]
 		public void Task_484_3()
