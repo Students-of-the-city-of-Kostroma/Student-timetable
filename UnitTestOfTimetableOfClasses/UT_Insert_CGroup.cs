@@ -14,6 +14,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 			//act		
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -49,6 +51,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -92,6 +96,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();			
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -117,6 +123,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -139,6 +147,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -164,6 +174,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -189,6 +201,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -214,6 +228,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -239,6 +255,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
