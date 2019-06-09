@@ -9,8 +9,11 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Logs
 	{
+		/// <summary>
+		/// Проверка корректного вывода метода GetInfo в Logs.txt
+		/// </summary>
 		[TestMethod]
-		public void Task_1018_1()//Нажали кнопку Удалить в форме Преподаватель
+		public void Task_1018_1()
 		{
 			//arrange
 			Logs.GetInfo("Click button Delete in Teacher");
@@ -34,8 +37,11 @@ namespace UnitTestOfTimetableOfClasses
 
 		}
 
+		/// <summary>
+		/// Проверка корректного вывода метода GetError в Logs.txt
+		/// </summary>
 		[TestMethod]
-		public void Task_1018_2()//Нажали кнопку Удалить в форме Преподаватель
+		public void Task_1018_2()
 		{
 			//arrange
 
@@ -51,7 +57,7 @@ namespace UnitTestOfTimetableOfClasses
 			string ex = ("");
 			ex = Read();
 
-			////act
+			//act
 			string act = "Error";
 
 			//assert
