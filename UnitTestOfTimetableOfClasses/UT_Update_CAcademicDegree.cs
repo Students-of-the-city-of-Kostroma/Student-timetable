@@ -7,8 +7,11 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CAcademicDegree
 	{
+		/// <summary>
+		/// Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
+		/// </summary>
 		[TestMethod]
-        	public void Task_484_1()//Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
+        	public void Task_484_1()
         	{
             		//arrange 
             		RefData.CAcademicDegree.Clear();
@@ -24,8 +27,11 @@ namespace UnitTestOfTimetableOfClasses
             		Assert.AreEqual(ex, act);
         	}
 
+		/// <summary>
+		/// Замена корректными данными всех полей таблицы
+		/// </summary>
 		[TestMethod]
-			public void Task_484_2()//Замена корректными данными всех полей таблицы
+			public void Task_484_2()
 			{
 					//arrange
 					RefData.CAcademicDegree.Clear();
@@ -42,6 +48,26 @@ namespace UnitTestOfTimetableOfClasses
 					Assert.AreEqual(ex, act);
 		
 			}
+		/// <summary>
+		/// Замена всех полей пустыми строками
+		/// </summary>
+		[TestMethod]
+		public void Task_484_3()
+		{
+			//arrange
+			RefData.CAcademicDegree.Clear();
+			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
+			RefData.CAcademicDegree.Insert(MAcademic);
+			bool ex = false;
 
+			//act
+			MAcademic.FullName = null;
+			MAcademic.Reduction = null;
+			bool act = RefData.CAcademicDegree.Update(MAcademic);
+
+			//assert
+			Assert.AreEqual(ex, act);
+
+		}
 	}
 }
