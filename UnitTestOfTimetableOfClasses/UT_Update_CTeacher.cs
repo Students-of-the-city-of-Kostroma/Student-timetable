@@ -17,7 +17,7 @@ namespace UnitTestOfTimetableOfClasses
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
-			bool expected = true;
+			bool expected = false;
 			//act
 			tcher1.AcademicDegree = "Доктор наук";
 			tcher1.AcademicTitle = "Доцент";
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
-			bool expected = true;
+			bool expected = false;
 			//act
 			tcher1.AcademicDegree = "Кандидат наук";
 			tcher1.AcademicTitle = "Доцент";
@@ -54,7 +54,7 @@ namespace UnitTestOfTimetableOfClasses
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
-			bool expected = true;
+			bool expected = false;
 			//act
 			tcher1.Departament = "ФАСТ";
 			bool actual = RefData.CTeacher.Update(tcher1);
@@ -70,7 +70,7 @@ namespace UnitTestOfTimetableOfClasses
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
-			bool expected = true;
+			bool expected = false;
 			//act
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
@@ -88,7 +88,7 @@ namespace UnitTestOfTimetableOfClasses
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
-			bool expected = true;
+			bool expected = false;
 			//act
 			tcher1.AcademicDegree = "Кандидат наук";
 			tcher1.AcademicTitle = "Доцент";
