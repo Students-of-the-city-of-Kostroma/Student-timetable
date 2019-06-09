@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
 			this.shortTitle = new System.Windows.Forms.TextBox();
 			this.fullTitle = new System.Windows.Forms.TextBox();
@@ -39,7 +38,6 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.B_Сancel = new System.Windows.Forms.Button();
 			this.createAndClose = new System.Windows.Forms.Button();
-			this.tooltip = new System.Windows.Forms.ToolTip(this.components);
 			this.SuspendLayout();
 			// 
 			// label1
@@ -61,7 +59,7 @@
 			this.shortTitle.MaxLength = 10;
 			this.shortTitle.Name = "shortTitle";
 			this.shortTitle.Size = new System.Drawing.Size(266, 22);
-			this.shortTitle.TabIndex = 3;
+			this.shortTitle.TabIndex = 1;
 			this.shortTitle.TextChanged += new System.EventHandler(this.ShortTitleTextChanged);
 			// 
 			// fullTitle
@@ -73,7 +71,7 @@
 			this.fullTitle.MaxLength = 64;
 			this.fullTitle.Name = "fullTitle";
 			this.fullTitle.Size = new System.Drawing.Size(266, 22);
-			this.fullTitle.TabIndex = 4;
+			this.fullTitle.TabIndex = 2;
 			this.fullTitle.TextChanged += new System.EventHandler(this.FullTitleTextChanged);
 			// 
 			// departmentHead
@@ -85,7 +83,7 @@
 			this.departmentHead.MaxLength = 200;
 			this.departmentHead.Name = "departmentHead";
 			this.departmentHead.Size = new System.Drawing.Size(266, 22);
-			this.departmentHead.TabIndex = 5;
+			this.departmentHead.TabIndex = 3;
 			this.departmentHead.TextChanged += new System.EventHandler(this.DepartmentHeadTextChanged);
 			// 
 			// institute
@@ -97,7 +95,7 @@
 			this.institute.MaxLength = 64;
 			this.institute.Name = "institute";
 			this.institute.Size = new System.Drawing.Size(266, 22);
-			this.institute.TabIndex = 6;
+			this.institute.TabIndex = 4;
 			this.institute.TextChanged += new System.EventHandler(this.InstituteTextChanged);
 			// 
 			// label2
@@ -136,7 +134,7 @@
 			this.B_Сancel.Location = new System.Drawing.Point(127, 342);
 			this.B_Сancel.Name = "B_Сancel";
 			this.B_Сancel.Size = new System.Drawing.Size(70, 34);
-			this.B_Сancel.TabIndex = 19;
+			this.B_Сancel.TabIndex = 6;
 			this.B_Сancel.Text = "Отмена";
 			this.B_Сancel.UseVisualStyleBackColor = true;
 			this.B_Сancel.Click += new System.EventHandler(this.СancelClick);
@@ -147,7 +145,7 @@
 			this.createAndClose.Location = new System.Drawing.Point(203, 342);
 			this.createAndClose.Name = "createAndClose";
 			this.createAndClose.Size = new System.Drawing.Size(75, 34);
-			this.createAndClose.TabIndex = 18;
+			this.createAndClose.TabIndex = 5;
 			this.createAndClose.Text = "Сохранить";
 			this.createAndClose.UseVisualStyleBackColor = true;
 			this.createAndClose.Click += new System.EventHandler(this.CreateAndCloseClick);
@@ -187,6 +185,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button B_Сancel;
         private System.Windows.Forms.Button createAndClose;
-		private System.Windows.Forms.ToolTip tooltip;
 	}
 }
