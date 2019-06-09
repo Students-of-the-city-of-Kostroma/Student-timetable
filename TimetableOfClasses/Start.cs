@@ -123,10 +123,10 @@ namespace TimetableOfClasses
 			institute.Show();
 		}
 
-        private void учебныеНеделиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StudyWeek studyWeek = new StudyWeek();
-            studyWeek.Show();
-        }
-    }
+		private void CharacteristicStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			Characteristic Characteristic = new Characteristic();
+			Characteristic.Show();
+		}
+	}
 }
