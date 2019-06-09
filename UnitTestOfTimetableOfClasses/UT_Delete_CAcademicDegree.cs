@@ -7,10 +7,12 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CAcademicDegree
 	{
-		//CAcademicDegree CAcademic = new CAcademicDegree();
 
+		/// <summary>
+		/// Удаление существующих данных таблицы
+		/// </summary>
 		[TestMethod]
-		public void Task_485_1()//Удаление существующих данных таблицы
+		public void Task_485_1()
 		{
 			//arrange
 			RefData.CAcademicDegree.Clear();
@@ -26,8 +28,11 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 		}
 
+		/// <summary>
+		/// Удаление несуществующих данных из таблицы
+		/// </summary>
 		[TestMethod]
-		public void Task_485_2()//Удаление несуществующих данных из таблицы
+		public void Task_485_2()
 		{
 			//arrange 
 			RefData.CAcademicDegree.Clear();
