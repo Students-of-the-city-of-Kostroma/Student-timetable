@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses
 			string act = "";
 			try
 			{
-				MAcademicDegree MAcademic = new MAcademicDegree(null);
+				MAcademicDegree MAcademic = new MAcademicDegree(null,null);
 			}
 			catch (Exception e)
 			{
