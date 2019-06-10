@@ -15,52 +15,65 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		public CUniversity() : base("ВУЗ")
 		{
-
-			if (RefData.CUniversity != null) throw new Exception("Контроллер уже существует");
-
 			DataColumn[] keys = new DataColumn[1];
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "INN";
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "INN"
+			};
 			this.Columns.Add(column);
 			keys[0] = column;
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "ShortName";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "ShortName"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "ActualAddress";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "ActualAddress"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "LegalAddress";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "LegalAddress"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullNameRector";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullNameRector"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Email";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Email",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Phone";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Phone",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
@@ -86,15 +99,6 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MUniversity mUniversity)
-		{
-			foreach (DataRow row in this.Rows)
-			{
-				if ((string)row["INN"] == mUniversity.INN)
-					return false;
-			}
-			return true;
-		}
 		/// <summary>
 		/// Метод добавления строки ВУЗа в таблицу
 		/// </summary>
@@ -104,32 +108,26 @@ namespace LibOfTimetableOfClasses
 		{
 			MUniversity mUniversity = (MUniversity)model;
 
-			if (isValidKey(mUniversity))
+			try
 			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["INN"] = mUniversity.INN;
-					newRow["ShortName"] = mUniversity.ShortName;
-					newRow["FullName"] = mUniversity.FullName;
-					newRow["ActualAddress"] = mUniversity.ActualAddress;
-					newRow["LegalAddress"] = mUniversity.LegalAddress;
-					newRow["FullNameRector"] =  mUniversity.SurnameRector + " " + mUniversity.NameRector + " " + mUniversity.MiddleNameRector;
-					newRow["Email"] = mUniversity.Email;
-					newRow["Phone"] = mUniversity.Phone;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				DataRow newRow = this.NewRow();
+				newRow["INN"] = mUniversity.INN;
+				newRow["ShortName"] = mUniversity.ShortName;
+				newRow["FullName"] = mUniversity.FullName;
+				newRow["ActualAddress"] = mUniversity.ActualAddress;
+				newRow["LegalAddress"] = mUniversity.LegalAddress;
+				newRow["FullNameRector"] = mUniversity.SurnameRector + " " + mUniversity.NameRector + " " + mUniversity.MiddleNameRector;
+				newRow["Email"] = mUniversity.Email;
+				newRow["Phone"] = mUniversity.Phone;
+				this.Rows.Add(newRow);
+				return true;
 			}
-
-			return false;
-
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 		/// <summary>
 		/// Метод обновления информации строки ВУЗа в таблице
@@ -162,6 +160,5 @@ namespace LibOfTimetableOfClasses
 			}
 			return false;
 		}
-
 	}
 }

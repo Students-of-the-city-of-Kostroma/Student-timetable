@@ -67,7 +67,7 @@ namespace LibOfTimetableOfClasses
 					throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
 				if (!Regex.IsMatch(value, @"[А-Яа-я\- ]"))
 					throw new Exception("Ошибка создания модели. В свойство FullName получена строка содержащая недопустимые символы");
-				if (!isLetterСaseNormal(value))
+				if (!IsLetterСaseNormal(value))
 					throw new Exception("Ошибка создания модели. В свойство FullName получена строка неверного формата");
 				_university = value;
 			}
@@ -180,7 +180,7 @@ namespace LibOfTimetableOfClasses
 			Comment= comment;
 		}
 
-		private bool isLetterСaseNormal(string input)
+		private bool IsLetterСaseNormal(string input)
 		{
 			input = Regex.Replace(input, @"\s+", " ");
 			input = Regex.Replace(input, @"-+", "-");

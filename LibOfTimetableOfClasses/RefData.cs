@@ -14,30 +14,34 @@ namespace LibOfTimetableOfClasses
     {
 		public static DataSet DataSet = new DataSet();
 		public static CTeacher CTeacher = new CTeacher();
-        public static CAuditor CAuditor = new CAuditor();
-        public static CDiscipline CDiscipline = new CDiscipline();
-        public static CGroup CGroup = new CGroup();
+		public static CAuditor CAuditor = new CAuditor();
+		public static CDiscipline CDiscipline = new CDiscipline();
+		public static CGroup CGroup = new CGroup();
 		public static CTitle CTitle = new CTitle();
 		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
 		public static СEnclosures СEnclosures = new СEnclosures();
 		public static CUniversity CUniversity = new CUniversity();
-        public static CInstitute CInstitute = new CInstitute();
-        public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
-
-		public RefData()
+		public static CInstitute CInstitute = new CInstitute();
+		public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+#pragma warning disable IDE0044 // Добавить модификатор только для чтения
+#pragma warning disable IDE0052 // Удалить непрочитанные закрытые члены
+		private static RefData rd = new RefData();
+#pragma warning restore IDE0052 // Удалить непрочитанные закрытые члены
+#pragma warning restore IDE0044 // Добавить модификатор только для чтения
+		private RefData()
 		{
 			DataSet.Tables.Add(CTrainingProfile);
-			DataSet.Tables.Add(CDirectionOfPreparation);	
+			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Tables.Add(CAuditor);
-			DataSet.Tables.Add(СEnclosures);			
+			DataSet.Tables.Add(СEnclosures);
 			DataSet.Tables.Add(CUniversity);
 			DataSet.Tables.Add(CInstitute);
 			DataSet.Tables.Add(CTeacher);
 			DataSet.Tables.Add(CAcademicDegree);
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
-      
+
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
 			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 			DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);

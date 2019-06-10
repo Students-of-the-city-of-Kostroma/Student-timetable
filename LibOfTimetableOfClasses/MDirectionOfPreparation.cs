@@ -9,17 +9,33 @@ namespace LibOfTimetableOfClasses
 {
 	public class MDirectionOfPreparation : Model
 	{
+		/// <summary>
+		/// Код направления подготовки
+		/// </summary>
 		protected string codeOfDP;
+		/// <summary>
+		/// Название направления подготовки
+		/// </summary>
 		protected string nameOfDP;
+		/// <summary>
+		/// Период обучения
+		/// </summary>
 		protected ushort periodOfStudy;
-
+		/// <summary>
+		/// Создает экземпляр направления подготовки
+		/// </summary>
+		/// <param name="codeOfDP">Код направления подготовки</param>
+		/// <param name="nameOfDP">Название направления подготовки</param>
+		/// <param name="periodOfStudy">Период обучения</param>
 		public MDirectionOfPreparation(string codeOfDP, string nameOfDP, ushort periodOfStudy) : base()
 		{
 			CodeOfDP = codeOfDP;
 			NameOfDP = nameOfDP;
 			PeriodOfStudy = periodOfStudy;
 		}
-
+		/// <summary>
+		/// codeOfDP - код напраления подготовки
+		/// </summary>
 		public string CodeOfDP
 		{
 			set
@@ -31,11 +47,17 @@ namespace LibOfTimetableOfClasses
 				
 			get { return codeOfDP; }
 		}
+		/// <summary>
+		/// nameOfDP - название напраления подготовки
+		/// </summary>
 		public string NameOfDP
 		{
 			set { nameOfDP = value; }
 			get { return nameOfDP; }
 		}
+		/// <summary>
+		/// periodOfStudy - период обучения
+		/// </summary>
 		public ushort PeriodOfStudy
 		{
 			set

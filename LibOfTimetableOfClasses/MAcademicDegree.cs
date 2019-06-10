@@ -68,11 +68,6 @@ namespace LibOfTimetableOfClasses
 			FullName = fullname;
 			Reduction = reduction;
 		}
-
-		public MAcademicDegree(string academicDegree) : base()
-		{
-			AcademicDegree = academicDegree;
-		}
 	}
 }
 

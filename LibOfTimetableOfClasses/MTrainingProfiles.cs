@@ -21,9 +21,12 @@ namespace LibOfTimetableOfClasses
 		/// </summary>
 		string shortname;
 		/// <summary>
-		/// Возвращает или задает fullname - Полное название профиля подготовки
+		/// Шифр направления
 		/// </summary>
 		string shiphr;
+		/// <summary>
+		/// fullname - Полное название профиля подготовки
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -39,7 +42,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 		/// <summary>
-		/// Возвращает или задает shortname - Краткое название профиля подготовки
+		/// shortname - Краткое название профиля подготовки
 		/// </summary>
 		public string ShortName
 		{
@@ -55,6 +58,9 @@ namespace LibOfTimetableOfClasses
 				shortname = value;
 			}
 		}
+		/// <summary>
+		/// shiphr - Шифр напраления подготовки
+		/// </summary>
 		public string Shiphr
 		{
 			get
@@ -66,16 +72,17 @@ namespace LibOfTimetableOfClasses
 				shiphr = value;
 			}
 		}
+		/// <summary>
+		/// Создает экземпляр Профиля подготовки
+		/// </summary>
+		/// <param name="fullname">Полное название профиля подготовки</param>
+		/// <param name="shortname">Краткое название профиля подготовки</param>
+		/// <param name="shiphr">Шмфр направления подготовки</param>
 		public MTrainingProfile(string fullname, string shortname, string shiphr) :base()
 		{
 			FullName = fullname;
 			ShortName = shortname;
 			Shiphr = shiphr;
-		}
-
-		public override string ToString()
-		{
-			return this.ShortName;
 		}
 	}
 }
