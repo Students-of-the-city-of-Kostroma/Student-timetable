@@ -8,21 +8,23 @@ namespace UnitTestOfTimetableOfClasses
 	public class UT_Delete_CGroup
 	{
 		[TestMethod]
-		public void Task_248_1() //Удаление существующей строки 
-		{
-			//arrange 
-			RefData.CGroup.Rows.Clear();
-			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			bool expected = true;
-			//act 
-			RefData.CGroup.Insert(gr);
-			bool actual = RefData.CGroup.Delete(gr);
-			//assert 
-			Assert.AreEqual(expected, actual);
+        public void Task_248_1() //Удаление существующей строки 
+        {
+            //arrange 
+            RefData.CGroup.Rows.Clear();
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("11.11.11", "й", 1);
+            MTrainingProfile tp = new MTrainingProfile("ИСиТa", "ИСиТ", "11.11.11");
+            MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 
-		}
+            bool expected = true;
+            //act 
+            RefData.CDirectionOfPreparation.Insert(dp);
+            RefData.CTrainingProfile.Insert(tp);
+            bool actual = RefData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual);
+        }
 
-		[TestMethod]
+        [TestMethod]
 		public void Task_248_2() //Удаление не существующей строки 
 		{
 			//arrange 
