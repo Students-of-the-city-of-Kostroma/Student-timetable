@@ -23,14 +23,15 @@ namespace TimetableOfClasses
 		public AddEnclosures(MEnclosures mEnclosures)
 		{
 			InitializeComponent();
-			Enclosures = mEnclosures;
-			name.Text = Enclosures.Name;
-			name.Enabled = false;
-			university.Text = Enclosures.University;
-			university.Enabled = false;
-			address.Text = Enclosures.Address;
-			phoneNumber.Text = Enclosures.Phone;
-			note.Text = Enclosures.Comment;
+				Enclosures = mEnclosures;
+				name.Text = Enclosures.Name;
+				name.Enabled = false;
+				university.Text = Enclosures.University;
+				university.Enabled = false;
+				address.Text = Enclosures.Address;
+				phoneNumber.Text = Enclosures.Phone;
+				note.Text = Enclosures.Comment;
+				btAddUniversity.Enabled = false;
 		}
 
 		private void name_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Названия корпуса
@@ -106,7 +107,7 @@ namespace TimetableOfClasses
 			{
 				MEnclosures mEnclosures = new MEnclosures(name.Text, university.Text, address.Text, phoneNumber.Text, note.Text);
 
-				if (Controllers.СEnclosures.Insert(mEnclosures))
+				if (RefData.СEnclosures.Insert(mEnclosures))
 				{
 					this.Close();
 				}
@@ -121,11 +122,11 @@ namespace TimetableOfClasses
 				Enclosures.Phone = phoneNumber.Text;
 				Enclosures.Comment = note.Text;
 
-				if (Controllers.СEnclosures.Update(Enclosures))
+				if (RefData.СEnclosures.Update(Enclosures))
 				{
 					this.Close();
 				}
-				else MessageBox.Show("Упс, невозможно обновить информацию об этом корпусе!");
+				else MessageBox.Show("Не удалось добавить запись: название корпуса, адрес и телефон должны быть уникальными!");
 			}
 
 		}
@@ -136,9 +137,9 @@ namespace TimetableOfClasses
 		}
 		private void checkNumber()
 		{
-			if (phoneNumber.Text.Length != 6 && phoneNumber.Text.Length != 11)
+			if (phoneNumber.Text.Length > 11)
 			{
-				MessageBox.Show("Номер может быть длинной только 6 либо 11 символов!");
+				MessageBox.Show("Номер не может быть длинной больше 11 символов!");
 				phoneNumber.Text = "";
 			}
 		}
@@ -156,6 +157,38 @@ namespace TimetableOfClasses
 		{
 			if ((sender as TextBox).Text.Length==0) (sender as TextBox).BackColor = Color.Red;
 			else (sender as TextBox).BackColor = Color.White;
+		}
+
+		private void btAddUniversity_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceUnviversity();
+		}
+
+		private void AddEnclosures_Shown(object sender, EventArgs e)
+		{
+			if (RefData.CUniversity.Rows.Count == 0)
+			{
+				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника ВУЗы?", 
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (DialogResult == DialogResult.Yes)
+					CreateFormForEditAndChoiceUnviversity();
+			}
+		}
+
+		private void CreateFormForEditAndChoiceUnviversity()
+		{
+			University university = new University(true);
+			university.FormClosed += University_FormClosed;
+			university.Owner = this;
+			university.Show();
+		}
+
+		private void University_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string choseUniversity = (sender as University).FullName;
+			if (choseUniversity != null)
+				this.university.Text = choseUniversity;
 		}
 	}
 }

@@ -13,27 +13,35 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_1() //пустая таблица
 		{
 			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
-			//act
-			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			CGroup cg = new CGroup();
-			bool actual = cg.Insert(gr);
+			//act		
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MGroup gr = new MGroup("17-ИСбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			bool actual = RefData.CGroup.Insert(gr);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
 
 
 		[TestMethod]
-		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты раздичаются
+		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты различаются
 		{
 			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			CGroup cg = new CGroup();
-			bool g = cg.Insert(gr);
+			RefData.CGroup.Insert(gr);
 			bool expected = false;
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2а", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
-			bool actual = cg.Insert(gr1);
+			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -42,13 +50,26 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_10() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
 		{
 			//arrange
-			MGroup gr = new MGroup("17-ЮФбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			CGroup cg = new CGroup();
-			bool g = cg.Insert(gr);
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ЮФбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
 			//act
-			MGroup gr1 = new MGroup("17-ЮФбо-2б", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
-			bool actual = cg.Insert(gr1);
+			MGroup gr1 = new MGroup("17-ЮФбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -58,29 +79,201 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_11() //полное дублирование всех атрибутов
 		{
 			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			CGroup cg = new CGroup();
-			bool g = cg.Insert(gr);
+			RefData.CGroup.Insert(gr);
 			bool expected = false;
 			//act
 			MGroup gr1 = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			bool actual = cg.Insert(gr1);
+			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
 
 
 		[TestMethod]
-		public void Task_251_from_3_or_9() // дублирование всех атрибутов, кроме атрибута "Группа"
+		public void Task_251_3() // дублирование Семестра
 		{
 			//arrange
-			MGroup gr = new MGroup("17-ИДбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			CGroup cg = new CGroup();
-			bool g = cg.Insert(gr);
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();			
 			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
 			//act
-			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-			bool actual = cg.Insert(gr1);
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 1, tp1.ShortName, 2, 2, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_4() // дублирование напр. подготоаки
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp.ShortName, 2, 2, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_5() // дублирование смены
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 1, 2, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_6() // дублирование студентов
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 1, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_7() // дублирование пар мин
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 0, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_8() // дублирование пар макс
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 1, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Суббота");
+			bool actual = RefData.CGroup.Insert(gr1);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+		[TestMethod]
+		public void Task_251_9() // дублирование выходной
+		{
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			RefData.CTrainingProfile.Rows.Clear();
+			RefData.CDirectionOfPreparation.Rows.Clear();
+			bool expected = true;
+
+			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
+			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual1);
+			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
+			bool actual2 = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual2);
+			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
+			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
+			Assert.AreEqual(expected, actual3);
+
+			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+			RefData.CGroup.Insert(gr);
+			//act
+			MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp1.ShortName, 2, 2, 1, 1, "Воскресенье");
+			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}

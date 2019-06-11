@@ -6,8 +6,11 @@
 
 trigger:
 - Testing
-- task-*
+- task*
 - 17-*
+- Alliance-*
+- tmp-*
+- Union-*
 
 pool:
   vmImage: 'VS2017-Win2016'

@@ -44,6 +44,7 @@
 			this.DG_Ministry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.DG_Ministry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_Ministry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_Ministry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Kod,
@@ -77,22 +78,18 @@
 			// 
 			// Kod
 			// 
-			this.Kod.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
 			this.Kod.HeaderText = "Код";
 			this.Kod.Name = "Kod";
 			this.Kod.ReadOnly = true;
-			this.Kod.Width = 51;
 			// 
 			// Naim
 			// 
 			this.Naim.HeaderText = "Наименование";
 			this.Naim.Name = "Naim";
 			this.Naim.ReadOnly = true;
-			this.Naim.Width = 205;
 			// 
 			// Description
 			// 
-			this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Description.HeaderText = "Описание";
 			this.Description.Name = "Description";
 			this.Description.ReadOnly = true;

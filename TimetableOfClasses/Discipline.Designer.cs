@@ -1,4 +1,7 @@
-﻿namespace TimetableOfClasses
+﻿using System;
+using System.Windows.Forms;
+
+namespace TimetableOfClasses
 {
     partial class Discipline
     {
@@ -125,6 +128,7 @@
 			this.Controls.Add(this.btCreateDiscipline);
 			this.Controls.Add(this.Delete);
 			this.Controls.Add(this.DG_Disc);
+			this.MinimumSize = new System.Drawing.Size(433, 242);
 			this.Name = "Discipline";
 			this.Text = "Дисциплины";
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).EndInit();
@@ -132,11 +136,21 @@
 
         }
 
-        #endregion
+		//private void btChange_Click(object sender, EventArgs e)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
-        private System.Windows.Forms.DataGridView DG_Disc;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button btCreateDiscipline;
+		//private void DG_Disc_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		//{
+		//	throw new NotImplementedException();
+		//}
+
+		#endregion
+
+		private System.Windows.Forms.DataGridView DG_Disc;
+		private System.Windows.Forms.Button Delete;
+		private System.Windows.Forms.Button btCreateDiscipline;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;
