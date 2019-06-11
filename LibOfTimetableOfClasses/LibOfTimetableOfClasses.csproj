@@ -65,6 +65,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CTypesOfOccupations.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logs.cs" />
     <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs">
@@ -92,6 +95,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MTypesOfOccupations.cs" />
     <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

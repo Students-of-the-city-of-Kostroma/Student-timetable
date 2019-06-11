@@ -122,6 +122,12 @@
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTypesOfOccupations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTypesOfOccupations.Designer.cs">
+      <DependentUpon>AddTypesOfOccupations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Characteristic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTypesOfOccupations.resx">
+      <DependentUpon>AddTypesOfOccupations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Characteristic.resx">
       <DependentUpon>Characteristic.cs</DependentUpon>
