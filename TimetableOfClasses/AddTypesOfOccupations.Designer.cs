@@ -45,7 +45,7 @@
             this.btCancel.TabIndex = 2;
             this.btCancel.Text = "Отмена";
             this.btCancel.UseVisualStyleBackColor = true;
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            this.btCancel.Click += new System.EventHandler(this.BtCancel_Click);
             // 
             // btCreateAndClean
             // 
@@ -55,7 +55,7 @@
             this.btCreateAndClean.TabIndex = 3;
             this.btCreateAndClean.Text = "Создать и очистить";
             this.btCreateAndClean.UseVisualStyleBackColor = true;
-            this.btCreateAndClean.Click += new System.EventHandler(this.btCreateAndClean_Click);
+            this.btCreateAndClean.Click += new System.EventHandler(this.BtCreateAndClean_Click);
             // 
             // btCreateAndClose
             // 
@@ -65,7 +65,7 @@
             this.btCreateAndClose.TabIndex = 4;
             this.btCreateAndClose.Text = "Создать и закрыть";
             this.btCreateAndClose.UseVisualStyleBackColor = true;
-            this.btCreateAndClose.Click += new System.EventHandler(this.btCreateAndClose_Click);
+            this.btCreateAndClose.Click += new System.EventHandler(this.BtCreateAndClose_Click);
             // 
             // tbFullName
             // 

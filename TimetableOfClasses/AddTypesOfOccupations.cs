@@ -18,9 +18,10 @@ namespace TimetableOfClasses
         public AddTypesOfOccupations()
         {
             InitializeComponent();
-            bool itsupdate = false;
-        }
-        bool itsupdate = false;
+			itsupdate = false;
+		}
+
+		private readonly bool itsupdate;
         public AddTypesOfOccupations(MTypesOfOccupations mTypesOfOccupations)
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace TimetableOfClasses
             itsupdate = true;
         }
 
-        private void btCreateAndClean_Click(object sender, EventArgs e)
+        private void BtCreateAndClean_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
                 MessageBox.Show("Заполните все поля");
@@ -42,7 +43,7 @@ namespace TimetableOfClasses
                 MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations(tbFullName.Text, tbShortName.Text);
                 try
                 {
-                    Controllers.CTypesOfOccupations.Insert(mTypesOfOccupations);
+                    RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
                     tbFullName.Text = "";
                     tbShortName.Text = "";
                 }
@@ -53,7 +54,7 @@ namespace TimetableOfClasses
             }
         }
 
-        private void btCreateAndClose_Click(object sender, EventArgs e)
+        private void BtCreateAndClose_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(tbFullName.Text) || String.IsNullOrWhiteSpace(tbShortName.Text))
                 MessageBox.Show("Заполните все поля");
@@ -63,8 +64,8 @@ namespace TimetableOfClasses
                 try
                 {
                     if (!itsupdate)
-                        Controllers.CTypesOfOccupations.Insert(mTypesOfOccupations);
-                    else Controllers.CTypesOfOccupations.Update(mTypesOfOccupations);
+                        RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
+                    else RefData.CTypesOfOccupations.Update(mTypesOfOccupations);
                     Close();
                 }
                 catch (Exception ex)
@@ -74,7 +75,7 @@ namespace TimetableOfClasses
             }
         }
 
-        private void btCancel_Click(object sender, EventArgs e)
+        private void BtCancel_Click(object sender, EventArgs e)
         {
             Close();
         }

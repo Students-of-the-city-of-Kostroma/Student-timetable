@@ -72,7 +72,7 @@
 			this.btAdd.TabIndex = 1;
 			this.btAdd.Text = "Добавить";
 			this.btAdd.UseVisualStyleBackColor = true;
-			this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+			this.btAdd.Click += new System.EventHandler(this.BtAdd_Click);
 			// 
 			// btDelete
 			// 
@@ -84,7 +84,7 @@
 			this.btDelete.TabIndex = 2;
 			this.btDelete.Text = "Удалить";
 			this.btDelete.UseVisualStyleBackColor = true;
-			this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+			this.btDelete.Click += new System.EventHandler(this.BtDelete_Click);
 			// 
 			// btChange
 			// 
@@ -95,7 +95,7 @@
 			this.btChange.TabIndex = 3;
 			this.btChange.Text = "Изменить";
 			this.btChange.UseVisualStyleBackColor = true;
-			this.btChange.Click += new System.EventHandler(this.btChange_Click);
+			this.btChange.Click += new System.EventHandler(this.BtChange_Click);
 			// 
 
 			// FullName

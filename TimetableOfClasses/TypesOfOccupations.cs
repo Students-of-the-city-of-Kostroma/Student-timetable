@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
             DG_TypesOfOccupations.AutoGenerateColumns = false;
-            DG_TypesOfOccupations.DataSource = Controllers.CTypesOfOccupations;
+            DG_TypesOfOccupations.DataSource = RefData.CTypesOfOccupations;
         }
 
         private void DG_TypesOfOccupations_SelectionChanged(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace TimetableOfClasses
             }
         }
 
-        private void btDelete_Click(object sender, EventArgs e)
+        private void BtDelete_Click(object sender, EventArgs e)
         {
             string SelectedName = "";
             foreach (DataGridViewRow row in DG_TypesOfOccupations.SelectedRows)
@@ -47,34 +47,34 @@ namespace TimetableOfClasses
             DialogResult dr = MessageBox.Show("Удалить вид занятия - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (DG_TypesOfOccupations.SelectedRows.Count > 0 && dr == DialogResult.OK)
             {
-                int countSelected = DG_TypesOfOccupations.SelectedRows.Count;
-
                 MTypesOfOccupations mTypesOfOccupations;
                 foreach (DataGridViewRow row in DG_TypesOfOccupations.SelectedRows)
                 {
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-                    Controllers.CTypesOfOccupations.Delete(mTypesOfOccupations);
+					RefData.CTypesOfOccupations.Delete(mTypesOfOccupations);
                 }
             }
 
         }
 
-        private void btAdd_Click(object sender, EventArgs e)
+        private void BtAdd_Click(object sender, EventArgs e)
         {
             AddTypesOfOccupations addTypesOfOccupations = new AddTypesOfOccupations();
             addTypesOfOccupations.ShowDialog();
         }
 
-        private void btChange_Click(object sender, EventArgs e)
+        private void BtChange_Click(object sender, EventArgs e)
         {
             if (DG_TypesOfOccupations.SelectedRows.Count == 1)
             {
                 DataRow Row = ((DataRowView)DG_TypesOfOccupations.SelectedRows[0].DataBoundItem).Row;
                 MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-                AddTypesOfOccupations add = new AddTypesOfOccupations(mTypesOfOccupations);
-                add.Owner = this;
-                add.ShowDialog();
+				AddTypesOfOccupations add = new AddTypesOfOccupations(mTypesOfOccupations)
+				{
+					Owner = this
+				};
+				add.ShowDialog();
             }
             else { MessageBox.Show("Для изменения выделите только одну строку!"); }
         }

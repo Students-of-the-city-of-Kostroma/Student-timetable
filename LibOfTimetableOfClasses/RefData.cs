@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
-    /// <summary>
-    /// В этом классе храняться все экземпляры контроллеров.
-    /// </summary>
-    public class RefData
-    {
+	/// <summary>
+	/// В этом классе храняться все экземпляры контроллеров.
+	/// </summary>
+	public class RefData
+	{
 		public static DataSet DataSet = new DataSet();
 		public static CTeacher CTeacher = new CTeacher();
 		public static CAuditor CAuditor = new CAuditor();
@@ -24,6 +24,7 @@ namespace LibOfTimetableOfClasses
 		public static CUniversity CUniversity = new CUniversity();
 		public static CInstitute CInstitute = new CInstitute();
 		public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
+		public static CTypesOfOccupations CTypesOfOccupations = new CTypesOfOccupations();
 #pragma warning disable IDE0044 // Добавить модификатор только для чтения
 #pragma warning disable IDE0052 // Удалить непрочитанные закрытые члены
 		private static RefData rd = new RefData();
@@ -48,9 +49,8 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
-			DataSet.Relations.Add("Group-Training profile",CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
+			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["ShortName"], СEnclosures.Columns["University"]);
 		}
-  }
+	}
 }
-
