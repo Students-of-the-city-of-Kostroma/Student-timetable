@@ -8,24 +8,20 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CGroup
 	{
-
-       
-           
-        
 		[TestMethod]
 		public void task_250_1_1() // Изменение когда все поля отличаются
-		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
-            MGroup gr = new MGroup("17-ИСбо-2а", 1,mTrainingProfile.ShortName , 1, 1, 0, 0, "Воскресенье");
+		{ 
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
+			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
 			//act
@@ -44,16 +40,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_3() // повтор Семестра
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -68,16 +64,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_4() // повтор направления подготовки
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -92,16 +88,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_5() // смены
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -116,16 +112,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_6() // повтор студентов
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -140,16 +136,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_7() // повтор графика
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -166,16 +162,16 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1_8() // повтор всего(кроме группы)
 		{
-            MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-            RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-            RefData.CTrainingProfile.Insert(mTrainingProfile1);
-            //arrange
-            RefData.CGroup.Rows.Clear();
+			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
+			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
+			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			//arrange
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
