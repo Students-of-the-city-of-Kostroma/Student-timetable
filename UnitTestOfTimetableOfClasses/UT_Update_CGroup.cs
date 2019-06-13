@@ -8,9 +8,12 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CGroup
 	{
+		/// <summary>
+		/// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_1() // Изменение когда все поля отличаются
-		{ 
+		public void task_250_1()
+		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
@@ -36,9 +39,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
-
+		/// <summary>
+		/// "Ввод корректных данных, при условии, что Семестр дублирует Семестр группы существующего экземпляра"
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_3() // повтор Семестра
+		public void task_250_3()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
@@ -61,8 +66,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+		/// <summary>
+		/// "Ввод корректных данных, при условии, что Направление подготовки дублирует Направление подготовки существующего экземпляра"
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_4() // повтор направления подготовки
+		public void task_250_4()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
@@ -85,8 +93,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+		/// <summary>
+		/// "Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра"
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_5() // смены
+		public void task_250_5()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
@@ -109,8 +120,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+		/// <summary>
+		/// "Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра"
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_6() // повтор студентов
+		public void task_250_6()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
@@ -133,8 +147,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+		/// <summary>
+		/// "Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра"
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_7() // повтор графика
+		public void task_250_7()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
@@ -159,8 +176,11 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+		/// <summary>
+		/// Ввод корректных данных при условии что она будет дублировать другую записть (невозможно изменение)
+		/// </summary>
 		[TestMethod]
-		public void task_250_1_8() // повтор всего(кроме группы)
+		public void task_250_8()
 		{
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
 			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
