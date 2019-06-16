@@ -7,6 +7,9 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CEnclosures
 	{
+		/// <summary>
+		/// Удаление существующих данных выбранной строки из таблицы
+		/// </summary>
 		[TestMethod]
 		public void task_395_1()
 		{
@@ -25,8 +28,11 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 
+		/// <summary>
+		/// Удаление данных из пустой таблицы
+		/// </summary>
 		[TestMethod]
-		public void task_395_2() //Удаление не существующей строки 
+		public void task_395_2() 
 		{
 			//arrange 
 			RefData.СEnclosures.Rows.Clear();
