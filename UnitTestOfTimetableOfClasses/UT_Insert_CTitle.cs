@@ -50,5 +50,34 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 
+		[TestMethod]
+		public void Task_361_4() //учёное звание с такой полной записью уже есть в таблице
+		{
+			//arrange
+			RefData.CTitle.Clear();
+			MTitle ma = new MTitle("Профессор", "Проф.1");
+			bool expected = false;
+			//act
+			RefData.CTitle.Insert(ma);
+			bool actual = RefData.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void Task_361_5() //учёное звание с такой полной записью уже есть в таблице
+		{
+			//arrange
+			RefData.CTitle.Clear();
+			MTitle ma1 = new MTitle("Профессор1", "Проф.");
+			MTitle ma2 = new MTitle("Профессор", "Проф.1");
+			bool expected = false;
+			//act
+			RefData.CTitle.Insert(ma1);
+			bool actual = RefData.CTitle.Insert(ma2);
+			//assert
+			Assert.AreEqual(expected, actual);
+		}
+
 	}
 }

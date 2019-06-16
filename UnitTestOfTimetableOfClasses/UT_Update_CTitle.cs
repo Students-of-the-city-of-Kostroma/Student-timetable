@@ -38,5 +38,35 @@ namespace UnitTestOfTimetableOfClasses
 
 			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 		}
+
+		[TestMethod]
+		public void Task_363_3()
+		{
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
+
+			RefData.CTitle.Clear();
+			RefData.CInstitute.Insert(T_Title);
+
+			T_Title = new MTitle("Проф.1", "Профессор");
+
+			bool result = RefData.CTitle.Update(T_Title);
+
+			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
+		}
+
+		[TestMethod]
+		public void Task_363_4()
+		{
+			MTitle T_Title = new MTitle("Проф.", "Профессор");
+
+			RefData.CTitle.Clear();
+			RefData.CInstitute.Insert(T_Title);
+
+			T_Title = new MTitle("Проф.", "Профессор1");
+
+			bool result = RefData.CTitle.Update(T_Title);
+
+			Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
+		}
 	}
 }
