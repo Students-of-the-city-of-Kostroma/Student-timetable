@@ -7,8 +7,10 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CEnclosures
 	{
+		/// <summary>
+		/// Удаление существующих данных выбранной строки из таблицы
+		/// </summary>
 		[TestMethod]
-		//Исправлен UT
 		public void task_395_1()
 		{
 			// arrange
