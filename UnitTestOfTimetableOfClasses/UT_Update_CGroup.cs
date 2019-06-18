@@ -14,28 +14,35 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_1()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Shift = 2;
 			gr1.Students = 3;
 			gr1.MaxNumberOfClass = 3;
 			gr1.MinNumberOfClass = 4;
 			gr1.Weekends = "Суббота";
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -45,24 +52,31 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_3()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Semester = 1;
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -72,24 +86,32 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_4()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
+
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Specialty = mTrainingProfile.ShortName;
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -99,24 +121,31 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_5()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Shift = 1;
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -126,24 +155,31 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_6()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Students = 1;
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -153,26 +189,33 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_7()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.MaxNumberOfClass = 0;
 			gr1.MinNumberOfClass = 0;
 			gr1.Weekends = "Воскресенье";
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -182,22 +225,29 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_250_8()
 		{
+			bool actual;
+			bool expected = true;
 			MDirectionOfPreparation directionOfPreparation = new MDirectionOfPreparation("22.22.22", "Парабола", 1);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile = new MTrainingProfile("Системы и Технологии", "СИТ", directionOfPreparation.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile);
+			Assert.AreEqual(expected, actual);
 			MDirectionOfPreparation directionOfPreparation1 = new MDirectionOfPreparation("22.33.22", "Гипербола", 2);
-			RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			actual=RefData.CDirectionOfPreparation.Insert(directionOfPreparation1);
+			Assert.AreEqual(expected, actual);
 			MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Курсач и Технологии", "КИТ", directionOfPreparation1.CodeOfDP);
-			RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			actual=RefData.CTrainingProfile.Insert(mTrainingProfile1);
+			Assert.AreEqual(expected, actual);
 			//arrange
 			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
-			RefData.CGroup.Insert(gr);
-			bool expected = true;
+			actual=RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
 			//act
 			MGroup gr1 = new MGroup("17-ИСбо-2б", 2, mTrainingProfile1.ShortName, 2, 2, 1, 1, "Воскресенье");
-			RefData.CGroup.Insert(gr1);
+			actual=RefData.CGroup.Insert(gr1);
+			Assert.AreEqual(expected, actual);
 			gr1.Semester = 1;
 			gr1.Specialty = mTrainingProfile.ShortName;
 			gr1.Shift = 1;
@@ -205,7 +255,7 @@ namespace UnitTestOfTimetableOfClasses
 			gr1.MaxNumberOfClass = 0;
 			gr1.MinNumberOfClass = 0;
 			gr1.Weekends = "Воскресенье";
-			bool actual = RefData.CGroup.Update(gr1);
+			actual = RefData.CGroup.Update(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
