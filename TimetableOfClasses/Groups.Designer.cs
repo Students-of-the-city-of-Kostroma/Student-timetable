@@ -72,7 +72,7 @@
 			this.DG_Group.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_Group_ColumnHeaderMouseClick);
 			this.DG_Group.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_Group_DataBindingComplete);
 			this.DG_Group.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Group_RowPrePaint);
-			this.DG_Group.DoubleClick += new System.EventHandler(this.DG_Group_DoubleClick);
+			this.DG_Group.DoubleClick += new System.EventHandler(this.Update);
 			// 
 			// Group
 			// 

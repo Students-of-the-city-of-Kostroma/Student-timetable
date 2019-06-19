@@ -122,19 +122,6 @@ namespace TimetableOfClasses
 				this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
 		}
 
-		private void DG_Group_DoubleClick(object sender, EventArgs e)
-		{
-			if (DG_Group.SelectedRows.Count == 1)
-			{
-				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
-				AddGroup addDiscipline = new AddGroup(mGroup);
-				addDiscipline.Owner = this;
-				addDiscipline.ShowDialog();
-			}
-			else if (DG_Group.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
-		}
 	}
 	
 }
