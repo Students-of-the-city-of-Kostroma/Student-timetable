@@ -8,19 +8,41 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CTeacher
 	{
+		public string degree(string a, string b)
+		{
+			RefData.CAcademicDegree.Clear();
+			MAcademicDegree ma = new MAcademicDegree(a, b); //Кандидат наук, канд.
+			bool ex = true;
+			//act
+			bool act = RefData.CAcademicDegree.Insert(ma);
+			//assert
+			Assert.AreEqual(ex, act);
+			return ma.FullName;
+		}
+		public string Title(string a, string b)
+		{
+			RefData.CTitle.Clear();
+			MTitle ma = new MTitle(a, b);//Профессор, проф.
+			bool expected = true;
+			//act
+			bool actual = RefData.CTitle.Insert(ma);
+			//assert
+			Assert.AreEqual(expected, actual);
+			return ma.FullName;
+		}
 		[TestMethod]
 		public void Task_247_1()//изменение когда атрибуты не повторяются (ФИО изменить не возможно)
 		{
 			//arrange
 			RefData.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Кандидат наук", "Канд"), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
 			bool expected = false;
 			//act
-			tcher1.AcademicDegree = "Доктор наук";
-			tcher1.AcademicTitle = "Доцент";
+			tcher1.AcademicDegree = degree("Доктор наук", "Док.");
+			tcher1.AcademicTitle = Title("Доцент", "Доц.");
 			tcher1.MetodicalDays = "Чт, Сб";
 			tcher1.Windows = "Сб, Пн";
 			tcher1.Weekends = "Пятница";
@@ -33,14 +55,14 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Доцент", "Доц."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
 			bool expected = false;
 			//act
-			tcher1.AcademicDegree = "Кандидат наук";
-			tcher1.AcademicTitle = "Доцент";
+			tcher1.AcademicDegree = degree("Кандидат наук", "Канд");
+			tcher1.AcademicTitle = Title("Доцент", "Доц.");
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -50,8 +72,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
 			bool expected = false;
@@ -66,8 +88,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
 			bool expected = false;
@@ -84,14 +106,14 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.CTeacher.Rows.Clear();
-			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			RefData.CTeacher.Insert(tcher);
 			RefData.CTeacher.Insert(tcher1);
 			bool expected = false;
 			//act
-			tcher1.AcademicDegree = "Кандидат наук";
-			tcher1.AcademicTitle = "Доцент";
+			tcher1.AcademicDegree = degree("Кандидат наук", "Канд");
+			tcher1.AcademicTitle = Title("Доцент", "Доц.");
 			tcher1.Departament = "ФАСТ";
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
