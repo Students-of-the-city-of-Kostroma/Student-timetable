@@ -7,8 +7,11 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CAcademicDegree
 	{
+		/// <summary>
+		/// Ввод корректных данных в пустую таблицу
+		/// </summary>
 		[TestMethod]
-		public void Task_486_1()//Ввод корректных данных в пустую таблицу
+		public void Task_486_1()
 		{
 			//arrange 
 			RefData.CAcademicDegree.Clear();
@@ -20,9 +23,11 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 		}
 
-
+		/// <summary>
+		/// учёная степень с такой сокращённой записью уже есть в таблице
+		/// </summary>
 		[TestMethod]
-		public void Task_486_2()////учёная степень с такой сокращённой записью уже есть в таблице
+		public void Task_486_2()
 		{
 			//arrange
 			RefData.CAcademicDegree.Clear();
@@ -34,5 +39,6 @@ namespace UnitTestOfTimetableOfClasses
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
+
 	}
 }
