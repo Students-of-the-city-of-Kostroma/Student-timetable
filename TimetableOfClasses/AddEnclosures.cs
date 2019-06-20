@@ -169,7 +169,7 @@ namespace TimetableOfClasses
 			if (RefData.CUniversity.Rows.Count == 0)
 			{
 				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
-					"Отрыть форму для редкатирования справочника ВУЗы?", 
+					"Открыть форму для редактирования справочника ВУЗы?", 
 					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
 				if (DialogResult == DialogResult.Yes)
 					CreateFormForEditAndChoiceUnviversity();
