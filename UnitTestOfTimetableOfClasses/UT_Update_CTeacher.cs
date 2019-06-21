@@ -60,6 +60,8 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual1 = RefData.CTeacher.Insert(tcher);
 			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			Assert.AreEqual(expected, actual1);
+			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = degree("Доктор наук", "Док.");
 			tcher1.AcademicTitle = Title("Профессор", "Проф.");
@@ -69,8 +71,6 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
-			Assert.AreEqual(expected, actual1);
-			Assert.AreEqual(expected, actual2);
 		}
 		/// <summary>
 		/// Ввод корректных данных, при условии, что примечание дублирует примечание существующего экземпляра
@@ -89,14 +89,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual1 = RefData.CTeacher.Insert(tcher);
 			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			Assert.AreEqual(expected, actual1);
+			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = ma;
 			tcher1.AcademicTitle = maTi;
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
-			Assert.AreEqual(expected, actual1);
-			Assert.AreEqual(expected, actual2);
 		}
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Кафедра дублирует Кафедра существующего экземпляра
@@ -113,13 +113,13 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual1 = RefData.CTeacher.Insert(tcher);
 			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			Assert.AreEqual(expected, actual1);
+			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.Departament = "ФАСТ";
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
-			Assert.AreEqual(expected, actual1);
-			Assert.AreEqual(expected, actual2);
 		}
 		/// <summary>
 		/// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
@@ -136,6 +136,8 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual1 = RefData.CTeacher.Insert(tcher);
 			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			Assert.AreEqual(expected, actual1);
+			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.MetodicalDays = "Пн, Вт";
 			tcher1.Windows = "Ср, Чт, Пт";
@@ -143,8 +145,6 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
-			Assert.AreEqual(expected, actual1);
-			Assert.AreEqual(expected, actual2);
 		}
 		/// <summary>
 		/// Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись
@@ -163,6 +163,8 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual1 = RefData.CTeacher.Insert(tcher);
 			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			Assert.AreEqual(expected, actual1);
+			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = ma;
 			tcher1.AcademicTitle = maTi;
@@ -173,8 +175,6 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CTeacher.Update(tcher1);
 			//assert
 			Assert.AreEqual(expected, actual);
-			Assert.AreEqual(expected, actual1);
-			Assert.AreEqual(expected, actual2);
 		}
 	}
 }
