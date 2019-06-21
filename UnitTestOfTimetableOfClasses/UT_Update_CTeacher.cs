@@ -57,10 +57,10 @@ namespace UnitTestOfTimetableOfClasses
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-			bool actual1 = RefData.CTeacher.Insert(tcher);
-			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			bool actual1 = RefData.CTeacher.Insert(tcher);
 			Assert.AreEqual(expected, actual1);
+			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = degree("Доктор наук", "Док.");
@@ -86,10 +86,10 @@ namespace UnitTestOfTimetableOfClasses
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-			bool actual1 = RefData.CTeacher.Insert(tcher);
-			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			bool actual1 = RefData.CTeacher.Insert(tcher);
 			Assert.AreEqual(expected, actual1);
+			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = ma;
@@ -110,10 +110,10 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.CTitle.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-			bool actual1 = RefData.CTeacher.Insert(tcher);
-			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			bool actual1 = RefData.CTeacher.Insert(tcher);
 			Assert.AreEqual(expected, actual1);
+			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.Departament = "ФАСТ";
@@ -133,10 +133,10 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.CTitle.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-			bool actual1 = RefData.CTeacher.Insert(tcher);
-			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			bool actual1 = RefData.CTeacher.Insert(tcher);
 			Assert.AreEqual(expected, actual1);
+			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.MetodicalDays = "Пн, Вт";
@@ -160,10 +160,10 @@ namespace UnitTestOfTimetableOfClasses
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-			bool actual1 = RefData.CTeacher.Insert(tcher);
-			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			bool expected = true;
+			bool actual1 = RefData.CTeacher.Insert(tcher);
 			Assert.AreEqual(expected, actual1);
+			bool actual2 = RefData.CTeacher.Insert(tcher1);
 			Assert.AreEqual(expected, actual2);
 			//act
 			tcher1.AcademicDegree = ma;
