@@ -120,7 +120,6 @@
             this.MinimumSize = new System.Drawing.Size(249, 230);
             this.Name = "AddStudyWeek";
             this.Text = "Добавить преподавателя";
-            this.Load += new System.EventHandler(this.AddTeacher_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
