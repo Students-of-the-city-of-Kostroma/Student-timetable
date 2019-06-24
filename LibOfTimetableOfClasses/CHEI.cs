@@ -8,9 +8,9 @@ using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {/// <summary>
-/// ВУЗ
-/// </summary>
-	public class CHEI : DataTable, IController
+ /// ВУЗ
+ /// </summary>
+	public class CHEI : Controller, IController
 	{
 		public CHEI() : base("ВУЗ")
 		{
@@ -23,7 +23,7 @@ namespace LibOfTimetableOfClasses
 			};
 			table.Columns.Add(column);
 			keys[0] = column;
-			PrimaryKey = keys;
+			table.PrimaryKey = keys;
 
 			column = new DataColumn
 			{
@@ -61,23 +61,23 @@ namespace LibOfTimetableOfClasses
 
 		}
 
-        public bool Delete(Model model)
-        {
-            throw new NotImplementedException();
-        }
+		public override bool Delete(Model model)
+		{
+			throw new NotImplementedException();
+		}
 
-        public bool Insert(Model model)
+		public override bool Insert(Model model)
 		{
 			try
 			{
 				MCHEI mCHEI = (MCHEI)model;
-				DataRow newRow = NewRow();
+				DataRow newRow = table.NewRow();
 				newRow["FullName"] = mCHEI.FullName;
 				newRow["AbbreviatedName"] = mCHEI.AbbreviatedName;
 				newRow["Rector"] = mCHEI.Rector;
 				newRow["Phone"] = mCHEI.Phone;
 				newRow["Email"] = mCHEI.Email;
-				Rows.Add(newRow);
+				table.Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
@@ -87,9 +87,9 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-        public bool Update(Model model)
-        {
-            throw new NotImplementedException();
-        }
+		public override bool Update(Model model)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
