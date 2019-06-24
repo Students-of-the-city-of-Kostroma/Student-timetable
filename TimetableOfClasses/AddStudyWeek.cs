@@ -94,16 +94,6 @@ namespace TimetableOfClasses
 			return false;
 		}
 
-		/// <summary>
-		/// Здесь должны быть комментарии
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void AddTeacher_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
 			Close();
