@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace TimetableOfClasses
 {
@@ -107,5 +108,15 @@ namespace TimetableOfClasses
 			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
 			typesOfOccupations.Show();
 		}
-	}
+
+        private void УстановкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Nastroiki nastroiki = new Nastroiki();
+            nastroiki.Show();
+        }
+
+       
+    }
+
+  
 }

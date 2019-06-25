@@ -16,5 +16,10 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void TypesOfOccupations_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

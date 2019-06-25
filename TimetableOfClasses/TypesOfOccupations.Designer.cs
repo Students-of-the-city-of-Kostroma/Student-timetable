@@ -28,56 +28,61 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.btAdd = new System.Windows.Forms.Button();
-			this.btDelete = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(9, 9);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(557, 307);
-			this.dataGridView1.TabIndex = 0;
-			// 
-			// btAdd
-			// 
-			this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btAdd.Location = new System.Drawing.Point(491, 322);
-			this.btAdd.Name = "btAdd";
-			this.btAdd.Size = new System.Drawing.Size(75, 23);
-			this.btAdd.TabIndex = 1;
-			this.btAdd.Text = "Добавить";
-			this.btAdd.UseVisualStyleBackColor = true;
-			// 
-			// btDelete
-			// 
-			this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btDelete.Location = new System.Drawing.Point(410, 322);
-			this.btDelete.Name = "btDelete";
-			this.btDelete.Size = new System.Drawing.Size(75, 23);
-			this.btDelete.TabIndex = 2;
-			this.btDelete.Text = "Удалить";
-			this.btDelete.UseVisualStyleBackColor = true;
-			// 
-			// TypesOfOccupations
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(575, 357);
-			this.Controls.Add(this.btDelete);
-			this.Controls.Add(this.btAdd);
-			this.Controls.Add(this.dataGridView1);
-			this.Name = "TypesOfOccupations";
-			this.Text = "Виды занятий";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			this.ResumeLayout(false);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 11);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(743, 378);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.Location = new System.Drawing.Point(655, 396);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(100, 28);
+            this.btAdd.TabIndex = 1;
+            this.btAdd.Text = "Добавить";
+            this.btAdd.UseVisualStyleBackColor = true;
+            // 
+            // btDelete
+            // 
+            this.btDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btDelete.Location = new System.Drawing.Point(547, 396);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(100, 28);
+            this.btDelete.TabIndex = 2;
+            this.btDelete.Text = "Удалить";
+            this.btDelete.UseVisualStyleBackColor = true;
+            // 
+            // TypesOfOccupations
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(767, 439);
+            this.Controls.Add(this.btDelete);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "TypesOfOccupations";
+            this.Text = "Виды занятий";
+            this.Load += new System.EventHandler(this.TypesOfOccupations_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 

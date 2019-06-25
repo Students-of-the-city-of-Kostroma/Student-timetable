@@ -140,6 +140,12 @@
     <Compile Include="Ministry.Designer.cs">
       <DependentUpon>Ministry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nastroiki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nastroiki.designer.cs">
+      <DependentUpon>Nastroiki.cs</DependentUpon>
+    </Compile>
     <Compile Include="RefData.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ministry.resx">
       <DependentUpon>Ministry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nastroiki.resx">
+      <DependentUpon>Nastroiki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
