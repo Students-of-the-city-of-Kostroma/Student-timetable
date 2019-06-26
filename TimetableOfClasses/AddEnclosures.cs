@@ -23,14 +23,15 @@ namespace TimetableOfClasses
 		public AddEnclosures(MEnclosures mEnclosures)
 		{
 			InitializeComponent();
-			Enclosures = mEnclosures;
-			name.Text = Enclosures.Name;
-			name.Enabled = false;
-			university.Text = Enclosures.University;
-			university.Enabled = false;
-			address.Text = Enclosures.Address;
-			phoneNumber.Text = Enclosures.Phone;
-			note.Text = Enclosures.Comment;
+				Enclosures = mEnclosures;
+				name.Text = Enclosures.Name;
+				name.Enabled = false;
+				university.Text = Enclosures.University;
+				university.Enabled = false;
+				address.Text = Enclosures.Address;
+				phoneNumber.Text = Enclosures.Phone;
+				note.Text = Enclosures.Comment;
+				btAddUniversity.Enabled = false;
 		}
 
 		private void name_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Названия корпуса
@@ -106,7 +107,7 @@ namespace TimetableOfClasses
 			{
 				MEnclosures mEnclosures = new MEnclosures(name.Text, university.Text, address.Text, phoneNumber.Text, note.Text);
 
-				if (Controllers.СEnclosures.Insert(mEnclosures))
+				if (RefData.СEnclosures.Insert(mEnclosures))
 				{
 					this.Close();
 				}
@@ -121,11 +122,11 @@ namespace TimetableOfClasses
 				Enclosures.Phone = phoneNumber.Text;
 				Enclosures.Comment = note.Text;
 
-				if (Controllers.СEnclosures.Update(Enclosures))
+				if (RefData.СEnclosures.Update(Enclosures))
 				{
 					this.Close();
 				}
-				else MessageBox.Show("Упс, невозможно обновить информацию об этом корпусе!");
+				else MessageBox.Show("Не удалось добавить запись: название корпуса, адрес и телефон должны быть уникальными!");
 			}
 
 		}
@@ -165,10 +166,10 @@ namespace TimetableOfClasses
 
 		private void AddEnclosures_Shown(object sender, EventArgs e)
 		{
-			if (Controllers.CUniversity.Rows.Count == 0)
+			if (RefData.CUniversity.Rows.Count == 0)
 			{
 				var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
-					"Отрыть форму для редкатирования справочника ВУЗы?", 
+					"Открыть форму для редактирования справочника ВУЗы?", 
 					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
 				if (DialogResult == DialogResult.Yes)
 					CreateFormForEditAndChoiceUnviversity();
@@ -185,7 +186,7 @@ namespace TimetableOfClasses
 
 		private void University_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			string choseUniversity = (sender as University).ShortName;
+			string choseUniversity = (sender as University).FullName;
 			if (choseUniversity != null)
 				this.university.Text = choseUniversity;
 		}

@@ -13,13 +13,23 @@ namespace TimetableOfClasses
 {
 	public partial class AcademicDegree : Form
 	{
-		public AcademicDegree()
+		public string ChoseReductionAcademicDegree;
+		public AcademicDegree(bool forChoice = false)
 		{
 			InitializeComponent();
 			DG_AcademicDegree.AutoGenerateColumns = false;
-			DG_AcademicDegree.DataSource = Controllers.CAcademicDegree;
+			DG_AcademicDegree.DataSource = RefData.CAcademicDegree;
+
+			if (forChoice)
+			{
+				this.Name = "Выбор степени";
+			}
 		}
 
+
+		/// <summary>
+		/// Кнопка изменения ученой степени
+		/// </summary>
 		private void ChangeButton_Click(object sender, EventArgs e)
 		{
 			if (DG_AcademicDegree.SelectedRows.Count == 1)
@@ -27,13 +37,18 @@ namespace TimetableOfClasses
 				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
 				MAcademicDegree mAcademicDegree = new MAcademicDegree((string)Row["FullName"], (string)Row["Reduction"]);
 
-				AddAcademicDegree addAcademicDegree = new AddAcademicDegree(mAcademicDegree);
-				addAcademicDegree.Owner = this;
+				AddAcademicDegree addAcademicDegree = new AddAcademicDegree(mAcademicDegree)
+				{
+					Owner = this
+				};
 				addAcademicDegree.Show();
 			}
 			else { MessageBox.Show("Для изменения выделите только одну строку"); }
 		}
 
+		/// <summary>
+		/// Кнопка удаления ученой степени
+		/// </summary>
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
 			if (DG_AcademicDegree.SelectedRows.Count == 0)
@@ -43,45 +58,36 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-				//if (== true)
-				//{
-				//	string message = "Нельзя удалить данную учёную степень. Данная учёная степень используется в таблице Преподователь";
-				//	string caption = "Сообщение";
-				//	MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-				//	DialogResult result;
-				//	result = MessageBox.Show(message, caption, buttons);
-				//}
-				//else
-				//{
-					string message = "Вы уверны что хотите удалить ученую степень?";
-					string caption = "Подтверждение удаления";
-					MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-					DialogResult result;
-					result = MessageBox.Show(message, caption, buttons);
+				string message = "Вы уверны что хотите удалить ученую степень?";
+				string caption = "Подтверждение удаления";
+				MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+				DialogResult result;
+				result = MessageBox.Show(message, caption, buttons);
 
-					if (result == System.Windows.Forms.DialogResult.Yes)
-					{
-						MAcademicDegree mAcademicDegree;
-						foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
-						{
-							DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-							mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
-							Controllers.CAcademicDegree.Delete(mAcademicDegree);
-						}
-						DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
-					}
-				//}
+				if (result == System.Windows.Forms.DialogResult.Yes)
+				{
+					//MAcademicDegree mAcademicDegree;
+					//foreach (DataGridViewRow row in DG_AcademicDegree.SelectedRows)
+					//{
+					//	DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+					//	mAcademicDegree = new MAcademicDegree((string)Row["FullName"]);
+					//	RefData.CAcademicDegree.Delete(mAcademicDegree);
+					//}
+					//DG_AcademicDegree.Rows.RemoveAt(DG_AcademicDegree.SelectedCells[0].RowIndex);
+				}
 			}
-
-
-
 		}
 
+		/// <summary>
+		/// Кнопка добавления ученой степени
+		/// </summary>
 		private void AddButton_Click(object sender, EventArgs e)
 		{
 
-		 	AddAcademicDegree addAcademicGegree = new AddAcademicDegree();
-			addAcademicGegree.Owner = this;
+			AddAcademicDegree addAcademicGegree = new AddAcademicDegree
+			{
+				Owner = this
+			};
 			addAcademicGegree.Show();
 		}
 
@@ -160,6 +166,14 @@ namespace TimetableOfClasses
 				this.DG_AcademicDegree.Rows[index].HeaderCell.Value = indexStr;
 		}
 
-
+		private void DG_AcademicDegree_DoubleClick(object sender, EventArgs e)
+		{
+			if (DG_AcademicDegree.SelectedRows.Count == 1 && this.Name == "Выбор степени")
+			{
+				DataRow Row = ((DataRowView)DG_AcademicDegree.SelectedRows[0].DataBoundItem).Row;
+				ChoseReductionAcademicDegree = (string)Row["Reduction"];
+				Close();
+			}
+		}
 	}
 }

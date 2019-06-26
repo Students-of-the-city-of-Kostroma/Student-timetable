@@ -7,35 +7,40 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CAcademicDegree
 	{
-		//CAcademicDegree CAcademic = new CAcademicDegree();
 
+		/// <summary>
+		/// Удаление существующих данных таблицы
+		/// </summary>
 		[TestMethod]
-		public void Task_485_1()//Удаление существующих данных таблицы
+		public void Task_485_1()
 		{
 			//arrange
-			Controllers.CAcademicDegree.Clear();
+			RefData.CAcademicDegree.Clear();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
 
 
 			//act
-			Controllers.CAcademicDegree.Insert(MAcademic);
-			bool act = Controllers.CAcademicDegree.Delete(MAcademic);
+			RefData.CAcademicDegree.Insert(MAcademic);
+			bool act = RefData.CAcademicDegree.Delete(MAcademic);
 
 			//assert 
 			Assert.AreEqual(ex, act);
 		}
 
+		/// <summary>
+		/// Удаление несуществующих данных из таблицы
+		/// </summary>
 		[TestMethod]
-		public void Task_485_2()//Удаление несуществующих данных из таблицы
+		public void Task_485_2()
 		{
 			//arrange 
-			Controllers.CAcademicDegree.Clear();
+			RefData.CAcademicDegree.Clear();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = false;
 
 			//act
-			bool act = Controllers.CAcademicDegree.Delete(MAcademic);
+			bool act = RefData.CAcademicDegree.Delete(MAcademic);
 
 			//assert
 			Assert.AreEqual(ex, act);

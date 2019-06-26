@@ -9,29 +9,43 @@ using System.Threading.Tasks;
 namespace LibOfTimetableOfClasses
 {
 	/// <summary>
-	/// Контроллер объекта Добавление ученого звания
+	/// Таблица со строками, хранящими данные об Ученых степенях
 	/// </summary>
 	public class CAcademicDegree : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы.
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью поля FullName.
+		/// </summary>
 		public CAcademicDegree() : base("Учёная степень")
 		{
 
-			DataColumn column = new DataColumn();
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "FullName";
-			column.Unique = true;
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "FullName",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Reduction";
-			column.Unique = true;
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Reduction",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
 		}
 
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CAcademicDegree.
+		/// В таблице CAcademicDegree ищется строка с полями "FullName" и "Reduction" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка. 
+		/// </summary>
 		public bool Delete(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
@@ -46,40 +60,34 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MAcademicDegree mAcademicDegree)
-		{
-			foreach (DataRow Row in this.Rows)
-			{
-				if (mAcademicDegree.FullName == (string)Row["FullName"])
-					return false;
-			}
-			return true;
-		}
-
+		/// <summary>
+		/// Метод добавления переданной модели MAcademicDegree в таблицу CAcademicDegree
+		/// в случае уникальности свойства FullName модели для таблицы CAcademicDegree
+		/// </summary>
 		public bool Insert(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
 
-			if (isValidKey(mAcademicDegree))
+			try
 			{
-				try
-				{
-		
-					DataRow newRow = this.NewRow();
-					newRow["FullName"] = mAcademicDegree.FullName;
-					newRow["Reduction"] = mAcademicDegree.Reduction;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+
+				DataRow newRow = this.NewRow();
+				newRow["FullName"] = mAcademicDegree.FullName;
+				newRow["Reduction"] = mAcademicDegree.Reduction;
+				this.Rows.Add(newRow);
+				return true;
 			}
-			return false;
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
+		/// <summary>
+		/// Обновление строки в таблице CAcademicDegree из переданной модели MAcademicDegree.
+		/// Поиск изменяемой строки CTeacher осуществляется по полю "FullName"
+		/// </summary>
 		public bool Update(Model model)
 		{
 			MAcademicDegree mAcademicDegree = (MAcademicDegree)model;
@@ -107,11 +115,6 @@ namespace LibOfTimetableOfClasses
 				}
 			}
 			return false;
-		}
-
-		public bool Update(DataRow row, Model model)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

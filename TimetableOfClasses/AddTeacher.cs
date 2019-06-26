@@ -15,8 +15,6 @@ namespace TimetableOfClasses
 	public partial class AddTeacher : Form
 	{
 		private MTeacher Lehrer;
-		private CAcademicDegree AcademicDegree = Controllers.CAcademicDegree;
-		private CTitle AcademicTitle = Controllers.CTitle;
 
 		public AddTeacher()
 		{
@@ -24,10 +22,6 @@ namespace TimetableOfClasses
 			firstName.Text = "Иван";
 			secondName.Text = "Иванов";
 			patronymic.Text = "Иванович";
-			academicDegree.DataSource = AcademicDegree;
-			academicDegree.DisplayMember = "Reduction";
-			academicTitle.DataSource = AcademicTitle;
-			academicTitle.DisplayMember = "Reduction";
 			department.Text = "ФАСТ";
 			metodDays.Text = "Пн, Вт";
 			windows.Text = "Ср, Чт, Пт";
@@ -69,13 +63,6 @@ namespace TimetableOfClasses
 
 			#endregion
 
-			academicDegree.DataSource = AcademicDegree;
-			academicDegree.DisplayMember = "Reduction";
-			academicDegree.Text = mTeacher.AcademicDegree;
-
-			academicTitle.DataSource = AcademicTitle;
-			academicTitle.DisplayMember = "Reduction";
-			academicTitle.Text = mTeacher.AcademicTitle;
 
 			department.Text = mTeacher.Departament;
 
@@ -91,17 +78,23 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
+			try
 			{
-				if (Add())
+				Logs.GetInfo("Click button Save in AddTeacher");
+				if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 				{
-					Close();
+					if (Add())
+					{
+						Close();
+					}
+					else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 				}
-				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
+				else message();
 			}
-			else message();		
-
-
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
 		}
 
 		private bool Add()
@@ -111,7 +104,7 @@ namespace TimetableOfClasses
 				if (Lehrer == null)
 				{
 					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-					return Controllers.CTeacher.Insert(Prepodavatel);
+					return RefData.CTeacher.Insert(Prepodavatel);
 				}
 				else
 				{
@@ -124,7 +117,7 @@ namespace TimetableOfClasses
 					Lehrer.MetodicalDays = metodDays.Text;
 					Lehrer.Windows = windows.Text;
 					Lehrer.Weekends = weekends.Text;
-					return Controllers.CTeacher.Update(Lehrer);
+					return RefData.CTeacher.Update(Lehrer);
 				}
 			}
 			catch (Exception)
@@ -290,7 +283,15 @@ namespace TimetableOfClasses
 
 		private void B_Сancel_Click(object sender, EventArgs e)
 		{
-			Close();
+			try
+			{
+				Logs.GetInfo("Click button Cancel in AddTeacher");
+				Close();
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
 		}
 
 		private void fieldChanged(object sender, EventArgs e)
@@ -319,6 +320,67 @@ namespace TimetableOfClasses
 			else
 			{
 				patronymic.Enabled = true;
+			}
+		}
+
+		private void SelectAD_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceAD();
+		}
+
+		private void SelectAT_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceAT();
+		}
+
+		private void CreateFormForEditAndChoiceAT()
+		{
+			AcademicTitle selectAT = new AcademicTitle(true);
+			selectAT.Owner = this;
+			selectAT.FormClosed += SelectAT_FormClosed;
+			selectAT.Show();
+		}
+
+		private void SelectAT_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string reduction = (sender as AcademicTitle).ChoseReductionAcademicTitle;
+			if (reduction != null)
+				academicTitle.Text = reduction;
+		}
+
+		private void CreateFormForEditAndChoiceAD()
+		{
+			AcademicDegree selectAD = new AcademicDegree(true);
+			selectAD.Owner = this;
+			selectAD.FormClosed += SelectAD_FormClosed;
+			selectAD.Show();
+		}
+
+		private void SelectAD_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string reduction = (sender as AcademicDegree).ChoseReductionAcademicDegree;
+			if (reduction != null)
+				academicDegree.Text = reduction;
+		}
+
+		private void AddTeacher_Shown(object sender, EventArgs e)
+		{
+			if (RefData.CAcademicDegree.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("В созависимом справочнике Академические степени отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Академические степени?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+					CreateFormForEditAndChoiceAD();
+			}
+
+			if (RefData.CTitle.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("В созависимом справочнике Академические звания отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Академические звания?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+					CreateFormForEditAndChoiceAT();
 			}
 		}
 	}

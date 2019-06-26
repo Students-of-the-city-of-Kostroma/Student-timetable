@@ -18,13 +18,13 @@ namespace TimetableOfClasses
      {
       InitializeComponent();
 			DataGridAuditor.AutoGenerateColumns = false;
-			DataGridAuditor.DataSource = Controllers.CAuditor;
+			DataGridAuditor.DataSource = RefData.CAuditor;
 		 }
 
 		private void btAddAuditor_Click(object sender, EventArgs e)
 		{
 			AddAuditor a = new AddAuditor();
-			a.ShowDialog();
+			a.Show();
 		}
 
 		private void btDelAuditor_Click(object sender, EventArgs e)
@@ -46,8 +46,8 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DataGridAuditor.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
-					Controllers.CAuditor.Delete(mAuditor);
+					mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
+					RefData.CAuditor.Delete(mAuditor);
 				}
 			}
 			
@@ -71,10 +71,10 @@ namespace TimetableOfClasses
 			if (DataGridAuditor.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DataGridAuditor.SelectedRows[0].DataBoundItem).Row;
-				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (byte)Row["Building"]);
+				MAuditor mAuditor = new MAuditor((string)Row["NameOfAuditor"], (string)Row["Cafedra"], (ushort)Row["Spacious"], (string)Row["Building"]);
 				AddAuditor add = new AddAuditor(mAuditor);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else if (DataGridAuditor.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
 			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibOfTimetableOfClasses
 {
@@ -14,17 +15,59 @@ namespace LibOfTimetableOfClasses
 	/// </summary>
 	public class MUniversity : Model
 	{
+		/// <summary>
+		/// ИНН
+		/// </summary>
 		string _inn;
+
+		/// <summary>
+		/// Краткое название ВУЗа
+		/// </summary>
 		string _shortName;
+
+		/// <summary>
+		/// Полное название ВУЗа
+		/// </summary>
 		string _fullName;
+
+		/// <summary>
+		/// Текущий адресс ВУЗа
+		/// </summary>
 		string _actualAddress;
+
+		/// <summary>
+		/// Юридический адресс ВУЗа
+		/// </summary>
 		string _legalAddress;
+
+		/// <summary>
+		/// Имя реактора ВУЗа
+		/// </summary>
 		string _nameRector;
+
+		/// <summary>
+		/// Фамилия ректора ВУЗа
+		/// </summary>
 		string _surnameRector;
+
+		/// <summary>
+		/// Отчество ректора ВУЗа
+		/// </summary>
 		string _middleNameRector;
+
+		/// <summary>
+		/// Электронная почта ВУЗа
+		/// </summary>
 		string _email;
+
+		/// <summary>
+		/// Номер телефона ВУЗа
+		/// </summary>
 		string _phone;
 
+		/// <summary>
+		/// Возвращает или задаёт ИНН ВУЗа
+		/// </summary>
 		public string INN
 		{
 			get
@@ -42,7 +85,9 @@ namespace LibOfTimetableOfClasses
 				_inn = value;
 			}
 		}
-
+		/// <summary>
+		/// Возвращает или задаёт краткое название ВУЗа
+		/// </summary>
 		public string ShortName
 		{
 			get
@@ -60,7 +105,9 @@ namespace LibOfTimetableOfClasses
 				_shortName = value;
 			}
 		}
-
+		/// <summary>
+		/// Возвращает или задаёт полное наименование ВУЗа
+		/// </summary>
 		public string FullName
 		{
 			get
@@ -80,6 +127,9 @@ namespace LibOfTimetableOfClasses
 				_fullName = value;
 			}
 		}
+		/// <summary>
+		/// Возвращает или задаёт текущий адрес
+		/// </summary>
 		public string ActualAddress
 		{
 			get
@@ -97,6 +147,9 @@ namespace LibOfTimetableOfClasses
 				_actualAddress = value;
 			}
 		}
+		/// <summary>
+		/// Возвращает или задаёт юридический адрес
+		/// </summary>
 		public string LegalAddress
 		{
 			get
@@ -114,7 +167,9 @@ namespace LibOfTimetableOfClasses
 				_legalAddress = value;
 			}
 		}
-
+		/// <summary>
+		/// Возвращает или задаёт имя ректора
+		/// </summary>
 		public string NameRector
 		{
 			get
@@ -134,7 +189,9 @@ namespace LibOfTimetableOfClasses
 				_nameRector = value;
 			}
 		}
-
+		/// <summary>
+		/// Возвращает или задаёт фамилию ректора
+		/// </summary>
 		public string SurnameRector
 		{
 			get
@@ -154,7 +211,9 @@ namespace LibOfTimetableOfClasses
 				_surnameRector = value;
 			}
 		}
-
+		/// <summary>
+		///  Возвращает или задаёт отчество ректора
+		/// </summary>
 		public string MiddleNameRector
 		{
 			get
@@ -180,7 +239,9 @@ namespace LibOfTimetableOfClasses
 				_middleNameRector = value;
 			}
 		}
-
+		/// <summary>
+		/// Возвращает или задаёт адрес электронной почты
+		/// </summary>
 		public string Email
 		{
 			get
@@ -198,6 +259,9 @@ namespace LibOfTimetableOfClasses
 				_email = value;
 			}
 		}
+		/// <summary>
+		/// Возвращает или задаёт номер телефона
+		/// </summary>
 		public string Phone
 		{
 			get
@@ -217,7 +281,7 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Создает экземпляр
+		/// Создаёт экземлпяр класса ВУЗ со всеми полями
 		/// </summary>
 		public MUniversity(string inn, string shortName, string fullName, string actualAddress, string legalAddress, string nameRector, string surnameRector, string middleNameRector, string email, string phone) : base()
 		{
@@ -231,11 +295,7 @@ namespace LibOfTimetableOfClasses
 			MiddleNameRector = middleNameRector;
 			Email = email;
 			Phone = phone;
-		}
 
-		public MUniversity(string inn) : base()
-		{
-			INN = inn;
 		}
 
 		private bool isLetterСaseNormal(string input)

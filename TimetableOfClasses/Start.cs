@@ -115,6 +115,18 @@ namespace TimetableOfClasses
 		{
 			TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
 			typesOfOccupations.Show();
+    }
+    
+		private void институтToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Institute institute = new Institute();
+			institute.Show();
+		}
+
+		private void CharacteristicStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			Characteristic Characteristic = new Characteristic();
+			Characteristic.Show();
 		}
 
 		private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {

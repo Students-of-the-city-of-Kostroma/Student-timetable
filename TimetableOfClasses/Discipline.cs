@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +17,7 @@ namespace TimetableOfClasses
 		{
 			InitializeComponent();
 			DG_Disc.AutoGenerateColumns = false;
-			DG_Disc.DataSource = Controllers.CDiscipline;
+			DG_Disc.DataSource = RefData.CDiscipline;
 		}
 
 
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
 					mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
-					Controllers.CDiscipline.Delete(mDiscipline);
+					RefData.CDiscipline.Delete(mDiscipline);
 				}
 			}
 
@@ -64,7 +64,7 @@ namespace TimetableOfClasses
 		private void btCreateDiscipline_Click(object sender, EventArgs e)
 		{
 			AddDiscipline addDiscipline = new AddDiscipline();
-			addDiscipline.ShowDialog();
+			addDiscipline.Show();
 		}
 
 		private void btChange_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace TimetableOfClasses
 				MDiscipline mDiscipline = new MDiscipline((string)Row["Fullname"], (string)Row["Shortname"], (string)Row["CycleofDiscipline"]);
 				AddDiscipline add = new AddDiscipline(mDiscipline);
 				add.Owner = this;
-				add.ShowDialog();
+				add.Show();
 			}
 			else if (DG_Disc.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
 			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
