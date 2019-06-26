@@ -128,5 +128,10 @@ namespace TimetableOfClasses
 			Characteristic Characteristic = new Characteristic();
 			Characteristic.Show();
 		}
+
+		private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Departments departments = new Departments();
+			departments.Show();
+		}
 	}
 }

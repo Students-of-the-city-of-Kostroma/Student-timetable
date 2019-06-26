@@ -74,6 +74,12 @@
     <Compile Include="AddAuditor.Designer.cs">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.cs">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDirectionOfPreparation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departments.Designer.cs">
+      <DependentUpon>Departments.cs</DependentUpon>
     </Compile>
     <Compile Include="AddTypesOfOccupations.cs">
       <SubType>Form</SubType>
@@ -241,6 +253,9 @@
     <EmbeddedResource Include="AddAuditor.resx">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDirectionOfPreparation.resx">
       <DependentUpon>AddDirectionOfPreparation.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departments.resx">
+      <DependentUpon>Departments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTypesOfOccupations.resx">
       <DependentUpon>AddTypesOfOccupations.cs</DependentUpon>

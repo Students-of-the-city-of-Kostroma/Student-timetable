@@ -51,6 +51,7 @@
 			this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.DepartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.CharacteristicStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -91,7 +92,8 @@
             this.институтToolStripMenuItem,
             this.профильПодготовкиToolStripMenuItem,
             this.направлениеПодготовкиToolStripMenuItem,
-            this.корпусаToolStripMenuItem});
+            this.корпусаToolStripMenuItem,
+            this.DepartmentsToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -238,6 +240,13 @@
 			this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
 			this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
 			// 
+			// DepartmentsToolStripMenuItem
+			// 
+			this.DepartmentsToolStripMenuItem.Name = "DepartmentsToolStripMenuItem";
+			this.DepartmentsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.DepartmentsToolStripMenuItem.Text = "Кафедры";
+			this.DepartmentsToolStripMenuItem.Click += new System.EventHandler(this.DepartmentsToolStripMenuItem_Click);
+			// 
 			// CharacteristicStripMenuItem1
 			// 
 			this.CharacteristicStripMenuItem1.Name = "CharacteristicStripMenuItem1";
@@ -285,6 +294,7 @@
 		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem редактироватьЗаписьToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem DepartmentsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem SettingStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem CharacteristicStripMenuItem1;
 	}
