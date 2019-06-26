@@ -70,7 +70,8 @@ namespace TimetableOfClasses
 
 		private void tbActualAddress_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (!Regex.IsMatch(e.KeyChar.ToString(), @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back)
+			int value = e.KeyChar.ToString();
+			if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back && Regex.IsMatch(value,@"[а-яА-Я]") && value.Length>=2)
 			{
 				e.Handled = true;
 				return;
