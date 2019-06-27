@@ -35,24 +35,29 @@ namespace TimetableOfClasses
 
 		private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
 		{
-			if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
+			if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))//ну и накодили тут =)
 			{
 				if (Reduction.Text.Length != 0)
 				{
 					if (FullName.Text.Length != 0)
 					{
-						try
-						{
-							MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-							RefData.CAcademicDegree.Insert(AcademicDegree);
-							FullName.Text = "";
-							Reduction.Text = "";
-						}
-						catch (Exception)
-						{
-							MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-						}
-					}
+                        if (FullName.Text.Length >= Reduction.Text.Length)
+                        { 
+						    try
+						    {
+							    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+							    RefData.CAcademicDegree.Insert(AcademicDegree);
+							    FullName.Text = "";
+							    Reduction.Text = "";
+						    }
+						    catch (Exception)
+						    {
+							    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+						    }
+                        }
+                        else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
+                            "Попробуйте снова", MessageBoxButtons.OK);
+                    }
 					else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 				}
 				else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
@@ -69,20 +74,25 @@ namespace TimetableOfClasses
 					{
 						if (FullName.Text.Length != 0)
 						{
-							try
-							{
-								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-								RefData.CAcademicDegree.Update(AcademicDegree);
-								FullName.Text = "";
-								Reduction.Text = "";
-								Close();
-							}
-							catch (Exception)
-							{
-								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-							}
-							
-						}
+                            if (FullName.Text.Length >= Reduction.Text.Length)
+                            {
+                                try
+                                {
+                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+                                    RefData.CAcademicDegree.Update(AcademicDegree);
+                                    FullName.Text = "";
+                                    Reduction.Text = "";
+                                    Close();
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+                                }
+                            }
+                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
+                            "Попробуйте снова", MessageBoxButtons.OK);
+
+                        }
 						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
 					else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
@@ -98,19 +108,25 @@ namespace TimetableOfClasses
 					{
 						if (FullName.Text.Length != 0)
 						{
-							try
-							{
-								MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-								RefData.CAcademicDegree.Insert(AcademicDegree);
-								FullName.Text = "";
-								Reduction.Text = "";
-								Close();
-							}
-							catch (Exception)
-							{
-								MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-							}
-						}
+                            if (FullName.Text.Length >= Reduction.Text.Length)
+                            {
+
+                                try
+                                {
+                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
+                                    RefData.CAcademicDegree.Insert(AcademicDegree);
+                                    FullName.Text = "";
+                                    Reduction.Text = "";
+                                    Close();
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+                                }
+                            }
+                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
+                                "Попробуйте снова", MessageBoxButtons.OK);
+                        }
 						else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
 					}
 					else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);

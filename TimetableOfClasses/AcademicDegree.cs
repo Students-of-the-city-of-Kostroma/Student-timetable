@@ -175,5 +175,10 @@ namespace TimetableOfClasses
 				Close();
 			}
 		}
-	}
+
+        private void DG_AcademicDegree_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }
