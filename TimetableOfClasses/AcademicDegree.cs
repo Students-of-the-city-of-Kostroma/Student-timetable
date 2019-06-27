@@ -175,5 +175,5 @@ namespace TimetableOfClasses
 				Close();
 			}
 		}
-    }
+	}
 }
