@@ -253,9 +253,19 @@
             0,
             0,
             0});
+			this.nudCountStudents.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudCountStudents.Name = "nudCountStudents";
 			this.nudCountStudents.Size = new System.Drawing.Size(236, 20);
 			this.nudCountStudents.TabIndex = 38;
+			this.nudCountStudents.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.nudCountStudents.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress4);
 			// 
 			// nudSmena

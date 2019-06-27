@@ -133,6 +133,10 @@ namespace TimetableOfClasses
 		{
 			StudyWeek studyWeek = new StudyWeek();
 			studyWeek.Show();
+    }
+		private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Departments departments = new Departments();
+			departments.Show();
 		}
 	}
 }
