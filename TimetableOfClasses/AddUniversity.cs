@@ -70,8 +70,8 @@ namespace TimetableOfClasses
 
 		private void tbActualAddress_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			int value = e.KeyChar.ToString();
-			if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back && Regex.IsMatch(value,@"[а-яА-Я]") && value.Length>=2)
+			string value = e.KeyChar.ToString();
+			if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back )
 			{
 				e.Handled = true;
 				return;
@@ -160,15 +160,20 @@ namespace TimetableOfClasses
 			input = Regex.Replace(input, @",+", ",");
 			input = Regex.Replace(input, @" - ", "-");
 			input = Regex.Replace(input, @"- -", " ");
-			if (input.Length > 2)
-			{
-				if (input[0] == ' ' || input[0] == '-')
-					input = input.Substring(1);
-				if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
-					input = input.Substring(1, input.Length - 2);
-			}
-			((TextBox)sender).Text = input;
-		}
+            if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2 )
+            { 
+
+                if (input[0] == ' ' || input[0] == '-')
+				    input = input.Substring(1);
+			    if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
+				    input = input.Substring(1, input.Length - 2);
+            }
+            else
+            {
+                input = "";
+            }
+            ((TextBox)sender).Text = input;
+        }
 
 		private void tbShortTittle_Leave(object sender, EventArgs e)
 		{
