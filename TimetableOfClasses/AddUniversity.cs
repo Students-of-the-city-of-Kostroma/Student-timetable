@@ -160,20 +160,20 @@ namespace TimetableOfClasses
 			input = Regex.Replace(input, @",+", ",");
 			input = Regex.Replace(input, @" - ", "-");
 			input = Regex.Replace(input, @"- -", " ");
-            if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2 )
-            { 
+			if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2 )
+			{ 
 
-                if (input[0] == ' ' || input[0] == '-')
-				    input = input.Substring(1);
-			    if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
-				    input = input.Substring(1, input.Length - 2);
-            }
-            else
-            {
-                input = "";
-            }
-            ((TextBox)sender).Text = input;
-        }
+				if (input[0] == ' ' || input[0] == '-')
+					input = input.Substring(1);
+				if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
+					input = input.Substring(1, input.Length - 2);
+			}
+			else
+			{
+				input = "";
+			}
+			((TextBox)sender).Text = input;
+		}
 
 		private void tbShortTittle_Leave(object sender, EventArgs e)
 		{
