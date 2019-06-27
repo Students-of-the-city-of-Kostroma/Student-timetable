@@ -49,7 +49,7 @@
             this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.установкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.параметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,17 +217,17 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.установкиToolStripMenuItem});
+            this.параметрыToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // установкиToolStripMenuItem
             // 
-            this.установкиToolStripMenuItem.Name = "установкиToolStripMenuItem";
-            this.установкиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.установкиToolStripMenuItem.Text = "Установки";
-            this.установкиToolStripMenuItem.Click += new System.EventHandler(this.УстановкиToolStripMenuItem_Click);
+            this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
+            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.параметрыToolStripMenuItem.Text = "Параметры";
+            this.параметрыToolStripMenuItem.Click += new System.EventHandler(this.ПараметрыToolStripMenuItem_Click);
             // 
             // Start
             // 
@@ -269,7 +269,7 @@
 		private System.Windows.Forms.ToolStripMenuItem видыЗанятийПодготовкиToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem направлениеПодготовкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem установкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem параметрыToolStripMenuItem;
     }
 }
 

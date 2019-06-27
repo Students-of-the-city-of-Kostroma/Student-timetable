@@ -109,7 +109,7 @@ namespace TimetableOfClasses
 			typesOfOccupations.Show();
 		}
 
-        private void УстановкиToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПараметрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nastroiki nastroiki = new Nastroiki();
             nastroiki.Show();
