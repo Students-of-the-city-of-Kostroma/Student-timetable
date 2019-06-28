@@ -53,12 +53,12 @@
             this.Most = new System.Windows.Forms.DomainUpDown();
             this.Date = new System.Windows.Forms.TabPage();
             this.Bells = new System.Windows.Forms.TabPage();
-            this.Cycles = new System.Windows.Forms.TabPage();
-            this.Etc = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Cycles = new System.Windows.Forms.TabPage();
+            this.Etc = new System.Windows.Forms.TabPage();
             this.Numeration.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Day.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             this.Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Ok.Location = new System.Drawing.Point(176, 514);
-            this.Ok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Ok.Margin = new System.Windows.Forms.Padding(4);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(100, 28);
             this.Ok.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             this.Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel.Location = new System.Drawing.Point(284, 514);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(100, 28);
             this.Cancel.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             this.Help.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Help.Location = new System.Drawing.Point(392, 514);
-            this.Help.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Help.Margin = new System.Windows.Forms.Padding(4);
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(100, 28);
             this.Help.TabIndex = 2;
@@ -107,9 +107,9 @@
             this.Numeration.Controls.Add(this.radioButton2);
             this.Numeration.Controls.Add(this.radioButton1);
             this.Numeration.Location = new System.Drawing.Point(17, 31);
-            this.Numeration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Numeration.Margin = new System.Windows.Forms.Padding(4);
             this.Numeration.Name = "Numeration";
-            this.Numeration.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Numeration.Padding = new System.Windows.Forms.Padding(4);
             this.Numeration.Size = new System.Drawing.Size(428, 50);
             this.Numeration.TabIndex = 3;
             this.Numeration.TabStop = false;
@@ -120,7 +120,7 @@
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(184, 25);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(82, 21);
             this.radioButton2.TabIndex = 1;
@@ -132,7 +132,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(9, 25);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(82, 21);
             this.radioButton1.TabIndex = 0;
@@ -150,7 +150,7 @@
             this.tabControl1.Controls.Add(this.Cycles);
             this.tabControl1.Controls.Add(this.Etc);
             this.tabControl1.Location = new System.Drawing.Point(16, 16);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(476, 479);
@@ -166,9 +166,9 @@
             this.Day.Controls.Add(this.Changes);
             this.Day.Controls.Add(this.Numeration);
             this.Day.Location = new System.Drawing.Point(4, 25);
-            this.Day.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Day.Margin = new System.Windows.Forms.Padding(4);
             this.Day.Name = "Day";
-            this.Day.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Day.Padding = new System.Windows.Forms.Padding(4);
             this.Day.Size = new System.Drawing.Size(468, 450);
             this.Day.TabIndex = 0;
             this.Day.Text = "День";
@@ -198,7 +198,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox1.Location = new System.Drawing.Point(17, 117);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(410, 21);
             this.checkBox1.TabIndex = 8;
@@ -213,7 +213,7 @@
             this.SecondPair.AutoSize = true;
             this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SecondPair.Location = new System.Drawing.Point(17, 89);
-            this.SecondPair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SecondPair.Margin = new System.Windows.Forms.Padding(4);
             this.SecondPair.Name = "SecondPair";
             this.SecondPair.Size = new System.Drawing.Size(299, 21);
             this.SecondPair.TabIndex = 7;
@@ -226,7 +226,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.domainUpDown1.Location = new System.Drawing.Point(371, 373);
-            this.domainUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.domainUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.Size = new System.Drawing.Size(87, 22);
             this.domainUpDown1.TabIndex = 6;
@@ -256,9 +256,9 @@
             this.Changes.Controls.Add(this.First);
             this.Changes.Controls.Add(this.Most);
             this.Changes.Location = new System.Drawing.Point(17, 208);
-            this.Changes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Changes.Margin = new System.Windows.Forms.Padding(4);
             this.Changes.Name = "Changes";
-            this.Changes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Changes.Padding = new System.Windows.Forms.Padding(4);
             this.Changes.Size = new System.Drawing.Size(428, 151);
             this.Changes.TabIndex = 4;
             this.Changes.TabStop = false;
@@ -321,7 +321,7 @@
             this.Third.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Third.Location = new System.Drawing.Point(341, 119);
-            this.Third.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Third.Margin = new System.Windows.Forms.Padding(4);
             this.Third.Name = "Third";
             this.Third.Size = new System.Drawing.Size(87, 22);
             this.Third.TabIndex = 8;
@@ -331,7 +331,7 @@
             this.Second.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Second.Location = new System.Drawing.Point(341, 87);
-            this.Second.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Second.Margin = new System.Windows.Forms.Padding(4);
             this.Second.Name = "Second";
             this.Second.Size = new System.Drawing.Size(87, 22);
             this.Second.TabIndex = 7;
@@ -341,7 +341,7 @@
             this.First.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.First.Location = new System.Drawing.Point(341, 55);
-            this.First.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.First.Margin = new System.Windows.Forms.Padding(4);
             this.First.Name = "First";
             this.First.Size = new System.Drawing.Size(87, 22);
             this.First.TabIndex = 6;
@@ -351,7 +351,7 @@
             this.Most.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Most.Location = new System.Drawing.Point(341, 23);
-            this.Most.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Most.Margin = new System.Windows.Forms.Padding(4);
             this.Most.Name = "Most";
             this.Most.Size = new System.Drawing.Size(87, 22);
             this.Most.TabIndex = 5;
@@ -359,9 +359,9 @@
             // Date
             // 
             this.Date.Location = new System.Drawing.Point(4, 25);
-            this.Date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Date.Margin = new System.Windows.Forms.Padding(4);
             this.Date.Name = "Date";
-            this.Date.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Date.Padding = new System.Windows.Forms.Padding(4);
             this.Date.Size = new System.Drawing.Size(468, 450);
             this.Date.TabIndex = 1;
             this.Date.Text = "Даты";
@@ -372,45 +372,13 @@
             this.Bells.Controls.Add(this.dataGridView1);
             this.Bells.Controls.Add(this.textBox1);
             this.Bells.Location = new System.Drawing.Point(4, 25);
-            this.Bells.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bells.Margin = new System.Windows.Forms.Padding(4);
             this.Bells.Name = "Bells";
-            this.Bells.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bells.Padding = new System.Windows.Forms.Padding(4);
             this.Bells.Size = new System.Drawing.Size(468, 450);
             this.Bells.TabIndex = 2;
             this.Bells.Text = "Звонки";
             this.Bells.UseVisualStyleBackColor = true;
-            // 
-            // Cycles
-            // 
-            this.Cycles.Location = new System.Drawing.Point(4, 25);
-            this.Cycles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Cycles.Name = "Cycles";
-            this.Cycles.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Cycles.Size = new System.Drawing.Size(468, 450);
-            this.Cycles.TabIndex = 3;
-            this.Cycles.Text = "Циклы";
-            this.Cycles.UseVisualStyleBackColor = true;
-            // 
-            // Etc
-            // 
-            this.Etc.Location = new System.Drawing.Point(4, 25);
-            this.Etc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Etc.Name = "Etc";
-            this.Etc.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Etc.Size = new System.Drawing.Size(468, 450);
-            this.Etc.TabIndex = 4;
-            this.Etc.Text = "Прочее";
-            this.Etc.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(4, 8);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 435);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -426,7 +394,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(192, 226);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick_2);
             // 
             // Column1
             // 
@@ -443,6 +410,38 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(4, 8);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(202, 435);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // Cycles
+            // 
+            this.Cycles.Location = new System.Drawing.Point(4, 25);
+            this.Cycles.Margin = new System.Windows.Forms.Padding(4);
+            this.Cycles.Name = "Cycles";
+            this.Cycles.Padding = new System.Windows.Forms.Padding(4);
+            this.Cycles.Size = new System.Drawing.Size(468, 450);
+            this.Cycles.TabIndex = 3;
+            this.Cycles.Text = "Циклы";
+            this.Cycles.UseVisualStyleBackColor = true;
+            // 
+            // Etc
+            // 
+            this.Etc.Location = new System.Drawing.Point(4, 25);
+            this.Etc.Margin = new System.Windows.Forms.Padding(4);
+            this.Etc.Name = "Etc";
+            this.Etc.Padding = new System.Windows.Forms.Padding(4);
+            this.Etc.Size = new System.Drawing.Size(468, 450);
+            this.Etc.TabIndex = 4;
+            this.Etc.Text = "Прочее";
+            this.Etc.UseVisualStyleBackColor = true;
+            // 
             // Characteristic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,7 +451,7 @@
             this.Controls.Add(this.Help);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Ok);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Characteristic";
             this.Text = "Установки";
             this.Numeration.ResumeLayout(false);
