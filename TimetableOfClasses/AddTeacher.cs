@@ -63,6 +63,9 @@ namespace TimetableOfClasses
 
 			#endregion
 
+			academicDegree.Text = mTeacher.AcademicDegree;
+
+			academicTitle.Text = mTeacher.AcademicTitle;
 
 			department.Text = mTeacher.Departament;
 
