@@ -97,8 +97,13 @@
 			this.Help.Text = "Справка";
 			this.Help.UseVisualStyleBackColor = true;
 			// 
+<<<<<<< HEAD
+			// Numeration 
+			//
+=======
 			// Numeration
 			// 
+>>>>>>> fd918ffe269133a7f61ffd074553225516a29a47
 			this.Numeration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
 			| System.Windows.Forms.AnchorStyles.Right)));
 			this.Numeration.Controls.Add(this.radioButton2);
@@ -494,5 +499,9 @@
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+<<<<<<< HEAD
+	}
+=======
     }
+>>>>>>> fd918ffe269133a7f61ffd074553225516a29a47
 }
