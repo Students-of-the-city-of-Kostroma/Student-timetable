@@ -158,7 +158,7 @@
 			// 
 			this.видыЗанятийПодготовкиToolStripMenuItem.Name = "видыЗанятийПодготовкиToolStripMenuItem";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Виды занятий подготовки";
+			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Вид занятия";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.видыЗанятийПодготовкиToolStripMenuItem_Click);
 			// 
 			// институтToolStripMenuItem
