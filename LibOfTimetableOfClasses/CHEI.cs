@@ -7,9 +7,10 @@ using System.Data;
 using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
-{/// <summary>
-/// ВУЗ
-/// </summary>
+{
+	/// <summary>
+	/// ВУЗ
+	/// </summary>
 	public class CHEI : Controller, IController
 	{
 		public CHEI() : base("ВУЗ")
@@ -61,12 +62,12 @@ namespace LibOfTimetableOfClasses
 
 		}
 
-        public override bool Delete(Model model)
-        {
-            throw new NotImplementedException();
-        }
+		public override bool Delete(Model model)
+		{
+			throw new NotImplementedException();
+		}
 
-        public override bool Insert(Model model)
+		public override bool Insert(Model model)
 		{
 			try
 			{
@@ -87,9 +88,9 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-        public override bool Update(Model model)
-        {
-            throw new NotImplementedException();
-        }
+		public override bool Update(Model model)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
