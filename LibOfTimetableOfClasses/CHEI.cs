@@ -22,9 +22,9 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "FullName",
 				ReadOnly = true
 			};
-			this.Columns.Add(column);
+			Columns.Add(column);
 			keys[0] = column;
-			this.PrimaryKey = keys;
+			PrimaryKey = keys;
 
 			column = new DataColumn
 			{
@@ -32,7 +32,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "AbbreviatedName",
 				ReadOnly = true
 			};
-			this.Columns.Add(column);
+			Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn
@@ -41,7 +41,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Rector",
 				ReadOnly = true
 			};
-			this.Columns.Add(column);
+			Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn
@@ -50,7 +50,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Phone",
 				ReadOnly = true
 			};
-			this.Columns.Add(column);
+			Columns.Add(column);
 
 			column = new DataColumn
 			{
@@ -58,7 +58,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Email",
 				ReadOnly = true
 			};
-			this.Columns.Add(column);
+			Columns.Add(column);
 
 		}
 
@@ -72,13 +72,13 @@ namespace LibOfTimetableOfClasses
 			try
 			{
 				MCHEI mCHEI = (MCHEI)model;
-				DataRow newRow = this.NewRow();
+				DataRow newRow = NewRow();
 				newRow["FullName"] = mCHEI.FullName;
 				newRow["AbbreviatedName"] = mCHEI.AbbreviatedName;
 				newRow["Rector"] = mCHEI.Rector;
 				newRow["Phone"] = mCHEI.Phone;
 				newRow["Email"] = mCHEI.Email;
-				this.Rows.Add(newRow);
+				Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
