@@ -56,7 +56,7 @@ namespace TimetableOfClasses
 					this.institute.Text
 				);
 				MessageBox.Show("Форма успешно заполнена!\nНа данный момент функционал добавления кафедры в список еще не реализован.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			} catch (FormatException ex) {
+			} catch {
 				MessageBox.Show("Пожалуйста корректно заполните поля формы.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
