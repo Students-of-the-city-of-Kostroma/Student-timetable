@@ -1,4 +1,4 @@
-﻿using System;
+﻿	using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// ВУЗ
 	/// </summary>
-	public class CHEI : Controller, IController
+	public class CHEI : DataTable, IController
 	{
 		public CHEI() : base("ВУЗ")
 		{
@@ -22,9 +22,9 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "FullName",
 				ReadOnly = true
 			};
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[0] = column;
-			table.PrimaryKey = keys;
+			this.PrimaryKey = keys;
 
 			column = new DataColumn
 			{
@@ -32,7 +32,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "AbbreviatedName",
 				ReadOnly = true
 			};
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[1] = column;
 
 			column = new DataColumn
@@ -41,7 +41,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Rector",
 				ReadOnly = true
 			};
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 			keys[2] = column;
 
 			column = new DataColumn
@@ -50,7 +50,7 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Phone",
 				ReadOnly = true
 			};
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 
 			column = new DataColumn
 			{
@@ -58,27 +58,27 @@ namespace LibOfTimetableOfClasses
 				ColumnName = "Email",
 				ReadOnly = true
 			};
-			table.Columns.Add(column);
+			this.Columns.Add(column);
 
 		}
 
-		public override bool Delete(Model model)
+		public bool Delete(Model model)
 		{
 			throw new NotImplementedException();
 		}
 
-		public override bool Insert(Model model)
+		public bool Insert(Model model)
 		{
 			try
 			{
 				MCHEI mCHEI = (MCHEI)model;
-				DataRow newRow = table.NewRow();
+				DataRow newRow = this.NewRow();
 				newRow["FullName"] = mCHEI.FullName;
 				newRow["AbbreviatedName"] = mCHEI.AbbreviatedName;
 				newRow["Rector"] = mCHEI.Rector;
 				newRow["Phone"] = mCHEI.Phone;
 				newRow["Email"] = mCHEI.Email;
-				table.Rows.Add(newRow);
+				this.Rows.Add(newRow);
 				return true;
 			}
 			catch (Exception ex)
@@ -88,7 +88,7 @@ namespace LibOfTimetableOfClasses
 			}
 		}
 
-		public override bool Update(Model model)
+		public bool Update(Model model)
 		{
 			throw new NotImplementedException();
 		}
