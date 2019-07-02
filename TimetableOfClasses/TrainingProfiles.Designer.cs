@@ -97,7 +97,7 @@
 			// Shiphr
 			// 
 			this.Shiphr.DataPropertyName = "Shiphr";
-			this.Shiphr.HeaderText = "Ширф направления подготовки";
+			this.Shiphr.HeaderText = "Шифр направления подготовки";
 			this.Shiphr.Name = "Shiphr";
 			this.Shiphr.ReadOnly = true;
 			this.Shiphr.Width = 174;
