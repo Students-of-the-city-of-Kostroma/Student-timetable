@@ -51,11 +51,11 @@
 			this.Date = new System.Windows.Forms.TabPage();
 			this.Bells = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.Cycles = new System.Windows.Forms.TabPage();
 			this.Etc = new System.Windows.Forms.TabPage();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Numeration.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.Day.SuspendLayout();
@@ -100,7 +100,7 @@
 			// Numeration
 			// 
 			this.Numeration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Numeration.Controls.Add(this.radioButton2);
 			this.Numeration.Controls.Add(this.radioButton1);
 			this.Numeration.Location = new System.Drawing.Point(17, 31);
@@ -140,7 +140,7 @@
 			// tabControl1
 			// 
 			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.Day);
 			this.tabControl1.Controls.Add(this.Date);
 			this.tabControl1.Controls.Add(this.Bells);
@@ -174,8 +174,8 @@
 			// label6
 			// 
 			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.AutoSize = true;
 			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.label6.Location = new System.Drawing.Point(17, 154);
@@ -185,13 +185,13 @@
 			this.label6.Size = new System.Drawing.Size(397, 36);
 			this.label6.TabIndex = 9;
 			this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
-			"и препдавателей:";
+    "и препдавателей:";
 			// 
 			// checkBox1
 			// 
 			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkBox1.AutoSize = true;
 			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.checkBox1.Location = new System.Drawing.Point(17, 117);
@@ -205,8 +205,8 @@
 			// SecondPair
 			// 
 			this.SecondPair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.SecondPair.AutoSize = true;
 			this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.SecondPair.Location = new System.Drawing.Point(17, 89);
@@ -220,8 +220,8 @@
 			// domainUpDown1
 			// 
 			this.domainUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.domainUpDown1.Location = new System.Drawing.Point(371, 373);
 			this.domainUpDown1.Margin = new System.Windows.Forms.Padding(4);
 			this.domainUpDown1.Name = "domainUpDown1";
@@ -231,7 +231,7 @@
 			// label5
 			// 
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label5.Location = new System.Drawing.Point(44, 375);
@@ -264,7 +264,7 @@
 			// label4
 			// 
 			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label4.Location = new System.Drawing.Point(8, 26);
@@ -277,7 +277,7 @@
 			// label3
 			// 
 			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label3.Location = new System.Drawing.Point(8, 122);
@@ -290,7 +290,7 @@
 			// label2
 			// 
 			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label2.Location = new System.Drawing.Point(8, 90);
@@ -303,7 +303,7 @@
 			// label1
 			// 
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label1.Location = new System.Drawing.Point(8, 58);
@@ -316,7 +316,7 @@
 			// Third
 			// 
 			this.Third.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Third.Location = new System.Drawing.Point(341, 119);
 			this.Third.Margin = new System.Windows.Forms.Padding(4);
 			this.Third.Name = "Third";
@@ -326,7 +326,7 @@
 			// Second
 			// 
 			this.Second.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Second.Location = new System.Drawing.Point(341, 87);
 			this.Second.Margin = new System.Windows.Forms.Padding(4);
 			this.Second.Name = "Second";
@@ -336,7 +336,7 @@
 			// First
 			// 
 			this.First.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.First.Location = new System.Drawing.Point(341, 55);
 			this.First.Margin = new System.Windows.Forms.Padding(4);
 			this.First.Name = "First";
@@ -346,7 +346,7 @@
 			// Most
 			// 
 			this.Most.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.Most.Location = new System.Drawing.Point(341, 23);
 			this.Most.Margin = new System.Windows.Forms.Padding(4);
 			this.Most.Name = "Most";
@@ -379,33 +379,24 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Column1,
-			this.Column2});
+            this.Column1,
+            this.Column2});
 			this.dataGridView1.EnableHeadersVisualStyles = false;
 			this.dataGridView1.Location = new System.Drawing.Point(241, 8);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersVisible = false;
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.RowTemplate.Height = 24;
+			this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.dataGridView1.Size = new System.Drawing.Size(192, 226);
 			this.dataGridView1.TabIndex = 2;
-			// 
-			// Column1
-			// 
-			this.Column1.Frozen = true;
-			this.Column1.HeaderText = "№";
-			this.Column1.MinimumWidth = 8;
-			this.Column1.Name = "Column1";
-			this.Column1.Width = 30;
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "Время занятий";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.Width = 125;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
 			// 
 			// textBox1
 			// 
@@ -439,6 +430,24 @@
 			this.Etc.Text = "Прочее";
 			this.Etc.UseVisualStyleBackColor = true;
 			// 
+			// Column1
+			// 
+			this.Column1.Frozen = true;
+			this.Column1.HeaderText = "№";
+			this.Column1.MinimumWidth = 8;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.Width = 30;
+			// 
+			// Column2
+			// 
+			this.Column2.Frozen = true;
+			this.Column2.HeaderText = "Время занятий";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.Width = 125;
+			// 
 			// Characteristic
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -461,7 +470,8 @@
 			this.Bells.ResumeLayout(false);
 			this.Bells.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			this.ResumeLayout(false);	
+			this.ResumeLayout(false);
+
 		}
 		#endregion
 		private System.Windows.Forms.Button Ok;

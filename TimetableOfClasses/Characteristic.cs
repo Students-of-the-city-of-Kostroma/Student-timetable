@@ -20,5 +20,10 @@ namespace TimetableOfClasses
 				row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
 			}
 		}
+
+		private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }
