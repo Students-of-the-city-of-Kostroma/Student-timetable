@@ -38,16 +38,16 @@ namespace LibOfTimetableOfClasses
 		}
 
 		/// <summary>
-		/// Возвращает или задает значение Name - полное название
+		/// fullName - полное название
 		/// </summary>
 		public string Fullname { set { fullName = value; } get { return fullName; } }
 
 		/// <summary>
-		/// Возвращает или задает значение Shortname - краткому названию
+		/// shortName - краткому названию
 		/// </summary>
 		public string Shortname { set { shortName = value; } get { return shortName; } }
 		/// <summary>
-		/// 
+		/// cycleOfDiscipline - цикла дисциплины
 		/// </summary>
 		public string CycleofDiscipline { set { cycleOfDiscipline = value; } get { return cycleOfDiscipline; } }
 	}

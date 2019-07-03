@@ -48,23 +48,21 @@ namespace TimetableOfClasses
 		public AddTeacher(MTeacher mTeacher)
 		{
 			InitializeComponent();
-			this.Text = "Изменение преподавателя";			
-			string[] split = mTeacher.FullName.Split(' ');
-
+			this.Text = "Изменение преподавателя";
+			checkPatronymic.Enabled = false;
 			#region(FullName)
 
-			firstName.Text = split[1];
+			firstName.Text = mTeacher.FirstName;
 			firstName.Enabled = false;
 
-			secondName.Text = split[0];
+			secondName.Text = mTeacher.SecondName;
 			secondName.Enabled = false;
 
-			patronymic.Text = split[2];
+			patronymic.Text = mTeacher.Patronymic;
 			patronymic.Enabled = false;
 
 			#endregion
 
-			notes.Text = mTeacher.Note;
 
 			department.Text = mTeacher.Departament;
 
@@ -80,7 +78,7 @@ namespace TimetableOfClasses
 
 		private void createAndClose_Click(object sender, EventArgs e)
 		{
-			if (!isEmpty(new string[] { secondName.Text, firstName.Text, department.Text, metodDays.Text, weekends.Text }))
+			if (!isEmpty(new string[] { secondName.Text, firstName.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, weekends.Text }))
 			{
 				if (Add())
 				{
@@ -89,31 +87,38 @@ namespace TimetableOfClasses
 				else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
 			}
 			else message();		
+
+
 		}
 
 		private bool Add()
 		{
-
-
-			if (Lehrer == null)
+			try
 			{
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				MTeacher Prepodavatel = new MTeacher(fullName, notes.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-				return Controllers.CTeacher.Insert(Prepodavatel);
+				if (Lehrer == null)
+				{
+					MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
+					return RefData.CTeacher.Insert(Prepodavatel);
+				}
+				else
+				{
+					Lehrer.FirstName = firstName.Text;
+					Lehrer.SecondName = secondName.Text;
+					Lehrer.Patronymic = patronymic.Text;
+					Lehrer.AcademicDegree = academicDegree.Text;
+					Lehrer.AcademicTitle = academicTitle.Text;
+					Lehrer.Departament = department.Text;
+					Lehrer.MetodicalDays = metodDays.Text;
+					Lehrer.Windows = windows.Text;
+					Lehrer.Weekends = weekends.Text;
+					return RefData.CTeacher.Update(Lehrer);
+				}
 			}
-			else
+			catch (Exception)
 			{
-
-				string fullName = secondName.Text + " " + firstName.Text + " " + patronymic.Text;
-				Lehrer.FullName = fullName;
-				Lehrer.Note = notes.Text;
-				Lehrer.Departament = department.Text;
-				Lehrer.MetodicalDays = metodDays.Text;
-				Lehrer.Windows = windows.Text;
-				Lehrer.Weekends = weekends.Text;
-				return Controllers.CTeacher.Update(Lehrer);
+				MessageBox.Show("Заполенены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
+				return false;
 			}
-
 		}
 
 		/// <summary>
@@ -155,6 +160,11 @@ namespace TimetableOfClasses
 					R.Text = R.Text.Substring(1);
 				if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
 					R.Text = R.Text.Remove(R.Text.Length - 1);
+				R.Text = R.Text.ToLower();
+				R.Text = FirstLetterToUpper(R.Text);
+			}
+			if (R.Text.Length == 1)
+			{
 				R.Text = R.Text.ToLower();
 				R.Text = FirstLetterToUpper(R.Text);
 			}
@@ -249,7 +259,7 @@ namespace TimetableOfClasses
 		private void KeyPress2(object sender, KeyPressEventArgs e)
 		{
 			char l = e.KeyChar;
-			if ((l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' '  && l != ',' && (l < '0' || l > '9'))
+			if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '\b' && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.')
 			{
 				e.Handled = true;
 			}
@@ -277,6 +287,87 @@ namespace TimetableOfClasses
 				R.BackColor = Color.Red;
 			else
 				R.BackColor = Color.White;
+
+			//ComboBox T = sender as ComboBox;
+			//if (T.SelectedItem == null)
+			//	T.BackColor = Color.Red;
+			//else
+			//	T.BackColor = Color.White;
+
+		}
+
+		private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
+		{
+			if (checkPatronymic.Checked)
+			{
+				patronymic.Text = "";
+				patronymic.Enabled = false;
+			}
+			else
+			{
+				patronymic.Enabled = true;
+			}
+		}
+
+		private void SelectAD_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceAD();
+		}
+
+		private void SelectAT_Click(object sender, EventArgs e)
+		{
+			CreateFormForEditAndChoiceAT();
+		}
+
+		private void CreateFormForEditAndChoiceAT()
+		{
+			AcademicTitle selectAT = new AcademicTitle(true);
+			selectAT.Owner = this;
+			selectAT.FormClosed += SelectAT_FormClosed;
+			selectAT.Show();
+		}
+
+		private void SelectAT_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string reduction = (sender as AcademicTitle).ChoseReductionAcademicTitle;
+			if (reduction != null)
+				academicTitle.Text = reduction;
+		}
+
+		private void CreateFormForEditAndChoiceAD()
+		{
+			AcademicDegree selectAD = new AcademicDegree(true);
+			selectAD.Owner = this;
+			selectAD.FormClosed += SelectAD_FormClosed;
+			selectAD.Show();
+		}
+
+		private void SelectAD_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			string reduction = (sender as AcademicDegree).ChoseReductionAcademicDegree;
+			if (reduction != null)
+				academicDegree.Text = reduction;
+		}
+
+		private void AddTeacher_Shown(object sender, EventArgs e)
+		{
+			if (RefData.CAcademicDegree.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("В созависимом справочнике Академические степени отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Академические степени?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+					CreateFormForEditAndChoiceAD();
+			}
+
+			if (RefData.CTitle.Rows.Count == 0)
+			{
+				var resultNotification = MessageBox.Show("В созависимом справочнике Академические звания отсутствуют записи. " +
+					"Отрыть форму для редкатирования справочника Академические звания?",
+					"Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
+				if (resultNotification == DialogResult.Yes)
+					CreateFormForEditAndChoiceAT();
+			}
 		}
 	}
 }

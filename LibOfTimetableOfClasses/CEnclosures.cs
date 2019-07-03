@@ -1,56 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Diagnostics;
+﻿	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+	using System.Data;
+	using System.Diagnostics;
 
 namespace LibOfTimetableOfClasses
 {
+	/// <summary>
+	/// Таблица со строками, хранящими данные о разных корпусах Университета.
+	/// </summary>
 	public class СEnclosures : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью полей Name и University
+		/// </summary>
 		public СEnclosures() : base("Корпус")
 		{
-			DataColumn[] keys = new DataColumn[2];
+			if (RefData.СEnclosures != null) throw new Exception("Контроллер уже существует");
+
+			DataColumn[] keys = new DataColumn[1];
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Name";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
 			keys[0] = column;
-			
+
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "University";
-			column.ReadOnly = true;
 			this.Columns.Add(column);
-			keys[1] = column;
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Address";
-			column.ReadOnly = false;
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Phone";
-			column.ReadOnly = false;
+			column.Unique = true;
 			this.Columns.Add(column);
 
 			column = new DataColumn();
 			column.DataType = typeof(string);
 			column.ColumnName = "Comment";
-			column.ReadOnly = false;
 			this.Columns.Add(column);
 
 			this.PrimaryKey = keys;
 		}
 
-
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы  CEnclosures.
+		/// В таблице CGroup ищется строка с полем "Name" и "University" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка.
+		/// </summary>
+		/// <param name="model">Модель, хранящая выбранную строку в таблице</param>
+		/// <returns>Результат удаления переданной строки из CGroup</returns>
 		public bool Delete(Model model)
-
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;
 			for (int i = 0; i < this.Rows.Count; i++)
@@ -64,16 +76,22 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MEnclosures mEnclosures)
-		{
-			foreach (DataRow row in this.Rows)
-			{
-				if ((string)row["Name"] == mEnclosures.Name && (string)row["University"] == mEnclosures.University)
-					return false;
-			}
-			return true;
-		}
+        private bool isValidKey(MEnclosures mEnclosures)
+        {
+            foreach (DataRow row in this.Rows)
+            {
+                if ((string)row["Name"] == mEnclosures.Name && (string)row["University"] == mEnclosures.University)
+                    return false;
+            }
+            return true;
+        }
 
+		/// <summary>
+		/// Метод вставки переданной модели MEnclosures в таблицу CEnclosures
+		/// в случае уникальности свойства Name и University модели для таблицы CGroup
+		/// </summary>
+		/// <param name="model">Модель хранящая добавляемую запись таблицы</param>
+		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;
@@ -103,6 +121,12 @@ namespace LibOfTimetableOfClasses
 
 		}
 
+		/// <summary>
+		/// Обновление свойств строки в таблице CEnclosures из переданной модели MEnclosures
+		/// Поиск изменяемой строки  CEnclosures осуществляется по полю "Name" и "University"
+		/// </summary>
+		/// <param name="model">Модель хранящая обновляемую запись таблицы</param>
+		/// <returns>Результат обновления</returns>
 		public bool Update(Model model)
 		{
 			MEnclosures mEnclosures = (MEnclosures)model;

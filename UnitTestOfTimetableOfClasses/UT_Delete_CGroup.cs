@@ -11,12 +11,12 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_1() //Удаление существующей строки 
 		{
 			//arrange 
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			bool expected = true;
 			//act 
-			CGroup cg = new CGroup();
-			cg.Insert(gr);
-			bool actual = cg.Delete(gr);
+			RefData.CGroup.Insert(gr);
+			bool actual = RefData.CGroup.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 
@@ -26,11 +26,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_2() //Удаление не существующей строки 
 		{
 			//arrange 
+			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			bool expected = false;
 			//act 
-			CGroup cg = new CGroup();
-			bool actual = cg.Delete(gr);
+			bool actual = RefData.CGroup.Delete(gr); 
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}

@@ -138,6 +138,7 @@
 			this.Controls.Add(this.btDelAuditor);
 			this.Controls.Add(this.btAddAuditor);
 			this.Controls.Add(this.DataGridAuditor);
+			this.MinimumSize = new System.Drawing.Size(507, 307);
 			this.Name = "Auditor";
 			this.Text = "Аудитории";
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();

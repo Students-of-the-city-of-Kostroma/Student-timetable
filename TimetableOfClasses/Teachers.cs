@@ -11,21 +11,21 @@ using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
-    public partial class Teachers : Form
-    {
+	public partial class Teachers : Form
+	{
 
-        public Teachers()
-        {
-            InitializeComponent();
+		public Teachers()
+		{
+			InitializeComponent();
 			DG.AutoGenerateColumns = false;
-			DG.DataSource = Controllers.CTeacher;
+			DG.DataSource = RefData.CTeacher;
 		}
 
-        private void AddTeacher(object sender, EventArgs e)
-        {
+		private void AddTeacher(object sender, EventArgs e)
+		{
 			AddTeacher t = new AddTeacher();
-            t.ShowDialog();
-        }
+			t.Show();
+		}
 
 		private void RemoveTeacher(object sender, EventArgs e)
 		{
@@ -39,8 +39,11 @@ namespace TimetableOfClasses
 				foreach (DataGridViewRow row in DG.SelectedRows)
 				{
 					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mTeacher = new MTeacher((string)Row["FullName"], (string)Row["Departament"]);
-					Controllers.CTeacher.Delete(mTeacher);
+					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+					if(fullName.Length==3)
+					mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					else mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					RefData.CTeacher.Delete(mTeacher);
 				}
 			}
 		}
@@ -50,18 +53,28 @@ namespace TimetableOfClasses
 			if (DG.SelectedRows.Count == 1)
 			{
 				DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-				MTeacher mTeacher = new MTeacher((string)Row["FullName"],(string)Row["Note"], (string)Row["Departament"],  (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+				String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+				MTeacher mTeacher;
+				if (fullName.Length == 3)
+				{
+					 mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+				}
+				else
+				{
+					 mTeacher = new MTeacher(fullName[1], fullName[0],"", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+				}
 				AddTeacher add = new AddTeacher(mTeacher);
 				add.Owner = this;
 				add.ShowDialog();
 			}
-			else { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
 		}
 
 		private void DG_SelectionChanged(object sender, EventArgs e)
-        {
-            //button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
-        }
+		{
+			//button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
+		}
 
 		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
@@ -74,22 +87,22 @@ namespace TimetableOfClasses
 			if (Row == null) return;
 
 			if (oldColumn != null)
+			{
+				if (oldColumn == newColumn &&
+					DG.SortOrder == SortOrder.Ascending)
 				{
-					if (oldColumn == newColumn &&
-						DG.SortOrder == SortOrder.Ascending)
-					{
-						direction = ListSortDirection.Descending;
-					}
-					else
-					{
-						direction = ListSortDirection.Ascending;
-						oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-					}
+					direction = ListSortDirection.Descending;
 				}
 				else
 				{
 					direction = ListSortDirection.Ascending;
+					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
 				}
+			}
+			else
+			{
+				direction = ListSortDirection.Ascending;
+			}
 
 			//сохраняем номер выделенной строки
 			List<object> arraySelectedRows = new List<object>();
@@ -106,7 +119,7 @@ namespace TimetableOfClasses
 				{
 					item.Selected = true;
 				}
-			} 
+			}
 		}
 
 		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
