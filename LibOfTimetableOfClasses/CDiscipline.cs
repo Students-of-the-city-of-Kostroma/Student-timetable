@@ -76,7 +76,7 @@ namespace LibOfTimetableOfClasses
         {
 			MDiscipline mDiscipline = (MDiscipline)model;
 			
-			if (mDiscipline.Fullname == null || mDiscipline.Shortname == null)
+			if (mDiscipline.Fullname.Length == mDiscipline.Shortname.Length || mDiscipline.Fullname == null || mDiscipline.Shortname == null)
 				return false;
 				
 			for (int i = 0; i < Rows.Count; i++)
