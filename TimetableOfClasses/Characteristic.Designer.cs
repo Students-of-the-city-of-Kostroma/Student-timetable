@@ -396,7 +396,6 @@
 			this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.dataGridView1.Size = new System.Drawing.Size(192, 226);
 			this.dataGridView1.TabIndex = 2;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
 			// 
 			// textBox1
 			// 
