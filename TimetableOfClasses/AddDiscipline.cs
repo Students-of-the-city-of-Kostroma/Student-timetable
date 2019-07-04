@@ -92,5 +92,10 @@ namespace TimetableOfClasses
 		{
 			Close();
 		}
-	}
+
+        private void TbFullName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
