@@ -22,20 +22,21 @@ namespace LibOfTimetableOfClasses
         {
 			DataColumn column = new DataColumn();
 			column.DataType = typeof(string);
-			column.ColumnName = "Fullname";
-			column.Unique = true;
+			column.ColumnName = "FullName";
+			column.Unique = false;
 			Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Shortname";
-			Columns.Add(column);
-			
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Shiphr";
-			//column.Unique = true;
-			Columns.Add(column);
+            DataColumn columnSN = new DataColumn();
+            columnSN.DataType = typeof(string);
+            columnSN.ColumnName = "ShortName";
+            columnSN.Unique = false;
+            Columns.Add(columnSN);
+
+            DataColumn columnSH = new DataColumn();
+            columnSH.DataType = typeof(string);
+            columnSH.ColumnName = "Shiphr";
+            columnSH.Unique = true;
+			Columns.Add(columnSH);
 		}
 		/// <summary>
 		/// Метод удаления строки соответствующей переданной модели из таблицы CTrainingProfile.
@@ -53,8 +54,8 @@ namespace LibOfTimetableOfClasses
 			{
 				if (Rows[i].RowState == DataRowState.Deleted)
 					continue;
-				if ((string)Rows[i]["Fullname"] == mTrainingProfile.FullName
-				&& (string)Rows[i]["Shortname"] == mTrainingProfile.ShortName
+				if ((string)Rows[i]["FullName"] == mTrainingProfile.FullName
+				&& (string)Rows[i]["ShortName"] == mTrainingProfile.ShortName
 				&& (string)Rows[i]["Shiphr"] == mTrainingProfile.Shiphr)
 				{
 					Rows.Remove(Rows[i]);
@@ -74,22 +75,21 @@ namespace LibOfTimetableOfClasses
 			MTrainingProfile mTrainingProfile = (MTrainingProfile)model;
 			if (mTrainingProfile.FullName == null)
 				return false;
-
-			try
-			{
-				DataRow newRow = NewRow();
-				newRow["FullName"] = mTrainingProfile.FullName;
-				newRow["ShortName"] = mTrainingProfile.ShortName;
-				newRow["Shiphr"] = mTrainingProfile.Shiphr;
-				Rows.Add(newRow);
-				return true;
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.Source);
-				return false;
-			}
-		}
+            try
+            {
+                DataRow newRow = NewRow();
+                newRow["FullName"] = mTrainingProfile.FullName;
+                newRow["ShortName"] = mTrainingProfile.ShortName;
+                newRow["Shiphr"] = mTrainingProfile.Shiphr;
+                Rows.Add(newRow);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Source);
+                return false;
+            }
+        }
 		/// <summary>
 		/// Обновление свойств строки в таблице CTrainingProfile из переданной модели MTrainingProfile
 		/// Поиск изменяемой строки CTrainingProfile осуществляется по полю "FullName"
