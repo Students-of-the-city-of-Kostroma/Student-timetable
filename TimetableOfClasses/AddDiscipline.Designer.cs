@@ -57,6 +57,7 @@
             this.tbShortName.Name = "tbShortName";
             this.tbShortName.Size = new System.Drawing.Size(338, 20);
             this.tbShortName.TabIndex = 1;
+            this.tbShortName.TextChanged += new System.EventHandler(this.TbFullName_TextChanged);
             // 
             // btCancel
             // 

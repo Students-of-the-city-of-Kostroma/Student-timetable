@@ -95,7 +95,10 @@ namespace TimetableOfClasses
 
         private void TbFullName_TextChanged(object sender, EventArgs e)
         {
-
+            var R = sender as TextBox;
+            R.Text = Regex.Replace(R.Text, @"[^А-Яа-я ]", "");
+            if (R.Text.Length != 0)
+                R.Text = R.Text.First().ToString().ToUpper() + R.Text.Substring(1);
         }
     }
 }
