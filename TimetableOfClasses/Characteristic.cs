@@ -12,29 +12,6 @@ namespace TimetableOfClasses
 {
 	public partial class Characteristic : Form
 	{
-		public Characteristic()
-		{
-			InitializeComponent();
-		}
-
-        private void Changes_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DomainUpDown2_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
+		public Characteristic() => InitializeComponent();
+	}
 }
