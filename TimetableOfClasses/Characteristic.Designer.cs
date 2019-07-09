@@ -56,7 +56,6 @@
 			this.listBox = new System.Windows.Forms.ListBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
 			this.label7 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -66,12 +65,14 @@
 			this.Bells = new System.Windows.Forms.TabPage();
 			this.Cycles = new System.Windows.Forms.TabPage();
 			this.Etc = new System.Windows.Forms.TabPage();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
 			this.Numeration.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.Day.SuspendLayout();
 			this.Changes.SuspendLayout();
 			this.Date.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Ok
@@ -166,7 +167,7 @@
 			this.Day.Controls.Add(this.Numeration);
 			this.Day.Location = new System.Drawing.Point(4, 22);
 			this.Day.Name = "Day";
-			this.Day.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Day.Padding = new System.Windows.Forms.Padding(3);
 			this.Day.Size = new System.Drawing.Size(349, 363);
 			this.Day.TabIndex = 0;
 			this.Day.Text = "День";
@@ -341,16 +342,16 @@
 			// 
 			// Date
 			// 
+			this.Date.Controls.Add(this.numericUpDown1);
 			this.Date.Controls.Add(this.button1);
 			this.Date.Controls.Add(this.listBox);
 			this.Date.Controls.Add(this.label10);
 			this.Date.Controls.Add(this.checkBox2);
-			this.Date.Controls.Add(this.domainUpDown2);
 			this.Date.Controls.Add(this.label7);
 			this.Date.Controls.Add(this.groupBox1);
 			this.Date.Location = new System.Drawing.Point(4, 22);
 			this.Date.Name = "Date";
-			this.Date.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Date.Padding = new System.Windows.Forms.Padding(3);
 			this.Date.Size = new System.Drawing.Size(349, 363);
 			this.Date.TabIndex = 1;
 			this.Date.Text = "Даты";
@@ -360,7 +361,7 @@
 			// 
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
 			this.button1.Location = new System.Drawing.Point(320, 174);
-			this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.button1.Margin = new System.Windows.Forms.Padding(2);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(21, 19);
 			this.button1.TabIndex = 8;
@@ -374,7 +375,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.listBox.FormattingEnabled = true;
 			this.listBox.Location = new System.Drawing.Point(13, 195);
-			this.listBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.listBox.Margin = new System.Windows.Forms.Padding(2);
 			this.listBox.Name = "listBox";
 			this.listBox.ScrollAlwaysVisible = true;
 			this.listBox.Size = new System.Drawing.Size(330, 147);
@@ -394,23 +395,12 @@
 			// 
 			this.checkBox2.AutoSize = true;
 			this.checkBox2.Location = new System.Drawing.Point(5, 54);
-			this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(173, 17);
 			this.checkBox2.TabIndex = 3;
 			this.checkBox2.Text = "Учитывать нулевой семестр";
 			this.checkBox2.UseVisualStyleBackColor = true;
-			// 
-			// domainUpDown2
-			// 
-			this.domainUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.domainUpDown2.Location = new System.Drawing.Point(269, 28);
-			this.domainUpDown2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.domainUpDown2.Name = "domainUpDown2";
-			this.domainUpDown2.Size = new System.Drawing.Size(64, 22);
-			this.domainUpDown2.TabIndex = 2;
 			// 
 			// label7
 			// 
@@ -432,9 +422,9 @@
 			this.groupBox1.Controls.Add(this.label9);
 			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Location = new System.Drawing.Point(5, 86);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
 			this.groupBox1.Size = new System.Drawing.Size(340, 84);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
@@ -446,7 +436,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dateTimePicker2.Location = new System.Drawing.Point(178, 58);
-			this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(151, 22);
 			this.dateTimePicker2.TabIndex = 3;
@@ -457,7 +447,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dateTimePicker1.Location = new System.Drawing.Point(178, 24);
-			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
 			this.dateTimePicker1.TabIndex = 2;
@@ -486,7 +476,7 @@
 			// 
 			this.Bells.Location = new System.Drawing.Point(4, 22);
 			this.Bells.Name = "Bells";
-			this.Bells.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Bells.Padding = new System.Windows.Forms.Padding(3);
 			this.Bells.Size = new System.Drawing.Size(349, 363);
 			this.Bells.TabIndex = 2;
 			this.Bells.Text = "Звонки";
@@ -496,7 +486,7 @@
 			// 
 			this.Cycles.Location = new System.Drawing.Point(4, 22);
 			this.Cycles.Name = "Cycles";
-			this.Cycles.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Cycles.Padding = new System.Windows.Forms.Padding(3);
 			this.Cycles.Size = new System.Drawing.Size(349, 363);
 			this.Cycles.TabIndex = 3;
 			this.Cycles.Text = "Циклы";
@@ -506,11 +496,21 @@
 			// 
 			this.Etc.Location = new System.Drawing.Point(4, 22);
 			this.Etc.Name = "Etc";
-			this.Etc.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Etc.Padding = new System.Windows.Forms.Padding(3);
 			this.Etc.Size = new System.Drawing.Size(349, 363);
 			this.Etc.TabIndex = 4;
 			this.Etc.Text = "Прочее";
 			this.Etc.UseVisualStyleBackColor = true;
+			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.numericUpDown1.Location = new System.Drawing.Point(278, 28);
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(56, 22);
+			this.numericUpDown1.TabIndex = 9;
 			// 
 			// Characteristic
 			// 
@@ -534,6 +534,7 @@
 			this.Date.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -567,7 +568,6 @@
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.DomainUpDown domainUpDown2;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.CheckBox checkBox2;
@@ -577,5 +577,6 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ListBox listBox;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.NumericUpDown numericUpDown1;
 	}
 }
