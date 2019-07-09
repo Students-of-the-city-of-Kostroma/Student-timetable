@@ -122,6 +122,12 @@
     <Compile Include="AddProfile.Designer.cs">
       <DependentUpon>AddProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddStudyWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudyWeek.Designer.cs">
+      <DependentUpon>AddStudyWeek.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudyWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudyWeek.Designer.cs">
+      <DependentUpon>StudyWeek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teachers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +286,9 @@
     <EmbeddedResource Include="AddProfile.resx">
       <DependentUpon>AddProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddStudyWeek.resx">
+      <DependentUpon>AddStudyWeek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +303,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Characteristic.resx">
       <DependentUpon>Characteristic.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
@@ -328,6 +344,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudyWeek.resx">
+      <DependentUpon>StudyWeek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teachers.resx">
       <DependentUpon>Teachers.cs</DependentUpon>
     </EmbeddedResource>

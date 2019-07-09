@@ -60,8 +60,13 @@
     <Compile Include="CGroup.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CHEI.cs" />
+    <Compile Include="CHEI.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CInstitute.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CStudyWeek.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller.cs" />
@@ -94,6 +99,7 @@
     <Compile Include="MHEI.cs" />
     <Compile Include="MInstitute.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="MStudyWeek.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
     <Compile Include="MTypesOfOccupations.cs" />

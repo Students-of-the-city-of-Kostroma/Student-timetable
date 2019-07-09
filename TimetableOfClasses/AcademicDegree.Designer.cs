@@ -42,13 +42,13 @@
 			this.DG_AcademicDegree.AllowUserToAddRows = false;
 			this.DG_AcademicDegree.AllowUserToDeleteRows = false;
 			this.DG_AcademicDegree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.DG_AcademicDegree.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DG_AcademicDegree.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.DG_AcademicDegree.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FullName,
-            this.Reduction});
+			this.FullName,
+			this.Reduction});
 			this.DG_AcademicDegree.Location = new System.Drawing.Point(16, 15);
 			this.DG_AcademicDegree.Margin = new System.Windows.Forms.Padding(4);
 			this.DG_AcademicDegree.Name = "DG_AcademicDegree";
@@ -58,20 +58,6 @@
 			this.DG_AcademicDegree.TabIndex = 0;
 			this.DG_AcademicDegree.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
 			this.DG_AcademicDegree.DoubleClick += new System.EventHandler(this.DG_AcademicDegree_DoubleClick);
-			// 
-			// FullName
-			// 
-			this.FullName.DataPropertyName = "FullName";
-			this.FullName.HeaderText = "Полная запись ученой степени";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// Reduction
-			// 
-			this.Reduction.DataPropertyName = "Reduction";
-			this.Reduction.HeaderText = "Сокращенная запись учёной степени";
-			this.Reduction.Name = "Reduction";
-			this.Reduction.ReadOnly = true;
 			// 
 			// FullName
 			// 

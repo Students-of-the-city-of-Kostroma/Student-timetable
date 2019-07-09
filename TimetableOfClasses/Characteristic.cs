@@ -13,10 +13,5 @@ namespace TimetableOfClasses
 	public partial class Characteristic : Form
 	{
 		public Characteristic() => InitializeComponent();
-
-		private void DomainUpDown2_SelectedItemChanged(object sender, EventArgs e)
-		{
-		
-		}
 	}
 }
