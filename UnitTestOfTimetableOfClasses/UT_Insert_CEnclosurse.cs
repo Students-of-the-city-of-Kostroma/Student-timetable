@@ -7,12 +7,14 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CEnclosurse
 	{
+		private MEnclosures gr = new MEnclosures("А", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1");
+
 		[TestMethod]
 		public void Task_397_1() //Ввод в пустую таблицу
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures ("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1" );
+			//MEnclosures gr = new MEnclosures ("А", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1" );
 			bool expected = true;
 			//act
 			bool actual = RefData.СEnclosures.Insert(gr);
@@ -25,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.СEnclosures.Insert(gr);
 			//act
@@ -40,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.СEnclosures.Insert(gr);
 			//act
@@ -55,11 +57,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.СEnclosures.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("Б", "Костромской Государственный Технологический Университет", "Ивановская", "111121", "1");
+			MEnclosures gr1 = new MEnclosures("Б", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Ивановская", "111121", "1");
 			bool actual = RefData.СEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -70,11 +72,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.СEnclosures.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинск", "222222", "2");
+			MEnclosures gr1 = new MEnclosures("А",RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинск", "222222", "2");
 			bool actual = RefData.СEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -85,11 +87,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.СEnclosures.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("Б", "Костромской Государственный Технологический Университет", "Дзержинск", "222222", "2");
+			MEnclosures gr1 = new MEnclosures("Б", RefData.CUniversity.Rows[1].ItemArray[2].ToString(), "Дзержинск", "222222", "2");
 			bool actual = RefData.СEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -98,13 +100,14 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_397_7() //Дублирование Корпуса
 		{
+			
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.СEnclosures.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("А", "Костромской Государственный Технологический Университет", "Дзержинск", "222222", "2");
+			MEnclosures gr1 = new MEnclosures("B", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1");
 			bool actual = RefData.СEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
@@ -115,11 +118,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			RefData.СEnclosures.Rows.Clear();
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			//MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.СEnclosures.Insert(gr);
 			//act
-			MEnclosures gr1 = new MEnclosures("Б", "Костромской Государственный Университет", "Дзержинск", "222222", "2");
+			MEnclosures gr1 = new MEnclosures("Б", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинск", "222222", "2");
 			bool actual = RefData.СEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
