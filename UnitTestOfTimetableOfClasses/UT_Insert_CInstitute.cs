@@ -9,12 +9,18 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CInstitute
 	{
+		private MEnclosures GetMEnclosures()
+		{
+			return new MEnclosures("А", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1");
+		}
+
 		[TestMethod]
 		public void Task_616_1() //Добавление в пустую таблицу	
 		{
 			//arrange 	
 			RefData.CInstitute.Clear();
-			MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+			MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", RefData.CTeacher.Rows[0].ItemArray[0].ToString(),
+				RefData.CUniversity.Rows[0].ItemArray[2].ToString());
 			bool expected = true;
 			//act	
 			bool actual = RefData.CInstitute.Insert(inst);
@@ -27,7 +33,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
             bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт неавтоматиз", "ИАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт неавтоматиз", "ИАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
+				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
             int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
@@ -38,9 +45,10 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_616_3() // полное название дублируется
 		{
-            bool ex = false;
+			bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
+				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
             int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
@@ -51,9 +59,10 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_616_4() // директор дублируется
         {
-            bool ex = false;
+			bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "Тюменский Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", RefData.CTeacher.Rows[0].ItemArray[0].ToString(),
+				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
             int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
@@ -66,7 +75,8 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			bool ex = false;
 			bool act;
-			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
+			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
+				RefData.CUniversity.Rows[0].ItemArray[2].ToString());
 			int C1 = RefData.CInstitute.Rows.Count;
 			act = RefData.CInstitute.Delete(T_Institute);
 			int C2 = RefData.CInstitute.Rows.Count;
