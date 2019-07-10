@@ -16,6 +16,7 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_1() //Ввод в пустую таблицу
 		{
 			//arrange
+
 			RefData.СEnclosures.Rows.Clear();
 			//MEnclosures gr = new MEnclosures ("А", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1" );
 			bool expected = true;
@@ -35,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.СEnclosures.Insert(GetMEnclosures());
 			//act
 			MEnclosures gr1 = new MEnclosures("Б", "Костромской Государственный Технологический Университет", "Дзержинского", "111121", "2");
-			bool actual = RefData.СEnclosures.Insert(gr1);
+			bool actual = RefData.CEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}
@@ -50,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
 			RefData.СEnclosures.Insert(GetMEnclosures());
 			//act
 			MEnclosures gr1 = new MEnclosures("Б", "Костромской Государственный Технологический Университет", "Ивановская", "111111", "2");
-			bool actual = RefData.СEnclosures.Insert(gr1);
+			bool actual = RefData.CEnclosures.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
 		}

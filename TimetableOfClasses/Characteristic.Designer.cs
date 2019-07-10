@@ -6,7 +6,6 @@
 		/// Required designer variable.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -19,15 +18,14 @@
 			}
 			base.Dispose(disposing);
 		}
-
 		#region Windows Form Designer generated code
-
 		/// <summary>
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Characteristic));
 			this.Ok = new System.Windows.Forms.Button();
 			this.Cancel = new System.Windows.Forms.Button();
 			this.Help = new System.Windows.Forms.Button();
@@ -36,6 +34,9 @@
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.Day = new System.Windows.Forms.TabPage();
+			this.label6 = new System.Windows.Forms.Label();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.SecondPair = new System.Windows.Forms.CheckBox();
 			this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
 			this.label5 = new System.Windows.Forms.Label();
 			this.Changes = new System.Windows.Forms.GroupBox();
@@ -48,22 +49,39 @@
 			this.First = new System.Windows.Forms.DomainUpDown();
 			this.Most = new System.Windows.Forms.DomainUpDown();
 			this.Date = new System.Windows.Forms.TabPage();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.button1 = new System.Windows.Forms.Button();
+			this.listBox = new System.Windows.Forms.ListBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.Bells = new System.Windows.Forms.TabPage();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.Cycles = new System.Windows.Forms.TabPage();
 			this.Etc = new System.Windows.Forms.TabPage();
-			this.SecondPair = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.label6 = new System.Windows.Forms.Label();
 			this.Numeration.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.Day.SuspendLayout();
 			this.Changes.SuspendLayout();
+			this.Date.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			this.groupBox1.SuspendLayout();
+			this.Bells.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Ok
 			// 
 			this.Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Ok.Location = new System.Drawing.Point(132, 418);
+			this.Ok.Location = new System.Drawing.Point(137, 415);
 			this.Ok.Name = "Ok";
 			this.Ok.Size = new System.Drawing.Size(75, 23);
 			this.Ok.TabIndex = 0;
@@ -73,7 +91,7 @@
 			// Cancel
 			// 
 			this.Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Cancel.Location = new System.Drawing.Point(213, 418);
+			this.Cancel.Location = new System.Drawing.Point(218, 415);
 			this.Cancel.Name = "Cancel";
 			this.Cancel.Size = new System.Drawing.Size(75, 23);
 			this.Cancel.TabIndex = 1;
@@ -83,7 +101,7 @@
 			// Help
 			// 
 			this.Help.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.Help.Location = new System.Drawing.Point(294, 418);
+			this.Help.Location = new System.Drawing.Point(299, 415);
 			this.Help.Name = "Help";
 			this.Help.Size = new System.Drawing.Size(75, 23);
 			this.Help.TabIndex = 2;
@@ -120,7 +138,7 @@
 			this.radioButton1.AutoSize = true;
 			this.radioButton1.Location = new System.Drawing.Point(7, 20);
 			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(65, 17);
+			this.radioButton1.Size = new System.Drawing.Size(67, 17);
 			this.radioButton1.TabIndex = 0;
 			this.radioButton1.TabStop = true;
 			this.radioButton1.Text = "С 0 по 7";
@@ -138,7 +156,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(12, 13);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(357, 389);
+			this.tabControl1.Size = new System.Drawing.Size(362, 389);
 			this.tabControl1.TabIndex = 4;
 			// 
 			// Day
@@ -152,11 +170,54 @@
 			this.Day.Controls.Add(this.Numeration);
 			this.Day.Location = new System.Drawing.Point(4, 22);
 			this.Day.Name = "Day";
-			this.Day.Padding = new System.Windows.Forms.Padding(3);
+			this.Day.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
 			this.Day.Size = new System.Drawing.Size(349, 363);
 			this.Day.TabIndex = 0;
 			this.Day.Text = "День";
 			this.Day.UseVisualStyleBackColor = true;
+			// 
+			// label6
+			// 
+			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label6.AutoSize = true;
+			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.label6.Location = new System.Drawing.Point(13, 125);
+			this.label6.MaximumSize = new System.Drawing.Size(325, 30);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(324, 28);
+			this.label6.TabIndex = 9;
+			this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
+    "и препдавателей:";
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox1.Location = new System.Drawing.Point(13, 95);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(317, 17);
+			this.checkBox1.TabIndex = 8;
+			this.checkBox1.Text = "Перемены достаточно для перехода из корпуса в корпус";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// SecondPair
+			// 
+			this.SecondPair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.SecondPair.AutoSize = true;
+			this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SecondPair.Location = new System.Drawing.Point(13, 72);
+			this.SecondPair.Name = "SecondPair";
+			this.SecondPair.Size = new System.Drawing.Size(232, 17);
+			this.SecondPair.TabIndex = 7;
+			this.SecondPair.Text = "Группа может приходить ко второй паре";
+			this.SecondPair.UseVisualStyleBackColor = true;
 			// 
 			// domainUpDown1
 			// 
@@ -165,7 +226,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.domainUpDown1.Location = new System.Drawing.Point(278, 303);
 			this.domainUpDown1.Name = "domainUpDown1";
-			this.domainUpDown1.Size = new System.Drawing.Size(65, 20);
+			this.domainUpDown1.Size = new System.Drawing.Size(65, 22);
 			this.domainUpDown1.TabIndex = 6;
 			// 
 			// label5
@@ -252,7 +313,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Third.Location = new System.Drawing.Point(256, 97);
 			this.Third.Name = "Third";
-			this.Third.Size = new System.Drawing.Size(65, 20);
+			this.Third.Size = new System.Drawing.Size(65, 22);
 			this.Third.TabIndex = 8;
 			// 
 			// Second
@@ -261,7 +322,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Second.Location = new System.Drawing.Point(256, 71);
 			this.Second.Name = "Second";
-			this.Second.Size = new System.Drawing.Size(65, 20);
+			this.Second.Size = new System.Drawing.Size(65, 22);
 			this.Second.TabIndex = 7;
 			// 
 			// First
@@ -270,7 +331,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.First.Location = new System.Drawing.Point(256, 45);
 			this.First.Name = "First";
-			this.First.Size = new System.Drawing.Size(65, 20);
+			this.First.Size = new System.Drawing.Size(65, 22);
 			this.First.TabIndex = 6;
 			// 
 			// Most
@@ -279,35 +340,219 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Most.Location = new System.Drawing.Point(256, 19);
 			this.Most.Name = "Most";
-			this.Most.Size = new System.Drawing.Size(65, 20);
+			this.Most.Size = new System.Drawing.Size(65, 22);
 			this.Most.TabIndex = 5;
 			// 
 			// Date
 			// 
+			this.Date.Controls.Add(this.numericUpDown1);
+			this.Date.Controls.Add(this.button1);
+			this.Date.Controls.Add(this.listBox);
+			this.Date.Controls.Add(this.label10);
+			this.Date.Controls.Add(this.checkBox2);
+			this.Date.Controls.Add(this.label7);
+			this.Date.Controls.Add(this.groupBox1);
 			this.Date.Location = new System.Drawing.Point(4, 22);
 			this.Date.Name = "Date";
-			this.Date.Padding = new System.Windows.Forms.Padding(3);
-			this.Date.Size = new System.Drawing.Size(371, 489);
+			this.Date.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Date.Size = new System.Drawing.Size(354, 363);
 			this.Date.TabIndex = 1;
 			this.Date.Text = "Даты";
 			this.Date.UseVisualStyleBackColor = true;
 			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.numericUpDown1.Location = new System.Drawing.Point(265, 22);
+			this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(60, 22);
+			this.numericUpDown1.TabIndex = 9;
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(304, 142);
+			this.button1.Margin = new System.Windows.Forms.Padding(2);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(26, 25);
+			this.button1.TabIndex = 8;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// listBox
+			// 
+			this.listBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.listBox.FormattingEnabled = true;
+			this.listBox.Location = new System.Drawing.Point(10, 171);
+			this.listBox.Margin = new System.Windows.Forms.Padding(2);
+			this.listBox.Name = "listBox";
+			this.listBox.ScrollAlwaysVisible = true;
+			this.listBox.Size = new System.Drawing.Size(325, 173);
+			this.listBox.TabIndex = 7;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(10, 156);
+			this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(153, 13);
+			this.label10.TabIndex = 4;
+			this.label10.Text = "Список праздничных дней:";
+			// 
+			// checkBox2
+			// 
+			this.checkBox2.AutoSize = true;
+			this.checkBox2.Location = new System.Drawing.Point(4, 44);
+			this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.Size = new System.Drawing.Size(173, 17);
+			this.checkBox2.TabIndex = 3;
+			this.checkBox2.Text = "Учитывать нулевой семестр";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(55, 24);
+			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(181, 13);
+			this.label7.TabIndex = 1;
+			this.label7.Text = "Максимальный номер семестра:";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.dateTimePicker2);
+			this.groupBox1.Controls.Add(this.label9);
+			this.groupBox1.Controls.Add(this.label8);
+			this.groupBox1.Controls.Add(this.dateTimePicker1);
+			this.groupBox1.Location = new System.Drawing.Point(4, 65);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+			this.groupBox1.Size = new System.Drawing.Size(345, 73);
+			this.groupBox1.TabIndex = 0;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Учебный период";
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dateTimePicker2.Location = new System.Drawing.Point(193, 40);
+			this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(138, 22);
+			this.dateTimePicker2.TabIndex = 3;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dateTimePicker1.Location = new System.Drawing.Point(193, 14);
+			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(138, 22);
+			this.dateTimePicker1.TabIndex = 2;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(6, 40);
+			this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(97, 13);
+			this.label9.TabIndex = 1;
+			this.label9.Text = "Дата окончания:";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(6, 17);
+			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(75, 13);
+			this.label8.TabIndex = 0;
+			this.label8.Text = "Дата начала:";
+			// 
 			// Bells
 			// 
+			this.Bells.Controls.Add(this.dataGridView1);
+			this.Bells.Controls.Add(this.textBox1);
 			this.Bells.Location = new System.Drawing.Point(4, 22);
 			this.Bells.Name = "Bells";
-			this.Bells.Padding = new System.Windows.Forms.Padding(3);
-			this.Bells.Size = new System.Drawing.Size(371, 489);
+			this.Bells.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Bells.Size = new System.Drawing.Size(349, 363);
 			this.Bells.TabIndex = 2;
 			this.Bells.Text = "Звонки";
 			this.Bells.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+			this.dataGridView1.EnableHeadersVisualStyles = false;
+			this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.RowHeadersVisible = false;
+			this.dataGridView1.RowHeadersWidth = 51;
+			this.dataGridView1.RowTemplate.Height = 24;
+			this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.dataGridView1.Size = new System.Drawing.Size(144, 184);
+			this.dataGridView1.TabIndex = 2;
+			// 
+			// Column1
+			// 
+			this.Column1.Frozen = true;
+			this.Column1.HeaderText = "№";
+			this.Column1.MinimumWidth = 8;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.Width = 30;
+			// 
+			// Column2
+			// 
+			this.Column2.Frozen = true;
+			this.Column2.HeaderText = "Время занятий";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.Width = 125;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(3, 6);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(152, 354);
+			this.textBox1.TabIndex = 1;
+			this.textBox1.Text = resources.GetString("textBox1.Text");
 			// 
 			// Cycles
 			// 
 			this.Cycles.Location = new System.Drawing.Point(4, 22);
 			this.Cycles.Name = "Cycles";
-			this.Cycles.Padding = new System.Windows.Forms.Padding(3);
-			this.Cycles.Size = new System.Drawing.Size(371, 489);
+			this.Cycles.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Cycles.Size = new System.Drawing.Size(349, 363);
 			this.Cycles.TabIndex = 3;
 			this.Cycles.Text = "Циклы";
 			this.Cycles.UseVisualStyleBackColor = true;
@@ -316,60 +561,17 @@
 			// 
 			this.Etc.Location = new System.Drawing.Point(4, 22);
 			this.Etc.Name = "Etc";
-			this.Etc.Padding = new System.Windows.Forms.Padding(3);
-			this.Etc.Size = new System.Drawing.Size(371, 489);
+			this.Etc.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Etc.Size = new System.Drawing.Size(349, 363);
 			this.Etc.TabIndex = 4;
 			this.Etc.Text = "Прочее";
 			this.Etc.UseVisualStyleBackColor = true;
-			// 
-			// SecondPair
-			// 
-			this.SecondPair.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.SecondPair.AutoSize = true;
-			this.SecondPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SecondPair.Location = new System.Drawing.Point(13, 72);
-			this.SecondPair.Name = "SecondPair";
-			this.SecondPair.Size = new System.Drawing.Size(232, 17);
-			this.SecondPair.TabIndex = 7;
-			this.SecondPair.Text = "Группа может приходить ко второй паре";
-			this.SecondPair.UseVisualStyleBackColor = true;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.checkBox1.Location = new System.Drawing.Point(13, 95);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(317, 17);
-			this.checkBox1.TabIndex = 8;
-			this.checkBox1.Text = "Перемены достаточно для перехода из корпуса в корпус";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// label6
-			// 
-			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label6.AutoSize = true;
-			this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label6.Location = new System.Drawing.Point(13, 125);
-			this.label6.MaximumSize = new System.Drawing.Size(325, 30);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(309, 28);
-			this.label6.TabIndex = 9;
-			this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
-    "и преподавателей:";
 			// 
 			// Characteristic
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(381, 453);
+			this.ClientSize = new System.Drawing.Size(386, 450);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.Help);
 			this.Controls.Add(this.Cancel);
@@ -383,12 +585,18 @@
 			this.Day.PerformLayout();
 			this.Changes.ResumeLayout(false);
 			this.Changes.PerformLayout();
+			this.Date.ResumeLayout(false);
+			this.Date.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.Bells.ResumeLayout(false);
+			this.Bells.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
-
 		#endregion
-
 		private System.Windows.Forms.Button Ok;
 		private System.Windows.Forms.Button Cancel;
 		private System.Windows.Forms.Button Help;
@@ -415,5 +623,20 @@
 		private System.Windows.Forms.CheckBox SecondPair;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.ListBox listBox;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 	}
 }
