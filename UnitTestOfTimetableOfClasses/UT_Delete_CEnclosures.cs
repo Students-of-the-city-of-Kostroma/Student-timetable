@@ -18,12 +18,12 @@ namespace UnitTestOfTimetableOfClasses
 			bool actualUni = RefData.CUniversity.Insert(grUni);
 			Assert.AreEqual(true, actualUni);
 			// arrange 
-			RefData.СEnclosures.Rows.Clear();
+			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", grUni.FullName, "Дзержинского", "111111", "1");
 			bool expected = true;
 			//act 
-			RefData.СEnclosures.Insert(gr);
-			bool actual = RefData.СEnclosures.Delete(gr);
+			RefData.CEnclosures.Insert(gr);
+			bool actual = RefData.CEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
@@ -35,11 +35,11 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_395_2() 
 		{
 			//arrange 
-			RefData.СEnclosures.Rows.Clear();
+			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			//act 
-			bool actual = RefData.СEnclosures.Delete(gr);
+			bool actual = RefData.CEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}

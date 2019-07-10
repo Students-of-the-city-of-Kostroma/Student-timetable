@@ -11,16 +11,16 @@ namespace LibOfTimetableOfClasses
 	/// <summary>
 	/// Таблица со строками, хранящими данные о разных корпусах Университета.
 	/// </summary>
-	public class СEnclosures : DataTable, IController
+	public class CEnclosures : DataTable, IController
 	{
 		/// <summary>
 		/// Конструктор таблицы
 		/// Формируются поля таблицы типа DataTable и их свойства.
 		/// Уникальность строки в таблице определяется уникальностью полей Name и University
 		/// </summary>
-		public СEnclosures() : base("Корпус")
+		public CEnclosures() : base("Корпус")
 		{
-			if (RefData.СEnclosures != null) throw new Exception("Контроллер уже существует");
+			if (RefData.CEnclosures != null) throw new Exception("Контроллер уже существует");
 
 			DataColumn[] keys = new DataColumn[2];
 			DataColumn column = new DataColumn

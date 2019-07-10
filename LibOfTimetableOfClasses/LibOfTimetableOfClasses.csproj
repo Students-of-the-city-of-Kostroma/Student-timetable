@@ -60,7 +60,9 @@
     <Compile Include="CGroup.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CHEI.cs" />
+    <Compile Include="CHEI.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CInstitute.cs">
       <SubType>Component</SubType>
     </Compile>

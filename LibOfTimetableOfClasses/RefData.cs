@@ -20,7 +20,7 @@ namespace LibOfTimetableOfClasses
 		public static CTitle CTitle = new CTitle();
 		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
-		public static СEnclosures СEnclosures = new СEnclosures();
+		public static CEnclosures CEnclosures = new CEnclosures();
 		public static CUniversity CUniversity = new CUniversity();
 		public static CStudyWeek CStudyWeek = new CStudyWeek();
 		public static CInstitute CInstitute = new CInstitute();
@@ -36,7 +36,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Tables.Add(CAuditor);
-			DataSet.Tables.Add(СEnclosures);
+			DataSet.Tables.Add(CEnclosures);
 			DataSet.Tables.Add(CUniversity);
 			DataSet.Tables.Add(CInstitute);
 			DataSet.Tables.Add(CTeacher);
@@ -52,12 +52,11 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
-			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], СEnclosures.Columns["University"]);
-
-			init();
+			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
+			Init();
 		}
 
-		public static void init()
+		private static void Init()
 		{
 			try
 			{
@@ -118,6 +117,7 @@ namespace LibOfTimetableOfClasses
 			{
 				System.Diagnostics.Debug.WriteLine(e.Message);
 			}
+			
 		}
 	}
 }
