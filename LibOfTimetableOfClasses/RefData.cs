@@ -53,10 +53,10 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
-			init();
+			Init();
 		}
 
-		public static void init()
+		public static void Init()
 		{
 			try
 			{
