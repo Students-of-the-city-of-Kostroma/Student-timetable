@@ -22,6 +22,7 @@ namespace UnitTestOfTimetableOfClasses
 			//act 
 			RefData.CGroup.Insert(gr);
 			bool actual = RefData.CGroup.Delete(gr);
+			actual = RefData.CGroup.Insert(gr);
 			//assert 
 			RefData.CDirectionOfPreparation.Insert(dp);
 			RefData.CTrainingProfile.Insert(tp);
