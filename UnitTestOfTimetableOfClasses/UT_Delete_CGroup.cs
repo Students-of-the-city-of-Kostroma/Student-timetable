@@ -20,13 +20,13 @@ namespace UnitTestOfTimetableOfClasses
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			bool expected = true;
 			//act 
-			RefData.CGroup.Insert(gr);
-			bool actual = RefData.CGroup.Delete(gr);
+			bool actual = RefData.CDirectionOfPreparation.Insert(dp);
+			Assert.AreEqual(expected, actual);
+			actual = RefData.CTrainingProfile.Insert(tp);
+			Assert.AreEqual(expected, actual);
 			actual = RefData.CGroup.Insert(gr);
-			//assert 
-			RefData.CDirectionOfPreparation.Insert(dp);
-			RefData.CTrainingProfile.Insert(tp);
-			actual = RefData.CGroup.Insert(gr);
+			Assert.AreEqual(expected, actual);
+			actual = RefData.CGroup.Delete(gr);
 			Assert.AreEqual(expected, actual);
 		}
 		/// <summary>
