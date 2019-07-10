@@ -8,8 +8,11 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CUniversity
 	{
+		/// <summary>
+		/// Ввод корректных данных в пустую таблицу
+		/// </summary>
 		[TestMethod]
-		public void Task_496_1() // Ввод в пустую таблицу
+		public void Task_496_1()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -20,8 +23,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Краткое название добавляемой группы дублирует Краткое название уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_2() //Дублирование краткого названия
+		public void Task_496_2()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -34,8 +41,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Полное название добавляемой группы дублирует Полное название уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_3() //Дублирование полного названия
+		public void Task_496_3()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -48,8 +59,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Фактический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_4() //Дублирование фактич. адреса
+		public void Task_496_4()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -62,8 +77,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Юридический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_5() //Дублирование юр. адреса
+		public void Task_496_5()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -76,8 +95,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что ФИО ректора добавляемой группы дублирует ФИО ректора уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_6() //Дублирование ФИО
+		public void Task_496_6()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -90,8 +113,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Почта добавляемой группы дублирует Почта уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_7() //Дублирование Почты
+		public void Task_496_7()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -104,8 +131,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Телефон добавляемой группы дублирует Телефон уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_8() //Дублирование Телефона
+		public void Task_496_8()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -118,8 +149,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что ИНН добавляемой группы дублирует ИНН уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_496_9() //дублирование ИНН
+		public void Task_496_9()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();
@@ -132,8 +167,12 @@ namespace UnitTestOfTimetableOfClasses
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
+
+		/// <summary>
+		/// Ввод данных аналогичных уже существующим
+		/// </summary>
 		[TestMethod]
-		public void Task_496_10() //дублирование всех атрибутов
+		public void Task_496_10()
 		{
 			// arrange
 			RefData.CUniversity.Rows.Clear();

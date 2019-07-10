@@ -20,7 +20,7 @@ namespace LibOfTimetableOfClasses
 		public static CTitle CTitle = new CTitle();
 		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
 		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
-		public static СEnclosures СEnclosures = new СEnclosures();
+		public static CEnclosures CEnclosures = new CEnclosures();
 		public static CUniversity CUniversity = new CUniversity();
 		public static CStudyWeek CStudyWeek = new CStudyWeek();
 		public static CInstitute CInstitute = new CInstitute();
@@ -36,7 +36,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Tables.Add(CAuditor);
-			DataSet.Tables.Add(СEnclosures);
+			DataSet.Tables.Add(CEnclosures);
 			DataSet.Tables.Add(CUniversity);
 			DataSet.Tables.Add(CInstitute);
 			DataSet.Tables.Add(CTeacher);
@@ -46,7 +46,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CStudyWeek);
 
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
-			DataSet.Relations.Add("Enclosures-Auditor", СEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
+			DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 			DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
 			DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
