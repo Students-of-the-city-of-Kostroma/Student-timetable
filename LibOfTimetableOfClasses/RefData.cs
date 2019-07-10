@@ -56,7 +56,7 @@ namespace LibOfTimetableOfClasses
 			Init();
 		}
 
-		public static void Init()
+		private static void Init()
 		{
 			try
 			{
