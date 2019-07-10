@@ -53,6 +53,73 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
+			Init();
+		}
+
+		private static void Init()
+		{
+			try
+			{
+				//true
+				MAcademicDegree mAademicDegree = new MAcademicDegree("Магистр", "Маг.");
+				CAcademicDegree.Insert(mAademicDegree);
+				//true
+				MUniversity mUniversity = new MUniversity("4401006286", "КГУ",
+					"Костромкой Государственный Университет",
+					"156005, Костромская область, г. Кострома, ул. Дзержинского, 17",
+					"156005, Костромская область, г. Кострома, ул. Дзержинского, 17",
+					"Александр", "Наумов", "Рудольфович", "kgu@mail.ru",
+					"84942317960");
+				CUniversity.Insert(mUniversity);
+
+				MUniversity mUniversity2 = new MUniversity("4414001246", "ГСХА",
+					"Костромская Сельско Хозяйственная Академия",
+					"156530, Костромская область, Костромской район, поселок Караваево, улица Учебный городок, 34",
+					"156530, Костромская область, Костромской район, поселок Караваево, улица Учебный городок, 34",
+					"Сергей", "Зудин", "Юрьевич", "van@ksaa.edu.ru",
+					"84942657110");
+				CUniversity.Insert(mUniversity2);
+				//true
+				MTitle mTitle = new MTitle("Профессор", "Проф.");
+				CTitle.Insert(mTitle);
+				//true
+				MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("12а12а12",
+					"Напр", 1);
+				CDirectionOfPreparation.Insert(mDirectionOfPreparation);
+				//true
+				MTrainingProfile mTrainingProfile = new MTrainingProfile("Профиль", "ПРОФ", mDirectionOfPreparation.CodeOfDP);
+				CTrainingProfile.Insert(mTrainingProfile);
+				//true
+				MGroup mGroup = new MGroup("17-ИСбо-2а", 1, mTrainingProfile.ShortName, 1, 1, 0, 0, "Воскресенье");
+				CGroup.Insert(mGroup);
+				//true
+				MAuditor mAucitor = new MAuditor("502", "каф. Иностранных языков", 20, "5");
+				CAuditor.Insert(mAucitor);
+				//true
+				MTeacher mTeacher = new MTeacher("Садовская", "Ольга", "Борисовна", mAademicDegree.Reduction,
+					mTitle.Reduction, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+				CTeacher.Insert(mTeacher);
+				MTeacher mTeacher2 = new MTeacher("Лустгартен", "Юрий", "Леонидович", mAademicDegree.Reduction,
+					mTitle.Reduction, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+				CTeacher.Insert(mTeacher2);
+				//true
+				MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Л");
+				CTypesOfOccupations.Insert(mTypesOfOccupations);
+
+
+				MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ",
+					 mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic,
+					 mUniversity.FullName);
+				CInstitute.Insert(mInstitute);
+
+				MEnclosures mEnclosures = new MEnclosures("А", mUniversity.FullName,
+					"Дзержинского", "111111", "1");
+				CEnclosures.Insert(mEnclosures);
+			}
+			catch (Exception e)
+			{
+				System.Diagnostics.Debug.WriteLine(e.Message);
+			}
 		}
 	}
 }
