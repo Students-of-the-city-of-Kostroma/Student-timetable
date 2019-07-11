@@ -18,7 +18,6 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CTeacher.Delete(tcher);
 			//assert 
 			Assert.AreEqual(expected, actual);
-
 		}
 
 		[TestMethod]
