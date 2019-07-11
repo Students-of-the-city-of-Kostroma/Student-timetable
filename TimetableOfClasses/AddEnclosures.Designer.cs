@@ -89,6 +89,7 @@
 			this.phoneNumber.Location = new System.Drawing.Point(12, 227);
 			this.phoneNumber.MaxLength = 11;
 			this.phoneNumber.Name = "phoneNumber";
+			this.phoneNumber.ShortcutsEnabled = false;
 			this.phoneNumber.Size = new System.Drawing.Size(188, 20);
 			this.phoneNumber.TabIndex = 3;
 			this.phoneNumber.TextChanged += new System.EventHandler(this.name_TextChanged);
