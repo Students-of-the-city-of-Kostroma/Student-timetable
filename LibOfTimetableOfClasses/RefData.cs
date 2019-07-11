@@ -59,8 +59,6 @@ namespace LibOfTimetableOfClasses
 
 		private static void Init()
 		{
-			try
-			{
 				//true
 				MAcademicDegree mAademicDegree = new MAcademicDegree("Магистр", "Маг.");
 				CAcademicDegree.Insert(mAademicDegree);
@@ -116,11 +114,6 @@ namespace LibOfTimetableOfClasses
 				MEnclosures mEnclosures = new MEnclosures("А", mUniversity.FullName,
 					"Дзержинского", "111111", "1");
 				CEnclosures.Insert(mEnclosures);
-			}
-			catch (Exception e)
-			{
-				System.Diagnostics.Debug.WriteLine(e.Message);
-			}
 		}
 	}
 }
