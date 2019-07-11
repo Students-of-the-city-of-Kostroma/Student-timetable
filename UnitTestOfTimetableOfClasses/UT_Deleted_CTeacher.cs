@@ -12,13 +12,9 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange 
 			RefData.CTeacher.Rows.Clear();
-			MTitle tit = new MTitle("Профессор1", "Профессор");
-			MAcademicDegree ad = new MAcademicDegree("Кандидат наук1", "Кандидат наук");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act 
-			RefData.CTitle.Insert(tit);
-			RefData.CAcademicDegree.Insert(ad);
 			RefData.CTeacher.Insert(tcher);
 			bool actual = RefData.CTeacher.Delete(tcher);
 			//assert 
