@@ -89,6 +89,7 @@
 			this.phoneNumber.Location = new System.Drawing.Point(12, 227);
 			this.phoneNumber.MaxLength = 11;
 			this.phoneNumber.Name = "phoneNumber";
+			this.phoneNumber.ShortcutsEnabled = false;
 			this.phoneNumber.Size = new System.Drawing.Size(188, 20);
 			this.phoneNumber.TabIndex = 3;
 			this.phoneNumber.TextChanged += new System.EventHandler(this.name_TextChanged);
@@ -189,7 +190,7 @@
 			this.Controls.Add(this.university);
 			this.Controls.Add(this.name);
 			this.Name = "AddEnclosures";
-			this.Text = "Добавить Корпус";
+			this.Text = "Добавить корпус";
 			this.Shown += new System.EventHandler(this.AddEnclosures_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
