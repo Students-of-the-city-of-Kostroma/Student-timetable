@@ -112,7 +112,7 @@
             this.Controls.Add(this.btCreateAndClean);
             this.Controls.Add(this.btCancel);
             this.Name = "AddTypesOfOccupations";
-            this.Text = "AddTypesOfOccupations";
+            this.Text = "Добавить вид занятия";
             this.ResumeLayout(false);
             this.PerformLayout();
 
