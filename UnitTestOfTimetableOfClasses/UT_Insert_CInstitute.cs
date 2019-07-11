@@ -9,11 +9,6 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CInstitute
 	{
-		private MEnclosures GetMEnclosures()
-		{
-			return new MEnclosures("А", RefData.CUniversity.Rows[0].ItemArray[2].ToString(), "Дзержинского", "111111", "1");
-		}
-
 		[TestMethod]
 		public void Task_616_1() //Добавление в пустую таблицу	
 		{
@@ -35,11 +30,8 @@ namespace UnitTestOfTimetableOfClasses
             bool act;
             MInstitute T_Institute = new MInstitute("Институт неавтоматиз", "ИАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
 				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
-            int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
-            int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
-            Assert.AreEqual(C1, C2);
         }
 
         [TestMethod]
@@ -47,13 +39,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
+            MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ",
+				RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
 				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
-            int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
-            int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
-            Assert.AreEqual(C1, C2);
         }
 
         [TestMethod]
@@ -61,13 +51,11 @@ namespace UnitTestOfTimetableOfClasses
         {
 			bool ex = false;
             bool act;
-            MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", RefData.CTeacher.Rows[0].ItemArray[0].ToString(),
+            MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ",
+				RefData.CTeacher.Rows[0].ItemArray[0].ToString(),
 				RefData.CUniversity.Rows[1].ItemArray[2].ToString());
-            int C1 = RefData.CInstitute.Rows.Count;
             act = RefData.CInstitute.Delete(T_Institute);
-            int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
-            Assert.AreEqual(C1, C2);
         }
 
 		[TestMethod]
@@ -75,13 +63,11 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			bool ex = false;
 			bool act;
-			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
+			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", 
+				RefData.CTeacher.Rows[1].ItemArray[0].ToString(),
 				RefData.CUniversity.Rows[0].ItemArray[2].ToString());
-			int C1 = RefData.CInstitute.Rows.Count;
 			act = RefData.CInstitute.Delete(T_Institute);
-			int C2 = RefData.CInstitute.Rows.Count;
 			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1, C2);
 		}
 	}
 

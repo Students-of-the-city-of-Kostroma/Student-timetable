@@ -38,9 +38,9 @@
 			this.Delete1 = new System.Windows.Forms.Button();
 			this.Update1 = new System.Windows.Forms.Button();
 			this.Create1 = new System.Windows.Forms.Button();
-			this.сEnclosuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.cEnclosuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.сEnclosuresBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cEnclosuresBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// DG
@@ -151,7 +151,7 @@
 			this.Name = "Enclosures";
 			this.Text = "Корпуса";
 			((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.сEnclosuresBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cEnclosuresBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -167,6 +167,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn CAddress;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CPhone;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CComment;
-		private System.Windows.Forms.BindingSource сEnclosuresBindingSource;
+		private System.Windows.Forms.BindingSource cEnclosuresBindingSource;
 	}
 }

@@ -52,7 +52,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
-			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], СEnclosures.Columns["University"]);
+			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
 
 			Init();
 		}
@@ -115,7 +115,7 @@ namespace LibOfTimetableOfClasses
 
 				MEnclosures mEnclosures = new MEnclosures("А", mUniversity.FullName,
 					"Дзержинского", "111111", "1");
-				СEnclosures.Insert(mEnclosures);
+				CEnclosures.Insert(mEnclosures);
 			}
 			catch (Exception e)
 			{
