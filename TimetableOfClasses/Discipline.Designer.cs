@@ -32,12 +32,12 @@ namespace TimetableOfClasses
         private void InitializeComponent()
         {
 			this.DG_Disc = new System.Windows.Forms.DataGridView();
-			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Delete = new System.Windows.Forms.Button();
 			this.btCreateDiscipline = new System.Windows.Forms.Button();
 			this.btChange = new System.Windows.Forms.Button();
+			this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Shortname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CycleofDiscipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.DG_Disc)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -61,28 +61,6 @@ namespace TimetableOfClasses
 			this.DG_Disc.TabIndex = 0;
 			this.DG_Disc.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Disc_RowPrePaint);
 			this.DG_Disc.SelectionChanged += new System.EventHandler(this.DG_Disc_SelectionChanged);
-			// 
-			// FullName
-			// 
-			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.FullName.DataPropertyName = "Fullname";
-			this.FullName.HeaderText = "Полное название дисциплины";
-			this.FullName.Name = "FullName";
-			this.FullName.ReadOnly = true;
-			// 
-			// Shortname
-			// 
-			this.Shortname.DataPropertyName = "Shortname";
-			this.Shortname.HeaderText = "Краткое название дисциплины";
-			this.Shortname.Name = "Shortname";
-			this.Shortname.ReadOnly = true;
-			// 
-			// CycleofDiscipline
-			// 
-			this.CycleofDiscipline.DataPropertyName = "CycleofDiscipline";
-			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
-			this.CycleofDiscipline.Name = "CycleofDiscipline";
-			this.CycleofDiscipline.ReadOnly = true;
 			// 
 			// Delete
 			// 
@@ -119,6 +97,30 @@ namespace TimetableOfClasses
 			this.btChange.UseVisualStyleBackColor = true;
 			this.btChange.Click += new System.EventHandler(this.btChange_Click);
 			// 
+			// FullName
+			// 
+			this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.FullName.DataPropertyName = "Fullname";
+			this.FullName.HeaderText = "Полное название дисциплины";
+			this.FullName.Name = "FullName";
+			this.FullName.ReadOnly = true;
+			// 
+			// Shortname
+			// 
+			this.Shortname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Shortname.DataPropertyName = "Shortname";
+			this.Shortname.HeaderText = "Краткое название дисциплины";
+			this.Shortname.Name = "Shortname";
+			this.Shortname.ReadOnly = true;
+			// 
+			// CycleofDiscipline
+			// 
+			this.CycleofDiscipline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.CycleofDiscipline.DataPropertyName = "CycleofDiscipline";
+			this.CycleofDiscipline.HeaderText = "Цикл дисциплин";
+			this.CycleofDiscipline.Name = "CycleofDiscipline";
+			this.CycleofDiscipline.ReadOnly = true;
+			// 
 			// Discipline
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,9 +153,9 @@ namespace TimetableOfClasses
 		private System.Windows.Forms.DataGridView DG_Disc;
 		private System.Windows.Forms.Button Delete;
 		private System.Windows.Forms.Button btCreateDiscipline;
-		private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Shortname;
-		private System.Windows.Forms.DataGridViewTextBoxColumn CycleofDiscipline;
 		private System.Windows.Forms.Button btChange;
+		private DataGridViewTextBoxColumn FullName;
+		private DataGridViewTextBoxColumn Shortname;
+		private DataGridViewTextBoxColumn CycleofDiscipline;
 	}
 }
