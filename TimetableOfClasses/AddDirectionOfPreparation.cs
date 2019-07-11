@@ -81,27 +81,30 @@ namespace TimetableOfClasses
 				MessageBox.Show("Ведите Код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
 				tbCod.Focus();
 			}
-			if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
-				MessageBox.Show("Заполните все поля корректно");
 			else
 			{
-				MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
-				try
+				if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
+					MessageBox.Show("Заполните все поля корректно");
+				else
 				{
-					if (!itsupdate)
+					MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
+					try
 					{
-						if (!RefData.CDirectionOfPreparation.Insert(mDirection))
+						if (!itsupdate)
 						{
-							MessageBox.Show("Невозможно добавить направление подготовки");
-							return;
+							if (!RefData.CDirectionOfPreparation.Insert(mDirection))
+							{
+								MessageBox.Show("Невозможно добавить направление подготовки");
+								return;
+							}
 						}
+						else RefData.CDirectionOfPreparation.Update(mDirection);
+						Close();
 					}
-					else RefData.CDirectionOfPreparation.Update(mDirection);
-					Close();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
 				}
 			}
 		}
