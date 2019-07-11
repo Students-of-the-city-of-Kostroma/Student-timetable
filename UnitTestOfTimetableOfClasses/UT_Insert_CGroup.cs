@@ -13,9 +13,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_1() //пустая таблица
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 			//act		
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -35,7 +32,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты различаются
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = false;
@@ -50,9 +46,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_10() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -79,7 +72,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_11() //полное дублирование всех атрибутов
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = false;
@@ -94,10 +86,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_251_3() // дублирование Семестра
 		{
-			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();			
+			//arrange		
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -122,9 +111,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_4() // дублирование напр. подготоаки
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -146,9 +132,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_5() // дублирование смены
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -173,9 +156,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_6() // дублирование студентов
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -200,9 +180,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_7() // дублирование пар мин
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -227,9 +204,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_8() // дублирование пар макс
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
@@ -254,9 +228,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_251_9() // дублирование выходной
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
-			RefData.CTrainingProfile.Rows.Clear();
-			RefData.CDirectionOfPreparation.Rows.Clear();
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);

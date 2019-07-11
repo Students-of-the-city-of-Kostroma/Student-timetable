@@ -14,7 +14,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_1()
 		{
 			//arrange 
-			RefData.CAcademicDegree.Clear();
 			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
 			bool ex = true;
 			//act
@@ -30,7 +29,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_486_2()
 		{
 			//arrange
-			RefData.CAcademicDegree.Clear();
 			Task_486_1();
 			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
 			bool expected = false;

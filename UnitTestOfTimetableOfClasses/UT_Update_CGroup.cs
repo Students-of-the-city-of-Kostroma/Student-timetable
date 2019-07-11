@@ -13,7 +13,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_1() // Изменение когда все поля отличаются
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -34,7 +33,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_3() // повтор Семестра
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -50,7 +48,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_4() // повтор направления подготовки
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -66,7 +63,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_5() // смены
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -82,7 +78,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_6() // повтор студентов
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -98,7 +93,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_7() // повтор графика
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;
@@ -116,7 +110,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_250_1_8() // повтор всего(кроме группы)
 		{
 			//arrange
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
 			bool expected = true;

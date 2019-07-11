@@ -11,7 +11,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_1() //Удаление существующей строки 
 		{
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act 
@@ -26,7 +25,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_2() //Удаление не существующей строки 
 		{
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = false;
 			//act 
