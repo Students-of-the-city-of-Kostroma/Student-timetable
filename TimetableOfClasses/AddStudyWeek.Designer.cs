@@ -119,7 +119,7 @@
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(249, 230);
             this.Name = "AddStudyWeek";
-            this.Text = "Добавить Учебную неделю";
+            this.Text = "Добавить учебную неделю";
             this.ResumeLayout(false);
             this.PerformLayout();
 
