@@ -50,9 +50,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_1()//изменение когда атрибуты не повторяются (ФИО изменить не возможно)
 		{
 			//arrange
-			RefData.CTeacher.Rows.Clear();
-			RefData.CAcademicDegree.Clear();
-			RefData.CTitle.Clear();
 			string ma = degree("Кандидат наук", "Канд.");
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
@@ -79,9 +76,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_5()//дублируется уч. степень и уч. звание
 		{
 			//arrange
-			RefData.CTeacher.Rows.Clear();
-			RefData.CAcademicDegree.Clear();
-			RefData.CTitle.Clear();
 			string ma = degree("Кандидат наук", "Канд.");
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
@@ -105,9 +99,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_6()//дублируется кафедра 
 		{
 			//arrange
-			RefData.CTeacher.Rows.Clear();
-			RefData.CAcademicDegree.Clear();
-			RefData.CTitle.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
 			bool expected = true;
@@ -128,9 +119,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_7()//дублируется график
 		{
 			//arrange
-			RefData.CTeacher.Rows.Clear();
-			RefData.CAcademicDegree.Clear();
-			RefData.CTitle.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", degree("Кандидат наук", "Канд"), Title("Доцент", "Доц."), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", degree("Доктор наук", "Док."), Title("Профессор", "Проф."), "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
 			bool expected = true;
@@ -153,9 +141,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_247_8()//дублируется всё кроме ФИО
 		{
 			//arrange
-			RefData.CTeacher.Rows.Clear();
-			RefData.CAcademicDegree.Clear();
-			RefData.CTitle.Clear();
 			string ma = degree("Кандидат наук", "Канд.");
 			string maTi = Title("Доцент", "Доц.");
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");

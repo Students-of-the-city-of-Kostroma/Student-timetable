@@ -14,7 +14,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_1()
 		{
 			//arrange 
-			RefData.CGroup.Rows.Clear();
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("11.11.11", "й", 1);
 			MTrainingProfile tp = new MTrainingProfile("ИСиТa", "ИСиТ", "11.11.11");
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
@@ -36,7 +35,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_248_2()
 		{
 			//arrange 
-			RefData.CGroup.Rows.Clear();
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
 			bool expected = false;
 			//act 

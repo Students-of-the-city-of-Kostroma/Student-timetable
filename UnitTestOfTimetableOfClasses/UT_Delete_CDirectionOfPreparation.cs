@@ -9,7 +9,6 @@ namespace UnitTestOfTimetableOfClasses
 	{
 		public void Pre_condition_Del()
 		{
-			RefData.CDirectionOfPreparation.Clear();
 			bool ex = true;
 			bool act;
 			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология",20);
