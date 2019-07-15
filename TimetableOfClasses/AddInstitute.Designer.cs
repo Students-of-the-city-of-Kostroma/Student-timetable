@@ -99,8 +99,8 @@
 			// 
 			// btCreateAndClose
 			// 
-			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClose.Location = new System.Drawing.Point(222, 249);
+			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCreateAndClose.Location = new System.Drawing.Point(222, 171);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClose.TabIndex = 13;
@@ -110,8 +110,8 @@
 			// 
 			// btCreateAndClean
 			// 
-			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(141, 249);
+			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCreateAndClean.Location = new System.Drawing.Point(141, 169);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 14;
@@ -121,8 +121,8 @@
 			// 
 			// btCancel
 			// 
-			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(60, 249);
+			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCancel.Location = new System.Drawing.Point(60, 169);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 15;
@@ -135,9 +135,9 @@
 			this.VUS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.VUS.FormattingEnabled = true;
-			this.VUS.Location = new System.Drawing.Point(10, 173);
+			this.VUS.Location = new System.Drawing.Point(10, 142);
 			this.VUS.Name = "VUS";
-			this.VUS.Size = new System.Drawing.Size(287, 21);
+			this.VUS.Size = new System.Drawing.Size(261, 21);
 			this.VUS.TabIndex = 16;
 			this.VUS.SelectedValueChanged += new System.EventHandler(this.VUS_SelectedValueChanged);
 			this.VUS.Validating += new System.ComponentModel.CancelEventHandler(this.VUS_Validating);
@@ -148,7 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(10, 157);
+			this.label4.Location = new System.Drawing.Point(10, 126);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(29, 13);
 			this.label4.TabIndex = 17;
@@ -162,28 +162,30 @@
 			this.Director.FormattingEnabled = true;
 			this.Director.Location = new System.Drawing.Point(10, 102);
 			this.Director.Name = "Director";
-			this.Director.Size = new System.Drawing.Size(287, 21);
+			this.Director.Size = new System.Drawing.Size(261, 21);
 			this.Director.TabIndex = 18;
 			this.Director.SelectedValueChanged += new System.EventHandler(this.Director_SelectedValueChanged);
 			this.Director.Validating += new System.ComponentModel.CancelEventHandler(this.Director_Validating);
 			// 
 			// Open_Teacher
 			// 
-			this.Open_Teacher.Location = new System.Drawing.Point(10, 130);
+			this.Open_Teacher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.Open_Teacher.Location = new System.Drawing.Point(277, 102);
 			this.Open_Teacher.Name = "Open_Teacher";
-			this.Open_Teacher.Size = new System.Drawing.Size(287, 23);
+			this.Open_Teacher.Size = new System.Drawing.Size(20, 23);
 			this.Open_Teacher.TabIndex = 19;
-			this.Open_Teacher.Text = "Добавить";
+			this.Open_Teacher.Text = "+";
 			this.Open_Teacher.UseVisualStyleBackColor = true;
 			this.Open_Teacher.Click += new System.EventHandler(this.Open_Teacher_Click);
 			// 
 			// Open_University
 			// 
-			this.Open_University.Location = new System.Drawing.Point(10, 200);
+			this.Open_University.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.Open_University.Location = new System.Drawing.Point(277, 140);
 			this.Open_University.Name = "Open_University";
-			this.Open_University.Size = new System.Drawing.Size(287, 23);
+			this.Open_University.Size = new System.Drawing.Size(20, 23);
 			this.Open_University.TabIndex = 20;
-			this.Open_University.Text = "Добавить ВУЗ";
+			this.Open_University.Text = "+";
 			this.Open_University.UseVisualStyleBackColor = true;
 			this.Open_University.Click += new System.EventHandler(this.Open_University_Click);
 			// 
@@ -195,7 +197,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(314, 297);
+			this.ClientSize = new System.Drawing.Size(314, 221);
 			this.Controls.Add(this.Open_University);
 			this.Controls.Add(this.Open_Teacher);
 			this.Controls.Add(this.Director);
@@ -209,8 +211,8 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.ShortName);
 			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.MinimumSize = new System.Drawing.Size(330, 336);
+			this.Margin = new System.Windows.Forms.Padding(2);
+			this.MinimumSize = new System.Drawing.Size(330, 260);
 			this.Name = "AddInstitute";
 			this.Text = "Добавление института";
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
