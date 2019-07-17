@@ -111,7 +111,7 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(141, 169);
+			this.btCreateAndClean.Location = new System.Drawing.Point(141, 171);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(75, 37);
 			this.btCreateAndClean.TabIndex = 14;
@@ -121,8 +121,8 @@
 			// 
 			// btCancel
 			// 
-			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(60, 169);
+			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btCancel.Location = new System.Drawing.Point(60, 171);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(75, 37);
 			this.btCancel.TabIndex = 15;
