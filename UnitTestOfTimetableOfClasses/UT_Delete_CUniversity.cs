@@ -11,7 +11,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_498_1() //удаление существующего вуза
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ" , "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			bool expected = true;
 			//act 
@@ -24,7 +23,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_498_2() //удаление не существующего вуза
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			bool expected = false;
 			//act 

@@ -123,7 +123,6 @@
 			this.Text = "AddTypesOfOccupations";
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
         }
 
         #endregion

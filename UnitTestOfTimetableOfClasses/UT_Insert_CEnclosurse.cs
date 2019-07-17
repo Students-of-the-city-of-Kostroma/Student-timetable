@@ -11,7 +11,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_1() //Ввод в пустую таблицу
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures ("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1" );
 			bool expected = true;
 			//act
@@ -24,7 +23,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_2() //Дублирование адреса
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.CEnclosures.Insert(gr);
@@ -39,7 +37,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_3() //Дублирование телефона
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.CEnclosures.Insert(gr);
@@ -54,7 +51,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_4() //Дублирование примечания
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.CEnclosures.Insert(gr);
@@ -69,7 +65,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_6() //Дублирование корпуса и ВУЗа
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			RefData.CEnclosures.Insert(gr);
@@ -84,7 +79,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_5() //Полностью отличные атрибуты
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.CEnclosures.Insert(gr);
@@ -99,7 +93,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_7() //Дублирование Корпуса
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.CEnclosures.Insert(gr);
@@ -114,7 +107,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_397_8() //Дублирование ВУЗа
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = true;
 			RefData.CEnclosures.Insert(gr);
