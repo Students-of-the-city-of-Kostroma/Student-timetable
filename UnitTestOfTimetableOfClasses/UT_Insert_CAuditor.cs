@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_1() //пустая таблица
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			bool expected = true;
 			//act
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -27,7 +26,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_6() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
@@ -44,7 +42,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_7() //полное дублирование всех атрибутов
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
@@ -61,7 +58,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_2() // дбавление записи, которая не дублирует ни один атрибут кроме корпуса
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
@@ -76,7 +72,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_3() // дбавление записи, которая не дублирует ни один атрибут кроме кафедры
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
@@ -91,7 +86,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_4() // дбавление записи, которая не дублирует ни один атрибут кроме числа мест
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);
@@ -106,7 +100,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_270_5() // дбавление записи, которая не дублирует ни один атрибут кроме названия
 		{
 			//arrange
-			RefData.CAuditor.Clear();
 			MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
 			CAuditor ca = new CAuditor();
 			bool a = ca.Insert(aud);

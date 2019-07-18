@@ -15,7 +15,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_1()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			bool expected = true;
 			//act 
@@ -31,7 +30,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_2()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = true;
@@ -49,7 +47,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_3()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = false;
@@ -67,7 +64,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_4()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = true;
@@ -85,7 +81,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_5()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = true;
@@ -103,7 +98,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_6()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = true;
@@ -121,7 +115,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_7()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = false;
@@ -139,7 +132,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_8()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = false;
@@ -157,7 +149,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_9()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = false;
@@ -175,7 +166,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_496_10()
 		{
 			// arrange
-			RefData.CUniversity.Rows.Clear();
 			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
 			bool expected = false;

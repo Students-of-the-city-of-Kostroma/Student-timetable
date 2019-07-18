@@ -122,7 +122,6 @@
 			this.Text = "Добавить преподавателя";
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
         }
 
         #endregion
