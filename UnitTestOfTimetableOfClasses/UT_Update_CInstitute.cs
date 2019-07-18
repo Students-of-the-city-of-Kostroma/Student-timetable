@@ -13,7 +13,6 @@ namespace UnitTestOfTimetableOfClasses
 
 			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
-			RefData.CInstitute.Clear();
 			RefData.CInstitute.Insert(T_Institute);
 
 			T_Institute = new MInstitute("Факультет автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Политехнический колледж");
@@ -30,7 +29,6 @@ namespace UnitTestOfTimetableOfClasses
 			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-			RefData.CInstitute.Clear();
 			RefData.CInstitute.Insert(T_Institute);
 
 
@@ -48,7 +46,6 @@ namespace UnitTestOfTimetableOfClasses
 			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-			RefData.CInstitute.Clear();
 			RefData.CInstitute.Insert(T_Institute);
 
 			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
@@ -66,7 +63,6 @@ namespace UnitTestOfTimetableOfClasses
 			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-			RefData.CInstitute.Clear();
 			RefData.CInstitute.Insert(T_Institute);
 
 			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Лустгартен Ю.Л.", "Политехнический колледж");
@@ -83,7 +79,6 @@ namespace UnitTestOfTimetableOfClasses
 			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-			RefData.CInstitute.Clear();
 			RefData.CInstitute.Insert(T_Institute);
 
 			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Костромской Государственный Университет");

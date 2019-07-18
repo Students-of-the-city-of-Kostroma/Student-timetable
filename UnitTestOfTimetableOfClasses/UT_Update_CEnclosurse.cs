@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_396_1()
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			RefData.CEnclosures.Insert(gr);
 			bool expected = true;
@@ -28,7 +27,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_396_2()// повтор адреса
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			RefData.CEnclosures.Insert(gr);
 			bool expected = false;
@@ -44,7 +42,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_396_3()// повтор телефона
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			RefData.CEnclosures.Insert(gr);
 			bool expected = false;
@@ -60,7 +57,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void task_396_4()// повтор примечания
 		{
 			//arrange
-			RefData.CEnclosures.Rows.Clear();
 			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			RefData.CEnclosures.Insert(gr);
 			bool expected = true;
