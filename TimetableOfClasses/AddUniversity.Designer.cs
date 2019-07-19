@@ -223,7 +223,7 @@
 			// btSave
 			// 
 			this.btSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btSave.Location = new System.Drawing.Point(164, 468);
+			this.btSave.Location = new System.Drawing.Point(164, 444);
 			this.btSave.Name = "btSave";
 			this.btSave.Size = new System.Drawing.Size(83, 32);
 			this.btSave.TabIndex = 34;
@@ -234,7 +234,7 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(81, 468);
+			this.btCancel.Location = new System.Drawing.Point(81, 444);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(77, 32);
 			this.btCancel.TabIndex = 35;
@@ -271,7 +271,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(259, 512);
+			this.ClientSize = new System.Drawing.Size(259, 488);
 			this.Controls.Add(this.tbINN);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.btCancel);
@@ -290,7 +290,7 @@
 			this.Controls.Add(this.lbFullTitle);
 			this.Controls.Add(this.tbShortTittle);
 			this.Controls.Add(this.lbTitle);
-			this.MinimumSize = new System.Drawing.Size(275, 478);
+			this.MinimumSize = new System.Drawing.Size(275, 527);
 			this.Name = "AddUniversity";
 			this.Text = "Добавить Университет";
 			this.ResumeLayout(false);
