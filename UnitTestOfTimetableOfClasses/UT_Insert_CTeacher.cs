@@ -11,8 +11,6 @@ namespace UnitTestOfTimetableOfClasses
 		public string AddDegree(string a, string b)
 		{
 			//arrange 
-			RefData.CTeacher.Clear();
-			RefData.CAcademicDegree.Clear();
 			MAcademicDegree ma = new MAcademicDegree(a, b);
 			bool ex = true;
 			//act
@@ -24,7 +22,6 @@ namespace UnitTestOfTimetableOfClasses
 		public string addTitle(string a, string b)
 		{
 			//arrange
-			RefData.CTitle.Clear();
 			MTitle maTi = new MTitle(a, b);
 			bool expectedTi = true;
 			//act
@@ -40,7 +37,6 @@ namespace UnitTestOfTimetableOfClasses
 			string ma = AddDegree("Магистр", "Маг.");
 			string maTi = addTitle("Профессор", "Проф.");
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
 			//act
@@ -57,7 +53,6 @@ namespace UnitTestOfTimetableOfClasses
 			string ma = AddDegree("Доктор наук", "Док.");
 			string maTi = addTitle("Профессор", "Проф.");
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			bool expected = true;
@@ -72,7 +67,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_3() //Повторяющийся атрибут "ФИО"
 		{
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Доктор наук", "Профессор", "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
 			bool expected = false;
@@ -90,7 +84,6 @@ namespace UnitTestOfTimetableOfClasses
 			string maTi = addTitle("Профессор", "Проф.");
 
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
 			bool expected = true;
@@ -109,7 +102,6 @@ namespace UnitTestOfTimetableOfClasses
 			string maTi = addTitle("Профессор", "Проф.");
 
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
 			bool expected = true;
@@ -127,7 +119,6 @@ namespace UnitTestOfTimetableOfClasses
 			string ma = AddDegree("Доктор наук", "Док.");
 			string maTi = addTitle("Профессор", "Проф.");
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
@@ -142,7 +133,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_246_7() //Все атрибуты повторяются
 		{
 			//arrange 
-			RefData.CTeacher.Rows.Clear();
 			MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = false;

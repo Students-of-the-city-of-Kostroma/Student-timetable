@@ -12,7 +12,6 @@ namespace UnitTestOfTimetableOfClasses
 		/// </summary>
 		public void Pre_condition_Del()
 		{
-			RefData.CTrainingProfile.Clear();
 			bool ex = true;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
@@ -38,7 +37,6 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_422_2()
 		{
-			RefData.CTrainingProfile.Clear();
 			bool ex = false;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");

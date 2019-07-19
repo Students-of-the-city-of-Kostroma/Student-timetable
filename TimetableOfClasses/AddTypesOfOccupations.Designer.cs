@@ -123,7 +123,6 @@
 			this.Text = "Добавить вид занятия";
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
         }
 
         #endregion

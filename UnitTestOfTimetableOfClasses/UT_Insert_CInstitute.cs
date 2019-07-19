@@ -13,7 +13,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_616_1() //Добавление в пустую таблицу	
 		{
 			//arrange 	
-			RefData.CInstitute.Clear();
 			MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 			bool expected = true;
 			//act	
