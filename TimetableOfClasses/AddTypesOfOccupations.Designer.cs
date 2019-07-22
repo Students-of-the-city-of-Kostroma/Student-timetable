@@ -40,7 +40,7 @@
 			// btCancel
 			// 
 			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCancel.Location = new System.Drawing.Point(12, 115);
+			this.btCancel.Location = new System.Drawing.Point(37, 120);
 			this.btCancel.Name = "btCancel";
 			this.btCancel.Size = new System.Drawing.Size(80, 35);
 			this.btCancel.TabIndex = 2;
@@ -51,7 +51,7 @@
 			// btCreateAndClean
 			// 
 			this.btCreateAndClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClean.Location = new System.Drawing.Point(98, 115);
+			this.btCreateAndClean.Location = new System.Drawing.Point(123, 120);
 			this.btCreateAndClean.Name = "btCreateAndClean";
 			this.btCreateAndClean.Size = new System.Drawing.Size(80, 35);
 			this.btCreateAndClean.TabIndex = 3;
@@ -62,7 +62,7 @@
 			// btCreateAndClose
 			// 
 			this.btCreateAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btCreateAndClose.Location = new System.Drawing.Point(184, 115);
+			this.btCreateAndClose.Location = new System.Drawing.Point(209, 120);
 			this.btCreateAndClose.Name = "btCreateAndClose";
 			this.btCreateAndClose.Size = new System.Drawing.Size(80, 35);
 			this.btCreateAndClose.TabIndex = 4;
@@ -76,7 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbFullName.Location = new System.Drawing.Point(12, 25);
 			this.tbFullName.Name = "tbFullName";
-			this.tbFullName.Size = new System.Drawing.Size(252, 20);
+			this.tbFullName.Size = new System.Drawing.Size(277, 20);
 			this.tbFullName.TabIndex = 5;
 			// 
 			// tbShortName
@@ -85,7 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbShortName.Location = new System.Drawing.Point(12, 77);
 			this.tbShortName.Name = "tbShortName";
-			this.tbShortName.Size = new System.Drawing.Size(252, 20);
+			this.tbShortName.Size = new System.Drawing.Size(277, 20);
 			this.tbShortName.TabIndex = 6;
 			// 
 			// label3
@@ -110,7 +110,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(279, 167);
+			this.ClientSize = new System.Drawing.Size(300, 161);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.tbShortName);
@@ -118,9 +118,9 @@
 			this.Controls.Add(this.btCreateAndClose);
 			this.Controls.Add(this.btCreateAndClean);
 			this.Controls.Add(this.btCancel);
-			this.MinimumSize = new System.Drawing.Size(295, 206);
+			this.MinimumSize = new System.Drawing.Size(316, 200);
 			this.Name = "AddTypesOfOccupations";
-			this.Text = "AddTypesOfOccupations";
+			this.Text = "Добавить вид занятия";
 			this.ResumeLayout(false);
 			this.PerformLayout();
         }
