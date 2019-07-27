@@ -74,6 +74,12 @@
     <Compile Include="AddAuditor.Designer.cs">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.cs">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDirectionOfPreparation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +122,29 @@
     <Compile Include="AddProfile.Designer.cs">
       <DependentUpon>AddProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddStudyWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudyWeek.Designer.cs">
+      <DependentUpon>AddStudyWeek.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departments.Designer.cs">
+      <DependentUpon>Departments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTypesOfOccupations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTypesOfOccupations.Designer.cs">
+      <DependentUpon>AddTypesOfOccupations.cs</DependentUpon>
     </Compile>
     <Compile Include="Characteristic.cs">
       <SubType>Form</SubType>
@@ -190,6 +214,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudyWeek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudyWeek.Designer.cs">
+      <DependentUpon>StudyWeek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teachers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +265,9 @@
     <EmbeddedResource Include="AddAuditor.resx">
       <DependentUpon>AddAuditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDirectionOfPreparation.resx">
       <DependentUpon>AddDirectionOfPreparation.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,14 +286,24 @@
     <EmbeddedResource Include="AddProfile.resx">
       <DependentUpon>AddProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddStudyWeek.resx">
+      <DependentUpon>AddStudyWeek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Departments.resx">
+      <DependentUpon>Departments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTypesOfOccupations.resx">
+      <DependentUpon>AddTypesOfOccupations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Characteristic.resx">
       <DependentUpon>Characteristic.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionOfPreparation.resx">
       <DependentUpon>DirectionOfPreparation.cs</DependentUpon>
@@ -301,6 +344,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudyWeek.resx">
+      <DependentUpon>StudyWeek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teachers.resx">
       <DependentUpon>Teachers.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,8 +10,6 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_362_1()
 		{
-			//arrange
-			RefData.CTitle.Clear();
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 			bool ex = true;
 			//act
@@ -24,8 +22,6 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void task_362_2()
 		{
-			//arrange
-			RefData.CTitle.Clear();
 			//act
 			MTitle T_Title = new MTitle("Проф.", "Профессор");
 			bool ex = false;

@@ -128,5 +128,15 @@ namespace TimetableOfClasses
 			Characteristic Characteristic = new Characteristic();
 			Characteristic.Show();
 		}
+
+		private void учебныеНеделиToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			StudyWeek studyWeek = new StudyWeek();
+			studyWeek.Show();
+		}
+		private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Departments departments = new Departments();
+			departments.Show();
+		}
 	}
 }

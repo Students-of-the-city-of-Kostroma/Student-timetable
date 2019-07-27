@@ -46,6 +46,11 @@ namespace TimetableOfClasses
 
 		private void bt_Cr_n_Cl_Click(object sender, EventArgs e)// создать и очистить
 		{
+			if (!(Regex.IsMatch(tbCod.Text, @"\d{2}.\d{2}.\d{2}")))
+			{
+				MessageBox.Show("Ведите Код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
+				tbCod.Focus();
+			}
 			if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
 				MessageBox.Show("Заполните все поля корректно");
 			else
@@ -53,7 +58,7 @@ namespace TimetableOfClasses
 				MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
 				try
 				{
-					if (RefData.CDirectionOfPreparation.Insert(mDirection))
+					if (!RefData.CDirectionOfPreparation.Insert(mDirection))
 					{
 						MessageBox.Show("Невозможно добавить направление подготовки");
 						return;
@@ -70,38 +75,37 @@ namespace TimetableOfClasses
 		}
 
 		private void bt_Cr_n_Close_Click(object sender, EventArgs e)// создать и закрыть
-		{			
-			if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
-				MessageBox.Show("Заполните все поля корректно");
-			else
-			{
-				MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
-				try
-				{
-					if (!itsupdate)
-					{
-						if (!RefData.CDirectionOfPreparation.Insert(mDirection))
-						{
-							MessageBox.Show("Невозможно добавить направление подготовки");
-							return;
-						}
-					}
-					else RefData.CDirectionOfPreparation.Update(mDirection);
-					Close();
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-				}
-			}
-		}
-
-		private void tbCod_Leave(object sender, EventArgs e)
 		{
 			if (!(Regex.IsMatch(tbCod.Text, @"\d{2}.\d{2}.\d{2}")))
 			{
 				MessageBox.Show("Ведите Код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
 				tbCod.Focus();
+			}
+			else
+			{
+				if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
+					MessageBox.Show("Заполните все поля корректно");
+				else
+				{
+					MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
+					try
+					{
+						if (!itsupdate)
+						{
+							if (!RefData.CDirectionOfPreparation.Insert(mDirection))
+							{
+								MessageBox.Show("Невозможно добавить направление подготовки");
+								return;
+							}
+						}
+						else RefData.CDirectionOfPreparation.Update(mDirection);
+						Close();
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+				}
 			}
 		}
 

@@ -67,7 +67,6 @@ namespace TimetableOfClasses
 			}
 			else
 			{
-
 				if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
 				{
 					if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
@@ -75,7 +74,11 @@ namespace TimetableOfClasses
 						try
 						{
 							MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-							RefData.CTitle.Insert(Title);
+							if (!RefData.CTitle.Insert(Title))
+							{
+								MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
+								return;
+							}
 							FullName.Text = "";
 							Reduction.Text = "";
 							Close();
