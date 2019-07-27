@@ -12,9 +12,6 @@ namespace TimetableOfClasses
 {
 	public partial class Characteristic : Form
 	{
-		public Characteristic()
-		{
-			InitializeComponent();
-		}
+		public Characteristic() => InitializeComponent();
 	}
 }

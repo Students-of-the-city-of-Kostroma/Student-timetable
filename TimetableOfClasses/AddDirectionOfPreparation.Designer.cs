@@ -85,7 +85,6 @@
 			this.tbCod.Size = new System.Drawing.Size(274, 20);
 			this.tbCod.TabIndex = 3;
 			this.tbCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCod_KeyPress);
-			this.tbCod.Leave += new System.EventHandler(this.tbCod_Leave);
 			// 
 			// tbName
 			// 

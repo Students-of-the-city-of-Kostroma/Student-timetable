@@ -60,11 +60,19 @@
     <Compile Include="CGroup.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CHEI.cs" />
+    <Compile Include="CHEI.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CInstitute.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CStudyWeek.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CTypesOfOccupations.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Logs.cs" />
     <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs">
@@ -83,6 +91,7 @@
     <Compile Include="MAcademicDegree.cs" />
     <Compile Include="MAuditor.cs" />
     <Compile Include="MCHEI.cs" />
+    <Compile Include="MDepartment.cs" />
     <Compile Include="MDirectionOfPreparation.cs" />
     <Compile Include="MDiscipline.cs" />
     <Compile Include="MEnclosures.cs" />
@@ -90,11 +99,14 @@
     <Compile Include="MHEI.cs" />
     <Compile Include="MInstitute.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="MStudyWeek.cs" />
     <Compile Include="MTeacher.cs" />
     <Compile Include="MTitle.cs" />
+    <Compile Include="MTypesOfOccupations.cs" />
     <Compile Include="MTrainingProfiles.cs" />
     <Compile Include="MUniversity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

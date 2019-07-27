@@ -48,9 +48,12 @@
 			this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SettingStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.CharacteristicStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.учебныеНеделиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.DepartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.CharacteristicStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -85,13 +88,15 @@
             this.аудиторииToolStripMenuItem,
             this.вУЗыToolStripMenuItem,
             this.министерстваToolStripMenuItem,
+            this.учебныеНеделиToolStripMenuItem,
             this.ученыеЗванияToolStripMenuItem,
             this.ученыеСтепениToolStripMenuItem,
             this.видыЗанятийПодготовкиToolStripMenuItem,
             this.институтToolStripMenuItem,
             this.профильПодготовкиToolStripMenuItem,
             this.направлениеПодготовкиToolStripMenuItem,
-            this.корпусаToolStripMenuItem});
+            this.корпусаToolStripMenuItem,
+            this.DepartmentsToolStripMenuItem});
 			this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
 			this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
 			this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -156,7 +161,7 @@
 			// 
 			this.видыЗанятийПодготовкиToolStripMenuItem.Name = "видыЗанятийПодготовкиToolStripMenuItem";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Виды занятий подготовки";
+			this.видыЗанятийПодготовкиToolStripMenuItem.Text = "Вид занятия";
 			this.видыЗанятийПодготовкиToolStripMenuItem.Click += new System.EventHandler(this.видыЗанятийПодготовкиToolStripMenuItem_Click);
 			// 
 			// институтToolStripMenuItem
@@ -216,6 +221,13 @@
 			this.SettingStripMenuItem1.Size = new System.Drawing.Size(79, 20);
 			this.SettingStripMenuItem1.Text = "Настройки";
 			// 
+			// CharacteristicStripMenuItem1
+			// 
+			this.CharacteristicStripMenuItem1.Name = "CharacteristicStripMenuItem1";
+			this.CharacteristicStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+			this.CharacteristicStripMenuItem1.Text = "Параметры";
+			this.CharacteristicStripMenuItem1.Click += new System.EventHandler(this.CharacteristicStripMenuItem1_Click);
+			// 
 			// справочникиToolStripMenuItem1
 			// 
 			this.справочникиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -238,12 +250,20 @@
 			this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
 			this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
 			// 
+			// учебныеНеделиToolStripMenuItem
+			// DepartmentsToolStripMenuItem
+			// 
+			this.DepartmentsToolStripMenuItem.Name = "DepartmentsToolStripMenuItem";
+			this.DepartmentsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.DepartmentsToolStripMenuItem.Text = "Кафедры";
+			this.DepartmentsToolStripMenuItem.Click += new System.EventHandler(this.DepartmentsToolStripMenuItem_Click);
+			// 
 			// CharacteristicStripMenuItem1
 			// 
-			this.CharacteristicStripMenuItem1.Name = "CharacteristicStripMenuItem1";
-			this.CharacteristicStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.CharacteristicStripMenuItem1.Text = "Параметры";
-			this.CharacteristicStripMenuItem1.Click += new System.EventHandler(this.CharacteristicStripMenuItem1_Click);
+			this.учебныеНеделиToolStripMenuItem.Name = "учебныеНеделиToolStripMenuItem";
+			this.учебныеНеделиToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+			this.учебныеНеделиToolStripMenuItem.Text = "Учебные недели";
+			this.учебныеНеделиToolStripMenuItem.Click += new System.EventHandler(this.учебныеНеделиToolStripMenuItem_Click);
 			// 
 			// Start
 			// 
@@ -285,8 +305,10 @@
 		private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem редактироватьЗаписьToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem DepartmentsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem SettingStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem CharacteristicStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem учебныеНеделиToolStripMenuItem;
 	}
 }
 

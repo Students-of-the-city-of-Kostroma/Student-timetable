@@ -13,7 +13,6 @@ namespace UnitTestOfTimetableOfClasses
 		public void Task_616_1() //Добавление в пустую таблицу	
 		{
 			//arrange 	
-			RefData.CInstitute.Clear();
 			MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 			bool expected = true;
 			//act	
@@ -29,7 +28,7 @@ namespace UnitTestOfTimetableOfClasses
             bool act;
             MInstitute T_Institute = new MInstitute("Институт неавтоматиз", "ИАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = RefData.CInstitute.Rows.Count;
-            act = RefData.CInstitute.Delete(T_Institute);
+            act = RefData.CInstitute.Insert(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
             Assert.AreEqual(C1, C2);
@@ -42,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
             bool act;
             MInstitute T_Institute = new MInstitute("Институт автоматизирован", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
             int C1 = RefData.CInstitute.Rows.Count;
-            act = RefData.CInstitute.Delete(T_Institute);
+            act = RefData.CInstitute.Insert(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
             Assert.AreEqual(C1, C2);
@@ -55,7 +54,7 @@ namespace UnitTestOfTimetableOfClasses
             bool act;
             MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Лустгартен Ю.Л.", "Тюменский Государственный Университет");
             int C1 = RefData.CInstitute.Rows.Count;
-            act = RefData.CInstitute.Delete(T_Institute);
+            act = RefData.CInstitute.Insert(T_Institute);
             int C2 = RefData.CInstitute.Rows.Count;
             Assert.AreEqual(ex, act);
             Assert.AreEqual(C1, C2);
@@ -68,7 +67,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool act;
 			MInstitute T_Institute = new MInstitute("Институт неавтоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Костромской Государственный Университет");
 			int C1 = RefData.CInstitute.Rows.Count;
-			act = RefData.CInstitute.Delete(T_Institute);
+			act = RefData.CInstitute.Insert(T_Institute);
 			int C2 = RefData.CInstitute.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
