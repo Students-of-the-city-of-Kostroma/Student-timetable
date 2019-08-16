@@ -8,9 +8,11 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Insert_CGroup
 	{
-
+		/// <summary>
+		/// Ввод корректных данных в пустую таблицу
+		/// </summary>
 		[TestMethod]
-		public void Task_251_1() //пустая таблица
+		public void Task_251_1()
 		{
 			//arrange
 			bool expected = true;
@@ -25,11 +27,15 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
+
 		}
-
-
+		
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Группа добавляемой группы дублирует Группа уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_2() //дуюлирование атрибута "Группа" остальные атрибуты различаются
+		public void Task_251_2()
 		{
 			//arrange
 			MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
@@ -40,23 +46,27 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
 
+		/// <summary>
+		/// Ввод корректных данных, при условии, что они не дублируют атрибуты уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_10() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
+		public void Task_251_10()
 		{
 			//arrange
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
-			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
-			Assert.AreEqual(expected, actual1);
+			/*bool actual1 = */RefData.CDirectionOfPreparation.Insert(dp);
+			//Assert.AreEqual(expected, actual1);
 			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
-			bool actual2 = RefData.CTrainingProfile.Insert(tp);
-			Assert.AreEqual(expected, actual2);
+			/*bool actual2 = */RefData.CTrainingProfile.Insert(tp);
+			//Assert.AreEqual(expected, actual2);
 			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
-			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
-			Assert.AreEqual(expected, actual3);
+			/*bool actual3 = */RefData.CTrainingProfile.Insert(tp1);
+			//Assert.AreEqual(expected, actual3);
 
 			MGroup gr = new MGroup("17-ЮФбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
@@ -65,9 +75,12 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
 
-
+		/// <summary>
+		/// Ввод корректных данных, при условии, что они полностью дублируют атрибуты уже существующей группы
+		/// </summary>
 		[TestMethod]
 		public void Task_251_11() //полное дублирование всех атрибутов
 		{
@@ -80,24 +93,27 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
 
-
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Семестр добавляемой группы дублирует Семестр уже существующей группы.
+		/// </summary>
 		[TestMethod]
-		public void Task_251_3() // дублирование Семестра
+		public void Task_251_3()
 		{
 			//arrange		
 			bool expected = true;
 
 			MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1);
-			bool actual1 = RefData.CDirectionOfPreparation.Insert(dp);
-			Assert.AreEqual(expected, actual1);
+			/*bool actual1 = */RefData.CDirectionOfPreparation.Insert(dp);
+			//Assert.AreEqual(expected, actual1);
 			MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
-			bool actual2 = RefData.CTrainingProfile.Insert(tp);
-			Assert.AreEqual(expected, actual2);
+			/*bool actual2 = */RefData.CTrainingProfile.Insert(tp);
+			//Assert.AreEqual(expected, actual2);
 			MTrainingProfile tp1 = new MTrainingProfile("Непрофиль", "НЕПРОФ", dp.CodeOfDP);
-			bool actual3 = RefData.CTrainingProfile.Insert(tp1);
-			Assert.AreEqual(expected, actual3);
+			/*bool actual3 = */RefData.CTrainingProfile.Insert(tp1);
+			//Assert.AreEqual(expected, actual3);
 
 			MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
 			RefData.CGroup.Insert(gr);
@@ -106,9 +122,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Направление подготовки добавляемой группы дублирует Направление подготовки уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_4() // дублирование напр. подготоаки
+		public void Task_251_4()
 		{
 			//arrange
 			bool expected = true;
@@ -127,9 +148,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Смена добавляемой группы дублирует Смена уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_5() // дублирование смены
+		public void Task_251_5()
 		{
 			//arrange
 			bool expected = true;
@@ -151,9 +177,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Студентов добавляемой группы дублирует Студентов уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_6() // дублирование студентов
+		public void Task_251_6()
 		{
 			//arrange
 			bool expected = true;
@@ -175,9 +206,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Пар/день min добавляемой группы дублирует Пар/день min уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_7() // дублирование пар мин
+		public void Task_251_7()
 		{
 			//arrange
 			bool expected = true;
@@ -199,9 +235,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Пар/день max добавляемой группы дублирует Пар/день max уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_8() // дублирование пар макс
+		public void Task_251_8()
 		{
 			//arrange
 			bool expected = true;
@@ -223,9 +264,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что  Выходные добавляемой группы дублирует Выходные уже существующей группы
+		/// </summary>
 		[TestMethod]
-		public void Task_251_9() // дублирование выходной
+		public void Task_251_9()
 		{
 			//arrange
 			bool expected = true;
@@ -247,6 +293,7 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CGroup.Insert(gr1);
 			//assert
 			Assert.AreEqual(expected, actual);
+			RefData.DataSet.Clear();
 		}
 	}
 }
