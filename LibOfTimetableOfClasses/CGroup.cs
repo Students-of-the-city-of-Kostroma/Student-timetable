@@ -8,54 +8,87 @@ using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
+	/// <summary>
+	/// Таблица со строками, хранящими данные о разных учебных группах в Университете
+	/// </summary>
 	public class CGroup : DataTable, IController
 	{
+		/// <summary>
+		/// Конструктор таблицы
+		/// Формируются поля таблицы типа DataTable и их свойства.
+		/// Уникальность строки в таблице определяется уникальностью поля Group.
+		/// </summary>
 		public CGroup() : base("Группа")
 		{
-	
-			DataColumn column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Group";
-			column.Unique = true;
+
+			if (RefData.CGroup != null) throw new Exception("Контроллер уже существует");
+
+			DataColumn column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Group",
+				Unique = true
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Semestr";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Semestr"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Specialty";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Specialty"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Shift";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Shift"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "Students";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "Students"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "MinNumberOfClass";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "MinNumberOfClass"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(ushort);
-			column.ColumnName = "MaxNumberOfClass";
+			column = new DataColumn
+			{
+				DataType = typeof(ushort),
+				ColumnName = "MaxNumberOfClass"
+			};
 			this.Columns.Add(column);
 
-			column = new DataColumn();
-			column.DataType = typeof(string);
-			column.ColumnName = "Weekends";
+			column = new DataColumn
+			{
+				DataType = typeof(string),
+				ColumnName = "Weekends"
+			};
 			this.Columns.Add(column);
 		}
 
-
+		/// <summary>
+		/// Метод удаления строки соответствующей переданной модели из таблицы CGroup.
+		/// В таблице CGroup ищется строка с полем "Group" соответсвующим этому же полю модели, 
+		/// переданной в качестве параметра.
+		///	В случае успеха поиска удаляется найденная строка. 
+		/// </summary>
+		/// <param name="model">Модель, выбранной строки в таблице</param>
+		/// <returns>Результат удаления переданной строки из CGroup</returns>
 		public bool Delete(Model model)
 
 		{
@@ -73,78 +106,74 @@ namespace LibOfTimetableOfClasses
 			return false;
 		}
 
-		private bool isValidKey(MGroup mGroup)
-		{
-			foreach (DataRow Row in this.Rows)
-			{
-				if (mGroup.Group == (string)Row["Group"])
-					return false;					
-			}
-			return true;
-		}
-
+		/// <summary>
+		/// Метод вставки переданной модели MGroup в таблицу CGroup
+		/// в случае уникальности свойства Group модели для таблицы CGroup
+		/// </summary>
+		/// <param name="model">Вставляемая в CGroup модель</param>
+		/// <returns>Результат вставки</returns>
 		public bool Insert(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
-			if (isValidKey(mGroup))
+			try
 			{
-				try
-				{
 
-					DataRow newRow = this.NewRow();
-					newRow["Group"] = mGroup.Group;
-					newRow["Semestr"] = mGroup.Semester;
-					newRow["Specialty"] = mGroup.Specialty;
-					newRow["Shift"] = mGroup.Shift;
-					newRow["Students"] = mGroup.Students;
-					newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-					newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-					newRow["Weekends"] = mGroup.Weekends;
-					this.Rows.Add(newRow);
-					return true;
-				}
-				catch (Exception ex)
-				{
-					Debug.WriteLine(ex.Source);
-					return false;
-				}
+				DataRow newRow = this.NewRow();
+				newRow["Group"] = mGroup.Group;
+				newRow["Semestr"] = mGroup.Semester;
+				newRow["Specialty"] = mGroup.Specialty;
+				newRow["Shift"] = mGroup.Shift;
+				newRow["Students"] = mGroup.Students;
+				newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+				newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+				newRow["Weekends"] = mGroup.Weekends;
+				this.Rows.Add(newRow);
+				return true;
 			}
-
-			return false;
-
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Source);
+				return false;
+			}
 		}
 
+
+		/// <summary>
+		/// Обновление свойств строки в таблице CGroup из переданной модели MGroup
+		/// Поиск изменяемой строки CGroup осуществляется по полю "Group"
+		/// </summary>
+		/// <param name="model">Модель по которой нужно обновить записи в таблице</param>
+		/// <returns>Успешность выполнения операции</returns>
 		public bool Update(Model model)
 		{
 			MGroup mGroup = (MGroup)model;
 
-				for (int i = 0; i < this.Rows.Count; i++)
-				{
+			for (int i = 0; i < this.Rows.Count; i++)
+			{
 
-					if (mGroup.Group == (string)this.Rows[i]["Group"])
+				if (mGroup.Group == (string)this.Rows[i]["Group"])
+				{
+					try
 					{
-						try
-						{
-							DataRow newRow = this.Rows[i];
-							newRow["Semestr"] = mGroup.Semester;
-							newRow["Specialty"] = mGroup.Specialty;
-							newRow["Shift"] = mGroup.Shift;
-							newRow["Students"] = mGroup.Students;
-							newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
-							newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
-							newRow["Weekends"] = mGroup.Weekends;
-							return true;
-						}
-						catch (Exception ex)
-						{
-							Debug.WriteLine(ex.Source);
-							return false;
-						}
+						DataRow newRow = this.Rows[i];
+						newRow["Semestr"] = mGroup.Semester;
+						newRow["Specialty"] = mGroup.Specialty;
+						newRow["Shift"] = mGroup.Shift;
+						newRow["Students"] = mGroup.Students;
+						newRow["MinNumberOfClass"] = mGroup.MinNumberOfClass;
+						newRow["MaxNumberOfClass"] = mGroup.MaxNumberOfClass;
+						newRow["Weekends"] = mGroup.Weekends;
+						return true;
 					}
+					catch (Exception ex)
+					{
+						Debug.WriteLine(ex.Source);
+						return false;
+					}
+				}
 			}
 			return false;
 		}
-
 	}
 }

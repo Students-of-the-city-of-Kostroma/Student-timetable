@@ -7,29 +7,36 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CEnclosures
 	{
+		/// <summary>
+		/// Удаление существующих данных выбранной строки из таблицы
+		/// </summary>
 		[TestMethod]
 		public void task_395_1()
 		{
-			// arrange
-			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
+			MUniversity grUni = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
+			bool actualUni = RefData.CUniversity.Insert(grUni);
+			Assert.AreEqual(true, actualUni);
+			// arrange 
+			MEnclosures gr = new MEnclosures("А", grUni.FullName, "Дзержинского", "111111", "1");
 			bool expected = true;
 			//act 
-			СEnclosures cg = new СEnclosures();
-			cg.Insert(gr);
-			bool actual = cg.Delete(gr);
+			RefData.CEnclosures.Insert(gr);
+			bool actual = RefData.CEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}
 
+		/// <summary>
+		/// Удаление данных из пустой таблицы
+		/// </summary>
 		[TestMethod]
-		public void task_395_2() //Удаление не существующей строки 
+		public void task_395_2() 
 		{
 			//arrange 
-			MEnclosures gr = new MEnclosures("А", "КГУ", "Дзержинского", "111111", "1");
+			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
 			bool expected = false;
 			//act 
-			СEnclosures cg = new СEnclosures();
-			bool actual = cg.Delete(gr);
+			bool actual = RefData.CEnclosures.Delete(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
 		}

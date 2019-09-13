@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
 			this.DataGridAuditor = new System.Windows.Forms.DataGridView();
+			this.btAddAuditor = new System.Windows.Forms.Button();
+			this.btDelAuditor = new System.Windows.Forms.Button();
+			this.btChange = new System.Windows.Forms.Button();
 			this.NameOfAuditor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Cafedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Spacious = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Building = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btAddAuditor = new System.Windows.Forms.Button();
-			this.btDelAuditor = new System.Windows.Forms.Button();
-			this.btChange = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -62,13 +62,48 @@
 			this.DataGridAuditor.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DataGridAuditor_RowPrePaint);
 			this.DataGridAuditor.SelectionChanged += new System.EventHandler(this.DataGridAuditor_SelectionChanged);
 			// 
+			// btAddAuditor
+			// 
+			this.btAddAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btAddAuditor.Location = new System.Drawing.Point(242, 241);
+			this.btAddAuditor.Name = "btAddAuditor";
+			this.btAddAuditor.Size = new System.Drawing.Size(75, 23);
+			this.btAddAuditor.TabIndex = 2;
+			this.btAddAuditor.Text = "Добавить";
+			this.btAddAuditor.UseVisualStyleBackColor = true;
+			this.btAddAuditor.Click += new System.EventHandler(this.btAddAuditor_Click);
+			// 
+			// btDelAuditor
+			// 
+			this.btDelAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btDelAuditor.Enabled = false;
+			this.btDelAuditor.Location = new System.Drawing.Point(404, 241);
+			this.btDelAuditor.Name = "btDelAuditor";
+			this.btDelAuditor.Size = new System.Drawing.Size(75, 23);
+			this.btDelAuditor.TabIndex = 3;
+			this.btDelAuditor.Text = "Удалить";
+			this.btDelAuditor.UseVisualStyleBackColor = true;
+			this.btDelAuditor.Click += new System.EventHandler(this.btDelAuditor_Click);
+			// 
+			// btChange
+			// 
+			this.btChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btChange.Enabled = false;
+			this.btChange.Location = new System.Drawing.Point(323, 241);
+			this.btChange.Name = "btChange";
+			this.btChange.Size = new System.Drawing.Size(75, 23);
+			this.btChange.TabIndex = 4;
+			this.btChange.Text = "Изменить";
+			this.btChange.UseVisualStyleBackColor = true;
+			this.btChange.Click += new System.EventHandler(this.btChange_Click);
+			// 
 			// NameOfAuditor
 			// 
+			this.NameOfAuditor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.NameOfAuditor.DataPropertyName = "NameOfAuditor";
 			this.NameOfAuditor.HeaderText = "Аудитория";
 			this.NameOfAuditor.Name = "NameOfAuditor";
 			this.NameOfAuditor.ReadOnly = true;
-			this.NameOfAuditor.Width = 85;
 			// 
 			// Cafedra
 			// 
@@ -80,54 +115,19 @@
 			// 
 			// Spacious
 			// 
+			this.Spacious.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Spacious.DataPropertyName = "Spacious";
 			this.Spacious.HeaderText = "Число мест";
 			this.Spacious.Name = "Spacious";
 			this.Spacious.ReadOnly = true;
-			this.Spacious.Width = 92;
 			// 
 			// Building
 			// 
+			this.Building.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Building.DataPropertyName = "Building";
 			this.Building.HeaderText = "Корпус";
 			this.Building.Name = "Building";
 			this.Building.ReadOnly = true;
-			this.Building.Width = 68;
-			// 
-			// btAddAuditor
-			// 
-			this.btAddAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btAddAuditor.Location = new System.Drawing.Point(12, 241);
-			this.btAddAuditor.Name = "btAddAuditor";
-			this.btAddAuditor.Size = new System.Drawing.Size(75, 23);
-			this.btAddAuditor.TabIndex = 2;
-			this.btAddAuditor.Text = "Добавить";
-			this.btAddAuditor.UseVisualStyleBackColor = true;
-			this.btAddAuditor.Click += new System.EventHandler(this.btAddAuditor_Click);
-			// 
-			// btDelAuditor
-			// 
-			this.btDelAuditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btDelAuditor.Enabled = false;
-			this.btDelAuditor.Location = new System.Drawing.Point(174, 241);
-			this.btDelAuditor.Name = "btDelAuditor";
-			this.btDelAuditor.Size = new System.Drawing.Size(75, 23);
-			this.btDelAuditor.TabIndex = 3;
-			this.btDelAuditor.Text = "Удалить";
-			this.btDelAuditor.UseVisualStyleBackColor = true;
-			this.btDelAuditor.Click += new System.EventHandler(this.btDelAuditor_Click);
-			// 
-			// btChange
-			// 
-			this.btChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btChange.Enabled = false;
-			this.btChange.Location = new System.Drawing.Point(93, 241);
-			this.btChange.Name = "btChange";
-			this.btChange.Size = new System.Drawing.Size(75, 23);
-			this.btChange.TabIndex = 4;
-			this.btChange.Text = "Изменить";
-			this.btChange.UseVisualStyleBackColor = true;
-			this.btChange.Click += new System.EventHandler(this.btChange_Click);
 			// 
 			// Auditor
 			// 
@@ -138,6 +138,7 @@
 			this.Controls.Add(this.btDelAuditor);
 			this.Controls.Add(this.btAddAuditor);
 			this.Controls.Add(this.DataGridAuditor);
+			this.MinimumSize = new System.Drawing.Size(507, 307);
 			this.Name = "Auditor";
 			this.Text = "Аудитории";
 			((System.ComponentModel.ISupportInitialize)(this.DataGridAuditor)).EndInit();
@@ -150,10 +151,10 @@
         private System.Windows.Forms.DataGridView DataGridAuditor;
 		private System.Windows.Forms.Button btAddAuditor;
 		private System.Windows.Forms.Button btDelAuditor;
+		private System.Windows.Forms.Button btChange;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfAuditor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cafedra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Spacious;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Building;
-		private System.Windows.Forms.Button btChange;
 	}
 }

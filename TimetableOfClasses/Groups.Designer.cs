@@ -65,12 +65,14 @@
 			this.DG_Group.MultiSelect = false;
 			this.DG_Group.Name = "DG_Group";
 			this.DG_Group.ReadOnly = true;
+			this.DG_Group.RowHeadersWidth = 60;
 			this.DG_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DG_Group.Size = new System.Drawing.Size(397, 347);
 			this.DG_Group.TabIndex = 0;
 			this.DG_Group.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_Group_ColumnHeaderMouseClick);
 			this.DG_Group.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_Group_DataBindingComplete);
 			this.DG_Group.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Group_RowPrePaint);
+			this.DG_Group.DoubleClick += new System.EventHandler(this.Update);
 			// 
 			// Group
 			// 
