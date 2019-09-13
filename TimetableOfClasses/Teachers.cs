@@ -164,6 +164,5 @@ namespace TimetableOfClasses
 			if (header == null || !header.Equals(indexStr))
 				this.DG.Rows[index].HeaderCell.Value = indexStr;
 		}
-
 	}
 }
