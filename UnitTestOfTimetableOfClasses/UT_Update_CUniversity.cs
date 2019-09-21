@@ -8,6 +8,22 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CUniversity
 	{
+
+		//[TestInitialize()]
+		//protected void SetUp()
+		//{
+		//	//initialize objects
+		//}
+
+		[TestCleanup()]
+		public void TearDown()
+		{
+			for (int i = 0; i < RefData.CUniversity.Rows.Count; i++)
+			{
+				RefData.CUniversity.Rows[i].Delete();  //dispose table
+			}
+		}
+
 		[TestMethod]
 		public void Task_497_1() 
 		{
@@ -49,10 +65,11 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_497_3()//дублирование полного названия
 		{
+			string fullName = "Костромкой Государственный Университет";
 			// arrange
-			MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
+			MUniversity gr = new MUniversity("4401006286", "КГУ", fullName, "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
 			RefData.CUniversity.Insert(gr);
-			MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
+			MUniversity gr1 = new MUniversity("4401006256", "КГТУ", fullName, "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
 			RefData.CUniversity.Insert(gr1);
 			bool expected = false;
 			//act 
