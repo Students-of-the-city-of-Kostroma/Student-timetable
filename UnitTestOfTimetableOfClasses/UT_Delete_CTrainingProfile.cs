@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
 		/// </summary>
 		public void Pre_condition_Del()
 		{
-			create_DirectionOfPreparation();
+			
 			bool ex = true;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
@@ -27,6 +27,7 @@ namespace UnitTestOfTimetableOfClasses
 		/// </summary>
 		public void create_DirectionOfPreparation()
 		{
+
 			bool ex = true;
 			bool act;
 			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
@@ -39,6 +40,7 @@ namespace UnitTestOfTimetableOfClasses
 		[TestMethod]
 		public void Task_422_1()
 		{
+			create_DirectionOfPreparation();
 			Pre_condition_Del();
 			bool ex = true;
 			bool act;
