@@ -8,22 +8,9 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Update_CUniversity
 	{
-
-		//[TestInitialize()]
-		//protected void SetUp()
-		//{
-		//	//initialize objects
-		//}
-
-		[TestCleanup()]
-		public void TearDown()
-		{
-			for (int i = 0; i < RefData.CUniversity.Rows.Count; i++)
-			{
-				RefData.CUniversity.Rows[i].Delete();  //dispose table
-			}
-		}
-
+		/// <summary>
+		/// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров 
+		/// </summary>
 		[TestMethod]
 		public void Task_497_1() 
 		{
@@ -46,7 +33,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Краткое название дублирует Краткое название существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_2()//дублирование краткого названия
 		{
@@ -61,7 +55,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Полное название дублирует Полное название существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_3()//дублирование полного названия
 		{
@@ -77,7 +78,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+
+			RefData.CUniversity.Delete(gr);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Фактический адрес дублирует Фактический адрес существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_4()//дублирование факт. адреса
 		{
@@ -92,7 +100,15 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Юридический адрес дублирует Юридический адрес адрес существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_5()//дублирование юр. адреса
 		{
@@ -107,7 +123,15 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что ФИО ректора дублирует ФИО ректора адрес существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_6()//дублирование ФИО ректора
 		{
@@ -124,7 +148,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод корректных данных, при условии, что Почта дублирует Почта адрес существующего экземпляра(не учитывая основные атрибуты)
+		/// </summary>
 		[TestMethod]
 		public void Task_497_7()//дублирование Почты
 		{
@@ -139,7 +170,14 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Update(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
+
+			RefData.CUniversity.Delete(gr);
+			RefData.CUniversity.Delete(gr1);
 		}
+
+		/// <summary>
+		/// Ввод данных аналогичных уже существующим
+		/// </summary>
 		[TestMethod]
 		public void Task_496_10() //дублирование всех атрибутов
 		{
@@ -152,6 +190,9 @@ namespace UnitTestOfTimetableOfClasses
 		bool actual = RefData.CUniversity.Insert(gr1);
 		//assert 
 		Assert.AreEqual(expected, actual);
+
+
+		RefData.CUniversity.Delete(gr);
 		}
 	}
 }
