@@ -36,6 +36,9 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
+		/// <summary>
+		/// Удаление существующих данных выбранной строки из таблицы
+		/// </summary>
 		[TestMethod]
 		public void Task_422_1()
 		{
@@ -49,6 +52,9 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 - 1, C2);
 		}
+		/// <summary>
+		/// Удаление данных из пустой таблицы
+		/// </summary>
 		[TestMethod]
 		public void Task_422_2()
 		{
