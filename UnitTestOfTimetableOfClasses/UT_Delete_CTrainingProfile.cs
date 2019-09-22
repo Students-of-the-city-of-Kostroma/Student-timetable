@@ -12,27 +12,21 @@ namespace UnitTestOfTimetableOfClasses
 		/// </summary>
 		public void Pre_condition_Del()
 		{
-			create_DirectionOfPreparation();
+			bool exPrep = true;
+			bool actPrep;
+			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
+			int DoP1 = RefData.CDirectionOfPreparation.Rows.Count;
+			actPrep = RefData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
+			int DoP2 = RefData.CDirectionOfPreparation.Rows.Count;
+			Assert.AreEqual(exPrep, actPrep);
+			Assert.AreEqual(DoP1 + 1, DoP2);
+
 			bool ex = true;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
 			int C1 = RefData.CTrainingProfile.Rows.Count;
 			act = RefData.CTrainingProfile.Insert(T_TrainingProfile);
 			int C2 = RefData.CTrainingProfile.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1 + 1, C2);
-		}
-		/// <summary>
-		/// Создание направления подготовки для начальных условий
-		/// </summary>
-		public void create_DirectionOfPreparation()
-		{
-			bool ex = true;
-			bool act;
-			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
-			int C1 = RefData.CDirectionOfPreparation.Rows.Count;
-			act = RefData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
-			int C2 = RefData.CDirectionOfPreparation.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
