@@ -33,23 +33,6 @@ namespace UnitTestOfTimetableOfClasses
 		/// <summary>
 		/// Удаление существующих данных выбранной строки из таблицы
 		/// </summary>
-<<<<<<< HEAD
-=======
-		public void create_DirectionOfPreparation()
-		{
-			bool ex = true;
-			bool act;
-			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
-			int C1 = RefData.CDirectionOfPreparation.Rows.Count;
-			act = RefData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
-			int C2 = RefData.CDirectionOfPreparation.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1 + 1, C2);
-		}
-		/// <summary>
-		/// Удаление существующих данных выбранной строки из таблицы
-		/// </summary>
->>>>>>> task-1186
 		[TestMethod]
 		public void Task_422_1()
 		{
