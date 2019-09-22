@@ -21,7 +21,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Краткое название добавляемой группы дублирует Краткое название уже существующей группы
@@ -38,7 +40,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Полное название добавляемой группы дублирует Полное название уже существующей группы
@@ -55,7 +59,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Фактический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
@@ -72,7 +78,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Юридический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
@@ -89,7 +97,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что ФИО ректора добавляемой группы дублирует ФИО ректора уже существующей группы
@@ -106,7 +116,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Почта добавляемой группы дублирует Почта уже существующей группы
@@ -123,7 +135,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что Телефон добавляемой группы дублирует Телефон уже существующей группы
@@ -140,7 +154,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод корректных данных, при условии, что ИНН добавляемой группы дублирует ИНН уже существующей группы
@@ -157,7 +173,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 
 		/// <summary>
 		/// Ввод данных аналогичных уже существующим
@@ -174,6 +192,8 @@ namespace UnitTestOfTimetableOfClasses
 			bool actual = RefData.CUniversity.Insert(gr1);
 			//assert 
 			Assert.AreEqual(expected, actual);
-		}
+            RefData.CUniversity.Delete(gr);
+            RefData.CUniversity.Delete(gr1);
+        }
 	}
 }
