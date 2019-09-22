@@ -16,11 +16,14 @@ namespace UnitTestOfTimetableOfClasses
 			//arrange 
 			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Проф", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
 			bool expected = true;
-			//act 
-			RefData.CTeacher.Insert(tcher);
-			bool actual = RefData.CTeacher.Delete(tcher);
-			//assert 
-			Assert.AreEqual(expected, actual);
+            bool expectedInsert = true;
+            //act 
+            bool actualInsert = RefData.CTeacher.Insert(tcher);
+            Assert.AreEqual(expectedInsert, actualInsert);
+            bool actual = RefData.CTeacher.Delete(tcher);
+            //assert 
+
+            Assert.AreEqual(expected, actual);
 		}
         /// <summary>
         /// Удаление не существующей строки 
@@ -33,8 +36,10 @@ namespace UnitTestOfTimetableOfClasses
 			bool expected = false;
 			//act 
 			bool actual = RefData.CTeacher.Delete(tcher);
-			//assert 
-			Assert.AreEqual(expected, actual);
+            //assert 
+            
+
+            Assert.AreEqual(expected, actual);
 		}
 	}
 }
