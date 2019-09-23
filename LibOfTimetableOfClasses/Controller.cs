@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -24,7 +19,7 @@ namespace LibOfTimetableOfClasses
         /// Создает таблицу с указаным именем
         /// </summary>
         /// <param name="tableName">Имя таблицы</param>
-        public Controller(string tableName="Controller")
+        public Controller(string tableName = "Controller")
         {
             table = new DataTable(tableName);
             DataSet.Tables.Add(table);
@@ -63,7 +58,7 @@ namespace LibOfTimetableOfClasses
         /// <returns></returns>
         public DataTable Select(string columnName, bool order)
         {
-            table.DefaultView.Sort = columnName + " " + ((order)?"ASC":"DESC");
+            table.DefaultView.Sort = columnName + " " + ((order) ? "ASC" : "DESC");
             return table;
         }
         public static bool TableCompare(DataTable table1, DataTable table2)
