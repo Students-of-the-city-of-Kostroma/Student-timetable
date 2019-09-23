@@ -131,5 +131,11 @@ namespace TimetableOfClasses
             Departments departments = new Departments();
             departments.Show();
         }
+
+        private void нагрузкаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AcademicLoad academicLoad = new AcademicLoad();
+            academicLoad.Show();
+        }
     }
 }
