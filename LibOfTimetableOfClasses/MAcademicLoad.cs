@@ -11,12 +11,12 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MAcademicLoad : Model
     {
-        string _Group;
-        string _Discipline;
-        string _Teacher;
-        string _TotalHours;
+        string _group;
+        string _discipline;
+        string _teacher;
         string _occupation;
-        string _Distributed;
+        string _totalHours;
+        string _distributed;
 
 
         /// <summary>
@@ -25,11 +25,11 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Группа
         /// </summary>
-        public string group
+        public string Group
         {
             get
             {
-                return _Group;
+                return _group;
             }
             set
             {
@@ -40,9 +40,61 @@ namespace LibOfTimetableOfClasses
                     if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
-                _Group = value;
+                _group = value;
             }
         }
+
+        /// <summary>
+        /// свойства discipline модели AcademicLoad
+        /// В случае записи свойства проводятся проверки переданнаго значения:
+        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Дисциплина
+        /// </summary>
+        public string Discipline
+        {
+            get
+            {
+                return _discipline;
+            }
+            set
+            {
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+                if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+
+                foreach (char l in value)
+                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
+                _discipline = value;
+            }
+        }
+
+        /// <summary>
+        /// свойства teacher модели AcademicLoad
+        /// В случае записи свойства проводятся проверки переданнаго значения:
+        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Преподаватель
+        /// </summary>
+        public string Teacher
+        {
+            get
+            {
+                return _teacher;
+            }
+            set
+            {
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+                if (value.Length > 25) throw new Exception("Кол-во символов не превышает 25");
+
+                foreach (char l in value)
+                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной");
+                _teacher = value;
+            }
+        }
+
+
 
         /// <summary>
         /// свойства occupation модели AcademicLoad
@@ -69,55 +121,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        /// <summary>
-        /// свойства discipline модели AcademicLoad
-        /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
-        /// Дисциплина
-        /// </summary>
-        public string discipline
-        {
-            get
-            {
-                return _Discipline;
-            }
-            set
-            {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
-
-                foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
-
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
-                _Discipline = value;
-            }
-        }
-
-        /// <summary>
-        /// свойства teacher модели AcademicLoad
-        /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
-        /// Преподаватель
-        /// </summary>
-        public string teacher
-        {
-            get
-            {
-                return _Teacher;
-            }
-            set
-            {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 25) throw new Exception("Кол-во символов не превышает 25");
-
-                foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
-
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной");
-                _Teacher = value;
-            }
-        }
 
         /// <summary>
         /// свойства TotalHours модели AcademicLoad
@@ -125,11 +128,11 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Всего часов
         /// </summary>
-        public string totalHours
+        public string TotalHours
         {
             get
             {
-                return _TotalHours;
+                return _totalHours;
             }
             set
             {
@@ -137,7 +140,7 @@ namespace LibOfTimetableOfClasses
                 foreach (char l in value)
                     if (l < '0' || l > '9') throw new Exception("Можно использовать только цифры ");
 
-                _TotalHours = value;
+                _totalHours = value;
             }
         }
 
@@ -148,11 +151,11 @@ namespace LibOfTimetableOfClasses
         /// Распределено
         /// </summary>
 
-        public string distributed
+        public string Distributed
         {
             get
             {
-                return _Distributed;
+                return _distributed;
             }
             set
             {
@@ -160,7 +163,7 @@ namespace LibOfTimetableOfClasses
                 foreach (char l in value)
                     if (l < '0' || l > '9') throw new Exception("Можно использовать только цифры ");
 
-                _Distributed = value;
+                _distributed = value;
             }
         }
     }
