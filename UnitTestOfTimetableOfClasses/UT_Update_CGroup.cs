@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
         [TestMethod]
-        public void task_250_1_1() // Изменение когда все поля отличаются
+        public void Task_250_1_1() // Изменение когда все поля отличаются
         {
             setupData();
             //arrange
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
        [TestMethod]
-        public void task_250_1_3() // повтор Семестра
+        public void Task_250_1_3() // повтор Семестра
         {
             setupData();
             //arrange
@@ -101,7 +101,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Направление подготовки дублирует Направление подготовки существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void task_250_1_4() // повтор направления подготовки
+        public void Task_250_1_4() // повтор направления подготовки
         {
             setupData();
             //arrange
@@ -133,7 +133,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void task_250_1_5() // смены
+        public void Task_250_1_5() // смены
         {
             setupData();
             //arrange
@@ -165,7 +165,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void task_250_1_6() // повтор студентов
+        public void Task_250_1_6() // повтор студентов
         {
             setupData();
             //arrange
@@ -197,7 +197,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void task_250_1_7() // повтор графика
+        public void Task_250_1_7() // повтор графика
         {
             setupData();
             //arrange
@@ -231,7 +231,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных при условии что она будет дублировать другую записть(невозможно изменение)
         /// </summary>
         [TestMethod]
-        public void task_250_1_8() // повтор всего(кроме группы)
+        public void Task_250_1_8() // повтор всего(кроме группы)
         {
             setupData();
             //arrange
