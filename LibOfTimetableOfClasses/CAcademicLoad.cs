@@ -56,7 +56,7 @@ namespace LibOfTimetableOfClasses
             column = new DataColumn
             {
                 DataType = typeof(string),
-                ColumnName = "Type of lesson"
+                ColumnName = "KindOfLesson"
             };
             this.Columns.Add(column);
         }
