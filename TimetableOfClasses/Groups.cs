@@ -1,13 +1,9 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -69,32 +65,32 @@ namespace TimetableOfClasses
             DataRow Row = ((DataRowView)DG_Group?.SelectedRows[0]?.DataBoundItem)?.Row;
             if (Row == null) return;
 
-                if (oldColumn != null)
+            if (oldColumn != null)
+            {
+                if (oldColumn == newColumn &&
+                    DG_Group.SortOrder == SortOrder.Ascending)
                 {
-                    if (oldColumn == newColumn &&
-                        DG_Group.SortOrder == SortOrder.Ascending)
-                    {
-                        direction = ListSortDirection.Descending;
-                    }
-                    else
-                    {
-                        direction = ListSortDirection.Ascending;
-                        oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-                    }
+                    direction = ListSortDirection.Descending;
                 }
                 else
                 {
                     direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
                 }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
 
-                //сохраняем номер выделенной строки
-                List<object> arraySelectedRows = new List<object>();
-                foreach (DataGridViewRow item in DG_Group.SelectedRows)
-                {
-                    arraySelectedRows.Add(item.DataBoundItem);
-                }
+            //сохраняем номер выделенной строки
+            List<object> arraySelectedRows = new List<object>();
+            foreach (DataGridViewRow item in DG_Group.SelectedRows)
+            {
+                arraySelectedRows.Add(item.DataBoundItem);
+            }
 
-                DG_Group.Sort(newColumn, direction);
+            DG_Group.Sort(newColumn, direction);
 
             foreach (DataGridViewRow item in DG_Group.Rows)
             {
@@ -123,5 +119,5 @@ namespace TimetableOfClasses
         }
 
     }
-    
+
 }

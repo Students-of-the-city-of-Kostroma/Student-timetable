@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -43,12 +37,15 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="s"></param>
         /// <param name="e"></param>
-        private void CreateAndCloseClick(object s, EventArgs e) {
-            if (!this.shortTitleValidated || !this.fullTitleValidated || !this.departmentHeadValidated || !this.instituteValidated) {
+        private void CreateAndCloseClick(object s, EventArgs e)
+        {
+            if (!this.shortTitleValidated || !this.fullTitleValidated || !this.departmentHeadValidated || !this.instituteValidated)
+            {
                 MessageBox.Show("Пожалуйста корректно заполните поля формы.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            try {
+            try
+            {
                 MDepartment mDepartment = new MDepartment(
                     this.shortTitle.Text,
                     this.fullTitle.Text,
@@ -56,7 +53,9 @@ namespace TimetableOfClasses
                     this.institute.Text
                 );
                 MessageBox.Show("Форма успешно заполнена!\nНа данный момент функционал добавления кафедры в список еще не реализован.", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch {
+            }
+            catch
+            {
                 MessageBox.Show("Пожалуйста корректно заполните поля формы.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -66,7 +65,8 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="s"></param>
         /// <param name="e"></param>
-        private void ShortTitleTextChanged(object s, EventArgs e) {
+        private void ShortTitleTextChanged(object s, EventArgs e)
+        {
             bool v = ValidateHandler(MDepartment.ValidateShortTitle((s as TextBox).Text, out string[] res), res, s, this.shortTitleTooltip);
             this.shortTitleValidated = v;
         }
@@ -76,7 +76,8 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="s"></param>
         /// <param name="e"></param>
-        private void FullTitleTextChanged(object s, EventArgs e) {
+        private void FullTitleTextChanged(object s, EventArgs e)
+        {
             bool v = ValidateHandler(MDepartment.ValidateFullTitle((s as TextBox).Text, shortTitle.Text, out string[] res), res, s, this.fullTitleTooltip);
             this.fullTitleValidated = v;
         }
@@ -86,7 +87,8 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="s"></param>
         /// <param name="e"></param>
-        private void DepartmentHeadTextChanged(object s, EventArgs e) {
+        private void DepartmentHeadTextChanged(object s, EventArgs e)
+        {
             bool v = ValidateHandler(MDepartment.ValidateDepartmentHead((s as TextBox).Text, out string[] res), res, s, this.departmentHeadTooltip);
             this.departmentHeadValidated = v;
         }
@@ -96,7 +98,8 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="s"></param>
         /// <param name="e"></param>
-        private void InstituteTextChanged(object s, EventArgs e) {
+        private void InstituteTextChanged(object s, EventArgs e)
+        {
             bool v = ValidateHandler(MDepartment.ValidateInstitute((s as TextBox).Text, out string[] res), res, s, this.instituteTooltip);
             this.instituteValidated = v;
         }
@@ -110,9 +113,11 @@ namespace TimetableOfClasses
         /// <param name="sender">Отправитель события об изменении поля</param>
         /// <param name="tooltip">Прикрепленный tooltip</param>
         /// <returns>Успешность проверки</returns>
-        private bool ValidateHandler(bool validator, string[] msgs, object sender, ToolTip tooltip) {
+        private bool ValidateHandler(bool validator, string[] msgs, object sender, ToolTip tooltip)
+        {
             TextBox tb = sender as TextBox;
-            if (!validator) {
+            if (!validator)
+            {
                 tooltip.ToolTipTitle = "Ошибка!";
                 tooltip.ToolTipIcon = ToolTipIcon.Error;
                 tooltip.SetToolTip(tb, String.Join("\n", msgs));

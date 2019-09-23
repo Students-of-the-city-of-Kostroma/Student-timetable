@@ -1,6 +1,6 @@
-﻿using System;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -19,7 +19,7 @@ namespace UnitTestOfTimetableOfClasses
             Logs.GetInfo("Click button Delete in Teacher");
             string ex = ("");
             ex = Read();
-            
+
             //act
             string act = "Click button Delete in Teacher";
 
@@ -47,7 +47,7 @@ namespace UnitTestOfTimetableOfClasses
 
             try
             {
-                throw new Exception ("Error");
+                throw new Exception("Error");
             }
             catch (Exception error)
             {

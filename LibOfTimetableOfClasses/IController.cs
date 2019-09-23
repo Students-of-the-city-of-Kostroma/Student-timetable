@@ -1,6 +1,3 @@
-
-using System.Data;
-
 namespace LibOfTimetableOfClasses
 {
     interface IController

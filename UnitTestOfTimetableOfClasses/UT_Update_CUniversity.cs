@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 
 namespace UnitTestOfTimetableOfClasses
@@ -12,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров 
         /// </summary>
         [TestMethod]
-        public void Task_497_1() 
+        public void Task_497_1()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006285", "МГУ", "Московский Государственный Университет", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "Виктор", "Садовничий", "Антонович", "infor@msu.edu.ru", "84942317961");

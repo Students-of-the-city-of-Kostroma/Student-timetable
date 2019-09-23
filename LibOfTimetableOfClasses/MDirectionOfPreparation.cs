@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -40,11 +36,11 @@ namespace LibOfTimetableOfClasses
         {
             set
             {
-                if  (Regex.IsMatch(value, @"\d{2}.\d{2}.\d{2}", RegexOptions.IgnoreCase))
+                if (Regex.IsMatch(value, @"\d{2}.\d{2}.\d{2}", RegexOptions.IgnoreCase))
                     codeOfDP = value;
                 else throw new ArgumentException("Код не соответствует маске задания кода");
             }
-                
+
             get { return codeOfDP; }
         }
         /// <summary>

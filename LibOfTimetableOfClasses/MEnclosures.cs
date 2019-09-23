@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
@@ -42,7 +38,7 @@ namespace LibOfTimetableOfClasses
                         throw new Exception("Присутствует недопустимый символ в строке названия корпуса");
                     }
                 }
-                if (value.Length>50) throw new Exception("Слишком длинная строка названия корпуса");
+                if (value.Length > 50) throw new Exception("Слишком длинная строка названия корпуса");
                 _name = value;
             }
         }
@@ -92,7 +88,7 @@ namespace LibOfTimetableOfClasses
                 if (value == null) throw new Exception("Null строка адреса");
                 foreach (char s in value)
                 {
-                    if ((s < 'А' || s > 'я')  && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))
+                    if ((s < 'А' || s > 'я') && s != '-' && s != ',' && s != ' ' && s != '.' && (s < '0' || s > '9'))
                     {
                         throw new Exception("Присутствует недопустимый символ в строке адреса");
                     }
@@ -171,13 +167,13 @@ namespace LibOfTimetableOfClasses
         /// <param name="address">Адресс корпуса </param>
         /// <param name="phone">Телефон корпуса</param>
         /// <param name="comment">Примечание к записи таблицы</param>
-        public MEnclosures(string name,string university,string address,string phone,string comment): base()
+        public MEnclosures(string name, string university, string address, string phone, string comment) : base()
         {
-            Name= name;
+            Name = name;
             University = university;
             Address = address;
-            Phone= phone;
-            Comment= comment;
+            Phone = phone;
+            Comment = comment;
         }
 
         private bool IsLetterСaseNormal(string input)

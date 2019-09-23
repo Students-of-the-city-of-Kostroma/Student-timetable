@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -42,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MAuditor T_Auditor = new MAuditor("", "", 0,"");
+                MAuditor T_Auditor = new MAuditor("", "", 0, "");
                 Assert.AreEqual(typeof(String), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MAuditor T_Auditor = new MAuditor("", "", 0,"");
+                MAuditor T_Auditor = new MAuditor("", "", 0, "");
                 Assert.AreEqual(typeof(ushort), T_Auditor.Spacious.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)

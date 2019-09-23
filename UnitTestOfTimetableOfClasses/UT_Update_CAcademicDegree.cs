@@ -1,5 +1,4 @@
-﻿using System;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
@@ -11,41 +10,41 @@ namespace UnitTestOfTimetableOfClasses
         /// Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
         /// </summary>
         [TestMethod]
-            public void Task_484_1()
-            {
-                    //arrange 
-                    MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-                    RefData.CAcademicDegree.Insert(MAcademic);
-                    bool ex = false;
+        public void Task_484_1()
+        {
+            //arrange 
+            MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
+            RefData.CAcademicDegree.Insert(MAcademic);
+            bool ex = false;
 
-                    //act
-                    MAcademic.Reduction = "Бак.";
-                    bool act = RefData.CAcademicDegree.Update(MAcademic);
+            //act
+            MAcademic.Reduction = "Бак.";
+            bool act = RefData.CAcademicDegree.Update(MAcademic);
 
-                    //assert
-                    Assert.AreEqual(ex, act);
-            }
+            //assert
+            Assert.AreEqual(ex, act);
+        }
 
         /// <summary>
         /// Замена корректными данными всех полей таблицы
         /// </summary>
         [TestMethod]
-            public void Task_484_2()
-            {
-                    //arrange
-                    MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-                    RefData.CAcademicDegree.Insert(MAcademic);
-                    bool ex = true;
+        public void Task_484_2()
+        {
+            //arrange
+            MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
+            RefData.CAcademicDegree.Insert(MAcademic);
+            bool ex = true;
 
-                    //act
-                    MAcademic.FullName = "Бакалавр";
-                    MAcademic.Reduction = "Маг.";
-                    bool act = RefData.CAcademicDegree.Update(MAcademic);
+            //act
+            MAcademic.FullName = "Бакалавр";
+            MAcademic.Reduction = "Маг.";
+            bool act = RefData.CAcademicDegree.Update(MAcademic);
 
-                    //assert
-                    Assert.AreEqual(ex, act);
-        
-            }
+            //assert
+            Assert.AreEqual(ex, act);
+
+        }
         /// <summary>
         /// Замена всех полей пустыми строками
         /// </summary>

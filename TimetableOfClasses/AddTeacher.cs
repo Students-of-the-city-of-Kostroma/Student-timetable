@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -30,7 +24,7 @@ namespace TimetableOfClasses
 
         private bool isEmpty(string[] strArgs)
         {
-            foreach(var cur in strArgs)
+            foreach (var cur in strArgs)
             {
                 if (cur.Length == 0)
                 {
@@ -42,7 +36,7 @@ namespace TimetableOfClasses
 
         private void message()
         {
-            MessageBox.Show("Заполните все пустые строки", "Предупреждение",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Заполните все пустые строки", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public AddTeacher(MTeacher mTeacher)
@@ -137,7 +131,7 @@ namespace TimetableOfClasses
         /// <param name="e"></param>
         private void AddTeacher_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void SelectionOfLetters1(object sender, EventArgs e)
@@ -237,13 +231,13 @@ namespace TimetableOfClasses
                 {
                     char p;
                     str = Char.ToUpper(str[0]) + str.Substring(1);
-                    for (int i=0; i < str.Length; i++)
-                    {   
-                        if(str[i] == ',')
+                    for (int i = 0; i < str.Length; i++)
+                    {
+                        if (str[i] == ',')
                         {
                             p = Char.ToUpper(str[i + 2]);
                             str = str.Remove(i + 2, 1);
-                            str = str.Insert(i + 2, ""+p);
+                            str = str.Insert(i + 2, "" + p);
                         }
                     }
                     return str;
@@ -259,7 +253,7 @@ namespace TimetableOfClasses
         private void KeyPress1(object sender, KeyPressEventArgs e)
         {
             char l = e.KeyChar;
-            if ((l < 'А' || l > 'я') && l != '\b' )
+            if ((l < 'А' || l > 'я') && l != '\b')
             {
                 e.Handled = true;
             }

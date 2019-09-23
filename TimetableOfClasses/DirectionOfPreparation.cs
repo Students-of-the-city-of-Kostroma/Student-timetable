@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -34,7 +28,7 @@ namespace TimetableOfClasses
         }
 
         private void btDeleteDirection_Click(object sender, EventArgs e)
-        {            
+        {
             string SelectedName = "";
             foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
             {
@@ -42,14 +36,14 @@ namespace TimetableOfClasses
                 SelectedName += (string)Row["NameOfDP"] + ", ";
             }
             if (SelectedName.Length > 2)
-                SelectedName = SelectedName.Remove(SelectedName.Length - 2);            
+                SelectedName = SelectedName.Remove(SelectedName.Length - 2);
             if (SelectedName != "")
             {
                 DialogResult dr = MessageBox.Show("Удалить направление - " + SelectedName + "?", "Подтверждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dgDirectionOfPreparation.SelectedRows.Count > 0 && dr == DialogResult.OK)
                 {
                     int countSelected = dgDirectionOfPreparation.SelectedRows.Count;
-                    
+
                     MDirectionOfPreparation Direction;
                     foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
                     {

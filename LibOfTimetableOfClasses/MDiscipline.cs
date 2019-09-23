@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibOfTimetableOfClasses
+﻿namespace LibOfTimetableOfClasses
 {
     /// <summary>
     /// Дисциплина
     /// </summary>
-     public class MDiscipline : Model
+    public class MDiscipline : Model
     {
         /// <summary>
         /// Полное название дисциплины

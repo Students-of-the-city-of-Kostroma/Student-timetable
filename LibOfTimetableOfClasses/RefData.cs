@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -62,7 +57,7 @@ namespace LibOfTimetableOfClasses
             RefData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
             RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5,"Суббота");
+            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
             RefData.CGroup.Insert(mGroup);
 
             MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4);

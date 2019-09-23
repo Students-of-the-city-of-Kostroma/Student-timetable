@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -22,15 +16,15 @@ namespace TimetableOfClasses
             dgProfile.DataSource = RefData.CTrainingProfile;
 
             if (forChoice)
-            {                
+            {
                 this.Name = "ВЫбор профиля";
-            }            
+            }
         }
 
         public TrainingProfiles(int tmp)
         {
             InitializeComponent();
-            
+
         }
 
         private void AddProfile_Click(object sender, EventArgs e)

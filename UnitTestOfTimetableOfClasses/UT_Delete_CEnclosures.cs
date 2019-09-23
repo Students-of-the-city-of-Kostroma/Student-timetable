@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -30,7 +29,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление данных из пустой таблицы
         /// </summary>
         [TestMethod]
-        public void task_395_2() 
+        public void task_395_2()
         {
             //arrange 
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");

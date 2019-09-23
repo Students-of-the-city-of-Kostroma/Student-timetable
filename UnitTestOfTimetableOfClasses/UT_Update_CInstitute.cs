@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -55,7 +54,7 @@ namespace UnitTestOfTimetableOfClasses
 
         }
 
-        
+
         [TestMethod]
         public void Task_615_4() //директор уже есть в таблице
         {

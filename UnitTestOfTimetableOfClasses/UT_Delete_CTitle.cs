@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace UnitTestOfTimetableOfClasses

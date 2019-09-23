@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -135,7 +131,7 @@ namespace LibOfTimetableOfClasses
 
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor 
+                if ((string)Rows[i]["NameOfAuditor"] == mAuditor.NameOfAuditor
                     && (string)Rows[i]["Building"] == mAuditor.Building)
                 {
                     Rows.Remove(Rows[i]);

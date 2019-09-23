@@ -1,13 +1,9 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -34,7 +30,7 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-    
+
         private void RemoveTeacher(object sender, EventArgs e)
         {
             try
@@ -42,7 +38,7 @@ namespace TimetableOfClasses
                 Logs.GetInfo("Click button Delete in Teacher");
                 //DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
                 if (DG.SelectedRows.Count == 0) return;
-                
+
                 DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 MTeacher mTeacher;
 
@@ -72,7 +68,7 @@ namespace TimetableOfClasses
                 Logs.GetInfo("Click button Change is Teacher");
                 if (DG.SelectedRows.Count == 1)
                 {
-                    
+
                     DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
                     String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     MTeacher mTeacher;
