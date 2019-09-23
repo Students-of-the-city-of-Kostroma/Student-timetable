@@ -37,14 +37,13 @@ namespace LibOfTimetableOfClasses
             };
             this.Columns.Add(column);
 
-            this.Columns.Add(column);
+            
 
             column = new DataColumn
             {
                 DataType = typeof(string),
                 ColumnName = "Discipline"
             };
-
             this.Columns.Add(column);
             
             column = new DataColumn
