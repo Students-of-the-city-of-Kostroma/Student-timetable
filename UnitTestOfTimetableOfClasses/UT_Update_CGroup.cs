@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CGroup
     {
-        private void setupData()
+        private void SetupData()
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
             Assert.IsTrue(RefData.CDirectionOfPreparation.Insert(mDirection));
@@ -20,7 +20,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(RefData.CTrainingProfile.Insert(mTrainingProfile));
         }
  
-        private void deleteData()
+        private void DeleteData()
         {
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
             Assert.IsTrue(RefData.CTrainingProfile.Delete(mTrainingProfile));
@@ -35,9 +35,9 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
         [TestMethod]
-        public void Task_250_1_1() // Изменение когда все поля отличаются
+        public void Task_250_1_1() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -63,15 +63,15 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
         /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
        [TestMethod]
-        public void Task_250_1_3() // повтор Семестра
+        public void Task_250_1_3() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -94,16 +94,16 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
  
         /// <summary>
         /// Ввод корректных данных, при условии, что Направление подготовки дублирует Направление подготовки существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_4() // повтор направления подготовки
+        public void Task_250_1_4() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -126,16 +126,16 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
  
         /// <summary>
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_5() // смены
+        public void Task_250_1_5() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -158,16 +158,16 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
  
         /// <summary>
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_6() // повтор студентов
+        public void Task_250_1_6() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -190,16 +190,16 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
  
         /// <summary>
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_7() // повтор графика
+        public void Task_250_1_7() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -224,16 +224,16 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
  
         /// <summary>
         /// Ввод корректных данных при условии что она будет дублировать другую записть(невозможно изменение)
         /// </summary>
         [TestMethod]
-        public void Task_250_1_8() // повтор всего(кроме группы)
+        public void Task_250_1_8() 
         {
-            setupData();
+            SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = RefData.CGroup.Insert(gr);
@@ -262,7 +262,7 @@ namespace UnitTestOfTimetableOfClasses
             result = RefData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
  
-            deleteData();
+            DeleteData();
         }
     }
 }
