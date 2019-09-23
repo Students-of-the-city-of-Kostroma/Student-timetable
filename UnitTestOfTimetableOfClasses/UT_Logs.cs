@@ -6,63 +6,63 @@ using System.Linq;
 
 namespace UnitTestOfTimetableOfClasses
 {
-	[TestClass]
-	public class UT_Logs
-	{
-		/// <summary>
-		/// Проверка корректного вывода метода GetInfo в Logs.txt
-		/// </summary>
-		[TestMethod]
-		public void Task_1018_1()
-		{
-			//arrange
-			Logs.GetInfo("Click button Delete in Teacher");
-			string ex = ("");
-			ex = Read();
-			
-			//act
-			string act = "Click button Delete in Teacher";
+    [TestClass]
+    public class UT_Logs
+    {
+        /// <summary>
+        /// Проверка корректного вывода метода GetInfo в Logs.txt
+        /// </summary>
+        [TestMethod]
+        public void Task_1018_1()
+        {
+            //arrange
+            Logs.GetInfo("Click button Delete in Teacher");
+            string ex = ("");
+            ex = Read();
+            
+            //act
+            string act = "Click button Delete in Teacher";
 
-			//assert
-			StringAssert.Contains(ex, act);
-		}
+            //assert
+            StringAssert.Contains(ex, act);
+        }
 
-		private string Read()
-		{
-			StreamReader file = new StreamReader("Logs.txt");
+        private string Read()
+        {
+            StreamReader file = new StreamReader("Logs.txt");
 
-			string ex = File.ReadLines(@"Logs.txt").Last();
-			file.Close();
-			return ex;
+            string ex = File.ReadLines(@"Logs.txt").Last();
+            file.Close();
+            return ex;
 
-		}
+        }
 
-		/// <summary>
-		/// Проверка корректного вывода метода GetError в Logs.txt
-		/// </summary>
-		[TestMethod]
-		public void Task_1018_2()
-		{
-			//arrange
+        /// <summary>
+        /// Проверка корректного вывода метода GetError в Logs.txt
+        /// </summary>
+        [TestMethod]
+        public void Task_1018_2()
+        {
+            //arrange
 
-			try
-			{
-				throw new Exception ("Error");
-			}
-			catch (Exception error)
-			{
-				Logs.GetError(error);
-			}
+            try
+            {
+                throw new Exception ("Error");
+            }
+            catch (Exception error)
+            {
+                Logs.GetError(error);
+            }
 
-			string ex = ("");
-			ex = Read();
+            string ex = ("");
+            ex = Read();
 
-			//act
-			string act = "Error";
+            //act
+            string act = "Error";
 
-			//assert
-			StringAssert.Contains(ex, act);
+            //assert
+            StringAssert.Contains(ex, act);
 
-		}
-	}
+        }
+    }
 }
