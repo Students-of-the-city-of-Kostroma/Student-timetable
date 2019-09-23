@@ -12,10 +12,10 @@ namespace LibOfTimetableOfClasses
     public class MAcademicLoad : Model
     {
         string _group;
+        string _totalHours;
         string _discipline;
         string _teacher;
         string _occupation;
-        string _totalHours;
         string _distributed;
 
 
@@ -41,6 +41,28 @@ namespace LibOfTimetableOfClasses
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _group = value;
+            }
+        }
+
+        /// <summary>
+        /// свойства TotalHours модели AcademicLoad
+        /// В случае записи свойства проводятся проверки переданнаго значения:
+        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Всего часов
+        /// </summary>
+        public string TotalHours
+        {
+            get
+            {
+                return _totalHours;
+            }
+            set
+            {
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+                foreach (char l in value)
+                    if (l < '0' || l > '9') throw new Exception("Можно использовать только цифры ");
+
+                _totalHours = value;
             }
         }
 
@@ -122,27 +144,7 @@ namespace LibOfTimetableOfClasses
         }
 
 
-        /// <summary>
-        /// свойства TotalHours модели AcademicLoad
-        /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
-        /// Всего часов
-        /// </summary>
-        public string TotalHours
-        {
-            get
-            {
-                return _totalHours;
-            }
-            set
-            {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                foreach (char l in value)
-                    if (l < '0' || l > '9') throw new Exception("Можно использовать только цифры ");
 
-                _totalHours = value;
-            }
-        }
 
         /// <summary>
         /// свойства distributed модели AcademicLoad
@@ -166,5 +168,26 @@ namespace LibOfTimetableOfClasses
                 _distributed = value;
             }
         }
+
+
+        /// <summary>
+        /// Конструктор класса MAcademicLoad.
+        /// </summary>
+        /// <param name="group">Группа(поток)</param>
+        /// <param name="totalHours">Часов всего</param>
+        /// <param name="discipline">Дисциплина</param>
+        /// <param name="teacher">Преподаватель</param>
+        /// <param name="occupation">Вид занятия</param>
+        /// <param name="distributed">Распределено </param>
+        public MAcademicLoad(string group, string totalHours, string discipline, string teacher, string occupation, string distributed ) : base()
+        {
+            this.Group = group;
+            this.TotalHours = totalHours;
+            this.Discipline = discipline;
+            Teacher = teacher;
+            Occupation = occupation;
+            Distributed = distributed;
+        }
+
     }
 }
