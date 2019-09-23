@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -11,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = true;
             bool act;
-            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология",20);
+            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20);
             int C1 = RefData.CDirectionOfPreparation.Rows.Count;
             act = RefData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
             int C2 = RefData.CDirectionOfPreparation.Rows.Count;

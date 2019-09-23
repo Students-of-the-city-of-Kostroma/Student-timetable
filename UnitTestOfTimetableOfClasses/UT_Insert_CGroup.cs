@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 
 namespace UnitTestOfTimetableOfClasses
@@ -28,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert
             Assert.AreEqual(expected, actual);
         }
-        
+
         /// <summary>
         /// Ввод корректных данных, при условии, что Группа добавляемой группы дублирует Группа уже существующей группы
         /// </summary>

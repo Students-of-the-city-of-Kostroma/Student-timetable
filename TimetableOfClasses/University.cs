@@ -1,24 +1,20 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
     public partial class University : Form
     {
         internal protected string FullName = "";
-        private bool IsPicking = false; 
+        private bool IsPicking = false;
         public University(bool isPicking = false)
         {
             InitializeComponent();
-            this.IsPicking = isPicking; 
+            this.IsPicking = isPicking;
 
             DG.AutoGenerateColumns = false;
             DG.DataSource = RefData.CUniversity;
@@ -40,31 +36,31 @@ namespace TimetableOfClasses
                 MUniversity mUniversity;
                 if (fullName.Length == 3)
                 {
-                    mUniversity = new MUniversity(    (string)Row["INN"], 
-                                                    (string)Row["ShortName"], 
-                                                    (string)Row["FullName"], 
-                                                    (string)Row["ActualAddress"], 
-                                                    (string)Row["LegalAddress"], 
-                                                    fullName[1], fullName[0], fullName[2], 
-                                                    (string)Row["Email"], 
+                    mUniversity = new MUniversity((string)Row["INN"],
+                                                    (string)Row["ShortName"],
+                                                    (string)Row["FullName"],
+                                                    (string)Row["ActualAddress"],
+                                                    (string)Row["LegalAddress"],
+                                                    fullName[1], fullName[0], fullName[2],
+                                                    (string)Row["Email"],
                                                     (string)Row["Phone"]);
                 }
                 else
                 {
-                    mUniversity = new MUniversity(    (string)Row["INN"], 
-                                                    (string)Row["ShortName"], 
-                                                    (string)Row["FullName"], 
-                                                    (string)Row["ActualAddress"], 
-                                                    (string)Row["LegalAddress"], 
-                                                    fullName[1], fullName[0], fullName[2], 
-                                                    (string)Row["Email"], 
+                    mUniversity = new MUniversity((string)Row["INN"],
+                                                    (string)Row["ShortName"],
+                                                    (string)Row["FullName"],
+                                                    (string)Row["ActualAddress"],
+                                                    (string)Row["LegalAddress"],
+                                                    fullName[1], fullName[0], fullName[2],
+                                                    (string)Row["Email"],
                                                     (string)Row["Phone"]);
                 }
                 AddUniversity add = new AddUniversity(mUniversity);
                 add.Owner = this;
                 add.ShowDialog();
             }
-            else if(DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+            else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
             else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
         }
 
@@ -78,7 +74,7 @@ namespace TimetableOfClasses
             String[] fullName = ((string)FirstRow["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             if (dr == DialogResult.Yes)
             {
-                
+
                 foreach (DataGridViewRow row in DG.SelectedRows)
                 {
 
@@ -91,7 +87,7 @@ namespace TimetableOfClasses
                                                     fullName[1], fullName[0], fullName[2],
                                                     (string)Row["Email"],
                                                     (string)Row["Phone"]);
-        
+
                     RefData.CUniversity.Delete(mUniversity);
                 }
             }

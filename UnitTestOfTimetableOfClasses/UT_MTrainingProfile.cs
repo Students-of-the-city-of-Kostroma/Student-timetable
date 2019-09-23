@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС","40454");
+                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС","40454");
+                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.ShortName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)

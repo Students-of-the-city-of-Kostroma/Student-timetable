@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -114,7 +110,7 @@ namespace LibOfTimetableOfClasses
                 if (value < 1 && value > 50) throw new Exception("Кол-во судентов не в диапазоне от 1 до 50");
                 _students = value;
             }
-            
+
         }
 
         /// <summary>
@@ -171,7 +167,7 @@ namespace LibOfTimetableOfClasses
                 if (value == null || value == "") throw new Exception("Строка(выходные) не может быть пустой");
                 foreach (char l in value)
                 {
-                    if ((l < 'А' || l > 'я')  && (l !=' ') && (l != ',')) throw new Exception("Можно использовать только русские буквы, пробелы и запятые !");
+                    if ((l < 'А' || l > 'я') && (l != ' ') && (l != ',')) throw new Exception("Можно использовать только русские буквы, пробелы и запятые !");
                 }
                 string[] mas = value.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
 

@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibOfTimetableOfClasses
+﻿namespace LibOfTimetableOfClasses
 {
     /// <summary>
     /// ВУЗ
     /// </summary>
-    class MCHEI:Model
+    class MCHEI : Model
     {
         string fullName;
         string abbreviatedName;
         string rector;
         int phone;
         string email;
-        
+
 
         public string FullName
         {
@@ -66,7 +60,7 @@ namespace LibOfTimetableOfClasses
 
             set
             {
-                if(value>=0) phone = value;
+                if (value >= 0) phone = value;
             }
         }
 

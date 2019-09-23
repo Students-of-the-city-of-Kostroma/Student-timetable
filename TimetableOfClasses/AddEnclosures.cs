@@ -1,12 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TimetableOfClasses
@@ -23,15 +17,15 @@ namespace TimetableOfClasses
         public AddEnclosures(MEnclosures mEnclosures)
         {
             InitializeComponent();
-                Enclosures = mEnclosures;
-                name.Text = Enclosures.Name;
-                name.Enabled = false;
-                university.Text = Enclosures.University;
-                university.Enabled = false;
-                address.Text = Enclosures.Address;
-                phoneNumber.Text = Enclosures.Phone;
-                note.Text = Enclosures.Comment;
-                btAddUniversity.Enabled = false;
+            Enclosures = mEnclosures;
+            name.Text = Enclosures.Name;
+            name.Enabled = false;
+            university.Text = Enclosures.University;
+            university.Enabled = false;
+            address.Text = Enclosures.Address;
+            phoneNumber.Text = Enclosures.Phone;
+            note.Text = Enclosures.Comment;
+            btAddUniversity.Enabled = false;
         }
 
         private void name_KeyPress(object sender, KeyPressEventArgs e)//Проверка входных значений Названия корпуса
@@ -101,7 +95,7 @@ namespace TimetableOfClasses
         private void save_Click(object sender, EventArgs e)//Сохранить изменения
         {
             checkNumber();
-            if (checkField()) return; 
+            if (checkField()) return;
 
             if (Enclosures == null)
             {
@@ -155,7 +149,7 @@ namespace TimetableOfClasses
 
         private void name_TextChanged(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Text.Length==0) (sender as TextBox).BackColor = Color.Red;
+            if ((sender as TextBox).Text.Length == 0) (sender as TextBox).BackColor = Color.Red;
             else (sender as TextBox).BackColor = Color.White;
         }
 
@@ -169,7 +163,7 @@ namespace TimetableOfClasses
             if (RefData.CUniversity.Rows.Count == 0)
             {
                 var DialogResult = MessageBox.Show("В созависимом справочнике ВУЗы отсутствуют записи. " +
-                    "Открыть форму для редактирования справочника ВУЗы?", 
+                    "Открыть форму для редактирования справочника ВУЗы?",
                     "Отсутствие записей в созависимом справочнике", MessageBoxButtons.YesNo);
                 if (DialogResult == DialogResult.Yes)
                     CreateFormForEditAndChoiceUnviversity();

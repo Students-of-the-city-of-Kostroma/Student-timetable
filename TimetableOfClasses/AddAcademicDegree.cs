@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
@@ -42,7 +35,7 @@ namespace TimetableOfClasses
                     if (FullName.Text.Length != 0)
                     {
                         if (FullName.Text.Length >= Reduction.Text.Length)
-                        { 
+                        {
                             try
                             {
                                 MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
@@ -64,7 +57,7 @@ namespace TimetableOfClasses
             }
             else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
         }
-            private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
+        private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
         {
             if (update)
             {
@@ -99,7 +92,7 @@ namespace TimetableOfClasses
                 else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
             }
             else
-{
+            {
 
                 if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
                 {

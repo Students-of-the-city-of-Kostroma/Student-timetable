@@ -1,6 +1,6 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
+using System;
 
 
 namespace UnitTestOfTimetableOfClasses
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses
             string act = "";
             try
             {
-                MAcademicDegree MAcademic = new MAcademicDegree(null,null);
+                MAcademicDegree MAcademic = new MAcademicDegree(null, null);
             }
             catch (Exception e)
             {

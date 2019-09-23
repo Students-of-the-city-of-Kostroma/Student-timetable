@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LibOfTimetableOfClasses
 {
@@ -184,7 +179,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Ошибка создания модели. В свойство NameRector получена строка недопустимой длины");
                 if (!Regex.IsMatch(value, @"[а-яА-Я\- ]"))
                     throw new Exception("Ошибка создания модели. В свойство NameRector получена строка содержащая недопустимые символы");
-                if(!isLetterСaseNormal(value))
+                if (!isLetterСaseNormal(value))
                     throw new Exception("Ошибка создания модели. В свойство NameRector получена строка неверного формата");
                 _nameRector = value;
             }
@@ -321,5 +316,5 @@ namespace LibOfTimetableOfClasses
             return true;
         }
     }
-    
+
 }

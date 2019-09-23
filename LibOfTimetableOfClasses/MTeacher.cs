@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -98,14 +94,14 @@ namespace LibOfTimetableOfClasses
                 }
 
                 if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
-        
-                    foreach (char l in value)
-                        if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
 
-                    if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
-                    for (int i = 1; i < value.Length; i++)
-                        if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
-                 _patronymic = value;
+                foreach (char l in value)
+                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
+
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
+                for (int i = 1; i < value.Length; i++)
+                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
+                _patronymic = value;
             }
         }
 
@@ -216,7 +212,7 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-        
+
         private void CapitalizationCheck(string value)
         {
             if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
@@ -245,7 +241,7 @@ namespace LibOfTimetableOfClasses
         {
             get
             {
-                if (_windows != null) return _windows; 
+                if (_windows != null) return _windows;
                 else return "";
             }
             set
@@ -262,7 +258,7 @@ namespace LibOfTimetableOfClasses
                     if ((l < 'А' || l > 'я') && l != ' ' && l != ',') throw new Exception("Недопустимые символы !");
 
                 CapitalizationCheck(value);
-                 _windows = value;
+                _windows = value;
 
             }
         }

@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
     /// <summary>
     /// Таблица со строками, хранящими данные о разных дисциплинах Университета.
     /// </summary>
-    public class CDiscipline : DataTable,IController
+    public class CDiscipline : DataTable, IController
     {
         /// <summary>
         /// Конструктор таблицы
@@ -53,11 +49,11 @@ namespace LibOfTimetableOfClasses
         public bool Delete(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
-            
+
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname 
-                && (string)Rows[i]["Shortname"] == mDiscipline.Shortname 
+                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname
+                && (string)Rows[i]["Shortname"] == mDiscipline.Shortname
                 && (string)Rows[i]["CycleofDiscipline"] == mDiscipline.CycleofDiscipline)
                 {
                     Rows.Remove(Rows[i]);
@@ -75,17 +71,17 @@ namespace LibOfTimetableOfClasses
         public bool Insert(Model model)
         {
             MDiscipline mDiscipline = (MDiscipline)model;
-            
+
             if (mDiscipline.Fullname.Length == mDiscipline.Shortname.Length || mDiscipline.Fullname == null || mDiscipline.Shortname == null)
                 return false;
-                
+
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname 
+                if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname
                 && (string)Rows[i]["Shortname"] == mDiscipline.Shortname)
                     return false;
             }
-            
+
             try
             {
                 DataRow newRow = NewRow();

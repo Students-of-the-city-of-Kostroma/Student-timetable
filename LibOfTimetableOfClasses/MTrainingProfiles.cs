@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -78,7 +74,7 @@ namespace LibOfTimetableOfClasses
         /// <param name="fullname">Полное название профиля подготовки</param>
         /// <param name="shortname">Краткое название профиля подготовки</param>
         /// <param name="shiphr">Шмфр направления подготовки</param>
-        public MTrainingProfile(string fullname, string shortname, string shiphr) :base()
+        public MTrainingProfile(string fullname, string shortname, string shiphr) : base()
         {
             FullName = fullname;
             ShortName = shortname;

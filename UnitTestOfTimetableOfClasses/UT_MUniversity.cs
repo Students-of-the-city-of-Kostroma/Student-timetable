@@ -1,7 +1,6 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TimetableOfClasses;
-using LibOfTimetableOfClasses;
+using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -13,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru","89995119864");
+                MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
                 Assert.AreEqual(typeof(String), T.INN.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)

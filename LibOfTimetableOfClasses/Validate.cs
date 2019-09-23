@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
-namespace LibOfTimetableOfClasses {
-    class Validate {
+namespace LibOfTimetableOfClasses
+{
+    class Validate
+    {
         /// <summary>
         /// Обертка для валидаторов. Упрощает построение очередного метода валидации.
         /// </summary>
@@ -14,8 +12,10 @@ namespace LibOfTimetableOfClasses {
         /// <param name="msg">Содержит сообщение об ошибке или null, если ошибки нет</param>
         /// <param name="errMsg">Сообщение об ошибке, которое следует передать</param>
         /// <returns></returns>
-        public static bool ResultWrapper(bool cond, out string msg, string errMsg) {
-            if (cond) {
+        public static bool ResultWrapper(bool cond, out string msg, string errMsg)
+        {
+            if (cond)
+            {
                 msg = null;
                 return true;
             }
@@ -35,7 +35,8 @@ namespace LibOfTimetableOfClasses {
             string str,
             out string msg,
             string errMsg = "Строка не может быть пустой!"
-        ) {
+        )
+        {
             return ResultWrapper(!String.IsNullOrWhiteSpace(str), out msg, errMsg);
         }
 
@@ -47,7 +48,8 @@ namespace LibOfTimetableOfClasses {
         /// <param name="msg">Сообщение об ошибке или null</param>
         /// <param name="errMsg">Сообщение об ошибке</param>
         /// <returns>Возвращает true в случае успешной проверки</returns>
-        public static bool MaxLength(string str, out string msg, uint length, string errMsg = "") {
+        public static bool MaxLength(string str, out string msg, uint length, string errMsg = "")
+        {
             errMsg = errMsg == "" ? $"Строка не может быть длиннее {length} символов!" : errMsg;
             return ResultWrapper(str.Length <= length, out msg, errMsg);
         }
@@ -65,8 +67,10 @@ namespace LibOfTimetableOfClasses {
             out string msg,
             string ignoreChars = "",
             string errMsg = "Строка должна содержать только буквы!"
-        ) {
-            if (!NonEmpty(str, out string tmp)) {
+        )
+        {
+            if (!NonEmpty(str, out string tmp))
+            {
                 msg = null;
                 return false;
             }
@@ -88,7 +92,8 @@ namespace LibOfTimetableOfClasses {
             string str,
             out string msg,
             string errMsg = "Строка должна содержать только русские символы!"
-        ) {
+        )
+        {
             return ResultWrapper(!Regex.IsMatch(str, @"[a-z]", RegexOptions.IgnoreCase), out msg, errMsg);
         }
 
@@ -105,7 +110,8 @@ namespace LibOfTimetableOfClasses {
             out string msg,
             string regex = @"\s{2,}",
             string errMsg = "Строка не должна содержать более одного пробела подряд!"
-        ) {
+        )
+        {
             return ResultWrapper(!Regex.IsMatch(str, regex), out msg, errMsg);
         }
 
@@ -122,8 +128,10 @@ namespace LibOfTimetableOfClasses {
             out string msg,
             string checkedChars = "",
             string errMsg = "Строка не должа содержать пробелы по краям!"
-        ) {
-            if (checkedChars == "") {
+        )
+        {
+            if (checkedChars == "")
+            {
                 checkedChars = @"\s";
             }
             return ResultWrapper(!Regex.IsMatch(str, $@"(^{checkedChars}|{checkedChars}$)"), out msg, errMsg);
@@ -140,8 +148,10 @@ namespace LibOfTimetableOfClasses {
             string str,
             out string msg,
             string errMsg = "Первый символ строки должен быть в верхнем регистре!"
-        ) {
-            if (!NonEmpty(str, out string tmp)) {
+        )
+        {
+            if (!NonEmpty(str, out string tmp))
+            {
                 msg = null;
                 return false;
             }
@@ -166,12 +176,15 @@ namespace LibOfTimetableOfClasses {
             out string msg,
             bool ignoreFirstChar = false,
             string errMsg = "Строка должна быть в нижнем регистре!"
-        ) {
-            if (!NonEmpty(str, out string tmp)) {
+        )
+        {
+            if (!NonEmpty(str, out string tmp))
+            {
                 msg = null;
                 return false;
             }
-            if (ignoreFirstChar) {
+            if (ignoreFirstChar)
+            {
                 str = str.Substring(1);
             }
             return ResultWrapper(str.ToLower() == str, out msg, errMsg);
@@ -181,7 +194,8 @@ namespace LibOfTimetableOfClasses {
             string str,
             out string msg,
             string errMsg = "В строке требуется пробел после каждой запятой!"
-        ) {
+        )
+        {
             return ResultWrapper(!Regex.IsMatch(str, @"\b,\b"), out msg, errMsg);
         }
 
@@ -189,9 +203,12 @@ namespace LibOfTimetableOfClasses {
         /// Бросить исключение, если валидация не пройдена
         /// </summary>
         /// <param name="msgs">Строка с ошибкой или null</param>
-        public static void ThrowMsg(bool result, string[] msgs) {
-            if (!result) {
-                if (msgs != null && msgs.Length > 0) {
+        public static void ThrowMsg(bool result, string[] msgs)
+        {
+            if (!result)
+            {
+                if (msgs != null && msgs.Length > 0)
+                {
                     throw new FormatException(msgs[0]);
                 }
             }
@@ -202,8 +219,10 @@ namespace LibOfTimetableOfClasses {
         /// </summary>
         /// <param name="msgs">Массив строк с результатами валидаций</param>
         /// <param name="result">Строка с результатом валидации</param>
-        public static bool AddToArr(ref string[] msgs, string msg) {
-            if (msg != null) {
+        public static bool AddToArr(ref string[] msgs, string msg)
+        {
+            if (msg != null)
+            {
                 Array.Resize(ref msgs, msgs.Length + 1);
                 msgs[msgs.Length - 1] = msg;
             }
@@ -216,8 +235,10 @@ namespace LibOfTimetableOfClasses {
         /// <param name="msgs">Массив строк с результатами валидаций</param>
         /// <param name="msg">Результат метода валидации</param>
         /// <param name="result">Строка с результатом валидации</param>
-        public static bool AddToArr(ref string[] msgs, bool result, string msg) {
-            if (!result && msg != null) {
+        public static bool AddToArr(ref string[] msgs, bool result, string msg)
+        {
+            if (!result && msg != null)
+            {
                 Array.Resize(ref msgs, msgs.Length + 1);
                 msgs[msgs.Length - 1] = msg;
             }

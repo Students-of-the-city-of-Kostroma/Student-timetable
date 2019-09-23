@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using System.Net.Mail;
-using LibOfTimetableOfClasses;
+using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
@@ -71,7 +65,7 @@ namespace TimetableOfClasses
         private void tbActualAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
             string value = e.KeyChar.ToString();
-            if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back )
+            if (!Regex.IsMatch(value, @"[а-яА-Я0-9.,\-\ ]") && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
                 return;
@@ -109,8 +103,8 @@ namespace TimetableOfClasses
                 string newinput = "";
                 if (input[0] == ' ' || input[0] == '-')
                     input = input.Substring(1);
-                if (input[input.Length-1] == ' ' || input[input.Length-1] == '-')
-                    input = input.Substring(1, input.Length-2);
+                if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
+                    input = input.Substring(1, input.Length - 2);
                 foreach (var ch in input)
                 {
                     if (isSpacePressed)
@@ -126,7 +120,7 @@ namespace TimetableOfClasses
             ((TextBox)sender).Text = newinput;
                 isSpacePressed = true;
             }
-            if((TextBox)sender == tbRectorName)
+            if ((TextBox)sender == tbRectorName)
             {
                 var splitedFullName = tbRectorName.Text.Split(new char[] { ' ' });
                 if (splitedFullName.Length > 3 || splitedFullName.Length < 2)
@@ -160,8 +154,8 @@ namespace TimetableOfClasses
             input = Regex.Replace(input, @",+", ",");
             input = Regex.Replace(input, @" - ", "-");
             input = Regex.Replace(input, @"- -", " ");
-            if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2 )
-            { 
+            if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2)
+            {
 
                 if (input[0] == ' ' || input[0] == '-')
                     input = input.Substring(1);
@@ -214,15 +208,15 @@ namespace TimetableOfClasses
         {
             try
             {
-            if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
-            {
-                if (Add()) this.Close();
-                else
+                if (!isEmpty(new string[] { tbINN.Text, tbShortTittle.Text, tbFullTitle.Text, tbActualAddress.Text, tbLegalAddress.Text, tbRectorName.Text, tbMail.Text, tbPhone.Text }))
                 {
-                    MessageBox.Show("Не удалось добавить/обновить запись. Вуз с таким ИНН, телефоном, Полным названием или почтовым адресом уже есть в таблице ");
+                    if (Add()) this.Close();
+                    else
+                    {
+                        MessageBox.Show("Не удалось добавить/обновить запись. Вуз с таким ИНН, телефоном, Полным названием или почтовым адресом уже есть в таблице ");
+                    }
                 }
-            }
-            else MessageBox.Show("Не все поля заполнены");
+                else MessageBox.Show("Не все поля заполнены");
             }
             catch (Exception err) { MessageBox.Show(err.Message); }
         }
@@ -260,7 +254,7 @@ namespace TimetableOfClasses
                 cur.Phone = tbPhone.Text;
                 return RefData.CUniversity.Update(cur);
             }
-        
+
         }
 
         private void tbINN_Leave(object sender, EventArgs e)
@@ -297,7 +291,7 @@ namespace TimetableOfClasses
 
         private void Cancel(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
     }

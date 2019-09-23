@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
 {
@@ -30,7 +26,7 @@ namespace LibOfTimetableOfClasses
             column.DataType = typeof(string);
             column.ColumnName = "Shortname";
             Columns.Add(column);
-            
+
             column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "Shiphr";

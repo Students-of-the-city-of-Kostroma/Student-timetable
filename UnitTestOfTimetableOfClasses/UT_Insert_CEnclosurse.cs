@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
@@ -11,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_397_1() //Ввод в пустую таблицу
         {
             //arrange
-            MEnclosures gr = new MEnclosures ("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1" );
+            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
             //act
             bool actual = RefData.CEnclosures.Insert(gr);

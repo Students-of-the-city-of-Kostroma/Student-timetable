@@ -1,12 +1,4 @@
-﻿using LibOfTimetableOfClasses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace TimetableOfClasses
@@ -115,8 +107,8 @@ namespace TimetableOfClasses
         {
             TypesOfOccupations typesOfOccupations = new TypesOfOccupations();
             typesOfOccupations.Show();
-    }
-    
+        }
+
         private void институтToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Institute institute = new Institute();
@@ -134,7 +126,8 @@ namespace TimetableOfClasses
             StudyWeek studyWeek = new StudyWeek();
             studyWeek.Show();
         }
-        private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void DepartmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Departments departments = new Departments();
             departments.Show();
         }
