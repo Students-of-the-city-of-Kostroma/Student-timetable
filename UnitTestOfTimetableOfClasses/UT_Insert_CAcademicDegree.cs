@@ -30,8 +30,15 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			//arrange
 			Task_486_1();
-			MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-			bool expected = false;
+			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
+            bool expected1 = true;
+            //act
+            bool actual1 = RefData.CAcademicDegree.Insert(ma);
+            Assert.AreEqual(expected1, actual1);
+
+            MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
+
+            bool expected = false;
 			//act
 			bool actual = RefData.CAcademicDegree.Insert(MAcademic);
 			//assert
