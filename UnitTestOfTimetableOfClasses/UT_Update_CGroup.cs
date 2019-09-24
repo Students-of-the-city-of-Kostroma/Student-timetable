@@ -1,11 +1,10 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
- 
- 
+
+
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]
+	[TestClass]
     public class UT_Update_CGroup
     {
         private void SetupData()
