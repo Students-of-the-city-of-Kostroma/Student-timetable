@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcademicLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcademicLoad.Designer.cs">
+      <DependentUpon>AcademicLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="AcademicTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     <Compile Include="TypesOfOccupations.Designer.cs">
       <DependentUpon>TypesOfOccupations.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcademicLoad.resx">
+      <DependentUpon>AcademicLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AcademicTitle.resx">
       <DependentUpon>AcademicTitle.cs</DependentUpon>
     </EmbeddedResource>
