@@ -1,6 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 
 namespace UnitTestOfTimetableOfClasses
@@ -21,8 +20,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
-            
         }
 
         /// <summary>
@@ -40,6 +39,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
         }
@@ -59,6 +59,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
         }
@@ -78,6 +79,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
         }
@@ -97,6 +99,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
         }
@@ -116,6 +119,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
         }
@@ -135,9 +139,10 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
+
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
-        }
+     }
 
         /// <summary>
         /// Ввод корректных данных, при условии, что Телефон добавляемой группы дублирует Телефон уже существующей группы
@@ -156,6 +161,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
+
         }
 
         /// <summary>
@@ -175,6 +181,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
+
         }
 
         /// <summary>
@@ -194,6 +201,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             RefData.CUniversity.Delete(gr);
             RefData.CUniversity.Delete(gr1);
+
         }
     }
 }

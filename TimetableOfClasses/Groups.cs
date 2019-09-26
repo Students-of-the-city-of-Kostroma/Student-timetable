@@ -1,127 +1,123 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
-	public partial class Groups : Form
-	{
-		public Groups()
-		{
-			InitializeComponent();
-			DG_Group.AutoGenerateColumns = false;
-			DG_Group.DataSource = RefData.CGroup;
-		}
+    public partial class Groups : Form
+    {
+        public Groups()
+        {
+            InitializeComponent();
+            DG_Group.AutoGenerateColumns = false;
+            DG_Group.DataSource = RefData.CGroup;
+        }
 
-		private void DeleteRow(object sender, EventArgs e)
-		{
-			if (DG_Group.SelectedRows.Count == 0) return;
+        private void DeleteRow(object sender, EventArgs e)
+        {
+            if (DG_Group.SelectedRows.Count == 0) return;
 
-			DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-			if (dr == DialogResult.Yes)
-			{
-				MGroup mGroup;
-				foreach (DataGridViewRow row in DG_Group.SelectedRows)
-				{
-					DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-					mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
-					RefData.CGroup.Delete(mGroup);
-				}
-			}
+            DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                MGroup mGroup;
+                foreach (DataGridViewRow row in DG_Group.SelectedRows)
+                {
+                    DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+                    mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
+                    RefData.CGroup.Delete(mGroup);
+                }
+            }
 
-		}
+        }
 
-		private void AddRow(object sender, EventArgs e)
-		{
-			AddGroup addDiscipline = new AddGroup();
-			addDiscipline.Owner = this;
-			addDiscipline.Show();
-		}
+        private void AddRow(object sender, EventArgs e)
+        {
+            AddGroup addDiscipline = new AddGroup();
+            addDiscipline.Owner = this;
+            addDiscipline.Show();
+        }
 
-		private void Update(object sender, EventArgs e)
-		{
-			if (DG_Group.SelectedRows.Count == 1)
-			{
-				DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
-				MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
-				AddGroup addDiscipline = new AddGroup(mGroup);
-				addDiscipline.Owner = this;
-				addDiscipline.ShowDialog();
-			}
-			else if (DG_Group.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-			else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
-		}
+        private void Update(object sender, EventArgs e)
+        {
+            if (DG_Group.SelectedRows.Count == 1)
+            {
+                DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+                MGroup mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
+                AddGroup addDiscipline = new AddGroup(mGroup);
+                addDiscipline.Owner = this;
+                addDiscipline.ShowDialog();
+            }
+            else if (DG_Group.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+            else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+        }
 
-		private void DG_Group_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			DataGridViewColumn newColumn = DG_Group.Columns[e.ColumnIndex];
-			DataGridViewColumn oldColumn = DG_Group.SortedColumn;
-			ListSortDirection direction;
+        private void DG_Group_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn newColumn = DG_Group.Columns[e.ColumnIndex];
+            DataGridViewColumn oldColumn = DG_Group.SortedColumn;
+            ListSortDirection direction;
 
-			if (DG_Group.SelectedRows.Count == 0) return;
-			DataRow Row = ((DataRowView)DG_Group?.SelectedRows[0]?.DataBoundItem)?.Row;
-			if (Row == null) return;
+            if (DG_Group.SelectedRows.Count == 0) return;
+            DataRow Row = ((DataRowView)DG_Group?.SelectedRows[0]?.DataBoundItem)?.Row;
+            if (Row == null) return;
 
-				if (oldColumn != null)
-				{
-					if (oldColumn == newColumn &&
-						DG_Group.SortOrder == SortOrder.Ascending)
-					{
-						direction = ListSortDirection.Descending;
-					}
-					else
-					{
-						direction = ListSortDirection.Ascending;
-						oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-					}
-				}
-				else
-				{
-					direction = ListSortDirection.Ascending;
-				}
+            if (oldColumn != null)
+            {
+                if (oldColumn == newColumn &&
+                    DG_Group.SortOrder == SortOrder.Ascending)
+                {
+                    direction = ListSortDirection.Descending;
+                }
+                else
+                {
+                    direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
 
-				//сохраняем номер выделенной строки
-				List<object> arraySelectedRows = new List<object>();
-				foreach (DataGridViewRow item in DG_Group.SelectedRows)
-				{
-					arraySelectedRows.Add(item.DataBoundItem);
-				}
+            //сохраняем номер выделенной строки
+            List<object> arraySelectedRows = new List<object>();
+            foreach (DataGridViewRow item in DG_Group.SelectedRows)
+            {
+                arraySelectedRows.Add(item.DataBoundItem);
+            }
 
-				DG_Group.Sort(newColumn, direction);
+            DG_Group.Sort(newColumn, direction);
 
-			foreach (DataGridViewRow item in DG_Group.Rows)
-			{
-				if (arraySelectedRows.Contains(item.DataBoundItem))
-				{
-					item.Selected = true;
-				}
-			}
-		}
+            foreach (DataGridViewRow item in DG_Group.Rows)
+            {
+                if (arraySelectedRows.Contains(item.DataBoundItem))
+                {
+                    item.Selected = true;
+                }
+            }
+        }
 
-		private void DG_Group_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-		{
-			foreach (DataGridViewColumn column in DG_Group.Columns)
-			{
-				column.SortMode = DataGridViewColumnSortMode.Programmatic;
-			}
-		}
+        private void DG_Group_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewColumn column in DG_Group.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Programmatic;
+            }
+        }
 
-		private void DG_Group_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-		{
-			int index = e.RowIndex;
-			string indexStr = (index + 1).ToString();
-			object header = this.DG_Group.Rows[index].HeaderCell.Value;
-			if (header == null || !header.Equals(indexStr))
-				this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
-		}
+        private void DG_Group_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            int index = e.RowIndex;
+            string indexStr = (index + 1).ToString();
+            object header = this.DG_Group.Rows[index].HeaderCell.Value;
+            if (header == null || !header.Equals(indexStr))
+                this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
+        }
 
-	}
-	
+    }
+
 }
