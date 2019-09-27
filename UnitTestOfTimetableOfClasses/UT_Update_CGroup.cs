@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
 {
-	[TestClass]
+    [TestClass]
     public class UT_Update_CGroup
     {
         private void SetupData()
