@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Update_CEnclosurse
     {
         [TestMethod]
-        public void task_396_1()
+        public void Task_396_1()
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void task_396_2()// повтор адреса
+        public void Task_396_2()// повтор адреса
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void task_396_3()// повтор телефона
+        public void Task_396_3()// повтор телефона
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void task_396_4()// повтор примечания
+        public void Task_396_4()// повтор примечания
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
