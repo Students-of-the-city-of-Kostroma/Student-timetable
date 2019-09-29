@@ -5,8 +5,8 @@ using System.Diagnostics;
 namespace LibOfTimetableOfClasses
 {
     /// <summary>
-	/// Таблица со строками, хранящими данные об Академической нагрузке
-	/// </summary>
+    /// Таблица со строками, хранящими данные об Академической нагрузке
+    /// </summary>
     public class CAcademicLoad : DataTable
     {
         /// <summary>
@@ -59,6 +59,34 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "KindOfLesson"
             };
             this.Columns.Add(column);
+        }
+        /// <summary>
+        /// Удаляет запись из таблицы данных об академической нагрузке
+        /// В таблице CAcademicLoad ищется строка с полем "Group" соответсвующим этому же полю модели, 
+        /// переданной в качестве параметра.
+        /// В случае успеха поиска удаляется найденная строка. 
+        /// </summary>
+        public bool Delete(Model model)
+        {
+            MAcademicLoad mAcademicLoad = (MAcademicLoad)model;
+
+            for (int i = 0; i < this.Rows.Count; i++)
+            {
+                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                {
+                    this.Rows[i].Delete();
+                    return true;
+                }
+            }
+            return false;
+        }
+        public override bool Insert(Model model)
+        {
+
+        }
+        public override bool Update(Model model)
+        {
+            
         }
     }
 }
