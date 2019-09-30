@@ -80,14 +80,38 @@ namespace LibOfTimetableOfClasses
 			RefData.CGroup.Insert(mGroup2);
 			#endregion
 			#region discipline
-			MDiscipline mDiscipline = new MDiscipline("Математика", "Мат", "Окт-Янв");
+			MDiscipline mDiscipline = new MDiscipline("Математика", "Мат", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline);
 
-			MDiscipline mDiscipline1 = new MDiscipline("Физика", "Физ", "Янв-Март");
+			MDiscipline mDiscipline1 = new MDiscipline("Физическая культура и спорт", "Физ-ра", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline1);
 
-			MDiscipline mDiscipline2 = new MDiscipline("Приграммирование", "Прг", "Янв-Май");
+			MDiscipline mDiscipline2 = new MDiscipline("Экономика", "Экнм", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline2);
+
+			MDiscipline mDiscipline3 = new MDiscipline("Технология разработки программного обеспечения", "ТРПО", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline3);
+
+			MDiscipline mDiscipline4 = new MDiscipline("Инструменты графического дизайна", "ИГД", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline4);
+
+			MDiscipline mDiscipline5 = new MDiscipline("Английский язык", "Англ", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline5);
+
+			MDiscipline mDiscipline10 = new MDiscipline("Немецкий язык", "Немец", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline10);
+
+			MDiscipline mDiscipline6 = new MDiscipline("Инфокоммуникационные системы и сети", "ИСС", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline6);
+
+			MDiscipline mDiscipline7 = new MDiscipline("Социология", "Соц", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline7);
+
+			MDiscipline mDiscipline8 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline8);
+
+			MDiscipline mDiscipline9 = new MDiscipline("Теория информационных процессов и систем", "ТИПиС", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline9);
 			#endregion
 			#region academicdegree
 			MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
