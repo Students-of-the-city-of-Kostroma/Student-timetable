@@ -67,9 +67,36 @@ namespace LibOfTimetableOfClasses
             throw new NotImplementedException();
         }
 
+
+        /// <summary>
+        ///  Метод вставки переданной модели MAcademicLoad в таблицу
+        /// </summary>
+        /// <param name="model">Модель MAcademicLoad хранящая новую запись таблицы</param>
+        /// <returns>Результат обновления</returns>
         public bool Insert(Model model)
         {
-            throw new NotImplementedException();
+            MAcademicLoad mAcademic = (MAcademicLoad)model;
+
+            if (mAcademic.Group == null)
+                return false;
+
+            try
+            {
+                DataRow newRow = NewRow();
+                newRow["Group"] = mAcademic.Group;
+                newRow["Discipline"] = mAcademic.Discipline;
+                newRow["DistributedHours"] = mAcademic.Distributed;
+                newRow["KindOfLesson"] = mAcademic.Occupation;
+                newRow["Professor"] = mAcademic.Teacher;
+                newRow["HoursAll"] = mAcademic.TotalHours;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Source);
+                return false;
+            }
         }
 
         /// <summary>
