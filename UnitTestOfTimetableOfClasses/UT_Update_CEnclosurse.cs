@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Адрес дублирует Адрес существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void Task_396_2()// повтор адреса
+        public void Task_396_2()
         {
             //arrange
             MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -63,7 +63,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Телефон дублирует Телефон существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void Task_396_3()// повтор телефона
+        public void Task_396_3()
         {
             //arrange
             MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -91,7 +91,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Примечание дублирует Примечание существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void Task_396_4()// повтор примечания
+        public void Task_396_4()
         {
             //arrange
             MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
