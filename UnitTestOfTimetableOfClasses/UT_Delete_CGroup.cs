@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление существующей строки 
         /// </summary>
         [TestMethod]
-        public void Task_248_1()
+        public void Task_249_1()
         {
             //arrange 
             MDirectionOfPreparation dp = new MDirectionOfPreparation("11.11.11", "й", 1);
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление не существующей строки 
         /// </summary>
         [TestMethod]
-        public void Task_248_2()
+        public void Task_249_2()
         {
             //arrange 
             bool expected = false;
