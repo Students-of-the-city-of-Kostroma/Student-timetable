@@ -13,8 +13,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_396_1()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            bool actualUni = RefData.CUniversity.Insert(university);
+            Assert.AreEqual(true, actualUni);
             //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = RefData.CEnclosures.Insert(gr);
             Assert.IsTrue(result);
             bool expected = true;
@@ -27,6 +30,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             //cleare data
             result = RefData.CEnclosures.Delete(gr);
+            Assert.IsTrue(result);
+            result = RefData.CUniversity.Delete(university);
             Assert.IsTrue(result);
         }
 
@@ -36,13 +41,16 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_396_2()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            bool actualUni = RefData.CUniversity.Insert(university);
+            Assert.AreEqual(true, actualUni);
             //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = RefData.CEnclosures.Insert(gr);
             Assert.IsTrue(result);
             bool expected = false;
             //act
-            MEnclosures gr1 = new MEnclosures("И", "Костромской Государственный Университет", "Ивановская", "222222", "2");
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = RefData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
 
@@ -57,6 +65,8 @@ namespace UnitTestOfTimetableOfClasses
 
             result = RefData.CEnclosures.Delete(gr1);
             Assert.IsTrue(result);
+            result = RefData.CUniversity.Delete(university);
+            Assert.IsTrue(result);
         }
 
         /// <summary>
@@ -65,13 +75,16 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_396_3()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            bool actualUni = RefData.CUniversity.Insert(university);
+            Assert.AreEqual(true, actualUni);
             //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = RefData.CEnclosures.Insert(gr);
             Assert.IsTrue(result);
             bool expected = false;
             //act
-            MEnclosures gr1 = new MEnclosures("И", "Костромской Государственный Университет", "Ивановская", "222222", "2");
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = RefData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
 
@@ -85,6 +98,8 @@ namespace UnitTestOfTimetableOfClasses
 
             result = RefData.CEnclosures.Delete(gr1);
             Assert.IsTrue(result);
+            result = RefData.CUniversity.Delete(university);
+            Assert.IsTrue(result);
         }
 
         /// <summary>
@@ -93,14 +108,17 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_396_4()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            bool actualUni = RefData.CUniversity.Insert(university);
+            Assert.AreEqual(true, actualUni);
             //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("Э", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = RefData.CEnclosures.Insert(gr);
             Assert.IsTrue(result);
 
             bool expected = true;
             //act
-            MEnclosures gr1 = new MEnclosures("И", "Костромской Государственный Университет", "Ивановская", "222222", "2");
+            MEnclosures gr1 = new MEnclosures("Ю", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = RefData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
             gr.Comment = "2";
@@ -112,6 +130,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(result);
 
             result = RefData.CEnclosures.Delete(gr1);
+            Assert.IsTrue(result);
+            result = RefData.CUniversity.Delete(university);
             Assert.IsTrue(result);
         }
     }
