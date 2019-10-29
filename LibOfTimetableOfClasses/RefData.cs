@@ -21,6 +21,7 @@ namespace LibOfTimetableOfClasses
         public static CInstitute CInstitute = new CInstitute();
         public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
         public static CTypesOfOccupations CTypesOfOccupations = new CTypesOfOccupations();
+        public static CAcademicLoad CAcademicLoad = new CAcademicLoad();
 #pragma warning disable IDE0044 // Добавить модификатор только для чтения
 #pragma warning disable IDE0052 // Удалить непрочитанные закрытые члены
         private static RefData rd = new RefData();
@@ -39,6 +40,7 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(CTitle);
             DataSet.Tables.Add(CGroup);
             DataSet.Tables.Add(CStudyWeek);
+            DataSet.Tables.Add(CAcademicLoad);
 
             DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
             DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
@@ -48,6 +50,10 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
             DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
             DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
+            DataSet.Relations.Add("AcademicLoad-Group", CAcademicLoad.Columns["Group"], CGroup.Columns["Group"]);
+            DataSet.Relations.Add("AcademicLoad-Discipline", CAcademicLoad.Columns["Discipline"], CDiscipline.Columns["FullName"]);
+            DataSet.Relations.Add("AcademicLoad-Teacher", CAcademicLoad.Columns["Professor"], CTeacher.Columns["FullName"]);
+            DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
             init();
         }
         private void init()
