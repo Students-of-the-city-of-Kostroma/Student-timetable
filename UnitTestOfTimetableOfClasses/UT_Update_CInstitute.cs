@@ -6,83 +6,114 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CInstitute
     {
-        [TestMethod]
-        public void Task_615_1() //замена всех атрибутов
+		private CInstitute cInstitute;
+
+		[TestInitialize()]
+		public void SetUp()
+		{
+			cInstitute = new CInstitute();
+		}
+
+		[TestCleanup()]
+		public void TearDown()
+		{
+			cInstitute = null;
+		}
+
+		/// <summary>
+		/// Замена корректными данными всех  полей таблицы, не дублируя существующие
+		/// </summary>
+	   [TestMethod]
+        public void Task_615_1()
         {
+			MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", 
+				"Костромской Государственный Университет");
 
-            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
-
-            RefData.CInstitute.Insert(T_Institute);
+			bool result = cInstitute.Insert(T_Institute);
+			Assert.IsTrue(result);
 
             T_Institute = new MInstitute("Факультет автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+            result = cInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }
 
-        [TestMethod]
-        public void Task_615_2() //замена атрибутов Полное название
+		/// <summary>
+		/// Замена корректными данными всех  полей таблицы, при условии, что полная запись института уже есть в таблице
+		/// </summary>
+		[TestMethod]
+        public void Task_615_2()
         {
 
-            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.",
+				"Костромской Государственный Университет");
+
+			bool result = cInstitute.Insert(T_Institute);
+			Assert.IsTrue(result);
 
 
-            RefData.CInstitute.Insert(T_Institute);
-
-
-            T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+			T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
+            result = cInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }
 
-        [TestMethod]
-        public void Task_615_3() //краткая запись института уже есть в таблице
+		/// <summary>
+		/// Замена корректными данными всех полей таблицы, при условии, что краткая запись института уже есть в таблице
+		/// </summary>
+		[TestMethod]
+        public void Task_615_3()
         {
 
-            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.",
+				"Костромской Государственный Университет");
+			bool result = cInstitute.Insert(T_Institute);
+			Assert.IsTrue(result);
 
-
-            RefData.CInstitute.Insert(T_Institute);
-
-            T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
+            result = cInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }
 
 
-        [TestMethod]
-        public void Task_615_4() //директор уже есть в таблице
+		/// <summary>
+		///Замена корректными данными всех полей таблицы, при условии, что директор уже есть в таблице
+		/// </summary>
+		[TestMethod]
+        public void Task_615_4()
         {
+            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.",
+				"Костромской Государственный Университет");
+			bool result = cInstitute.Insert(T_Institute);
+			Assert.IsTrue(result);
 
-            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
-
-
-            RefData.CInstitute.Insert(T_Institute);
-
-            T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Лустгартен Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Лустгартен Ю.Л.", "Политехнический колледж");
+            result = cInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }
 
-        [TestMethod]
-        public void Task_615_5() //наименование ВУЗа уже есть в таблице
+		/// <summary>
+		/// Замена корректными данными всех полей таблицы, при условии, что наименование ВУЗа уже есть в таблице
+		/// </summary>
+		[TestMethod]
+        public void Task_615_5()
         {
 
-            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+            MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.",
+				"Костромской Государственный Университет");
 
+			bool result = cInstitute.Insert(T_Institute);
+			Assert.IsTrue(result);
 
-            RefData.CInstitute.Insert(T_Institute);
+			T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Костромской Государственный Университет");
 
-            T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Костромской Государственный Университет");
-
-            bool result = RefData.CInstitute.Update(T_Institute);
+            result = cInstitute.Update(T_Institute);
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }
