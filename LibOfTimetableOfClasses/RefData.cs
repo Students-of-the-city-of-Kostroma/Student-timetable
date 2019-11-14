@@ -160,6 +160,9 @@ namespace LibOfTimetableOfClasses
 			#endregion
 		}
 
+		/// <summary>
+		/// Создаёт список аудиторий для Е-корпуса
+		/// </summary>
 		private void InitEAuditors() {
 			CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
 			CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
