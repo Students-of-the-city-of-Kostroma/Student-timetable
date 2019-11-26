@@ -17,6 +17,7 @@ namespace UnitTestOfTimetableOfClasses
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
             bool expected = true;
             //act 
+
             bool actual = RefData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
@@ -31,7 +32,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = true;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГУ", "Костромкой Государственный Технологический Университет", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317860");
@@ -51,18 +53,19 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_496_3()
         {
             // arrange
-            MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            MUniversity gr = new MUniversity("4401022286", "КГУ","Костромкой Государственный Технический Университет", "156002, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgb@mail.ru", "84942312960");
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = false;
             //act 
-            MUniversity gr1 = new MUniversity("4401015275", "КГУ", "Костромкой Государственный Университет", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317860");
+            MUniversity gr1 = new MUniversity("4401006256", "КГТУ","Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
 
            
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
-            Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
+            
         }
 
         /// <summary>
@@ -73,7 +76,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = true;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317860");
@@ -94,7 +98,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = true;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "151005, Костромская область, г. Кострома, ул. Ивановская, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317860");
@@ -115,7 +120,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = true;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "Александр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317860");
@@ -136,7 +142,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = false;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "Дмитрий", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317860");
@@ -146,8 +153,7 @@ namespace UnitTestOfTimetableOfClasses
 
            
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
-            Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
-     }
+           }
 
         /// <summary>
         /// Ввод корректных данных, при условии, что Телефон добавляемой группы дублирует Телефон уже существующей группы
@@ -157,7 +163,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = false;
             //act 
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317960");
@@ -166,8 +173,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
-            Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
-
+            
         }
 
         /// <summary>
@@ -178,7 +184,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = false;
             //act 
             MUniversity gr1 = new MUniversity("4401006286", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
@@ -187,7 +194,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
-            Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
+            
 
         }
 
@@ -198,17 +205,18 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_496_10()
         {
             // arrange
-            MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            RefData.CUniversity.Insert(gr);
+            MUniversity gr = new MUniversity("4401006282", "КГУ", "Канадский Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "wkgu@mail.ru", "82942317960");
+            bool result = RefData.CUniversity.Insert(gr);
+            Assert.IsTrue(result);
             bool expected = false;
             //act 
-            MUniversity gr1 = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            bool actual = RefData.CUniversity.Insert(gr1);
+           
+            bool actual = RefData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
            
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
-            Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
+            
 
         }
     }
