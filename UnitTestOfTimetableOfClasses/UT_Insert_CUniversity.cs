@@ -20,8 +20,6 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
-
-            RefData.CUniversity.Delete(gr);
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
         }
 
@@ -41,8 +39,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
         }
@@ -63,8 +60,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
         }
@@ -85,8 +81,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+          
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
         }
@@ -107,8 +102,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
         }
@@ -129,8 +123,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
         }
@@ -151,8 +144,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
      }
@@ -172,8 +164,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+            
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
 
@@ -194,8 +185,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+            
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
 
@@ -216,8 +206,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-            RefData.CUniversity.Delete(gr);
-            RefData.CUniversity.Delete(gr1);
+           
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr));
             Assert.AreEqual(true, RefData.CUniversity.Delete(gr1));
 
