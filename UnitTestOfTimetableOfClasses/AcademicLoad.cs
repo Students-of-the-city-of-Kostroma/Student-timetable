@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AddAcademicLoad
+namespace TimetableOfClasses
 {
-    public partial class Form1 : Form
+    public partial class AcademicLoad : Form
     {
-        public Form1()
+        public AcademicLoad()
         {
             InitializeComponent();
         }

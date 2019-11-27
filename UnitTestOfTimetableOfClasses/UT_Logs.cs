@@ -1,68 +1,68 @@
-﻿using System;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.IO;
 using System.Linq;
 
 namespace UnitTestOfTimetableOfClasses
 {
-	[TestClass]
-	public class UT_Logs
-	{
-		/// <summary>
-		/// Проверка корректного вывода метода GetInfo в Logs.txt
-		/// </summary>
-		[TestMethod]
-		public void Task_1018_1()
-		{
-			//arrange
-			Logs.GetInfo("Click button Delete in Teacher");
-			string ex = ("");
-			ex = Read();
-			
-			//act
-			string act = "Click button Delete in Teacher";
+    [TestClass]
+    public class UT_Logs
+    {
+        /// <summary>
+        /// Проверка корректного вывода метода GetInfo в Logs.txt
+        /// </summary>
+        [TestMethod]
+        public void Task_1018_1()
+        {
+            //arrange
+            Logs.GetInfo("Click button Delete in Teacher");
+            string ex = ("");
+            ex = Read();
 
-			//assert
-			StringAssert.Contains(ex, act);
-		}
+            //act
+            string act = "Click button Delete in Teacher";
 
-		private string Read()
-		{
-			StreamReader file = new StreamReader("Logs.txt");
+            //assert
+            StringAssert.Contains(ex, act);
+        }
 
-			string ex = File.ReadLines(@"Logs.txt").Last();
-			file.Close();
-			return ex;
+        private string Read()
+        {
+            StreamReader file = new StreamReader("Logs.txt");
 
-		}
+            string ex = File.ReadLines(@"Logs.txt").Last();
+            file.Close();
+            return ex;
 
-		/// <summary>
-		/// Проверка корректного вывода метода GetError в Logs.txt
-		/// </summary>
-		[TestMethod]
-		public void Task_1018_2()
-		{
-			//arrange
+        }
 
-			try
-			{
-				throw new Exception ("Error");
-			}
-			catch (Exception error)
-			{
-				Logs.GetError(error);
-			}
+        /// <summary>
+        /// Проверка корректного вывода метода GetError в Logs.txt
+        /// </summary>
+        [TestMethod]
+        public void Task_1018_2()
+        {
+            //arrange
 
-			string ex = ("");
-			ex = Read();
+            try
+            {
+                throw new Exception("Error");
+            }
+            catch (Exception error)
+            {
+                Logs.GetError(error);
+            }
 
-			//act
-			string act = "Error";
+            string ex = ("");
+            ex = Read();
 
-			//assert
-			StringAssert.Contains(ex, act);
+            //act
+            string act = "Error";
 
-		}
-	}
+            //assert
+            StringAssert.Contains(ex, act);
+
+        }
+    }
 }

@@ -1,26 +1,25 @@
-﻿using System;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
 {
-	[TestClass]
-	public class UT_Insert_CAcademicDegree
-	{
-		/// <summary>
-		/// Ввод корректных данных в пустую таблицу
-		/// </summary>
-		[TestMethod]
-		public void Task_486_1()
-		{
-			//arrange 
-			MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
-			bool ex = true;
-			//act
-			bool act = RefData.CAcademicDegree.Insert(ma);
-			//assert
-			Assert.AreEqual(ex, act);
-		}
+    [TestClass]
+    public class UT_Insert_CAcademicDegree
+    {
+        /// <summary>
+        /// Ввод корректных данных в пустую таблицу
+        /// </summary>
+        [TestMethod]
+        public void Task_486_1()
+        {
+            //arrange 
+            MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
+            bool ex = true;
+            //act
+            bool act = RefData.CAcademicDegree.Insert(ma);
+            //assert
+            Assert.AreEqual(ex, act);
+        }
 
 		/// <summary>
 		/// учёная степень с такой сокращённой записью уже есть в таблице
@@ -45,5 +44,6 @@ namespace UnitTestOfTimetableOfClasses
 			Assert.AreEqual(expected, actual);
 		}
 
-	}
+
+    }
 }
