@@ -3,7 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
 {
-   [TestMethod]
+    [TestClass]
+    public class UT_Deleted_CTeacher
+    {
+
+        /// <summary>
+        /// Удаление существующей строки
+        /// </summary>
+		[TestMethod]
         public void Task_248_1()
         {
 
@@ -35,5 +42,5 @@ namespace UnitTestOfTimetableOfClasses
 
             Assert.AreEqual(expected, actual);
         }
-    
+    }
 }
