@@ -61,13 +61,27 @@ namespace LibOfTimetableOfClasses
             };
             this.Columns.Add(column);
         }
-
+        /// <summary>
+        /// Удаляет запись из таблицы данных об академической нагрузке
+        /// В таблице CAcademicLoad ищется строка с полем "Group" соответсвующим этому же полю модели, 
+        /// переданной в качестве параметра.
+        /// В случае успеха поиска удаляется найденная строка. 
+        /// </summary>
         public bool Delete(Model model)
         {
-            throw new NotImplementedException();
+            MAcademicLoad mAcademicLoad = (MAcademicLoad)model;
+
+            for (int i = 0; i < this.Rows.Count; i++)
+            {
+                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                {
+                    this.Rows[i].Delete();
+                    return true;
+                }
+            }
+            return false;
         }
-
-
+        
         /// <summary>
         ///  Метод вставки переданной модели MAcademicLoad в таблицу
         /// </summary>
