@@ -159,7 +159,6 @@ namespace UnitTestOfTimetableOfClasses
             //act
             MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "аааааа", "1");
             //assert
-      Assert.AreEqual(expected, actual);
             RefData.CEnclosures.Delete(gr);
             RefData.CEnclosures.Delete(gr1);
         }
