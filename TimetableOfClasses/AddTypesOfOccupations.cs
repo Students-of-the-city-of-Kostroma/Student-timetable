@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 
 namespace TimetableOfClasses
@@ -18,10 +10,10 @@ namespace TimetableOfClasses
         public AddTypesOfOccupations()
         {
             InitializeComponent();
-			itsupdate = false;
-		}
+            itsupdate = false;
+        }
 
-		private readonly bool itsupdate;
+        private readonly bool itsupdate;
         public AddTypesOfOccupations(MTypesOfOccupations mTypesOfOccupations)
         {
             InitializeComponent();

@@ -1,24 +1,22 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
-	[TestClass]
-	public class UT_Insert_CEnclosurse
-	{
-        /// <summary>
-        /// Ввод в пустую таблицу
-        /// </summary>
+    [TestClass]
+    public class UT_Insert_CEnclosurse
+    {
         [TestMethod]
-        public void Task_397_1()
+        public void Task_397_1() //Ввод в пустую таблицу
         {
             //arrange
-            MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+
             bool expected = true;
             //act
             bool actual = RefData.CEnclosures.Insert(gr);
             //assert
+
 			Assert.AreEqual(expected, actual);
             RefData.CEnclosures.Delete(gr);
         }
@@ -161,8 +159,10 @@ namespace UnitTestOfTimetableOfClasses
             //act
             MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "аааааа", "1");
             //assert
+      Assert.AreEqual(expected, actual);
             RefData.CEnclosures.Delete(gr);
             RefData.CEnclosures.Delete(gr1);
         }
 	}
 }
+            
