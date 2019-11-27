@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Deleted_CTitle
     {
         [TestMethod]
-        public void task_362_1()
+        public void Task_362_1()
         {
             MTitle T_Title = new MTitle("Проф.", "Профессор");
             bool ex = true;
@@ -20,7 +20,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_362_2()
+        public void Task_362_2()
         {
             //act
             MTitle T_Title = new MTitle("Проф.", "Профессор");

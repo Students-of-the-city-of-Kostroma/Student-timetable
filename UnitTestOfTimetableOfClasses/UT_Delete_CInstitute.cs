@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_617_2() //Удалить запись при совпадении атрибута Краткое название
+        public void Task_617_2() //Удалить запись при совпадении атрибута Краткое название
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ИАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -32,7 +32,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_617_3() //при совпадении атрибута Полное название
+        public void Task_617_3() //при совпадении атрибута Полное название
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -43,7 +43,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_617_4() //при совпадении атрибута  Директор
+        public void Task_617_4() //при совпадении атрибута  Директор
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -54,7 +54,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_617_5() //при совпадении атрибута Наименование ВУЗа
+        public void Task_617_5() //при совпадении атрибута Наименование ВУЗа
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Костромской Государственный Университет");
@@ -65,7 +65,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void task_617_6() //Удаление несуществующих данных из таблицы
+        public void Task_617_6() //Удаление несуществующих данных из таблицы
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");

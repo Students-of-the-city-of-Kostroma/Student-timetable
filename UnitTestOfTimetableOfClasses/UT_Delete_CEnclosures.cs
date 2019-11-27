@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление существующих данных выбранной строки из таблицы
         /// </summary>
         [TestMethod]
-        public void task_395_1()
+        public void Task_395_1()
         {
             // arrange 
             MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -25,7 +25,8 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление данных из пустой таблицы
         /// </summary>
         [TestMethod]
-        public void task_395_2() 
+
+        public void Task_395_2()
         {
             //arrange 
             MEnclosures gr = new MEnclosures("Я", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
