@@ -38,6 +38,8 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
 			DataSet.Tables.Add(CStudyWeek);
+            DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 			DataSet.Tables.Add(CAcademicLoad);
 
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
@@ -78,14 +80,30 @@ namespace LibOfTimetableOfClasses
 			RefData.CGroup.Insert(mGroup2);
 			#endregion
 			#region discipline
-			MDiscipline mDiscipline = new MDiscipline("Математика", "Мат", "Окт-Янв");
+			MDiscipline mDiscipline = new MDiscipline("Web-программирование", "Web", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline);
 
-			MDiscipline mDiscipline1 = new MDiscipline("Физика", "Физ", "Янв-Март");
+			MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline1);
 
-			MDiscipline mDiscipline2 = new MDiscipline("Приграммирование", "Прг", "Янв-Май");
+			MDiscipline mDiscipline2 = new MDiscipline("Операционные системы", "ОС", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline2);
+
+			MDiscipline mDiscipline3 = new MDiscipline("Управление данными", "УД", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline3);
+
+			MDiscipline mDiscipline4 = new MDiscipline("3D-моделирование", "3D", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline4);
+
+			MDiscipline mDiscipline5 = new MDiscipline("Инструменты графического дизайна", "ИГД", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline5);
+
+			MDiscipline mDiscipline6 = new MDiscipline("Физическая культура и спорт", "Физра", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline6);
+
+			MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline7);
+
 			#endregion
 			#region academicdegree
 			MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
