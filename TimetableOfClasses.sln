@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimetableOfClasses", "TimetableOfClasses\TimetableOfClasses.csproj", "{8E04A57B-7C6F-436C-B9F7-40B669DDD55A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibOfTimetableOfClasses", "LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj", "{93A4D5CC-B39E-480D-9A5E-9F7BB97FF8A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestOfTimetableOfClasses", "UnitTestOfTimetableOfClasses\UnitTestOfTimetableOfClasses.csproj", "{E6F16B7B-F973-481D-954B-60CCF9A6600A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{946757A0-6466-4894-BEF1-C02F9BB30139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
