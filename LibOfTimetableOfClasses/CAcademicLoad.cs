@@ -30,6 +30,7 @@ namespace LibOfTimetableOfClasses
                 DataType = typeof(string),
                 ColumnName = "HoursAll"
             };
+            this.Columns.Add(column);
 
             column = new DataColumn
             {
