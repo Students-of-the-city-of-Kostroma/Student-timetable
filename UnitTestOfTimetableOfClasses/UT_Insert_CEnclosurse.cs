@@ -62,7 +62,7 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]
         public void Task_397_4()
-		{
+        {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
