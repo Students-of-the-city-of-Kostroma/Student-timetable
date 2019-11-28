@@ -176,72 +176,93 @@ namespace LibOfTimetableOfClasses
 			#endregion
 		}
 
-		/// <summary>
-		/// Создаёт список аудиторий для Е-корпуса
-		/// </summary>
-		private void InitEAuditors() {
-			CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
-			CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("113", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("115", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("116", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("120", "Инженерная графика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("121", "Инженерная графика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("123", "Теоретическая механика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("128", "Инженерная и компьютерная графика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("203", "Информационная безопасность", 0, "Е"));
-			CAuditor.Insert(new MAuditor("205", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("208", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("209", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("211", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("212", "Биология", 0, "Е"));
-			CAuditor.Insert(new MAuditor("221", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("222", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("223", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("225", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("226", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("227", "Прикладная математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("228", "Прикладная математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("303а", "", 0, "Е"));
-			CAuditor.Insert(new MAuditor("303б", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("304", "Физика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("305", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("306", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("308", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("309", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("312", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("313", "История", 0, "Е"));
-			CAuditor.Insert(new MAuditor("314", "Иностранные языки", 0, "Е"));
-			CAuditor.Insert(new MAuditor("317", "Прикладная математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("318", "", 0, "Е"));
-			CAuditor.Insert(new MAuditor("319", "", 15, "Е"));
-			CAuditor.Insert(new MAuditor("321", "Информационные системы", 0, "Е"));
-			CAuditor.Insert(new MAuditor("323", "Информационные системы", 0, "Е"));
-			CAuditor.Insert(new MAuditor("324", "Информационные системы", 0, "Е"));
-			CAuditor.Insert(new MAuditor("325", "Информационные системы", 18, "Е"));
-			CAuditor.Insert(new MAuditor("326", "Информационные системы", 100, "Е"));
-			CAuditor.Insert(new MAuditor("327", "Вычислительная техника", 12, "Е"));
-			CAuditor.Insert(new MAuditor("330", "Вычислительная техника", 12, "Е"));
-			CAuditor.Insert(new MAuditor("401", "Информационная безопасность", 0, "Е"));
-			CAuditor.Insert(new MAuditor("403", "Математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("405", "Математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("406", "Информационная безопасность", 0, "Е"));
-			CAuditor.Insert(new MAuditor("407", "Информационные системы", 0, "Е"));
-			CAuditor.Insert(new MAuditor("412", "Математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("413", "Математика", 0, "Е"));
-			CAuditor.Insert(new MAuditor("430", "Военная кафедра", 0, "Е"));
-			CAuditor.Insert(new MAuditor("501а", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("502", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("508", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("509", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("514", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("516", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("517", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("519", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
-			CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
-			CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
-		}
+        /// <summary>
+        /// Создаёт список аудиторий для Е-корпуса
+        /// </summary>
+        private void InitEAuditors() {
+            CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
+            CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("113", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("115", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("116", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("120", "Инженерная графика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("121", "Инженерная графика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("123", "Теоретическая механика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("128", "Инженерная и компьютерная графика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("203", "Информационная безопасность", 0, "Е"));
+            CAuditor.Insert(new MAuditor("205", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("208", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("209", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("211", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("212", "Биология", 0, "Е"));
+            CAuditor.Insert(new MAuditor("221", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("222", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("223", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("225", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("226", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("227", "Прикладная математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("228", "Прикладная математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("303а", "", 0, "Е"));
+            CAuditor.Insert(new MAuditor("303б", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("304", "Физика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("305", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("306", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("308", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("309", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("312", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("313", "История", 0, "Е"));
+            CAuditor.Insert(new MAuditor("314", "Иностранные языки", 0, "Е"));
+            CAuditor.Insert(new MAuditor("317", "Прикладная математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("318", "", 0, "Е"));
+            CAuditor.Insert(new MAuditor("319", "", 15, "Е"));
+            CAuditor.Insert(new MAuditor("321", "Информационные системы", 0, "Е"));
+            CAuditor.Insert(new MAuditor("323", "Информационные системы", 0, "Е"));
+            CAuditor.Insert(new MAuditor("324", "Информационные системы", 0, "Е"));
+            CAuditor.Insert(new MAuditor("325", "Информационные системы", 18, "Е"));
+            CAuditor.Insert(new MAuditor("326", "Информационные системы", 100, "Е"));
+            CAuditor.Insert(new MAuditor("327", "Вычислительная техника", 12, "Е"));
+            CAuditor.Insert(new MAuditor("330", "Вычислительная техника", 12, "Е"));
+            CAuditor.Insert(new MAuditor("401", "Информационная безопасность", 0, "Е"));
+            CAuditor.Insert(new MAuditor("403", "Математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("405", "Математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("406", "Информационная безопасность", 0, "Е"));
+            CAuditor.Insert(new MAuditor("407", "Информационные системы", 0, "Е"));
+            CAuditor.Insert(new MAuditor("412", "Математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("413", "Математика", 0, "Е"));
+            CAuditor.Insert(new MAuditor("430", "Военная кафедра", 0, "Е"));
+            CAuditor.Insert(new MAuditor("501а", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("502", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("508", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("509", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("514", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("516", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("517", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("519", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
+            CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
+            CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
+
+
+        }   
+            
+            /// <summary>
+            /// создает список институтов КГУ
+            /// </summary>
+            private void InitInstitute   ()
+            { 
+              //  CInstitute.Insert(new MInstitute("Институт автоматизированных систем и техноглогий", "ИАСТ", "Лустгартен Юрий Леонидович", "КГУ"));
+                CInstitute.Insert(new MInstitute(" Институт гуманитарных наук и социальных технологий "," ИГНИСТ"," Панкратова Ольга Борисовна ","КГУ"));
+            CInstitute.Insert(new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "КГУ"));
+            CInstitute.Insert(new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "КГУ"));
+            CInstitute.Insert(new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "КГУ"));
+            CInstitute.Insert(new MInstitute(" Институт управления, экономики и финансов  ", "ИУЭФ ", " Беркович Мргарита Ивановна ", "КГУ"));
+            CInstitute.Insert(new MInstitute(" Юридический институт им. Ю.П. Новицкого ", "ЮИН ", " Бриль Геннадий Геннадьевич ", "КГУ"));
+            
+
+
+        }
+
+
     }
 }
