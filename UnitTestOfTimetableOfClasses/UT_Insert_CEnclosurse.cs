@@ -28,11 +28,11 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_397_2()
         {
             //arrange
-            MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Малышковская", "111111", "1");
             bool expected = false;
             RefData.CEnclosures.Insert(gr);
             //act
-            MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Дзержинского", "111121", "2");
+            MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Малышковская", "111121", "2");
             bool actual = RefData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
