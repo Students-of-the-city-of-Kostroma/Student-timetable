@@ -12,11 +12,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_395_1()
         {
-           MUniversity grUni = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
+           MUniversity grUni = new MUniversity("4401006986", "КУ", "Костомкой Государственный Университет", "156205, Кострмская область, г. Косрома, ул. Дзеринского, 27", "156005, Котромская область, г. Котрома, ул. Дзержинсого, 37", "Алексанр", "Науов", "Руольфович", "kg@mail.ru", "84942417960");
 		bool actualUni = RefData.CUniversity.Insert(grUni);
 			Assert.AreEqual(true, actualUni);
 			// arrange 
-			MEnclosures gr = new MEnclosures("А", grUni.FullName, "Дзержинского", "111111", "1");
+			MEnclosures gr = new MEnclosures("У", grUni.FullName, "Дзеринского", "114111", "7");
 			bool expected = true;
 			//act 
 			RefData.CEnclosures.Insert(gr);
@@ -32,7 +32,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_2()
         {
            //arrange 
-			MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
+			MEnclosures gr = new MEnclosures("Г", "Косткромской Государственный Университет", "Дзержинрского", "111119", "7);
 			bool expected = false;
 			//act 
 			bool actual = RefData.CEnclosures.Delete(gr);
