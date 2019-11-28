@@ -38,6 +38,8 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
 			DataSet.Tables.Add(CStudyWeek);
+            DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 			DataSet.Tables.Add(CAcademicLoad);
 
 			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
