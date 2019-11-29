@@ -253,8 +253,7 @@ namespace LibOfTimetableOfClasses
             /// </summary>
             private void InitInstitute   ()
             { 
-              //  CInstitute.Insert(new MInstitute("Институт автоматизированных систем и техноглогий", "ИАСТ", "Лустгартен Юрий Леонидович", "КГУ"));
-                CInstitute.Insert(new MInstitute(" Институт гуманитарных наук и социальных технологий "," ИГНИСТ"," Панкратова Ольга Борисовна ","КГУ"));
+            CInstitute.Insert(new MInstitute(" Институт гуманитарных наук и социальных технологий "," ИГНИСТ"," Панкратова Ольга Борисовна ","КГУ"));
             CInstitute.Insert(new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "КГУ"));
             CInstitute.Insert(new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "КГУ"));
             CInstitute.Insert(new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "КГУ"));
