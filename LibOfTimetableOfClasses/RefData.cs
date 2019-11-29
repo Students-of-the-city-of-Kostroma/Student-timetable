@@ -113,7 +113,7 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher);
 			MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
-
+                        RefData.CAcademicDegree.Insert(mAcademicDegree1);
 			MTitle mTitle1 = new MTitle("Профессор", "Проф");
 			RefData.CTitle.Insert(mTitle1);
 			MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
