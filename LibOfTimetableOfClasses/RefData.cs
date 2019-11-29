@@ -156,17 +156,17 @@ namespace LibOfTimetableOfClasses
 
 			MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
 			RefData.CInstitute.Insert(mInstitute2);
-            MInstitute mInstitute = new MInstitute(" Институт гуманитарных наук и социальных технологий ", " ИГНИСТ", " Панкратова Ольга Борисовна ", "Костромской Государственный Университет");
+            MInstitute mInstitute3 = new MInstitute(" Институт гуманитарных наук и социальных технологий ", " ИГНИСТ", " Панкратова Ольга Борисовна ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute3);
-            MInstitute mInstitute = new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "Костромской Государственный Университет");
+            MInstitute mInstitute4 = new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute4);
-            MInstitute mInstitute = new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "Костромской Государственный Университет");
+            MInstitute mInstitute5 = new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute5);
-            MInstitute mInstitute = new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "Костромской Государственный Университет");
+            MInstitute mInstitute6 = new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute6);
-            MInstitute mInstitute = new MInstitute(" Институт управления, экономики и финансов  ", "ИУЭФ ", " Беркович Мргарита Ивановна ", "Костромской Государственный Университет");
+            MInstitute mInstitute7 = new MInstitute(" Институт управления, экономики и финансов  ", "ИУЭФ ", " Беркович Мргарита Ивановна ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute7);
-            MInstitute mInstitute = new MInstitute(" Юридический институт им. Ю.П. Новицкого ", "ЮИН ", " Бриль Геннадий Геннадьевич ", "Костромской Государственный Университет");
+            MInstitute mInstitute8 = new MInstitute(" Юридический институт им. Ю.П. Новицкого ", "ЮИН ", " Бриль Геннадий Геннадьевич ", "Костромской Государственный Университет");
             RefData.CInstitute.Insert(mInstitute8);
             #endregion
             #region auditor
