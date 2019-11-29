@@ -156,9 +156,21 @@ namespace LibOfTimetableOfClasses
 
 			MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
 			RefData.CInstitute.Insert(mInstitute2);
-			#endregion
-			#region auditor
-			this.InitEAuditors();
+            MInstitute mInstitute = new MInstitute(" Институт гуманитарных наук и социальных технологий ", " ИГНИСТ", " Панкратова Ольга Борисовна ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute3);
+            MInstitute mInstitute = new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute4);
+            MInstitute mInstitute = new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute5);
+            MInstitute mInstitute = new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute6);
+            MInstitute mInstitute = new MInstitute(" Институт управления, экономики и финансов  ", "ИУЭФ ", " Беркович Мргарита Ивановна ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute7);
+            MInstitute mInstitute = new MInstitute(" Юридический институт им. Ю.П. Новицкого ", "ЮИН ", " Бриль Геннадий Геннадьевич ", "Костромской Государственный Университет");
+            RefData.CInstitute.Insert(mInstitute8);
+            #endregion
+            #region auditor
+            this.InitEAuditors();
 
 			MAuditor mAuditor1 = new MAuditor("214", "Педагогики", 80, "А");
 			RefData.CAuditor.Insert(mAuditor1);
@@ -248,21 +260,15 @@ namespace LibOfTimetableOfClasses
 
         }   
             
-            /// <summary>
-            /// создает список институтов КГУ
-            /// </summary>
-            private void InitInstitute   ()
-            { 
-            CInstitute.Insert(new MInstitute(" Институт гуманитарных наук и социальных технологий "," ИГНИСТ"," Панкратова Ольга Борисовна ","КГУ"));
-            CInstitute.Insert(new MInstitute(" Институт дизайна и технологий  ", "ИДТ ", " Шорохов Сергей Александрович ", "КГУ"));
-            CInstitute.Insert(new MInstitute(" Институт культуры и искуств ", " ИКИ ", " Домахина Надежда Михайловна ", "КГУ"));
-            CInstitute.Insert(new MInstitute(" Институт профессионального развития ", "ИПР", " Селиванова Лариса Ивановна ", "КГУ"));
-            CInstitute.Insert(new MInstitute(" Институт управления, экономики и финансов  ", "ИУЭФ ", " Беркович Мргарита Ивановна ", "КГУ"));
-            CInstitute.Insert(new MInstitute(" Юридический институт им. Ю.П. Новицкого ", "ЮИН ", " Бриль Геннадий Геннадьевич ", "КГУ"));
+            
+           
+            
+            
+           
             
 
 
-        }
+        
 
 
     }
