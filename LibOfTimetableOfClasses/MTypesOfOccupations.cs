@@ -1,7 +1,7 @@
 ﻿namespace LibOfTimetableOfClasses
 {
     /// <summary>
-    /// Дисциплина
+    /// Вид занятий
     /// </summary>
     public class MTypesOfOccupations : Model
     {

@@ -1,42 +1,34 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System.Data;
 
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_Insert_CTeacher
     {
-        public string AddDegree(string a, string b)
-        {
-            //arrange 
-            MAcademicDegree ma = new MAcademicDegree(a, b);
-            bool ex = true;
-            //act
-            bool act = RefData.CAcademicDegree.Insert(ma);
-            //assert
-            Assert.AreEqual(ex, act);
-            return ma.Reduction;
-        }
-        public string addTitle(string a, string b)
-        {
-            //arrange
-            MTitle maTi = new MTitle(a, b);
-            bool expectedTi = true;
-            //act
-            bool actualTi = RefData.CTitle.Insert(maTi);
-            //assert
-            Assert.AreEqual(expectedTi, actualTi);
-            return maTi.Reduction;
-        }
+		private DataRow[] Degree()
+		{
+			DataTable table = RefData.DataSet.Tables["Учёная степень"];
+			DataRow[] rows = table.Select();
+			return rows;
+		}
+
+		private DataRow[] Title()
+		{
+			DataTable table = RefData.DataSet.Tables["Уч.Звание"];
+			DataRow[] rows = table.Select();
+			return rows;
+		}
 
         [TestMethod]
         public void Task_246_1() //Добавление в пустую таблицу
-        {
-            string ma = AddDegree("Магистр", "Маг.");
-            string maTi = addTitle("Профессор", "Проф.");
-            //arrange 
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+		{
+			DataRow[] maTi = Title();
+			DataRow[] ma = Degree();
+
+			//arrange 
+			MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act
             bool actual = RefData.CTeacher.Insert(tcher);
@@ -47,20 +39,24 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_246_2() //Полностью отличные атрибуты
         {
-            string ma1 = AddDegree("Кандидат наук", "Канд.");
-            string maTi1 = addTitle("Доцент", "Доц.");
-            string ma = AddDegree("Доктор наук", "Док.");
-            string maTi = addTitle("Профессор", "Проф.");
+			DataRow[] maTi = Title();
+			DataRow[] ma = Degree();
+			//string ma1 = AddDegree("Кандидат наук", "Канд.");
+            //string maTi1 = addTitle("Доцент", "Доц.");
+            //string ma = AddDegree("Доктор наук", "Док.");
+            //string maTi = addTitle("Профессор", "Проф.");
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
             bool expected = true;
             //act
             RefData.CTeacher.Insert(tcher1);
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-        }
+			RefData.CTeacher.Delete(tcher);
+			RefData.CTeacher.Delete(tcher1);
+		}
 
         [TestMethod]
         public void Task_246_3() //Повторяющийся атрибут "ФИО"
@@ -74,59 +70,71 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-        }
+		}
 
         [TestMethod]
         public void Task_246_4() //Повторяющиеся атрибуты Уч. степень и Уч. звание
         {
-            string ma = AddDegree("Кандидат наук", "Канд.");
-            string maTi = addTitle("Профессор", "Проф.");
+			DataRow[] maTi = Title();
+			DataRow[] ma = Degree();
+			//string ma = AddDegree("Кандидат наук", "Канд.");
+            //string maTi = addTitle("Профессор", "Проф.");
 
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma, maTi, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
             bool expected = true;
-            //act
-            RefData.CTeacher.Insert(tcher1);
-            bool actual = RefData.CTeacher.Insert(tcher);
+			//act
+			bool actual = RefData.CTeacher.Insert(tcher1);
+           RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-        }
+			RefData.CTeacher.Delete(tcher);
+			RefData.CTeacher.Delete(tcher1);
+		}
         [TestMethod]
         public void Task_246_5() //Повторяющиеся атрибут Кафедра
         {
-            string ma1 = AddDegree("Кандидат наук", "Канд.");
-            string maTi1 = addTitle("Доцент", "Доц.");
-            string ma = AddDegree("Доктор наук", "Док.");
-            string maTi = addTitle("Профессор", "Проф.");
+			DataRow[] maTi = Title();
+			DataRow[] ma = Degree();
+			//string ma1 = AddDegree("Кандидат наук", "Канд.");
+   //         string maTi1 = addTitle("Доцент", "Доц.");
+   //         string ma = AddDegree("Доктор наук", "Док.");
+   //         string maTi = addTitle("Профессор", "Проф.");
 
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
             bool expected = true;
             //act
             RefData.CTeacher.Insert(tcher1);
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-        }
+			RefData.CTeacher.Delete(tcher);
+			RefData.CTeacher.Delete(tcher1);
+		}
         [TestMethod]
         public void Task_246_6() //Повторяющиеся атрибуты график работы
         {
-            string ma1 = AddDegree("Кандидат наук", "Канд.");
-            string maTi1 = addTitle("Доцент", "Доц.");
-            string ma = AddDegree("Доктор наук", "Док.");
-            string maTi = addTitle("Профессор", "Проф.");
+			DataRow[] maTi = Title();
+			DataRow[] ma = Degree();
+			//string ma1 = AddDegree("Кандидат наук", "Канд.");
+   //         string maTi1 = addTitle("Доцент", "Доц.");
+   //         string ma = AddDegree("Доктор наук", "Док.");
+   //         string maTi = addTitle("Профессор", "Проф.");
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma1, maTi1, "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma, maTi, "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act
             RefData.CTeacher.Insert(tcher1);
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-        }
+			RefData.CTeacher.Delete(tcher);
+			RefData.CTeacher.Delete(tcher1);
+		}
 
         [TestMethod]
         public void Task_246_7() //Все атрибуты повторяются
