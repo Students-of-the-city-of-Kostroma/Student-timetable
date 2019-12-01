@@ -13,7 +13,8 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_1()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
-            RefData.CUniversity.Insert(grUni);
+            bool actualUni = RefData.CUniversity.Insert(grUni);
+            Assert.AreEqual(true, actualUni);
             // arrange 
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
             bool expected = true;
