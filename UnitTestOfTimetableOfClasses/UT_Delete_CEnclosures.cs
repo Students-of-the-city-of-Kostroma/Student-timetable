@@ -11,14 +11,19 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]
        public void Task_395_1()
-		{
-            MEnclosures gr = new MEnclosures("Ж", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            //act 
-            RefData.CEnclosures.Insert(gr);
-            bool result = RefData.CEnclosures.Insert(gr);
-            //assert 
-            Assert.AreEqual(true, RefData.CEnclosures.Delete(gr));
-        }
+{
+			MUniversity grUni = new MUniversity("4551006286", "НДВ", "Кострумкой Госудьрственный Унивеьситет", "176005, Кострьмская облаьть, р. Костьома, пл. Дзебжинского, 27", "156505, Кострьмская оьласть, р. Коьтрома, пл. Дзержьнского, 47", "Альксандр", "Наьмов", "Руьольфович", "ktu@mail.ru", "84992317960");
+			bool actualUni = RefData.CUniversity.Insert(grUni);
+			Assert.AreEqual(true, actualUni);
+			// arrange 
+			MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзербинского", "111121", "8");
+			bool expected = true;
+			//act 
+			RefData.CEnclosures.Insert(gr);
+			bool actual = RefData.CEnclosures.Delete(gr);
+			//assert 
+			Assert.AreEqual(expected, actual);
+		}
         /// <summary>
         /// Удаление данных из пустой таблицы
         /// </summary>
@@ -26,13 +31,13 @@ namespace UnitTestOfTimetableOfClasses
 
         public void Task_395_2()
         {
-           //arrange 
-            MEnclosures gr = new MEnclosures("Я", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = false;
-            //act 
-            bool actual = RefData.CEnclosures.Delete(gr);
-            //assert 
-            Assert.AreEqual(expected, actual);
-        }
+			//arrange 
+			MEnclosures gr = new MEnclosures("М", "Костбомской Госбдарственный Университет", "Дзержбнского", "115111", "4");
+			bool expected = false;
+			//act 
+			bool actual = RefData.CEnclosures.Delete(gr);
+			//assert 
+			Assert.AreEqual(expected, actual);
+		}
     }
 }
