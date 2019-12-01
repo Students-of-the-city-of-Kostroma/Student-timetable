@@ -1,4 +1,4 @@
-﻿using LibOfTimetableOfClasses;
+using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
@@ -31,7 +31,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_2()
         {
             //arrange 
-            MEnclosures gr = new MEnclosures("П", "Костьомской Госудаьственный Универьитет", "Дзиржинского", "111311", "5");
+            MEnclosures gr = new MEnclosures("О", "Костьомской Госудаьственный Универьитет", "Дзиржинского", "111311", "5");
             bool expected = false;
             //act 
             bool actual = RefData.CEnclosures.Delete(gr);
