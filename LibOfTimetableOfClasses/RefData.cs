@@ -150,10 +150,8 @@ namespace LibOfTimetableOfClasses
 			#region institute
 			MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
 			RefData.CInstitute.Insert(mInstitute);
-
 			MInstitute mInstitute1 = new MInstitute("Институт педагогики и психологии", "ИПП", "Аристархов Валерий Аристархович", "Костромской Государственный Университет");
 			RefData.CInstitute.Insert(mInstitute1);
-
 			MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
 			RefData.CInstitute.Insert(mInstitute2);
             MInstitute mInstitute3 = new MInstitute(" Институт гуманитарных наук и социальных технологий ", " ИГНИСТ", " Панкратова Ольга Борисовна ", "Костромской Государственный Университет");
@@ -256,20 +254,6 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
             CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
             CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
-
-
         }   
-            
-            
-           
-            
-            
-           
-            
-
-
-        
-
-
     }
 }
