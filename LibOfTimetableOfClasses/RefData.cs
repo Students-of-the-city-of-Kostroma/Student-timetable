@@ -167,13 +167,13 @@ namespace LibOfTimetableOfClasses
 			RefData.CAuditor.Insert(mAuditor2);
 			#endregion
 			#region occupations
-			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
+			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
 
-			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Теория информационных процессов и систем", "ТИПИС");
+			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Практическая работа", "ПР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations1);
 
-			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
+			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Лабараторная работа", "ЛР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
 			#endregion
 		}

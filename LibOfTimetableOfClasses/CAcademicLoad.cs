@@ -20,8 +20,7 @@ namespace LibOfTimetableOfClasses
             DataColumn column = new DataColumn
             {
                 DataType = typeof(string),
-                ColumnName = "Group",
-                Unique = true
+                ColumnName = "Group"
             };
             this.Columns.Add(column);
 
@@ -141,7 +140,6 @@ namespace LibOfTimetableOfClasses
                         Rows[i]["HoursAll"] = mAcademic.TotalHours;
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
-
                         return true;
                     }
                     catch (Exception ex)
