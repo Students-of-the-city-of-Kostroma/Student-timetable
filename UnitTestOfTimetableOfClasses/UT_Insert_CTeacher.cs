@@ -44,6 +44,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher));
         }
 
         /// <summary>
@@ -63,8 +64,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CTeacher.Delete(tcher);
-            RefData.CTeacher.Delete(tcher1);
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher));
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher1));
         }
 
         /// <summary>
@@ -101,8 +102,8 @@ namespace UnitTestOfTimetableOfClasses
             RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CTeacher.Delete(tcher);
-            RefData.CTeacher.Delete(tcher1);
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher));
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher1));
         }
 
         /// <summary>
@@ -122,8 +123,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CTeacher.Delete(tcher);
-            RefData.CTeacher.Delete(tcher1);
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher));
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher1));
         }
 
         /// <summary>
@@ -143,8 +144,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CTeacher.Insert(tcher);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CTeacher.Delete(tcher);
-            RefData.CTeacher.Delete(tcher1);
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher));
+            Assert.IsTrue(RefData.CTeacher.Delete(tcher1));
         }
 
         /// <summary>
