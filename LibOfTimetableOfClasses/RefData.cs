@@ -56,7 +56,8 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
 			init();
 		}
-		private void init() {
+		private void init()
+		{
 			#region direction
 			MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
 			RefData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
@@ -113,7 +114,7 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher);
 			MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
-                        RefData.CAcademicDegree.Insert(mAcademicDegree1);
+			RefData.CAcademicDegree.Insert(mAcademicDegree1);
 			MTitle mTitle1 = new MTitle("Профессор", "Проф");
 			RefData.CTitle.Insert(mTitle1);
 			MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
@@ -122,38 +123,38 @@ namespace LibOfTimetableOfClasses
 			MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher2);
 
-            MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher3);
+			MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher3);
 
-            MTeacher mTeacher4 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher4);
+			MTeacher mTeacher4 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher4);
 
-            MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher5);
+			MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
+			RefData.CTeacher.Insert(mTeacher5);
 
-            MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИАСТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher6);
+			MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИАСТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+			RefData.CTeacher.Insert(mTeacher6);
 
-            MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher7);
+			MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher7);
 
-            MTeacher mTeacher8 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher8);
+			MTeacher mTeacher8 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher8);
 
-            MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher9);
+			MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+			RefData.CTeacher.Insert(mTeacher9);
 
-            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher10);
+			MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
+			RefData.CTeacher.Insert(mTeacher10);
 
-            MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
-            RefData.CTeacher.Insert(mTeacher11);
+			MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
+			RefData.CTeacher.Insert(mTeacher11);
 
-            MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher12);
-            #endregion
-            #region university
-            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
+			MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
+			RefData.CTeacher.Insert(mTeacher12);
+			#endregion
+			#region university
+			MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
 			RefData.CUniversity.Insert(mUniversity);
 
 			MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
@@ -201,6 +202,55 @@ namespace LibOfTimetableOfClasses
 			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
 			#endregion
+			#region academicload
+
+			MAcademicLoad mAcademicLoad001 = new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad001);
+
+			MAcademicLoad mAcademicLoad002 = new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad002);
+
+			MAcademicLoad mAcademicLoad003 = new MAcademicLoad("17-ВТбо-1", "36", "Программирование на языках высокого уровня", "Гутман А.С", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad003);
+
+			MAcademicLoad mAcademicLoad004 = new MAcademicLoad("17-ВТбо-1", "72", "Программирование на языках высокого уровня", "Гутман А.С", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad004);
+
+			MAcademicLoad mAcademicLoad005 = new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Панин И.Г", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad005);
+
+			MAcademicLoad mAcademicLoad006 = new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Чувиляева А.С", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad006);
+
+			MAcademicLoad mAcademicLoad007 = new MAcademicLoad("17-ВТбо-1", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad007);
+
+			MAcademicLoad mAcademicLoad008 = new MAcademicLoad("17-ВТбо-1", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad008);
+
+			MAcademicLoad mAcademicLoad009 = new MAcademicLoad("17-ВТбо-1", "36", "WEB-программирование", "Демчинова Е.А", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad009);
+
+			MAcademicLoad mAcademicLoad010 = new MAcademicLoad("17-ВТбо-1", "72", "WEB-программирование", "Демчинова Е.А", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad010);
+
+			MAcademicLoad mAcademicLoad011 = new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad011);
+
+			MAcademicLoad mAcademicLoad012 = new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad012);
+
+			MAcademicLoad mAcademicLoad013 = new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Лекция", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad013);
+
+			MAcademicLoad mAcademicLoad014 = new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad014);
+
+			MAcademicLoad mAcademicLoad015 = new MAcademicLoad("17-ВТбо-1", "144", "Физическая культура и спорт", "Бушуев С.Г", "Практика", "0");
+			RefData.CAcademicLoad.Insert(mAcademicLoad015);
+
+			#endregion
+
 		}
 
 		/// <summary>
