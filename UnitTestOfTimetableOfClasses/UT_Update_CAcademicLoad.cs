@@ -36,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1245_2()
         {
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-НОбо-1а", "110", "Правоведение", "Иванов Иван Иванович", "Лр", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-НОбо-1а", "110", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1245_3()
         {
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-Нбо-1а", "110", "Web-программирование", "Иванов Иван Иванович", "Лекция", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-Нбо-1а", "110", "Web-программирование", "Иванов Иван Иванович", "Лр", "20");
             bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
