@@ -22,7 +22,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// свойства group модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я, а-я, 0-9 и -, не пустой
         /// Группа
         /// </summary>
         public string Group
@@ -37,9 +37,8 @@ namespace LibOfTimetableOfClasses
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != '-') && (l > '9' || l < '0')) throw new Exception("Можно использовать только русские буквы ");
 
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _group = value;
             }
         }
@@ -84,7 +83,7 @@ namespace LibOfTimetableOfClasses
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _discipline = value;
@@ -106,10 +105,10 @@ namespace LibOfTimetableOfClasses
             set
             {
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 25) throw new Exception("Кол-во символов не превышает 25");
+                if (value.Length > 107) throw new Exception("Кол-во символов не превышает 107");
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной");
                 _teacher = value;
@@ -136,7 +135,7 @@ namespace LibOfTimetableOfClasses
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _occupation = value;
