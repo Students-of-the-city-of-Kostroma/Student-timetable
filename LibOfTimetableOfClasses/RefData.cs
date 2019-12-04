@@ -62,7 +62,7 @@ namespace LibOfTimetableOfClasses
             RefData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
             RefData.CTrainingProfile.Insert(mTrainingProfile);
-            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5,"Суббота");
+            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
             RefData.CGroup.Insert(mGroup);
 
             MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4);
@@ -80,14 +80,30 @@ namespace LibOfTimetableOfClasses
             RefData.CGroup.Insert(mGroup2);
             #endregion
             #region discipline
-            MDiscipline mDiscipline = new MDiscipline("Математика", "Мат", "Окт-Янв");
+            MDiscipline mDiscipline = new MDiscipline("Web-программирование", "Web", "Сентябрь-Декабрь");
             RefData.CDiscipline.Insert(mDiscipline);
 
-            MDiscipline mDiscipline1 = new MDiscipline("Физика", "Физ", "Янв-Март");
+            MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
             RefData.CDiscipline.Insert(mDiscipline1);
 
-            MDiscipline mDiscipline2 = new MDiscipline("Приграммирование", "Прг", "Янв-Май");
+            MDiscipline mDiscipline2 = new MDiscipline("Операционные системы", "ОС", "Сентябрь-Декабрь");
             RefData.CDiscipline.Insert(mDiscipline2);
+
+            MDiscipline mDiscipline3 = new MDiscipline("Управление данными", "УД", "Сентябрь-Декабрь");
+            RefData.CDiscipline.Insert(mDiscipline3);
+
+            MDiscipline mDiscipline4 = new MDiscipline("3D-моделирование", "3D", "Сентябрь-Декабрь");
+            RefData.CDiscipline.Insert(mDiscipline4);
+
+            MDiscipline mDiscipline5 = new MDiscipline("Инструменты графического дизайна", "ИГД", "Сентябрь-Декабрь");
+            RefData.CDiscipline.Insert(mDiscipline5);
+
+            MDiscipline mDiscipline6 = new MDiscipline("Физическая культура и спорт", "Физра", "Сентябрь-Декабрь");
+            RefData.CDiscipline.Insert(mDiscipline6);
+
+            MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
+            RefData.CDiscipline.Insert(mDiscipline7);
+
             #endregion
             #region academicdegree
             MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
@@ -150,7 +166,7 @@ namespace LibOfTimetableOfClasses
 
             MAuditor mAuditor2 = new MAuditor("123", "Философии", 77, "Б");
             RefData.CAuditor.Insert(mAuditor2);
-			#endregion
+            #endregion
             #region occupations
             MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
             RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
@@ -162,29 +178,29 @@ namespace LibOfTimetableOfClasses
             RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
             #endregion
             #region Teacher
-            MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher3);
+            MTeacher mTeacher13 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher13);
 
-            MTeacher mTeacher4 = new MTeacher("Демчинова", "Елена", "Александровна,", "Нет", "Нет", "ИАСТ", "Пн", "Вт, Ср, Чт, Пт, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher4);
+            MTeacher mTeacher14 = new MTeacher("Демчинова", "Елена", "Александровна,", "Нет", "Нет", "ИАСТ", "Пн", "Вт, Ср, Чт, Пт, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher14);
 
-            MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher5);
+            MTeacher mTeacher15 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
+            RefData.CTeacher.Insert(mTeacher15);
 
-            MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher6);
+            MTeacher mTeacher16 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+            RefData.CTeacher.Insert(mTeacher16);
 
-            MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher7);
+            MTeacher mTeacher17 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher17);
 
-            MTeacher mTeacher8 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher8);
+            MTeacher mTeacher18 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher18);
 
-            MTeacher mTeacher9 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher9);
+            MTeacher mTeacher19 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher19);
 
-            MTeacher mTeacher10 = new MTeacher("Александра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher10);
+            MTeacher mTeacher20 = new MTeacher("Александра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+            RefData.CTeacher.Insert(mTeacher20);
             #endregion
         }
     }
