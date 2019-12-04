@@ -52,7 +52,7 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
 			DataSet.Relations.Add("AcademicLoad-Group", CAcademicLoad.Columns["Group"], CGroup.Columns["Group"]);
 			DataSet.Relations.Add("AcademicLoad-Discipline", CAcademicLoad.Columns["Discipline"], CDiscipline.Columns["FullName"]);
-			DataSet.Relations.Add("AcademicLoad-Teacher", CAcademicLoad.Columns["Professor"], CTeacher.Columns["FullName"]);
+			DataSet.Relations.Add("AcademicLoad-Teacher", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
 			DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
 			init();
 		}
