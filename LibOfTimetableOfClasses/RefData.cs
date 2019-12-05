@@ -200,13 +200,32 @@ namespace LibOfTimetableOfClasses
 
 			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Лабараторная работа", "ЛР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
-			#endregion
-		}
+            #endregion
+            #region academicLoad
+            MAcademicLoad mAcademicLoad = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "36");
+            RefData.CAcademicLoad.Insert(mAcademicLoad);
 
-		/// <summary>
-		/// Создаёт список аудиторий для Е-корпуса
-		/// </summary>
-		private void InitEAuditors() {
+            MAcademicLoad mAcademicLoad1 = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Практика", "36");
+            RefData.CAcademicLoad.Insert(mAcademicLoad1);
+
+            MAcademicLoad mAcademicLoad2 = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Самостоятельная работа", "72");
+            RefData.CAcademicLoad.Insert(mAcademicLoad2);
+
+            MAcademicLoad mAcademicLoad3 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "18");
+            RefData.CAcademicLoad.Insert(mAcademicLoad3);
+
+            MAcademicLoad mAcademicLoad4 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "18");
+            RefData.CAcademicLoad.Insert(mAcademicLoad4);
+
+            MAcademicLoad mAcademicLoad5 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Самостоятельная работа", "36");
+            RefData.CAcademicLoad.Insert(mAcademicLoad5);
+            #endregion
+        }
+
+        /// <summary>
+        /// Создаёт список аудиторий для Е-корпуса
+        /// </summary>
+        private void InitEAuditors() {
 			CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
 			CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
 			CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
