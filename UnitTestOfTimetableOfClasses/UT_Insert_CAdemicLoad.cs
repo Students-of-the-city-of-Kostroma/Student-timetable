@@ -35,11 +35,13 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1240_2()
         {
             //arrange
-            Task_1240_1();
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "36", "Физика", "Иванова", "Практика", "40");
-            bool expected = false;
+            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
+            CAcademicLoad ca = new CAcademicLoad();
+            bool m = ca.Insert(ma);
+            bool expected = true;
             //act
-            bool actual = RefData.CAcademicLoad.Insert(ma);
+            MAcademicLoad ma1 = new MAcademicLoad("ВТ", "36", "Физика", "Иванова", "Практика", "40");
+            bool actual = ca.Insert(ma1);
             //assert
             Assert.AreEqual(expected, actual);
         }
