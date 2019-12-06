@@ -13,11 +13,10 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_249_1()
         {
             //arrange 
-            MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-            bool expected = true;
+            MGroup mGroup = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 1, 2, "Воскресенье");
+            bool expected = RefData.CGroup.Insert(mGroup);
             //act 
-            RefData.CGroup.Insert(gr);
-            bool actual = RefData.CGroup.Delete(gr);
+            bool actual = RefData.CGroup.Delete(mGroup);
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
