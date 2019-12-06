@@ -202,22 +202,22 @@ namespace LibOfTimetableOfClasses
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
             #endregion
             #region academicLoad
-            MAcademicLoad mAcademicLoad = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "36");
+            MAcademicLoad mAcademicLoad = new MAcademicLoad("17-ИСбо-2а", "144", "Моделирование информационных систем", "Панин Игорь Григорьевич", "Лекция", "36");
             RefData.CAcademicLoad.Insert(mAcademicLoad);
 
-            MAcademicLoad mAcademicLoad1 = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Практика", "36");
+            MAcademicLoad mAcademicLoad1 = new MAcademicLoad("17-ИСбо-2а", "144", "Моделирование информационных систем", "Панин Игорь Григорьевич", "Практика", "36");
             RefData.CAcademicLoad.Insert(mAcademicLoad1);
 
-            MAcademicLoad mAcademicLoad2 = new MAcademicLoad("17-ИСбо-2а", "144", "Управление данными", "Прядкина Нина Олеговна", "Самостоятельная работа", "72");
+            MAcademicLoad mAcademicLoad2 = new MAcademicLoad("17-ИСбо-2а", "144", "Моделирование информационных систем", "Панин Игорь Григорьевич", "Самостоятельная работа", "72");
             RefData.CAcademicLoad.Insert(mAcademicLoad2);
 
-            MAcademicLoad mAcademicLoad3 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "18");
+            MAcademicLoad mAcademicLoad3 = new MAcademicLoad("17-ИСбо-2а", "108", "Теория формальных языков и грамматик", "Орлов Александр", "Лекция", "18");
             RefData.CAcademicLoad.Insert(mAcademicLoad3);
 
-            MAcademicLoad mAcademicLoad4 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "18");
+            MAcademicLoad mAcademicLoad4 = new MAcademicLoad("17-ИСбо-2а", "108", "Теория формальных языков и грамматик", "Орлов Александр", "Практика", "36");
             RefData.CAcademicLoad.Insert(mAcademicLoad4);
 
-            MAcademicLoad mAcademicLoad5 = new MAcademicLoad("17-ИСбо-2а", "72", "Правоведение", "Зеленцов Алексей Вениаминович", "Самостоятельная работа", "36");
+            MAcademicLoad mAcademicLoad5 = new MAcademicLoad("17-ИСбо-2а", "108", "Теория формальных языков и грамматик", "Орлов Александр", "Самостоятельная работа", "54");
             RefData.CAcademicLoad.Insert(mAcademicLoad5);
             #endregion
         }
