@@ -14,8 +14,7 @@ namespace LibOfTimetableOfClasses
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальность строки в таблице определяется уникальностью поля Group.
         /// </summary>
-        public CAcademicLoad()
-            : base("Нагрузка")
+        public CAcademicLoad() : base("Нагрузка")
         {
             DataColumn column = new DataColumn
             {
@@ -30,6 +29,7 @@ namespace LibOfTimetableOfClasses
                 DataType = typeof(string),
                 ColumnName = "HoursAll"
             };
+            this.Columns.Add(column);
 
             column = new DataColumn
             {
@@ -61,13 +61,27 @@ namespace LibOfTimetableOfClasses
             };
             this.Columns.Add(column);
         }
-
+        /// <summary>
+        /// Удаляет запись из таблицы данных об академической нагрузке
+        /// В таблице CAcademicLoad ищется строка с полем "Group" соответсвующим этому же полю модели, 
+        /// переданной в качестве параметра.
+        /// В случае успеха поиска удаляется найденная строка. 
+        /// </summary>
         public bool Delete(Model model)
         {
-            throw new NotImplementedException();
+            MAcademicLoad mAcademicLoad = (MAcademicLoad)model;
+
+            for (int i = 0; i < this.Rows.Count; i++)
+            {
+                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                {
+                    this.Rows[i].Delete();
+                    return true;
+                }
+            }
+            return false;
         }
-
-
+        
         /// <summary>
         ///  Метод вставки переданной модели MAcademicLoad в таблицу
         /// </summary>
@@ -76,9 +90,6 @@ namespace LibOfTimetableOfClasses
         public bool Insert(Model model)
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
-
-            if (mAcademic.Group == null)
-                return false;
 
             try
             {
@@ -89,7 +100,7 @@ namespace LibOfTimetableOfClasses
                 newRow["KindOfLesson"] = mAcademic.Occupation;
                 newRow["Professor"] = mAcademic.Teacher;
                 newRow["HoursAll"] = mAcademic.TotalHours;
-
+                Rows.Add(newRow);
                 return true;
             }
             catch (Exception ex)
@@ -126,7 +137,6 @@ namespace LibOfTimetableOfClasses
                         Rows[i]["HoursAll"] = mAcademic.TotalHours;
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
-
                         return true;
                     }
                     catch (Exception ex)
