@@ -206,9 +206,6 @@ namespace LibOfTimetableOfClasses
             #endregion
             #region academicload
 
-            MAcademicLoad mAcademicLoad001 = new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Лекция", "0");
-            RefData.CAcademicLoad.Insert(mAcademicLoad001);
-
             MAcademicLoad mAcademicLoad002 = new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Практика", "0");
             RefData.CAcademicLoad.Insert(mAcademicLoad002);
 
