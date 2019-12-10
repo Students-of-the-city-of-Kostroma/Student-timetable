@@ -108,53 +108,6 @@ namespace LibOfTimetableOfClasses
             RefData.CDiscipline.Insert(mDiscipline7);
 
             #endregion
-            #region academicdegree
-            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
-            RefData.CAcademicDegree.Insert(mAcademicDegree);
-            MTitle mTitle = new MTitle("Доцент", "Доц");
-            RefData.CTitle.Insert(mTitle);
-            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher);
-            MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
-            RefData.CAcademicDegree.Insert(mAcademicDegree1);
-            MTitle mTitle1 = new MTitle("Профессор", "Проф");
-            RefData.CTitle.Insert(mTitle1);
-            MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher1);
-
-            MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher2);
-
-            MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher3);
-
-            MTeacher mTeacher4 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher4);
-
-            MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher5);
-
-            MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИАСТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher6);
-
-            MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher7);
-
-            MTeacher mTeacher8 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher8);
-
-            MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher9);
-
-            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher10);
-
-            MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
-            RefData.CTeacher.Insert(mTeacher11);
-
-            MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher12);
-            #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
             RefData.CUniversity.Insert(mUniversity);
