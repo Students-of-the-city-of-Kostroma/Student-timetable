@@ -250,7 +250,6 @@ namespace LibOfTimetableOfClasses
 
             MAcademicLoad mAcademicLoad015 = new MAcademicLoad("17-ВТбо-1", "144", "Физическая культура и спорт", "Бушуев С.Г", "Практика", "0");
             RefData.CAcademicLoad.Insert(mAcademicLoad015);
-
             #endregion
             #region Teacher
             MTeacher mTeacher13 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
