@@ -201,31 +201,7 @@ namespace LibOfTimetableOfClasses
 			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
 			#endregion
-			#region Teacher
-			MTeacher mTeacher13 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-			RefData.CTeacher.Insert(mTeacher13);
 
-			MTeacher mTeacher14 = new MTeacher("Демчинова", "Елена", "Александровна,", "Нет", "Нет", "ИАСТ", "Пн", "Вт, Ср, Чт, Пт, Сб", "Вс");
-			RefData.CTeacher.Insert(mTeacher14);
-
-			MTeacher mTeacher15 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
-			RefData.CTeacher.Insert(mTeacher15);
-
-			MTeacher mTeacher16 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-			RefData.CTeacher.Insert(mTeacher16);
-
-			MTeacher mTeacher17 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
-			RefData.CTeacher.Insert(mTeacher17);
-
-			MTeacher mTeacher18 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-			RefData.CTeacher.Insert(mTeacher18);
-
-			MTeacher mTeacher19 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-			RefData.CTeacher.Insert(mTeacher19);
-
-			MTeacher mTeacher20 = new MTeacher("Александра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-			RefData.CTeacher.Insert(mTeacher20);
-			#endregion
 		}
 
 		/// <summary>
