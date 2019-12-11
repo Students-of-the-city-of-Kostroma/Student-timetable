@@ -116,41 +116,29 @@ namespace LibOfTimetableOfClasses
                         RefData.CAcademicDegree.Insert(mAcademicDegree1);
 			MTitle mTitle1 = new MTitle("Профессор", "Проф");
 			RefData.CTitle.Insert(mTitle1);
-			MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-			RefData.CTeacher.Insert(mTeacher1);
+			MTeacher mTeacher13 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher13);
 
-			MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-			RefData.CTeacher.Insert(mTeacher2);
+			MTeacher mTeacher14 = new MTeacher("Демчинова", "Елена", "Александровна,", "Нет", "Нет", "ИАСТ", "Пн", "Вт, Ср, Чт, Пт, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher14);
 
-            MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher3);
+			MTeacher mTeacher15 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
+			RefData.CTeacher.Insert(mTeacher15);
 
-            MTeacher mTeacher4 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher4);
+			MTeacher mTeacher16 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+			RefData.CTeacher.Insert(mTeacher16);
 
-            MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher5);
+			MTeacher mTeacher17 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher17);
 
-            MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИАСТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
-            RefData.CTeacher.Insert(mTeacher6);
+			MTeacher mTeacher18 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher18);
 
-            MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher7);
+			MTeacher mTeacher19 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+			RefData.CTeacher.Insert(mTeacher19);
 
-            MTeacher mTeacher8 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
-            RefData.CTeacher.Insert(mTeacher8);
-
-            MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher9);
-
-            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher10);
-
-            MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
-            RefData.CTeacher.Insert(mTeacher11);
-
-            MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher12);
+			MTeacher mTeacher20 = new MTeacher("Александра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+			RefData.CTeacher.Insert(mTeacher20);
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
