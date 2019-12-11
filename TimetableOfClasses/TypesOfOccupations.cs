@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
-	public partial class TypesOfOccupations : Form
-	{
-		public TypesOfOccupations()
-		{
-			InitializeComponent();
+    public partial class TypesOfOccupations : Form
+    {
+        public TypesOfOccupations()
+        {
+            InitializeComponent();
             DG_TypesOfOccupations.AutoGenerateColumns = false;
             DG_TypesOfOccupations.DataSource = RefData.CTypesOfOccupations;
         }
@@ -52,7 +46,7 @@ namespace TimetableOfClasses
                 {
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-					RefData.CTypesOfOccupations.Delete(mTypesOfOccupations);
+                    RefData.CTypesOfOccupations.Delete(mTypesOfOccupations);
                 }
             }
 
@@ -70,11 +64,11 @@ namespace TimetableOfClasses
             {
                 DataRow Row = ((DataRowView)DG_TypesOfOccupations.SelectedRows[0].DataBoundItem).Row;
                 MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-				AddTypesOfOccupations add = new AddTypesOfOccupations(mTypesOfOccupations)
-				{
-					Owner = this
-				};
-				add.ShowDialog();
+                AddTypesOfOccupations add = new AddTypesOfOccupations(mTypesOfOccupations)
+                {
+                    Owner = this
+                };
+                add.ShowDialog();
             }
             else { MessageBox.Show("Для изменения выделите только одну строку!"); }
         }
