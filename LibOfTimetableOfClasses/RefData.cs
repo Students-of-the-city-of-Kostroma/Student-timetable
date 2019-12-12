@@ -103,7 +103,6 @@ namespace LibOfTimetableOfClasses
 
 			MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline7);
-
 			#endregion
 			#region academicdegree
 			MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
