@@ -42,7 +42,10 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(CStudyWeek);
             DataSet.Tables.Add(CDiscipline);
             DataSet.Tables.Add(CTypesOfOccupations);
+
             DataSet.Tables.Add(CAcademicLoad);
+   DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 
             DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
             DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
@@ -125,6 +128,8 @@ namespace LibOfTimetableOfClasses
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher2);
 
+			
+
             MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
             RefData.CTeacher.Insert(mTeacher3);
 
@@ -157,6 +162,7 @@ namespace LibOfTimetableOfClasses
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
+
             RefData.CUniversity.Insert(mUniversity);
 
             MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
@@ -284,6 +290,8 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
             CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
             CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
+
+		
         }
     }
 }

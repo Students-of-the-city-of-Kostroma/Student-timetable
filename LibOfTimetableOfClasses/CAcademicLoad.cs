@@ -14,8 +14,7 @@ namespace LibOfTimetableOfClasses
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальность строки в таблице определяется уникальностью поля Group.
         /// </summary>
-        public CAcademicLoad()
-            : base("Нагрузка")
+        public CAcademicLoad() : base("Нагрузка")
         {
             DataColumn column = new DataColumn
             {
@@ -92,9 +91,6 @@ namespace LibOfTimetableOfClasses
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
 
-            if (mAcademic.Group == null)
-                return false;
-
             try
             {
                 DataRow newRow = NewRow();
@@ -104,7 +100,7 @@ namespace LibOfTimetableOfClasses
                 newRow["KindOfLesson"] = mAcademic.Occupation;
                 newRow["Professor"] = mAcademic.Teacher;
                 newRow["HoursAll"] = mAcademic.TotalHours;
-
+                Rows.Add(newRow);
                 return true;
             }
             catch (Exception ex)
@@ -141,7 +137,6 @@ namespace LibOfTimetableOfClasses
                         Rows[i]["HoursAll"] = mAcademic.TotalHours;
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
-
                         return true;
                     }
                     catch (Exception ex)
