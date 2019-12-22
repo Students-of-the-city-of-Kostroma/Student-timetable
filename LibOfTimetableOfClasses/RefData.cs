@@ -1,4 +1,4 @@
-using System.Data;
+﻿using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
@@ -41,19 +41,21 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(CDiscipline);
             DataSet.Tables.Add(CTypesOfOccupations);
 			DataSet.Tables.Add(CAcademicLoad);
+            DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 
-			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
+            DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
 			DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
-			DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
-			DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
+            DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["AcademicDegree"]);
+            DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["AcademicTitle"]);
 			DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
 			DataSet.Relations.Add("AcademicLoad-Group", CAcademicLoad.Columns["Group"], CGroup.Columns["Group"]);
 			DataSet.Relations.Add("AcademicLoad-Discipline", CAcademicLoad.Columns["Discipline"], CDiscipline.Columns["FullName"]);
-			DataSet.Relations.Add("AcademicLoad-Teacher", CAcademicLoad.Columns["Professor"], CTeacher.Columns["FullName"]);
-			DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
+            DataSet.Relations.Add("AcademicLoad-Teacher", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
+            DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
 			init();
 		}
 		private void init() {
@@ -103,6 +105,7 @@ namespace LibOfTimetableOfClasses
 
 			MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline7);
+
 			#endregion
 			#region academicdegree
 			MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
@@ -142,7 +145,7 @@ namespace LibOfTimetableOfClasses
             MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher9);
 
-            MTeacher mTeacher10 = new MTeacher("Елена", "Демчинова", "Александровна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher10);
 
             MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
@@ -191,13 +194,13 @@ namespace LibOfTimetableOfClasses
 			RefData.CAuditor.Insert(mAuditor2);
 			#endregion
 			#region occupations
-			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
+			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
 
-			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Теория информационных процессов и систем", "ТИПИС");
+			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Практическая работа", "ПР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations1);
 
-			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
+			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Лабараторная работа", "ЛР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
 			#endregion
 		}
@@ -268,6 +271,38 @@ namespace LibOfTimetableOfClasses
 			CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
 			CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
 			CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
-		}
+            CAuditor.Insert(new MAuditor("101", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("106", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("108", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("109", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("110", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("202", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("203", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("204", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("205", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("208", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("213", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("215", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("216", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("217", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("218", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("302", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("303", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("305", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("309", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("311", "Иностранные языки", 0, "Б"));
+            CAuditor.Insert(new MAuditor("314", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("315", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("402", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("403", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("404", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("405", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("408", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("411", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("413", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("416", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("417", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("418", "", 0, "Б"));
+        }
     }
 }
