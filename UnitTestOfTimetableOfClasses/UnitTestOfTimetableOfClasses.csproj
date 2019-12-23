@@ -41,6 +41,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UT_Insert_CAdemicLoad.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="UT_MAcademicDegree.cs" />
     <Compile Include="UT_MDirectionOfPreparation.cs" />

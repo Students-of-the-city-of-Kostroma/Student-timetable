@@ -19,32 +19,28 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_1240_1()
         {
-            //arrange 
-            bool ex = true;
             //act
             MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            CAcademicLoad ca = new CAcademicLoad();
-            bool act = ca.Insert(ma);
+            bool ex = true;
+            bool act = RefData.CAcademicLoad.Insert(ma);
             //assert
             Assert.AreEqual(ex, act);
         }
         /// <summary>
-        ///Ввод корректных данных в таблицу, при условии, что добавляемая запись не имеет аналогов в таблице
+        /// Ввод корректных данных в таблицу, при условии, что подобный тип занятия уже есть в таблице
         /// </summary>
         [TestMethod]
         public void Task_1240_2()
         {
-            //arrange
+            //arrange 
             MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            CAcademicLoad ca = new CAcademicLoad();
-            bool m = ca.Insert(ma);
-            bool expected = true;
+            bool ex = true;
             //act
-            MAcademicLoad ma1 = new MAcademicLoad("ВТ", "36", "Физика", "Иванова", "Практика", "40");
-            bool actual = ca.Insert(ma1);
+            bool act = RefData.CAcademicLoad.Insert(ma);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(ex, act);
         }
+
         /// <summary>
         /// Ввод корректных данных в таблицу, при условии, что преподаватель с такой фамилией уже есть в таблице
         /// </summary>
