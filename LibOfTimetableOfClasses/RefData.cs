@@ -38,6 +38,8 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CTitle);
 			DataSet.Tables.Add(CGroup);
 			DataSet.Tables.Add(CStudyWeek);
+            DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 			DataSet.Tables.Add(CAcademicLoad);
             DataSet.Tables.Add(CDiscipline);
             DataSet.Tables.Add(CTypesOfOccupations);
@@ -80,14 +82,30 @@ namespace LibOfTimetableOfClasses
 			RefData.CGroup.Insert(mGroup2);
 			#endregion
 			#region discipline
-			MDiscipline mDiscipline = new MDiscipline("Математика", "Мат", "Окт-Янв");
+			MDiscipline mDiscipline = new MDiscipline("Web-программирование", "Web", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline);
 
-			MDiscipline mDiscipline1 = new MDiscipline("Физика", "Физ", "Янв-Март");
+			MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline1);
 
-			MDiscipline mDiscipline2 = new MDiscipline("Приграммирование", "Прг", "Янв-Май");
+			MDiscipline mDiscipline2 = new MDiscipline("Операционные системы", "ОС", "Сентябрь-Декабрь");
 			RefData.CDiscipline.Insert(mDiscipline2);
+
+			MDiscipline mDiscipline3 = new MDiscipline("Управление данными", "УД", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline3);
+
+			MDiscipline mDiscipline4 = new MDiscipline("3D-моделирование", "3D", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline4);
+
+			MDiscipline mDiscipline5 = new MDiscipline("Инструменты графического дизайна", "ИГД", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline5);
+
+			MDiscipline mDiscipline6 = new MDiscipline("Физическая культура и спорт", "Физра", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline6);
+
+			MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
+			RefData.CDiscipline.Insert(mDiscipline7);
+
 			#endregion
 			#region academicdegree
 			MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
@@ -96,23 +114,48 @@ namespace LibOfTimetableOfClasses
 			RefData.CTitle.Insert(mTitle);
 			MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher);
-
 			MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
-			RefData.CAcademicDegree.Insert(mAcademicDegree1);
+                        RefData.CAcademicDegree.Insert(mAcademicDegree1);
 			MTitle mTitle1 = new MTitle("Профессор", "Проф");
 			RefData.CTitle.Insert(mTitle1);
 			MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher1);
 
-			MAcademicDegree mAcademicDegree2 = new MAcademicDegree("Кандидат наук", "КН");
-			RefData.CAcademicDegree.Insert(mAcademicDegree2);
-			MTitle mTitle2 = new MTitle("Профессор", "Проф");
-			RefData.CTitle.Insert(mTitle2);
 			MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
 			RefData.CTeacher.Insert(mTeacher2);
-			#endregion
-			#region university
-			MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
+
+            MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher3);
+
+            MTeacher mTeacher4 = new MTeacher("Нина", "Прядкина", "Олеговна", "КН", "Доц", "ИВТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher4);
+
+            MTeacher mTeacher5 = new MTeacher("Анна", "Дружинина", "Григорьевна", "КН", "Доц", "ИВТ", "Ср, Сб", "Пн, Вт, Чт, Пт", "Вс");
+            RefData.CTeacher.Insert(mTeacher5);
+
+            MTeacher mTeacher6 = new MTeacher("Мария", "Исаева", "Владимировна", "КН", "Доц", "ИАСТ", "Сб", "Пн, Вт, Ср, Чт, Пт", "Вс");
+            RefData.CTeacher.Insert(mTeacher6);
+
+            MTeacher mTeacher7 = new MTeacher("Игорь", "Панин", "Григорьевич", "КН", "Доц", "ИВТ", "Ср", "Пн, Вт, Чт, Пт, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher7);
+
+            MTeacher mTeacher8 = new MTeacher("Жанна", "Дорохова", "Викторовна", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
+            RefData.CTeacher.Insert(mTeacher8);
+
+            MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            RefData.CTeacher.Insert(mTeacher9);
+
+            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
+            RefData.CTeacher.Insert(mTeacher10);
+
+            MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
+            RefData.CTeacher.Insert(mTeacher11);
+
+            MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
+            RefData.CTeacher.Insert(mTeacher12);
+            #endregion
+            #region university
+            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
 			RefData.CUniversity.Insert(mUniversity);
 
 			MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
@@ -151,13 +194,13 @@ namespace LibOfTimetableOfClasses
 			RefData.CAuditor.Insert(mAuditor2);
 			#endregion
 			#region occupations
-			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
+			MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
 
-			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Теория информационных процессов и систем", "ТИПИС");
+			MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Практическая работа", "ПР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations1);
 
-			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
+			MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Лабараторная работа", "ЛР");
 			RefData.CTypesOfOccupations.Insert(mTypesOfOccupations2);
 			#endregion
 		}
@@ -228,6 +271,38 @@ namespace LibOfTimetableOfClasses
 			CAuditor.Insert(new MAuditor("520", "Химия", 0, "Е"));
 			CAuditor.Insert(new MAuditor("522", "", 0, "Е"));
 			CAuditor.Insert(new MAuditor("523", "", 0, "Е"));
-		}
+            CAuditor.Insert(new MAuditor("101", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("106", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("108", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("109", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("110", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("202", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("203", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("204", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("205", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("208", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("213", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("215", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("216", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("217", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("218", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("302", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("303", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("305", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("309", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("311", "Иностранные языки", 0, "Б"));
+            CAuditor.Insert(new MAuditor("314", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("315", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("402", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("403", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("404", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("405", "Автоматика и микропроцессорная техника", 0, "Б"));
+            CAuditor.Insert(new MAuditor("408", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("411", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("413", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("416", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("417", "", 0, "Б"));
+            CAuditor.Insert(new MAuditor("418", "", 0, "Б"));
+        }
     }
 }
