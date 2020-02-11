@@ -116,11 +116,11 @@ namespace LibOfTimetableOfClasses
                         RefData.CAcademicDegree.Insert(mAcademicDegree1);
 			MTitle mTitle1 = new MTitle("Профессор", "Проф");
 			RefData.CTitle.Insert(mTitle1);
-			MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-			RefData.CTeacher.Insert(mTeacher1);
+            MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
+            RefData.CTeacher.Insert(mTeacher1);
 
-			MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-			RefData.CTeacher.Insert(mTeacher2);
+            MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
+            RefData.CTeacher.Insert(mTeacher2);
 
             MTeacher mTeacher3 = new MTeacher("Илья", "Барило", "Иванович", "КН", "Доц", "ИАСТ", "Чт, Пт", "Пн, Вт, Ср, Сб", "Вс");
             RefData.CTeacher.Insert(mTeacher3);
@@ -143,14 +143,11 @@ namespace LibOfTimetableOfClasses
             MTeacher mTeacher9 = new MTeacher("Светлана", "Смирнова", "Геннадьевна", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher9);
 
-            MTeacher mTeacher10 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher10 = new MTeacher("Елена", "Демчинова", "Александровна", "КН", "Доц", "ИАСТ", "СР, Чт", "ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher10);
 
-            MTeacher mTeacher11 = new MTeacher("Мария", "Нехорошкина", "Сергеевна", "КН", "Доц", "ИАСТ", "ПН, ВТ", "ПТ", "ВС");
+            MTeacher mTeacher11 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
             RefData.CTeacher.Insert(mTeacher11);
-
-            MTeacher mTeacher12 = new MTeacher("Алексндра", "Чувиляева", "Сергеевна", "КН", "Доц", "ИВТ", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            RefData.CTeacher.Insert(mTeacher12);
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
