@@ -36,12 +36,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_617_3()
         {
-            //act    
-            MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Иванов Юрий Иванович", "Политехнический колледж");
-            bool ex = false;
-            bool act = RefData.CInstitute.Delete(I_IInstitute);
-            //assert    
-            Assert.AreEqual(ex, act);
+            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Ярославский Государственный Университет");
+            Assert.IsTrue(RefData.CInstitute.Insert(I_IInstitute));
+            MInstitute I_IInstitute2 = new MInstitute("Любой институт", "ффффф", "ффффф", "фффффф");
+            Assert.IsFalse(RefData.CInstitute.Delete(I_IInstitute2));
+            Assert.IsTrue(RefData.CInstitute.Delete(I_IInstitute));
         }
         /// <summary>
         /// При совпадении атрибута  Директор
@@ -49,12 +48,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_617_4()
         {
-            //act    
-            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Политехнический колледж");
-            bool ex = false;
-            bool act = RefData.CInstitute.Delete(I_IInstitute);
-            //assert    
-            Assert.AreEqual(ex, act);
+            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Ярославский Государственный Университет");
+            Assert.IsTrue(RefData.CInstitute.Insert(I_IInstitute));
+            MInstitute I_IInstitute2 = new MInstitute("ффффф", "ффффф", "Иванов Иван Иванович", "фффффф");
+            Assert.IsFalse(RefData.CInstitute.Delete(I_IInstitute2));
+            Assert.IsTrue(RefData.CInstitute.Delete(I_IInstitute));
         }
         /// <summary>
         /// При совпадении атрибута Наименование ВУЗа
@@ -62,12 +60,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_617_5()
         {
-            //act    
-            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Юрий Иванович", "Костромской Государственный Университет");
-            bool ex = false;
-            bool act = RefData.CInstitute.Delete(I_IInstitute);
-            //assert    
-            Assert.AreEqual(ex, act);
+            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Ярославский Государственный Университет");
+            Assert.IsTrue(RefData.CInstitute.Insert(I_IInstitute));
+            MInstitute I_IInstitute2 = new MInstitute("ффффф", "ффффф", "ффффф", "Ярославский Государственный Университет");
+            Assert.IsFalse(RefData.CInstitute.Delete(I_IInstitute2));
+            Assert.IsTrue(RefData.CInstitute.Delete(I_IInstitute));
         }
         /// <summary>
         /// Удаление несуществующих данных из таблицы
@@ -75,12 +72,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_617_6()
         {
-            //act    
-            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Юрий Иванович", "Политехнический колледж");
-            bool ex = false;
-            bool act = RefData.CInstitute.Delete(I_IInstitute);
-            //assert    
-            Assert.AreEqual(ex, act);
+            MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Ярославский Государственный Университет");
+            Assert.IsTrue(RefData.CInstitute.Insert(I_IInstitute));
+            MInstitute I_IInstitute2 = new MInstitute("ффффф", "ффффф", "ффффф", "ффффф");
+            Assert.IsFalse(RefData.CInstitute.Delete(I_IInstitute2));
+            Assert.IsTrue(RefData.CInstitute.Delete(I_IInstitute));
         }
     }
 }
