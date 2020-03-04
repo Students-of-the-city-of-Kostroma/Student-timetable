@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 	[TestMethod]
         public void Task_617_1()
         {
-		MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Иван Иванович", "Политехнический колледж");
+		MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "TEST", "Иванов Иван Иванович", "Костромской Государственный Университет");
 		Assert.IsTrue(RefData.CInstitute.Insert(I_IInstitute));
 		Assert.IsTrue(RefData.CInstitute.Delete(I_IInstitute));
         }
