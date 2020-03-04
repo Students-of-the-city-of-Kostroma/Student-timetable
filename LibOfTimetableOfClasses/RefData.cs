@@ -297,7 +297,20 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("413", "", 0, "Б"));
             CAuditor.Insert(new MAuditor("416", "", 0, "Б"));
             CAuditor.Insert(new MAuditor("417", "", 0, "Б"));
-            CAuditor.Insert(new MAuditor("418", "", 0, "Б"));
-        }
+			CAuditor.Insert(new MAuditor("418", "", 0, "Б"));
+			CAuditor.Insert(new MAuditor("315", "", 0, "Б"));
+			CAuditor.Insert(new MAuditor("103", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("104", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("106", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("107", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("108", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("110", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("301", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("303", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("305", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("309", "Технология машиностроения", 0, "А"));
+			CAuditor.Insert(new MAuditor("311", "Технология машиностроения", 0, "А"));
+
+		}
     }
 }
