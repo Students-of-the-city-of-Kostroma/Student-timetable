@@ -23,7 +23,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CEnclosures.Delete(gr);
             //assert 
             Assert.AreEqual(expected, actual);
-            RefData.DataSet.Clear();
+            RefData.CEnclosures.Delete(gr);
+            RefData.CUniversity.Delete(grUni);
         }
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = RefData.CEnclosures.Delete(gr);
             //assert 
             Assert.AreEqual(expected, actual);
-            RefData.DataSet.Clear();
+            RefData.CEnclosures.Delete(gr);
         }
     }
 }
