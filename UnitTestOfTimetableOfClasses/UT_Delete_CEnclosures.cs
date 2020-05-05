@@ -19,7 +19,8 @@ namespace UnitTestOfTimetableOfClasses
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
             bool expected = true;
             //act 
-            RefData.CEnclosures.Insert(gr);
+            bool actuali = RefData.CEnclosures.Insert(gr);
+            Assert.AreEqual(expected, actuali);
             bool actual = RefData.CEnclosures.Delete(gr);
             //assert 
             Assert.AreEqual(expected, actual);
