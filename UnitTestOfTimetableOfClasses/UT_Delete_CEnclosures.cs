@@ -21,13 +21,11 @@ namespace UnitTestOfTimetableOfClasses
             //act 
             bool actuali = RefData.CEnclosures.Insert(gr);
             Assert.AreEqual(expected, actuali);
-            bool actual = RefData.CEnclosures.Delete(gr);
             //assert 
-            Assert.AreEqual(expected, actual);
-            bool check = RefData.CEnclosures.Delete(gr);
-            Assert.AreEqual(true, check);
-            bool check =  RefData.CUniversity.Delete(grUni);
-            Assert.AreEqual(true, check);
+            bool check_gr = RefData.CEnclosures.Delete(gr);
+            Assert.AreEqual(true, check_gr);
+            bool check_grUni = RefData.CUniversity.Delete(grUni);
+            Assert.AreEqual(true, check_grUni);
         }
 
         /// <summary>
@@ -44,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
             bool del = RefData.CEnclosures.Delete(gr);
-            Assert.AreEqual(true, del);
+            Assert.AreEqual(false, del);
         }
     }
 }
