@@ -89,10 +89,6 @@
       <Project>{93A4D5CC-B39E-480D-9A5E-9F7BB97FF8A5}</Project>
       <Name>LibOfTimetableOfClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TimetableOfClasses\TimetableOfClasses.csproj">
-      <Project>{8e04a57b-7c6f-436c-b9f7-40b669ddd55a}</Project>
-      <Name>TimetableOfClasses</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
