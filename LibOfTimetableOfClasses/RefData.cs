@@ -6,28 +6,62 @@ namespace LibOfTimetableOfClasses
 	/// В этом классе храняться все экземпляры контроллеров.
 	/// </summary>
 	public class RefData {
-		public static DataSet DataSet = new DataSet();
-		public static CTeacher CTeacher = new CTeacher();
-		public static CAuditor CAuditor = new CAuditor();
-		public static CDiscipline CDiscipline = new CDiscipline();
-		public static CGroup CGroup = new CGroup();
-		public static CTitle CTitle = new CTitle();
-		public static CTrainingProfile CTrainingProfile = new CTrainingProfile();
-		public static CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
-		public static CEnclosures CEnclosures = new CEnclosures();
-		public static CUniversity CUniversity = new CUniversity();
-		public static CStudyWeek CStudyWeek = new CStudyWeek();
-		public static CInstitute CInstitute = new CInstitute();
-		public static CAcademicDegree CAcademicDegree = new CAcademicDegree();
-		public static CTypesOfOccupations CTypesOfOccupations = new CTypesOfOccupations();
-		public static CAcademicLoad CAcademicLoad = new CAcademicLoad();
-#pragma warning disable IDE0044 // Добавить модификатор только для чтения
-#pragma warning disable IDE0052 // Удалить непрочитанные закрытые члены
-		private static RefData rd = new RefData();
-#pragma warning restore IDE0052 // Удалить непрочитанные закрытые члены
-#pragma warning restore IDE0044 // Добавить модификатор только для чтения
-		private RefData() {
-			DataSet.Tables.Add(CTrainingProfile);
+		public static DataSet DataSet;
+		public static CTeacher CTeacher ;
+		public static CAuditor CAuditor ;
+		public static CDiscipline CDiscipline ;
+		public static CGroup CGroup ;
+		public static CTitle CTitle ;
+		public static CTrainingProfile CTrainingProfile ;
+		public static CDirectionOfPreparation CDirectionOfPreparation ;
+		public static CEnclosures CEnclosures ;
+		public static CUniversity CUniversity ;
+		public static CStudyWeek CStudyWeek ;
+		public static CInstitute CInstitute ;
+		public static CAcademicDegree CAcademicDegree ;
+		public static CTypesOfOccupations CTypesOfOccupations ;
+		public static CAcademicLoad CAcademicLoad ;
+        private static void InitTables()
+        {
+            DataSet = new DataSet();
+            CTeacher = new CTeacher();
+            CAuditor = new CAuditor();
+            CDiscipline = new CDiscipline();
+            CGroup = new CGroup();
+            CTitle = new CTitle();
+            CTrainingProfile = new CTrainingProfile();
+            CDirectionOfPreparation = new CDirectionOfPreparation();
+            CEnclosures = new CEnclosures();
+            CUniversity = new CUniversity();
+            CStudyWeek = new CStudyWeek();
+            CInstitute = new CInstitute();
+            CAcademicDegree = new CAcademicDegree();
+            CTypesOfOccupations = new CTypesOfOccupations();
+            CAcademicLoad = new CAcademicLoad();
+        }
+        private static void ClearTables()
+        {
+            DataSet = null;
+            CTeacher = null;
+            CAuditor = null;
+            CDiscipline = null;
+            CGroup = null;
+            CTitle = null;
+            CTrainingProfile = null;
+            CDirectionOfPreparation = null;
+            CEnclosures = null;
+            CUniversity = null;
+            CStudyWeek = null;
+            CInstitute = null;
+            CAcademicDegree = null;
+            CTypesOfOccupations = null;
+            CAcademicLoad = null;
+        }
+
+        public static void InitRefData() {
+            ClearTables();
+            InitTables();
+            DataSet.Tables.Add(CTrainingProfile);
 			DataSet.Tables.Add(CDirectionOfPreparation);
 			DataSet.Tables.Add(CAuditor);
 			DataSet.Tables.Add(CEnclosures);
@@ -39,8 +73,10 @@ namespace LibOfTimetableOfClasses
 			DataSet.Tables.Add(CGroup);
 			DataSet.Tables.Add(CStudyWeek);
 			DataSet.Tables.Add(CAcademicLoad);
+            DataSet.Tables.Add(CDiscipline);
+            DataSet.Tables.Add(CTypesOfOccupations);
 
-			DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
+            DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
 			DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 			DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["academicDegree"]);
 			DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["academicTitle"]);
@@ -48,13 +84,13 @@ namespace LibOfTimetableOfClasses
 			DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
 			DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
 			DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
-			DataSet.Relations.Add("AcademicLoad-Group", CAcademicLoad.Columns["Group"], CGroup.Columns["Group"]);
+			DataSet.Relations.Add("AcademicLoad-Group", CGroup.Columns["Group"], CAcademicLoad.Columns["Group"]);
 			DataSet.Relations.Add("AcademicLoad-Discipline", CAcademicLoad.Columns["Discipline"], CDiscipline.Columns["FullName"]);
 			DataSet.Relations.Add("AcademicLoad-Teacher", CAcademicLoad.Columns["Professor"], CTeacher.Columns["FullName"]);
 			DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
 			init();
 		}
-		private void init() {
+		private static void init() {
 			#region direction
 			MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
 			RefData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
@@ -156,7 +192,7 @@ namespace LibOfTimetableOfClasses
 			RefData.CInstitute.Insert(mInstitute2);
 			#endregion
 			#region auditor
-			this.InitEAuditors();
+			InitEAuditors();
 
 			MAuditor mAuditor1 = new MAuditor("214", "Педагогики", 80, "А");
 			RefData.CAuditor.Insert(mAuditor1);
@@ -179,7 +215,7 @@ namespace LibOfTimetableOfClasses
 		/// <summary>
 		/// Создаёт список аудиторий для Е-корпуса
 		/// </summary>
-		private void InitEAuditors() {
+		static private void InitEAuditors() {
 			CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
 			CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
 			CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
