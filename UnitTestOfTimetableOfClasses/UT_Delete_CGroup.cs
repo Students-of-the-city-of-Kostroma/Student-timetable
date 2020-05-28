@@ -13,8 +13,15 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_249_1()
         {
             //arrange 
-            MGroup mGroup = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 1, 2, "Воскресенье");
-            bool expected = RefData.CGroup.Insert(mGroup);
+            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
+            MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
+            MGroup mGroup = new MGroup("17-ИСбо-2б", 2, "ИС", 2, 13, 1, 4, "Воскресенье");
+            
+            bool expected = RefData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
+              Assert.IsTrue(expected);
+                 expected = RefData.CTrainingProfile.Insert(mTrainingProfile);
+                   Assert.IsTrue(expected); 
+                 expected = RefData.CDirectionOfPreparation.Insert(mGroup);
             //act 
             bool actual = RefData.CGroup.Delete(mGroup);
             Assert.AreEqual(expected, actual);
