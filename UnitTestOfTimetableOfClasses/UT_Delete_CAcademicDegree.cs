@@ -13,16 +13,10 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_485_1()
         {
-            //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool ex = true;
-
-
-            //act
             RefData.CAcademicDegree.Insert(MAcademic);
             bool act = RefData.CAcademicDegree.Delete(MAcademic);
-
-            //assert 
             Assert.AreEqual(ex, act);
         }
 
