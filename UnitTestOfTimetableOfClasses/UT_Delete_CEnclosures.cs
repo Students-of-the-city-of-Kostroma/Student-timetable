@@ -19,12 +19,13 @@ namespace UnitTestOfTimetableOfClasses
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
             bool expected = true;
             //act 
-            RefData.CEnclosures.Insert(gr);
-            bool actual = RefData.CEnclosures.Delete(gr);
+            bool actuali = RefData.CEnclosures.Insert(gr);
+            Assert.AreEqual(expected, actuali);
             //assert 
-            Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CUniversity.Delete(grUni);
+            bool check_gr = RefData.CEnclosures.Delete(gr);
+            Assert.AreEqual(true, check_gr);
+            bool check_grUni = RefData.CUniversity.Delete(grUni);
+            Assert.AreEqual(true, check_grUni);
         }
 
         /// <summary>
@@ -33,14 +34,12 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_395_2()
         {
-            //arrange 
-            MEnclosures gr = new MEnclosures("О", "Костьомской Госудаьственный Универьитет", "Дзиржинского", "111311", "5");
-            bool expected = false;
-            //act 
-            bool actual = RefData.CEnclosures.Delete(gr);
-            //assert 
-            Assert.AreEqual(expected, actual);
+            MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            RefData.CUniversity.Insert(grUni);
+            MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
+            RefData.CEnclosures.Insert(gr);          
             RefData.CEnclosures.Delete(gr);
+            Assert.AreEqual(RefData.CEnclosures.Delete(gr), false);
         }
     }
 }
