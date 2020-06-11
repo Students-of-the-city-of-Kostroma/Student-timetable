@@ -75,7 +75,6 @@
     <Compile Include="CStudyWeek.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controller.cs" />
     <Compile Include="CTypesOfOccupations.cs">
       <SubType>Component</SubType>
     </Compile>
