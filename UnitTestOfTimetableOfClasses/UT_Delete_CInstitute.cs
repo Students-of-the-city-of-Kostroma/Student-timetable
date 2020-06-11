@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CInstitute
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         [TestMethod]
         public void Task_617_1() //Удалить запись при совпадении всех атрибутов
         {

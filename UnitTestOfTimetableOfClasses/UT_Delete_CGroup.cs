@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CGroup
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующей строки 
         /// </summary>

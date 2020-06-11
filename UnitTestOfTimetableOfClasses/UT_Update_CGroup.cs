@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CGroup
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         private void SetupData()
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);

@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Deleted_CTeacher
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         [TestMethod]
         public void Task_248_1() //Удаление существующей строки 
         {

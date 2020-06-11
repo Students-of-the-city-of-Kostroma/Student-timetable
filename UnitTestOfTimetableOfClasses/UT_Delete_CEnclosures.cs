@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CEnclosures
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующих данных выбранной строки из таблицы
         /// </summary>

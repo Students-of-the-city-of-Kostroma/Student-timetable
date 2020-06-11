@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CDirectionOfPreparation
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         public void Pre_condition_Del()
         {
             bool ex = true;

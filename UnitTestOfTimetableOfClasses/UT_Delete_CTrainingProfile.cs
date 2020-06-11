@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CTrainingProfile
 	{
-		RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         /// <summary>
 		/// Начальные условия для метода Delete
 		/// </summary>

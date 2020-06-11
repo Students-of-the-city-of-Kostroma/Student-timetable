@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CTitle
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         [TestMethod]
         public void Task_361_1() //пустая таблица
         {

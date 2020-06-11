@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CAcademicDegree
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующих данных таблицы
         /// </summary>
