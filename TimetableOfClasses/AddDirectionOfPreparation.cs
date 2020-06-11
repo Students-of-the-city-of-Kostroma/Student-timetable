@@ -51,7 +51,7 @@ namespace TimetableOfClasses
                 MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
                 try
                 {
-                    if (!RefData.CDirectionOfPreparation.Insert(mDirection))
+                    if (!Program.refData.CDirectionOfPreparation.Insert(mDirection))
                     {
                         MessageBox.Show("Невозможно добавить направление подготовки");
                         return;
@@ -85,13 +85,13 @@ namespace TimetableOfClasses
                     {
                         if (!itsupdate)
                         {
-                            if (!RefData.CDirectionOfPreparation.Insert(mDirection))
+                            if (!Program.refData.CDirectionOfPreparation.Insert(mDirection))
                             {
                                 MessageBox.Show("Невозможно добавить направление подготовки");
                                 return;
                             }
                         }
-                        else RefData.CDirectionOfPreparation.Update(mDirection);
+                        else Program.refData.CDirectionOfPreparation.Update(mDirection);
                         Close();
                     }
                     catch (Exception ex)

@@ -6,21 +6,22 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CAcademicDegree
     {
-
+        RefData refData = new RefData();
         /// <summary>
         /// Удаление существующих данных таблицы
         /// </summary>
         [TestMethod]
         public void Task_485_1()
         {
+            
             //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool ex = true;
 
 
             //act
-            RefData.CAcademicDegree.Insert(MAcademic);
-            bool act = RefData.CAcademicDegree.Delete(MAcademic);
+            refData.CAcademicDegree.Insert(MAcademic);
+            bool act = refData.CAcademicDegree.Delete(MAcademic);
 
             //assert 
             Assert.AreEqual(ex, act);
@@ -37,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
             bool ex = false;
 
             //act
-            bool act = RefData.CAcademicDegree.Delete(MAcademic);
+            bool act = refData.CAcademicDegree.Delete(MAcademic);
 
             //assert
             Assert.AreEqual(ex, act);

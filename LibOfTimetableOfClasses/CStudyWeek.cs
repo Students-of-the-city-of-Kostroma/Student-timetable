@@ -8,8 +8,6 @@ namespace LibOfTimetableOfClasses
     {
         public CStudyWeek() : base("Учебная неделя")
         {
-            if (RefData.CStudyWeek != null) throw new Exception("Контроллер уже существует");
-
             DataColumn column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "Number";
