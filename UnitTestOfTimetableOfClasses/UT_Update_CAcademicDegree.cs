@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CAcademicDegree
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
         /// </summary>
@@ -14,12 +15,12 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange 
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-            RefData.CAcademicDegree.Insert(MAcademic);
+            refData.CAcademicDegree.Insert(MAcademic);
             bool ex = false;
 
             //act
             MAcademic.Reduction = "Бак.";
-            bool act = RefData.CAcademicDegree.Update(MAcademic);
+            bool act = refData.CAcademicDegree.Update(MAcademic);
 
             //assert
             Assert.AreEqual(ex, act);
@@ -33,13 +34,13 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-            RefData.CAcademicDegree.Insert(MAcademic);
+            refData.CAcademicDegree.Insert(MAcademic);
             bool ex = true;
 
             //act
             MAcademic.FullName = "Бакалавр";
             MAcademic.Reduction = "Маг.";
-            bool act = RefData.CAcademicDegree.Update(MAcademic);
+            bool act = refData.CAcademicDegree.Update(MAcademic);
 
             //assert
             Assert.AreEqual(ex, act);
@@ -53,13 +54,13 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
-            RefData.CAcademicDegree.Insert(MAcademic);
+            refData.CAcademicDegree.Insert(MAcademic);
             bool ex = false;
 
             //act
             MAcademic.FullName = null;
             MAcademic.Reduction = null;
-            bool act = RefData.CAcademicDegree.Update(MAcademic);
+            bool act = refData.CAcademicDegree.Update(MAcademic);
 
             //assert
             Assert.AreEqual(ex, act);

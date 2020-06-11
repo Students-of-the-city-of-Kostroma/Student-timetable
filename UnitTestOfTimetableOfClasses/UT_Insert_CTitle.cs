@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CTitle
     {
-
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_361_1() //пустая таблица
         {
@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
             MTitle ma = new MTitle("Профессор", "Проф.");
             bool expected = true;
             //act
-            bool actual = RefData.CTitle.Insert(ma);
+            bool actual = refData.CTitle.Insert(ma);
             //assert
             Assert.AreEqual(expected, actual);
         }
@@ -28,7 +28,7 @@ namespace UnitTestOfTimetableOfClasses
             MTitle ma = new MTitle("Доцент", "Проф.");
             bool expected = false;
             //act
-            bool actual = RefData.CTitle.Insert(ma);
+            bool actual = refData.CTitle.Insert(ma);
             //assert
             Assert.AreEqual(expected, actual);
         }
@@ -41,7 +41,7 @@ namespace UnitTestOfTimetableOfClasses
             MTitle ma = new MTitle("Профессор", "Доц.");
             bool expected = false;
             //act
-            bool actual = RefData.CTitle.Insert(ma);
+            bool actual = refData.CTitle.Insert(ma);
             //assert
             Assert.AreEqual(expected, actual);
         }

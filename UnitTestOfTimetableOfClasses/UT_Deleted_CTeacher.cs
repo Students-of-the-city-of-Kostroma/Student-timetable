@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Deleted_CTeacher
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_248_1() //Удаление существующей строки 
         {
@@ -13,8 +14,8 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act 
-            RefData.CTeacher.Insert(tcher);
-            bool actual = RefData.CTeacher.Delete(tcher);
+            refData.CTeacher.Insert(tcher);
+            bool actual = refData.CTeacher.Delete(tcher);
             //assert 
             Assert.AreEqual(expected, actual);
         }
@@ -26,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = false;
             //act 
-            bool actual = RefData.CTeacher.Delete(tcher);
+            bool actual = refData.CTeacher.Delete(tcher);
             //assert 
             Assert.AreEqual(expected, actual);
         }
