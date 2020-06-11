@@ -13,11 +13,11 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_249_1()
         {
-            int countRows = refData.CGroup.Rows.Count;// countRows == 0
-            MGroup mGroup = new MGroup("17-ИСбо-1в", 2, "ИС", 2, 13, 1, 4, "Воскресенье");//countRows == 0
-            Assert.IsTrue(refData.CGroup.Insert(mGroup)); //countRows == 0,refData.CGroup.Rows.Count == 1 
-            Assert.AreEqual(countRows+1, refData.CGroup.Rows.Count);// 
-            Assert.AreEqual(refData.CGroup.Rows[countRows], refData.CGroup.Rows[3]);//
+            int countRows = refData.CGroup.Rows.Count;
+            MGroup mGroup = new MGroup("17-ИСбо-1в", 2, "ИС", 2, 13, 1, 4, "Воскресенье");
+            Assert.IsTrue(refData.CGroup.Insert(mGroup));  
+            Assert.AreEqual(countRows+1, refData.CGroup.Rows.Count); 
+            Assert.AreEqual(refData.CGroup.Rows[countRows], refData.CGroup.Rows[3]);
             Assert.IsTrue(refData.CGroup.Delete(mGroup));
         }
         /// <summary>
