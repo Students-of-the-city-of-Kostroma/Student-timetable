@@ -80,8 +80,6 @@ namespace TimetableOfClasses
         {
 
             Enclosures enclosures = new Enclosures();
-            University university = new University(true);
-
             enclosures.Show();
         }
 

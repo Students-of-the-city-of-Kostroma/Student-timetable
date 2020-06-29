@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MTypesOfOccupation
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Проверка поля fullName объекта класса MTypesOfOccupation
         /// </summary>

@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAuditor
     {
+        RefData refData = new RefData();
         //[TestMethod]
         //public void Task_274_1()
 
