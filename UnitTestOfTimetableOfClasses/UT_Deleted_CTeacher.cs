@@ -6,12 +6,9 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Deleted_CTeacher
     {
-
-        /// <summary>
-        /// Удаление существующей строки
-        /// </summary>
-		[TestMethod]
-        public void Task_248_1()
+        readonly RefData refData = new RefData();
+        [TestMethod]
+        public void Task_248_1() //Удаление существующей строки 
         {
 
             //arrange 
@@ -19,9 +16,8 @@ namespace UnitTestOfTimetableOfClasses
             bool expected = true;
             bool expectedInsert = true;
             //act 
-            bool actualInsert = RefData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expectedInsert, actualInsert);
-            bool actual = RefData.CTeacher.Delete(tcher);
+            refData.CTeacher.Insert(tcher);
+            bool actual = refData.CTeacher.Delete(tcher);
             //assert 
 
             Assert.AreEqual(expected, actual);
@@ -37,7 +33,7 @@ namespace UnitTestOfTimetableOfClasses
 
             bool expected = false;
             //act 
-            bool actual = RefData.CTeacher.Delete(tcher);
+            bool actual = refData.CTeacher.Delete(tcher);
             //assert 
 
             Assert.AreEqual(expected, actual);

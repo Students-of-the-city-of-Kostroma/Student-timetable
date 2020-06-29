@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CUniversity
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_498_1() //удаление существующего вуза
         {
@@ -13,8 +14,8 @@ namespace UnitTestOfTimetableOfClasses
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
             bool expected = true;
             //act 
-            RefData.CUniversity.Insert(gr);
-            bool actual = RefData.CUniversity.Delete(gr);
+            refData.CUniversity.Insert(gr);
+            bool actual = refData.CUniversity.Delete(gr);
             //assert 
             Assert.AreEqual(expected, actual);
         }
@@ -25,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
             bool expected = false;
             //act 
-            bool actual = RefData.CUniversity.Delete(gr);
+            bool actual = refData.CUniversity.Delete(gr);
             //assert 
             Assert.AreEqual(expected, actual);
         }

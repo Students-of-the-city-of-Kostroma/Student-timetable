@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CAcademicDegree
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
@@ -16,7 +17,7 @@ namespace UnitTestOfTimetableOfClasses
             MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
             bool ex = true;
             //act
-            bool act = RefData.CAcademicDegree.Insert(ma);
+            bool act = refData.CAcademicDegree.Insert(ma);
             //assert
             Assert.AreEqual(ex, act);
         }
@@ -32,7 +33,7 @@ namespace UnitTestOfTimetableOfClasses
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool expected = false;
             //act
-            bool actual = RefData.CAcademicDegree.Insert(MAcademic);
+            bool actual = refData.CAcademicDegree.Insert(MAcademic);
             //assert
             Assert.AreEqual(expected, actual);
         }

@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CTypesOfOccupation
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод корректных данных в таблицу, при условии, что они не дублируют других атрибутов
         /// </summary>

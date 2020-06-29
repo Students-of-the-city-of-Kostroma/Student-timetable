@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MInstitute
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Issue_645_1()
         {

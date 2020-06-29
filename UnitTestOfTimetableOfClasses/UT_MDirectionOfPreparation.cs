@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MDirectionOfPreparation
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_554_1()
         {

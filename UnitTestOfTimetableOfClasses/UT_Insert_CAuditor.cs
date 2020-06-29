@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CAuditor
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_270_1() //пустая таблица
         {
