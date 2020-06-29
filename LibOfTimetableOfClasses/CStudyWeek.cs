@@ -8,17 +8,19 @@ namespace LibOfTimetableOfClasses
     {
         public CStudyWeek() : base("Учебная неделя")
         {
-            if (RefData.CStudyWeek != null) throw new Exception("Контроллер уже существует");
-
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Number";
-            column.Unique = true;
+            DataColumn column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "Number",
+                Unique = true
+            };
             this.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Name";
+            column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "Name"
+            };
             this.Columns.Add(column);
         }
 

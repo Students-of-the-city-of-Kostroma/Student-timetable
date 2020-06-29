@@ -36,7 +36,7 @@ namespace TimetableOfClasses
                 try
                 {
 
-                    if (!RefData.CDiscipline.Insert(mDiscipline))
+                    if (!Program.refData.CDiscipline.Insert(mDiscipline))
                     {
                         MessageBox.Show("Невозможно добавить дисциплину");
                         return;
@@ -64,13 +64,13 @@ namespace TimetableOfClasses
                 {
                     if (!itsupdate)
                     {
-                        if (!RefData.CDiscipline.Insert(mDiscipline))
+                        if (!Program.refData.CDiscipline.Insert(mDiscipline))
                         {
                             MessageBox.Show("Невозможно добавить дисциплину");
                             return;
                         }
                     }
-                    else RefData.CDiscipline.Update(mDiscipline);
+                    else Program.refData.CDiscipline.Update(mDiscipline);
                     Close();
                 }
                 catch (Exception ex)
