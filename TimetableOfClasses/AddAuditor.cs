@@ -44,7 +44,7 @@ namespace TimetableOfClasses
                 try
                 {
 
-                    if (!RefData.CAuditor.Insert(Auditor))
+                    if (!Program.refData.CAuditor.Insert(Auditor))
                     {
                         MessageBox.Show("Невозможно добавить аудиторию");
                         return;
@@ -73,13 +73,13 @@ namespace TimetableOfClasses
                 {
                     if (!itsupdate)
                     {
-                        if (!RefData.CAuditor.Insert(Auditor))
+                        if (!Program.refData.CAuditor.Insert(Auditor))
                         {
                             MessageBox.Show("Невозможно добавить аудиторию");
                             return;
                         }
                     }
-                    else RefData.CAuditor.Update(Auditor);
+                    else Program.refData.CAuditor.Update(Auditor);
                     Close();
                 }
                 catch (Exception ex)

@@ -13,7 +13,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             dgProfile.AutoGenerateColumns = false;
-            dgProfile.DataSource = RefData.CTrainingProfile;
+            dgProfile.DataSource = Program.refData.CTrainingProfile;
 
             if (forChoice)
             {
@@ -55,7 +55,7 @@ namespace TimetableOfClasses
                     {
                         DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                         Profile = new MTrainingProfile((string)Row["FullName"], (string)Row["ShortName"], (string)Row["Shiphr"]);
-                        RefData.CTrainingProfile.Delete(Profile);
+                        Program.refData.CTrainingProfile.Delete(Profile);
                     }
                 }
             }

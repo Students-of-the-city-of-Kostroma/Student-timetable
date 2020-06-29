@@ -9,8 +9,8 @@ namespace TimetableOfClasses
 {
     public partial class AddInstitute : Form
     {
-        private CUniversity University = RefData.CUniversity;
-        private CTeacher Teacher = RefData.CTeacher;
+        private CUniversity University = Program.refData.CUniversity;
+        private CTeacher Teacher = Program.refData.CTeacher;
         public AddInstitute()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace TimetableOfClasses
                 try
                 {
                     MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
-                    RefData.CInstitute.Update(Institute);
+                    Program.refData.CInstitute.Update(Institute);
                     FullName.Text = "";
                     ShortName.Text = "";
                     Director.Text = "";
@@ -86,7 +86,7 @@ namespace TimetableOfClasses
                 try
                 {
                     MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
-                    RefData.CInstitute.Insert(Institute);
+                    Program.refData.CInstitute.Insert(Institute);
                     FullName.Text = "";
                     ShortName.Text = "";
                     Director.Text = "";
@@ -111,7 +111,7 @@ namespace TimetableOfClasses
             try
             {
                 MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
-                RefData.CInstitute.Insert(Institute);
+                Program.refData.CInstitute.Insert(Institute);
                 FullName.Text = "";
                 ShortName.Text = "";
                 Director.Text = "";

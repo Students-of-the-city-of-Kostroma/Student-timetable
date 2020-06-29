@@ -16,8 +16,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CEnclosures() : base("Корпус")
         {
-            if (RefData.CEnclosures != null) throw new Exception("Контроллер уже существует");
-
             DataColumn[] keys = new DataColumn[2];
             DataColumn column = new DataColumn
             {

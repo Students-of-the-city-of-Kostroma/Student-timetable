@@ -101,7 +101,7 @@ namespace TimetableOfClasses
                 if (Lehrer == null)
                 {
                     MTeacher Prepodavatel = new MTeacher(firstName.Text, secondName.Text, patronymic.Text, academicDegree.Text, academicTitle.Text, department.Text, metodDays.Text, windows.Text, weekends.Text);
-                    return RefData.CTeacher.Insert(Prepodavatel);
+                    return Program.refData.CTeacher.Insert(Prepodavatel);
                 }
                 else
                 {
@@ -114,7 +114,7 @@ namespace TimetableOfClasses
                     Lehrer.MetodicalDays = metodDays.Text;
                     Lehrer.Windows = windows.Text;
                     Lehrer.Weekends = weekends.Text;
-                    return RefData.CTeacher.Update(Lehrer);
+                    return Program.refData.CTeacher.Update(Lehrer);
                 }
             }
             catch (Exception)
@@ -362,7 +362,7 @@ namespace TimetableOfClasses
 
         private void AddTeacher_Shown(object sender, EventArgs e)
         {
-            if (RefData.CAcademicDegree.Rows.Count == 0)
+            if (Program.refData.CAcademicDegree.Rows.Count == 0)
             {
                 var resultNotification = MessageBox.Show("В созависимом справочнике Академические степени отсутствуют записи. " +
                     "Отрыть форму для редкатирования справочника Академические степени?",
@@ -371,7 +371,7 @@ namespace TimetableOfClasses
                     CreateFormForEditAndChoiceAD();
             }
 
-            if (RefData.CTitle.Rows.Count == 0)
+            if (Program.refData.CTitle.Rows.Count == 0)
             {
                 var resultNotification = MessageBox.Show("В созависимом справочнике Академические звания отсутствуют записи. " +
                     "Отрыть форму для редкатирования справочника Академические звания?",

@@ -14,7 +14,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG_AcademicTitle.AutoGenerateColumns = false;
-            DG_AcademicTitle.DataSource = RefData.CTitle;
+            DG_AcademicTitle.DataSource = Program.refData.CTitle;
 
             if (forChoice)
             {
@@ -76,8 +76,10 @@ namespace TimetableOfClasses
 
                 MTitle mTitle = new MTitle((string)Row["FullName"], (string)Row["Reduction"]);
 
-                AddAcademicTitle add = new AddAcademicTitle(mTitle);
-                add.Owner = this;
+                AddAcademicTitle add = new AddAcademicTitle(mTitle)
+                {
+                    Owner = this
+                };
                 add.ShowDialog();
             }
             else { MessageBox.Show("Для изменения выделите только одну строку!"); }
