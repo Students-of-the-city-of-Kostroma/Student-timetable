@@ -13,7 +13,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG_Institute.AutoGenerateColumns = false;
-            DG_Institute.DataSource = RefData.CInstitute;
+            DG_Institute.DataSource = Program.refData.CInstitute;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -35,7 +35,7 @@ namespace TimetableOfClasses
                 MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations(tbFullName.Text, tbShortName.Text);
                 try
                 {
-                    RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
+                    Program.refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
                     tbFullName.Text = "";
                     tbShortName.Text = "";
                 }
@@ -56,8 +56,8 @@ namespace TimetableOfClasses
                 try
                 {
                     if (!itsupdate)
-                        RefData.CTypesOfOccupations.Insert(mTypesOfOccupations);
-                    else RefData.CTypesOfOccupations.Update(mTypesOfOccupations);
+                        Program.refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
+                    else Program.refData.CTypesOfOccupations.Update(mTypesOfOccupations);
                     Close();
                 }
                 catch (Exception ex)
