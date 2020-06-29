@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MGroup
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_245_1()
         {

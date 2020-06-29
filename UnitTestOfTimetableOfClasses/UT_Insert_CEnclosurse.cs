@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CEnclosurse
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод в пустую таблицу
         /// </summary>
@@ -16,10 +17,10 @@ namespace UnitTestOfTimetableOfClasses
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
             //act
-            bool actual = RefData.CEnclosures.Insert(gr);
+            bool actual = refData.CEnclosures.Insert(gr);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr);
         }
         /// <summary>
         /// Дублирование адреса
@@ -30,14 +31,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Малышковская", "111111", "1");
             bool expected = false;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Малышковская", "111121", "2");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Дублирование телефона
@@ -48,14 +49,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = false;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Ивановская", "111111", "2");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Дублирование примечания
@@ -66,14 +67,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Ивановская", "111121", "1");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Дублирование корпуса и ВУЗа
@@ -84,14 +85,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = false;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинск", "222222", "2");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Полностью отличные атрибуты
@@ -102,14 +103,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Дзержинск", "222222", "2");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Дублирование Корпуса
@@ -120,14 +121,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = false;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Дублирование ВУЗа
@@ -138,14 +139,14 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
             bool expected = true;
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Дзержинск", "222222", "2");
-            bool actual = RefData.CEnclosures.Insert(gr1);
+            bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
         /// <summary>
         /// Ввод в поле телефон букв
@@ -156,12 +157,12 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "аааааа", "1");
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "аааааа", "1");
             //assert
-            RefData.CEnclosures.Delete(gr);
-            RefData.CEnclosures.Delete(gr1);
+            refData.CEnclosures.Delete(gr);
+            refData.CEnclosures.Delete(gr1);
         }
     }
 }
