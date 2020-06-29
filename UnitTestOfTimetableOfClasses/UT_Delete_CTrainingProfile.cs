@@ -6,7 +6,8 @@ namespace UnitTestOfTimetableOfClasses
 	[TestClass]
 	public class UT_Delete_CTrainingProfile
 	{
-		/// <summary>
+        readonly RefData refData = new RefData();
+        /// <summary>
 		/// Начальные условия для метода Delete
 		/// </summary>
 		public void Pre_condition_Del()
@@ -14,18 +15,18 @@ namespace UnitTestOfTimetableOfClasses
 			bool exPrep = true;
 			bool actPrep;
 			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
-			int DoP1 = RefData.CDirectionOfPreparation.Rows.Count;
-			actPrep = RefData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
-			int DoP2 = RefData.CDirectionOfPreparation.Rows.Count;
+			int DoP1 = refData.CDirectionOfPreparation.Rows.Count;
+			actPrep = refData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
+			int DoP2 = refData.CDirectionOfPreparation.Rows.Count;
 			Assert.AreEqual(exPrep, actPrep);
 			Assert.AreEqual(DoP1 + 1, DoP2);
 
 			bool ex = true;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			int C1 = RefData.CTrainingProfile.Rows.Count;
-			act = RefData.CTrainingProfile.Insert(T_TrainingProfile);
-			int C2 = RefData.CTrainingProfile.Rows.Count;
+			int C1 = refData.CTrainingProfile.Rows.Count;
+			act = refData.CTrainingProfile.Insert(T_TrainingProfile);
+			int C2 = refData.CTrainingProfile.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 + 1, C2);
 		}
@@ -39,9 +40,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = true;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			int C1 = RefData.CTrainingProfile.Rows.Count;
-			act = RefData.CTrainingProfile.Delete(T_TrainingProfile);
-			int C2 = RefData.CTrainingProfile.Rows.Count;
+			int C1 = refData.CTrainingProfile.Rows.Count;
+			act = refData.CTrainingProfile.Delete(T_TrainingProfile);
+			int C2 = refData.CTrainingProfile.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1 - 1, C2);
 		}
@@ -54,9 +55,9 @@ namespace UnitTestOfTimetableOfClasses
 			bool ex = false;
 			bool act;
 			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			int C1 = RefData.CTrainingProfile.Rows.Count;
-			act = RefData.CTrainingProfile.Delete(T_TrainingProfile);
-			int C2 = RefData.CTrainingProfile.Rows.Count;
+			int C1 = refData.CTrainingProfile.Rows.Count;
+			act = refData.CTrainingProfile.Delete(T_TrainingProfile);
+			int C2 = refData.CTrainingProfile.Rows.Count;
 			Assert.AreEqual(ex, act);
 			Assert.AreEqual(C1, C2);
 		}

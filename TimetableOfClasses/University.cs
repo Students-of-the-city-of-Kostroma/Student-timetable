@@ -17,7 +17,7 @@ namespace TimetableOfClasses
             this.IsPicking = isPicking;
 
             DG.AutoGenerateColumns = false;
-            DG.DataSource = RefData.CUniversity;
+            DG.DataSource = Program.refData.CUniversity;
         }
 
         private void Add(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace TimetableOfClasses
                                                     (string)Row["Email"],
                                                     (string)Row["Phone"]);
 
-                    RefData.CUniversity.Delete(mUniversity);
+                    Program.refData.CUniversity.Delete(mUniversity);
                 }
             }
 

@@ -15,7 +15,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG.AutoGenerateColumns = false;
-            DG.DataSource = RefData.CEnclosures;
+            DG.DataSource = Program.refData.CEnclosures;
             if (forChoice)
             {
                 Name = "Выбор корпуса";
@@ -97,7 +97,7 @@ namespace TimetableOfClasses
                 {
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mEnclosures = new MEnclosures((string)Row["Name"], (string)Row["University"], (string)Row["Adress"], (string)Row["Phone"], (string)Row["Comment"]);
-                    RefData.CEnclosures.Delete(mEnclosures);
+                    Program.refData.CEnclosures.Delete(mEnclosures);
                 }
             }
         }

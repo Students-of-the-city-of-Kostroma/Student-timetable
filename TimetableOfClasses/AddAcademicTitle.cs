@@ -40,7 +40,7 @@ namespace TimetableOfClasses
                         try
                         {
                             MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                            RefData.CTitle.Update(Title);
+                            Program.refData.CTitle.Update(Title);
                             FullName.Text = "";
                             Reduction.Text = "";
                             Close();
@@ -69,7 +69,7 @@ namespace TimetableOfClasses
                         try
                         {
                             MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                            if (!RefData.CTitle.Insert(Title))
+                            if (!Program.refData.CTitle.Insert(Title))
                             {
                                 MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
                                 return;
@@ -104,7 +104,7 @@ namespace TimetableOfClasses
                     try
                     {
                         MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                        RefData.CTitle.Insert(Title);
+                        Program.refData.CTitle.Insert(Title);
                         FullName.Text = "";
                         Reduction.Text = "";
                     }
