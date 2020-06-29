@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MAcademicDegree
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Проверка корректного ввода в поле Полная запись уч. степени
         /// </summary>

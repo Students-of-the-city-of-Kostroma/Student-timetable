@@ -1,10 +1,12 @@
 using System;
 using System.Windows.Forms;
+using LibOfTimetableOfClasses;
 
 namespace TimetableOfClasses
 {
     static class Program
     {
+        public static RefData refData = new RefData();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

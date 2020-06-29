@@ -13,7 +13,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG_Group.AutoGenerateColumns = false;
-            DG_Group.DataSource = RefData.CGroup;
+            DG_Group.DataSource = Program.refData.CGroup;
         }
 
         private void DeleteRow(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace TimetableOfClasses
                 {
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mGroup = new MGroup((string)Row["Group"], (ushort)Row["Semestr"], (string)Row["Specialty"], (ushort)Row["Shift"], (ushort)Row["Students"], (ushort)Row["MinNumberOfClass"], (ushort)Row["MaxNumberOfClass"], (string)Row["Weekends"]);
-                    RefData.CGroup.Delete(mGroup);
+                    Program.refData.CGroup.Delete(mGroup);
                 }
             }
 
