@@ -8,6 +8,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Insert_CGroup
     {
         RefData refData = new RefData();
+
         /// <summary>
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
@@ -23,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
             MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
             bool actual2 = refData.CTrainingProfile.Insert(tp);
             Assert.AreEqual(expected, actual2);
-            MGroup gr = new MGroup("17-ИСбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
+            MGroup gr = new MGroup("17-ИСбо-2д", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
             bool actual = refData.CGroup.Insert(gr);
             //assert
             Assert.AreEqual(expected, actual);
