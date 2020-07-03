@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1240_1()
         {
             bool expected = true;
-            MAcademicLoad mal = new MAcademicLoad("17-ВТбо-1", "24", "Математика", "Садовская Ольга Борисовна", "Лекция", "5");
+            MAcademicLoad mal = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Лекция", "20");
             CAcademicLoad CaL = new CAcademicLoad();
             bool actual = CaL.Insert(mal);
             Assert.AreEqual(expected, actual);
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             Task_1240_1();
-            MAcademicLoad MAcademicL = new MAcademicLoad("17-ВТбо-1", "24", "Математика", "Садовская Ольга Борисовна", "Лекция", "5");
+            MAcademicLoad MAcademicL = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Лекция", "20");
             bool expected = false;
             //act
             bool actual = refData.CAcademicLoad.Insert(MAcademicL);
