@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
             bool expected = false;
             //act
             bool actual = refData.CTitle.Insert(ma);
-            //assert
+            //assert 
             Assert.AreEqual(expected, actual);
         }
 
