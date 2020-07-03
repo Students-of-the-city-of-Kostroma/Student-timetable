@@ -8,24 +8,30 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Insert_CTitle
     {
         readonly RefData refData = new RefData();
+
+        /// <summary>
+        ///  Вставляем в refData ноыве данные
+        /// </summary>
         [TestMethod]
-        public void Task_361_1() //пустая таблица
+        public void Task_361_1() 
         {
             //arrange
-            MTitle ma = new MTitle("Профессор", "Проф.");
+            MTitle ma = new MTitle("НЕПрофессор", "Проф.");
             bool expected = true;
             //act
             bool actual = refData.CTitle.Insert(ma);
-            //assert
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Добавляем учёное звание с такой сокращённой записью, которая уже есть в таблице
+        /// </summary>
         [TestMethod]
-        public void Task_361_2() //учёное звание с такой сокращённой записью уже есть в таблице
+        public void Task_361_2() 
         {
-            //arrange
             Task_361_1();
-            MTitle ma = new MTitle("Доцент", "Проф.");
+            //arrange
+            MTitle ma = new MTitle("НЕДоцент", "Проф.");
             bool expected = false;
             //act
             bool actual = refData.CTitle.Insert(ma);
@@ -33,12 +39,15 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Добавляем учёное звание с такой полной записью, которая уже есть в таблице
+        /// </summary>
         [TestMethod]
-        public void Task_361_3() //учёное звание с такой полной записью уже есть в таблице
+        public void Task_361_3() 
         {
-            //arrange
             Task_361_1();
-            MTitle ma = new MTitle("Профессор", "Доц.");
+            //arrange
+            MTitle ma = new MTitle("НЕПрофессор", "Доц.");
             bool expected = false;
             //act
             bool actual = refData.CTitle.Insert(ma);
