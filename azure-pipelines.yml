@@ -6,6 +6,7 @@
 
 trigger:
 - dev
+- task-*
 
 pool:
   vmImage: 'VS2017-Win2016'
