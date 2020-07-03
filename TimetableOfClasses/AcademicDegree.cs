@@ -14,7 +14,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG_AcademicDegree.AutoGenerateColumns = false;
-            DG_AcademicDegree.DataSource = RefData.CAcademicDegree;
+            DG_AcademicDegree.DataSource = Program.refData.CAcademicDegree;
 
             if (forChoice)
             {

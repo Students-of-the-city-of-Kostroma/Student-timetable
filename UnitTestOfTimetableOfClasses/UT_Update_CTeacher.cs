@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CTeacher
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
@@ -17,9 +18,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = RefData.CTeacher.Insert(tcher);
+            bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1);
-            bool actual2 = RefData.CTeacher.Insert(tcher1);
+            bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2);
             //act
             tcher1.AcademicDegree = "ДН";
@@ -27,15 +28,15 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.MetodicalDays = "Чт, Сб";
             tcher1.Windows = "Сб, Пн";
             tcher1.Weekends = "Пт";
-            bool actual = RefData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
 
             //cleare data
-            bool result = RefData.CTeacher.Delete(tcher);
+            bool result = refData.CTeacher.Delete(tcher);
             Assert.IsTrue(result);
 
-            result = RefData.CTeacher.Delete(tcher1);
+            result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
         /// <summary>
@@ -48,22 +49,22 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = RefData.CTeacher.Insert(tcher);
+            bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1);
-            bool actual2 = RefData.CTeacher.Insert(tcher1);
+            bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2);
             //act
             tcher1.AcademicDegree = "КН";
             tcher1.AcademicTitle = "Доц";
-            bool actual = RefData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
 
             //cleare data
-            bool result = RefData.CTeacher.Delete(tcher);
+            bool result = refData.CTeacher.Delete(tcher);
             Assert.IsTrue(result);
 
-            result = RefData.CTeacher.Delete(tcher1);
+            result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
         /// <summary>
@@ -76,21 +77,21 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = RefData.CTeacher.Insert(tcher);
+            bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1);
-            bool actual2 = RefData.CTeacher.Insert(tcher1);
+            bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2);
             //act
             tcher1.Departament = "ИАСТ";
-            bool actual = RefData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
 
             //cleare data
-            bool result = RefData.CTeacher.Delete(tcher);
+            bool result = refData.CTeacher.Delete(tcher);
             Assert.IsTrue(result);
 
-            result = RefData.CTeacher.Delete(tcher1);
+            result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
         /// <summary>
@@ -103,23 +104,23 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = RefData.CTeacher.Insert(tcher);
+            bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1);
-            bool actual2 = RefData.CTeacher.Insert(tcher1);
+            bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2);
             //act
             tcher1.MetodicalDays = "Пн, Вт";
             tcher1.Windows = "Ср, Чт, Пт";
             tcher1.Weekends = "Вс";
-            bool actual = RefData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
 
             //cleare data
-            bool result = RefData.CTeacher.Delete(tcher);
+            bool result = refData.CTeacher.Delete(tcher);
             Assert.IsTrue(result);
 
-            result = RefData.CTeacher.Delete(tcher1);
+            result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
         /// <summary>
@@ -132,9 +133,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = RefData.CTeacher.Insert(tcher);
+            bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1);
-            bool actual2 = RefData.CTeacher.Insert(tcher1);
+            bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2);
             //act
             tcher1.AcademicDegree = "КН";
@@ -143,15 +144,15 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.MetodicalDays = "Пн, Вт";
             tcher1.Windows = "Ср, Чт, Пт";
             tcher1.Weekends = "Вс";
-            bool actual = RefData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
 
             //cleare data
-            bool result = RefData.CTeacher.Delete(tcher);
+            bool result = refData.CTeacher.Delete(tcher);
             Assert.IsTrue(result);
 
-            result = RefData.CTeacher.Delete(tcher1);
+            result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
     }

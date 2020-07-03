@@ -11,7 +11,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG_TypesOfOccupations.AutoGenerateColumns = false;
-            DG_TypesOfOccupations.DataSource = RefData.CTypesOfOccupations;
+            DG_TypesOfOccupations.DataSource = Program.refData.CTypesOfOccupations;
         }
 
         private void DG_TypesOfOccupations_SelectionChanged(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace TimetableOfClasses
                 {
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-                    RefData.CTypesOfOccupations.Delete(mTypesOfOccupations);
+                    Program.refData.CTypesOfOccupations.Delete(mTypesOfOccupations);
                 }
             }
 

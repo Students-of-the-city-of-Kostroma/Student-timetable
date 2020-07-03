@@ -98,7 +98,7 @@ namespace TimetableOfClasses
                                     if (group == null)
                                     {
                                         MGroup Group = new MGroup(tbNameGroup.Text, semest, cbSpec.Text, smena, countStudents, minPar, maxPar, tbVixodnie.Text);
-                                        if (RefData.CGroup.Insert(Group))
+                                        if (Program.refData.CGroup.Insert(Group))
                                             return true;
                                         else errors = "Невозможно добавить эту группу";
                                     }
@@ -112,7 +112,7 @@ namespace TimetableOfClasses
                                         group.MinNumberOfClass = minPar;
                                         group.MaxNumberOfClass = maxPar;
                                         group.Weekends = tbVixodnie.Text;
-                                        if (RefData.CGroup.Update(group))
+                                        if (Program.refData.CGroup.Update(group))
                                             return true;
                                         else errors = "Невозможно так изменить эту группу";
                                     }
@@ -239,7 +239,7 @@ namespace TimetableOfClasses
 
         private void AddGroup_Shown(object sender, EventArgs e)
         {
-            if (RefData.CTrainingProfile.Rows.Count == 0)
+            if (Program.refData.CTrainingProfile.Rows.Count == 0)
             {
                 var resultNotification = MessageBox.Show("В созависимом справочнике Профили подготовки отсутствуют записи. " +
                     "Отрыть форму для редкатирования справочника Профили подготовки?",
