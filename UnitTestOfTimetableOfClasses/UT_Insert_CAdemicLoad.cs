@@ -13,76 +13,35 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CAcademicLoad
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
         [TestMethod]
         public void Task_1240_1()
         {
-            //act
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            bool ex = true;
-            bool act = RefData.CAcademicLoad.Insert(ma);
-            //assert
-            Assert.AreEqual(ex, act);
+            bool expected = true;
+            MAcademicLoad mal = new MAcademicLoad("17-ВТбо-1", "24", "Математика", "Садовская Ольга Борисовна", "Лекция", "5");
+            CAcademicLoad CaL = new CAcademicLoad();
+            bool actual = CaL.Insert(mal);
+            Assert.AreEqual(expected, actual);
         }
+
         /// <summary>
-        /// Ввод корректных данных в таблицу, при условии, что подобный тип занятия уже есть в таблице
+        /// учёная степень с такой сокращённой записью уже есть в таблице
         /// </summary>
         [TestMethod]
         public void Task_1240_2()
         {
-            //arrange 
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            bool ex = true;
+            //arrange
+            Task_1240_1();
+            MAcademicLoad MAcademicL = new MAcademicLoad("17-ВТбо-1", "24", "Математика", "Садовская Ольга Борисовна", "Лекция", "5");
+            bool expected = false;
             //act
-            bool act = RefData.CAcademicLoad.Insert(ma);
+            bool actual = refData.CAcademicLoad.Insert(MAcademicL);
             //assert
-            Assert.AreEqual(ex, act);
+            Assert.AreEqual(expected, actual);
         }
 
-        /// <summary>
-        /// Ввод корректных данных в таблицу, при условии, что преподаватель с такой фамилией уже есть в таблице
-        /// </summary>
-        [TestMethod]
-        public void Task_1240_3()
-        {
-            //arrange 
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            bool ex = true;
-            //act
-            bool act = RefData.CAcademicLoad.Insert(ma);
-            //assert
-            Assert.AreEqual(ex, act);
-        }
-        /// <summary>
-        /// Ввод корректных данных в таблицу, при условии, что дисциплина уже есть в таблице
-        /// </summary>
-        [TestMethod]
-        public void Task_1240_4()
-        {
-            //arrange 
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            bool ex = true;
-            //act
-            bool act = RefData.CAcademicLoad.Insert(ma);
-            //assert
-            Assert.AreEqual(ex, act);
-        }
-        /// <summary>
-        /// Ввод корректных данных в таблицу, при условии, что группа уже есть в таблице
-        /// </summary>
-        [TestMethod]
-        public void Task_1240_5()
-        {
-            //arrange 
-            MAcademicLoad ma = new MAcademicLoad("ВТ", "48", "Физкультура", "Иванов", "Леция", "20");
-            bool ex = true;
-            //act
-            bool act = RefData.CAcademicLoad.Insert(ma);
-            //assert
-            Assert.AreEqual(ex, act);
-        }
     }
-
 }
