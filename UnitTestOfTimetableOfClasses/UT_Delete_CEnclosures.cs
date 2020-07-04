@@ -6,6 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Delete_CEnclosures
     {
+        readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующих данных выбранной строки из таблицы
         /// </summary>
@@ -13,19 +14,13 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_1()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
-            bool actualUni = RefData.CUniversity.Insert(grUni);
-            Assert.AreEqual(true, actualUni);
+            Assert.AreEqual(refData.CUniversity.Insert(grUni), true);
             // arrange 
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
-            bool expected = true;
+            Assert.AreEqual(refData.CEnclosures.Insert(gr), true);
             //act 
-            bool actuali = RefData.CEnclosures.Insert(gr);
-            Assert.AreEqual(expected, actuali);
-            //assert 
-            bool check_gr = RefData.CEnclosures.Delete(gr);
-            Assert.AreEqual(true, check_gr);
-            bool check_grUni = RefData.CUniversity.Delete(grUni);
-            Assert.AreEqual(true, check_grUni);
+            Assert.AreEqual(refData.CEnclosures.Delete(gr), true);
+            
         }
 
         /// <summary>
@@ -36,7 +31,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
-            Assert.AreEqual(RefData.CEnclosures.Delete(gr2), false);
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false);
         }
         /// <summary>
         /// удаление данных при совпадении всех ключевых полей
@@ -45,12 +40,12 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_21()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
-            RefData.CUniversity.Insert(grUni);
+            refData.CUniversity.Insert(grUni);
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
-            Assert.AreEqual(RefData.CEnclosures.Delete(gr2), true);
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), true);
         }
         /// <summary>
         /// Удаление данных при не совпадающих значениях поля Name
@@ -59,12 +54,12 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_22()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
-            RefData.CUniversity.Insert(grUni);
+            refData.CUniversity.Insert(grUni);
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("М", grUni2.FullName, "Дзббжинского", "112111", "8");
-            Assert.AreEqual(RefData.CEnclosures.Delete(gr2), false);
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false);
         }
         /// <summary>
         /// Удаление данных при не совпадающих значениях поля University
@@ -73,12 +68,12 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_395_23()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
-            RefData.CUniversity.Insert(grUni);
+            refData.CUniversity.Insert(grUni);
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
-            RefData.CEnclosures.Insert(gr);
+            refData.CEnclosures.Insert(gr);
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Цостьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
-            Assert.AreEqual(RefData.CEnclosures.Delete(gr2), false);
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false);
         }
     }
 }

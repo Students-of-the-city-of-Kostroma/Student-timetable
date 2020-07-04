@@ -9,6 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Logs
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Проверка корректного вывода метода GetInfo в Logs.txt
         /// </summary>

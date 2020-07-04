@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CAcademicLoad
     {
+        RefData refData = new RefData();
         /// <summary>
         /// Ввод коректных данных
         /// </summary>
@@ -15,7 +16,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             bool expected = true;
             //act
@@ -24,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
             PreMa.Occupation = "Практическая работа";
             PreMa.Teacher = "Аристархов Валерий Аристархович";
             PreMa.TotalHours = "120";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
             //assert
             Assert.AreEqual(expected, actual);
         }
@@ -37,11 +38,11 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-НОбо-1а", "110", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
             PreMa.Discipline = "1";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
         }
         /// <summary>
         /// Ввод не коректных данных в атрибут Распределено
@@ -52,11 +53,11 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Нбо-1а", "110", "Web-программирование", "Иванов Иван Иванович", "Лр", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
             PreMa.Distributed = "двадцать";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
         }
         /// <summary>
         /// Ввод не коректных данных в атрибут Вид занятия
@@ -67,11 +68,11 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "110", "Управление данными", "Прядкина Нина Олеговна", "Контрольная работа", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
             PreMa.Occupation = "1";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
         }
         /// <summary>
         /// Ввод не коректных данных в атрибут Учитель
@@ -82,11 +83,11 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Ебо-4а", "110", "3D-моделирование", "Дорохова Жанна Викторовна", "Лабараторная работа", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
             PreMa.Teacher = "1";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
         }
         /// <summary>
         /// Ввод не коректных данных в атрибут Всего часов
@@ -97,11 +98,11 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ЕДбо-4а", "110", "Инструменты графического дизайна", "Барило Илья Иванович", "Кр", "20");
-            bool actualPreMa = RefData.CAcademicLoad.Insert(PreMa);
+            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa);
             //act
             PreMa.TotalHours = "Сто";
-            bool actual = RefData.CAcademicLoad.Update(PreMa);
+            bool actual = refData.CAcademicLoad.Update(PreMa);
         }
     }
 }

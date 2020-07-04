@@ -16,8 +16,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CTeacher() : base("Учитель")
         {
-            if (RefData.CTeacher != null) throw new Exception("Контроллер уже существует");
-
             DataColumn column = new DataColumn
             {
                 DataType = typeof(string),

@@ -6,16 +6,17 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Update_CInstitute
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_615_1() //замена всех атрибутов
         {
 
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
-            RefData.CInstitute.Insert(T_Institute);
+            refData.CInstitute.Insert(T_Institute);
 
             T_Institute = new MInstitute("Факультет автоматизированных систем и технологий", "ФАСТ", "Голубева Ю.А.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+            bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
@@ -28,11 +29,11 @@ namespace UnitTestOfTimetableOfClasses
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-            RefData.CInstitute.Insert(T_Institute);
+            refData.CInstitute.Insert(T_Institute);
 
 
             T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+            bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
@@ -45,10 +46,10 @@ namespace UnitTestOfTimetableOfClasses
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-            RefData.CInstitute.Insert(T_Institute);
+            refData.CInstitute.Insert(T_Institute);
 
             T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+            bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
@@ -62,10 +63,10 @@ namespace UnitTestOfTimetableOfClasses
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-            RefData.CInstitute.Insert(T_Institute);
+            refData.CInstitute.Insert(T_Institute);
 
             T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Лустгартен Ю.Л.", "Политехнический колледж");
-            bool result = RefData.CInstitute.Update(T_Institute);
+            bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
@@ -78,11 +79,11 @@ namespace UnitTestOfTimetableOfClasses
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
-            RefData.CInstitute.Insert(T_Institute);
+            refData.CInstitute.Insert(T_Institute);
 
             T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Костромской Государственный Университет");
 
-            bool result = RefData.CInstitute.Update(T_Institute);
+            bool result = refData.CInstitute.Update(T_Institute);
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
 
         }

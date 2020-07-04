@@ -7,6 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_MTrainingProfile
     {
+        RefData refData = new RefData();
         //[TestMethod]
         //public void Task_427_1()
         //{

@@ -7,14 +7,15 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Deleted_CTitle
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_362_1()
         {
             MTitle T_Title = new MTitle("Проф.", "Профессор");
             bool ex = true;
             //act
-            RefData.CTitle.Insert(T_Title);
-            bool act = RefData.CTitle.Delete(T_Title);
+            refData.CTitle.Insert(T_Title);
+            bool act = refData.CTitle.Delete(T_Title);
             //assert
             Assert.AreEqual(ex, act);
         }
@@ -25,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
             //act
             MTitle T_Title = new MTitle("Проф.", "Профессор");
             bool ex = false;
-            bool act = RefData.CTitle.Delete(T_Title);
+            bool act = refData.CTitle.Delete(T_Title);
             //assert
             Assert.AreEqual(ex, act);
         }

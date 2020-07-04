@@ -14,7 +14,7 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
             DG.AutoGenerateColumns = false;
-            DG.DataSource = RefData.CStudyWeek;
+            DG.DataSource = Program.refData.CStudyWeek;
         }
 
         private void AddStudyWeek(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace TimetableOfClasses
                     int number = int.Parse(Row["Number"].ToString());
                     String name = Row["Name"].ToString();
                     mStudyWeek = new MStudyWeek(number, name);
-                    RefData.CStudyWeek.Delete(mStudyWeek);
+                    Program.refData.CStudyWeek.Delete(mStudyWeek);
                 }
             }
         }
