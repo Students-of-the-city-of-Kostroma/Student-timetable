@@ -51,8 +51,9 @@
     <Compile Include="CAuditor.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CDiscipline.cs">
+    <Compile Include="..\..\CDiscipline.cs">
       <SubType>Component</SubType>
+      <Link>CDiscipline.cs</Link>
     </Compile>
     <Compile Include="CEnclosures.cs">
       <SubType>Component</SubType>

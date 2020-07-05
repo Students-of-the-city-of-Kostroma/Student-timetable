@@ -55,6 +55,9 @@
     <Compile Include="UT_Delete_CTitle.cs" />
     <Compile Include="UT_Delete_CInstitute.cs" />
     <Compile Include="UT_Insert_CInstitute.cs" />
+    <Compile Include="..\..\UT_Update_CDiscipline.cs">
+      <Link>UT_Update_CDiscipline.cs</Link>
+    </Compile>
     <Compile Include="UT_Update_CInstitute.cs" />
     <Compile Include="UT_Update_CTitle.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />

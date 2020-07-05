@@ -109,33 +109,27 @@ namespace LibOfTimetableOfClasses
 		/// <param name="model">Модель хранящая обновляемую запись таблицы</param>
 		/// <returns>Результат обновления</returns>
 		public bool Update(Model model)
-        {
-            MDiscipline mDiscipline = (MDiscipline)model;
+        { // 0
+            MDiscipline mDiscipline = (MDiscipline)model; // 1
 
-			if ((mDiscipline.Fullname == null && mDiscipline.Shortname == null && mDiscipline.CycleofDiscipline == null))
-				return false;
+			if ((mDiscipline.Fullname == null && mDiscipline.Shortname == null && mDiscipline.CycleofDiscipline == null)) // 2
+				return false; // 3
 
-			for (int i = 0; i < Rows.Count; i++)
+			for (int i = 0; i < Rows.Count; i++) // 4
             {
-				if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname)
+				if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname) // 5
 				{
-					try
-					{
-						Rows[i].BeginEdit();
-						Rows[i]["Shortname"] = mDiscipline.Shortname;
-						Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
-						Rows[i].EndEdit();
-						Rows[i].AcceptChanges();
-						return true;
-					}
-					catch (Exception ex)
-					{
-						Debug.WriteLine(ex.Source);
-						return false;
-					}
+					
+						Rows[i].BeginEdit(); // 6
+						Rows[i]["Shortname"] = mDiscipline.Shortname; // 7
+						Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline; // 8
+						Rows[i].EndEdit(); // 9
+						Rows[i].AcceptChanges(); // 10
+						return true; // 11
+					
 				}
             }
-            return false;
-        }
+            return false; // 12
+        } // 13
 	}
 }
