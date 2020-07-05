@@ -123,6 +123,7 @@ namespace LibOfTimetableOfClasses
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher2);
+<<<<<<< HEAD
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
@@ -154,6 +155,61 @@ namespace LibOfTimetableOfClasses
             MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
             CInstitute.Insert(mInstitute2);
             #endregion
+=======
+            #endregion
+            #region university
+            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
+            CUniversity.Insert(mUniversity);
+
+            MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
+            CUniversity.Insert(mUniversity1);
+
+            MUniversity mUniversity2 = new MUniversity("7605009467", "ЯГТУ", "Ярославский Государственный Технический Университет", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "Елена", "Олеговна", "Степанова", "rector@ystu.ru", "84852305661");
+            CUniversity.Insert(mUniversity2);
+            #endregion
+            #region enclosures
+            MEnclosures mEnclosures = new MEnclosures("Е", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 4", "84942536522", "Примечание");
+            CEnclosures.Insert(mEnclosures);
+
+            MEnclosures mEnclosures1 = new MEnclosures("А", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 6", "88005534535", "Примечание");
+            CEnclosures.Insert(mEnclosures1);
+
+            MEnclosures mEnclosures2 = new MEnclosures("Б", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 8", "84947004444", "Примечание");
+            CEnclosures.Insert(mEnclosures2);
+            #endregion
+            #region institute
+            MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute);
+
+            MInstitute mInstitute1 = new MInstitute("Институт педагогики и психологии", "ИПП", "Аристархов Валерий Аристархович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute1);
+
+            MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute2);
+
+            MInstitute mInstitute3 = new MInstitute("Институт дополнительного профессионального образования", "ИДПО", "Ббекенева Любовь Александровна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute3);
+
+            MInstitute mInstitute4 = new MInstitute("Институт профессионального развития", "ИПР", "Селиванова Лариса Ивановна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute4);
+
+            MInstitute mInstitute5 = new MInstitute("Институт управления экономики и финансов", "ИУЭФ", "Беркович Маргарита Израйлевна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute5);
+
+            MInstitute mInstitute6 = new MInstitute("Институт гуманитарных наук и социальных технолоний", "ИГНиСТ", "Панкратова Ольга Борисовна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute6);
+
+            MInstitute mInstitute7 = new MInstitute("Институт дизайна и технологий", "ИДТ", "Шорохов Сергей Александрович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute7);
+
+            MInstitute mInstitute8 = new MInstitute("Юридический институт им. Ю. П. Новицкого", "ЮИН", "Бриль Геннадий Геннадьевич", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute8);
+
+            MInstitute mInstitute9 = new MInstitute("Институт культуры и искуств", "ИКИ", "Домахина Надежда Михайловна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute9);
+
+            #endregion
+>>>>>>> dev
             #region auditor
             InitEAuditors();
 
