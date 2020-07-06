@@ -13,14 +13,16 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_395_1()
         {
+
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             Assert.AreEqual(refData.CUniversity.Insert(grUni), true);
+
             // arrange 
             MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
             Assert.AreEqual(refData.CEnclosures.Insert(gr), true);
             //act 
-            Assert.AreEqual(refData.CEnclosures.Delete(gr), true);
-            
+
+            Assert.AreEqual(refData.CEnclosures.Delete(gr), true);      
         }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace UnitTestOfTimetableOfClasses
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Цостьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
             Assert.AreEqual(refData.CEnclosures.Delete(gr2), false);
+
         }
     }
 }
