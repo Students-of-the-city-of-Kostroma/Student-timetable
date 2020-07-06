@@ -1,12 +1,12 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibOfTimetableOfClasses;
 
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_Delete_CTypesOfOccupations
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_877_1() //Удаление существующей строки 
         {

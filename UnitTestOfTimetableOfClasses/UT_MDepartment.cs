@@ -1,21 +1,22 @@
-﻿using System;
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_MDepartment
     {
+        RefData refData = new RefData();
         [TestMethod]
         public void Task_965_1_1()
         {
             try
-            { 
-            MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
+            {
+                MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
                 Assert.AreEqual(typeof(String), D.ShortTitle.GetType(), "Ожидался тип поля string");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Assert.Fail(ex.Message);
             }
