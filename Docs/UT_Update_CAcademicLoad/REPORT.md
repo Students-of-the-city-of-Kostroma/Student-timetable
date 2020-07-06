@@ -17,5 +17,6 @@ R5 = 0 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 10 - 11 - 12 - 14 - 15 - 16 - 18
 R6 = 0 - 2 - 3 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 10 - 11 - 12 - 14 - 15 - 16 - 18
 
 # Тестовые сченарии
-||Регион||Test ID||Test title||Input value||Expected result||
+|Регион|Test ID|Test title|Input value|Expected result|
+| --- | --- | --- | --- | --- |
 |R1|task_250_1|Ввод  некорректных данных в атрибут Дисциплина|Discipline  = 1|false|
