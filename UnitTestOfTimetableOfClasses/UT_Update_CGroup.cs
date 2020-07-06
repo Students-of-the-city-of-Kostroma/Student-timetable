@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile));
            
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile));
+            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile));
  
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection));
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
         [TestMethod]
-        public void Task_250_1_1() 
+        public void Task_250_1() 
         {
             SetupData();
             //arrange
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
        [TestMethod]
-        public void Task_250_1_3() 
+        public void Task_250_3() 
         {
             SetupData();
             //arrange
@@ -101,7 +101,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Направление подготовки дублирует Направление подготовки существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_4() 
+        public void Task_250_4() 
         {
             SetupData();
             //arrange
@@ -133,7 +133,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_5() 
+        public void Task_250_5() 
         {
             SetupData();
             //arrange
@@ -165,7 +165,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_6() 
+        public void Task_250_6() 
         {
             SetupData();
             //arrange
@@ -197,7 +197,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_1_7() 
+        public void Task_250_7() 
         {
             SetupData();
             //arrange
@@ -231,7 +231,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных при условии что она будет дублировать другую записть(невозможно изменение)
         /// </summary>
         [TestMethod]
-        public void Task_250_1_8() 
+        public void Task_250_8() 
         {
             SetupData();
             //arrange
