@@ -2,11 +2,11 @@
 
 #Код метода Delete
 
-! [alt text] (CODE.JPG "Код метода Delete")
+! [alt text] (CODE.png "Код метода Delete")
 
 #Управляющий граф
 
-! [alt text] (GRAPH.JPG "Управляющий граф")
+! [alt text] (GRAPH.png "Управляющий граф")
 
 #Возможные маршруты на основании графа
 
