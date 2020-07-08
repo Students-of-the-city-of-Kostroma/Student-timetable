@@ -115,20 +115,14 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname)
                 {
-                    try
-                    {
+                   
                         Rows[i].BeginEdit();
                         Rows[i]["Shortname"] = mDiscipline.Shortname;
                         Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
                         return true;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine(ex.Source);
-                        return false;
-                    }
+                                           
                 }
             }
             return false;
