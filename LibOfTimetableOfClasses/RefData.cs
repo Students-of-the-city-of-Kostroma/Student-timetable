@@ -123,39 +123,7 @@ namespace LibOfTimetableOfClasses
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher2);
-<<<<<<< HEAD
-            #endregion
-            #region university
-            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
-            CUniversity.Insert(mUniversity);
 
-            MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
-            CUniversity.Insert(mUniversity1);
-
-            MUniversity mUniversity2 = new MUniversity("7605009467", "ЯГТУ", "Ярославский Государственный Технический Университет", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "Елена", "Олеговна", "Степанова", "rector@ystu.ru", "84852305661");
-            CUniversity.Insert(mUniversity2);
-            #endregion
-            #region enclosures
-            MEnclosures mEnclosures = new MEnclosures("Е", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 4", "84942536522", "Примечание");
-            CEnclosures.Insert(mEnclosures);
-
-            MEnclosures mEnclosures1 = new MEnclosures("А", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 6", "88005534535", "Примечание");
-            CEnclosures.Insert(mEnclosures1);
-
-            MEnclosures mEnclosures2 = new MEnclosures("Б", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 8", "84947004444", "Примечание");
-            CEnclosures.Insert(mEnclosures2);
-            #endregion
-            #region institute
-            MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute);
-
-            MInstitute mInstitute1 = new MInstitute("Институт педагогики и психологии", "ИПП", "Аристархов Валерий Аристархович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute1);
-
-            MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute2);
-            #endregion
-=======
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
@@ -209,7 +177,6 @@ namespace LibOfTimetableOfClasses
             CInstitute.Insert(mInstitute9);
 
             #endregion
->>>>>>> dev
             #region auditor
             InitEAuditors();
 
