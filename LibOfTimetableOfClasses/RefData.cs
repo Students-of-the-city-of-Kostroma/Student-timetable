@@ -52,8 +52,9 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
             InitData();
         }
-    
-        private void InitData() {
+
+        private void InitData()
+        {
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
@@ -123,7 +124,6 @@ namespace LibOfTimetableOfClasses
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher2);
-<<<<<<< HEAD
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
@@ -154,8 +154,6 @@ namespace LibOfTimetableOfClasses
 
             MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
             CInstitute.Insert(mInstitute2);
-            #endregion
-=======
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
@@ -209,7 +207,6 @@ namespace LibOfTimetableOfClasses
             CInstitute.Insert(mInstitute9);
 
             #endregion
->>>>>>> dev
             #region auditor
             InitEAuditors();
 
@@ -229,7 +226,6 @@ namespace LibOfTimetableOfClasses
             MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
             CTypesOfOccupations.Insert(mTypesOfOccupations2);
             #endregion
-        }
 
         /// <summary>
         /// Создаёт список аудиторий для Е-корпуса
