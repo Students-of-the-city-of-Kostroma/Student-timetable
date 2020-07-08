@@ -52,8 +52,9 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
             InitData();
         }
-    
-        private void InitData() {
+
+        private void InitData()
+        {
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
@@ -186,6 +187,9 @@ namespace LibOfTimetableOfClasses
             MAuditor mAuditor2 = new MAuditor("123", "Философии", 77, "Б");
             CAuditor.Insert(mAuditor2);
             #endregion
+            #region AcademicLoad
+            InitAcademicLoad();
+            #endregion
             #region occupations
             MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
             CTypesOfOccupations.Insert(mTypesOfOccupations);
@@ -198,10 +202,31 @@ namespace LibOfTimetableOfClasses
             #endregion
         }
 
-        /// <summary>
-        /// Создаёт список аудиторий для Е-корпуса
-        /// </summary>
-        private void InitEAuditors() {
+            /// <summary>
+            /// Заполняет нагрузку
+            /// </summary>
+        private void InitAcademicLoad()
+        {
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Программирование на языках высокого уровня", "Гутман А.С", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Программирование на языках высокого уровня", "Гутман А.С", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Панин И.Г", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Чувиляева А.С", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "WEB-программирование", "Демчинова Е.А", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "WEB-программирование", "Демчинова Е.А", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Лекция", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Практика", 0));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "144", "Физическая культура и спорт", "Бушуев С.Г", "Практика", 0));
+        }
+            /// <summary>
+            /// Создаёт список аудиторий для Е-корпуса
+            /// </summary>
+            private void InitEAuditors() {
             CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
             CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
             CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
