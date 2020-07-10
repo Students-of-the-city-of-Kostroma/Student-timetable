@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление в пустую таблицу
         /// </summary>
         [TestMethod]
-        public void Task_246_1()
+            public void Task_246_1()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
