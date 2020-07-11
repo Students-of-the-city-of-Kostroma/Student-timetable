@@ -29,7 +29,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление данных из пустой таблицы
         /// </summary>
         [TestMethod]
-        public void Task_395_2()
+        public void Task_395_2_1()
         {
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses
         /// удаление данных при совпадении всех ключевых полей
         /// </summary>
         [TestMethod]
-        public void Task_395_21()
+        public void Task_395_2_4()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             refData.CUniversity.Insert(grUni);
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление данных при не совпадающих значениях поля Name
         /// </summary>
         [TestMethod]
-        public void Task_395_22()
+        public void Task_395_2_2()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             refData.CUniversity.Insert(grUni);
@@ -67,7 +67,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление данных при не совпадающих значениях поля University
         /// </summary>
         [TestMethod]
-        public void Task_395_23()
+        public void Task_395_2_3()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             refData.CUniversity.Insert(grUni);
