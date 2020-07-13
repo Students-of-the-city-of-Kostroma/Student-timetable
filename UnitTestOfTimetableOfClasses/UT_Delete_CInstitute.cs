@@ -12,12 +12,15 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_617_1() //Удалить запись при совпадении всех атрибутов
         {
-
-            MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+            // arrange
+            MTeacher mTeacher = new MTeacher("Юрий", "Лустгартен", "Леонидович", "КН", "Доц", "ФАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            refData.CTeacher.Insert(mTeacher);
+            MInstitute I_IInstitute = new MInstitute("Какой то левый институт не наш", "ФАСТ", "Лустгартен Юрий Леонидович", "Костромской Государственный Университет");
             bool ex = true;
             refData.CInstitute.Insert(I_IInstitute);
-            bool act = refData.CInstitute.Delete(I_IInstitute);
-
+            //act
+            bool act = refData.CInstitute.Delete(I_IInstitute);       
+            // assert
             Assert.AreEqual(ex, act);
         }
 
