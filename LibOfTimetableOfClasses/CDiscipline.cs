@@ -94,7 +94,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Source);
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -115,14 +115,12 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)Rows[i]["Fullname"] == mDiscipline.Fullname)
                 {
-                   
-                        Rows[i].BeginEdit();
-                        Rows[i]["Shortname"] = mDiscipline.Shortname;
-                        Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
-                        Rows[i].EndEdit();
-                        Rows[i].AcceptChanges();
-                        return true;
-                                           
+                    Rows[i].BeginEdit();
+                    Rows[i]["Shortname"] = mDiscipline.Shortname;
+                    Rows[i]["CycleofDiscipline"] = mDiscipline.CycleofDiscipline;
+                    Rows[i].EndEdit();
+                    Rows[i].AcceptChanges();
+                    return true;
                 }
             }
             return false;
