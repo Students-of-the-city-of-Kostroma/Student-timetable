@@ -16,10 +16,10 @@ R4 = 1 - 2 - 3 - 4 - 5 - 7
 # Таблица тестирования 
 | Регион | Test ID | Test title | RefData | Input value | Expected result | Actual result | Test status (Passed/Failed)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| R1 | Task_395_1 | check that table isn’t empty | empty | “Name”:“E” “University”:”KGU” | false | false | Passed|
-| R2 | Task_395_2 | check of difference in Name | “Name”:“E” “University”:”KGU” | “Name”:“A” “University”:”KGU” | false | false | Passed|
-| R3 | Task_395_3 | check of difference in University | “Name”:“E” “University”:”KGU” | “Name”:“E” “University”:”KGA” | false | false | Passed|
-| R4 | Task_395_4 | correct execution of code |  “Name”:“E” “University”:”KGU” | “Name”:“E” “University”:”KGU” | true | true | Passed|
+| R1 | Task_395_1 | check that table isn’t empty | empty | “Name”:“E” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | false | false | Passed|
+| R2 | Task_395_2 | check of difference in Name | “Name”:“E” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | “Name”:“A” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | false | false | Passed|
+| R3 | Task_395_3 | check of difference in University | “Name”:“E” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | “Name”:“E” “University”:”KGA” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | false | false | Passed|
+| R4 | Task_395_4 | correct execution of code |  “Name”:“E” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | “Name”:“E” “University”:”KGU” "Address":"Дзержинского" "Phone":"112111" "Comment" "8" | true | true | Passed|
 
 # Вывод
 Метод Delete может удалить или не удалить данные из таблицы - это зависит от входных данных. Тестирование “белым ящиком” позволяет проверить оба варианта метода. Большинство ошибок возникает из-за вводимых данных, поэтому требуется несколько однотипных тестов, проверяющих совпадение данных в таблице и входных данных.
