@@ -17,8 +17,8 @@ R4= 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 11 - 12 - 13 - 14 -15
 # Тестовые сценарии
 |Регион|Test ID|Test title|Input value|Expected result|
 | --- | --- | --- | --- | --- |
-|R1|247_1|Кол-во записей в Rows равно 0 |Rows.count = 0 AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные"|недостижим|
-|R2|247_2|Кол-во записей в Rows равно 5 |Rows.count = 5, но (string)this.Rows[i]["FullName"] != fullName AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные" |false|
+|R1|247_1|Изменить сведения в пустой таблице |Rows.count = 0 AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные"|недостижим|
+|R2|247_2|Изменить сведения в не пустой таблице |Rows.count = 5, но (string)this.Rows[i]["FullName"] != fullName AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные" |false|
 |R3|247_3|Ввод коректных данных, при условии, что они не дублируют данные других экземпляров|AcademicDegree = "ДН"; Departament = "ИАСТ"; AcademicTitle = "Проф"; MetodicalDays = "Чт, Сб";  Windows = "Сб, Пн" Weekends = "Пт"|true|
 |R4|247_4|Ввод корректных данных, при условии, что данная запись полностью дублирует другую запись|AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|false|
 
