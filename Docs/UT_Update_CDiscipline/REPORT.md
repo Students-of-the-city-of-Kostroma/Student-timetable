@@ -16,9 +16,9 @@ R3 = 0 - 1 - 2 - 4 - 12 - 13
 
 | Test ID | Test title | Input model | Expected result | Actual result | Test status (Passed/Failed)|
 | --- | --- | --- | --- | --- | --- |
-| R1 | Correct input values | “Fullname”:“Математика" "Shortname":"Физ." "CycleOfDiscipline":"33" | true | true | Passed |
-| R2 | Attempt to enter null values | “Fullname”: null "Shortname": null "CycleOfDiscipline":null | false | false | Passed |
-| R3 | Attempt to update doesn’t exist | “Fullname”:“Абвг” "Shortname":"Физ." "CycleOfDiscipline":"33" | false | false | Passed|
+| R1 | Ввод корректных данных в таблицу | “Fullname”:“Математика" "Shortname":"Физ." "CycleOfDiscipline":"33" | true | true | Passed |
+| R2 | Ввод null-значений | “Fullname”: null "Shortname": null "CycleOfDiscipline":null | false | false | Passed |
+| R3 | Попытка обновления данных, которых не существует | “Fullname”:“Абвг” "Shortname":"Физ." "CycleOfDiscipline":"33" | false | false | Passed|
 
 
 
