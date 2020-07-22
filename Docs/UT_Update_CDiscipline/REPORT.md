@@ -14,11 +14,11 @@ R3 = 0 - 1 - 2a - 2b - 2c - 4 - 12 - 13
 
 # Таблица тестирования 
 
-| Test ID | Test title | Input model | Expected result | Actual result | Test status (Passed/Failed)|
-| --- | --- | --- | --- | --- | --- |
-| R1 | Ввод корректных данных в таблицу | “Fullname”:“Математика" "Shortname":"Физ." "CycleOfDiscipline":"33" | true | true | Passed |
-| R2 | Ввод null-значений | “Fullname”: null "Shortname": null "CycleOfDiscipline":null | false | false | Passed |
-| R3 | Попытка обновления данных, которых не существует | “Fullname”:“Абвг” "Shortname":"Физ." "CycleOfDiscipline":"33" | false | false | Passed|
+| Test ID | Region | Test title | Input model | Expected result | Actual result | Test status (Passed/Failed)|
+| --- | --- | --- | --- | --- | --- | --- |
+| task-337-1 | R2 | Ввод корректных данных в таблицу | “Fullname”:“Математика" "Shortname":"Физ." "CycleOfDiscipline":"33" | true | true | Passed |
+| task-337-2 | R1 | Ввод null-значений | “Fullname”: null "Shortname": null "CycleOfDiscipline":null | false | false | Passed |
+| task-337-3 | R3 | Попытка обновления данных, которых не существует | “Fullname”:“Абвг” "Shortname":"Физ." "CycleOfDiscipline":"33" | false | false | Passed|
 
 
 
