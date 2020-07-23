@@ -13,6 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_395_1()
         {
+            Assert.AreEqual(refData.CEnclosures.Rows.Count == 0, true);
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
             Assert.AreEqual(refData.CEnclosures.Delete(gr2), false);
