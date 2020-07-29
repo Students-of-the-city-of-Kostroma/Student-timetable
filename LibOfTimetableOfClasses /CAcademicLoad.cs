@@ -127,7 +127,6 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)Rows[i]["Group"] == mAcademic.Group)
                 {
-                    
                     {
                         Rows[i].BeginEdit();
                         Rows[i]["Discipline"] = mAcademic.Discipline;
