@@ -127,7 +127,6 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)Rows[i]["Group"] == mAcademic.Group)
                 {
-                    {
                         Rows[i].BeginEdit();
                         Rows[i]["Discipline"] = mAcademic.Discipline;
                         Rows[i]["DistributedHours"] = mAcademic.Distributed;
@@ -137,7 +136,6 @@ namespace LibOfTimetableOfClasses
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
                         return true;
-                    }
                 }
             }
             return false;
