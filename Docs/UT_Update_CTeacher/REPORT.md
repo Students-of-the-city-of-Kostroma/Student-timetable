@@ -15,12 +15,12 @@ R4= 0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 11 - 12 - 13 - 15
 
 
 # Тестовые сценарии
-|Регион|Test ID|Test title|Input value|Expected result|
-| --- | --- | --- | --- | --- |
-|R1|247_1|Изменить сведения в пустой таблице |Rows.count = 0 AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные"|недостижим|
-|R2|247_2|Изменить сведения в не пустой таблице |Rows.count = 5, но (string)this.Rows[i]["FullName"] != fullName AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные" |false|
-|R3|247_3|Ввод коректных данных, при условии, что они не дублируют данные других экземпляров|AcademicDegree = "ДН"; Departament = "ИАСТ"; AcademicTitle = "Проф"; MetodicalDays = "Чт, Сб";  Windows = "Сб, Пн" Weekends = "Пт"|true|
-|R4|247_4|Ввод корректных данных, при условии, что данная запись полностью дублирует другую запись|AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|false|
+|Регион|Тест ID|Идея теста|Предварительное условие|Входные параметры|Ожидаемый результат|
+| --- | --- | --- | --- | --- | --- |
+|R1|247_1|Изменить сведения в пустой таблице |Входных данных нет|Rows.count = 0 AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные"|недостижим //Входные данные не могут быть пусты|
+|R2|247_2|Изменить нусуществующего преподавателя | FirstName = "Садовская", SecondName "Ольга", Patronymic = "Борисовна" AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|(string)this.Rows[i]["FullName"] != fullName AcademicDegree = "Валидные данные"; AcademicTitle = "Валидные данные"; MetodicalDays = "Валидные данные"; Departament = "Валидные данные"; Teacher = "Валидные данные"; Windows = "Валидные данные" Weekends = "Валидные данные" |false|
+|R3|247_3|Ввод коректных данных, при условии, что они не дублируют данные других экземпляров|FirstName = "Садовская", SecondName "Ольга", Patronymic = "Борисовна" AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|AcademicDegree = "ДН"; Departament = "ИВТ"; AcademicTitle = "Проф"; MetodicalDays = "Чт, Сб";  Windows = "Сб, Пн" Weekends = "Пт"|true|
+|R4|247_4|Ввод корректных данных, при условии, что данная запись полностью дублирует другую запись|AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|AcademicDegree = "КН"; AcademicTitle = "Доц"; MetodicalDays = "Пн, Вт";  Windows = "Ср, Чт, Пт" Weekends = "Вс"|false|
 
 
 Вывод: Метод Update либо обновляет данные в таблице, либо не обновляет их, по какой-то причине. Тестирование “белый ящик”, позволяет проверить оба варианта работы метода, но большинство ошибок происходит из-за проблем с вводимыми данными и поэтому необходимо несколько однотипных тестов, реализующих добавление разных вариантов данных. Поэтому число тестов, для проверки функционала может быть значительным.
