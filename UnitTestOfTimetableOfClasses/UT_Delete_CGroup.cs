@@ -13,19 +13,19 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_249_1()
         {
-            int countRows = refData.CGroup.Rows.Count;//0
-            int i = 0;//1
-            MGroup mGroup = new MGroup("17-ИСбо-1в", 2, "ИС", 2, 13, 1, 4, "Воскресенье");//2
-            Assert.IsTrue(refData.CGroup.Insert(mGroup));//3  
-            Assert.AreEqual(countRows+1, refData.CGroup.Rows.Count);//4
-            do//5
+            int countRows = refData.CGroup.Rows.Count;
+            int i = 0;
+            MGroup mGroup = new MGroup("17-ИСбо-1в", 2, "ИС", 2, 13, 1, 4, "Воскресенье");
+            Assert.IsTrue(refData.CGroup.Insert(mGroup));
+            Assert.AreEqual(countRows+1, refData.CGroup.Rows.Count);
+            do
             {
-                Console.WriteLine(i);//6
-                i++;//7
+                Console.WriteLine(i);
+                i++;
             }
-            while ((refData.CGroup.Rows[countRows]) !=(refData.CGroup.Rows[i]));//8
-            Assert.AreEqual(refData.CGroup.Rows[countRows], refData.CGroup.Rows[i]);//9
-            Assert.IsTrue(refData.CGroup.Delete(mGroup));//10
+            while ((refData.CGroup.Rows[countRows]) !=(refData.CGroup.Rows[i]));
+            Assert.AreEqual(refData.CGroup.Rows[countRows], refData.CGroup.Rows[i]);
+            Assert.IsTrue(refData.CGroup.Delete(mGroup));
         }
         /// <summary>
         /// Удаление не существующей строки 
