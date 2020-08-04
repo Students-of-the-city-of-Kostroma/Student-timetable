@@ -46,14 +46,15 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
             DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
             DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
-            DataSet.Relations.Add("AcademicLoad-Group", CGroup.Columns["Group"], CAcademicLoad.Columns["Group"]);
-            DataSet.Relations.Add("AcademicLoad-Discipline", CAcademicLoad.Columns["Discipline"], CDiscipline.Columns["FullName"]);
-            DataSet.Relations.Add("AcademicLoad-Teacher", CAcademicLoad.Columns["Professor"], CTeacher.Columns["FullName"]);
-            DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
+            DataSet.Relations.Add("Group-AcademicLoad", CGroup.Columns["Group"],  CAcademicLoad.Columns["Group"]);
+            DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
+            DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
+            DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
             InitData();
         }
-    
-        private void InitData() {
+
+        private void InitData()
+        {
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
@@ -123,6 +124,7 @@ namespace LibOfTimetableOfClasses
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher2);
+
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
@@ -153,6 +155,28 @@ namespace LibOfTimetableOfClasses
 
             MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
             CInstitute.Insert(mInstitute2);
+
+            MInstitute mInstitute3 = new MInstitute("Институт дополнительного профессионального образования", "ИДПО", "Ббекенева Любовь Александровна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute3);
+
+            MInstitute mInstitute4 = new MInstitute("Институт профессионального развития", "ИПР", "Селиванова Лариса Ивановна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute4);
+
+            MInstitute mInstitute5 = new MInstitute("Институт управления экономики и финансов", "ИУЭФ", "Беркович Маргарита Израйлевна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute5);
+
+            MInstitute mInstitute6 = new MInstitute("Институт гуманитарных наук и социальных технолоний", "ИГНиСТ", "Панкратова Ольга Борисовна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute6);
+
+            MInstitute mInstitute7 = new MInstitute("Институт дизайна и технологий", "ИДТ", "Шорохов Сергей Александрович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute7);
+
+            MInstitute mInstitute8 = new MInstitute("Юридический институт им. Ю. П. Новицкого", "ЮИН", "Бриль Геннадий Геннадьевич", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute8);
+
+            MInstitute mInstitute9 = new MInstitute("Институт культуры и искуств", "ИКИ", "Домахина Надежда Михайловна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute9);
+
             #endregion
             #region auditor
             InitEAuditors();
@@ -162,6 +186,9 @@ namespace LibOfTimetableOfClasses
 
             MAuditor mAuditor2 = new MAuditor("123", "Философии", 77, "Б");
             CAuditor.Insert(mAuditor2);
+            #endregion
+            #region AcademicLoad
+            InitAcademicLoad();
             #endregion
             #region occupations
             MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
@@ -175,10 +202,31 @@ namespace LibOfTimetableOfClasses
             #endregion
         }
 
-        /// <summary>
-        /// Создаёт список аудиторий для Е-корпуса
-        /// </summary>
-        private void InitEAuditors() {
+            /// <summary>
+            /// Заполняет нагрузку
+            /// </summary>
+        private void InitAcademicLoad()
+        {
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Программирование на языках высокого уровня", "Гутман А.С", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Программирование на языках высокого уровня", "Гутман А.С", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Панин И.Г", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Чувиляева А.С", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "WEB-программирование", "Демчинова Е.А", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "WEB-программирование", "Демчинова Е.А", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "144", "Физическая культура и спорт", "Бушуев С.Г", "Практика", "0"));
+        }
+            /// <summary>
+            /// Создаёт список аудиторий для Е-корпуса
+            /// </summary>
+            private void InitEAuditors() {
             CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
             CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
             CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
