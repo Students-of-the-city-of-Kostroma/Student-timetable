@@ -141,4 +141,4 @@ namespace LibOfTimetableOfClasses
             return false;
         }
     }
-}
+} 
