@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
 
             for (int i = 0; i < this.Rows.Count; i++)
             {
-                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                if (this.Rows[i]["Group"] == mAcademicLoad.Group)
                 {
                     this.Rows[i].Delete();
                     return true;
@@ -125,7 +125,7 @@ namespace LibOfTimetableOfClasses
 
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)Rows[i]["Group"] == mAcademic.Group)
+                if (Rows[i]["Group"] == mAcademic.Group)
                 { 
                         Rows[i].BeginEdit();
                         Rows[i]["Discipline"] = mAcademic.Discipline;
