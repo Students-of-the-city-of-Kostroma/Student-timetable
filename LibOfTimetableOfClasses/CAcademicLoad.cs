@@ -105,7 +105,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Source);
                 return false;
             }
         }
@@ -122,7 +122,9 @@ namespace LibOfTimetableOfClasses
             for (int i = 0; i < Rows.Count; i++)
             {
                 if ((string)Rows[i]["Group"] == mAcademic.Group)
-                { 
+                {
+                    try
+                    {
                         Rows[i].BeginEdit();
                         Rows[i]["Discipline"] = mAcademic.Discipline;
                         Rows[i]["DistributedHours"] = mAcademic.Distributed;
@@ -132,9 +134,15 @@ namespace LibOfTimetableOfClasses
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
                         return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Source);
+                        return false;
+                    }
                 }
             }
             return false;
         }
     }
-} 
+}
