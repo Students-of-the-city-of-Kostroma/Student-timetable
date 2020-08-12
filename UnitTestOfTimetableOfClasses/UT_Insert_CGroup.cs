@@ -82,7 +82,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что они полностью дублируют атрибуты уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_11() //полное дублирование всех атрибутов
+        public void Task_251_11() //Полное дублирование всех атрибутов.
         {
             bool expected = true;
             //arrange
