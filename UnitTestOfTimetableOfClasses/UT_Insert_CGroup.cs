@@ -37,14 +37,16 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_251_2()
         {
             //arrange
-            MGroup gr = new MGroup("17-ИСбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
-            bool expected = false;
-            //act
-            MGroup gr1 = new MGroup("17-ИСбо-2а", 2, "ИСиТД", 2, 2, 1, 1, "Суббота");
-            bool actual = refData.CGroup.Insert(gr1);
-            //assert
+            bool expected = true;
+            MGroup gr = new MGroup("17-ИСбо-2д", 1, "ИС", 1, 1, 0, 0, "Воскресенье");
+            bool actual = refData.CGroup.Insert(gr);
             Assert.AreEqual(expected, actual);
+            expected = false;
+            //act
+            MGroup gr1 = new MGroup("17-ИСбо-2д", 2, "ИС", 2, 2, 1, 1, "Суббота");
+            bool actual1 = refData.CGroup.Insert(gr1);
+            //assert
+            Assert.AreEqual(expected, actual1);
         }
 
         /// <summary>
@@ -67,12 +69,13 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ЮФбо-2в", 1, tp.ShortName, 1, 1, 0, 0, "Васкресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ЮФбо-2г", 2, tp1.ShortName, 2, 2, 1, 1, "Суббата");
-            bool actual = refData.CGroup.Insert(gr1);
+            bool actual5 = refData.CGroup.Insert(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual5);
         }
 
         /// <summary>
@@ -81,15 +84,17 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_251_11() //полное дублирование всех атрибутов
         {
+            bool expected = true;
             //arrange
-            MGroup gr = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
-            bool expected = false;
-            //act
-            MGroup gr1 = new MGroup("17-ТМбо-2а", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
-            bool actual = refData.CGroup.Insert(gr1);
-            //assert
+            MGroup gr = new MGroup("17-ТМбо-2а", 1, "ИС", 1, 1, 0, 0, "Воскресенье");
+            bool actual = refData.CGroup.Insert(gr);
             Assert.AreEqual(expected, actual);
+            expected = false;
+            //act
+            MGroup gr1 = new MGroup("17-ТМбо-2а", 1, "ИС", 1, 1, 0, 0, "Воскресенье");
+            bool actual1 = refData.CGroup.Insert(gr1);
+            //assert
+            Assert.AreEqual(expected, actual1);
         }
 
         /// <summary>
@@ -112,7 +117,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2г", 1, tp.ShortName, 1, 1, 0, 0, "Воскресеньее");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2в", 1, tp1.ShortName, 2, 2, 1, 1, "Субботаа");
             bool actual = refData.CGroup.Insert(gr1);
@@ -137,7 +143,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual2);
 
             MGroup gr = new MGroup("17-ИДбо-2а", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2б", 2, tp.ShortName, 2, 2, 1, 1, "Суббота");
             bool actual = refData.CGroup.Insert(gr1);
@@ -165,7 +172,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2т", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2д", 2, tp1.ShortName, 1, 2, 1, 1, "Суббота");
             bool actual = refData.CGroup.Insert(gr1);
@@ -193,7 +201,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2е", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2ю", 2, tp1.ShortName, 2, 1, 1, 1, "Суббота");
             bool actual = refData.CGroup.Insert(gr1);
@@ -221,7 +230,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2ж", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2з", 2, tp1.ShortName, 2, 2, 0, 1, "Суббота");
             bool actual = refData.CGroup.Insert(gr1);
@@ -249,7 +259,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2и", 1, tp.ShortName, 1, 1, 0, 1, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2к", 2, tp1.ShortName, 2, 2, 1, 1, "Суббота");
             bool actual = refData.CGroup.Insert(gr1);
@@ -277,7 +288,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual3);
 
             MGroup gr = new MGroup("17-ИДбо-2л", 1, tp.ShortName, 1, 1, 0, 0, "Воскресенье");
-            refData.CGroup.Insert(gr);
+            bool actual4 = refData.CGroup.Insert(gr);
+            Assert.AreEqual(expected, actual4);
             //act
             MGroup gr1 = new MGroup("17-ИДбо-2м", 2, tp1.ShortName, 2, 2, 1, 1, "Воскресенье");
             bool actual = refData.CGroup.Insert(gr1);
