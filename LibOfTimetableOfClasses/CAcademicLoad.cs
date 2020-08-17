@@ -105,7 +105,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Source);
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -119,10 +119,6 @@ namespace LibOfTimetableOfClasses
         public bool Update(Model model)
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
-
-            if (mAcademic.Group == null)
-                return false;
-
             for (int i = 0; i < Rows.Count; i++)
             {
                 if ((string)Rows[i]["Group"] == mAcademic.Group)
@@ -141,7 +137,7 @@ namespace LibOfTimetableOfClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Source);
+                        Debug.WriteLine(ex.Message);
                         return false;
                     }
                 }
