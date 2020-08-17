@@ -50,7 +50,7 @@ namespace UnitTestOfTimetableOfClasses
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
             result = refData.CGroup.Insert(gr1);
             Assert.IsTrue(result);
-
+            refData.CGroup.Clear();
             gr1.Shift = 2;
             gr1.Students = 3;
             gr1.MaxNumberOfClass = 3;
@@ -61,10 +61,10 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
 
             result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
 
             result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
 
             DeleteData();
         }
