@@ -14,16 +14,14 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_1()
         {
-            //arrange            
+            //arrange    
+            refData.CInstitute.Clear();
             refData.CTeacher.Clear();
+            Assert.IsTrue((refData.CInstitute.Rows.Count == 0) && (refData.CTeacher.Rows.Count == 0));
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = false;
             //act
-            tcher1.AcademicDegree = "ДН";
-            tcher1.AcademicTitle = "Проф";
-            tcher1.MetodicalDays = "Чт, Сб";
-            tcher1.Windows = "Сб, Пн";
-            tcher1.Weekends = "Пт";
+         
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual);
