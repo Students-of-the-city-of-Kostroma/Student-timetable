@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             refData.CGroup.Clear();
-            Assert.IsTrue(refData.CGroup.Rows.Count == 0);
+            Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
             bool expected = true;
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             expected = false;
