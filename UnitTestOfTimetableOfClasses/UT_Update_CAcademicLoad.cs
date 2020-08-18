@@ -16,6 +16,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1245_1()
         {
             //arrange
+            Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0);
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool expected = false;
             //act
