@@ -11,25 +11,25 @@ namespace UnitTestOfTimetableOfClasses
         private void SetupData()
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
-            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection));
+            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection),"Не вставить удалить профиль обучения");
  
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile));
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile),"Не удалось вставить профиль обучения");
  
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile));
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
         }
  
         private void DeleteData()
         {
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile));
+            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
            
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile));
+            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
  
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
-            Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection));
+            Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             refData.CGroup.Clear();
-            Assert.IsTrue(refData.CGroup.Rows.Count == 0);
+            Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось Очистить таблицу группа");
             bool expected = true;
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             expected = false;
@@ -63,13 +63,11 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
 
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" +gr.Group );
             bool expected = false;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Понедельник");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
 
             MGroup gr2 = new MGroup("17-ММЭбо-2в", 2, "ММЭ", 1, 2, 1, 1, "Вторник");
 
@@ -82,12 +80,8 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CGroup.Update(gr2);
             //assert
             Assert.AreEqual(expected, actual);
-
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
-
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
 
             DeleteData();
         }
@@ -102,26 +96,22 @@ namespace UnitTestOfTimetableOfClasses
             SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+
             bool expected = true;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+
             gr1.Semester = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
+
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
+
+
             DeleteData();
         }
  
@@ -135,26 +125,21 @@ namespace UnitTestOfTimetableOfClasses
             SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+
             bool expected = true;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+
             gr1.Shift = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
+
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
+
             DeleteData();
         }
  
@@ -167,26 +152,21 @@ namespace UnitTestOfTimetableOfClasses
             SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+
             bool expected = true;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+
             gr1.Students = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
+
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
+
             DeleteData();
         }
  
@@ -199,28 +179,23 @@ namespace UnitTestOfTimetableOfClasses
             SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+
             bool expected = true;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+
             gr1.MaxNumberOfClass = 0;
             gr1.MinNumberOfClass = 0;
             gr1.Weekends = "Воскресенье";
             bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
+
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
+
             DeleteData();
         }
  
@@ -233,15 +208,13 @@ namespace UnitTestOfTimetableOfClasses
             SetupData();
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+
             bool expected = true;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+
             gr1.Semester = 1;
             gr1.Specialty = "ММЭТ";
             gr1.Shift = 1;
@@ -252,13 +225,10 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
+
+            Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
+
             DeleteData();
         }
     }
