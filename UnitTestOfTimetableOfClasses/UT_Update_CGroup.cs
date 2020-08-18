@@ -36,48 +36,34 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить сведения в пустой таблице
         /// </summary>
         [TestMethod]
-        public void Task_250_11()
+        public void Task_250_1()
         {
-            SetupData();
             //arrange
-            bool expected = true;
-
-            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
-            expected = false;
-            //act
-            MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
             refData.CGroup.Clear();
-            gr1.Shift = 2;
-            gr1.Students = 3;
-            gr1.MaxNumberOfClass = 3;
-            gr1.MinNumberOfClass = 4;
-            gr1.Weekends = "Суббота";
-            bool actual = refData.CGroup.Update(gr1);
+            bool expected = true;
+            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
+            expected = false;
+
+            //act
+            gr.Shift = 2;
+            gr.Students = 3;
+            gr.MaxNumberOfClass = 3;
+            gr.MinNumberOfClass = 4;
+            gr.Weekends = "Суббота";
+            bool actual = refData.CGroup.Update(gr);
+
             //assert
             Assert.AreEqual(expected, actual);
-
-            result = refData.CGroup.Delete(gr);
-            Assert.IsFalse(result);
-
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsFalse(result);
-
-            DeleteData();
         }
 
         /// <summary>
         /// Изменить несуществующую группу в заполненной таблице
         /// </summary>
         [TestMethod]
-        public void Task_250_12()
+        public void Task_250_2()
         {
             SetupData();
             //arrange
-         
 
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             bool result = refData.CGroup.Insert(gr);
@@ -89,78 +75,27 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(result);
 
             MGroup gr2 = new MGroup("17-ММЭбо-2в", 2, "ММЭ", 1, 2, 1, 1, "Вторник");
-            result = refData.CGroup.Insert(gr2);
-            Assert.IsTrue(result);
-            MGroup gr3 = new MGroup("17-ММЭбо-2г", 2, "ММЭ", 2, 1, 1, 1, "Среда");
-            result = refData.CGroup.Insert(gr3);
-            Assert.IsTrue(result);
-            MGroup gr4 = new MGroup("17-ММЭбо-2е", 2, "ММЭ", 2, 1, 1, 2, "Четверг");
-            result = refData.CGroup.Insert(gr4);
-            Assert.IsTrue(result);
 
-            gr4.Group = "17-МЭбо-3г";
-            gr4.Shift = 2;
-            gr4.Students = 3;
-            gr4.MaxNumberOfClass = 3;
-            gr4.MinNumberOfClass = 4;
-            gr4.Weekends = "Суббота";
-            bool actual = refData.CGroup.Update(gr4);
-            //assert
-            Assert.AreEqual(expected, actual);
-
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
-
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
-
-            result = refData.CGroup.Delete(gr2);
-            Assert.IsTrue(result);
-
-            result = refData.CGroup.Delete(gr3);
-            Assert.IsTrue(result);
-
-            result = refData.CGroup.Delete(gr4);
-            Assert.IsTrue(result);
-
-            DeleteData();
-        }
-
-
-        /// <summary>
-        /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
-        /// </summary>
-        [TestMethod]
-        public void Task_250_1() 
-        {
-            SetupData();
-            //arrange
-            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
-            bool expected = true;
             //act
-            MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
-            gr1.Shift = 2;
-            gr1.Students = 3;
-            gr1.MaxNumberOfClass = 3;
-            gr1.MinNumberOfClass = 4;
-            gr1.Weekends = "Суббота";
-            bool actual = refData.CGroup.Update(gr1);
+            gr2.Shift = 2;
+            gr2.Students = 3;
+            gr2.MaxNumberOfClass = 3;
+            gr2.MinNumberOfClass = 4;
+            gr2.Weekends = "Суббота";
+            bool actual = refData.CGroup.Update(gr2);
             //assert
             Assert.AreEqual(expected, actual);
- 
+
             result = refData.CGroup.Delete(gr);
             Assert.IsTrue(result);
- 
+
             result = refData.CGroup.Delete(gr1);
             Assert.IsTrue(result);
- 
+
             DeleteData();
         }
+
+
         /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
@@ -193,43 +128,12 @@ namespace UnitTestOfTimetableOfClasses
             DeleteData();
         }
  
-        /// <summary>
-        /// Ввод корректных данных, при условии, что Направление подготовки дублирует Направление подготовки существующего экземпляра
-        /// </summary>
-        [TestMethod]
-        public void Task_250_4() 
-        {
-            SetupData();
-            //arrange
-            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            bool result = refData.CGroup.Insert(gr);
-            Assert.IsTrue(result);
- 
-            bool expected = true;
-            //act
-            MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            result = refData.CGroup.Insert(gr1);
-            Assert.IsTrue(result);
- 
-            gr1.Specialty = "ММЭТ";
-            bool actual = refData.CGroup.Update(gr1);
-            //assert
-            Assert.AreEqual(expected, actual);
- 
-            result = refData.CGroup.Delete(gr);
-            Assert.IsTrue(result);
- 
-            result = refData.CGroup.Delete(gr1);
-            Assert.IsTrue(result);
- 
-            DeleteData();
-        }
- 
+       
         /// <summary>
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_5() 
+        public void Task_250_4() 
         {
             SetupData();
             //arrange
@@ -261,7 +165,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_6() 
+        public void Task_250_5() 
         {
             SetupData();
             //arrange
@@ -293,7 +197,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_7() 
+        public void Task_250_6() 
         {
             SetupData();
             //arrange
