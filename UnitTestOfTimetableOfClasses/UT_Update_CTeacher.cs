@@ -17,14 +17,15 @@ namespace UnitTestOfTimetableOfClasses
             //arrange    
             refData.CInstitute.Clear();
             refData.CTeacher.Clear();
-            Assert.IsTrue((refData.CInstitute.Rows.Count == 0) && (refData.CTeacher.Rows.Count == 0));
+            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
+              Assert.IsTrue(refData.CTeacher.Rows.Count == 0, "Не удалось Очистить таблицу Преподаватель");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = false;
             //act
          
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
 
       
             
@@ -47,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
 
            
         }
@@ -62,9 +63,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual1, "Ожидаемое и действительное не совпало");
             bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2);
+            Assert.AreEqual(expected, actual2, "Ожидаемое и действительное не совпало");
             //act
             tcher1.AcademicDegree = "ДН";
             tcher1.AcademicTitle = "Проф";
@@ -73,14 +74,12 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
 
             //cleare data
-            bool result = refData.CTeacher.Delete(tcher);
-            Assert.IsTrue(result);
-
-            result = refData.CTeacher.Delete(tcher1);
-            Assert.IsTrue(result);
+           
+            Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя"+ tcher.FirstName);
+            Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
         }
        
        
@@ -95,9 +94,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected, actual1, "Ожидаемое и действительное не совпало");
             bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2);
+            Assert.AreEqual(expected, actual2, "Ожидаемое и действительное не совпало");
             //act
             tcher1.AcademicDegree = "КН";
             tcher1.AcademicTitle = "Доц";
@@ -107,14 +106,11 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Вс";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
 
             //cleare data
-            bool result = refData.CTeacher.Delete(tcher);
-            Assert.IsTrue(result);
-
-            result = refData.CTeacher.Delete(tcher1);
-            Assert.IsTrue(result);
+            Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя" + tcher.FirstName);
+            Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
         }
     }
 }
