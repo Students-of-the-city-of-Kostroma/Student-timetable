@@ -40,16 +40,13 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             refData.CGroup.Clear();
+            Assert.IsTrue(refData.CGroup.Rows.Count == 0);
             bool expected = true;
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             expected = false;
 
             //act
-            gr.Shift = 2;
-            gr.Students = 3;
-            gr.MaxNumberOfClass = 3;
-            gr.MinNumberOfClass = 4;
-            gr.Weekends = "Суббота";
+        
             bool actual = refData.CGroup.Update(gr);
 
             //assert
