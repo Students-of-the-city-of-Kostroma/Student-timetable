@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         private void SetupData()
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
-            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection),"Не вставить удалить профиль обучения");
+            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection),"Не удалось вставить профиль обучения");
  
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile),"Не удалось вставить профиль обучения");
@@ -73,11 +73,6 @@ namespace UnitTestOfTimetableOfClasses
             MGroup gr2 = new MGroup("17-ММЭбо-2в", 2, "ММЭ", 1, 2, 1, 1, "Вторник");
 
             //act
-            gr2.Shift = 2;
-            gr2.Students = 3;
-            gr2.MaxNumberOfClass = 3;
-            gr2.MinNumberOfClass = 4;
-            gr2.Weekends = "Суббота";
             bool actual = refData.CGroup.Update(gr2);
             //assert
             Assert.AreEqual(expected, actual);
