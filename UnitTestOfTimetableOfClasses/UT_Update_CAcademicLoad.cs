@@ -16,14 +16,14 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_1245_1()
         {
             //arrange
-            Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0);
+            Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Не удалось Очистить таблицу нагрузка");
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool expected = false;
             //act
 
             bool actual = refData.CAcademicLoad.Update(PreMa);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
         /// <summary>
         /// Изменить несуществующую группу в заполненной таблице
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             MAcademicLoad PreMa1 = new MAcademicLoad("17-Нбо-1а", "110", "Программирование", "Иванов Иван Иванович", "Лр", "20");
             bool expected = false;
             //act
@@ -45,7 +45,7 @@ namespace UnitTestOfTimetableOfClasses
             PreMa1.TotalHours = "120";
             bool actual = refData.CAcademicLoad.Update(PreMa1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
         /// <summary>
         /// Ввод коректных данных
@@ -56,7 +56,7 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             bool expected = true;
             //act
             PreMa.Discipline = "Операционные системы";
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
             PreMa.TotalHours = "120";
             bool actual = refData.CAcademicLoad.Update(PreMa);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
 
         /// <summary>
@@ -79,12 +79,12 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Ебо-4а", "110", "3D-моделирование", "Дорохова Жанна Викторовна", "Лабараторная работа", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             bool expected = false;
             //act
             PreMa.Group = "17-Ебо-4а";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
 
         /// <summary>
@@ -97,12 +97,12 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Ебо-4а", "110", "3D-моделирование", "Дорохова Жанна Викторовна", "Лабараторная работа", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             bool expected = false;
             //act
             PreMa.Discipline = "Цукенгшщзх";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
 
         /// <summary>
@@ -115,12 +115,12 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Ебо-4а", "110", "3D-моделирование", "Дорохова Жанна Викторовна", "Лабараторная работа", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             bool expected = false;
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
         }
 
         /// <summary>
@@ -133,12 +133,12 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-Ебо-4а", "110", "3D-моделирование", "Дорохова Жанна Викторовна", "Лабараторная работа", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa);
+            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
             bool expected = false;
             //act
             PreMa.Occupation = "Фуаываываыв";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало" );
         }
 
     }
