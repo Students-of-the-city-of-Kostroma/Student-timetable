@@ -34,15 +34,11 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
             MAcademicLoad PreMa1 = new MAcademicLoad("17-Нбо-1а", "110", "Программирование", "Иванов Иван Иванович", "Лр", "20");
             bool expected = false;
             //act
-            PreMa1.Discipline = "Операционные системы";
-            PreMa1.Distributed = "30";
-            PreMa1.Occupation = "Практическая работа";
-            PreMa1.Teacher = "Аристархов Валерий Аристархович";
-            PreMa1.TotalHours = "120";
+            
             bool actual = refData.CAcademicLoad.Update(PreMa1);
             //assert
             Assert.AreEqual(expected, actual, " Удалось изменить несуществующую группу в заполненной таблице");
@@ -66,7 +62,7 @@ namespace UnitTestOfTimetableOfClasses
             PreMa.TotalHours = "120";
             bool actual = refData.CAcademicLoad.Update(PreMa);
             //assert
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, " Ввод коректных данных не произошел");
         }
 
         /// <summary>
@@ -84,7 +80,7 @@ namespace UnitTestOfTimetableOfClasses
             //act
             PreMa.Group = "17-Ебо-4а";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Произошел ввод группы, дублирующей другую группу");
         }
 
         /// <summary>
@@ -102,7 +98,7 @@ namespace UnitTestOfTimetableOfClasses
             //act
             PreMa.Discipline = "Цукенгшщзх";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Произошел ввод не коректных данных в атрибут Дисциплина");
         }
 
         /// <summary>
@@ -120,11 +116,11 @@ namespace UnitTestOfTimetableOfClasses
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Произошел ввод не коректных данных в атрибут преподаватель");
         }
 
         /// <summary>
-        /// , "Не удалось вставить нагрузку для "+PreMa.Group
+        /// Ввод не коректных данных в атрибут тип занятия
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(System.Exception))]
@@ -138,7 +134,7 @@ namespace UnitTestOfTimetableOfClasses
             //act
             PreMa.Occupation = "Фуаываываыв";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало" );
+            Assert.AreEqual(expected, actual, " Произошел ввод не коректных данных в атрибут тип занятия ");
         }
 
     }
