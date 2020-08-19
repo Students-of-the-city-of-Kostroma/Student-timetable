@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
          
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, " Удалось Изменить сведения в пустой таблице");
 
       
             
@@ -36,7 +36,10 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_2()
         {
-            //arrange            
+            //arrange    
+            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
+            bool actual1 = refData.CTeacher.Insert(tcher);
+            Assert.AreEqual(true, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = false;
 
@@ -48,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Удалось Изменить несуществующего преподавателя");
 
            
         }
@@ -63,9 +66,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual2, "Не удалось вставить преподавателя" + tcher1.FirstName);
             //act
             tcher1.AcademicDegree = "ДН";
             tcher1.AcademicTitle = "Проф";
@@ -74,7 +77,7 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Ввод коректных данных, при условии, что они не дублируют данные других экземпляров не произошел");
 
             //cleare data
            
@@ -94,9 +97,9 @@ namespace UnitTestOfTimetableOfClasses
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual2, "Не удалось вставить преподавателя" + tcher1.FirstName);
             //act
             tcher1.AcademicDegree = "КН";
             tcher1.AcademicTitle = "Доц";
@@ -106,7 +109,7 @@ namespace UnitTestOfTimetableOfClasses
             tcher1.Weekends = "Вс";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Ожидаемое и действительное не совпало");
+            Assert.AreEqual(expected, actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
 
             //cleare data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя" + tcher.FirstName);
