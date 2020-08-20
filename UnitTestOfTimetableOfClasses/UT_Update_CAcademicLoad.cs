@@ -55,11 +55,6 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для "+PreMa.Group);
             bool expected = true;
             //act
-            PreMa.Discipline = "Операционные системы";
-            PreMa.Distributed = "30";
-            PreMa.Occupation = "Практическая работа";
-            PreMa.Teacher = "Аристархов Валерий Аристархович";
-            PreMa.TotalHours = "120";
             bool actual = refData.CAcademicLoad.Update(PreMa);
             //assert
             Assert.AreEqual(expected, actual, " Ввод коректных данных не произошел");
