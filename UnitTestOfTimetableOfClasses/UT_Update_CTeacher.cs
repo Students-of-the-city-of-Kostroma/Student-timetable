@@ -36,6 +36,10 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_2()
         {
+            refData.CInstitute.Clear();
+            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
+            refData.CTeacher.Clear();
+            Assert.IsTrue(refData.CTeacher.Rows.Count == 0, "Не удалось Очистить таблицу Преподаватель");
             //arrange    
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             bool actual1 = refData.CTeacher.Insert(tcher);
@@ -44,11 +48,6 @@ namespace UnitTestOfTimetableOfClasses
             bool expected = false;
 
             //act
-            tcher1.AcademicDegree = "ДН";
-            tcher1.AcademicTitle = "Проф";
-            tcher1.MetodicalDays = "Чт, Сб";
-            tcher1.Windows = "Сб, Пн";
-            tcher1.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual, "Удалось Изменить несуществующего преподавателя");
