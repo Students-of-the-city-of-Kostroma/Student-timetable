@@ -36,10 +36,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_2()
         {
-            refData.CInstitute.Clear();
-            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
-            refData.CTeacher.Clear();
-            Assert.IsTrue(refData.CTeacher.Rows.Count == 0, "Не удалось Очистить таблицу Преподаватель");
+            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange    
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             bool actual1 = refData.CTeacher.Insert(tcher);
@@ -60,6 +57,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_3()//изменение когда атрибуты не повторяются (ФИО изменить не возможно)
         {
+            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
@@ -91,6 +89,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_4()//дублируется всё кроме ФИО
         {
+            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
