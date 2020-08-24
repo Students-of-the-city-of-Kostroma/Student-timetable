@@ -235,7 +235,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных при условии что она будет дублировать другую записть(невозможно изменение)
         /// </summary>
         [TestMethod]
-        public void Task_250_8() 
+        public void Task_250_7() 
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
