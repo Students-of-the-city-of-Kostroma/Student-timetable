@@ -52,7 +52,7 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("AcademicLoad-TypesOfOccupations", CAcademicLoad.Columns["KindOfLesson"], CTypesOfOccupations.Columns["FullName"]);
             InitData();
         }
-    
+ 
         private void InitData() {
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
