@@ -7,6 +7,7 @@ namespace TimetableOfClasses
 {
     public partial class TypesOfOccupations : Form
     {
+        public string ChoseType;
         public TypesOfOccupations()
         {
             InitializeComponent();
@@ -81,6 +82,14 @@ namespace TimetableOfClasses
             if (header == null || !header.Equals(indexStr))
                 this.DG_TypesOfOccupations.Rows[index].HeaderCell.Value = indexStr;
         }
-
+        private void DG_TypesOfOccupations_DoubleClick(object sender, EventArgs e)
+        {
+            if (DG_TypesOfOccupations.SelectedRows.Count == 1 && this.Name == "TypesOfOccupations")
+            {
+                DataRow Row = ((DataRowView)DG_TypesOfOccupations.SelectedRows[0].DataBoundItem).Row;
+                ChoseType = (string)Row["Shortname"];
+                Close();
+            }
+        }
     }
 }

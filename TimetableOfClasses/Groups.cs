@@ -9,6 +9,7 @@ namespace TimetableOfClasses
 {
     public partial class Groups : Form
     {
+        public string ChoseGroupe;
         public Groups()
         {
             InitializeComponent();
@@ -117,7 +118,15 @@ namespace TimetableOfClasses
             if (header == null || !header.Equals(indexStr))
                 this.DG_Group.Rows[index].HeaderCell.Value = indexStr;
         }
-
+        private void DG_Group_DoubleClick(object sender, EventArgs e)
+        {
+            if (DG_Group.SelectedRows.Count == 1 && this.Name == "Groups")
+            {
+                DataRow Row = ((DataRowView)DG_Group.SelectedRows[0].DataBoundItem).Row;
+                ChoseGroupe = (string)Row["Group"];
+                Close();
+            }
+        }
     }
 
 }

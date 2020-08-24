@@ -7,6 +7,7 @@ namespace TimetableOfClasses
 {
     public partial class Discipline : Form
     {
+        public string ChoseDiscipline;
         public Discipline()
         {
             InitializeComponent();
@@ -82,6 +83,15 @@ namespace TimetableOfClasses
             object header = this.DG_Disc.Rows[index].HeaderCell.Value;
             if (header == null || !header.Equals(indexStr))
                 this.DG_Disc.Rows[index].HeaderCell.Value = indexStr;
+        }
+        private void DG_Disc_DoubleClick(object sender, EventArgs e)
+        {
+            if (DG_Disc.SelectedRows.Count == 1 && this.Name == "Discipline")
+            {
+                DataRow Row = ((DataRowView)DG_Disc.SelectedRows[0].DataBoundItem).Row;
+                ChoseDiscipline = (string)Row["Shortname"];
+                Close();
+            }
         }
     }
 }

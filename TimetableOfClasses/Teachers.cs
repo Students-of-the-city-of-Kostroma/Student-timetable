@@ -9,7 +9,7 @@ namespace TimetableOfClasses
 {
     public partial class Teachers : Form
     {
-
+        public string ChoseTeacher;
         public Teachers()
         {
             InitializeComponent();
@@ -159,6 +159,15 @@ namespace TimetableOfClasses
             object header = this.DG.Rows[index].HeaderCell.Value;
             if (header == null || !header.Equals(indexStr))
                 this.DG.Rows[index].HeaderCell.Value = indexStr;
+        }
+        private void DG_DoubleClick(object sender, EventArgs e)
+        {
+            if (DG.SelectedRows.Count == 1 && this.Name == "Teachers")
+            {
+                DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
+                ChoseTeacher = (string)Row["FullName"];
+                Close();
+            }
         }
     }
 }
