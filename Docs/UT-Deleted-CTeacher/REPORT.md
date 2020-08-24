@@ -14,7 +14,7 @@ R4 = 1 - 2 - 3 - 4 - 5 - 6 - 8
 
 # Тестовые сценарии
 
-| Test ID | Region | Test title | Input model | Expected result | Actual result | Test status (Passed/Failed)|
+| Test ID | Регион | Идея | Предварительное условие | Входные параметры | Ожидаемый результат | 
 | --- | --- | --- | --- | --- | --- | --- |
 | task-1281-1 | R1 |  |  |  |  |  |
 | task-1281-2 | R2 |  |  |  |  |  |
