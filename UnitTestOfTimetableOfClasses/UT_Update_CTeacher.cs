@@ -43,7 +43,6 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(true, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = false;
-
             //act
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
@@ -75,9 +74,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual, "Ввод коректных данных, при условии, что они не дублируют данные других экземпляров не произошел");
-
-            //cleare data
-           
+            //clear data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя"+ tcher.FirstName);
             Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
         }
@@ -108,7 +105,6 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
-
             //cleare data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя" + tcher.FirstName);
             Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
