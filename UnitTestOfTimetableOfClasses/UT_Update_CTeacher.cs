@@ -15,10 +15,10 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_247_1()
         {
             //arrange    
-            refData.CInstitute.Clear();
+           /* refData.CInstitute.Clear();
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             refData.CTeacher.Clear();
-              Assert.IsTrue(refData.CTeacher.Rows.Count == 0, "Не удалось Очистить таблицу Преподаватель");
+              Assert.IsTrue(refData.CTeacher.Rows.Count == 0, "Не удалось Очистить таблицу Преподаватель");*/
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = false;
             //act
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
         [TestMethod]
-        public void Task_247_3()//изменение когда атрибуты не повторяются (ФИО изменить не возможно)
+        public void Task_247_3()
         {
             Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange            
@@ -87,7 +87,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись
         /// </summary>
         [TestMethod]
-        public void Task_247_4()//дублируется всё кроме ФИО
+        public void Task_247_4()
         {
             Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange            
