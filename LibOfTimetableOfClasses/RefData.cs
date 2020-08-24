@@ -53,7 +53,7 @@ namespace LibOfTimetableOfClasses
            // InitData();
         }
     
-        private void InitData() {
+        public void InitData() {
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
