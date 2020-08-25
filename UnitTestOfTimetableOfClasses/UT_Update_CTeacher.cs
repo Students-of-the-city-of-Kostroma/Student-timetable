@@ -57,6 +57,8 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_247_3()
         {
             Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
+            refData.CInstitute.Clear();
+            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
