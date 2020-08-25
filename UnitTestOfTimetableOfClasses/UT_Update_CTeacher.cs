@@ -107,7 +107,7 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.AreEqual(expected, actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
-            //cleare data
+            //clear data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя" + tcher.FirstName);
             Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
         }
