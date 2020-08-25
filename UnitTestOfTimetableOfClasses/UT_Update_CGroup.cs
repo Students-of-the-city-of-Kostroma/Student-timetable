@@ -24,11 +24,10 @@ namespace UnitTestOfTimetableOfClasses
             expected = false;
 
             //act
-        
             bool actual = refData.CGroup.Update(gr);
 
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Произошли изменения сведений в пустой таблице");
         }
 
         /// <summary>
@@ -64,7 +63,7 @@ namespace UnitTestOfTimetableOfClasses
 
             bool actual = refData.CGroup.Update(gr2);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Удалось изменить несуществующую группу в заполненной таблице");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
 
@@ -103,7 +102,7 @@ namespace UnitTestOfTimetableOfClasses
             gr1.Semester = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующим семестром не произошел");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
@@ -141,7 +140,7 @@ namespace UnitTestOfTimetableOfClasses
             gr1.Shift = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующей сменой не произошел");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
@@ -178,7 +177,7 @@ namespace UnitTestOfTimetableOfClasses
             gr1.Students = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующимися студентами не произошел");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
@@ -219,7 +218,7 @@ namespace UnitTestOfTimetableOfClasses
             gr1.Weekends = "Воскресенье";
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующим графиком не произошел");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
@@ -265,7 +264,7 @@ namespace UnitTestOfTimetableOfClasses
             gr1.Weekends = "Воскресенье";
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual, "Произошло полное дублирование записи");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
