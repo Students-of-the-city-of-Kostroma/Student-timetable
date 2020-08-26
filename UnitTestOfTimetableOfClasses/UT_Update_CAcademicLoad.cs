@@ -33,7 +33,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual, "Удалось изменить сведения в пустой таблице");
         }
         /// <summary>
-        /// Изменить несуществующую группу в заполненной таблице
+        /// Изменить несуществующую нагрузку в заполненной таблице
         /// </summary>
         [TestMethod]
         public void Task_1245_2()
