@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
          
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, " Удалось Изменить сведения в пустой таблице");
+            Assert.IsFalse( actual, " Удалось Изменить сведения в пустой таблице");
 
       
             
@@ -46,7 +46,7 @@ namespace UnitTestOfTimetableOfClasses
             //act
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Удалось Изменить несуществующего преподавателя");
+            Assert.IsFalse(actual, "Удалось Изменить несуществующего преподавателя");
 
            
         }
@@ -61,54 +61,60 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
-            MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
+           
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
-            bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2, "Не удалось вставить преподавателя" + tcher1.FirstName);
+           
             //act
-            tcher1.AcademicDegree = "ДН";
-            tcher1.AcademicTitle = "Проф";
-            tcher1.MetodicalDays = "Чт, Сб";
-            tcher1.Windows = "Сб, Пн";
-            tcher1.Weekends = "Пт";
-            bool actual = refData.CTeacher.Update(tcher1);
+            bool actual = refData.CTeacher.Update(tcher);
             //assert
             Assert.AreEqual(expected, actual, "Ввод коректных данных, при условии, что они не дублируют данные других экземпляров не произошел");
             //clear data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя"+ tcher.FirstName);
-            Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
+    
         }
-       
-       
+
+
         /// <summary>
-        /// Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись
+        /// Ввод корректных данных, при условии, что вводимая ученая степень преподавателя не существует
         /// </summary>
         [TestMethod]
         public void Task_247_4()
         {
             Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             //arrange            
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
-            bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             bool actual2 = refData.CTeacher.Insert(tcher1);
             Assert.AreEqual(expected, actual2, "Не удалось вставить преподавателя" + tcher1.FirstName);
             //act
-            tcher1.AcademicDegree = "КН";
-            tcher1.AcademicTitle = "Доц";
-            tcher1.Departament = "ИАСТ";
-            tcher1.MetodicalDays = "Пн, Вт";
-            tcher1.Windows = "Ср, Чт, Пт";
-            tcher1.Weekends = "Вс";
+            tcher1.AcademicDegree = "П";
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
-            Assert.AreEqual(expected, actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
+            Assert.IsFalse(actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
             //clear data
-            Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя" + tcher.FirstName);
+            Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
+        }
+
+        /// <summary>
+        /// Ввод корректных данных, при условии, что вводимое ученое звание преподавателя не существует
+        /// </summary>
+        [TestMethod]
+        public void Task_247_5()
+        {
+            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
+            //arrange            
+            MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
+            bool expected = true;
+            bool actual2 = refData.CTeacher.Insert(tcher1);
+            Assert.AreEqual(expected, actual2, "Не удалось вставить преподавателя" + tcher1.FirstName);
+            //act
+            tcher1.AcademicTitle = "П";
+            bool actual = refData.CTeacher.Update(tcher1);
+            //assert
+            Assert.IsFalse(actual, "Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись не произошел");
+            //clear data
             Assert.IsTrue(refData.CTeacher.Delete(tcher1), "Не удалось удалить преподавателя" + tcher1.FirstName);
         }
     }
