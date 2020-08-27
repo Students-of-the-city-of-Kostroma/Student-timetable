@@ -52,7 +52,6 @@ namespace UnitTestOfTimetableOfClasses
 
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу " +gr.Group );
-            bool expected = false;
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Понедельник");
             Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу " + gr1.Group);
@@ -63,7 +62,7 @@ namespace UnitTestOfTimetableOfClasses
 
             bool actual = refData.CGroup.Update(gr2);
             //assert
-            Assert.AreEqual(expected, actual, "Удалось изменить несуществующую группу в заполненной таблице");
+            Assert.IsFalse(actual, "Удалось изменить несуществующую группу в заполненной таблице");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
 
