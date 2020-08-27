@@ -18,5 +18,5 @@ R4 = 1 - 2 - 3 - 4 - 5 - 6 - 8
 | --- | --- | --- | --- | --- | --- |
 | R1 | task-1281-1 | Удаление сведений в пустой таблице | Таблица преподавателей пуста | FirstName - Валидные данные, SecondName - Валидные данные, FullName - Валидные данные, Departament - Валидные данные | false |
 | R2 | task-1281-2 | Удаление несуществующего преподавателя | FirstName = "Чередникова", SecondName = "Алла",  Patronymic = "Викторовна" |  | false |
-| R3 | task-1281-3 | Корректное удаление преподавателя |  FirstName = "Прядкина", SecondName = "Нина",  Patronymic = "Олеговна" | FirstName, SecondName, FullName | true |
+| R3 | task-1281-3 | Корректное удаление преподавателя |  FirstName = "Прядкина", SecondName = "Нина",  Patronymic = "Олеговна" | FirstName, SecondName, FullName, Departament | true |
 | R4 | task-1281-4 | Некорректное удаление преподавателя |  FirstName = "Прядкина", SecondName = "Нина",  Patronymic = "Олеговна" |  |  |                     
