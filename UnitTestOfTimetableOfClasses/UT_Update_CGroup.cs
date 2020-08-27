@@ -35,8 +35,7 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]
         public void Task_250_2()
-        {
-            
+        { 
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
