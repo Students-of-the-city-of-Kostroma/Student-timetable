@@ -38,6 +38,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_1245_2()
         {
+            Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
