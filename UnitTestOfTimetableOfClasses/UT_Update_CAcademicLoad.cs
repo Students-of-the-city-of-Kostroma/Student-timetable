@@ -11,8 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Ввод коректных данных
         /// </summary>
-        [TestMethod]
-        public void Task_1245_1()
+        [TestMethod]public void Task_1245_1()
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
@@ -33,7 +32,6 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут Дисциплина
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
         public void Task_1245_2()
         {
             //arrange
@@ -48,7 +46,6 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут Распределено
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
         public void Task_1245_3()
         {
             //arrange
@@ -62,9 +59,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Ввод не коректных данных в атрибут Вид занятия
         /// </summary>
-        [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
-        public void Task_1245_4()
+        [TestMethod]public void Task_1245_4()
         {
             //arrange
             MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "110", "Управление данными", "Прядкина Нина Олеговна", "Контрольная работа", "20");
@@ -78,7 +73,6 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут Учитель
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
         public void Task_1245_5()
         {
             //arrange
@@ -93,7 +87,6 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут Всего часов
         /// </summary>
         [TestMethod]
-        [ExpectedException(typeof(System.Exception))]
         public void Task_1245_6()
         {
             //arrange
