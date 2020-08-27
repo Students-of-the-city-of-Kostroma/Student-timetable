@@ -46,9 +46,9 @@ namespace UnitTestOfTimetableOfClasses
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
 
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
-
             //arrange
+            refData.CGroup.Clear();
+            Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
 
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу " +gr.Group );
@@ -231,7 +231,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         /// <summary>
-        /// Ввод корректных данных при условии что она будет дублировать другую записть(невозможно изменение)
+        /// Ввод  данных при условии что указанная специальность не существует
         /// </summary>
         [TestMethod]
         public void Task_250_7() 
@@ -249,25 +249,13 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
-
-            bool expected = true;
             //act
-            MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
-
-            gr1.Semester = 1;
-            gr1.Specialty = "ММЭТ";
-            gr1.Shift = 1;
-            gr1.Students = 1;
-            gr1.MaxNumberOfClass = 0;
-            gr1.MinNumberOfClass = 0;
-            gr1.Weekends = "Воскресенье";
-            bool actual = refData.CGroup.Update(gr1);
+            gr.Specialty = "Т";
+            bool actual = refData.CGroup.Update(gr);
             //assert
-            Assert.AreEqual(expected, actual, "Произошло полное дублирование записи");
+            Assert.IsFalse(actual, "Произошло полное дублирование записи");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
-            Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
 
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
