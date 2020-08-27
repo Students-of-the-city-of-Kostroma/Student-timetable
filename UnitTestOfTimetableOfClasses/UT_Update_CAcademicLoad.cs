@@ -19,8 +19,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
-        [TestMethod]
-        public void Task_1245_1()
+        [TestMethod]public void Task_1245_1()
         {
             //arrange
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
@@ -72,6 +71,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Атрибут "Группа" дублирует уже существующий атрибут "Группа" 
         /// </summary>
+
         [TestMethod]
         public void Task_1245_4()
         {
