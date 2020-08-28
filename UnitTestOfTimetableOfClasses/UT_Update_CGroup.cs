@@ -251,9 +251,39 @@ namespace UnitTestOfTimetableOfClasses
             gr.Specialty = "Т";
             bool actual = refData.CGroup.Update(gr);
             //assert
-            Assert.IsFalse(actual, "Произошло полное дублирование записи");
+            Assert.IsFalse(actual, "Произошло обновление некорректной специальности");
 
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
+
+            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
+            Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
+
+
+        }
+
+        /// <summary>
+        /// Ввод  данных при условии что указанная Группа не существует
+        /// </summary>
+        [TestMethod]
+        public void Task_250_8()
+        {
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
+            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
+
+            MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
+
+            mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
+
+            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
+            //arrange
+            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
+            //act
+            gr.Group = "17-ХХбо-2а";
+            bool actual = refData.CGroup.Update(gr);
+            //assert
+            Assert.IsFalse(actual, "Произошло обновление некорректной группы");
 
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
