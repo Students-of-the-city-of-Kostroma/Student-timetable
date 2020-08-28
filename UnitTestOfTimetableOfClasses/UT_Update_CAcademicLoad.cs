@@ -9,6 +9,28 @@ namespace UnitTestOfTimetableOfClasses
     {
         public void setupData()
         {
+            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
+            bool actualmDirectionOfPreparation = refData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
+            MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
+            bool actualmTrainingProfile = refData.CTrainingProfile.Insert(mTrainingProfile);
+            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
+            bool actualmGroup = refData.CGroup.Insert(mGroup);
+            MGroup mGroup2 = new MGroup("17-ИСбо-2б", 3, "ИС", 1, 10, 1, 6, "Суббота");
+            bool actualmGroup2 = refData.CGroup.Insert(mGroup2);
+
+            MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
+            bool actuamDiscipline1 = refData.CDiscipline.Insert(mDiscipline1);
+
+            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
+            bool actuamAcademicDegree = refData.CAcademicDegree.Insert(mAcademicDegree);
+            MTitle mTitle = new MTitle("Доцент", "Доц");
+            bool actualmTitle = refData.CTitle.Insert(mTitle);
+            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            bool actualamTeacher = refData.CTeacher.Insert(mTeacher);
+
+            MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
+            bool actualmTypesOfOccupations = refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
+
             MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
@@ -37,7 +59,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_1245_2()
         {
-            Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
@@ -58,7 +79,7 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2б", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
             bool expected = true;
