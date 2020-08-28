@@ -45,13 +45,11 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
             DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
             DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
-            DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
-            
+            DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);            
             DataSet.Relations.Add("Group-AcademicLoad", CGroup.Columns["Group"],  CAcademicLoad.Columns["Group"]);
             DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
             DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
-            DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
-            ec99c5b9657d2f21f4c5e0e4f297bac66598dd51
+            DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);            
         }
 
         public void InitData()
@@ -124,9 +122,7 @@ namespace LibOfTimetableOfClasses
             MTitle mTitle2 = new MTitle("Профессор", "Проф");
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-            CTeacher.Insert(mTeacher2);
-            
-            ec99c5b9657d2f21f4c5e0e4f297bac66598dd51
+            CTeacher.Insert(mTeacher2);          
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
