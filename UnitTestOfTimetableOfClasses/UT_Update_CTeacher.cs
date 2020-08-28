@@ -58,17 +58,22 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_3()
         {
-            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
             refData.CInstitute.Clear();
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
-           
+      
             bool expected = true;
             bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(expected, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
-           
+
             //act
+            tcher.AcademicDegree = "ДН";
+            tcher.AcademicTitle = "Проф";
+            tcher.Departament = "ИФМЕН";
+            tcher.MetodicalDays = "Вс";
+            tcher.Windows = "Ср, Чт";
+            tcher.Weekends = "Пт";
             bool actual = refData.CTeacher.Update(tcher);
             //assert
             Assert.AreEqual(expected, actual, "Ввод коректных данных, при условии, что они не дублируют данные других экземпляров не произошел");
