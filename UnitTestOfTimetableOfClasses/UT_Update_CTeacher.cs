@@ -8,6 +8,17 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Update_CTeacher
     {
         RefData refData = new RefData();
+        public void setupData()
+        {
+            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
+            bool actual1 = refData.CAcademicDegree.Insert(mAcademicDegree);
+            MAcademicDegree mAcademicDegree2 = new MAcademicDegree("Доктор наук", "ДН");
+            bool actual2 = refData.CAcademicDegree.Insert(mAcademicDegree2);
+            MTitle mTitle = new MTitle("Доцент", "Доц");
+            bool actual3 = refData.CTitle.Insert(mTitle);
+            MTitle mTitle2 = new MTitle("Профессор", "Проф");
+            bool actual4 = refData.CTitle.Insert(mTitle2);
+        }
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
@@ -36,7 +47,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_2()
         {
-            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
+            setupData();
             refData.CInstitute.Clear();
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             //arrange    
@@ -44,7 +55,6 @@ namespace UnitTestOfTimetableOfClasses
             bool actual1 = refData.CTeacher.Insert(tcher);
             Assert.AreEqual(true, actual1, "Не удалось вставить преподавателя" + tcher.FirstName);
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-            bool expected = false;
             //act
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
@@ -58,6 +68,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_3()
         {
+            setupData();
             refData.CInstitute.Clear();
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
             //arrange            
@@ -89,7 +100,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_4()
         {
-            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
+            setupData();
             //arrange            
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
@@ -110,7 +121,7 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_247_5()
         {
-            Assert.IsTrue(refData.CInstitute.Rows.Count != 0, "Таблица институт пуста");
+            setupData();
             //arrange            
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
             bool expected = true;
