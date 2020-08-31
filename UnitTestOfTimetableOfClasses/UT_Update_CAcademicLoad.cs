@@ -102,7 +102,7 @@ namespace UnitTestOfTimetableOfClasses
             MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
             bool expected = false;
             //act
-            PreMa.Group = "17-Ебо-4а";
+            PreMa.Group = "17-ИСбо-2а";
             bool actual = refData.CAcademicLoad.Update(PreMa);
             Assert.AreEqual(expected, actual, "Произошел ввод группы, дублирующей другую группу");
         }
