@@ -86,7 +86,6 @@ namespace UnitTestOfTimetableOfClasses
 
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
 
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
@@ -125,7 +124,6 @@ namespace UnitTestOfTimetableOfClasses
 
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
@@ -162,7 +160,6 @@ namespace UnitTestOfTimetableOfClasses
 
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
@@ -201,7 +198,6 @@ namespace UnitTestOfTimetableOfClasses
 
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
@@ -242,8 +238,6 @@ namespace UnitTestOfTimetableOfClasses
 
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-
-            Assert.IsTrue(refData.CGroup.Rows.Count != 0, "Таблица групп пуста");
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
