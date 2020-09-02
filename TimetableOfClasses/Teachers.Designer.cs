@@ -35,6 +35,7 @@
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Post = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departament = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MetodicalDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Windows = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,7 @@
             this.FullName,
             this.AcademicDegree,
             this.aTitle,
+            this.Post,
             this.Departament,
             this.MetodicalDays,
             this.Windows,
@@ -67,6 +69,7 @@
             this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG.Size = new System.Drawing.Size(807, 344);
             this.DG.TabIndex = 0;
+            this.DG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_CellContentClick);
             this.DG.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DG_ColumnHeaderMouseClick);
             this.DG.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_DataBindingComplete);
             this.DG.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
@@ -128,6 +131,12 @@
             this.aTitle.Name = "aTitle";
             this.aTitle.ReadOnly = true;
             // 
+            // Post
+            // 
+            this.Post.HeaderText = "Должность";
+            this.Post.Name = "Post";
+            this.Post.ReadOnly = true;
+            // 
             // Departament
             // 
             this.Departament.DataPropertyName = "Departament";
@@ -171,7 +180,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DG);
             this.Name = "Teachers";
-            this.Text = "Преподаватели";
+            this.Text = "Сотрудники";
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.ResumeLayout(false);
 
@@ -185,6 +194,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn aTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Post;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departament;
         private System.Windows.Forms.DataGridViewTextBoxColumn MetodicalDays;
         private System.Windows.Forms.DataGridViewTextBoxColumn Windows;

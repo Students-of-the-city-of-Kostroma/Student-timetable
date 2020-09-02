@@ -360,7 +360,7 @@
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(249, 427);
             this.Name = "AddTeacher";
-            this.Text = "Добавить преподавателя";
+            this.Text = "Добавить сотрудника";
             this.Load += new System.EventHandler(this.AddTeacher_Load);
             this.Shown += new System.EventHandler(this.AddTeacher_Shown);
             this.ResumeLayout(false);

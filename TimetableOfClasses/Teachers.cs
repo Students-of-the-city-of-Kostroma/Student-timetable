@@ -160,5 +160,10 @@ namespace TimetableOfClasses
             if (header == null || !header.Equals(indexStr))
                 this.DG.Rows[index].HeaderCell.Value = indexStr;
         }
+
+        private void DG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
