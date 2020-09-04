@@ -272,9 +272,10 @@ namespace UnitTestOfTimetableOfClasses
 
             //arrange
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            //act
-            gr.Group = "17-ХХбо-2а";
-            bool actual = refData.CGroup.Update(gr);
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+            MGroup gr1 = new MGroup("17-ММбо-2б", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
+
+            bool actual = refData.CGroup.Update(gr1);
             //assert
             Assert.IsFalse(actual, "Произошло обновление некорректной группы");
 
