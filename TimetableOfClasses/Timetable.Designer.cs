@@ -138,7 +138,8 @@
             "ИПП",
             "ИФМЕН",
             "ИДПО",
-            "ИПР"});
+            "ИПР",
+            "ИДТ"});
             this.comboBox4.Location = new System.Drawing.Point(7, 7);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(680, 21);
