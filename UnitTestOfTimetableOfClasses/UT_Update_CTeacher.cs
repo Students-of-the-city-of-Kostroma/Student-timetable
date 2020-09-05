@@ -123,37 +123,7 @@ namespace UnitTestOfTimetableOfClasses
             result = refData.CTeacher.Delete(tcher1);
             Assert.IsTrue(result);
         }
-        /// <summary>
-        /// Ввод корректных данных, при условии, что данная запись полность. дублирует другую запись
-        /// </summary>
-        [TestMethod]
-        public void Task_247_8()//дублируется всё кроме ФИО
-        {
-            //arrange            
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
-            MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "КН", "Доц", "ИАСТ", "Пт, Ср", "Пн, Вт", "Сб");
-            bool expected = true;
-            bool actual1 = refData.CTeacher.Insert(tcher);
-            Assert.AreEqual(expected, actual1);
-            bool actual2 = refData.CTeacher.Insert(tcher1);
-            Assert.AreEqual(expected, actual2);
-            //act
-            tcher1.AcademicDegree = "КН";
-            tcher1.AcademicTitle = "Доц";
-            tcher1.Departament = "ИАСТ";
-            tcher1.MetodicalDays = "Пн, Вт";
-            tcher1.Windows = "Ср, Чт, Пт";
-            tcher1.Weekends = "Вс";
-            bool actual = refData.CTeacher.Update(tcher1);
-            //assert
-            Assert.AreEqual(expected, actual);
+        
 
-            //cleare data
-            bool result = refData.CTeacher.Delete(tcher);
-            Assert.IsTrue(result);
-
-            result = refData.CTeacher.Delete(tcher1);
-            Assert.IsTrue(result);
-        }
     }
 }
