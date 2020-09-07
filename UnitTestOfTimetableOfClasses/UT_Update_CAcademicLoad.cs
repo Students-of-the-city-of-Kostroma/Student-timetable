@@ -99,7 +99,7 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Group = "17-ИСбо-2а";
@@ -116,12 +116,12 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Discipline = "Цукенгшщзх";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Произошел ввод не коректных данных в атрибут Дисциплина");
+            Assert.AreEqual(expected, actual, "Произошел ввод некорректных данных в атрибут Дисциплина");
         }
 
         /// <summary>
@@ -133,12 +133,12 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Произошел ввод не коректных данных в атрибут преподаватель");
+            Assert.AreEqual(expected, actual, "Произошел ввод некорректных данных в атрибут преподаватель");
         }
 
         /// <summary>
@@ -150,12 +150,12 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекцияа", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Occupation = "Фуаываываыв";
             bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, " Произошел ввод не коректных данных в атрибут тип занятия ");
+            Assert.AreEqual(expected, actual, " Произошел ввод некорректных данных в атрибут тип занятия ");
         }
 
     }
