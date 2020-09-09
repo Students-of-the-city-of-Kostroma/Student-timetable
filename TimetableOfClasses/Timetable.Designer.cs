@@ -110,7 +110,8 @@
             this.comboBox6.Items.AddRange(new object[] {
             "17-ИСбо-2",
             "17-ИДбо-3",
-            "17-ВТбо-1"});
+            "17-ВТбо-1",
+            "17-ПСбо-2"});
             this.comboBox6.Location = new System.Drawing.Point(7, 63);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(680, 21);
