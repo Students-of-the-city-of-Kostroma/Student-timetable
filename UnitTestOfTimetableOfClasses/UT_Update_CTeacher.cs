@@ -156,4 +156,4 @@ namespace UnitTestOfTimetableOfClasses
             Assert.IsTrue(result);
         }
     }
-}
+} 
