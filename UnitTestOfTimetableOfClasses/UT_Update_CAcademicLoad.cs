@@ -77,7 +77,7 @@ namespace UnitTestOfTimetableOfClasses
             
             bool actual = refData.CAcademicLoad.Update(PreMa1);
             //assert
-            Assert.AreEqual(expected, actual, " Удалось изменить несуществующую группу в заполненной таблице");
+            Assert.AreEqual(expected, actual, " Удалось изменить несуществующую нагрузку в заполненной таблице");
         }
         /// <summary>
         /// Ввод коректных данных
