@@ -12,12 +12,16 @@ namespace UnitTestOfTimetableOfClasses
         {
             MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
             bool actual1 = refData.CAcademicDegree.Insert(mAcademicDegree);
+            Assert.IsTrue(actual1, " Не удалось вставить ученую степень");
             MAcademicDegree mAcademicDegree2 = new MAcademicDegree("Доктор наук", "ДН");
             bool actual2 = refData.CAcademicDegree.Insert(mAcademicDegree2);
+            Assert.IsTrue(actual2, " Не удалось вставить ученую степень");
             MTitle mTitle = new MTitle("Доцент", "Доц");
             bool actual3 = refData.CTitle.Insert(mTitle);
+            Assert.IsTrue(actual3, " Не удалось вставить ученую звание");
             MTitle mTitle2 = new MTitle("Профессор", "Проф");
             bool actual4 = refData.CTitle.Insert(mTitle2);
+            Assert.IsTrue(actual4, " Не удалось вставить ученую звание");
         }
         /// <summary>
         /// Изменить сведения в пустой таблице
@@ -69,8 +73,7 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_247_3()
         {
             setupData();
-           // refData.CInstitute.Clear();
-            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Не удалось Очистить таблицу Институт");
+            Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Таблица институтов не пуста");
             //arrange            
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "КН", "Доц", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Вс");
       
