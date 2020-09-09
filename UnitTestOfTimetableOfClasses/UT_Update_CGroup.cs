@@ -254,35 +254,5 @@ namespace UnitTestOfTimetableOfClasses
 
 
         }
-
-        /// <summary>
-        /// Ввод  данных при условии что указанная Группа не существует
-        /// </summary>
-        [TestMethod]
-        public void Task_250_8()
-        {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4);
-            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
-
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
-
-            mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-
-            //arrange
-            MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
-            MGroup gr1 = new MGroup("17-ММбо-2б", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-
-            bool actual = refData.CGroup.Update(gr1);
-            //assert
-            Assert.IsFalse(actual, "Произошло обновление некорректной группы");
-
-            Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
-            Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
-
-
-        }
     }
 }
