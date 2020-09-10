@@ -122,8 +122,7 @@ namespace LibOfTimetableOfClasses
             MTitle mTitle2 = new MTitle("Профессор", "Проф");
             CTitle.Insert(mTitle2);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-            CTeacher.Insert(mTeacher2);
-
+            CTeacher.Insert(mTeacher2);          
             #endregion
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
