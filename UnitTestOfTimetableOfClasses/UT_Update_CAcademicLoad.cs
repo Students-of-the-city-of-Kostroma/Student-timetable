@@ -140,7 +140,7 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Occupation = "Фуаываываыв";
