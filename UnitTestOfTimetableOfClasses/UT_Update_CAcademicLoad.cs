@@ -97,30 +97,11 @@ namespace UnitTestOfTimetableOfClasses
             //assert
             Assert.AreEqual(expected, actual, " Ввод коректных данных не произошел");
         }
-
-        /// <summary>
-        /// Атрибут "Группа" дублирует уже существующий атрибут "Группа" 
-        /// </summary>
-
-        [TestMethod]
-        public void Task_1245_4()
-        {
-            setupData();
-            Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
-            //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ПИбо-4а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
-            bool expected = false;
-            //act
-            PreMa.Group = "17-ИСбо-2а";
-            bool actual = refData.CAcademicLoad.Update(PreMa);
-            Assert.AreEqual(expected, actual, "Произошел ввод группы, дублирующей другую группу");
-        }
-
         /// <summary>
         /// Ввод не коректных данных в атрибут Дисциплина
         /// </summary>
         [TestMethod]
-        public void Task_1245_5()
+        public void Task_1245_4()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
@@ -137,12 +118,12 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут преподаватель
         /// </summary>
         [TestMethod]
-        public void Task_1245_6()
+        public void Task_1245_5()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
+            MAcademicLoad PreMa = new MAcademicLoad("17-ИСбо-2а", "100", "Правоведение", "Иванова Ивана Ивановича", "Лекция", "20");
             bool expected = false;
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
@@ -154,7 +135,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут тип занятия
         /// </summary>
         [TestMethod]
-        public void Task_1245_7()
+        public void Task_1245_6()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
