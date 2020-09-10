@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Deleted_CTeacher
+    public class UT_Delete_CTeacher
     {
         readonly RefData refData = new RefData();
         [TestMethod]
