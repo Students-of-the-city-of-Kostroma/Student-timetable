@@ -124,7 +124,8 @@
             this.comboBox5.Items.AddRange(new object[] {
             "Информационные системы и техноогии",
             "Прикладная информатика",
-            "Информатика и вычеслительная техника"});
+            "Информатика и вычеслительная техника",
+            "Управление качеством"});
             this.comboBox5.Location = new System.Drawing.Point(7, 35);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(680, 21);
