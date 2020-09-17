@@ -139,19 +139,19 @@ namespace LibOfTimetableOfClasses
         /// <param name="model">Модель, выбранной строки в таблице</param>
         /// <returns>Результат удаления переданной строки из CTeacher</returns>
         public bool Delete(Model model)
-        {//0
-            MTeacher mTeacher = (MTeacher)model;//1
-            string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;//2
-            for (int i = 0; i < this.Rows.Count; i++)//3
-            {//4
-                if ((string)this.Rows[i]["FullName"] == fullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)//5
-                {//6
-                    this.Rows[i].Delete();//7
+        {
+            MTeacher mTeacher = (MTeacher)model;
+            string fullName = mTeacher.SecondName + " " + mTeacher.FirstName + " " + mTeacher.Patronymic;
+            for (int i = 0; i < this.Rows.Count; i++)
+            {
+                if ((string)this.Rows[i]["FullName"] == fullName && (string)this.Rows[i]["Departament"] == mTeacher.Departament)
+                {
+                    this.Rows[i].Delete();
                     //Recount(i);
-                    return true;//8
-                }//9
-            }//10
-            return false;//11
-        }//12
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
