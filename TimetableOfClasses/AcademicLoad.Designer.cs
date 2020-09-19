@@ -31,14 +31,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.delete = new System.Windows.Forms.Button();
-            this.change = new System.Windows.Forms.Button();
-            this.add = new System.Windows.Forms.Button();
             this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discipline = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.occupation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.Button();
+            this.change = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +72,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(775, 277);
             this.dataGridView1.TabIndex = 2;
             // 
+            // Group
+            // 
+            this.Group.HeaderText = "Группа (поток)";
+            this.Group.Name = "Group";
+            this.Group.Width = 150;
+            // 
+            // TotalHours
+            // 
+            this.TotalHours.HeaderText = "Часов всего";
+            this.TotalHours.Name = "TotalHours";
+            // 
+            // Discipline
+            // 
+            this.Discipline.HeaderText = "Дисциплина";
+            this.Discipline.Name = "Discipline";
+            this.Discipline.Width = 150;
+            // 
+            // Teacher
+            // 
+            this.Teacher.HeaderText = "Преподаватель";
+            this.Teacher.Name = "Teacher";
+            this.Teacher.Width = 170;
+            // 
+            // occupation
+            // 
+            this.occupation.HeaderText = "Вид занятия";
+            this.occupation.Name = "occupation";
+            this.occupation.Width = 160;
+            // 
             // delete
             // 
             this.delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -101,35 +130,7 @@
             this.add.TabIndex = 5;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
-            // 
-            // Group
-            // 
-            this.Group.HeaderText = "Группа (поток)";
-            this.Group.Name = "Group";
-            this.Group.Width = 150;
-            // 
-            // TotalHours
-            // 
-            this.TotalHours.HeaderText = "Часов всего";
-            this.TotalHours.Name = "TotalHours";
-            // 
-            // Discipline
-            // 
-            this.Discipline.HeaderText = "Дисциплина";
-            this.Discipline.Name = "Discipline";
-            this.Discipline.Width = 150;
-            // 
-            // Teacher
-            // 
-            this.Teacher.HeaderText = "Преподаватель";
-            this.Teacher.Name = "Teacher";
-            this.Teacher.Width = 170;
-            // 
-            // occupation
-            // 
-            this.occupation.HeaderText = "Вид занятия";
-            this.occupation.Name = "occupation";
-            this.occupation.Width = 160;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // AcademicLoad
             // 

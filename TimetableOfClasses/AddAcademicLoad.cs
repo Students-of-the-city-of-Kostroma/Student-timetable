@@ -76,7 +76,7 @@ namespace TimetableOfClasses
                     {
                         Close();
                     }
-                    else MessageBox.Show("Новозможно добавить эту нагрузку", "Попробуйте снова");
+                    else MessageBox.Show("Невозможно добавить эту нагрузку", "Попробуйте снова");
                 }
                 else message();
             }
@@ -108,7 +108,7 @@ namespace TimetableOfClasses
             }
             catch (Exception)
             {
-                MessageBox.Show("Заполенены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
+                MessageBox.Show("Заполнены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
                 return false;
             }
         }

@@ -16,5 +16,11 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            AddAcademicLoad addAcademicLoad = new AddAcademicLoad();
+            addAcademicLoad.Show();
+        }
     }
 }
