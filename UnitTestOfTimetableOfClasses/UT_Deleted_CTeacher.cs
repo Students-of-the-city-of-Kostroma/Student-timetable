@@ -25,8 +25,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrage
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "К. псих. н.", "Доцент", "РАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "К. технич. н.", "Нет", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = false;
             //act
             refData.CTeacher.Insert(tcher1);
@@ -41,8 +41,8 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrage
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "К. псих. н.", "Доцент", "РАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "К. технич. н.", "Нет", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = false;
             //act
             refData.CTeacher.Insert(tcher1);
@@ -54,11 +54,12 @@ namespace UnitTestOfTimetableOfClasses
 
         [TestMethod]
         public void Task_1187_4()//Удаление существующей строки из таблицы
-        {
+        { // Тест прошёл не так, как планировалось, после анализа кода появилось предположение, что ошибка в вводе данных, 
+            // предположительные методы и конструкторы для ввода данных помечены комментариями
             //arrage
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher1 = new MTeacher("Садовская", "Елена", "Григорьевна", "К. псих. н.", "Доцент", "РАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher2 = new MTeacher("Садовская", "Ирина", "Борисовна", "К. технич. н.", "Нет", "ИАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act
             refData.CTeacher.Insert(tcher);
@@ -68,32 +69,5 @@ namespace UnitTestOfTimetableOfClasses
             //assert
             Assert.AreEqual(expected, actual);
         }
-
-        /*
-        [TestMethod]
-        public void Task_248_1() //Удаление существующей строки 
-        {
-            //arrange 
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            bool expected = true;
-            //act 
-            refData.CTeacher.Insert(tcher);
-            bool actual = refData.CTeacher.Delete(tcher);
-            //assert 
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Task_248_2() //Удаление не существующей строки 
-        {
-            //arrange 
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            bool expected = false;
-            //act 
-            bool actual = refData.CTeacher.Delete(tcher);
-            //assert 
-            Assert.AreEqual(expected, actual);
-        }
-        */
     }
 }
