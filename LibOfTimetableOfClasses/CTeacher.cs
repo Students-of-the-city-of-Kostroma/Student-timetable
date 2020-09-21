@@ -14,7 +14,7 @@ namespace LibOfTimetableOfClasses
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальность строки в таблице определяется уникальностью поля FullName.
         /// </summary>
-        public CTeacher() : base("Учитель")
+        public CTeacher() : base("Учитель") // Есть подозрения, что ошибка теста белого ящика кроется здесь
         {
             DataColumn column = new DataColumn
             {
@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         /// <param name="model">Вставляемая в CTeacher модель</param>
         /// <returns>Результат вставки</returns>
-        public bool Insert(Model model)
+        public bool Insert(Model model) // Есть подозрения, что кроется здесь ошибка
         {
             MTeacher mTeacher = (MTeacher)model;
             try
