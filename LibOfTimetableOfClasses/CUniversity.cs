@@ -15,8 +15,7 @@ namespace LibOfTimetableOfClasses
             DataColumn column = new DataColumn
             {
                 DataType = typeof(string),
-                ColumnName = "INN",
-                Unique = true
+                ColumnName = "INN"
             };
             this.Columns.Add(column);
             keys[0] = column;
