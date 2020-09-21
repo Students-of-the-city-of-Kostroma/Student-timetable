@@ -39,37 +39,97 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(CAcademicLoad);
 
             DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
+            DataSet.Relations.Add("Institute-DirectionOfPreparation", CInstitute.Columns["ShortName"], CDirectionOfPreparation.Columns["InstituteShortName"]);
+
             DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
-            DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["AcademicDegree"]);
-            DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["AcademicTitle"]);
-            DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
+
+            //DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["AcademicDegree"]);
+            //DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["AcademicTitle"]);
+            //DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
+            //DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
+
             DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
-            DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
             DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
+
+            DataSet.Relations.Add("Group-Training profile", CTrainingProfile.Columns["Shortname"], CGroup.Columns["Specialty"]);
             DataSet.Relations.Add("Group-AcademicLoad", CGroup.Columns["Group"],  CAcademicLoad.Columns["Group"]);
+
             DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
-            DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
             DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
+            
         }
 
         public void InitData()
         {
+            #region university
+            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
+            CUniversity.Insert(mUniversity);
+
+            MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
+            CUniversity.Insert(mUniversity1);
+
+            MUniversity mUniversity2 = new MUniversity("7605009467", "ЯГТУ", "Ярославский Государственный Технический Университет", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "Елена", "Олеговна", "Степанова", "rector@ystu.ru", "84852305661");
+            CUniversity.Insert(mUniversity2);
+            #endregion
+            #region enclosures
+            MEnclosures mEnclosures = new MEnclosures("Е", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 4", "84942536522", "Примечание");
+            CEnclosures.Insert(mEnclosures);
+
+            MEnclosures mEnclosures1 = new MEnclosures("А", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 6", "88005534535", "Примечание");
+            CEnclosures.Insert(mEnclosures1);
+
+            MEnclosures mEnclosures2 = new MEnclosures("Б", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 8", "84947004444", "Примечание");
+            CEnclosures.Insert(mEnclosures2);
+            #endregion
+            #region institute
+            MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute);
+
+            MInstitute mInstitute1 = new MInstitute("Институт педагогики и психологии", "ИПП", "Аристархов Валерий Аристархович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute1);
+
+            MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute2);
+
+            MInstitute mInstitute3 = new MInstitute("Институт дополнительного профессионального образования", "ИДПО", "Бекенева Любовь Александровна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute3);
+
+            MInstitute mInstitute4 = new MInstitute("Институт профессионального развития", "ИПР", "Селиванова Лариса Ивановна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute4);
+
+            MInstitute mInstitute5 = new MInstitute("Институт управления экономики и финансов", "ИУЭФ", "Беркович Маргарита Израйлевна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute5);
+
+            MInstitute mInstitute6 = new MInstitute("Институт гуманитарных наук и социальных технолоний", "ИГНиСТ", "Панкратова Ольга Борисовна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute6);
+
+            MInstitute mInstitute7 = new MInstitute("Институт дизайна и технологий", "ИДТ", "Шорохов Сергей Александрович", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute7);
+
+            MInstitute mInstitute8 = new MInstitute("Юридический институт им. Ю. П. Новицкого", "ЮИН", "Бриль Геннадий Геннадьевич", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute8);
+
+            MInstitute mInstitute9 = new MInstitute("Институт культуры и искуств", "ИКИ", "Домахина Надежда Михайловна", "Костромской Государственный Университет");
+            CInstitute.Insert(mInstitute9);
+
+            #endregion
+            
             #region direction
-            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4);
+            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
             CTrainingProfile.Insert(mTrainingProfile);
             MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
             CGroup.Insert(mGroup);
 
-            MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4);
+            MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation1);
             MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Прикладная информатика", "ПИ", "09.03.03");
             CTrainingProfile.Insert(mTrainingProfile1);
             MGroup mGroup1 = new MGroup("17-ПИбо-4а", 5, "ПИ", 2, 19, 2, 5, "Воскресенье");
             CGroup.Insert(mGroup1);
 
-            MDirectionOfPreparation mDirectionOfPreparation2 = new MDirectionOfPreparation("09.03.01", "Информатика и вычислительная техника", 4);
+            MDirectionOfPreparation mDirectionOfPreparation2 = new MDirectionOfPreparation("09.03.01", "Информатика и вычислительная техника", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation2);
             MTrainingProfile mTrainingProfile2 = new MTrainingProfile("Информатика и вычислительная техника", "ИВТ", "09.03.01");
             CTrainingProfile.Insert(mTrainingProfile2);
@@ -102,6 +162,7 @@ namespace LibOfTimetableOfClasses
             CDiscipline.Insert(mDiscipline7);
 
             #endregion
+
             #region academicdegree
             MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
             CAcademicDegree.Insert(mAcademicDegree);
@@ -125,58 +186,7 @@ namespace LibOfTimetableOfClasses
             CTeacher.Insert(mTeacher2);
 
             #endregion
-            #region university
-            MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
-            CUniversity.Insert(mUniversity);
-
-            MUniversity mUniversity1 = new MUniversity("7604011791", "ЯГУ", "Ярославский Государственный Университет", "150003, Ярославская область, г. Ярославль, ул. Советская, 14", "150003, Ярославская область, г. Ярославль,ул. Советская, 14", "Михаил", "Михайлович", "Котюков", "rectorat@uniyar.ac.ru", "84852797702");
-            CUniversity.Insert(mUniversity1);
-
-            MUniversity mUniversity2 = new MUniversity("7605009467", "ЯГТУ", "Ярославский Государственный Технический Университет", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "Елена", "Олеговна", "Степанова", "rector@ystu.ru", "84852305661");
-            CUniversity.Insert(mUniversity2);
-            #endregion
-            #region enclosures
-            MEnclosures mEnclosures = new MEnclosures("Е", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 4", "84942536522", "Примечание");
-            CEnclosures.Insert(mEnclosures);
-
-            MEnclosures mEnclosures1 = new MEnclosures("А", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 6", "88005534535", "Примечание");
-            CEnclosures.Insert(mEnclosures1);
-
-            MEnclosures mEnclosures2 = new MEnclosures("Б", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 8", "84947004444", "Примечание");
-            CEnclosures.Insert(mEnclosures2);
-            #endregion
-            #region institute
-            MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute);
-
-            MInstitute mInstitute1 = new MInstitute("Институт педагогики и психологии", "ИПП", "Аристархов Валерий Аристархович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute1);
-
-            MInstitute mInstitute2 = new MInstitute("Институт физико математических и естественных наук", "ИФМЕН", "Михайлов Василий Александрович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute2);
-
-            MInstitute mInstitute3 = new MInstitute("Институт дополнительного профессионального образования", "ИДПО", "Ббекенева Любовь Александровна", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute3);
-
-            MInstitute mInstitute4 = new MInstitute("Институт профессионального развития", "ИПР", "Селиванова Лариса Ивановна", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute4);
-
-            MInstitute mInstitute5 = new MInstitute("Институт управления экономики и финансов", "ИУЭФ", "Беркович Маргарита Израйлевна", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute5);
-
-            MInstitute mInstitute6 = new MInstitute("Институт гуманитарных наук и социальных технолоний", "ИГНиСТ", "Панкратова Ольга Борисовна", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute6);
-
-            MInstitute mInstitute7 = new MInstitute("Институт дизайна и технологий", "ИДТ", "Шорохов Сергей Александрович", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute7);
-
-            MInstitute mInstitute8 = new MInstitute("Юридический институт им. Ю. П. Новицкого", "ЮИН", "Бриль Геннадий Геннадьевич", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute8);
-
-            MInstitute mInstitute9 = new MInstitute("Институт культуры и искуств", "ИКИ", "Домахина Надежда Михайловна", "Костромской Государственный Университет");
-            CInstitute.Insert(mInstitute9);
-
-            #endregion
+           
             #region auditor
             InitEAuditors();
 
@@ -214,8 +224,8 @@ namespace LibOfTimetableOfClasses
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Чувиляева А.С", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "WEB-программирование", "Демчинова Е.А", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "WEB-программирование", "Демчинова Е.А", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "ВЕБ-программирование", "Демчинова Е.А", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "ВЕБ-программирование", "Демчинова Е.А", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Лекция", "0"));

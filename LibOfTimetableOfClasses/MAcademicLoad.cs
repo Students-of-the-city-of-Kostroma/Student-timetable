@@ -80,10 +80,10 @@ namespace LibOfTimetableOfClasses
             set
             {
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
+                if (value.Length > 45) throw new Exception("Кол-во символов превышает 45");
 
                 foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ') && (l != '-') && (l != '.')) throw new Exception("Можно использовать только русские буквы, пробел тире и точку");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _discipline = value;
@@ -108,7 +108,7 @@ namespace LibOfTimetableOfClasses
                 if (value.Length > 107) throw new Exception("Кол-во символов не превышает 107");
 
                 foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ') && (l != '.')) throw new Exception("Можно использовать только русские буквы, пробел и точку");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной");
                 _teacher = value;
@@ -135,7 +135,7 @@ namespace LibOfTimetableOfClasses
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
                 foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы ");
+                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы и пробел");
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _occupation = value;

@@ -31,9 +31,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboGroup = new System.Windows.Forms.ComboBox();
+            this.cboCourse = new System.Windows.Forms.ComboBox();
+            this.cboInstitute = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,9 +93,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox6);
-            this.tabPage1.Controls.Add(this.comboBox5);
-            this.tabPage1.Controls.Add(this.comboBox4);
+            this.tabPage1.Controls.Add(this.cboGroup);
+            this.tabPage1.Controls.Add(this.cboCourse);
+            this.tabPage1.Controls.Add(this.cboInstitute);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -104,49 +104,37 @@
             this.tabPage1.Text = "Расписание студента";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // cboGroup
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cboGroup.FormattingEnabled = true;
+            this.cboGroup.Items.AddRange(new object[] {
             "17-ИСбо-2",
             "17-ИДбо-3",
             "17-ВТбо-1",
             "17-ПСбо-2"});
-            this.comboBox6.Location = new System.Drawing.Point(7, 63);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(680, 21);
-            this.comboBox6.TabIndex = 2;
-            this.comboBox6.Text = "Выберите группу";
+            this.cboGroup.Location = new System.Drawing.Point(7, 63);
+            this.cboGroup.Name = "cboGroup";
+            this.cboGroup.Size = new System.Drawing.Size(680, 21);
+            this.cboGroup.TabIndex = 2;
+            this.cboGroup.Text = "Выберите группу";
             // 
-            // comboBox5
+            // cboCourse
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Информационные системы и техноогии",
-            "Прикладная информатика",
-            "Информатика и вычеслительная техника",
-            "Управление качеством"});
-            this.comboBox5.Location = new System.Drawing.Point(7, 35);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(680, 21);
-            this.comboBox5.TabIndex = 1;
-            this.comboBox5.Text = "Выберите направление подготовки";
+            this.cboCourse.FormattingEnabled = true;
+            this.cboCourse.Location = new System.Drawing.Point(7, 35);
+            this.cboCourse.Name = "cboCourse";
+            this.cboCourse.Size = new System.Drawing.Size(680, 21);
+            this.cboCourse.TabIndex = 1;
+            this.cboCourse.Text = "Выберите направление подготовки";
             // 
-            // comboBox4
+            // cboInstitute
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "ИАСТ",
-            "ИПП",
-            "ИФМЕН",
-            "ИДПО",
-            "ИПР",
-            "ИДТ"});
-            this.comboBox4.Location = new System.Drawing.Point(7, 7);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(680, 21);
-            this.comboBox4.TabIndex = 0;
-            this.comboBox4.Text = "Выберите институт";
+            this.cboInstitute.FormattingEnabled = true;
+            this.cboInstitute.Location = new System.Drawing.Point(7, 7);
+            this.cboInstitute.Name = "cboInstitute";
+            this.cboInstitute.Size = new System.Drawing.Size(680, 21);
+            this.cboInstitute.TabIndex = 0;
+            this.cboInstitute.Text = "Выберите институт";
             // 
             // tableLayoutPanel1
             // 
@@ -368,8 +356,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboGroup;
+        private System.Windows.Forms.ComboBox cboCourse;
+        private System.Windows.Forms.ComboBox cboInstitute;
     }
 }
