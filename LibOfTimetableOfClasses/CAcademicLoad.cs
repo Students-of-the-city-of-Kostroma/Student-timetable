@@ -12,7 +12,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Конструктор таблицы.
         /// Формируются поля таблицы типа DataTable и их свойства.
-        /// Уникальность строки в таблице определяется уникальностью поля Group.
+        /// Поле Group - не может быть уникальным, т.к. для одной группы может быть несколько дисциплин
         /// </summary>
         public CAcademicLoad() : base("Нагрузка")
         {
@@ -20,7 +20,7 @@ namespace LibOfTimetableOfClasses
             {
                 DataType = typeof(string),
                 ColumnName = "Group",
-                Unique = true
+                //Unique = true  // не может быть уникальным!!!
             };
             this.Columns.Add(column);
 
@@ -37,9 +37,7 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "DistributedHours"
             };
             this.Columns.Add(column);
-
-
-
+                       
             column = new DataColumn
             {
                 DataType = typeof(string),
@@ -73,7 +71,10 @@ namespace LibOfTimetableOfClasses
 
             for (int i = 0; i < this.Rows.Count; i++)
             {
-                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group
+                    && (string)this.Rows[i]["Discipline"] == mAcademicLoad.Discipline
+                    && (string)this.Rows[i]["Professor"] == mAcademicLoad.Teacher
+                    && (string)this.Rows[i]["KindOfLesson"] == mAcademicLoad.Occupation)
                 {
                     this.Rows[i].Delete();
                     return true;

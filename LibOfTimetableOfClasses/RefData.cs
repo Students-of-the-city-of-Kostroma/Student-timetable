@@ -40,13 +40,12 @@ namespace LibOfTimetableOfClasses
 
             DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
             DataSet.Relations.Add("Institute-DirectionOfPreparation", CInstitute.Columns["ShortName"], CDirectionOfPreparation.Columns["InstituteShortName"]);
-
             DataSet.Relations.Add("Enclosures-Auditor", CEnclosures.Columns["Name"], CAuditor.Columns["Building"]);
 
-            //DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["AcademicDegree"]);
-            //DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["AcademicTitle"]);
-            //DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
-            //DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
+            DataSet.Relations.Add("CTitle-Teacher", CTitle.Columns["Reduction"], CTeacher.Columns["AcademicTitle"]);
+            DataSet.Relations.Add("AcademicDegree-Teacher", CAcademicDegree.Columns["Reduction"], CTeacher.Columns["AcademicDegree"]);
+            DataSet.Relations.Add("Teacher-Institute", CTeacher.Columns["FullName"], CInstitute.Columns["Director"]);
+            DataSet.Relations.Add("Teacher-AcademicLoad", CTeacher.Columns["FullName"], CAcademicLoad.Columns["Professor"]);
 
             DataSet.Relations.Add("University-Institute", CUniversity.Columns["FullName"], CInstitute.Columns["University"]);
             DataSet.Relations.Add("University-Enclosures", CUniversity.Columns["FullName"], CEnclosures.Columns["University"]);
@@ -56,9 +55,13 @@ namespace LibOfTimetableOfClasses
 
             DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
             DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
-            
+
         }
 
+        /// <summary>
+        /// Загрузка тестовых данных, в последовательности, соответствующей DataSet.Relations
+        /// Последовательность не менять - сломается загрузка.
+        /// </summary>
         public void InitData()
         {
             #region university
@@ -71,6 +74,7 @@ namespace LibOfTimetableOfClasses
             MUniversity mUniversity2 = new MUniversity("7605009467", "ЯГТУ", "Ярославский Государственный Технический Университет", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "150023, Ярославская область, г. Ярославль, ул. Московский пр., 88", "Елена", "Олеговна", "Степанова", "rector@ystu.ru", "84852305661");
             CUniversity.Insert(mUniversity2);
             #endregion
+
             #region enclosures
             MEnclosures mEnclosures = new MEnclosures("Е", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 4", "84942536522", "Примечание");
             CEnclosures.Insert(mEnclosures);
@@ -81,6 +85,79 @@ namespace LibOfTimetableOfClasses
             MEnclosures mEnclosures2 = new MEnclosures("Б", "Костромской Государственный Университет", "г. Кострома, Малышковская ул., 8", "84947004444", "Примечание");
             CEnclosures.Insert(mEnclosures2);
             #endregion
+            
+            #region auditor
+            InitEAuditors();
+
+            MAuditor mAuditor1 = new MAuditor("214", "Педагогики", 80, "А");
+            CAuditor.Insert(mAuditor1);
+
+            MAuditor mAuditor2 = new MAuditor("123", "Философии", 77, "Б");
+            CAuditor.Insert(mAuditor2);
+            #endregion
+
+            #region title
+            MTitle mTitle = new MTitle("Доцент", "Доц");
+            CTitle.Insert(mTitle);
+            MTitle mTitle1 = new MTitle("Профессор", "Проф");
+            CTitle.Insert(mTitle1);
+            MTitle mTitle2 = new MTitle("Нет звания", " ");
+            CTitle.Insert(mTitle2);
+            #endregion
+
+            #region academicdegree
+            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
+            CAcademicDegree.Insert(mAcademicDegree);
+            MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
+            CAcademicDegree.Insert(mAcademicDegree1);
+            MAcademicDegree mAcademicDegree2 = new MAcademicDegree("Нет ученой степени", " ");
+            CAcademicDegree.Insert(mAcademicDegree2);
+            #endregion
+
+            #region teacher
+            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher);
+            MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher1);
+            MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher2);
+            MTeacher mTeacher3 = new MTeacher("Любовь", "Бекенава", "Александровна", "КН", "Проф", "ИДПО", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher3);
+            MTeacher mTeacher4 = new MTeacher("Лариса", "Селиванова", "Ивановна", "КН", "Проф", "ИПР", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher4);
+            MTeacher mTeacher5 = new MTeacher("Маргарита", "Беркович", "Израйлевна", "КН", "Проф", "ИУЭФ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher5);
+            MTeacher mTeacher6 = new MTeacher("Ольга", "Панкратова", "Борисовна", "КН", "Проф", "ИГНИСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher6);
+            MTeacher mTeacher7 = new MTeacher("Сергей", "Шорохов", "Александрович", "КН", "Проф", "ИДТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher7);
+            MTeacher mTeacher8 = new MTeacher("Геннадий", "Бриль", "Геннадьевич", "КН", "Проф", "ЮИН", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher8);
+            MTeacher mTeacher9 = new MTeacher("Надежда", "Домахина", "Михайловна", "КН", "Проф", "ИКИ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher9);
+            MTeacher mTeacher10 = new MTeacher("Нина", "Прядкина", "Олеговна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher10);
+            MTeacher mTeacher11 = new MTeacher("Александр", "Гутман", "Сергеевич", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher11);
+            MTeacher mTeacher12 = new MTeacher("Игорь", "Панин", "Григорьевич", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher12);
+            MTeacher mTeacher13 = new MTeacher("Александра", "Чувиляева", "Сергеевна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher13);
+            MTeacher mTeacher14 = new MTeacher("Александр", "Орлов", "Валерьевич", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher14);
+            MTeacher mTeacher15 = new MTeacher("Елена", "Демчинова", "Александровна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher15);
+            MTeacher mTeacher16 = new MTeacher("Анна", "Дружина", "Григорьевна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher16);
+            MTeacher mTeacher17 = new MTeacher("Алексей", "Зеленцов", "Вениаминович", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher17);
+            MTeacher mTeacher18 = new MTeacher("Сергей", "Бушуев", "Герольдович", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher18);
+            MTeacher mTeacher19 = new MTeacher("Жанна", "Дорохова", "Викторовна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher19);
+
+            #endregion
+
             #region institute
             MInstitute mInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Иванов Иван Иванович", "Костромской Государственный Университет");
             CInstitute.Insert(mInstitute);
@@ -113,46 +190,51 @@ namespace LibOfTimetableOfClasses
             CInstitute.Insert(mInstitute9);
 
             #endregion
-            
+
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
-            CTrainingProfile.Insert(mTrainingProfile);
-            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
-            CGroup.Insert(mGroup);
-
             MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation1);
-            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Прикладная информатика", "ПИ", "09.03.03");
-            CTrainingProfile.Insert(mTrainingProfile1);
-            MGroup mGroup1 = new MGroup("17-ПИбо-4а", 5, "ПИ", 2, 19, 2, 5, "Воскресенье");
-            CGroup.Insert(mGroup1);
-
             MDirectionOfPreparation mDirectionOfPreparation2 = new MDirectionOfPreparation("09.03.01", "Информатика и вычислительная техника", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation2);
+            #endregion
+
+            #region TrainingProfile
+            MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
+            CTrainingProfile.Insert(mTrainingProfile);
+            MTrainingProfile mTrainingProfile1 = new MTrainingProfile("Прикладная информатика", "ПИ", "09.03.03");
+            CTrainingProfile.Insert(mTrainingProfile1);
             MTrainingProfile mTrainingProfile2 = new MTrainingProfile("Информатика и вычислительная техника", "ИВТ", "09.03.01");
             CTrainingProfile.Insert(mTrainingProfile2);
+            #endregion
+
+            #region group
+            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
+            CGroup.Insert(mGroup);
+            MGroup mGroup1 = new MGroup("17-ПИбо-4а", 5, "ПИ", 2, 19, 2, 5, "Воскресенье");
+            CGroup.Insert(mGroup1);
             MGroup mGroup2 = new MGroup("17-ВТбо-2б", 4, "ИВТ", 1, 20, 2, 5, "Суббота");
             CGroup.Insert(mGroup2);
             #endregion
+
             #region discipline
-            MDiscipline mDiscipline = new MDiscipline("Web-программирование", "Web", "Сентябрь-Декабрь");
+            MDiscipline mDiscipline = new MDiscipline("ВЕБ-программирование", "Web", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline);
 
             MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline1);
 
-            MDiscipline mDiscipline2 = new MDiscipline("Операционные системы", "ОС", "Сентябрь-Декабрь");
+            MDiscipline mDiscipline2 = new MDiscipline("Системное ПО", "ПО", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline2);
 
             MDiscipline mDiscipline3 = new MDiscipline("Управление данными", "УД", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline3);
 
-            MDiscipline mDiscipline4 = new MDiscipline("3D-моделирование", "3D", "Сентябрь-Декабрь");
+            MDiscipline mDiscipline4 = new MDiscipline("3Д-моделирование", "3D", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline4);
 
-            MDiscipline mDiscipline5 = new MDiscipline("Инструменты графического дизайна", "ИГД", "Сентябрь-Декабрь");
+            MDiscipline mDiscipline5 = new MDiscipline("Моделирование ИС", "ИС", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline5);
 
             MDiscipline mDiscipline6 = new MDiscipline("Физическая культура и спорт", "Физра", "Сентябрь-Декабрь");
@@ -163,79 +245,46 @@ namespace LibOfTimetableOfClasses
 
             #endregion
 
-            #region academicdegree
-            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
-            CAcademicDegree.Insert(mAcademicDegree);
-            MTitle mTitle = new MTitle("Доцент", "Доц");
-            CTitle.Insert(mTitle);
-            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            CTeacher.Insert(mTeacher);
+            #region occupations
+            MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Практика", "Практика");
+            CTypesOfOccupations.Insert(mTypesOfOccupations);
 
-            MAcademicDegree mAcademicDegree1 = new MAcademicDegree("Доктор наук", "ДН");
-            CAcademicDegree.Insert(mAcademicDegree1);
-            MTitle mTitle1 = new MTitle("Профессор", "Проф");
-            CTitle.Insert(mTitle1);
-            MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
-            CTeacher.Insert(mTeacher1);
-
-            MAcademicDegree mAcademicDegree2 = new MAcademicDegree("Кандидат наук", "КН");
-            CAcademicDegree.Insert(mAcademicDegree2);
-            MTitle mTitle2 = new MTitle("Профессор", "Проф");
-            CTitle.Insert(mTitle2);
-            MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
-            CTeacher.Insert(mTeacher2);
-
+            MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Лекция", "Лекция");
+            CTypesOfOccupations.Insert(mTypesOfOccupations1);
             #endregion
-           
-            #region auditor
-            InitEAuditors();
 
-            MAuditor mAuditor1 = new MAuditor("214", "Педагогики", 80, "А");
-            CAuditor.Insert(mAuditor1);
-
-            MAuditor mAuditor2 = new MAuditor("123", "Философии", 77, "Б");
-            CAuditor.Insert(mAuditor2);
-            #endregion
             #region AcademicLoad
             InitAcademicLoad();
             #endregion
-            #region occupations
-            MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Технология разработки программного обеспичения", "ТРПО");
-            CTypesOfOccupations.Insert(mTypesOfOccupations);
-
-            MTypesOfOccupations mTypesOfOccupations1 = new MTypesOfOccupations("Теория информационных процессов и систем", "ТИПИС");
-            CTypesOfOccupations.Insert(mTypesOfOccupations1);
-
-            MTypesOfOccupations mTypesOfOccupations2 = new MTypesOfOccupations("Инфокоммуникационные системы и сети", "ИСС");
-            CTypesOfOccupations.Insert(mTypesOfOccupations2);
-            #endregion
+                        
         }
 
-            /// <summary>
-            /// Заполняет нагрузку
-            /// </summary>
+        /// <summary>
+        /// Заполняет нагрузку
+        /// </summary>
         private void InitAcademicLoad()
         {
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Управление данными", "Прядкина Н.О", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Программирование на языках высокого уровня", "Гутман А.С", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Программирование на языках высокого уровня", "Гутман А.С", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Панин И.Г", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Моделирование ИС", "Чувиляева А.С", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов А.В", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "ВЕБ-программирование", "Демчинова Е.А", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "ВЕБ-программирование", "Демчинова Е.А", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "72", "Системное ПО", "Дружиннина А.Г", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "36", "Правоведение", "Зеленцов", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-1", "144", "Физическая культура и спорт", "Бушуев С.Г", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Программирование на языках высокого уровня", "Гутман Александр С", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Программирование на языках высокого уровня", "Гутман Александр С", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "ВЕБ-программирование", "Демчинова Елена Александровна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "ВЕБ-программирование", "Демчинова Елена Александровна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружиннина Анна Григорьевна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружиннина Анна Григорьевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "3Д-моделирование", "Дорохова Жанна Викторовна", "Практика", "0"));
         }
             /// <summary>
             /// Создаёт список аудиторий для Е-корпуса
             /// </summary>
-            private void InitEAuditors() {
+        private void InitEAuditors() {
             CAuditor.Insert(new MAuditor("100", "Биология", 0, "Е"));
             CAuditor.Insert(new MAuditor("101", "Физическая культура и спорт", 0, "Е"));
             CAuditor.Insert(new MAuditor("108", "Биология", 0, "Е"));
@@ -343,6 +392,29 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("309", "Технология машиностроения", 0, "А"));
             CAuditor.Insert(new MAuditor("311", "Технология машиностроения", 0, "А"));
 
+        }
+
+        /// <summary>
+        /// Очистка таблиц от данных, в последовательности, определенной Relations
+        /// Последовательность не менять - сломается очистка.
+        /// </summary>
+        public void ClearData()
+        {
+            CAcademicLoad.Clear();
+            CGroup.Clear();
+            CTrainingProfile.Clear();
+            CDirectionOfPreparation.Clear();
+            CInstitute.Clear();
+            CTeacher.Clear();
+            CAuditor.Clear();
+            CDiscipline.Clear();
+            CTitle.Clear();
+            CEnclosures.Clear();
+            CUniversity.Clear();
+            CStudyWeek.Clear();
+            CAcademicDegree.Clear();
+            CTypesOfOccupations.Clear();
+            
         }
     }
 }

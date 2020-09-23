@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LibOfTimetableOfClasses
@@ -11,6 +12,10 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MAcademicLoad : Model
     {
+        const string AllPattern = @"^[А-Яа-я0-9 -.]+$";
+        const string CapitalLetterPattern = @"[А-Я0-9]{1}";
+        const string OnlyRussianPattern = @"^[А-Яа-я -.]+$";
+
         string _group;
         string _totalHours;
         string _discipline;
@@ -68,7 +73,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// свойства discipline модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, цифры, не пустой, начинаться с заглавной
         /// Дисциплина
         /// </summary>
         public string Discipline
@@ -82,10 +87,15 @@ namespace LibOfTimetableOfClasses
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
                 if (value.Length > 45) throw new Exception("Кол-во символов превышает 45");
 
-                foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ') && (l != '-') && (l != '.')) throw new Exception("Можно использовать только русские буквы, пробел тире и точку");
+                Regex regex = new Regex(AllPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Дисциплина: Можно использовать только русские буквы, цифры, пробел тире и точку");
+                }
 
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
+                regex = new Regex(CapitalLetterPattern);
+                if (!regex.IsMatch(value)) throw new Exception("Дисциплина: Первая буквы должна быть заглавной или цифрой ");
+
                 _discipline = value;
             }
         }
@@ -93,7 +103,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// свойства teacher модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
+        /// Строка должна быть: не-null, не более 110 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Преподаватель
         /// </summary>
         public string Teacher
@@ -105,10 +115,13 @@ namespace LibOfTimetableOfClasses
             set
             {
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 107) throw new Exception("Кол-во символов не превышает 107");
+                if (value.Length > 110) throw new Exception("Кол-во символов не превышает 107");
 
-                foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ') && (l != '.')) throw new Exception("Можно использовать только русские буквы, пробел и точку");
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Преподаватель: Можно использовать только русские буквы, пробел и точку");
+                }
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной");
                 _teacher = value;
@@ -134,8 +147,11 @@ namespace LibOfTimetableOfClasses
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
-                foreach (char l in value)
-                    if ((l < 'А' || l > 'я') && (l != ' ')) throw new Exception("Можно использовать только русские буквы и пробел");
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Вид занятия: Можно использовать только русские буквы, пробел и точку");
+                }
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной ");
                 _occupation = value;

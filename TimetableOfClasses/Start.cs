@@ -145,9 +145,9 @@ namespace TimetableOfClasses
 
         private void bLoad_Click(object sender, EventArgs e)
         {
-            //LibOfTimetableOfClasses.RefData refData = new LibOfTimetableOfClasses.RefData();
             try
             {
+                refData.ClearData();
                 refData.InitData();  // загрузка тестовых данных
                 isRefDataLoaded = true;
             }
@@ -156,7 +156,7 @@ namespace TimetableOfClasses
                 isRefDataLoaded = false;
                 MessageBox.Show(string.Format("RefData не загрузился: {0} {1}",ex.Message, ex.StackTrace), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            MessageBox.Show("RefData загрузжен", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
     }
