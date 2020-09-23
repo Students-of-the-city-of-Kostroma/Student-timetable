@@ -155,7 +155,6 @@ namespace LibOfTimetableOfClasses
             CTeacher.Insert(mTeacher18);
             MTeacher mTeacher19 = new MTeacher("Жанна", "Дорохова", "Викторовна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher19);
-
             #endregion
 
             #region institute
