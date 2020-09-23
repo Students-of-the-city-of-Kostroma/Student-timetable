@@ -1,5 +1,5 @@
-# Тестируемый метод
-![alt text](code.png "Тестируемый метод")
+# Тестирование метода Delete класса CTeacher
+![alt text](code.png "Тестирование метода Delete класса CTeacher")
 # Управляющий граф
 ![alt text](graph.png "Управляющий граф")
 
