@@ -20,7 +20,6 @@ namespace LibOfTimetableOfClasses
             {
                 DataType = typeof(string),
                 ColumnName = "Group",
-                //Unique = true  // не может быть уникальным!!!
             };
             this.Columns.Add(column);
 
