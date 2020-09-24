@@ -73,7 +73,7 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// свойства discipline модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
-        /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, цифры, не пустой, начинаться с заглавной
+        /// Строка должна быть: не-null, не более 45 символов, содержать только А-Я,а-я, цифры, не пустой, начинаться с заглавной
         /// Дисциплина
         /// </summary>
         public string Discipline
@@ -115,7 +115,7 @@ namespace LibOfTimetableOfClasses
             set
             {
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
-                if (value.Length > 110) throw new Exception("Кол-во символов не превышает 107");
+                if (value.Length > 110) throw new Exception("Кол-во символов не превышает 110");
 
                 Regex regex = new Regex(OnlyRussianPattern);
                 if (!regex.IsMatch(value))
