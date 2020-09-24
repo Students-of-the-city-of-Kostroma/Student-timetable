@@ -9,7 +9,7 @@
 - `Auditor` - Аудитория
 - `DirectionOfPreparation` - Направление подготовки
 - `Discipline` - Дисциплина
-- `Enclosures` - Университет
+- `Enclosures` - Корпус
 - `Group` - Группа
 - `HEI` - ВУЗ
 - `Institute` - Институт
