@@ -63,7 +63,7 @@
     <Compile Include="UT_Delete_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
-    <Compile Include="UT_Deleted_CTeacher.cs" />
+    <Compile Include="UT_Delete_CTeacher.cs" />
     <Compile Include="UT_Delete_CGroup.cs" />
     <Compile Include="UT_Insert_CEnclosurse.cs" />
     <Compile Include="UT_Insert_CTeacher.cs" />
