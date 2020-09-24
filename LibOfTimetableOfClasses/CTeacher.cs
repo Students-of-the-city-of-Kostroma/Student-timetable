@@ -113,12 +113,15 @@ namespace LibOfTimetableOfClasses
                     try
                     {
                         DataRow newRow = this.Rows[i];
+                        Rows[i].BeginEdit();
                         newRow["AcademicDegree"] = mTeacher.AcademicDegree;
                         newRow["AcademicTitle"] = mTeacher.AcademicTitle;
                         newRow["Departament"] = mTeacher.Departament;
                         newRow["MetodicalDays"] = mTeacher.MetodicalDays;
                         newRow["Windows"] = mTeacher.Windows;
                         newRow["Weekends"] = mTeacher.Weekends;
+                        Rows[i].EndEdit();
+                        Rows[i].AcceptChanges();
                         return true;
                     }
                     catch (Exception ex)

@@ -1,4 +1,4 @@
-﻿using LibOfTimetableOfClasses;
+using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
@@ -8,37 +8,58 @@ namespace UnitTestOfTimetableOfClasses
     {
         readonly RefData refData = new RefData();
         /// <summary>
-        /// Удаление существующих данных выбранной строки из таблицы
+        /// Попытка удалить корпус из пустой таблицы корпусов
         /// </summary>
         [TestMethod]
         public void Task_395_1()
         {
-            MUniversity grUni = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
-            bool actualUni = refData.CUniversity.Insert(grUni);
-            Assert.AreEqual(true, actualUni);
-            // arrange 
-            MEnclosures gr = new MEnclosures("А", grUni.FullName, "Дзержинского", "111111", "1");
-            bool expected = true;
-            //act 
-            refData.CEnclosures.Insert(gr);
-            bool actual = refData.CEnclosures.Delete(gr);
-            //assert 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(refData.CEnclosures.Rows.Count == 0, true, "При проверке отсутствия записей в таблице корпусов, она оказалась не пустой");
+            MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
+            MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Delete(gr), false, "Корпус был удалён, не смотря на то, что таблица с корпусами пуста");
         }
-
         /// <summary>
-        /// Удаление данных из пустой таблицы
+        /// Попытка удалить корпус из таблицы корпусов при не совпадающих значениях названий
         /// </summary>
         [TestMethod]
         public void Task_395_2()
         {
-            //arrange 
-            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = false;
-            //act 
-            bool actual = refData.CEnclosures.Delete(gr);
-            //assert 
-            Assert.AreEqual(expected, actual);
+            MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
+            MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Insert(gr), true, "При попытке добавить корпус в таблицу с корпусами, он не был добавлен");
+            MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            MEnclosures gr2 = new MEnclosures("М", grUni2.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false, "Корпус был удалён, не смотря на то, что названия корпусов не совпадают");
+        }
+        /// <summary>
+        /// Попытка удалить корпус из таблицы корпусов при не совпадающих значениях названий университетов
+        /// </summary>
+        [TestMethod]
+        public void Task_395_3()
+        {
+            MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
+            MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Insert(gr), true, "При попытке добавить корпус в таблицу с корпусами, он не был добавлен");
+            MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Цостьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false, "Корпус был удалён, не смотря на то, что названия университетов не совпадают");
+        }
+        /// <summary>
+        /// Попытка удалить корпус из таблицы корпусов при всех совпадающих значениях
+        /// </summary>
+        [TestMethod]
+        public void Task_395_4()
+        {
+            MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
+            MEnclosures gr = new MEnclosures("Я", grUni.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Insert(gr), true, "При попытке добавить корпус в таблицу с корпусами, он не был добавлен");
+            MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костьомкой Госуьарственный Унивеьситет", "159005, Костьомская оьласть, р. Коьтрома, пл. Дзержиьского, 27", "158005, Костьомская обьасть, р. Костьома, пл. Дзеьжинского, 47", "Алекьандр", "Наьмов", "Рудолььович", "kru@mail.ru", "84944417960");
+            MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзббжинского", "112111", "8");
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), true, "Корпус не был удалён, не смотря на то, что все поля совпадают");
         }
     }
 }
