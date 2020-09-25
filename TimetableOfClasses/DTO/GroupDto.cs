@@ -11,5 +11,7 @@ namespace TimetableOfClasses
     {
         public string ID { get; set; }
         public string Group { get; set; }
+        public string Speciality { get; set; }
+        public string Code { get; set; }
     }
 }

@@ -193,7 +193,7 @@ namespace LibOfTimetableOfClasses
             #region direction
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation);
-            MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4, "ИАСТ");
+            MDirectionOfPreparation mDirectionOfPreparation1 = new MDirectionOfPreparation("09.03.03", "Прикладная информатика", 4, "ИПР");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation1);
             MDirectionOfPreparation mDirectionOfPreparation2 = new MDirectionOfPreparation("09.03.01", "Информатика и вычислительная техника", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation2);

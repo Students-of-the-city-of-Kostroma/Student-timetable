@@ -117,6 +117,7 @@
             this.cboGroup.Size = new System.Drawing.Size(680, 21);
             this.cboGroup.TabIndex = 2;
             this.cboGroup.Text = "Выберите группу";
+            this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.CboGroup_SelectedIndexChanged);
             // 
             // cboCourse
             // 
@@ -126,6 +127,7 @@
             this.cboCourse.Size = new System.Drawing.Size(680, 21);
             this.cboCourse.TabIndex = 1;
             this.cboCourse.Text = "Выберите направление подготовки";
+            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.CboCourse_SelectedIndexChanged);
             // 
             // cboInstitute
             // 
@@ -135,6 +137,7 @@
             this.cboInstitute.Size = new System.Drawing.Size(680, 21);
             this.cboInstitute.TabIndex = 0;
             this.cboInstitute.Text = "Выберите институт";
+            this.cboInstitute.SelectedIndexChanged += new System.EventHandler(this.CboInstitute_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 

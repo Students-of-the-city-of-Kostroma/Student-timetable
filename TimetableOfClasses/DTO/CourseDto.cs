@@ -11,5 +11,6 @@ namespace TimetableOfClasses
     {
         public string ID { get; set; }
         public string NameOfDP { get; set; }
+        public string InstituteShortName { get; set; }
     }
 }

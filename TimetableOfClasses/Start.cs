@@ -145,6 +145,7 @@ namespace TimetableOfClasses
 
         private void bLoad_Click(object sender, EventArgs e)
         {
+            string msg = "Тестовые данные загружены.";
             try
             {
                 refData.ClearData();
@@ -154,7 +155,11 @@ namespace TimetableOfClasses
             catch (Exception ex)
             {
                 isRefDataLoaded = false;
-                MessageBox.Show(string.Format("RefData не загрузился: {0} {1}",ex.Message, ex.StackTrace), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msg = string.Format("RefData не загрузился: {0} {1}", ex.Message, ex.StackTrace);
+            }
+            finally
+            {
+                MessageBox.Show(msg, isRefDataLoaded ? "Сообщение" : "Ошибка", MessageBoxButtons.OK, isRefDataLoaded ? MessageBoxIcon.Information : MessageBoxIcon.Error);
             }
             
         }

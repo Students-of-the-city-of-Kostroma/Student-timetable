@@ -179,6 +179,7 @@
     <Compile Include="Directory.Designer.cs">
       <DependentUpon>Directory.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\TrainingProfileDto.cs" />
     <Compile Include="Enclosures.cs">
       <SubType>Form</SubType>
     </Compile>
