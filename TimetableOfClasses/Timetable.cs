@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -57,7 +58,7 @@ namespace TimetableOfClasses
                 }).ToList();
         }
 
-        private void CboInstitute_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void CboInstitute_SelectionChangeCommitted(object sender, System.EventArgs e)
         {
             ComboBox cbo = (ComboBox)sender;
             InstituteDto selectedInstitute = (InstituteDto)cbo.SelectedItem;
@@ -66,22 +67,25 @@ namespace TimetableOfClasses
             if (courses.Count > 0)
             {
                 cboCourse.Enabled = true;
-                cboCourse.DataSource = courses;
                 cboCourse.DisplayMember = "NameOfDP";
                 cboCourse.ValueMember = "ID";
+                cboCourse.DataSource = courses;
             }
             else
             {
+                cboCourse.DataSource = null;
                 cboCourse.Enabled = false;
                 cboCourse.Text = "Выберите направление подготовки";
-
+                cboGroup.DataSource = null;
                 cboGroup.Enabled = false;
+                cboGroup.Text = "Выберите группу";
             }
         }
 
-        private void CboCourse_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void CboCourse_SelectionChangeCommitted(object sender, System.EventArgs e)
         {
             ComboBox cbo = (ComboBox)sender;
+            var sv = cbo.SelectedValue;
             CourseDto selectedCourse = (CourseDto)cbo.SelectedItem;
 
             var groups = allProfiles.Join(allGroups, p => p.ShortName, gr => gr.Speciality, 
@@ -96,21 +100,27 @@ namespace TimetableOfClasses
             if (groups.Count() > 0)
             {
                 cboGroup.Enabled = true;
-                cboGroup.DataSource = groups;
                 cboGroup.DisplayMember = "Group";
                 cboGroup.ValueMember = "ID";
+                cboGroup.DataSource = groups;
             }
             else
             {
+                cboGroup.DataSource = null;
                 cboGroup.Enabled = false;
                 cboGroup.Text = "Выберите группу";
             }
 
         }
 
-        private void CboGroup_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void CboGroup_SelectionChangeCommitted(object sender, System.EventArgs e)
         {
+            ComboBox cbo = (ComboBox)sender;
+            var sv = cbo.SelectedValue;
+            GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
 
+            throw new NotImplementedException("Отображение расписания не реализовано.");
         }
+
     }
 }

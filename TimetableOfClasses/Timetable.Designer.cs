@@ -107,17 +107,12 @@
             // cboGroup
             // 
             this.cboGroup.FormattingEnabled = true;
-            this.cboGroup.Items.AddRange(new object[] {
-            "17-ИСбо-2",
-            "17-ИДбо-3",
-            "17-ВТбо-1",
-            "17-ПСбо-2"});
             this.cboGroup.Location = new System.Drawing.Point(7, 63);
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(680, 21);
             this.cboGroup.TabIndex = 2;
             this.cboGroup.Text = "Выберите группу";
-            this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.CboGroup_SelectedIndexChanged);
+            this.cboGroup.SelectionChangeCommitted += new System.EventHandler(this.CboGroup_SelectionChangeCommitted);
             // 
             // cboCourse
             // 
@@ -127,7 +122,7 @@
             this.cboCourse.Size = new System.Drawing.Size(680, 21);
             this.cboCourse.TabIndex = 1;
             this.cboCourse.Text = "Выберите направление подготовки";
-            this.cboCourse.SelectedIndexChanged += new System.EventHandler(this.CboCourse_SelectedIndexChanged);
+            this.cboCourse.SelectionChangeCommitted += new System.EventHandler(this.CboCourse_SelectionChangeCommitted);
             // 
             // cboInstitute
             // 
@@ -137,7 +132,7 @@
             this.cboInstitute.Size = new System.Drawing.Size(680, 21);
             this.cboInstitute.TabIndex = 0;
             this.cboInstitute.Text = "Выберите институт";
-            this.cboInstitute.SelectedIndexChanged += new System.EventHandler(this.CboInstitute_SelectedIndexChanged);
+            this.cboInstitute.SelectionChangeCommitted += new System.EventHandler(this.CboInstitute_SelectionChangeCommitted);
             // 
             // tableLayoutPanel1
             // 
