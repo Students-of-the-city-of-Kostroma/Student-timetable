@@ -121,7 +121,7 @@ namespace LibOfTimetableOfClasses
             CTeacher.Insert(mTeacher1);
             MTeacher mTeacher2 = new MTeacher("Валерий", "Аристархов", "Аристархович", "КН", "Проф", "ИПП", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher2);
-            MTeacher mTeacher3 = new MTeacher("Любовь", "Бекенава", "Александровна", "КН", "Проф", "ИДПО", "Пн, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher3 = new MTeacher("Любовь", "Бекенева", "Александровна", "КН", "Проф", "ИДПО", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher3);
             MTeacher mTeacher4 = new MTeacher("Лариса", "Селиванова", "Ивановна", "КН", "Проф", "ИПР", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher4);
@@ -147,7 +147,7 @@ namespace LibOfTimetableOfClasses
             CTeacher.Insert(mTeacher14);
             MTeacher mTeacher15 = new MTeacher("Елена", "Демчинова", "Александровна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher15);
-            MTeacher mTeacher16 = new MTeacher("Анна", "Дружина", "Григорьевна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher16 = new MTeacher("Анна", "Дружинина", "Григорьевна", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher16);
             MTeacher mTeacher17 = new MTeacher("Алексей", "Зеленцов", "Вениаминович", " ", " ", " ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher17);
@@ -242,6 +242,12 @@ namespace LibOfTimetableOfClasses
             MDiscipline mDiscipline7 = new MDiscipline("Моделирование информационных систем", "МИС", "Сентябрь-Декабрь");
             CDiscipline.Insert(mDiscipline7);
 
+            MDiscipline mDiscipline8 = new MDiscipline("Лингвистическое обеспечение Пр.Ап.Ср.", "ЛО", "Сентябрь-Декабрь");
+            CDiscipline.Insert(mDiscipline8);
+
+            MDiscipline mDiscipline9 = new MDiscipline("Программирование на языках высокого уровня", "ПЯВУ", "Январь-Март");
+            CDiscipline.Insert(mDiscipline9);
+
             #endregion
 
             #region occupations
@@ -265,16 +271,16 @@ namespace LibOfTimetableOfClasses
         {
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Программирование на языках высокого уровня", "Гутман Александр С", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Программирование на языках высокого уровня", "Гутман Александр С", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "ВЕБ-программирование", "Демчинова Елена Александровна", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "ВЕБ-программирование", "Демчинова Елена Александровна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружиннина Анна Григорьевна", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружиннина Анна Григорьевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
             CAcademicLoad.Insert(new MAcademicLoad("17-ВТбо-2б", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
@@ -378,7 +384,6 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("416", "", 0, "Б"));
             CAuditor.Insert(new MAuditor("417", "", 0, "Б"));
             CAuditor.Insert(new MAuditor("418", "", 0, "Б"));
-            CAuditor.Insert(new MAuditor("315", "", 0, "Б"));
             CAuditor.Insert(new MAuditor("103", "Технология машиностроения", 0, "А"));
             CAuditor.Insert(new MAuditor("104", "Технология машиностроения", 0, "А"));
             CAuditor.Insert(new MAuditor("106", "Технология машиностроения", 0, "А"));

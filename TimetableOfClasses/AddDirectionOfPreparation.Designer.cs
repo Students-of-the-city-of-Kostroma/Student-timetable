@@ -182,6 +182,7 @@
             this.bSelectInstitute.TabIndex = 17;
             this.bSelectInstitute.Text = "Выбрать";
             this.bSelectInstitute.UseVisualStyleBackColor = true;
+            this.bSelectInstitute.Click += new System.EventHandler(this.btSelectInstitute_Click);
             // 
             // AddDirectionOfPreparation
             // 

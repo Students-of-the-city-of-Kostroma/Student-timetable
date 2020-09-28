@@ -114,5 +114,17 @@ namespace TimetableOfClasses
                 e.Handled = true;
         }
 
+        private void btSelectInstitute_Click(object sender, EventArgs e)
+        {
+            Institute selectInstitute = new Institute();
+            selectInstitute.FormClosing += SelectInstitute_FormClosing;
+            selectInstitute.Show();
+        }
+
+        private void SelectInstitute_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Institute institute = (Institute)sender;
+            tbInstitute.Text = institute.selectedInstitute;
+        }
     }
 }
