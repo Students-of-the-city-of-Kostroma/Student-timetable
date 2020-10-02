@@ -7,20 +7,66 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class RefData {
         public DataSet DataSet = new DataSet();
+        /// <summary>
+        /// Преподаватели
+        /// </summary>
         public CTeacher CTeacher = new CTeacher();
+        /// <summary>
+        /// Аудитории
+        /// </summary>
         public CAuditor CAuditor = new CAuditor();
+        /// <summary>
+        /// Дисциплины (Предметы)
+        /// </summary>
         public CDiscipline CDiscipline = new CDiscipline();
+        /// <summary>
+        /// Группы
+        /// </summary>
         public CGroup CGroup = new CGroup();
+        /// <summary>
+        /// Ученое звание
+        /// </summary>
         public CTitle CTitle = new CTitle();
+        /// <summary>
+        /// Профили подготовки Университета
+        /// </summary>
         public CTrainingProfile CTrainingProfile = new CTrainingProfile();
+        /// <summary>
+        /// Направления подготовки
+        /// </summary>
         public CDirectionOfPreparation CDirectionOfPreparation = new CDirectionOfPreparation();
+        /// <summary>
+        /// Корпуса Университета
+        /// </summary>
         public CEnclosures CEnclosures = new CEnclosures();
+        /// <summary>
+        /// Университеты
+        /// </summary>
         public CUniversity CUniversity = new CUniversity();
+        /// <summary>
+        /// Учебная неделя (?)
+        /// </summary>
         public CStudyWeek CStudyWeek = new CStudyWeek();
+        /// <summary>
+        /// Институты
+        /// </summary>
         public CInstitute CInstitute = new CInstitute();
+        /// <summary>
+        /// Учёные степени
+        /// </summary>
         public CAcademicDegree CAcademicDegree = new CAcademicDegree();
+        /// <summary>
+        /// Вид занятия
+        /// </summary>
         public CTypesOfOccupations CTypesOfOccupations = new CTypesOfOccupations();
+        /// <summary>
+        /// Академическая нагрузка
+        /// </summary>
         public CAcademicLoad CAcademicLoad = new CAcademicLoad();
+        /// <summary>
+        /// Расписание занятий
+        /// </summary>
+        public CCourseSchedule CCourseSchedule = new CCourseSchedule();
 
         public  RefData() {
             DataSet.Tables.Add(CTrainingProfile);
@@ -55,6 +101,8 @@ namespace LibOfTimetableOfClasses
 
             DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
             DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
+
+
 
         }
 

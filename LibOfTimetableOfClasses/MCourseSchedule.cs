@@ -11,14 +11,25 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MCourseSchedule : Model
     {
+        private Int32 _id;
         private string _discipline;
         private string _classroom;
         private string _dayOfWeek;
         private TimeSpan _startTime;
         private TimeSpan _endTime;
 
-        public MCourseSchedule(string discipline, string classroom, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
+        /// <summary>
+        /// Создает экземпляр расписания
+        /// </summary>
+        /// <param name="ID">Уникальный идентификатор</param>
+        /// <param name="discipline">Краткое название предмета(дисциплины)</param>
+        /// <param name="classroom">Аудитория</param>
+        /// <param name="dayOfWeek">День недели</param>
+        /// <param name="startTime">Время начала занятия</param>
+        /// <param name="endTime">Время окончания занятия</param>
+        public MCourseSchedule(Int32 ID, string discipline, string classroom, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
         {
+            Id = ID;
             Discipline = discipline;
             Classroom = classroom;
             DayOfWeek = dayOfWeek;
@@ -26,7 +37,21 @@ namespace LibOfTimetableOfClasses
             EndTime = endTime;
         }
 
-
+        /// <summary>
+        /// Уникальный идентификатор записи
+        /// </summary>
+        public Int32 Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+        
         /// <summary>
         /// Предмет
         /// </summary>
