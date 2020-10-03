@@ -16,6 +16,7 @@ namespace LibOfTimetableOfClasses
         const string CapitalLetterPattern = @"[А-Я0-9]{1}";
         const string OnlyRussianPattern = @"^[А-Яа-я -.]+$";
 
+        private int? _id;
         string _group;
         string _totalHours;
         string _discipline;
@@ -23,6 +24,22 @@ namespace LibOfTimetableOfClasses
         string _occupation;
         string _distributed;
 
+
+        /// <summary>
+        /// Уникальный идентификатор записи.
+        /// Может принимать значение null для новой модели
+        /// </summary>
+        public int? Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
 
         /// <summary>
         /// свойства group модели AcademicLoad
@@ -188,17 +205,19 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Конструктор класса MAcademicLoad.
         /// </summary>
+        /// <param name="id">Идентификатор</param>
         /// <param name="group">Группа(поток)</param>
         /// <param name="totalHours">Часов всего</param>
         /// <param name="discipline">Дисциплина</param>
         /// <param name="teacher">Преподаватель</param>
         /// <param name="occupation">Вид занятия</param>
         /// <param name="distributed">Распределено </param>
-        public MAcademicLoad(string group, string totalHours, string discipline, string teacher, string occupation, string distributed ) : base()
+        public MAcademicLoad(int? id, string group, string totalHours, string discipline, string teacher, string occupation, string distributed ) : base()
         {
-            this.Group = group;
-            this.TotalHours = totalHours;
-            this.Discipline = discipline;
+            Id = id;
+            Group = group;
+            TotalHours = totalHours;
+            Discipline = discipline;
             Teacher = teacher;
             Occupation = occupation;
             Distributed = distributed;

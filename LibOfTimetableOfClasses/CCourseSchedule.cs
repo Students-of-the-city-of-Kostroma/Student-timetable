@@ -20,9 +20,11 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CCourseSchedule() : base("Расписание")
         {
+            var keys = new DataColumn[1];
+
             DataColumn idColumn = new DataColumn
             {
-                DataType = typeof(Int32),
+                DataType = typeof(int),
                 ColumnName = "ID",
             };
             idColumn.Unique = true;
@@ -30,11 +32,19 @@ namespace LibOfTimetableOfClasses
             idColumn.AutoIncrementSeed = 1;
             idColumn.AutoIncrementStep = 1;
             Columns.Add(idColumn);
+            keys[0] = idColumn;
 
             DataColumn column = new DataColumn
             {
+                DataType = typeof(int),
+                ColumnName = "AcademicId",
+            };
+            Columns.Add(column);
+
+            column = new DataColumn
+            {
                 DataType = typeof(string),
-                ColumnName = "Discipline",
+                ColumnName = "Building"
             };
             Columns.Add(column);
 
@@ -47,24 +57,26 @@ namespace LibOfTimetableOfClasses
 
             column = new DataColumn
             {
-                DataType = typeof(ushort),
+                DataType = typeof(string),
                 ColumnName = "DayOfWeek"
             };
             Columns.Add(column);
 
             column = new DataColumn
             {
-                DataType = typeof(string),
+                DataType = typeof(TimeSpan),
                 ColumnName = "StartTime"
             };
             Columns.Add(column);
 
             column = new DataColumn
             {
-                DataType = typeof(string),
+                DataType = typeof(TimeSpan),
                 ColumnName = "EndTime"
             };
             Columns.Add(column);
+
+            PrimaryKey = keys;
         }
 
         /// <summary>
@@ -79,9 +91,12 @@ namespace LibOfTimetableOfClasses
         {
             MCourseSchedule mSchedule = (MCourseSchedule)model;
 
+            if (mSchedule.Id <= 0 || mSchedule.Id == null)
+                return false;
+
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((Int32)Rows[i]["ID"] == mSchedule.Id)
+                if ((int)Rows[i]["ID"] == mSchedule.Id)
                 {
                     Rows.Remove(Rows[i]);
                     return true;
@@ -96,17 +111,19 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         /// <param name="model">Вставляемая в CCourseSchedule модель</param>
         /// <returns>Результат вставки</returns>
+        /// <remarks>Поле ID не заполняем, оно автоинкрементное. При вставке ID равно null.</remarks>
         public bool Insert(Model model)
         {
             MCourseSchedule mSchedule = (MCourseSchedule)model;
 
-            if (mSchedule.Id == 0)
+            if (mSchedule.Id <= 0 || (mSchedule.AcademicId <= 0 || mSchedule.AcademicId == null))
                 return false;
 
             try
             {
                 DataRow newRow = NewRow();
-                newRow["Discipline"] = mSchedule.Discipline;
+                newRow["AcademicId"] = mSchedule.AcademicId;
+                newRow["Building"] = mSchedule.Building;
                 newRow["Classroom"] = mSchedule.Classroom;
                 newRow["DayOfWeek"] = mSchedule.DayOfWeek;
                 newRow["StartTime"] = mSchedule.StartTime;
@@ -132,16 +149,18 @@ namespace LibOfTimetableOfClasses
         {
             MCourseSchedule mSchedule = (MCourseSchedule)model;
 
-            if (mSchedule.Id == 0)
+            if (mSchedule.Id <= 0 || mSchedule.Id == null)
                 return false;
 
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((Int32)Rows[i]["ID"] == mSchedule.Id)
+                if ((int)Rows[i]["ID"] == mSchedule.Id)
                 {
                     try
                     {
-                        Rows[i]["Discipline"] = mSchedule.Discipline;
+                        Rows[i].BeginEdit();
+                        Rows[i]["AcademicId"] = mSchedule.AcademicId;
+                        Rows[i]["Building"] = mSchedule.Building;
                         Rows[i]["Classroom"] = mSchedule.Classroom;
                         Rows[i]["DayOfWeek"] = mSchedule.DayOfWeek;
                         Rows[i]["StartTime"] = mSchedule.StartTime;

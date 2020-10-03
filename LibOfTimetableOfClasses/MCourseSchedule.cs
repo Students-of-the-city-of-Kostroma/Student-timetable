@@ -11,8 +11,9 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MCourseSchedule : Model
     {
-        private Int32 _id;
-        private string _discipline;
+        private int? _id;
+        private int? _academicId;
+        private string _building;
         private string _classroom;
         private string _dayOfWeek;
         private TimeSpan _startTime;
@@ -22,15 +23,17 @@ namespace LibOfTimetableOfClasses
         /// Создает экземпляр расписания
         /// </summary>
         /// <param name="ID">Уникальный идентификатор</param>
-        /// <param name="discipline">Краткое название предмета(дисциплины)</param>
+        /// <param name="academicId">Идентификатор академической загрузки</param>
+        /// <param name="building">Корпус</param>
         /// <param name="classroom">Аудитория</param>
         /// <param name="dayOfWeek">День недели</param>
         /// <param name="startTime">Время начала занятия</param>
         /// <param name="endTime">Время окончания занятия</param>
-        public MCourseSchedule(Int32 ID, string discipline, string classroom, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
+        public MCourseSchedule(int? ID, int? academicId, string building, string classroom, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
         {
             Id = ID;
-            Discipline = discipline;
+            AcademicId = academicId;
+            Building = building;
             Classroom = classroom;
             DayOfWeek = dayOfWeek;
             StartTime = startTime;
@@ -39,8 +42,9 @@ namespace LibOfTimetableOfClasses
 
         /// <summary>
         /// Уникальный идентификатор записи
+        /// Может принимать значение null для новой модели
         /// </summary>
-        public Int32 Id
+        public int? Id
         {
             get
             {
@@ -51,21 +55,37 @@ namespace LibOfTimetableOfClasses
                 _id = value;
             }
         }
-        
+
         /// <summary>
-        /// Предмет
+        /// Идентификатор академической загрузки (ссылка на значение из таблицы академической загрузки)
         /// </summary>
-        public string Discipline
+        public int? AcademicId
         {
             get
             {
-                return _discipline;
+                return _academicId;
             }
             set
             {
-                _discipline = value;
+                _academicId = value;
             }
         }
+
+        /// <summary>
+        /// Корпус
+        /// </summary>
+        public string Building
+        {
+            get
+            {
+                return _building;
+            }
+            set
+            {
+                _building = value;
+            }
+        }
+
 
         /// <summary>
         /// Аудитория
