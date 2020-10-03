@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Delete_CTeacher
+    public class UT_DСTeacher
     {
         readonly RefData refData = new RefData();
         [TestMethod]
@@ -43,7 +43,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void DCTEacher_4() //Попытка удалить данные при всех совпадающих значениях
+        public void DCTeacher_4() //Попытка удалить данные при всех совпадающих значениях
         {
 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
