@@ -105,8 +105,9 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("Discipline-AcademicLoad", CDiscipline.Columns["FullName"], CAcademicLoad.Columns["Discipline"]);
             DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
 
-
-
+            DataSet.Relations.Add("AcademicLoad-CourseSchedule", CAcademicLoad.Columns["ID"], CCourseSchedule.Columns["AcademicId"]);
+            DataSet.Relations.Add("Enclosures-CourseSchedule", CEnclosures.Columns["Name"], CCourseSchedule.Columns["Building"]);
+            DataSet.Relations.Add("Auditor-CourseSchedule", CAuditor.Columns["NameOfAuditor"], CCourseSchedule.Columns["Classroom"]);
         }
 
         /// <summary>
@@ -313,8 +314,9 @@ namespace LibOfTimetableOfClasses
             InitAcademicLoad();
             #endregion
 
-            MCourseSchedule mSchedule = new MCourseSchedule(null, 1, "A", "127", "Monday", new System.TimeSpan(8,30,0), new System.TimeSpan(10, 0, 0));
-            CCourseSchedule.Insert(mSchedule);
+            #region Schedule
+            InitSchedule();
+            #endregion
 
         }
 
@@ -323,70 +325,65 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         private void InitAcademicLoad()
         {
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "36", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(1, "17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(2, "17-ВТбо-2б", "72", "Управление данными", "Прядкина Нина Олеговна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(3, "17-ВТбо-2б", "36", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(4, "17-ВТбо-2б", "72", "Программирование на языках высокого уровня", "Гутман Александр Сергеевич", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(5, "17-ВТбо-2б", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(6, "17-ВТбо-2б", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(7, "17-ВТбо-2б", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(8, "17-ВТбо-2б", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
 
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ПИбо-4а", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ПИбо-4а", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ПИбо-4а", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ПИбо-4а", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ПИбо-4а", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(9, "17-ПИбо-4а", "72", "Моделирование ИС", "Панин Игорь Григорьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(10, "17-ПИбо-4а", "72", "Моделирование ИС", "Чувиляева Александра Сергеевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(11, "17-ПИбо-4а", "36", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(12, "17-ПИбо-4а", "72", "Лингвистическое обеспечение Пр.Ап.Ср.", "Орлов Александр Валерьевич", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(13, "17-ПИбо-4а", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
 
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "36", "ВЕБ-программирование", "Демчинова Елена Александровна", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "ВЕБ-программирование", "Демчинова Елена Александровна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(14, "17-ВТбо-2б", "36", "ВЕБ-программирование", "Демчинова Елена Александровна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(15, "17-ВТбо-2б", "72", "ВЕБ-программирование", "Демчинова Елена Александровна", "Практика", "0"));
 
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ИСбо-2а", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ИСбо-2а", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(16, "17-ИСбо-2а", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(17, "17-ИСбо-2а", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
 
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "3Д-моделирование", "Дорохова Жанна Викторовна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Практика", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
-            CAcademicLoad.Insert(new MAcademicLoad(null, "17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(18, "17-ВТбо-2б", "144", "Физическая культура и спорт", "Бушуев Сергей Герольдович", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(19, "17-ВТбо-2б", "72", "3Д-моделирование", "Дорохова Жанна Викторовна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(20, "17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(21, "17-ВТбо-2б", "72", "Системное ПО", "Дружинина Анна Григорьевна", "Практика", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(22, "17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Лекция", "0"));
+            CAcademicLoad.Insert(new MAcademicLoad(23, "17-ВТбо-2б", "36", "Правоведение", "Зеленцов Алексей Вениаминович", "Практика", "0"));
         }
 
         /// <summary>
-        /// Автоматически заполняем расписание тестовыми данными
+        /// Заполняем расписание тестовыми данными
         /// </summary>
         private void InitSchedule()
         {
             string[] days = new string[5] { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница" };
-            Tuple<TimeSpan, TimeSpan>[] timespans = LoadTimeSpans();
 
-            var vtbo = CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ВТбо-2б").Select(row => row.Field<int>("ID")).ToList();
-            var pibo = CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ПИбо-4а").Select(row => row.Field<int>("ID")).ToList();
-            var isbo = CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ИСбо-2а").Select(row => row.Field<int>("ID")).ToList();
-            var classrooms = CAuditor.AsEnumerable().Where(row => row.Field<string>("Building") == "Е").Select(row => row.Field<string>("NameOfAuditor")).ToList();
+            // 17-ВТбо-2б
+            CCourseSchedule.Insert(new MCourseSchedule(null, 1, "Е", "120", days[0], new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 6, "Е", "228", days[0], new TimeSpan(10, 10, 0), new TimeSpan(11, 40, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 19, "Е", "407", days[0], new TimeSpan(11, 50, 0), new TimeSpan(13, 20, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 5, "Е", "228", days[1], new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 18, "Е", "101", days[2], new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 2, "Е", "115", days[3], new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 7, "Е", "306", days[2], new TimeSpan(15, 40, 0), new TimeSpan(17, 10, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 23, "Б", "416", days[4], new TimeSpan(19, 0, 0), new TimeSpan(20, 30, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 23, "Б", "416", days[4], new TimeSpan(17, 20, 0), new TimeSpan(18, 50, 0)));
 
-            MCourseSchedule mSchedule = new MCourseSchedule(null, 1, "Е", "127", "Monday", new System.TimeSpan(8, 30, 0), new System.TimeSpan(10, 0, 0));
-            CCourseSchedule.Insert(mSchedule);
+            // 17-ИСбо-2а
+            CCourseSchedule.Insert(new MCourseSchedule(null, 17, "Е", "228", days[1], new TimeSpan(11, 50, 0), new TimeSpan(13, 20, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 16, "А", "303", days[3], new TimeSpan(10, 10, 0), new TimeSpan(11, 40, 0)));
 
+            //17-ПИбо-4а
+            CCourseSchedule.Insert(new MCourseSchedule(null, 13, "Е", "101", days[0], new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 9, "Е", "407", days[0], new TimeSpan(11, 50, 0), new TimeSpan(13, 20, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 10, "Е", "407", days[2], new TimeSpan(11, 50, 0), new TimeSpan(13, 20, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 12, "Е", "222", days[3], new TimeSpan(10, 10, 0), new TimeSpan(11, 40, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 11, "Е", "520", days[3], new TimeSpan(15, 40, 0), new TimeSpan(17, 10, 0)));
         }
 
-        /// <summary>
-        /// Готовим временные промежутки для занятий
-        /// </summary>
-        private Tuple<TimeSpan, TimeSpan>[] LoadTimeSpans()
-        {
-            Tuple<TimeSpan, TimeSpan>[] timespans =
-            {
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(8,30,0), new TimeSpan(10, 0, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(10,10,0), new TimeSpan(11, 40, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(11,50,0), new TimeSpan(13, 20, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(14,0,0), new TimeSpan(15, 30, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(15,40,0), new TimeSpan(17, 10, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(17,20,0), new TimeSpan(18, 50, 0)),
-                new Tuple<TimeSpan, TimeSpan>(new TimeSpan(19,0,0), new TimeSpan(20, 30, 0))
-            };
-            return timespans;
-        }
 
         /// <summary>
         /// Создаёт список аудиторий для Е-корпуса
@@ -506,6 +503,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public void ClearData()
         {
+            CCourseSchedule.Clear();
             CAcademicLoad.Clear();
             CGroup.Clear();
             CTrainingProfile.Clear();

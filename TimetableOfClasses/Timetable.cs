@@ -56,6 +56,10 @@ namespace TimetableOfClasses
                     Group = row.Field<string>("Group"),
                     Speciality = row.Field<string>("Specialty")
                 }).ToList();
+
+            //var groups = refData.CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ВТбо-2б").Select(row => row.Field<int>("ID")).ToList();
+            //var classrooms = refData.CAuditor.AsEnumerable().Where(row => row.Field<string>("Building") == "Е").Select(row => row.Field<string>("NameOfAuditor")).ToList();
+
         }
 
         private void CboInstitute_SelectionChangeCommitted(object sender, System.EventArgs e)
@@ -118,6 +122,17 @@ namespace TimetableOfClasses
             ComboBox cbo = (ComboBox)sender;
             var sv = cbo.SelectedValue;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
+
+            //Tuple<TimeSpan, TimeSpan>[] timespans =
+            //{
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(8,30,0), new TimeSpan(10, 0, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(10,10,0), new TimeSpan(11, 40, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(11,50,0), new TimeSpan(13, 20, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(14,0,0), new TimeSpan(15, 30, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(15,40,0), new TimeSpan(17, 10, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(17,20,0), new TimeSpan(18, 50, 0)),
+            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(19,0,0), new TimeSpan(20, 30, 0))
+            //};
 
             throw new NotImplementedException("Отображение расписания не реализовано.");
         }

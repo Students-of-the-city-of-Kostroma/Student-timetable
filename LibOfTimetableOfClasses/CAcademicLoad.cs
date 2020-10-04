@@ -103,7 +103,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         /// <param name="model">Модель MAcademicLoad хранящая новую запись таблицы</param>
         /// <returns>Результат обновления</returns>
-        /// <remarks>Поле ID не заполняем, оно автоинкрементное. При вставке ID равно null.</remarks>
+        /// <remarks>В поле ID значение может быть равно null, оно автоинкрементное. При вставке ID равно null.</remarks>
         public bool Insert(Model model)
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
@@ -114,6 +114,10 @@ namespace LibOfTimetableOfClasses
             try
             {
                 DataRow newRow = NewRow();
+                if (mAcademic.Id != null)
+                {
+                    newRow["ID"] = mAcademic.Id;
+                }
                 newRow["Group"] = mAcademic.Group;
                 newRow["Discipline"] = mAcademic.Discipline;
                 newRow["DistributedHours"] = mAcademic.Distributed;

@@ -111,7 +111,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         /// <param name="model">Вставляемая в CCourseSchedule модель</param>
         /// <returns>Результат вставки</returns>
-        /// <remarks>Поле ID не заполняем, оно автоинкрементное. При вставке ID равно null.</remarks>
+        /// <remarks>Поле ID допускает значение null, оно автоинкрементное.</remarks>
         public bool Insert(Model model)
         {
             MCourseSchedule mSchedule = (MCourseSchedule)model;
@@ -122,6 +122,10 @@ namespace LibOfTimetableOfClasses
             try
             {
                 DataRow newRow = NewRow();
+                if (mSchedule.Id != null)
+                {
+                    newRow["ID"] = mSchedule.Id;
+                }
                 newRow["AcademicId"] = mSchedule.AcademicId;
                 newRow["Building"] = mSchedule.Building;
                 newRow["Classroom"] = mSchedule.Classroom;
