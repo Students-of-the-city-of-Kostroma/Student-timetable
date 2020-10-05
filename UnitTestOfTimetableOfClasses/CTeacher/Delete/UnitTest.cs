@@ -3,21 +3,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]
-    public class UT_DСTeacher /// <summary> Тестирование метода Delete сущности Преподаватель </summary>
-    {
+    [TestClass]               /// <summary>
+    public class UT_DСTeacher /// Тестирование метода Delete сущности Преподаватель
+    {                         /// </summary>
         readonly RefData refData = new RefData();
-        [TestMethod]
-        public void DCTeacher_1() /// <summary> Удаление сведений в пустой таблице преподавателей </summary>
-        {
+        [TestMethod]              /// <summary>
+        public void DCTeacher_1() /// Удаление сведений в пустой таблице преподавателей
+        {                         /// </summary>
             Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой"); 
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             Assert.AreEqual(refData.CTeacher.Delete(tcher), false, "Преподаватель был удалён, не смотря на то, что таблица преподавателей пуста");
-        }
+        } 
 
-        [TestMethod]
-        public void DCTeacher_2() /// <summary> Попытка удалить преподавателя при несовпадающих значениях фамилии </summary>
-        {
+        [TestMethod]              /// <summary>
+        public void DCTeacher_2() /// Попытка удалить преподавателя при несовпадающих значениях фамилии
+        {                         /// </summary>
 
             MAcademicDegree mad = new MAcademicDegree ("Кандидат наук","КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
@@ -29,9 +29,9 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(refData.CTeacher.Delete(tcher2), false, "Преподаватель был удалён, не смотря на то, что фамилии не совпадают");
         }
 
-        [TestMethod]
-        public void DCTeacher_3() /// <summary> Попытка удалить преподавателя при несовпадающих значениях института </summary>
-        {
+        [TestMethod]              /// <summary>
+        public void DCTeacher_3() /// Попытка удалить преподавателя при несовпадающих значениях института
+        {                         /// </summary>
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
             MTitle mt = new MTitle("Профессор", "ПР");
@@ -42,9 +42,9 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(refData.CTeacher.Delete(tcher2), false, "Преподаватель был удалён, не смотря на то, что название институтов не совпадают");
         }
 
-        [TestMethod]
-        public void DCTeacher_4() /// <summary> Попытка удалить данные при всех совпадающих значениях </summary>
-        {
+        [TestMethod]              /// <summary>
+        public void DCTeacher_4() /// Попытка удалить данные при всех совпадающих значениях
+        {                         /// /summary>
 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
