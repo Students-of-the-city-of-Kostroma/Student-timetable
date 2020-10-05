@@ -4,11 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_DСTeacher //Тестирование метода Delete сущности Преподаватель
+    public class UT_DСTeacher // <summary> Тестирование метода Delete сущности Преподаватель </summary>
     {
         readonly RefData refData = new RefData();
         [TestMethod]
-        public void DCTeacher_1() //Удаление сведений в пустой таблице преподавателей 
+        public void DCTeacher_1() // <summary> Удаление сведений в пустой таблице преподавателей </summary>
         {
             Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой"); 
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
@@ -16,7 +16,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void DCTeacher_2() //Попытка удалить преподавателя при несовпадающих значениях фамилии 
+        public void DCTeacher_2() // <summary> Попытка удалить преподавателя при несовпадающих значениях фамилии </summary>
         {
 
             MAcademicDegree mad = new MAcademicDegree ("Кандидат наук","КН");
@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void DCTeacher_3() //Попытка удалить преподавателя при несовпадающих значениях института 
+        public void DCTeacher_3() // <summary> Попытка удалить преподавателя при несовпадающих значениях института </summary>
         {
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
@@ -43,7 +43,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void DCTeacher_4() //Попытка удалить данные при всех совпадающих значениях
+        public void DCTeacher_4() // <summary> Попытка удалить данные при всех совпадающих значениях </summary>
         {
 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
