@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_DСTeacher
+    public class UT_DСTeacher //Тестирование метода Delete сущности Преподаватель
     {
         readonly RefData refData = new RefData();
         [TestMethod]
