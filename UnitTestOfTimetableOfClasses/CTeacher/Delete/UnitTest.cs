@@ -44,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses
 
         [TestMethod]              /// <summary>
         public void DCTeacher_4() /// Попытка удалить данные при всех совпадающих значениях
-        {                         /// /summary>
+        {                         /// </summary>
 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
