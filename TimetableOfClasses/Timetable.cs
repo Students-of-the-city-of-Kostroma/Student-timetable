@@ -17,6 +17,43 @@ namespace TimetableOfClasses
         public Timetable()
         {
             InitializeComponent();
+
+            string[] headers = new string[8] { "Время", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
+
+            string[] timespans =
+            {
+                string.Format("{0}-{1}",new TimeSpan(8,30,0).ToString(), new TimeSpan(10, 0, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(10,10,0).ToString(), new TimeSpan(11, 40, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(11,50,0).ToString(), new TimeSpan(13, 20, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(14,0,0).ToString(), new TimeSpan(15, 30, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(15,40,0).ToString(), new TimeSpan(17, 10, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(17,20,0).ToString(), new TimeSpan(18, 50, 0).ToString()),
+                string.Format("{0}-{1}",new TimeSpan(19,0,0).ToString(), new TimeSpan(20, 30, 0).ToString())
+            };
+
+            tpSchedule.ColumnStyles.Clear();
+            tpSchedule.RowStyles.Clear();
+
+            tpSchedule.ColumnCount = headers.Length;
+            tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
+            //tpSchedule.AutoScroll = true;
+            tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
+            tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
+            // заголовок
+            for (int i = 0; i < headers.Length; i++)
+            {
+                tpSchedule.Controls.Add(new Label() { Text = headers[i] }, i, 0);
+            }
+
+            //строки в первой колонке -"Время"
+            for (int i = 0; i < timespans.Length; i++)
+            {
+                tpSchedule.Controls.Add(new Label() { Text = timespans[i] }, 0, i + 1);
+            }
+
         }
 
         public void initRefData(LibOfTimetableOfClasses.RefData refData)
@@ -123,18 +160,6 @@ namespace TimetableOfClasses
             var sv = cbo.SelectedValue;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
 
-            //Tuple<TimeSpan, TimeSpan>[] timespans =
-            //{
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(8,30,0), new TimeSpan(10, 0, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(10,10,0), new TimeSpan(11, 40, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(11,50,0), new TimeSpan(13, 20, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(14,0,0), new TimeSpan(15, 30, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(15,40,0), new TimeSpan(17, 10, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(17,20,0), new TimeSpan(18, 50, 0)),
-            //    new Tuple<TimeSpan, TimeSpan>(new TimeSpan(19,0,0), new TimeSpan(20, 30, 0))
-            //};
-
-            throw new NotImplementedException("Отображение расписания не реализовано.");
         }
 
     }
