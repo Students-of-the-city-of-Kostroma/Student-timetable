@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibOfTimetableOfClasses;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace TimetableOfClasses
         List<GroupDto> allGroups = new List<GroupDto>();
         List<CourseDto> allCourses = new List<CourseDto>();
         List<TrainingProfileDto> allProfiles = new List<TrainingProfileDto>();
+        List<MAcademicLoad> allAcademicLoads = new List<MAcademicLoad>();
+        List<MCourseSchedule> allCoursesScheduler = new List<MCourseSchedule>();
 
         public Timetable()
         {
@@ -94,8 +97,28 @@ namespace TimetableOfClasses
                     Speciality = row.Field<string>("Specialty")
                 }).ToList();
 
-            //var groups = refData.CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ВТбо-2б").Select(row => row.Field<int>("ID")).ToList();
-            //var classrooms = refData.CAuditor.AsEnumerable().Where(row => row.Field<string>("Building") == "Е").Select(row => row.Field<string>("NameOfAuditor")).ToList();
+            allAcademicLoads = refData.CAcademicLoad.AsEnumerable()
+                .Select(row => new MAcademicLoad(
+                    row.Field<int?>("ID"),
+                    row.Field<string>("Group"),
+                    row.Field<string>("HoursAll"),
+                    row.Field<string>("Discipline"),
+                    row.Field<string>("Professor"),
+                    row.Field<string>("KindOfLesson"),
+                    row.Field<string>("DistributedHours")
+                )).ToList();
+
+            allCoursesScheduler = refData.CCourseSchedule.AsEnumerable()
+                .Select(row => new MCourseSchedule
+                (
+                    row.Field<int?>("ID"),
+                    row.Field<int?>("AcademicId"),
+                    row.Field<string>("Building"),
+                    row.Field<string>("Classroom"),
+                    row.Field<string>("DayOfWeek"),
+                    row.Field<TimeSpan>("StartTime"),
+                    row.Field<TimeSpan>("EndTime")
+                )).ToList();
 
         }
 
@@ -159,6 +182,9 @@ namespace TimetableOfClasses
             ComboBox cbo = (ComboBox)sender;
             var sv = cbo.SelectedValue;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
+
+            //var groups = refData.CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ВТбо-2б").Select(row => row.Field<int>("ID")).ToList();
+            //var classrooms = refData.CAuditor.AsEnumerable().Where(row => row.Field<string>("Building") == "Е").Select(row => row.Field<string>("NameOfAuditor")).ToList();
 
         }
 
