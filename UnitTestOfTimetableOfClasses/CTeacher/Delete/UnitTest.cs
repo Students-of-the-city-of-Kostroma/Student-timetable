@@ -5,11 +5,6 @@ namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_DСTeacher                    
-    /// <summary>
-    /// Тестирование метода Delete сущности Преподаватель
-    /// </summary>
-    /// <param name="">текст</param>
-    /// <returns>текст</returns>
     {                   
         readonly RefData refData = new RefData();
         [TestMethod]    
