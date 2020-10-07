@@ -3,8 +3,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses
 {
-    [TestClass]         
-    public class UT_DСTeacher /// Тестирование метода Delete сущности Преподаватель
+    [TestClass]
+    /// <summary>
+    /// Тестирование метода Delete сущности Преподаватель
+    /// </summary>
+    public class UT_DСTeacher
     {                   
         readonly RefData refData = new RefData();
         [TestMethod]    
