@@ -1,11 +1,11 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
-{
     /// <summary>
     /// Тестирование метода Delete сущности Преподаватель
     /// </summary>
+namespace UnitTestOfTimetableOfClasses
+{
     [TestClass]
     public class UT_DСTeacher
     {                   
