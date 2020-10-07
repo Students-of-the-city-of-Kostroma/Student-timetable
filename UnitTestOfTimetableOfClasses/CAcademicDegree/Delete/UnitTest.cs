@@ -4,14 +4,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Delete_CAcademicDegree
+    public class UT_DCAcademicDegree
     {
         readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующих данных таблицы
         /// </summary>
         [TestMethod]
-        public void Task_485_1()
+        public void DCAcademicDegree_1()
         {
             
             //arrange
@@ -31,7 +31,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление несуществующих данных из таблицы
         /// </summary>
         [TestMethod]
-        public void Task_485_2()
+        public void DCAcademicDegree_2()
         {
             //arrange 
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
