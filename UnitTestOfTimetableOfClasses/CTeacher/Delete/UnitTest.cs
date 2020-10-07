@@ -1,8 +1,3 @@
-    /// <summary>
-    /// Тестирование метода Delete сущности Преподаватель
-    /// </summary>
-    /// <param name="">текст</param>
-    /// <returns>текст</returns>
 using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
