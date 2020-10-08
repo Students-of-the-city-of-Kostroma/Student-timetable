@@ -106,8 +106,6 @@ namespace LibOfTimetableOfClasses
             DataSet.Relations.Add("TypesOfOccupations-AcademicLoad", CTypesOfOccupations.Columns["FullName"], CAcademicLoad.Columns["KindOfLesson"]);
 
             DataSet.Relations.Add("AcademicLoad-CourseSchedule", CAcademicLoad.Columns["ID"], CCourseSchedule.Columns["AcademicId"]);
-            DataSet.Relations.Add("Enclosures-CourseSchedule", CEnclosures.Columns["Name"], CCourseSchedule.Columns["Building"]);
-            DataSet.Relations.Add("Auditor-CourseSchedule", CAuditor.Columns["NameOfAuditor"], CCourseSchedule.Columns["Classroom"]);
         }
 
         /// <summary>

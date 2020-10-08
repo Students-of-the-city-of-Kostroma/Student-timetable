@@ -10,20 +10,16 @@ namespace TimetableOfClasses
 {
     public partial class Timetable : Form
     {
+        private LibOfTimetableOfClasses.RefData refData;
+
         List<InstituteDto> institutes = new List<InstituteDto>();
         List<GroupDto> allGroups = new List<GroupDto>();
         List<CourseDto> allCourses = new List<CourseDto>();
         List<TrainingProfileDto> allProfiles = new List<TrainingProfileDto>();
-        List<MAcademicLoad> allAcademicLoads = new List<MAcademicLoad>();
-        List<MCourseSchedule> allCoursesScheduler = new List<MCourseSchedule>();
 
-        public Timetable()
-        {
-            InitializeComponent();
+        private string[] headers = new string[8] { "Время", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
 
-            string[] headers = new string[8] { "Время", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
-
-            string[] timespans =
+        private string[] timespans =
             {
                 string.Format("{0}-{1}",new TimeSpan(8,30,0).ToString(), new TimeSpan(10, 0, 0).ToString()),
                 string.Format("{0}-{1}",new TimeSpan(10,10,0).ToString(), new TimeSpan(11, 40, 0).ToString()),
@@ -33,6 +29,14 @@ namespace TimetableOfClasses
                 string.Format("{0}-{1}",new TimeSpan(17,20,0).ToString(), new TimeSpan(18, 50, 0).ToString()),
                 string.Format("{0}-{1}",new TimeSpan(19,0,0).ToString(), new TimeSpan(20, 30, 0).ToString())
             };
+
+        const string pattern = @"{0}
+        {1}-{2}({3})
+        {4}";
+
+        public Timetable()
+        {
+            InitializeComponent();
 
             tpSchedule.ColumnStyles.Clear();
             tpSchedule.RowStyles.Clear();
@@ -59,9 +63,11 @@ namespace TimetableOfClasses
 
         }
 
-        public void initRefData(LibOfTimetableOfClasses.RefData refData)
+        public void initRefData(LibOfTimetableOfClasses.RefData data)
         {
-            institutes = refData.CInstitute.AsEnumerable()
+            refData = data;
+
+            institutes = data.CInstitute.AsEnumerable()
                 .Select(row => new InstituteDto
                 {
                     ID = row.Field<string>("ShortName"),
@@ -74,7 +80,7 @@ namespace TimetableOfClasses
             cboCourse.Enabled = false;
             cboGroup.Enabled = false;
 
-            allCourses = refData.CDirectionOfPreparation.AsEnumerable()
+            allCourses = data.CDirectionOfPreparation.AsEnumerable()
                 .Select(row => new CourseDto
                 {
                     ID = row.Field<string>("CodeOfDP"),
@@ -82,43 +88,20 @@ namespace TimetableOfClasses
                     InstituteShortName = row.Field<string>("InstituteShortName")
                 }).ToList();
 
-            allProfiles = refData.CTrainingProfile.AsEnumerable()
+            allProfiles = data.CTrainingProfile.AsEnumerable()
                 .Select(row => new TrainingProfileDto
                 {
                     Code = row.Field<string>("Shiphr"),
                     ShortName = row.Field<string>("ShortName")
                 }).ToList();
 
-            allGroups = refData.CGroup.AsEnumerable()
+            allGroups = data.CGroup.AsEnumerable()
                 .Select(row => new GroupDto
                 {
                     ID = row.Field<string>("Group"),
                     Group = row.Field<string>("Group"),
                     Speciality = row.Field<string>("Specialty")
                 }).ToList();
-
-            allAcademicLoads = refData.CAcademicLoad.AsEnumerable()
-                .Select(row => new MAcademicLoad(
-                    row.Field<int?>("ID"),
-                    row.Field<string>("Group"),
-                    row.Field<string>("HoursAll"),
-                    row.Field<string>("Discipline"),
-                    row.Field<string>("Professor"),
-                    row.Field<string>("KindOfLesson"),
-                    row.Field<string>("DistributedHours")
-                )).ToList();
-
-            allCoursesScheduler = refData.CCourseSchedule.AsEnumerable()
-                .Select(row => new MCourseSchedule
-                (
-                    row.Field<int?>("ID"),
-                    row.Field<int?>("AcademicId"),
-                    row.Field<string>("Building"),
-                    row.Field<string>("Classroom"),
-                    row.Field<string>("DayOfWeek"),
-                    row.Field<TimeSpan>("StartTime"),
-                    row.Field<TimeSpan>("EndTime")
-                )).ToList();
 
         }
 
@@ -149,7 +132,6 @@ namespace TimetableOfClasses
         private void CboCourse_SelectionChangeCommitted(object sender, System.EventArgs e)
         {
             ComboBox cbo = (ComboBox)sender;
-            var sv = cbo.SelectedValue;
             CourseDto selectedCourse = (CourseDto)cbo.SelectedItem;
 
             var groups = allProfiles.Join(allGroups, p => p.ShortName, gr => gr.Speciality, 
@@ -180,11 +162,43 @@ namespace TimetableOfClasses
         private void CboGroup_SelectionChangeCommitted(object sender, System.EventArgs e)
         {
             ComboBox cbo = (ComboBox)sender;
-            var sv = cbo.SelectedValue;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
 
-            //var groups = refData.CAcademicLoad.AsEnumerable().Where(row => row.Field<string>("Group") == "17-ВТбо-2б").Select(row => row.Field<int>("ID")).ToList();
-            //var classrooms = refData.CAuditor.AsEnumerable().Where(row => row.Field<string>("Building") == "Е").Select(row => row.Field<string>("NameOfAuditor")).ToList();
+            var groupSchedule = (from al in refData.CAcademicLoad.AsEnumerable()
+                                join cs in refData.CCourseSchedule.AsEnumerable() on (int?)al["ID"] equals (int)cs["AcademicId"]
+                                where (string)al["Group"] == selectedGroup.Group
+                                orderby (string)cs["DayOfWeek"]
+                                select new
+                                {
+                                    Id = (int?)al["ID"],
+                                    Group = (string)al["Group"],
+                                    Speciality = (string)al["Discipline"],
+                                    Teacher = (string)al["Professor"],
+                                    KindOfLesson = (string)al["KindOfLesson"],
+                                    Building = (string)cs["Building"],
+                                    Classroom = (string)cs["Classroom"],
+                                    DayOfWeek = (string)cs["DayOfWeek"],
+                                    Time = string.Format("{0}-{1}", ((TimeSpan)cs["StartTime"]).ToString(), ((TimeSpan)cs["EndTime"]).ToString()),
+                                }).ToList();
+
+            for (int x = 1; x < headers.Length; x++)
+            {
+                for (int y = 0; y < timespans.Length; y++)
+                {
+                    
+                    var daySchedule = groupSchedule.Where(r => r.DayOfWeek == headers[x]).OrderBy(r => r.Time);
+                    if (daySchedule.Count() > 0)
+                    {
+                        var lesson = daySchedule.Where(s => s.Time == timespans[y]).SingleOrDefault();
+                        if (lesson != null)
+                        {
+                            var text = string.Format(pattern,lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher);
+                            tpSchedule.Controls.Add(new Label() { Text = text }, x, y+1);
+                        }
+                    }
+                }
+            }
+
 
         }
 
