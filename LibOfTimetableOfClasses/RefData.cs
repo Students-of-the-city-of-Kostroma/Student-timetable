@@ -247,6 +247,10 @@ namespace LibOfTimetableOfClasses
             CDirectionOfPreparation.Insert(mDirectionOfPreparation1);
             MDirectionOfPreparation mDirectionOfPreparation2 = new MDirectionOfPreparation("09.03.01", "Информатика и вычислительная техника", 4, "ИАСТ");
             CDirectionOfPreparation.Insert(mDirectionOfPreparation2);
+            MDirectionOfPreparation mDirectionOfPreparation3 = new MDirectionOfPreparation("09.03.05", "Дизайн и технологии", 3, "ИДТ");
+            CDirectionOfPreparation.Insert(mDirectionOfPreparation3);
+            MDirectionOfPreparation mDirectionOfPreparation4 = new MDirectionOfPreparation("09.03.10", "Основы колористики", 3, "ИДТ");
+            CDirectionOfPreparation.Insert(mDirectionOfPreparation4);
             #endregion
 
             #region TrainingProfile
@@ -256,6 +260,8 @@ namespace LibOfTimetableOfClasses
             CTrainingProfile.Insert(mTrainingProfile1);
             MTrainingProfile mTrainingProfile2 = new MTrainingProfile("Информатика и вычислительная техника", "ИВТ", "09.03.01");
             CTrainingProfile.Insert(mTrainingProfile2);
+            MTrainingProfile mTrainingProfile3 = new MTrainingProfile("Дизайн и технологии", "ДИТ", "09.03.05");
+            CTrainingProfile.Insert(mTrainingProfile3);
             #endregion
 
             #region group
@@ -265,6 +271,8 @@ namespace LibOfTimetableOfClasses
             CGroup.Insert(mGroup1);
             MGroup mGroup2 = new MGroup("17-ВТбо-2б", 4, "ИВТ", 1, 20, 2, 5, "Суббота");
             CGroup.Insert(mGroup2);
+            MGroup mGroup3 = new MGroup("18-ИСбо-1а", 3, "ДИТ", 1, 20, 2, 5, "Суббота");
+            CGroup.Insert(mGroup3);
             #endregion
 
             #region discipline
@@ -357,7 +365,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         private void InitSchedule()
         {
-            string[] days = new string[5] { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница" };
+            string[] days = new string[7] { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
 
             // 17-ВТбо-2б
             CCourseSchedule.Insert(new MCourseSchedule(null, 1, "Е", "120", days[0], new TimeSpan(8, 30, 0), new TimeSpan(10, 0, 0)));

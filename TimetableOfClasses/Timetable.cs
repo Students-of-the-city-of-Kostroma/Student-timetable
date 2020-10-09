@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TimetableOfClasses.DTO;
@@ -30,42 +31,19 @@ namespace TimetableOfClasses
                 string.Format("{0}-{1}",new TimeSpan(19,0,0).ToString(), new TimeSpan(20, 30, 0).ToString())
             };
 
-        const string pattern = @"{0}
-        {1}-{2}({3})
-        {4}";
+        const string pattern = @"{0}{5}{1}-{2}({3}){5}{4}";
 
         public Timetable()
         {
             InitializeComponent();
 
-            tpSchedule.ColumnStyles.Clear();
-            tpSchedule.RowStyles.Clear();
-
-            tpSchedule.ColumnCount = headers.Length;
-            tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
-            //tpSchedule.AutoScroll = true;
-            tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-
-            tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-
-            // заголовок
-            for (int i = 0; i < headers.Length; i++)
-            {
-                tpSchedule.Controls.Add(new Label() { Text = headers[i] }, i, 0);
-            }
-
-            //строки в первой колонке -"Время"
-            for (int i = 0; i < timespans.Length; i++)
-            {
-                tpSchedule.Controls.Add(new Label() { Text = timespans[i] }, 0, i + 1);
-            }
-
+            // TableLayoutPanel инициализация
+            TpSchedule_Init();
         }
 
         public void initRefData(LibOfTimetableOfClasses.RefData data)
         {
-            refData = data;
+            this.refData = data;
 
             institutes = data.CInstitute.AsEnumerable()
                 .Select(row => new InstituteDto
@@ -123,10 +101,10 @@ namespace TimetableOfClasses
                 cboCourse.DataSource = null;
                 cboCourse.Enabled = false;
                 cboCourse.Text = "Выберите направление подготовки";
-                cboGroup.DataSource = null;
-                cboGroup.Enabled = false;
-                cboGroup.Text = "Выберите группу";
             }
+            cboGroup.DataSource = null;
+            cboGroup.Enabled = false;
+            cboGroup.Text = "Выберите группу";
         }
 
         private void CboCourse_SelectionChangeCommitted(object sender, System.EventArgs e)
@@ -164,6 +142,9 @@ namespace TimetableOfClasses
             ComboBox cbo = (ComboBox)sender;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
 
+            TpSchedule_Clear();
+            TpSchedule_Init();
+
             var groupSchedule = (from al in refData.CAcademicLoad.AsEnumerable()
                                 join cs in refData.CCourseSchedule.AsEnumerable() on (int?)al["ID"] equals (int)cs["AcademicId"]
                                 where (string)al["Group"] == selectedGroup.Group
@@ -192,15 +173,55 @@ namespace TimetableOfClasses
                         var lesson = daySchedule.Where(s => s.Time == timespans[y]).SingleOrDefault();
                         if (lesson != null)
                         {
-                            var text = string.Format(pattern,lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher);
-                            tpSchedule.Controls.Add(new Label() { Text = text }, x, y+1);
+                            var text = string.Format(pattern,lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher, Environment.NewLine);
+                            //tpSchedule.Controls.Add(new Label() { Text = text, Dock = DockStyle.Fill }, x, y+1);
+                            TextBox tbLesson = new TextBox();
+                            tbLesson.ReadOnly = true;
+                            tbLesson.Multiline = true;
+                            tbLesson.Dock = DockStyle.Fill;
+                            tbLesson.Text = text;
+                            SizeF size = tbLesson.CreateGraphics().MeasureString(tbLesson.Text, tbLesson.Font, tbLesson.Width, new StringFormat(0));
+                            tbLesson.Height = (int)size.Height;
+                            tpSchedule.Controls.Add(tbLesson, x, y + 1);
                         }
                     }
                 }
             }
-
-
         }
 
+        private void TpSchedule_Clear()
+        {
+            while (tpSchedule.Controls.Count > 0)
+            {
+                tpSchedule.Controls[0].Dispose();
+            }
+            tpSchedule.Controls.Clear();
+        }
+
+        private void TpSchedule_Init()
+        {
+            tpSchedule.ColumnStyles.Clear();
+            tpSchedule.RowStyles.Clear();
+
+            tpSchedule.ColumnCount = headers.Length;
+            tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
+
+            tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+
+            tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
+            // заголовок
+            for (int i = 0; i < headers.Length; i++)
+            {
+                tpSchedule.Controls.Add(new Label() { Text = headers[i], Dock = DockStyle.Fill }, i, 0);
+            }
+
+            //строки в первой колонке -"Время"
+            for (int i = 0; i < timespans.Length; i++)
+            {
+                tpSchedule.Controls.Add(new Label() { Text = timespans[i], Dock = DockStyle.Fill }, 0, i + 1);
+            }
+        }
     }
 }
