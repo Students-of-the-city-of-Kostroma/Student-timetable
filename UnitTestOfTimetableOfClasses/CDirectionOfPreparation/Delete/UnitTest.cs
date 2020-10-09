@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Delete_CDirectionOfPreparation
+    public class UT_DCDirectionOfPreparation
     {
         readonly RefData refData = new RefData();
         public void Pre_condition_Del()
@@ -19,7 +19,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(C1 + 1, C2);
         }
         [TestMethod]
-        public void Task_555_1()
+        public void DCDirectionOfPreparation_1()
         {
             Pre_condition_Del();
             bool ex = true;
@@ -33,7 +33,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(C1 - 1, C2);
         }
         [TestMethod]
-        public void Task_555_2()
+        public void DCDirectionOfPreparation_2()
         {
             bool ex = false;
             bool act;
