@@ -127,16 +127,16 @@
             // 
             // tpSchedule
             // 
-            this.tpSchedule.AutoScroll = true;
             this.tpSchedule.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tpSchedule.ColumnCount = 1;
             this.tpSchedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tpSchedule.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tpSchedule.Location = new System.Drawing.Point(0, 128);
+            this.tpSchedule.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tpSchedule.Location = new System.Drawing.Point(13, 128);
             this.tpSchedule.Name = "tpSchedule";
             this.tpSchedule.RowCount = 1;
             this.tpSchedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 503F));
-            this.tpSchedule.Size = new System.Drawing.Size(729, 503);
+            this.tpSchedule.Size = new System.Drawing.Size(698, 491);
             this.tpSchedule.TabIndex = 0;
             // 
             // listBox1

@@ -375,8 +375,8 @@ namespace LibOfTimetableOfClasses
             CCourseSchedule.Insert(new MCourseSchedule(null, 18, "Е", "101", days[2], new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)));
             CCourseSchedule.Insert(new MCourseSchedule(null, 2, "Е", "115", days[3], new TimeSpan(14, 0, 0), new TimeSpan(15, 30, 0)));
             CCourseSchedule.Insert(new MCourseSchedule(null, 7, "Е", "306", days[2], new TimeSpan(15, 40, 0), new TimeSpan(17, 10, 0)));
-            CCourseSchedule.Insert(new MCourseSchedule(null, 23, "Б", "416", days[4], new TimeSpan(19, 0, 0), new TimeSpan(20, 30, 0)));
-            CCourseSchedule.Insert(new MCourseSchedule(null, 23, "Б", "416", days[4], new TimeSpan(17, 20, 0), new TimeSpan(18, 50, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 22, "Б", "416", days[4], new TimeSpan(19, 0, 0), new TimeSpan(20, 30, 0)));
+            CCourseSchedule.Insert(new MCourseSchedule(null, 23, "Б", "416", days[6], new TimeSpan(17, 20, 0), new TimeSpan(18, 50, 0)));
 
             // 17-ИСбо-2а
             CCourseSchedule.Insert(new MCourseSchedule(null, 17, "Е", "228", days[1], new TimeSpan(11, 50, 0), new TimeSpan(13, 20, 0)));

@@ -31,14 +31,14 @@ namespace TimetableOfClasses
                 string.Format("{0}-{1}",new TimeSpan(19,0,0).ToString(), new TimeSpan(20, 30, 0).ToString())
             };
 
-        const string pattern = @"{0}{5}{1}-{2}({3}){5}{4}";
+        const string LessonPattern = @"{0}{5}{1}-{2}({3}){5}{4}{5}";
 
         public Timetable()
         {
             InitializeComponent();
 
             // TableLayoutPanel инициализация
-            TpSchedule_Init();
+            TlpSchedule_Init();
         }
 
         public void initRefData(LibOfTimetableOfClasses.RefData data)
@@ -142,8 +142,8 @@ namespace TimetableOfClasses
             ComboBox cbo = (ComboBox)sender;
             GroupDto selectedGroup = (GroupDto)cbo.SelectedItem;
 
-            TpSchedule_Clear();
-            TpSchedule_Init();
+            TlpSchedule_Clear();
+            TlpSchedule_Init();
 
             var groupSchedule = (from al in refData.CAcademicLoad.AsEnumerable()
                                 join cs in refData.CCourseSchedule.AsEnumerable() on (int?)al["ID"] equals (int)cs["AcademicId"]
@@ -167,38 +167,24 @@ namespace TimetableOfClasses
                 for (int y = 0; y < timespans.Length; y++)
                 {
                     
-                    var daySchedule = groupSchedule.Where(r => r.DayOfWeek == headers[x]).OrderBy(r => r.Time);
-                    if (daySchedule.Count() > 0)
+                    var lesson = groupSchedule.Where(r => r.DayOfWeek == headers[x] && r.Time == timespans[y]).SingleOrDefault();
+                    if (lesson != null)
                     {
-                        var lesson = daySchedule.Where(s => s.Time == timespans[y]).SingleOrDefault();
-                        if (lesson != null)
-                        {
-                            var text = string.Format(pattern,lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher, Environment.NewLine);
-                            //tpSchedule.Controls.Add(new Label() { Text = text, Dock = DockStyle.Fill }, x, y+1);
-                            TextBox tbLesson = new TextBox();
-                            tbLesson.ReadOnly = true;
-                            tbLesson.Multiline = true;
-                            tbLesson.Dock = DockStyle.Fill;
-                            tbLesson.Text = text;
-                            SizeF size = tbLesson.CreateGraphics().MeasureString(tbLesson.Text, tbLesson.Font, tbLesson.Width, new StringFormat(0));
-                            tbLesson.Height = (int)size.Height;
-                            tpSchedule.Controls.Add(tbLesson, x, y + 1);
-                        }
+                        var text = string.Format(LessonPattern, lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher, Environment.NewLine);
+                        Label lLesson = new Label() { Text = text };
+                        lLesson.Size = new Size(lLesson.PreferredWidth, lLesson.PreferredHeight);
+                        tpSchedule.Controls.Add(lLesson, x, y + 1);
                     }
                 }
             }
         }
 
-        private void TpSchedule_Clear()
+        private void TlpSchedule_Clear()
         {
-            while (tpSchedule.Controls.Count > 0)
-            {
-                tpSchedule.Controls[0].Dispose();
-            }
             tpSchedule.Controls.Clear();
         }
 
-        private void TpSchedule_Init()
+        private void TlpSchedule_Init()
         {
             tpSchedule.ColumnStyles.Clear();
             tpSchedule.RowStyles.Clear();
@@ -207,21 +193,24 @@ namespace TimetableOfClasses
             tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
 
             tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            tpSchedule.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
             tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
             tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
-            // заголовок
+            // заполняем заголовок
             for (int i = 0; i < headers.Length; i++)
             {
-                tpSchedule.Controls.Add(new Label() { Text = headers[i], Dock = DockStyle.Fill }, i, 0);
+                tpSchedule.Controls.Add(new Label() { Text = headers[i] }, i, 0);
             }
 
-            //строки в первой колонке -"Время"
+            // заполняем строки в первой колонке -"Время"
             for (int i = 0; i < timespans.Length; i++)
             {
-                tpSchedule.Controls.Add(new Label() { Text = timespans[i], Dock = DockStyle.Fill }, 0, i + 1);
+                tpSchedule.Controls.Add(new Label() { Text = timespans[i] }, 0, i + 1);
             }
+
+            tpSchedule.AutoScroll = true;
         }
     }
 }
