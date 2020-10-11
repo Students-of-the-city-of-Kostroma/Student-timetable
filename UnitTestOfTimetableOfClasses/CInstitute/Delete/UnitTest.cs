@@ -6,11 +6,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Delete_CInstitute
+    public class UT_DCInstitute
     {
         readonly RefData refData = new RefData();
         [TestMethod]
-        public void Task_617_1() //Удалить запись при совпадении всех атрибутов
+        public void DCInstitute_1() //Удалить запись при совпадении всех атрибутов
         {
 
             MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_617_2() //Удалить запись при совпадении атрибута Краткое название
+        public void DCInstitute_2() //Удалить запись при совпадении атрибута Краткое название
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ИАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -33,7 +33,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_617_3() //при совпадении атрибута Полное название
+        public void DCInstitute_3() //при совпадении атрибута Полное название
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -44,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_617_4() //при совпадении атрибута  Директор
+        public void DCInstitute_4() //при совпадении атрибута  Директор
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_617_5() //при совпадении атрибута Наименование ВУЗа
+        public void DCInstitute_5() //при совпадении атрибута Наименование ВУЗа
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Костромской Государственный Университет");
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_617_6() //Удаление несуществующих данных из таблицы
+        public void DCInstitute_6() //Удаление несуществующих данных из таблицы
         {
             //act    
             MInstitute I_IInstitute = new MInstitute("Любой институт", "ФАСТ", "Иванов Ю.Л.", "Политехнический колледж");
