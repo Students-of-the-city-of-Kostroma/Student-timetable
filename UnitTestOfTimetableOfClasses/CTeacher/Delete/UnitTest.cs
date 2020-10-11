@@ -1,15 +1,16 @@
 using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_DСTeacher                    
-    {   
+    {
         readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление сведений в пустой таблице преподавателей
         /// </summary>
-        [TestMethod]   
+        [TestMethod]  
         public void DCTeacher_1()
         { 
             Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой"); 
@@ -20,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях фамилии
         /// </summary>
-        [TestMethod]       
+        [TestMethod]     
         public void DCTeacher_2()
         {         
 
@@ -37,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях института
         /// </summary>
-        [TestMethod]            
+        [TestMethod]           
         public void DCTeacher_3()
         {                 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
