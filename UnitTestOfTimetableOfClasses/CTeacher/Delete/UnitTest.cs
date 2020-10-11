@@ -5,14 +5,14 @@ namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
     public class UT_DСTeacher                    
-    {           
+    {   
         readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление сведений в пустой таблице преподавателей
         /// </summary>
         [TestMethod]    
         public void DCTeacher_1()
-        {       
+        { 
             Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой"); 
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             Assert.AreEqual(refData.CTeacher.Delete(tcher), false, "Преподаватель был удалён, не смотря на то, что таблица преподавателей пуста");
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]         
         public void DCTeacher_2()
-        {          
+        {         
 
             MAcademicDegree mad = new MAcademicDegree ("Кандидат наук","КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]            
         public void DCTeacher_3()
-        {                   
+        {                 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
             MTitle mt = new MTitle("Профессор", "ПР");
@@ -56,7 +56,7 @@ namespace UnitTestOfTimetableOfClasses
         /// </summary>
         [TestMethod]
         public void DCTeacher_4()
-        {                 
+        {              
 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
