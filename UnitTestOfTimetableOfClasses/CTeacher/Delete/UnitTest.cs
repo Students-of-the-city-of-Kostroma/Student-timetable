@@ -4,11 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Delete_CTeacher
+    public class UT_DCTeacher
     {
         readonly RefData refData = new RefData();
         [TestMethod]
-        public void Task_248_1() //Удаление существующей строки 
+        public void DCTeacher_1() //Удаление существующей строки 
         {
             //arrange 
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_248_2() //Удаление не существующей строки 
+        public void DCTeacher_2() //Удаление не существующей строки 
         {
             //arrange 
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
