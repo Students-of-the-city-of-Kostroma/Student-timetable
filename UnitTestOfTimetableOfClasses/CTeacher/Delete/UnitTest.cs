@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_DСTeacher                    
     {
         /// <summary>
-        /// Возвращаемое значение RefData
+        /// Возвращаемая ссылка на RefData
         /// </summary>
         readonly RefData refData = new RefData();
         /// <summary>
