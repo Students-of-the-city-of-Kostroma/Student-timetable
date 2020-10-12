@@ -6,6 +6,9 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_DСTeacher                    
     {
+        /// <summary>
+        /// Возвращаемое значение RefData
+        /// </summary>
         readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление сведений в пустой таблице преподавателей
