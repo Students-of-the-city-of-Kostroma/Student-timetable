@@ -1,7 +1,7 @@
 using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
 {
         /// <summary>
         /// Тестирование метода Delete, сущности Преподаватель
