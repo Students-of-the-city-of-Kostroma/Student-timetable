@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
 {
-
     /// <summary>
     /// Тестирование метода Delete сущности Преподаватель
     /// </summary>
