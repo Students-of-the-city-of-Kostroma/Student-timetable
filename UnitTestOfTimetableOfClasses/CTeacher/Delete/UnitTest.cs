@@ -3,19 +3,22 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
 {
-/// <summary>
-/// Тестирование метода Delete сущности Преподаватель
-/// </summary>
+
+    /// <summary>
+    /// Тестирование метода Delete сущности Преподаватель
+    /// </summary>
     [TestClass]
     public class UT_DСTeacher                    
     {
-/// <summary>
-/// Возвращаемая ссылка на RefData
-/// </summary>
+
+    /// <summary>
+    /// Новые данные в RefData
+    /// </summary>
         readonly RefData refData = new RefData();
-/// <summary>
-/// Удаление сведений в пустой таблице преподавателей
-/// </summary>
+
+    /// <summary>
+    /// Удаление сведений в пустой таблице преподавателей
+    /// </summary>
         [TestMethod]  
         public void DCTeacher_1()
         { 
@@ -24,9 +27,9 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
             Assert.AreEqual(refData.CTeacher.Delete(tcher), false, "Преподаватель был удалён, не смотря на то, что таблица преподавателей пуста");
         }
         
-/// <summary>
-/// Попытка удалить преподавателя при несовпадающих значениях фамилии
-/// </summary>
+    /// <summary>
+    /// Попытка удалить преподавателя при несовпадающих значениях фамилии
+    /// </summary>
         [TestMethod]     
         public void DCTeacher_2()
         {         
@@ -41,9 +44,9 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
             Assert.AreEqual(refData.CTeacher.Delete(tcher2), false, "Преподаватель был удалён, не смотря на то, что фамилии не совпадают");
         }
         
-/// <summary>
-/// Попытка удалить преподавателя при несовпадающих значениях института
-/// </summary>
+    /// <summary>
+    /// Попытка удалить преподавателя при несовпадающих значениях института
+    /// </summary>
         [TestMethod]           
         public void DCTeacher_3()
         {                 
@@ -57,9 +60,9 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
             Assert.AreEqual(refData.CTeacher.Delete(tcher2), false, "Преподаватель был удалён, не смотря на то, что название институтов не совпадают");
         }
         
-/// <summary>
-/// Попытка удалить данные при всех совпадающих значениях
-/// </summary>
+    /// <summary>
+    /// Попытка удалить данные при всех совпадающих значениях
+    /// </summary>
         [TestMethod]
         public void DCTeacher_4()
         {              
