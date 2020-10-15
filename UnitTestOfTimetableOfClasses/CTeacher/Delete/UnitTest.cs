@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
     [TestClass]
     public class UT_DСTeacher                    
     {
-
     /// <summary>
     /// Новые данные в RefData
     /// </summary>
