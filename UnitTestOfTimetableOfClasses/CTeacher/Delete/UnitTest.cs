@@ -3,9 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
 {
-    /// <summary>
-    /// Тестирование метода Delete сущности Преподаватель
-    /// </summary>
+/// <summary>
+/// Тестирование метода Delete сущности Преподаватель
+/// </summary>
     [TestClass]
     public class UT_DСTeacher                    
     {
