@@ -13,9 +13,9 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// Новые данные в RefData
         /// </summary>
         readonly RefData refData = new RefData();
-            /// <summary>
-            /// Удаление сведений в пустой таблице преподавателей
-            /// </summary>
+        /// <summary>
+        /// Удаление сведений в пустой таблице преподавателей
+        /// </summary>
         [TestMethod]  
         public void DCTeacher_1()
         { 
