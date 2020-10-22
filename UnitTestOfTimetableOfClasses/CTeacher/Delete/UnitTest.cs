@@ -13,7 +13,11 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// Новые данные в RefData
         /// </summary>
         readonly RefData refData = new RefData();
-        /// <summary> /// Удаление сведений в пустой таблице преподавателей /// </summary>
+        /// <summary>
+        
+        /// Удаление сведений в пустой таблице преподавателей
+        
+        /// </summary>
         [TestMethod] 
         public void DCTeacher_1()
         { 
@@ -21,7 +25,11 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             Assert.AreEqual(refData.CTeacher.Delete(tcher), false, "Преподаватель был удалён, не смотря на то, что таблица преподавателей пуста");
         }
-        /// <summary> /// Попытка удалить преподавателя при несовпадающих значениях фамилии /// </summary>
+        /// <summary>
+        
+        /// Попытка удалить преподавателя при несовпадающих значениях фамилии
+        
+        /// </summary>
         [TestMethod]    
         public void DCTeacher_2()
         {         
