@@ -29,7 +29,6 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         [TestMethod]
         public void DCTeacher_2()
         {
-
             MAcademicDegree mad = new MAcademicDegree ("Кандидат наук","КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
             MTitle mt = new MTitle("Профессор", "ПР");
@@ -60,7 +59,6 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         [TestMethod]
         public void DCTeacher_4()
         {
-
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
             MTitle mt = new MTitle("Профессор", "ПР");
