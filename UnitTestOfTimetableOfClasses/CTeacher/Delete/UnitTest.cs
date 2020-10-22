@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
     /// Тестирование метода Delete сущности Преподаватель
     /// </summary>
     [TestClass]
-    public class UT_DСTeacher                    
+    public class UT_DСTeacher                   
     {
         /// <summary>
         /// Новые данные в RefData
@@ -16,19 +16,19 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// <summary>
         /// Удаление сведений в пустой таблице преподавателей
         /// </summary>
-        [TestMethod] 
+        [TestMethod]
         public void DCTeacher_1()
-        { 
-            Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой"); 
+        {
+            Assert.AreEqual(refData.CTeacher.Rows.Count == 0, true, "При проверке отсутствия записей в таблице преподавателей, она оказалась не пустой");
             MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", "Кандидат наук", "Профессор", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             Assert.AreEqual(refData.CTeacher.Delete(tcher), false, "Преподаватель был удалён, не смотря на то, что таблица преподавателей пуста");
         }
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях фамилии
         /// </summary>
-        [TestMethod]    
+        [TestMethod]   
         public void DCTeacher_2()
-        {         
+        {      
 
             MAcademicDegree mad = new MAcademicDegree ("Кандидат наук","КН");
             Assert.AreEqual(refData.CAcademicDegree.Insert(mad), true, "При попытке добавить учёную степень в таблицу с учёными степенями она не была добавлена");
@@ -42,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях института
         /// </summary>
-        [TestMethod]         
+        [TestMethod]        
         public void DCTeacher_3()
         {                 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
