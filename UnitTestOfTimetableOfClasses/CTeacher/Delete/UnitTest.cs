@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях фамилии
         /// </summary>
-        [TestMethod]   
+        [TestMethod]
         public void DCTeacher_2()
         {      
 
@@ -42,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses.CTeacher.Delete
         /// <summary>
         /// Попытка удалить преподавателя при несовпадающих значениях института
         /// </summary>
-        [TestMethod]        
+        [TestMethod]      
         public void DCTeacher_3()
         {                 
             MAcademicDegree mad = new MAcademicDegree("Кандидат наук", "КН");
