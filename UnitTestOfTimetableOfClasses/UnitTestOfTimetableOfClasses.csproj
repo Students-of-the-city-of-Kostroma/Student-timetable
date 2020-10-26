@@ -41,6 +41,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CTeacher\Delete\UnitTest.cs" />
     <Compile Include="UT_Update_CAcademicLoad.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="UT_MAcademicDegree.cs" />
