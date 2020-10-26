@@ -13,10 +13,10 @@ namespace TimetableOfClasses
     {
         private LibOfTimetableOfClasses.RefData refData;
 
-        List<InstituteDto> institutes = new List<InstituteDto>();
-        List<GroupDto> allGroups = new List<GroupDto>();
-        List<CourseDto> allCourses = new List<CourseDto>();
-        List<TrainingProfileDto> allProfiles = new List<TrainingProfileDto>();
+        private List<InstituteDto> institutes = new List<InstituteDto>();
+        private List<GroupDto> allGroups = new List<GroupDto>();
+        private List<CourseDto> allCourses = new List<CourseDto>();
+        private List<TrainingProfileDto> allProfiles = new List<TrainingProfileDto>();
 
         private string[] headers = new string[8] { "Время", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
 
