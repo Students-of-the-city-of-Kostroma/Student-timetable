@@ -142,7 +142,6 @@
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\CourseDto.cs" />
     <Compile Include="Departments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,14 +178,12 @@
     <Compile Include="Directory.Designer.cs">
       <DependentUpon>Directory.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\TrainingProfileDto.cs" />
     <Compile Include="Enclosures.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Enclosures.Designer.cs">
       <DependentUpon>Enclosures.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\GroupDto.cs" />
     <Compile Include="Groups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,7 +208,6 @@
     <Compile Include="Institute.Designer.cs">
       <DependentUpon>Institute.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\InstituteDto.cs" />
     <Compile Include="Ministry.cs">
       <SubType>Form</SubType>
     </Compile>
