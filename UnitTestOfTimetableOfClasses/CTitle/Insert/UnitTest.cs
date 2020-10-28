@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTitle.Insert
 {
 
     [TestClass]
@@ -29,7 +29,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void ICTitle_2() 
         {
-            Task_361_1();
             //arrange
             MTitle ma = new MTitle("НЕДоцент", "Проф.");
             bool expected = false;
@@ -45,7 +44,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void ICTitle_3() 
         {
-            Task_361_1();
             //arrange
             MTitle ma = new MTitle("НЕПрофессор", "Доц.");
             bool expected = false;

@@ -41,6 +41,34 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CAcademicDegree\Delete\UnitTest.cs" />
+    <Compile Include="CAcademicDegree\Insert\UnitTest.cs" />
+    <Compile Include="CAcademicDegree\Update\UnitTest.cs" />
+    <Compile Include="CAcademicLoad\Update\UnitTest.cs" />
+    <Compile Include="CAuditor\Insert\UnitTest.cs" />
+    <Compile Include="CDirectionOfPreparation\Delete\UnitTest.cs" />
+    <Compile Include="CEnclosures\Delete\UnitTest.cs" />
+    <Compile Include="CEnclosures\Insert\UnitTest.cs" />
+    <Compile Include="CEnclosures\Update\UnitTest.cs" />
+    <Compile Include="CGroup\Delete\UnitTest.cs" />
+    <Compile Include="CGroup\Insert\UnitTest.cs" />
+    <Compile Include="CGroup\UPDATE\UnitTest.cs" />
+    <Compile Include="CInstitute\Delete\UnitTest.cs" />
+    <Compile Include="CInstitute\Insert\UnitTest.cs" />
+    <Compile Include="CInstitute\Update\UnitTest.cs" />
+    <Compile Include="CTeacher\Delete\UnitTest.cs" />
+    <Compile Include="CTeacher\Insert\UnitTest.cs" />
+    <Compile Include="CTeacher\Update\UnitTest.cs" />
+    <Compile Include="CTitle\Delete\UnitTest.cs" />
+    <Compile Include="CTitle\Insert\UnitTest.cs" />
+    <Compile Include="CTitle\Update\UnitTest.cs" />
+    <Compile Include="CTrainingProfile\Delete\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Delete\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Insert\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Update\UnitTest.cs" />
+    <Compile Include="CUniversity\Delete\UnitTest.cs" />
+    <Compile Include="CUniversity\Insert\UnitTest.cs" />
+    <Compile Include="CUniversity\Update\UnitTest.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="UT_MAcademicDegree.cs" />
     <Compile Include="UT_MDirectionOfPreparation.cs" />
@@ -73,7 +101,27 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CAcademicLoad\Update\whitebox.md" />
+    <None Include="CEnclosures\Delete\whitebox.md" />
+    <None Include="CGroup\Insert\whiteBox.md" />
+    <None Include="CGroup\UPDATE\whitebox.md" />
+    <None Include="CTeacher\Update\whitebox.md" />
+    <None Include="CTitle\Insert\whitebox.md" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAcademicLoad\Update\CODE.PNG" />
+    <Content Include="CAcademicLoad\Update\GRAPH.PNG" />
+    <Content Include="CEnclosures\Delete\code.JPG" />
+    <Content Include="CEnclosures\Delete\graph.JPG" />
+    <Content Include="CGroup\Insert\CODE.PNG" />
+    <Content Include="CGroup\Insert\GRAPH.PNG" />
+    <Content Include="CGroup\UPDATE\CODE.PNG" />
+    <Content Include="CGroup\UPDATE\GRAPH.PNG" />
+    <Content Include="CTeacher\Update\CODE.PNG" />
+    <Content Include="CTeacher\Update\GRAPH.PNG" />
+    <Content Include="CTitle\Insert\CODE.PNG" />
+    <Content Include="CTitle\Insert\GRAPH.PNG" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

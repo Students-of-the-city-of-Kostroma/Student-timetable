@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LibOfTimetableOfClasses;
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CGroup.Delete
 {
     [TestClass]
     public class UT_DCGroup

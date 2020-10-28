@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CAcademicDegree.Insert
 {
     [TestClass]
     public class UT_ICAcademicDegree
@@ -29,7 +29,6 @@ namespace UnitTestOfTimetableOfClasses
         public void ICAcademicDegree_2()
         {
             //arrange
-            Task_486_1();
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool expected = false;
             //act

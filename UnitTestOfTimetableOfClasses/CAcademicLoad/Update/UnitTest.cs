@@ -2,7 +2,7 @@
 using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CAcademicLoad.Update
 {
     [TestClass]
     public class UT_UCAcademicLoad
