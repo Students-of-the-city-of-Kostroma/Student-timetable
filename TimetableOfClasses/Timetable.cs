@@ -128,7 +128,7 @@ namespace TimetableOfClasses
                     if (lesson != null)
                     {
                         var text = string.Format(LessonPattern, lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher, Environment.NewLine);
-                        Label lLesson = new Label() { Text = text };
+                        Label lLesson = new Label() { Text = text, Dock = DockStyle.Fill };
                         lLesson.Size = new Size(lLesson.PreferredWidth, lLesson.PreferredHeight);
                         tpSchedule.Controls.Add(lLesson, x, y + 1);
                     }
@@ -148,23 +148,33 @@ namespace TimetableOfClasses
 
             tpSchedule.ColumnCount = headers.Length;
             tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
+            var percent = (float)(100 / timespans.Length); // расчитываем процент высоты строки
 
             tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tpSchedule.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
-            tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            tpSchedule.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
             // заполняем заголовок
             for (int i = 0; i < headers.Length; i++)
             {
-                tpSchedule.Controls.Add(new Label() { Text = headers[i] }, i, 0);
+                // ширина колонок подбирается автоматически
+                tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                tpSchedule.Controls.Add(new Label() { Text = headers[i], Dock = DockStyle.Fill }, i, 0);
             }
 
             // заполняем строки в первой колонке -"Время"
-            for (int i = 0; i < timespans.Length; i++)
+            for (int i = 0; i < timespans.Length + 1; i++)
             {
-                tpSchedule.Controls.Add(new Label() { Text = timespans[i] }, 0, i + 1);
+                if (i == 0)
+                {
+                    // для строки заголовка высота подбирается автоматически
+                    tpSchedule.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+                else
+                {
+                    tpSchedule.RowStyles.Add(new RowStyle(SizeType.Percent, percent));
+                    tpSchedule.Controls.Add(new Label() { Text = timespans[i - 1], Dock = DockStyle.Fill }, 0, i);
+                }
             }
 
             tpSchedule.AutoScroll = true;
