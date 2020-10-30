@@ -9,121 +9,86 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         /// <summary>
-        /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров 
+        /// Изменить сведения в пустой таблице
         /// </summary>
         [TestMethod]
-        public void Task_497_1()
+        public void UCUniversity_1()
         {
+            refData.CUniversity.Clear();
+            Assert.IsTrue(refData.CUniversity.Rows.Count == 0, "Не удалось очистить таблицу Университет");
+
             // arrange
             MUniversity gr = new MUniversity("4401006285", "МГУ", "Московский Государственный Университет", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "Виктор", "Садовничий", "Антонович", "infor@msu.edu.ru", "84942317961");
-            bool result = refData.CUniversity.Insert(gr);
-            Assert.IsTrue(result);
-
-            MUniversity gr1 = new MUniversity("4401006211", "КГТУ", "Костромской Государственный Технический Университет", "156005, Костромская область, г. Костромушка.", "156005, Костромская область, г. Костромушка.", "Александр", "Наумов", "Сергеевич", "informacia@ksu.edu.ru", "84959391244");
-            result = refData.CUniversity.Insert(gr1);
-            Assert.IsTrue(result);
-
-            bool expected = true;
 
             //act 
-            bool actual = refData.CUniversity.Update(gr1);
-            //assert 
-            Assert.AreEqual(expected, actual);
-
-            result = refData.CUniversity.Delete(gr);
-            Assert.IsTrue(result);
-
-            result = refData.CUniversity.Delete(gr1);
-            Assert.IsTrue(result);
+            bool actual = refData.CUniversity.Update(gr);
+            Assert.IsFalse(actual,"Удалось очистить таблицу Университета");
         }
 
         /// <summary>
-        /// Ввод корректных данных, при условии, что Краткое название дублирует Краткое название существующего экземпляра(не учитывая основные атрибуты)
+        /// Изменить несуществующий университет
         /// </summary>
         [TestMethod]
-        public void Task_497_2()//дублирование краткого названия
+        public void UCUniversity_2()
         {
-            // arrange
+            //arrange    
             MUniversity gr = new MUniversity("4401006285", "МГУ", "Московский Государственный Университет", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "119991, Москва, ГСП-1, Ленинские горы, д. 1", "Виктор", "Садовничий", "Антонович", "infor@msu.edu.ru", "84942317961");
-            bool result = refData.CUniversity.Insert(gr);
-            Assert.IsTrue(result);
-
+            bool actual1 = refData.CUniversity.Insert(gr);
+            Assert.AreEqual(true, actual1, "Не удалось вставить университет" + gr.FullName);
             MUniversity gr1 = new MUniversity("4401156256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "wkgtu@mail.ru", "84942327960");
-            result = refData.CUniversity.Insert(gr1);
-            Assert.IsTrue(result);
-
-            bool expected = true;
-            //act 
-            gr1.ShortName = "КГУ";
+            //act
             bool actual = refData.CUniversity.Update(gr1);
-            //assert 
-            Assert.AreEqual(expected, actual);
-
-            result = refData.CUniversity.Delete(gr);
-            Assert.IsTrue(result);
-
-            result = refData.CUniversity.Delete(gr1);
-            Assert.IsTrue(result);
-
+            //assert
+            Assert.IsFalse(actual, "Удалось Изменить несуществующего преподавателя");
         }
 
         /// <summary>
-        /// Ввод корректных данных, при условии, что Полное название дублирует Полное название существующего экземпляра(не учитывая основные атрибуты)
+        /// Обновление корректной строки
         /// </summary>
         [TestMethod]
-        public void Task_497_3()//дублирование полного названия
+        public void UCUniversity_3()//дублирование полного названия
         {
             string fullName = "Костромкой Государственный Университет";
             // arrange
             MUniversity gr = new MUniversity("4401022286", "КГУ", fullName, "156002, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgb@mail.ru", "84942312960");
             bool result = refData.CUniversity.Insert(gr);
-            Assert.IsTrue(result);
+            Assert.IsTrue(result, "Вставка университета "+gr.FullName+" не удалалсь.");
 
-            MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
-            result = refData.CUniversity.Insert(gr1);
-            Assert.IsTrue(result);
-
-            bool expected = false;
             //act 
-            gr1.FullName = fullName;
-            bool actual = refData.CUniversity.Update(gr1);
+            gr.Phone = "89999641203";
+            bool actual = refData.CUniversity.Update(gr);
+
             //assert 
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(actual, "Обновленние корректной строки не удалось.");
 
             result = refData.CUniversity.Delete(gr);
-            Assert.IsTrue(result);
-
-            result = refData.CUniversity.Delete(gr1);
             Assert.IsTrue(result);
         }
 
         /// <summary>
-        /// Ввод корректных данных, при условии, что Фактический адрес дублирует Фактический адрес существующего экземпляра(не учитывая основные атрибуты)
+        ///Обновление данных при условии, что ИНН дублирует ИНН существующего университета
         /// </summary>
         [TestMethod]
-        public void Task_497_4()//дублирование факт. адреса
+        public void UCUniversity_4()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006282", "КГУ", "Костромкойй Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "wkgu@mail.ru", "84942312960");
             bool result = refData.CUniversity.Insert(gr);
-            Assert.IsTrue(result);
+            Assert.IsTrue(result, "Вставка университета " + gr.FullName + " не удалалсь.");
 
             MUniversity gr1 = new MUniversity("4401006256", "КГТУ", "Костромкой Государственный Технический Университет", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "156505, Костромская область, г. Кострома, ул. Дзержинского, 35", "Леонид", "Лионидов", "Леонидович", "kgtu@mail.ru", "84942317961");
             result = refData.CUniversity.Insert(gr1);
-            Assert.IsTrue(result);
+            Assert.IsTrue(result, "Вставка университета " + gr.FullName + " не удалалсь.");
 
-            bool expected = true;
             //act 
-            gr1.ActualAddress = "156005, Костромская область, г. Кострома, ул. Дзержинского, 17";
+            gr1.INN = "4401006282";
             bool actual = refData.CUniversity.Update(gr1);
             //assert 
-            Assert.AreEqual(expected, actual);
+            Assert.IsFalse(actual, "Обновление данных при условии, что ИНН дублирует ИНН существующего университета удалось.");
 
             result = refData.CUniversity.Delete(gr);
             Assert.IsTrue(result);
-
-            result = refData.CUniversity.Delete(gr1);
-            Assert.IsTrue(result);
+            
         }
 
         /// <summary>
