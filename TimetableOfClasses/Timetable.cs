@@ -25,7 +25,7 @@ namespace TimetableOfClasses
                 string.Format("{0}-{1}",new TimeSpan(19,0,0).ToString(), new TimeSpan(20, 30, 0).ToString())
             };
 
-        const string LessonPattern = @"{0}{5}{1}-{2}({3}){5}{4}{5}";
+        const string LessonPattern = @"{0}{5}{1}-{2} ({3}) {5}{4}{5}";
 
         public Timetable()
         {
@@ -129,7 +129,6 @@ namespace TimetableOfClasses
                     {
                         var text = string.Format(LessonPattern, lesson.Speciality, lesson.Building, lesson.Classroom, lesson.KindOfLesson, lesson.Teacher, Environment.NewLine);
                         Label lLesson = new Label() { Text = text, Dock = DockStyle.Fill };
-                        lLesson.Size = new Size(lLesson.PreferredWidth, lLesson.PreferredHeight);
                         tpSchedule.Controls.Add(lLesson, x, y + 1);
                     }
                 }
@@ -148,17 +147,23 @@ namespace TimetableOfClasses
 
             tpSchedule.ColumnCount = headers.Length;
             tpSchedule.RowCount = timespans.Length + 1; // +1 строка заголовка
-            var percent = (float)(100 / timespans.Length); // расчитываем процент высоты строки
+            var percentH = (float)(100 / timespans.Length); // расчитываем процент высоты строки
+            var percentW = (float)(100 / headers.Length); // расчитываем процент ширины строки
 
             tpSchedule.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            tpSchedule.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tpSchedule.GrowStyle = TableLayoutPanelGrowStyle.AddRows;
 
             // заполняем заголовок
             for (int i = 0; i < headers.Length; i++)
             {
-                // ширина колонок подбирается автоматически
-                tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                if (i == 0)
+                {
+                    // ширина колонок подбирается автоматически
+                    tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                }
+                else
+                {
+                    tpSchedule.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, percentW));
+                }
                 tpSchedule.Controls.Add(new Label() { Text = headers[i], Dock = DockStyle.Fill }, i, 0);
             }
 
@@ -172,12 +177,11 @@ namespace TimetableOfClasses
                 }
                 else
                 {
-                    tpSchedule.RowStyles.Add(new RowStyle(SizeType.Percent, percent));
+                    tpSchedule.RowStyles.Add(new RowStyle(SizeType.Percent, percentH));
                     tpSchedule.Controls.Add(new Label() { Text = timespans[i - 1], Dock = DockStyle.Fill }, 0, i);
                 }
             }
 
-            tpSchedule.AutoScroll = true;
         }
     }
 }
