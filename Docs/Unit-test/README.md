@@ -17,7 +17,7 @@
 Например, если мы хотим протестировать метод вставки для сущности преподаватель, 
 то путь составит `UnitTestOfTimetableOfClasse/CTeacher/Insert`. 
 В этой папке располагается файл с именем `UnitTest.cs` и другие.
-Так же располагается файл модели с именем `Model.cs`.
+Так же располагается папка `Model` с файлом модели с именем `Model.cs`.
 [файлы](https://github.com/Students-of-the-city-of-Kostroma/Student-timetable/blob/dev/Docs/White-box/README.md), 
 предшествующие написанию модульных тестов. 
 
