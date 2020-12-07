@@ -2,11 +2,11 @@
 using System.Data;
 using System.Diagnostics;
 
-/// <summary>
-/// Создаёт экзампляр контроллера для сущности Институт
-/// </summary>
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Создаёт экзампляр контроллера для сущности Институт
+    /// </summary>
     public class CInstitute : DataTable, IController
     {
         public CInstitute() : base("Institute")

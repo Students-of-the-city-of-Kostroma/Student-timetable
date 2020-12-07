@@ -14,3 +14,4 @@
 - `TrainingProfiles` - Профиль подготовки
 - `TypesOfOccupations` - Вид занятия
 - `University` - Университет
+- `CourseSchedule` - Расписание
