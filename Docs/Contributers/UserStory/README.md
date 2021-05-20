@@ -122,7 +122,7 @@ _Заголовок должен фокусироваться на отличи�
 
 ## Пример создания документа:
 
-[Образец](https://github.com/Students-of-the-city-of-Kostroma/Student-timetable/blob/issue-1344/Docs/Technical/UserStories/Story-0/READMY.md)
+[Образец](/Docs/Technical/UserStories/Story-0/READMY.md)
 
 ## Роль документа в жизненном цикле ПО
 
