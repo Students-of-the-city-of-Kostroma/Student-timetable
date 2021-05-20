@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.dgDirectionOfPreparation = new System.Windows.Forms.DataGridView();
-            this.btAddDirection = new System.Windows.Forms.Button();
-            this.btDeleteDirection = new System.Windows.Forms.Button();
-            this.btChangeDirection = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btAddDirection = new System.Windows.Forms.Button();
+            this.btDeleteDirection = new System.Windows.Forms.Button();
+            this.btChangeDirection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDirectionOfPreparation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,8 +51,7 @@
             this.dgDirectionOfPreparation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4});
+            this.Column3});
             this.dgDirectionOfPreparation.Location = new System.Drawing.Point(-1, 0);
             this.dgDirectionOfPreparation.Name = "dgDirectionOfPreparation";
             this.dgDirectionOfPreparation.ReadOnly = true;
@@ -63,6 +61,29 @@
             this.dgDirectionOfPreparation.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgDirectionOfPreparation_RowPrePaint);
             this.dgDirectionOfPreparation.SelectionChanged += new System.EventHandler(this.dgDirectionOfPreparation_SelectionChanged);
             this.dgDirectionOfPreparation.DoubleClick += new System.EventHandler(this.dgDirectionOfPreparation_DoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CodeOfDP";
+            this.Column1.HeaderText = "Код";
+            this.Column1.MaxInputLength = 20;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "NameOfDP";
+            this.Column2.HeaderText = "Наименование";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PeriodOfStudy";
+            this.Column3.HeaderText = "Срок обучение";
+            this.Column3.MaxInputLength = 2;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // btAddDirection
             // 
@@ -97,36 +118,6 @@
             this.btChangeDirection.UseVisualStyleBackColor = true;
             this.btChangeDirection.Click += new System.EventHandler(this.btChangeDirection_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "CodeOfDP";
-            this.Column1.HeaderText = "Код";
-            this.Column1.MaxInputLength = 20;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "NameOfDP";
-            this.Column2.HeaderText = "Наименование";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PeriodOfStudy";
-            this.Column3.HeaderText = "Срок обучение";
-            this.Column3.MaxInputLength = 2;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "InstituteShortName";
-            this.Column4.HeaderText = "Институт";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // DirectionOfPreparation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +144,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

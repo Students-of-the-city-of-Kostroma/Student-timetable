@@ -66,7 +66,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Source);
                 return false;
             }
         }
@@ -92,7 +92,7 @@ namespace LibOfTimetableOfClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Message);
+                        Debug.WriteLine(ex.Source);
                         return false;
                     }
                 }

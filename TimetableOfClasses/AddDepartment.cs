@@ -41,7 +41,7 @@ namespace TimetableOfClasses
         {
             if (!this.shortTitleValidated || !this.fullTitleValidated || !this.departmentHeadValidated || !this.instituteValidated)
             {
-                MessageBox.Show("Пожалуйста корректно заполните поля формы.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста, корректно заполните поля формы.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
