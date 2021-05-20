@@ -37,17 +37,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SecondPair = new System.Windows.Forms.CheckBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.Changes = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Third = new System.Windows.Forms.DomainUpDown();
-            this.Second = new System.Windows.Forms.DomainUpDown();
-            this.First = new System.Windows.Forms.DomainUpDown();
-            this.Most = new System.Windows.Forms.DomainUpDown();
             this.Date = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,9 +52,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Bells = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +62,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Cycles = new System.Windows.Forms.TabPage();
             this.Etc = new System.Windows.Forms.TabPage();
+            this.Most = new System.Windows.Forms.NumericUpDown();
+            this.First = new System.Windows.Forms.NumericUpDown();
+            this.Second = new System.Windows.Forms.NumericUpDown();
+            this.Third = new System.Windows.Forms.NumericUpDown();
+            this.domainUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Numeration.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Day.SuspendLayout();
@@ -76,6 +76,11 @@
             this.groupBox1.SuspendLayout();
             this.Bells.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Most)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.First)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Second)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Third)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domainUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // Ok
@@ -138,7 +143,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 20);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
+            this.radioButton1.Size = new System.Drawing.Size(65, 17);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "С 0 по 7";
@@ -161,17 +166,17 @@
             // 
             // Day
             // 
+            this.Day.Controls.Add(this.domainUpDown1);
             this.Day.Controls.Add(this.label6);
             this.Day.Controls.Add(this.checkBox1);
             this.Day.Controls.Add(this.SecondPair);
-            this.Day.Controls.Add(this.domainUpDown1);
             this.Day.Controls.Add(this.label5);
             this.Day.Controls.Add(this.Changes);
             this.Day.Controls.Add(this.Numeration);
             this.Day.Location = new System.Drawing.Point(4, 22);
             this.Day.Name = "Day";
-            this.Day.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Day.Size = new System.Drawing.Size(349, 363);
+            this.Day.Padding = new System.Windows.Forms.Padding(3);
+            this.Day.Size = new System.Drawing.Size(354, 363);
             this.Day.TabIndex = 0;
             this.Day.Text = "День";
             this.Day.UseVisualStyleBackColor = true;
@@ -186,7 +191,7 @@
             this.label6.Location = new System.Drawing.Point(13, 125);
             this.label6.MaximumSize = new System.Drawing.Size(325, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(324, 28);
+            this.label6.Size = new System.Drawing.Size(309, 28);
             this.label6.TabIndex = 9;
             this.label6.Text = "Настройки, приведённые ниже, могут быть изменены при задании характеристик групп " +
     "и препдавателей:";
@@ -219,16 +224,6 @@
             this.SecondPair.Text = "Группа может приходить ко второй паре";
             this.SecondPair.UseVisualStyleBackColor = true;
             // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.domainUpDown1.Location = new System.Drawing.Point(278, 303);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(65, 22);
-            this.domainUpDown1.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -244,14 +239,14 @@
             // Changes
             // 
             this.Changes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Changes.Controls.Add(this.label4);
-            this.Changes.Controls.Add(this.label3);
-            this.Changes.Controls.Add(this.label2);
-            this.Changes.Controls.Add(this.label1);
             this.Changes.Controls.Add(this.Third);
             this.Changes.Controls.Add(this.Second);
             this.Changes.Controls.Add(this.First);
             this.Changes.Controls.Add(this.Most);
+            this.Changes.Controls.Add(this.label4);
+            this.Changes.Controls.Add(this.label3);
+            this.Changes.Controls.Add(this.label2);
+            this.Changes.Controls.Add(this.label1);
             this.Changes.Location = new System.Drawing.Point(13, 169);
             this.Changes.Name = "Changes";
             this.Changes.Size = new System.Drawing.Size(321, 123);
@@ -307,42 +302,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Первая смена начинается на паре:";
             // 
-            // Third
-            // 
-            this.Third.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Third.Location = new System.Drawing.Point(256, 97);
-            this.Third.Name = "Third";
-            this.Third.Size = new System.Drawing.Size(65, 22);
-            this.Third.TabIndex = 8;
-            // 
-            // Second
-            // 
-            this.Second.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Second.Location = new System.Drawing.Point(256, 71);
-            this.Second.Name = "Second";
-            this.Second.Size = new System.Drawing.Size(65, 22);
-            this.Second.TabIndex = 7;
-            // 
-            // First
-            // 
-            this.First.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.First.Location = new System.Drawing.Point(256, 45);
-            this.First.Name = "First";
-            this.First.Size = new System.Drawing.Size(65, 22);
-            this.First.TabIndex = 6;
-            // 
-            // Most
-            // 
-            this.Most.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Most.Location = new System.Drawing.Point(256, 19);
-            this.Most.Name = "Most";
-            this.Most.Size = new System.Drawing.Size(65, 22);
-            this.Most.TabIndex = 5;
-            // 
             // Date
             // 
             this.Date.Controls.Add(this.numericUpDown1);
@@ -354,7 +313,7 @@
             this.Date.Controls.Add(this.groupBox1);
             this.Date.Location = new System.Drawing.Point(4, 22);
             this.Date.Name = "Date";
-            this.Date.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Date.Padding = new System.Windows.Forms.Padding(3);
             this.Date.Size = new System.Drawing.Size(354, 363);
             this.Date.TabIndex = 1;
             this.Date.Text = "Даты";
@@ -365,11 +324,12 @@
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown1.Location = new System.Drawing.Point(265, 22);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(270, 22);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
             this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // button1
             // 
@@ -400,7 +360,7 @@
             this.label10.Location = new System.Drawing.Point(10, 156);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(153, 13);
+            this.label10.Size = new System.Drawing.Size(143, 13);
             this.label10.TabIndex = 4;
             this.label10.Text = "Список праздничных дней:";
             // 
@@ -410,7 +370,7 @@
             this.checkBox2.Location = new System.Drawing.Point(4, 44);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(173, 17);
+            this.checkBox2.Size = new System.Drawing.Size(171, 17);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "Учитывать нулевой семестр";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -421,7 +381,7 @@
             this.label7.Location = new System.Drawing.Point(55, 24);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(181, 13);
+            this.label7.Size = new System.Drawing.Size(176, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Максимальный номер семестра:";
             // 
@@ -451,19 +411,8 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(193, 40);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(138, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker2.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(193, 14);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 22);
-            this.dateTimePicker1.TabIndex = 2;
             // 
             // label9
             // 
@@ -471,7 +420,7 @@
             this.label9.Location = new System.Drawing.Point(6, 40);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 13);
+            this.label9.Size = new System.Drawing.Size(92, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Дата окончания:";
             // 
@@ -481,9 +430,20 @@
             this.label8.Location = new System.Drawing.Point(6, 17);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Дата начала:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(193, 14);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // Bells
             // 
@@ -491,8 +451,8 @@
             this.Bells.Controls.Add(this.textBox1);
             this.Bells.Location = new System.Drawing.Point(4, 22);
             this.Bells.Name = "Bells";
-            this.Bells.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Bells.Size = new System.Drawing.Size(349, 363);
+            this.Bells.Padding = new System.Windows.Forms.Padding(3);
+            this.Bells.Size = new System.Drawing.Size(354, 363);
             this.Bells.TabIndex = 2;
             this.Bells.Text = "Звонки";
             this.Bells.UseVisualStyleBackColor = true;
@@ -509,7 +469,7 @@
             this.Column2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(181, 6);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -539,7 +499,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(3, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -551,8 +511,8 @@
             // 
             this.Cycles.Location = new System.Drawing.Point(4, 22);
             this.Cycles.Name = "Cycles";
-            this.Cycles.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Cycles.Size = new System.Drawing.Size(349, 363);
+            this.Cycles.Padding = new System.Windows.Forms.Padding(3);
+            this.Cycles.Size = new System.Drawing.Size(354, 363);
             this.Cycles.TabIndex = 3;
             this.Cycles.Text = "Циклы";
             this.Cycles.UseVisualStyleBackColor = true;
@@ -561,11 +521,66 @@
             // 
             this.Etc.Location = new System.Drawing.Point(4, 22);
             this.Etc.Name = "Etc";
-            this.Etc.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.Etc.Size = new System.Drawing.Size(349, 363);
+            this.Etc.Padding = new System.Windows.Forms.Padding(3);
+            this.Etc.Size = new System.Drawing.Size(354, 363);
             this.Etc.TabIndex = 4;
             this.Etc.Text = "Прочее";
             this.Etc.UseVisualStyleBackColor = true;
+            // 
+            // Most
+            // 
+            this.Most.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Most.Location = new System.Drawing.Point(261, 14);
+            this.Most.Margin = new System.Windows.Forms.Padding(2);
+            this.Most.Name = "Most";
+            this.Most.Size = new System.Drawing.Size(60, 20);
+            this.Most.TabIndex = 13;
+            // 
+            // First
+            // 
+            this.First.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.First.Location = new System.Drawing.Point(261, 40);
+            this.First.Margin = new System.Windows.Forms.Padding(2);
+            this.First.Name = "First";
+            this.First.Size = new System.Drawing.Size(60, 20);
+            this.First.TabIndex = 14;
+            // 
+            // Second
+            // 
+            this.Second.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Second.Location = new System.Drawing.Point(261, 71);
+            this.Second.Margin = new System.Windows.Forms.Padding(2);
+            this.Second.Name = "Second";
+            this.Second.Size = new System.Drawing.Size(60, 20);
+            this.Second.TabIndex = 15;
+            // 
+            // Third
+            // 
+            this.Third.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Third.Location = new System.Drawing.Point(261, 99);
+            this.Third.Margin = new System.Windows.Forms.Padding(2);
+            this.Third.Name = "Third";
+            this.Third.Size = new System.Drawing.Size(60, 20);
+            this.Third.TabIndex = 16;
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.domainUpDown1.Location = new System.Drawing.Point(274, 303);
+            this.domainUpDown1.Margin = new System.Windows.Forms.Padding(2);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.domainUpDown1.TabIndex = 17;
             // 
             // Characteristic
             // 
@@ -593,6 +608,11 @@
             this.Bells.ResumeLayout(false);
             this.Bells.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Most)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.First)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Second)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Third)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.domainUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -610,15 +630,10 @@
         private System.Windows.Forms.TabPage Cycles;
         private System.Windows.Forms.TabPage Etc;
         private System.Windows.Forms.GroupBox Changes;
-        private System.Windows.Forms.DomainUpDown Third;
-        private System.Windows.Forms.DomainUpDown Second;
-        private System.Windows.Forms.DomainUpDown First;
-        private System.Windows.Forms.DomainUpDown Most;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox SecondPair;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -638,5 +653,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.NumericUpDown Most;
+        private System.Windows.Forms.NumericUpDown domainUpDown1;
+        private System.Windows.Forms.NumericUpDown Third;
+        private System.Windows.Forms.NumericUpDown Second;
+        private System.Windows.Forms.NumericUpDown First;
     }
 }
