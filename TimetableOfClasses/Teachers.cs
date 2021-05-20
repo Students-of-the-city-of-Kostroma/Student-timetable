@@ -21,13 +21,13 @@ namespace TimetableOfClasses
         {
             try
             {
-                Logs.GetInfo("Click button Create in Teacher");
-                AddTeacher t = new AddTeacher();
-                t.Show();
+                Logs.GetInfo("Click button Create in Teacher"); //Выводим сообщение "нажмите кнопку, чтобы добавить нового учителя"
+                AddTeacher t = new AddTeacher();//Создаём экземпляр объекта - добавление учителя
+                t.Show();//Выводим объект на экран
             }
             catch (Exception ex)
             {
-                Logs.GetError(ex);
+                Logs.GetError(ex);//Если ловим ошибку, то добавляем в логи ошибку
             }
         }
 
@@ -35,29 +35,29 @@ namespace TimetableOfClasses
         {
             try
             {
-                Logs.GetInfo("Click button Delete in Teacher");
+                Logs.GetInfo("Click button Delete in Teacher");//Выводим сообщние об удалении учителя
                 //DG.Rows.RemoveAt(DG.SelectedCells[0].RowIndex);
-                if (DG.SelectedRows.Count == 0) return;
+                if (DG.SelectedRows.Count == 0) return;//Если нет учителей, то ничего не делаем
 
-                DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                MTeacher mTeacher;
+                DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);//Подтверждение удаления
+                MTeacher mTeacher;//Создаём объекты типа MTeacher
 
-                if (dr == DialogResult.Yes)
+                if (dr == DialogResult.Yes)//Проверка нажатия кнопки в выборке(окне)
                 {
-                    foreach (DataGridViewRow row in DG.SelectedRows)
+                    foreach (DataGridViewRow row in DG.SelectedRows)//Перебираем список учителей
                     {
                         DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-                        String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                        if (fullName.Length == 3)
-                            mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-                        else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
-                        Program.refData.CTeacher.Delete(mTeacher);
+                        String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);//Записываем ФИО в массив
+                        if (fullName.Length == 3)//Проверяем корректность ФИО учителя
+                            mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);//Если ФИО корректно введено, то получаем данные об учителя в текущем формате
+                        else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);//Иначе получаем в другом формате
+                        Program.refData.CTeacher.Delete(mTeacher);//Удаляем экземпляр учителя из БД(программы)
                     }
                 }
             }
             catch (Exception ex)
             {
-                Logs.GetError(ex);
+                Logs.GetError(ex);//Если получаем ошибку, то она отправляется в файл лог
             }
         }
 
@@ -65,31 +65,31 @@ namespace TimetableOfClasses
         {
             try
             {
-                Logs.GetInfo("Click button Change is Teacher");
-                if (DG.SelectedRows.Count == 1)
+                Logs.GetInfo("Click button Change is Teacher");//Изменить данные в логах об учителе
+                if (DG.SelectedRows.Count == 1) //Если количество выделенных строк равно 1
                 {
 
-                    DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
-                    String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    MTeacher mTeacher;
-                    if (fullName.Length == 3)
+                    DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;//
+                    String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); //Записываем ФИО в массив
+                    MTeacher mTeacher;//Создаём экземпляр класса MTeacher
+                    if (fullName.Length == 3)//Проверка на правильность ФИО
                     {
-                        mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+                        mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]); //Если ФИО корректно введено, то получаем данные об учителя в текущем формате
                     }
-                    else
+                    else//Иначе получаем в другом формате
                     {
                         mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
                     }
-                    AddTeacher add = new AddTeacher(mTeacher);
-                    add.Owner = this;
-                    add.ShowDialog();
+                    AddTeacher add = new AddTeacher(mTeacher); //Добавляем учителя
+                    add.Owner = this;//Добавляем учителя в БД(программу)
+                    add.ShowDialog();//Показываем диалог
                 }
-                else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
-                else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+                else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }//Если выделили больше 1 строки
+                else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }//Если вообще не выделили строку
             }
             catch (Exception ex)
             {
-                Logs.GetError(ex);
+                Logs.GetError(ex);//Добавляем ошибку в лог
             }
         }
 
