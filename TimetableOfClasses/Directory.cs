@@ -15,5 +15,10 @@ namespace TimetableOfClasses
             dataGridView1.DataSource = table;
             this.Text = table.TableName;
         }
+
+        private void bt2_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

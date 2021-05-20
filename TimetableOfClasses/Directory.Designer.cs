@@ -64,6 +64,7 @@
             this.bt2.TabIndex = 2;
             this.bt2.Text = "Добавить";
             this.bt2.UseVisualStyleBackColor = true;
+            this.bt2.Click += new System.EventHandler(this.bt2_Click);
             // 
             // Directory
             // 

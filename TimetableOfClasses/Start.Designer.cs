@@ -55,7 +55,6 @@
             this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +78,7 @@
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
+            this.файлToolStripMenuItem.Click += new System.EventHandler(this.файлToolStripMenuItem_Click);
             // 
             // справочникиToolStripMenuItem
             // 
@@ -273,22 +273,11 @@
             this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
             // 
-            // loadButton
-            // 
-            this.loadButton.Location = new System.Drawing.Point(12, 46);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(208, 23);
-            this.loadButton.TabIndex = 1;
-            this.loadButton.Text = "Загрузить тестовые данные";
-            this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.Click += new System.EventHandler(this.bLoad_Click);
-            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 350);
-            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Start";
@@ -329,7 +318,6 @@
         private System.Windows.Forms.ToolStripMenuItem CharacteristicStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem учебныеНеделиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem нагрузкаToolStripMenuItem1;
-        private System.Windows.Forms.Button loadButton;
     }
 }
 
