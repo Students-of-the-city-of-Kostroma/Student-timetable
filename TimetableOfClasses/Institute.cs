@@ -9,8 +9,6 @@ namespace TimetableOfClasses
 {
     public partial class Institute : Form
     {
-        public string selectedInstitute;
-
         public Institute()
         {
             InitializeComponent();
@@ -132,13 +130,6 @@ namespace TimetableOfClasses
                 }
 
             }
-        }
-
-        private void DG_Institute_DoubleClick(object sender, EventArgs e)
-        {
-            DataRow Row = ((DataRowView)DG_Institute.SelectedRows[0].DataBoundItem).Row;
-            selectedInstitute = (string)Row["ShortName"];
-            Close();
         }
     }
 }
