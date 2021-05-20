@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.DG = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +36,9 @@
             this.MetodicalDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Windows = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Weekends = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,39 +71,6 @@
             this.DG.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DG_DataBindingComplete);
             this.DG.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_RowPrePaint);
             this.DG.SelectionChanged += new System.EventHandler(this.DG_SelectionChanged);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(748, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.AddTeacher);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(600, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.RemoveTeacher);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(671, 369);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Update);
             // 
             // FullName
             // 
@@ -160,6 +127,39 @@
             this.Weekends.Name = "Weekends";
             this.Weekends.ReadOnly = true;
             this.Weekends.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(748, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddTeacher);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(600, 369);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Удалить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.RemoveTeacher);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(671, 369);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Update);
             // 
             // Teachers
             // 

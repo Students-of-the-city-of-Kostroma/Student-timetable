@@ -60,7 +60,6 @@
             this.DG_Institute.Size = new System.Drawing.Size(535, 217);
             this.DG_Institute.TabIndex = 4;
             this.DG_Institute.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.DG_Institute_RowPrePaint);
-            this.DG_Institute.DoubleClick += new System.EventHandler(this.DG_Institute_DoubleClick);
             // 
             // ShortName
             // 

@@ -46,7 +46,6 @@
             this.направлениеПодготовкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.корпусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DepartmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.нагрузкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.рабочийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,7 @@
             this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadButton = new System.Windows.Forms.Button();
+            this.нагрузкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,13 +207,6 @@
             this.DepartmentsToolStripMenuItem.Text = "Кафедры";
             this.DepartmentsToolStripMenuItem.Click += new System.EventHandler(this.DepartmentsToolStripMenuItem_Click);
             // 
-            // нагрузкаToolStripMenuItem1
-            // 
-            this.нагрузкаToolStripMenuItem1.Name = "нагрузкаToolStripMenuItem1";
-            this.нагрузкаToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
-            this.нагрузкаToolStripMenuItem1.Text = "Нагрузка";
-            this.нагрузкаToolStripMenuItem1.Click += new System.EventHandler(this.нагрузкаToolStripMenuItem1_Click);
-            // 
             // расписаниеToolStripMenuItem
             // 
             this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
@@ -273,22 +265,18 @@
             this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
             // 
-            // loadButton
+            // нагрузкаToolStripMenuItem1
             // 
-            this.loadButton.Location = new System.Drawing.Point(12, 46);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(208, 23);
-            this.loadButton.TabIndex = 1;
-            this.loadButton.Text = "Загрузить тестовые данные";
-            this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.Click += new System.EventHandler(this.bLoad_Click);
+            this.нагрузкаToolStripMenuItem1.Name = "нагрузкаToolStripMenuItem1";
+            this.нагрузкаToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
+            this.нагрузкаToolStripMenuItem1.Text = "Нагрузка";
+            this.нагрузкаToolStripMenuItem1.Click += new System.EventHandler(this.нагрузкаToolStripMenuItem1_Click);
             // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 350);
-            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Start";
@@ -329,7 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem CharacteristicStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem учебныеНеделиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem нагрузкаToolStripMenuItem1;
-        private System.Windows.Forms.Button loadButton;
     }
 }
 
