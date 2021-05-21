@@ -9,11 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         public void setupData()
         {
-<<<<<<< HEAD
-            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4,"КГУ");
-=======
             MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "КГУ");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
             bool actualmDirectionOfPreparation = refData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
                 Assert.IsTrue(actualmDirectionOfPreparation, "Не удалось вставить направление подготовки");
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
@@ -44,11 +40,9 @@ namespace UnitTestOfTimetableOfClasses
             bool actualmTypesOfOccupations = refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
                 Assert.IsTrue(actualmTypesOfOccupations, "Не удалось вставить тип занятия");
 
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100, "17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20","к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
 
@@ -62,11 +56,9 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а","Правоведение", "Иванов Иван Иванович", "Лекция", "20", "к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool expected = false;
             //act
 
@@ -83,11 +75,9 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-<<<<<<< HEAD
-            MAcademicLoad PreMa1 = new MAcademicLoad(null, "17-Нбо-1а", "110", "Программирование", "Иванов Иван Иванович", "Лр", "20");
-=======
+
             MAcademicLoad PreMa1 = new MAcademicLoad(110,"17-Нбо-1а", "Программирование", "Иванов Иван Иванович", "Лр", "20", "к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool expected = false;
             //act
             
@@ -104,11 +94,9 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2б", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2б", "Правоведение", "Иванов Иван Иванович", "Лекция", "20", "к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
             bool expected = true;
@@ -126,11 +114,9 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2а", "100", "История", "Иванова Ивана Ивановича", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "История", "Иванова Ивана Ивановича", "Лекция", "20", "к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool expected = false;
             //act
             PreMa.Discipline = "Цукенгшщзх";
@@ -147,11 +133,9 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2а", "100", "Правоведение", "Иванова Ивана Ивановича", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "Правоведение", "Иванова Ивана Ивановича", "Лекция", "20","к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool expected = false;
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
@@ -168,11 +152,9 @@ namespace UnitTestOfTimetableOfClasses
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-<<<<<<< HEAD
-            MAcademicLoad PreMa = new MAcademicLoad(null, "17-ИСбо-2а", "100", "Правоведение", "Иванов Иван Иванович", "Лекция", "20");
-=======
+
             MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20","к");
->>>>>>> f463591d4b64b4009887a1e0f7a0ddea5d531dd0
+
             bool expected = false;
             //act
             PreMa.Occupation = "Фуаываываыв";
