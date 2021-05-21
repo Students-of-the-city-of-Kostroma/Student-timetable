@@ -8,5 +8,10 @@ namespace TimetableOfClasses
         {
             InitializeComponent();
         }
+
+        private void DG_Ministry_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

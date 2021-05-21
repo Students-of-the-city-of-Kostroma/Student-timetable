@@ -152,7 +152,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод в поле телефон букв
         /// </summary>
         [TestMethod]
-        
+        [ExpectedException(typeof(System.Exception))]
         public void Task_397_9()
         {
             //arrange

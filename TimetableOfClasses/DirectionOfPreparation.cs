@@ -48,7 +48,7 @@ namespace TimetableOfClasses
                     foreach (DataGridViewRow row in dgDirectionOfPreparation.SelectedRows)
                     {
                         DataRow Row = ((DataRowView)row.DataBoundItem).Row;
-                        Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"], (string)Row["InstituteShortName"]);
+                        Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
                         Program.refData.CDirectionOfPreparation.Delete(Direction);
                     }
                 }
@@ -74,7 +74,7 @@ namespace TimetableOfClasses
             if (dgDirectionOfPreparation.SelectedRows.Count == 1)
             {
                 DataRow Row = ((DataRowView)dgDirectionOfPreparation.SelectedRows[0].DataBoundItem).Row;
-                MDirectionOfPreparation Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"], (string)Row["InstituteShortName"]);
+                MDirectionOfPreparation Direction = new MDirectionOfPreparation((string)Row["CodeOfDP"], (string)Row["NameOfDP"], (ushort)Row["PeriodOfStudy"]);
                 AddDirectionOfPreparation add = new AddDirectionOfPreparation(Direction);
                 add.Owner = this;
                 add.Show();
