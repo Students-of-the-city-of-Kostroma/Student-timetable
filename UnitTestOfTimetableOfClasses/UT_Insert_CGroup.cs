@@ -248,7 +248,7 @@ namespace UnitTestOfTimetableOfClasses
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ж12", "Нжпр", 1,"КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ж12", "Нжпр", 1, "КГУ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профдль", "ПРОФД", dp.CodeOfDP);

@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = true;
             bool act;
-            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20);
+            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20, "КГУ");
             int C1 = refData.CDirectionOfPreparation.Rows.Count;
             act = refData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
             int C2 = refData.CDirectionOfPreparation.Rows.Count;
@@ -24,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
             Pre_condition_Del();
             bool ex = true;
             bool act;
-            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20);
+            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20, "КГУ");
 
             int C1 = refData.CDirectionOfPreparation.Rows.Count;
             act = refData.CDirectionOfPreparation.Delete(T_DirectionOfPreparation);
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             bool ex = false;
             bool act;
-            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20);
+            MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "Филология", 20, "КГУ");
             int C1 = refData.CDirectionOfPreparation.Rows.Count;
             act = refData.CDirectionOfPreparation.Delete(T_DirectionOfPreparation);
             int C2 = refData.CDirectionOfPreparation.Rows.Count;
