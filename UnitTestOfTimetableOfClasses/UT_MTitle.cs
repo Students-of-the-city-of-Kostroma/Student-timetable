@@ -6,7 +6,7 @@ using System;
 namespace UnitTestOfTimetableOfClasses
 {
     /// <summary>
-    /// класс содержит методы проверки ввёденного значения
+    ///  класс для тестирования Уч. звания 
     /// </summary>
     [TestClass]
     public class UT_MTitle
