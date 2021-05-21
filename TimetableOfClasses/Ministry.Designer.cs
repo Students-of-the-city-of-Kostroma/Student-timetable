@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.DG_Ministry = new System.Windows.Forms.DataGridView();
+            this.Add = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
             this.Kod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Ministry)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,25 +55,6 @@
             this.DG_Ministry.ReadOnly = true;
             this.DG_Ministry.Size = new System.Drawing.Size(562, 215);
             this.DG_Ministry.TabIndex = 1;
-            this.DG_Ministry.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Ministry_CellContentClick);
-            // 
-            // Kod
-            // 
-            this.Kod.HeaderText = "Код";
-            this.Kod.Name = "Kod";
-            this.Kod.ReadOnly = true;
-            // 
-            // Naim
-            // 
-            this.Naim.HeaderText = "Наименование";
-            this.Naim.Name = "Naim";
-            this.Naim.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Описание";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
             // 
             // Add
             // 
@@ -94,6 +75,24 @@
             this.Delete.TabIndex = 3;
             this.Delete.Text = "Удалить";
             this.Delete.UseVisualStyleBackColor = true;
+            // 
+            // Kod
+            // 
+            this.Kod.HeaderText = "Код";
+            this.Kod.Name = "Kod";
+            this.Kod.ReadOnly = true;
+            // 
+            // Naim
+            // 
+            this.Naim.HeaderText = "Наименование";
+            this.Naim.Name = "Naim";
+            this.Naim.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Описание";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // Ministry
             // 

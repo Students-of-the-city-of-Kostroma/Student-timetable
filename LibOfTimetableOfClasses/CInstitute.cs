@@ -2,11 +2,11 @@
 using System.Data;
 using System.Diagnostics;
 
-/// <summary>
-/// Создаёт экзампляр контроллера для сущности Институт
-/// </summary>
 namespace LibOfTimetableOfClasses
 {
+    /// <summary>
+    /// Создаёт экзампляр контроллера для сущности Институт
+    /// </summary>
     public class CInstitute : DataTable, IController
     {
         public CInstitute() : base("Institute")
@@ -80,7 +80,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Source);
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -111,7 +111,7 @@ namespace LibOfTimetableOfClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Source);
+                        Debug.WriteLine(ex.Message);
                         return false;
                     }
                 }
