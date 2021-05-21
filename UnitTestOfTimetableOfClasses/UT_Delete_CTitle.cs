@@ -8,6 +8,9 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Deleted_CTitle
     {
         RefData refData = new RefData();
+        /// <summary>
+        /// Удалить запись при совпадении  атрибутов
+        /// </summary>
         [TestMethod]
         public void Task_362_1()
         {
@@ -19,7 +22,9 @@ namespace UnitTestOfTimetableOfClasses
             //assert
             Assert.AreEqual(ex, act);
         }
-
+         /// <summary>
+        /// Удалить несуществующие данные 
+        /// </summary>
         [TestMethod]
         public void Task_362_2()
         {
