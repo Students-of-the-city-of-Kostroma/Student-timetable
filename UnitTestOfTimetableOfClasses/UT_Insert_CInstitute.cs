@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange     
             MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
-            bool expected = true;
+            bool expected = false;
             //act    
             bool actual = refData.CInstitute.Insert(inst);
             //assert    
