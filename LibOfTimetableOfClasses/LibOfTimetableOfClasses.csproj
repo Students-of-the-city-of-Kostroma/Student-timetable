@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRing.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CAcademicLoad.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +86,7 @@
     </Compile>
     <Compile Include="Logs.cs" />
     <Compile Include="MAcademicLoad.cs" />
+    <Compile Include="MRing.cs" />
     <Compile Include="MCourseSchedule.cs" />
     <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs">
