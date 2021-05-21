@@ -9,8 +9,8 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MTeacher : Model
     {
-        const string AllPattern = @"^[А-Яа-я0-9 -.]+$"; //патерн поиска в конце строки
-        const string OnlyRussianPattern = @"^[А-Яа-я -.]+$"; //патерн поиска в конце строки
+        const string AllPattern = @"^[А-Яа-я0-9 -.]+$"; 
+        const string OnlyRussianPattern = @"^[А-Яа-я -.]+$"; 
 
         string _patronymic;
         string _secondName;
@@ -28,28 +28,28 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Имя преподавателя(Семантически)
         /// </summary>
-        public string FirstName // Свойство имени
+        public string FirstName 
         {
             get
             {
-                return _firstName; //получение имени
+                return _firstName; 
             }
             set
             {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой"); //Проверка на корректность строки
-                if (value.Length > 25) throw new Exception("Кол-во символов превышает 25"); //Проверка на длину строки
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой"); 
+                if (value.Length > 25) throw new Exception("Кол-во символов превышает 25"); 
 
-                Regex regex = new Regex(OnlyRussianPattern); // создаём объект с паттерном
-                if (!regex.IsMatch(value)) //проверка на коррентность ввода паттерна(имени)
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value)) 
                 {
-                    throw new Exception("Имя: Можно использовать только русские буквы, пробел и точку"); //создание ошибки
+                    throw new Exception("Имя: Можно использовать только русские буквы, пробел и точку"); 
                 };
 
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); //Проверка регистра первой имени
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); 
 
                 for (int i = 1; i < value.Length; i++)
-                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !"); //Проверка регистра остальных букв
-                _firstName = value; //Добавление имени
+                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !"); 
+                _firstName = value; 
             }
         }
 
@@ -59,23 +59,23 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 50 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Фамилия преподавателя(Семантически)
         /// </summary>
-        public string SecondName //свойство фамилии
+        public string SecondName 
         {
             get
             {
-                return _secondName; // получение фамилии
+                return _secondName; 
             }
             set
             {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой"); // проверка на корректность строки 
-                if (value.Length > 50) throw new Exception("Кол-во символов превышает 50"); //Проверка на длину Фалимии
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой");  
+                if (value.Length > 50) throw new Exception("Кол-во символов превышает 50"); 
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !"); //Проверка на использование русского алфавита 
+                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !"); 
                     
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); // Проверка регистсра первой буквы фамилии
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); 
                 for (int i = 1; i < value.Length; i++)
-                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !"); //Проверка регистра остальных букв
+                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !"); 
                 _secondName = value;
             }
         }
@@ -85,29 +85,29 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не более 30 символов, содержать только А-Я,а-я, начинаться с заглавной
         /// Отчество преподавателя(Семантически)
         /// </summary>
-        public string Patronymic// отчество
+        public string Patronymic
         {
             get
             {
-                if (_patronymic != null) return _patronymic; // проверка наличия отчества, возвращение отчества при наличии
-                else return ""; //если его нет возвращаем пустую строку
+                if (_patronymic != null) return _patronymic; 
+                else return ""; 
             }
             set
             {
-                if (value == "" || value == null) //Проверка на наличие отчества
+                if (value == "" || value == null) 
                 {
-                    _patronymic = null; //При остуствии пристваевается пустое значение
+                    _patronymic = null;
                     return;
                 }
 
-                if (value.Length > 30) throw new Exception("Кол-во символов превышает 30"); //Проверка на длину
+                if (value.Length > 30) throw new Exception("Кол-во символов превышает 30");
 
                 foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !"); //Проверка на использование русского алфавита
+                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !"); 
 
-                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); // Проверка регистсра первой буквы фамилии
+                if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !"); 
                 for (int i = 1; i < value.Length; i++)
-                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");  //Проверка регистра остальных букв
+                    if (value[i] < 'а' || value[i] > 'я') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
                 _patronymic = value;
             }
         }
@@ -117,24 +117,24 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 10 символов, содержать только А-Я, не пустой
         /// Кафедра преподавателя(Семантически)
         /// </summary>
-        public string Departament // Отделение 
+        public string Departament 
         {
             get
             {
-                return _departament; //Возвращение отделения
+                return _departament;
             }
             set
             {
-                if (value == null || value == "") throw new Exception("Строка не может быть пустой"); // проверка на корректность строки 
-                if (value.Length > 10) throw new Exception("Кол-во символов превышает 10"); //Проверка на длину
+                if (value == null || value == "") throw new Exception("Строка не может быть пустой");
+                if (value.Length > 10) throw new Exception("Кол-во символов превышает 10"); 
 
-                Regex regex = new Regex(OnlyRussianPattern); // Создаём объект с патерном
-                if (!regex.IsMatch(value)) //Проверяем на корректность патерна
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value)) 
                 {
-                    throw new Exception("Кафедра: Можно использовать только русские буквы, пробел и точку"); //вывод ошибки 
+                    throw new Exception("Кафедра: Можно использовать только русские буквы, пробел и точку"); 
                 }
                 
-                _departament = value; // Присвоение значиная 
+                _departament = value; 
             }
         }
 
