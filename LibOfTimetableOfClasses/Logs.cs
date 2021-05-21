@@ -1,50 +1,173 @@
-﻿using System;
-using System.IO;
+using LibOfTimetableOfClasses;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Windows.Forms;
 
-namespace LibOfTimetableOfClasses
+namespace TimetableOfClasses
 {
-    static public class Logs
-    {
-        /// <summary>
-        /// Поле info класса Logs
-        /// </summary>
-        static string info;
-        /// <summary>
-        /// Поле error класса Logs
-        /// </summary>
-        static string error;
 
-        /// <summary>
-        /// Метод получает ошибку
-        /// </summary>
-        static public void GetError(Exception ex)
-        {
-            string time = string.Format("{0:dd.MM.yyy HH:mm:ss.fff}", DateTime.Now); //Получаем текущее время в формате день, год  часы, минуты, секунды.
-            error = string.Format("DEBUG | {0} | [HResult: {1}]  [Message: {2}]  [TargetSite.DeclaringType: {3}]  [TargetSite.Name: {4}]  [Data: {5}]",
-                time, ex.HResult, ex.Message, ex.TargetSite.DeclaringType, ex.TargetSite.Name, ex.Data);//Создаём строку с данными об ошибке 
-            Write(error);//Выводим сообщение об ошибке
-        }
+	public partial class Teachers : Form
+	{
 
-        /// <summary>
-        /// Метод получает информацию о дествии пользователя
-        /// </summary>
-        static public void GetInfo(string _info)
-        {
-            string time = string.Format("{0:dd.MM.yyy HH:mm:ss.fff}", DateTime.Now); //Получаем текущее время в формате день, год  часы, минуты, секунды.
-            info = string.Format("INFO  | {0} | {1}", time, _info); //Получаем строку с датой и действием пользователя
-            Write(info);//Выводим на экран
-        }
+		public Teachers()
+		{
+			InitializeComponent();
+			DG.AutoGenerateColumns = false;
+			DG.DataSource = Program.refData.CTeacher;
+		}
+		/// <summary>
+		/// Метод добавления учителя
+		/// </summary>
+		private void AddTeacher(object sender, EventArgs e)
+		{
+			try
+			{
+				//выводим на экран окно с добавлением учителя
+				Logs.GetInfo("Click button Create in Teacher");
+				AddTeacher t = new AddTeacher();
+				t.Show();
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+		}
+		/// <summary>
+		/// Метод удаления учителя
+		/// </summary>
+		private void RemoveTeacher(object sender, EventArgs e)
+		{
+			try
+			{
+				Logs.GetInfo("Click button Delete in Teacher");
+				//проверка на кол-во выделенных строк											   
+				if (DG.SelectedRows.Count == 0) return;
 
-        /// <summary>
-        /// <para>Метод получает INFO или ERROR и записывает в файл Logs.txt</para>
-        /// Путь к файлу: TimetableOfClasses\bin\Debug\Logs.txt
-        /// </summary>
-        static private void Write(string msg)
-        {
-            string path = @"Logs.txt"; //Создаём путь файла с логами
-            using (FileStream file = new FileStream(path, FileMode.Append)) //Создаём объект, считывающий файл
-            using (StreamWriter writeInfo = new StreamWriter(file)) //Создаём объект, записывающий данный файл
-                writeInfo.WriteLine(msg);//Записываем полученную ошибку в файл
-        }
-    }
+				DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				MTeacher mTeacher;
+				
+				if (dr == DialogResult.Yes)
+				{
+					//Удаление экземпляра учителя из БД(программы)
+					foreach (DataGridViewRow row in DG.SelectedRows)
+					{
+						DataRow Row = ((DataRowView)row.DataBoundItem).Row;
+						String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+						if (fullName.Length == 3)
+							mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+						else mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+						Program.refData.CTeacher.Delete(mTeacher);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+		}
+		/// <summary>
+		/// Метод обновления данных
+		/// </summary>
+		private void Update(object sender, EventArgs e)
+		{
+			try
+			{
+				Logs.GetInfo("Click button Change is Teacher");
+				if (DG.SelectedRows.Count == 1) 
+				{
+					//добавление учителя в базу
+					DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;//
+					String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); 
+					MTeacher mTeacher;
+					if (fullName.Length == 3)
+					{
+						mTeacher = new MTeacher(fullName[1], fullName[0], fullName[2], (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]); 
+					}
+					else
+					{
+						mTeacher = new MTeacher(fullName[1], fullName[0], "", (string)Row["AcademicDegree"], (string)Row["AcademicTitle"], (string)Row["Departament"], (string)Row["MetodicalDays"], (string)Row["Windows"], (string)Row["Weekends"]);
+					}
+					AddTeacher add = new AddTeacher(mTeacher); 
+					add.Owner = this;
+					add.ShowDialog();
+				}
+				else if (DG.SelectedRows.Count > 1) { MessageBox.Show("Для изменения выделите только одну строку!"); }
+				else { MessageBox.Show("Для изменения выделите хотя бы одну строку !"); }
+			}
+			catch (Exception ex)
+			{
+				Logs.GetError(ex);
+			}
+		}
+
+		private void DG_SelectionChanged(object sender, EventArgs e)
+		{
+			//button2.Enabled = ((DG.SelectedRows.Count > 0) && (DG.SelectedCells[0].RowIndex != DG.Rows.Count - 1));
+		}
+
+		private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
+			DataGridViewColumn oldColumn = DG.SortedColumn;
+			ListSortDirection direction;
+
+			if (DG.SelectedRows.Count == 0) return;
+			DataRow Row = ((DataRowView)DG.SelectedRows[0]?.DataBoundItem)?.Row;
+			if (Row == null) return;
+
+			if (oldColumn != null)
+			{
+				if (oldColumn == newColumn &&
+					DG.SortOrder == SortOrder.Ascending)
+				{
+					direction = ListSortDirection.Descending;
+				}
+				else
+				{
+					direction = ListSortDirection.Ascending;
+					oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+				}
+			}
+			else
+			{
+				direction = ListSortDirection.Ascending;
+			}
+
+			//сохраняем номер выделенной строки
+			List<object> arraySelectedRows = new List<object>();
+			foreach (DataGridViewRow item in DG.SelectedRows)
+			{
+				arraySelectedRows.Add(item.DataBoundItem);
+			}
+
+			DG.Sort(newColumn, direction);
+
+			foreach (DataGridViewRow item in DG.Rows)
+			{
+				if (arraySelectedRows.Contains(item.DataBoundItem))
+				{
+					item.Selected = true;
+				}
+			}
+		}
+
+		private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+		{
+			foreach (DataGridViewColumn column in DG.Columns)
+			{
+				column.SortMode = DataGridViewColumnSortMode.Programmatic;
+			}
+		}
+
+		private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+		{
+			int index = e.RowIndex;
+			string indexStr = (index + 1).ToString();
+			object header = this.DG.Rows[index].HeaderCell.Value;
+			if (header == null || !header.Equals(indexStr))
+				this.DG.Rows[index].HeaderCell.Value = indexStr;
+		}
+	}
 }
