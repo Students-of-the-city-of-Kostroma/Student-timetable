@@ -18,17 +18,25 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         protected ushort periodOfStudy;
         /// <summary>
+        /// Сокращенное название института, к которому относится направление подготовки
+        /// </summary>
+        protected string instituteShortName;
+        
+        /// <summary>
         /// Создает экземпляр направления подготовки
         /// </summary>
         /// <param name="codeOfDP">Код направления подготовки</param>
         /// <param name="nameOfDP">Название направления подготовки</param>
         /// <param name="periodOfStudy">Период обучения</param>
-        public MDirectionOfPreparation(string codeOfDP, string nameOfDP, ushort periodOfStudy) : base()
+        /// <param name="instituteShortName">Сокращенное название института, к которому относится направление подготовки</param>
+        public MDirectionOfPreparation(string codeOfDP, string nameOfDP, ushort periodOfStudy, string instituteShortName) : base()
         {
             CodeOfDP = codeOfDP;
             NameOfDP = nameOfDP;
             PeriodOfStudy = periodOfStudy;
+            InstituteShortName = instituteShortName;
         }
+
         /// <summary>
         /// codeOfDP - код напраления подготовки
         /// </summary>
@@ -64,6 +72,23 @@ namespace LibOfTimetableOfClasses
             }
 
             get { return periodOfStudy; }
+        }
+
+        /// <summary>
+        /// Сокращенное название института, к которому относится направление подготовки
+        /// </summary>
+        public string InstituteShortName
+        {
+            get
+            {
+                return instituteShortName;
+            }
+            set
+            {
+                if (value == null || value == "")
+                    throw new Exception("Поле сокращенное название иннститута пустое");
+                instituteShortName = value;
+            }
         }
     }
 }

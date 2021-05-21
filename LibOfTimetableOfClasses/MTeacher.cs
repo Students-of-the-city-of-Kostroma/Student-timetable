@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
@@ -8,6 +9,9 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class MTeacher : Model
     {
+        const string AllPattern = @"^[А-Яа-я0-9 -.]+$";
+        const string OnlyRussianPattern = @"^[А-Яа-я -.]+$";
+
         string _patronymic;
         string _secondName;
         string _firstName;
@@ -35,8 +39,11 @@ namespace LibOfTimetableOfClasses
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
-                foreach (char l in value)
-                    if (l < 'А' || l > 'я') throw new Exception("Можно использовать только русские буквы !");
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Имя: Можно использовать только русские буквы, пробел и точку");
+                };
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 
@@ -121,11 +128,12 @@ namespace LibOfTimetableOfClasses
                 if (value == null || value == "") throw new Exception("Строка не может быть пустой");
                 if (value.Length > 10) throw new Exception("Кол-во символов превышает 10");
 
-                foreach (char l in value)
-                    if (l < 'А' || l > 'Я') throw new Exception("Можно использовать только русские, заглавные буквы !");
-
-
-
+                Regex regex = new Regex(OnlyRussianPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Кафедра: Можно использовать только русские буквы, пробел и точку");
+                }
+                
                 _departament = value;
             }
         }
@@ -147,9 +155,13 @@ namespace LibOfTimetableOfClasses
                 if (value == null) throw new Exception("Строка не может быть null");
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
-                foreach (char l in value)
-                    if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
-                if (value.Length > 0)
+                Regex regex = new Regex(AllPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Учёная степень: Недопустимые символы !");
+                }
+
+                if (value.Length > 0 && value != " ")
                     if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 
                 if (value != "") _academicDegree = value;
@@ -178,9 +190,13 @@ namespace LibOfTimetableOfClasses
                 }
                 if (value.Length > 25) throw new Exception("Кол-во символов превышает 25");
 
-                foreach (char l in value)
-                    if ((l < 'A' || l > 'z') && (l < 'А' || l > 'я') && l != '-' && l != ' ' && l != ',' && (l < '0' || l > '9') && l != '.') throw new Exception("Недопустимые символы !");
-                if (value.Length > 0)
+                Regex regex = new Regex(AllPattern);
+                if (!regex.IsMatch(value))
+                {
+                    throw new Exception("Учёное звание: Недопустимые символы !");
+                }
+
+                if (value.Length > 0 && value != " ")
                     if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
                 if (value != "") _academicTitle = value;
                 else _academicTitle = null;
