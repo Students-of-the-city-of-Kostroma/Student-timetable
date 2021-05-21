@@ -20,8 +20,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(countRows+1, refData.CGroup.Rows.Count);
             do
             {
-                Console.WriteLine(i);
-                i++;
+                Console.WriteLine(i++);
             }
             while ((refData.CGroup.Rows[countRows]) !=(refData.CGroup.Rows[i]));
             Assert.AreEqual(refData.CGroup.Rows[countRows], refData.CGroup.Rows[i]);
