@@ -5,14 +5,14 @@ using System;
 namespace UnitTestOfTimetableOfClasses
 {
     /// <summary>
-    /// Класс для тестирования полей класса MDirectionOfPreparation (направление подготовки - Model)
+    /// Класс для тестирования полей класса MDirectionOfPreparation ("Направление подготовки") (Model)
     /// </summary>
     [TestClass]
     public class UT_MDirectionOfPreparation
     {
         RefData refData = new RefData();
         /// <summary>
-        /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation
+        /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>
         [TestMethod]
         public void Task_554_1()
@@ -28,7 +28,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         /// <summary>
-        /// Проверка поля NameOfDP экземпляра класса MDirectionOfPreparation
+        /// Проверка поля NameOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>
         [TestMethod]
         public void Task_554_2()
@@ -44,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         /// <summary>
-        /// Проверка поля PeriodOfStudy экземпляра класса MDirectionOfPreparation
+        /// Проверка поля PeriodOfStudy экземпляра класса MDirectionOfPreparation на соответствие типу ushort
         /// </summary>
         [TestMethod]
         public void Task_554_3()
