@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.CodeOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.NameOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
                 Assert.AreEqual(typeof(ushort), mDirectionOfPreparation.PeriodOfStudy.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)
