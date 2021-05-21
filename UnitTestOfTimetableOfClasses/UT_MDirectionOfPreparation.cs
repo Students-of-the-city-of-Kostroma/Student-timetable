@@ -8,12 +8,15 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_MDirectionOfPreparation
     {
         RefData refData = new RefData();
+        /// <summary>
+        /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation
+        /// </summary>
         [TestMethod]
         public void Task_554_1()
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.CodeOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -21,12 +24,15 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
+        /// <summary>
+        /// Проверка поля NameOfDP экземпляра класса MDirectionOfPreparation
+        /// </summary>
         [TestMethod]
         public void Task_554_2()
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.NameOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -34,12 +40,15 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
+        /// <summary>
+        /// Проверка поля PeriodOfStudy экземпляра класса MDirectionOfPreparation
+        /// </summary>
         [TestMethod]
         public void Task_554_3()
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1);
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "");
                 Assert.AreEqual(typeof(ushort), mDirectionOfPreparation.PeriodOfStudy.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)
