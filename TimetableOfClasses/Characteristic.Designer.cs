@@ -1,4 +1,4 @@
-﻿namespace TimetableOfClasses
+namespace TimetableOfClasses
 {
     partial class Characteristic
     {
