@@ -16,11 +16,14 @@ namespace TimetableOfClasses
             DG.AutoGenerateColumns = false;
             DG.DataSource = Program.refData.CTeacher;
         }
-
+/// <summary>
+		/// Метод добавления объекта учителя
+		/// </summary>
+        
         private void AddTeacher(object sender, EventArgs e)
         {
             try
-            {
+            {       
                 Logs.GetInfo("Click button Create in Teacher");
                 AddTeacher t = new AddTeacher();
                 t.Show();
@@ -30,7 +33,10 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-
+        /// <summary>
+		/// Метод удаления объекта учитель
+		/// </summary>
+        
         private void RemoveTeacher(object sender, EventArgs e)
         {
             try
@@ -60,7 +66,10 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-
+        /// <summary>
+		/// Метод обновления данных
+		/// </summary>
+        
         private void Update(object sender, EventArgs e)
         {
             try
@@ -68,7 +77,6 @@ namespace TimetableOfClasses
                 Logs.GetInfo("Click button Change is Teacher");
                 if (DG.SelectedRows.Count == 1)
                 {
-
                     DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
                     String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     MTeacher mTeacher;
@@ -126,7 +134,6 @@ namespace TimetableOfClasses
                 direction = ListSortDirection.Ascending;
             }
 
-            //сохраняем номер выделенной строки
             List<object> arraySelectedRows = new List<object>();
             foreach (DataGridViewRow item in DG.SelectedRows)
             {
