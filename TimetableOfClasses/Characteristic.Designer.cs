@@ -25,7 +25,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Characteristic));
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.Help = new System.Windows.Forms.Button();
@@ -62,11 +61,12 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Bells = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Cycles = new System.Windows.Forms.TabPage();
             this.Etc = new System.Windows.Forms.TabPage();
+            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeOfStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeOfEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numeration.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Day.SuspendLayout();
@@ -488,7 +488,6 @@
             // Bells
             // 
             this.Bells.Controls.Add(this.dataGridView1);
-            this.Bells.Controls.Add(this.textBox1);
             this.Bells.Location = new System.Drawing.Point(4, 22);
             this.Bells.Name = "Bells";
             this.Bells.Padding = new System.Windows.Forms.Padding(3);
@@ -499,55 +498,28 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.University,
+            this.Number,
+            this.TimeOfStart,
+            this.TimeOfEnd});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(144, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(352, 356);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
-            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "№";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Время занятий";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(3, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(152, 354);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // Cycles
             // 
@@ -568,6 +540,43 @@
             this.Etc.TabIndex = 4;
             this.Etc.Text = "Прочее";
             this.Etc.UseVisualStyleBackColor = true;
+            // 
+            // University
+            // 
+            this.University.DataPropertyName = "University";
+            this.University.Frozen = true;
+            this.University.HeaderText = "ВУЗ";
+            this.University.Name = "University";
+            this.University.ReadOnly = true;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.Frozen = true;
+            this.Number.HeaderText = "№";
+            this.Number.MinimumWidth = 8;
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Number.Width = 30;
+            // 
+            // TimeOfStart
+            // 
+            this.TimeOfStart.DataPropertyName = "TimeOfStart";
+            this.TimeOfStart.Frozen = true;
+            this.TimeOfStart.HeaderText = "Начало занятий";
+            this.TimeOfStart.MinimumWidth = 6;
+            this.TimeOfStart.Name = "TimeOfStart";
+            this.TimeOfStart.ReadOnly = true;
+            this.TimeOfStart.Width = 125;
+            // 
+            // TimeOfEnd
+            // 
+            this.TimeOfEnd.DataPropertyName = "TimeOfEnd";
+            this.TimeOfEnd.Frozen = true;
+            this.TimeOfEnd.HeaderText = "Конец занятий";
+            this.TimeOfEnd.Name = "TimeOfEnd";
+            this.TimeOfEnd.ReadOnly = true;
             // 
             // Characteristic
             // 
@@ -593,7 +602,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Bells.ResumeLayout(false);
-            this.Bells.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -636,9 +644,10 @@
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn University;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeOfStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeOfEnd;
     }
 }

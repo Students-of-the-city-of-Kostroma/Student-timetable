@@ -6,7 +6,7 @@ namespace TimetableOfClasses
     public partial class Start : Form
     {
         private bool isRefDataLoaded = false;
-        private LibOfTimetableOfClasses.RefData refData = new LibOfTimetableOfClasses.RefData();
+        private LibOfTimetableOfClasses.RefData refData = Program.refData;
 
         public Start()
         {
