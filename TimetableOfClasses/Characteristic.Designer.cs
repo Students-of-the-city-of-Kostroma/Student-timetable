@@ -386,7 +386,14 @@
             0,
             0,
             0});
+<<<<<<< HEAD
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+=======
+<<<<<<< HEAD
+=======
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+>>>>>>> 0608ec7ea6563179be1fce8a9debe24bd188b0de
+>>>>>>> 223bb4d7228f9b2d6fa3459e662295e63554302b
             // 
             // button1
             // 
@@ -526,7 +533,15 @@
             this.Column1,
             this.Column2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(192, 6);
+=======
+<<<<<<< HEAD
+            this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(192, 6);
+>>>>>>> 0608ec7ea6563179be1fce8a9debe24bd188b0de
+>>>>>>> 223bb4d7228f9b2d6fa3459e662295e63554302b
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
