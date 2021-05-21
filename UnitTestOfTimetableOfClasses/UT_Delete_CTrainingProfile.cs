@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
 		{
 			bool exPrep = true;
 			bool actPrep;
-			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20);
+			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20, "КГУ");
 			int DoP1 = refData.CDirectionOfPreparation.Rows.Count;
 			actPrep = refData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
 			int DoP2 = refData.CDirectionOfPreparation.Rows.Count;
