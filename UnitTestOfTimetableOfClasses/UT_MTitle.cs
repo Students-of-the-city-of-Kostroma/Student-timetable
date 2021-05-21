@@ -5,10 +5,16 @@ using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
+    /// <summary>
+    ///  класс для тестирования Уч. звания 
+    /// </summary>
     [TestClass]
     public class UT_MTitle
     {
         RefData refData = new RefData();
+        /// <summary>
+        /// Метод проверяет ввёдённое название учёного звания на соответствие типу поля string
+        /// </summary>
         [TestMethod]
         public void Issue_646_1()
         {
@@ -22,6 +28,9 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
+        /// <summary>
+        /// Метод проверяет ввёдённое название учёного звания на соответствие типу поля string
+        /// </summary>
         [TestMethod]
         public void Issue_646_2()
         {
