@@ -38,8 +38,7 @@ namespace TimetableOfClasses
 
                     if (!Program.refData.CDiscipline.Insert(mDiscipline))
                     {
-                        MessageBox.Show("Невозможно добавить дисциплину");
-                        return;
+                        throw new Exception("Невозможно добавить дисциплину");
                     }
 
                     tbFullName.Text = "";
@@ -66,8 +65,7 @@ namespace TimetableOfClasses
                     {
                         if (!Program.refData.CDiscipline.Insert(mDiscipline))
                         {
-                            MessageBox.Show("Невозможно добавить дисциплину");
-                            return;
+                            throw new Exception("Невозможно добавить дисциплину");
                         }
                     }
                     else Program.refData.CDiscipline.Update(mDiscipline);
