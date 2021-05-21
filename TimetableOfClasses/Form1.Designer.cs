@@ -1,6 +1,6 @@
 ﻿namespace TimetableOfClasses
 {
-    partial class Sprav
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sprav));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
