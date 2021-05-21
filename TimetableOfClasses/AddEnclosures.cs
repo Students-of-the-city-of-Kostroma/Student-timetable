@@ -149,8 +149,7 @@ namespace TimetableOfClasses
 
         private void name_TextChanged(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Text.Length == 0) (sender as TextBox).BackColor = Color.Red;
-            else (sender as TextBox).BackColor = Color.White;
+            (sender as TextBox).BackColor = (sender as TextBox).Text.Length == 0 ? Color.Red : Color.White;
         }
 
         private void btAddUniversity_Click(object sender, EventArgs e)
