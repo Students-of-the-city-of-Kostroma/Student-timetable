@@ -59,7 +59,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Поле Сокращенное наименование уч. звания содержит недопустимые символы");
                 if (value.Length > 25)
                     throw new Exception("Слишком Длинное значение");
-                if (value.Length <= 1)
+                if (value.Length == 0)
                     throw new Exception("Слишком короткое значение");
 
                 _reduction = value;

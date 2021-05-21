@@ -12,15 +12,28 @@ namespace LibOfTimetableOfClasses
         /// <summary>
         /// Конструктор таблицы.
         /// Формируются поля таблицы типа DataTable и их свойства.
-        /// Уникальность строки в таблице определяется уникальностью поля Group.
+        /// Уникальное значение - ID
         /// </summary>
         public CAcademicLoad() : base("Нагрузка")
         {
+            var keys = new DataColumn[1];
+
+            DataColumn idColumn = new DataColumn
+            {
+                DataType = typeof(int),
+                ColumnName = "ID",
+            };
+            idColumn.Unique = true;
+            idColumn.AutoIncrement = true;
+            idColumn.AutoIncrementSeed = 1;
+            idColumn.AutoIncrementStep = 1;
+            Columns.Add(idColumn);
+            keys[0] = idColumn;
+
             DataColumn column = new DataColumn
             {
                 DataType = typeof(string),
                 ColumnName = "Group",
-                Unique = true
             };
             this.Columns.Add(column);
 
@@ -37,9 +50,7 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "DistributedHours"
             };
             this.Columns.Add(column);
-
-
-
+                       
             column = new DataColumn
             {
                 DataType = typeof(string),
@@ -60,10 +71,12 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "KindOfLesson"
             };
             this.Columns.Add(column);
+
+            PrimaryKey = keys;
         }
         /// <summary>
         /// Удаляет запись из таблицы данных об академической нагрузке
-        /// В таблице CAcademicLoad ищется строка с полем "Group" соответсвующим этому же полю модели, 
+        /// В таблице CAcademicLoad ищется строка с полем "ID" соответсвующим этому же полю модели, 
         /// переданной в качестве параметра.
         /// В случае успеха поиска удаляется найденная строка. 
         /// </summary>
@@ -71,9 +84,12 @@ namespace LibOfTimetableOfClasses
         {
             MAcademicLoad mAcademicLoad = (MAcademicLoad)model;
 
+            if (mAcademicLoad.Id <= 0 || mAcademicLoad.Id == null)
+                return false;
+
             for (int i = 0; i < this.Rows.Count; i++)
             {
-                if ((string)this.Rows[i]["Group"] == mAcademicLoad.Group)
+                if ((int?)this.Rows[i]["ID"] == mAcademicLoad.Id)
                 {
                     this.Rows[i].Delete();
                     return true;
@@ -81,19 +97,27 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
-        
+
         /// <summary>
         ///  Метод вставки переданной модели MAcademicLoad в таблицу
         /// </summary>
         /// <param name="model">Модель MAcademicLoad хранящая новую запись таблицы</param>
         /// <returns>Результат обновления</returns>
+        /// <remarks>В поле ID значение может быть равно null, оно автоинкрементное. При вставке ID равно null.</remarks>
         public bool Insert(Model model)
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
 
+            if (mAcademic.Id <= 0)
+                return false;
+
             try
             {
                 DataRow newRow = NewRow();
+                if (mAcademic.Id != null)
+                {
+                    newRow["ID"] = mAcademic.Id;
+                }
                 newRow["Group"] = mAcademic.Group;
                 newRow["Discipline"] = mAcademic.Discipline;
                 newRow["DistributedHours"] = mAcademic.Distributed;
@@ -105,7 +129,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Source);
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -120,16 +144,17 @@ namespace LibOfTimetableOfClasses
         {
             MAcademicLoad mAcademic = (MAcademicLoad)model;
 
-            if (mAcademic.Group == null)
+            if (mAcademic.Id <= 0 || mAcademic.Id == null)
                 return false;
 
             for (int i = 0; i < Rows.Count; i++)
             {
-                if ((string)Rows[i]["Group"] == mAcademic.Group)
+                if ((int?)Rows[i]["ID"] == mAcademic.Id)
                 {
                     try
                     {
                         Rows[i].BeginEdit();
+                        Rows[i]["Group"] = mAcademic.Group;
                         Rows[i]["Discipline"] = mAcademic.Discipline;
                         Rows[i]["DistributedHours"] = mAcademic.Distributed;
                         Rows[i]["KindOfLesson"] = mAcademic.Occupation;
@@ -141,7 +166,7 @@ namespace LibOfTimetableOfClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Source);
+                        Debug.WriteLine(ex.Message);
                         return false;
                     }
                 }
