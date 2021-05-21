@@ -4,6 +4,9 @@ using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
+    /// <summary>
+    /// Класс для тестирования полей класса MDirectionOfPreparation (направление подготовки - Model)
+    /// </summary>
     [TestClass]
     public class UT_MDirectionOfPreparation
     {
