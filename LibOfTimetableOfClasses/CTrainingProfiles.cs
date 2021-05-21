@@ -30,7 +30,7 @@ namespace LibOfTimetableOfClasses
             column = new DataColumn();
             column.DataType = typeof(string);
             column.ColumnName = "Shiphr";
-            column.Unique = true;
+            //column.Unique = true;
             Columns.Add(column);
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace LibOfTimetableOfClasses
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Source);
                 return false;
             }
         }
@@ -117,7 +117,7 @@ namespace LibOfTimetableOfClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Message);
+                        Debug.WriteLine(ex.Source);
                         return false;
                     }
                 }

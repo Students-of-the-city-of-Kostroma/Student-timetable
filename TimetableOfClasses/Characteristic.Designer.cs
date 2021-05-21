@@ -62,11 +62,11 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Bells = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Cycles = new System.Windows.Forms.TabPage();
             this.Etc = new System.Windows.Forms.TabPage();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numeration.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Day.SuspendLayout();
@@ -386,6 +386,10 @@
             0,
             0,
             0});
+<<<<<<< HEAD
+=======
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+>>>>>>> 0608ec7ea6563179be1fce8a9debe24bd188b0de
             // 
             // button1
             // 
@@ -525,7 +529,11 @@
             this.Column1,
             this.Column2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(192, 6);
+>>>>>>> 0608ec7ea6563179be1fce8a9debe24bd188b0de
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -534,24 +542,7 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(144, 184);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "№";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Время занятий";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox1
             // 
@@ -583,6 +574,23 @@
             this.Etc.TabIndex = 4;
             this.Etc.Text = "Прочее";
             this.Etc.UseVisualStyleBackColor = true;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "№";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Время занятий";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // Characteristic
             // 
