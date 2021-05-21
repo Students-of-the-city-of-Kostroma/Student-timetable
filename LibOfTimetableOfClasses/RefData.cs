@@ -8,8 +8,6 @@ namespace LibOfTimetableOfClasses
     /// В этом классе храняться все экземпляры контроллеров.
     /// </summary>
     public class RefData {
-
-        
         public DataSet DataSet = new DataSet();
         /// <summary>
         /// Звонки
@@ -123,8 +121,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public void InitData()
         {
-
-
             #region university
             MUniversity mUniversity = new MUniversity("4401006286", "КГУ", "Костромской Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Рудольфович", "Наумов", "info@kstu.edu.ru", "84942317960");
             CUniversity.Insert(mUniversity);
