@@ -7,51 +7,58 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CTitle
     {
-        readonly RefData refData = new RefData();
+        readonly CTitle refData = new CTitle();
 
         /// <summary>
-        ///  Вставляем в refData ноыве данные
+        /// Добавление записи в таблицу
         /// </summary>
         [TestMethod]
-        public void Task_361_1() 
+        public void Task_361_1()
         {
             //arrange
-            MTitle ma = new MTitle("НЕПрофессор", "Проф.");
+            MTitle ma = new MTitle("Профессор", "Проф.");
             bool expected = true;
-            //act
-            bool actual = refData.CTitle.Insert(ma);
-            Assert.AreEqual(expected, actual);
-        }
 
-        /// <summary>
-        /// Добавляем учёное звание с такой сокращённой записью, которая уже есть в таблице
-        /// </summary>
-        [TestMethod]
-        public void Task_361_2() 
-        {
-            Task_361_1();
-            //arrange
-            MTitle ma = new MTitle("НЕДоцент", "Проф.");
-            bool expected = false;
             //act
-            bool actual = refData.CTitle.Insert(ma);
+            bool actual = refData.Insert(ma);
+
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Добавляем учёное звание с такой полной записью, которая уже есть в таблице
+        /// Учёное звание с такой сокращённой записью уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void Task_361_3() 
+        public void Task_361_2()
         {
-            Task_361_1();
             //arrange
-            MTitle ma = new MTitle("НЕПрофессор", "Доц.");
+            Task_361_1();
+            MTitle ma = new MTitle("Профессор", "Проф.");
             bool expected = false;
+
             //act
-            bool actual = refData.CTitle.Insert(ma);
-            //assert 
+            bool actual = refData.Insert(ma);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        /// <summary>
+        /// Учёное звание с такой полной записью уже есть в таблице
+        /// </summary>
+        [TestMethod]
+        public void Task_361_3()
+        {
+            //arrange
+            Task_361_1();
+            MTitle ma = new MTitle("Доцент", "Проф.");
+            bool expected = false;
+
+            //act
+            bool actual = refData.Insert(ma);
+
+            //assert
             Assert.AreEqual(expected, actual);
         }
 

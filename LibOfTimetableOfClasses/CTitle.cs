@@ -43,6 +43,10 @@ namespace LibOfTimetableOfClasses
             return false;
         }
 
+        /// <summary>
+        /// Добавление новых учёных званий в таблицу
+        /// </summary>
+        /// <param name="model">Модель учёного звания</param>
         public bool Insert(Model model)
         {
             try
