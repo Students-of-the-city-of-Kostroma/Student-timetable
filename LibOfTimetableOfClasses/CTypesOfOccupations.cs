@@ -24,11 +24,11 @@ namespace LibOfTimetableOfClasses
         }
 
 
-/// <summary>
-/// Свойство, удаляющие объект
-/// </summary>
-/// <param name="model">Обьект для удаления</param>
-/// <returns>Возвращаем удалён ли объект</returns>
+        /// <summary>
+        /// Свойство, удаляющие объект
+        /// </summary>
+        /// <param name="model">Обьект для удаления</param>
+        /// <returns>Возвращаем удалён ли объект</returns>
         public bool Delete(Model model)
         {
             MTypesOfOccupations mTypesofOccupations = (MTypesOfOccupations)model;
