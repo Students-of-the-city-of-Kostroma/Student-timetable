@@ -25,7 +25,7 @@ namespace TimetableOfClasses
         public AddInstitute(MInstitute mInstitute)
         {
             InitializeComponent();
-            this.Text = "Изменение института";
+            this.Text = "Изменение инстиута";
             this.btCreateAndClean.Visible = false;
             this.btCreateAndClose.Text = "Изменить";
             this.ShortName.Enabled = false;

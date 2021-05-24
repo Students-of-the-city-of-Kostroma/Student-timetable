@@ -184,13 +184,6 @@
     <Compile Include="Enclosures.Designer.cs">
       <DependentUpon>Enclosures.cs</DependentUpon>
     </Compile>
-    <Compile Include="Docs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>Docs.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Groups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,9 +324,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Directory.resx">
       <DependentUpon>Directory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Docs.resx">
-      <DependentUpon>Docs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enclosures.resx">
       <DependentUpon>Enclosures.cs</DependentUpon>

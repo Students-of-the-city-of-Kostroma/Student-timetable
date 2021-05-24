@@ -84,7 +84,7 @@ namespace TimetableOfClasses
                     {
                         Close();
                     }
-                    else MessageBox.Show("Невозможно добавить этого преподавателя", "Попробуйте снова");
+                    else MessageBox.Show("Новозможно добавить этого преподавателя", "Попробуйте снова");
                 }
                 else message();
             }
@@ -119,7 +119,7 @@ namespace TimetableOfClasses
             }
             catch (Exception)
             {
-                MessageBox.Show("Заполнены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
+                MessageBox.Show("Заполенены не все поля или заполнены некорректно", "Ошибка", MessageBoxButtons.OK);
                 return false;
             }
         }

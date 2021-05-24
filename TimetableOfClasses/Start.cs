@@ -5,6 +5,9 @@ namespace TimetableOfClasses
 {
     public partial class Start : Form
     {
+        private bool isRefDataLoaded = false;
+        private LibOfTimetableOfClasses.RefData refData = new LibOfTimetableOfClasses.RefData();
+
         public Start()
         {
             InitializeComponent();
@@ -37,6 +40,10 @@ namespace TimetableOfClasses
         private void расписаниеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Timetable tt = new Timetable();
+            if (isRefDataLoaded)
+            {
+                tt.initRefData(refData);
+            }
             tt.Show();
         }
         private void вУЗыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,10 +143,26 @@ namespace TimetableOfClasses
             academicLoad.Show();
         }
 
-        private void рабочийToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bLoad_Click(object sender, EventArgs e)
         {
-            Form1 Docs = new Form1();
-            Docs.Show();
+            string msg = "Тестовые данные загружены.";
+            try
+            {
+                refData.ClearData();
+                refData.InitData();  // загрузка тестовых данных
+                isRefDataLoaded = true;
+            }
+            catch (Exception ex)
+            {
+                isRefDataLoaded = false;
+                msg = string.Format("RefData не загрузился: {0} {1}", ex.Message, ex.StackTrace);
+            }
+            finally
+            {
+                MessageBox.Show(msg, isRefDataLoaded ? "Сообщение" : "Ошибка", MessageBoxButtons.OK, isRefDataLoaded ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+            }
+            
         }
+
     }
 }

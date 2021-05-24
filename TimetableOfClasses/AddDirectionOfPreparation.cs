@@ -30,6 +30,7 @@ namespace TimetableOfClasses
             nuPeriod.Text = Convert.ToString(mDirection.PeriodOfStudy);
             input = Convert.ToString(nuPeriod.Value);
             result = ushort.TryParse(input, out number);
+            tbInstitute.Text = mDirection.InstituteShortName;
             itsupdate = true;
         }
         private void btCancel_Click(object sender, EventArgs e)// отмена
@@ -41,14 +42,14 @@ namespace TimetableOfClasses
         {
             if (!(Regex.IsMatch(tbCod.Text, @"\d{2}.\d{2}.\d{2}")))
             {
-                MessageBox.Show("Ведите код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
+                MessageBox.Show("Ведите Код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
                 tbCod.Focus();
             }
             if (!result || String.IsNullOrWhiteSpace(tbCod.Text) || String.IsNullOrWhiteSpace(tbName.Text) || String.IsNullOrWhiteSpace(nuPeriod.Text))
                 MessageBox.Show("Заполните все поля корректно");
             else
             {
-                MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
+                MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value, tbInstitute.Text);
                 try
                 {
                     if (!Program.refData.CDirectionOfPreparation.Insert(mDirection))
@@ -59,6 +60,7 @@ namespace TimetableOfClasses
                     tbCod.Text = "";
                     tbName.Text = "";
                     nuPeriod.Value = 1;
+                    tbInstitute.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -71,7 +73,7 @@ namespace TimetableOfClasses
         {
             if (!(Regex.IsMatch(tbCod.Text, @"\d{2}.\d{2}.\d{2}")))
             {
-                MessageBox.Show("Ведите код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
+                MessageBox.Show("Ведите Код направления в виде: 2 цифры, любой символ, 2 цифры, любой символ, 2 цифры (запятую опустить)");
                 tbCod.Focus();
             }
             else
@@ -80,7 +82,7 @@ namespace TimetableOfClasses
                     MessageBox.Show("Заполните все поля корректно");
                 else
                 {
-                    MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value);
+                    MDirectionOfPreparation mDirection = new MDirectionOfPreparation(tbCod.Text, tbName.Text, (ushort)nuPeriod.Value, tbInstitute.Text);
                     try
                     {
                         if (!itsupdate)
@@ -110,6 +112,19 @@ namespace TimetableOfClasses
             }
             else
                 e.Handled = true;
+        }
+
+        private void btSelectInstitute_Click(object sender, EventArgs e)
+        {
+            Institute selectInstitute = new Institute();
+            selectInstitute.FormClosing += SelectInstitute_FormClosing;
+            selectInstitute.Show();
+        }
+
+        private void SelectInstitute_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Institute institute = (Institute)sender;
+            tbInstitute.Text = institute.selectedInstitute;
         }
     }
 }
