@@ -96,7 +96,7 @@ namespace LibOfTimetableOfClasses
                 if (value.Length < 1 || value.Length > 10)
                     throw new Exception("Ошибка создания модели. В свойство ShortName получена строка недопустимой длины");
                 if (!Regex.IsMatch(value, @"[А-Я]+"))
-                    throw new Exception(value + "-Ошибка создания модели. В свойство ShortName получена строка содержащая недопустимые символы");
+                    throw new Exception("Ошибка создания модели. В свойство ShortName получена строка содержащая недопустимые символы");
                 _shortName = value;
             }
         }
