@@ -69,9 +69,9 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-        /// <summary>
-	/// Метод обновления данных у объекта "учитель"
-	/// </summary>
+	///<summary>
+	///Метод обновления данных объекта "учитель"
+	///</summary>
         private void Update(object sender, EventArgs e)
         {
             try
