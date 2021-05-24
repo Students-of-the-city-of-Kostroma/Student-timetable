@@ -7,16 +7,23 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
+    ///<summary>
+    ///Класс создания объекта учитель
+    ///</summary>
     public partial class Teachers : Form
     {
-
+         ///<summary>
+        ///Метод инициализации объекта "учитель"
+        ///</summary>
         public Teachers()
         {
             InitializeComponent();
             DG.AutoGenerateColumns = false;
             DG.DataSource = Program.refData.CTeacher;
         }
-
+        ///<summary>
+        ///Метод добавления нового объекта "учитель"
+        ///</summary>
         private void AddTeacher(object sender, EventArgs e)
         {
             try
@@ -30,7 +37,9 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-
+        /// <summary>
+		/// Метод удаления объекта "учитель"
+		/// </summary>
         private void RemoveTeacher(object sender, EventArgs e)
         {
             try
@@ -41,7 +50,7 @@ namespace TimetableOfClasses
 
                 DialogResult dr = MessageBox.Show("Вы точно хотите удалить выделенный ряд(ы)", "Уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 MTeacher mTeacher;
-
+                
                 if (dr == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in DG.SelectedRows)
@@ -60,7 +69,9 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-
+        /// <summary>
+		/// Метод обновления данных у объекта "учитель"
+		/// </summary>
         private void Update(object sender, EventArgs e)
         {
             try
