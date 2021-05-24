@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = true;
+            bool expected = false;
             //act
             bool actual = refData.CEnclosures.Insert(gr);
             //assert
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = true;
+            bool expected = false;
             refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Ивановская", "111121", "1");
@@ -102,7 +102,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = true;
+            bool expected = false;
             refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Дзержинск", "222222", "2");
@@ -138,7 +138,7 @@ namespace UnitTestOfTimetableOfClasses
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
-            bool expected = true;
+            bool expected = false;
             refData.CEnclosures.Insert(gr);
             //act
             MEnclosures gr1 = new MEnclosures("Г", "Ярославский Государственный Университет", "Дзержинск", "222222", "2");
@@ -156,10 +156,10 @@ namespace UnitTestOfTimetableOfClasses
         public void Task_397_9()
         {
             //arrange
-            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "аааааа", "1");
+            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
             refData.CEnclosures.Insert(gr);
             //act
-            MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "аааааа", "1");
+            MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
             //assert
             refData.CEnclosures.Delete(gr);
             refData.CEnclosures.Delete(gr1);
