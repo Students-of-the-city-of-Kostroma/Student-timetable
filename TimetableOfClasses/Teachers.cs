@@ -38,8 +38,8 @@ namespace TimetableOfClasses
             }
         }
         /// <summary>
-		/// Метод удаления объекта "учитель"
-		/// </summary>
+	/// Метод удаления объекта "учитель"
+	/// </summary>
         private void RemoveTeacher(object sender, EventArgs e)
         {
             try
@@ -70,8 +70,8 @@ namespace TimetableOfClasses
             }
         }
         /// <summary>
-		/// Метод обновления данных у объекта "учитель"
-		/// </summary>
+	/// Метод обновления данных у объекта "учитель"
+	/// </summary>
         private void Update(object sender, EventArgs e)
         {
             try
