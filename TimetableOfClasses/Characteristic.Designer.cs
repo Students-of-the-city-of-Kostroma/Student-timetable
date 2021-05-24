@@ -1,4 +1,4 @@
-﻿namespace TimetableOfClasses
+namespace TimetableOfClasses
 {
     partial class Characteristic
     {
@@ -25,8 +25,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Characteristic));
+
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.Help = new System.Windows.Forms.Button();
@@ -51,7 +53,6 @@
             this.Most = new System.Windows.Forms.DomainUpDown();
             this.Date = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
             this.listBox = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -63,9 +64,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Bells = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.University = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeOfStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeOfEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cycles = new System.Windows.Forms.TabPage();
             this.Etc = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
@@ -378,7 +380,6 @@
             // Date
             // 
             this.Date.Controls.Add(this.numericUpDown1);
-            this.Date.Controls.Add(this.button1);
             this.Date.Controls.Add(this.listBox);
             this.Date.Controls.Add(this.label10);
             this.Date.Controls.Add(this.checkBox2);
@@ -404,6 +405,7 @@
             this.numericUpDown1.Size = new System.Drawing.Size(80, 22);
             this.numericUpDown1.TabIndex = 9;
             // 
+
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(405, 175);
@@ -414,6 +416,7 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+
             // listBox
             // 
             this.listBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -518,7 +521,9 @@
             // Bells
             // 
             this.Bells.Controls.Add(this.dataGridView1);
+
             this.Bells.Controls.Add(this.textBox1);
+
             this.Bells.Location = new System.Drawing.Point(4, 25);
             this.Bells.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Bells.Name = "Bells";
@@ -530,22 +535,31 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
+            this.University,
+            this.Number,
+            this.TimeOfStart,
+            this.TimeOfEnd});
             this.dataGridView1.EnableHeadersVisualStyles = false;
+
             this.dataGridView1.Location = new System.Drawing.Point(241, 7);
+
+            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
+
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+
             this.dataGridView1.Size = new System.Drawing.Size(192, 226);
             this.dataGridView1.TabIndex = 2;
             // 
@@ -577,6 +591,51 @@
             this.textBox1.Size = new System.Drawing.Size(201, 435);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = resources.GetString("textBox1.Text");
+
+            this.dataGridView1.Size = new System.Drawing.Size(469, 438);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // University
+            // 
+            this.University.DataPropertyName = "University";
+            this.University.Frozen = true;
+            this.University.HeaderText = "ВУЗ";
+            this.University.MinimumWidth = 6;
+            this.University.Name = "University";
+            this.University.ReadOnly = true;
+            this.University.Width = 125;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.Frozen = true;
+            this.Number.HeaderText = "№";
+            this.Number.MinimumWidth = 8;
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Number.Width = 30;
+            // 
+            // TimeOfStart
+            // 
+            this.TimeOfStart.DataPropertyName = "TimeOfStart";
+            this.TimeOfStart.Frozen = true;
+            this.TimeOfStart.HeaderText = "Начало занятий";
+            this.TimeOfStart.MinimumWidth = 6;
+            this.TimeOfStart.Name = "TimeOfStart";
+            this.TimeOfStart.ReadOnly = true;
+            this.TimeOfStart.Width = 125;
+            // 
+            // TimeOfEnd
+            // 
+            this.TimeOfEnd.DataPropertyName = "TimeOfEnd";
+            this.TimeOfEnd.Frozen = true;
+            this.TimeOfEnd.HeaderText = "Конец занятий";
+            this.TimeOfEnd.MinimumWidth = 6;
+            this.TimeOfEnd.Name = "TimeOfEnd";
+            this.TimeOfEnd.ReadOnly = true;
+            this.TimeOfEnd.Width = 125;
+
             // 
             // Cycles
             // 
@@ -591,11 +650,13 @@
             // 
             // Etc
             // 
+
             this.Etc.Controls.Add(this.sml);
             this.Etc.Controls.Add(this.textBox2);
             this.Etc.Controls.Add(this.label12);
             this.Etc.Controls.Add(this.linkLabel1);
             this.Etc.Controls.Add(this.label11);
+
             this.Etc.Location = new System.Drawing.Point(4, 25);
             this.Etc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Etc.Name = "Etc";
@@ -688,7 +749,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Bells.ResumeLayout(false);
-            this.Bells.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Etc.ResumeLayout(false);
             this.Etc.PerformLayout();
@@ -731,10 +791,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox listBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Label sml;
@@ -743,5 +802,11 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Timer timer1;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn University;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeOfStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeOfEnd;
+
     }
 }

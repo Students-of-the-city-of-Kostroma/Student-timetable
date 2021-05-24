@@ -1,11 +1,19 @@
+
 ﻿using System.Windows.Forms;
 using System.Diagnostics;
 using System.Drawing;
+
+﻿using LibOfTimetableOfClasses;
+using System.Windows.Forms;
+using System;
+using System.Data;
+
 
 namespace TimetableOfClasses
 {
     public partial class Characteristic : Form
     {
+
         public Characteristic() => InitializeComponent();
 
         private void timer1_Tick(object sender, System.EventArgs e)
@@ -35,6 +43,15 @@ namespace TimetableOfClasses
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
            Process.Start("https://github.com/Students-of-the-city-of-Kostroma/Student-timetable");
+
+        public Characteristic()
+        {
+
+            InitializeComponent();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = Program.refData.CRing;
+
         }
     }
 }
