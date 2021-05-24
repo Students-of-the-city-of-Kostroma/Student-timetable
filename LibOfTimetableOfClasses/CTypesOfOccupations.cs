@@ -24,7 +24,11 @@ namespace LibOfTimetableOfClasses
         }
 
 
-
+        /// <summary>
+		/// Свойство, удаляющие объект
+		/// </summary>
+		/// <param name="model">Обьект для удаления</param>
+		/// <returns>Возвращаем удалён ли объект</returns>
         public bool Delete(Model model)
         {
             MTypesOfOccupations mTypesofOccupations = (MTypesOfOccupations)model;
@@ -40,7 +44,11 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
-
+        /// <summary>
+		/// Свойство, добавляющие объект
+		/// </summary>
+		/// <param name="model">Обьект для добавления</param>
+		/// <returns>Возвращаем добавлен ли объект</returns>
         public bool Insert(Model model)
         {
             MTypesOfOccupations mTypesOfOccupations = (MTypesOfOccupations)model;
@@ -70,7 +78,11 @@ namespace LibOfTimetableOfClasses
                 return false;
             }
         }
-
+        /// <summary>
+		/// Метод обновления 
+		/// </summary>
+		/// <param name="model">Обьект для обновления</param>
+		/// <returns>Возвращает обнавлен ли объект</returns>
         public bool Update(Model model)
         {
             MTypesOfOccupations mTypesOfOccupations = (MTypesOfOccupations)model;
