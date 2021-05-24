@@ -12,7 +12,7 @@ namespace TimetableOfClasses
     ///</summary>
     public partial class Teachers : Form
     {
-         ///<summary>
+        ///<summary>
         ///Метод инициализации объекта "учитель"
         ///</summary>
         public Teachers()
@@ -69,9 +69,9 @@ namespace TimetableOfClasses
                 Logs.GetError(ex);
             }
         }
-         /// <summary>
-	 /// Метод обновления данных у объекта "учитель"
-	 /// </summary>
+        /// <summary>
+	/// Метод обновления данных у объекта "учитель"
+	/// </summary>
         private void Update(object sender, EventArgs e)
         {
             try
