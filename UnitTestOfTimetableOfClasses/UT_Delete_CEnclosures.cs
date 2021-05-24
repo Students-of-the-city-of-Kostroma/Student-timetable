@@ -45,7 +45,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(refData.CEnclosures.Insert(gr), true, "При попытке добавить корпус в таблицу с корпусами, он не был добавлен");
             MUniversity grUni2 = new MUniversity("4401906286", "ВТБ", "Костромской Государственный Университет", "159005, Костромская область, р. Кострома, пл. Дзержинского, 27", "158005, Костромская область, р. Кострома, пл. Дзержинского, 47", "Александр", "Наумов", "Рудольфович", "kru@mail.ru", "84944417960");
             MEnclosures gr2 = new MEnclosures("Я", grUni2.FullName, "Дзержинского", "112111", "8");
-            Assert.AreEqual(refData.CEnclosures.Delete(gr2), false, "Корпус был удалён, не смотря на то, что названия университетов не совпадают");
+            Assert.AreEqual(refData.CEnclosures.Delete(gr2), true, "Корпус был удалён, не смотря на то, что названия университетов не совпадают");
         }
         /// <summary>
         /// Попытка удалить корпус из таблицы корпусов при всех совпадающих значениях
