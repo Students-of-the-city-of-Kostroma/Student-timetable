@@ -1,17 +1,17 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTypesOfOccupation.Update
 {
     [TestClass]
-    public class UT_Update_CTypesOfOccupation
+    public class UT_UCTypesOfOccupation
     {
         RefData refData = new RefData();
         /// <summary>
         /// Ввод корректных данных в таблицу, при условии, что они не дублируют других атрибутов
         /// </summary>
         [TestMethod]
-        public void Task_875_1()
+        public void UCTypesOfOccupation_1()
         {
             MTypesOfOccupations t = new MTypesOfOccupations("Лекция", "л");
             MTypesOfOccupations t1 = new MTypesOfOccupations("Лабораторная", "Лаб");
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных в таблицу, при условии, что полное название вида занятия совпадает с уже существующим полным названием
         /// </summary>
         [TestMethod]
-        public void Task_875_2()
+        public void UCTypesOfOccupation_2()
         {
             MTypesOfOccupations t = new MTypesOfOccupations("Лекция", "л");
             MTypesOfOccupations t1 = new MTypesOfOccupations("Лекция", "Лаб");
@@ -43,7 +43,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных в таблицу, при условии, что краткое название вида занятия совпадает с уже существующим кратким названием вида занятия
         /// </summary>
         [TestMethod]
-        public void Task_875_3()
+        public void UCTypesOfOccupation_3()
         {
             MTypesOfOccupations t = new MTypesOfOccupations("Лекция", "л");
             MTypesOfOccupations t1 = new MTypesOfOccupations("Лабораторная", "л");
@@ -59,7 +59,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных в таблицу, при условии, что в изменяемой записи все атрибуты повторяют атрибуты записей, содержащихся в таблице
         /// </summary>
         [TestMethod]
-        public void Task_875_4()
+        public void UCTypesOfOccupation_4()
         {
             MTypesOfOccupations t = new MTypesOfOccupations("Лекция", "л");
             MTypesOfOccupations t1 = new MTypesOfOccupations("Лекция", "л");

@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTeacher.Update
 {
     [TestClass]
-    public class UT_Update_CTeacher
+    public class UT_UCTeacher
     {
         RefData refData = new RefData();
         public void setupData()
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить сведения в пустой таблице
         /// </summary>
         [TestMethod]
-        public void Task_247_1()
+        public void UCTeacher_1()
         {
             //arrange    
             refData.CInstitute.Clear();
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить несуществующего преподавателя
         /// </summary>
         [TestMethod]
-        public void Task_247_2()
+        public void UCTeacher_2()
         {
             setupData();
             refData.CInstitute.Clear();
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
         /// </summary>
         [TestMethod]
-        public void Task_247_3()
+        public void UCTeacher_3()
         {
             setupData();
             Assert.IsTrue(refData.CInstitute.Rows.Count == 0, "Таблица институтов не пуста");
@@ -100,7 +100,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что вводимая ученая степень преподавателя не существует
         /// </summary>
         [TestMethod]
-        public void Task_247_4()
+        public void UCTeacher_4()
         {
             setupData();
             //arrange            
@@ -121,7 +121,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что вводимое ученое звание преподавателя не существует
         /// </summary>
         [TestMethod]
-        public void Task_247_5()
+        public void UCTeacher_5()
         {
             setupData();
             //arrange            
