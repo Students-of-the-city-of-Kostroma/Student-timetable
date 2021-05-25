@@ -16,7 +16,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Метод проверяет ввёдённое название учёного звания на соответствие типу поля string
         /// </summary>
         [TestMethod]
-        public void Issue_646_1()
+        public void MTitle_1()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Метод проверяет ввёдённое название учёного звания на соответствие типу поля string
         /// </summary>
         [TestMethod]
-        public void Issue_646_2()
+        public void MTitle_2()
         {
             try
             {

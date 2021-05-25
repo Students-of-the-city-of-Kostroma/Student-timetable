@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка поля fullName объекта класса MTypesOfOccupation
         /// </summary>
         [TestMethod]
-        public void Task_997_1()
+        public void MTypesOfOccupation_1()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка поля shortName объекта класса MTypesOfOccupation
         /// </summary>
         [TestMethod]
-        public void Task_997_2()
+        public void MTypesOfOccupation_2()
         {
             try
             {
