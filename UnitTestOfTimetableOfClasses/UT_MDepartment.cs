@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void MDepartment_1()
+        public void Task_965_1_1()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
 
-        public void MDepartment_2()
+        public void Task_965_1_2()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void MDepartment_3()
+        public void Task_965_1_3()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void MDepartment_4()
+        public void Task_965_1_4()
         {
             try
             {

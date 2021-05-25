@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         //[TestMethod]
-        //public void MAuditor_1()
+        //public void Task_274_1()
 
         //{
         //    try
@@ -25,7 +25,7 @@ namespace UnitTestOfTimetableOfClasses
         //}
 
         [TestMethod]
-        public void MAuditor_2()
+        public void Task_274_2()
         {
             try
             {
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void MAuditor_3()
+        public void Task_274_3()
         {
             try
             {
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MAuditor_4()
+        public void Task_274_4()
         {
             try
             {
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void MAuditor_5()
+        public void Task_274_5()
         {
             try
             {

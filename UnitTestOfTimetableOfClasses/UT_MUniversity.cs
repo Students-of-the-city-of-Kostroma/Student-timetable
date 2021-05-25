@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void MUniversity_1()
+        public void Issue_506_1()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_2()
+        public void Issue_506_2()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_3()
+        public void Issue_506_3()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_4()
+        public void Issue_506_4()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_5()
+        public void Issue_506_5()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_6()
+        public void Issue_506_6()
         {
             try
             {
@@ -87,7 +87,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_7()
+        public void Issue_506_7()
         {
             try
             {
@@ -100,7 +100,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_8()
+        public void Issue_506_8()
         {
             try
             {
@@ -113,7 +113,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void MUniversity_9()
+        public void Issue_506_9()
         {
             try
             {
@@ -125,7 +125,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void MUniversity_10()
+        public void Issue_506_10()
         {
             try
             {
