@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Issue_252_1_1()
+        public void MTeacher_1()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_1_2()
+        public void MTeacher_2()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_1_3()
+        public void MTeacher_3()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_2_1()
+        public void MTeacher_4()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_2_2()
+        public void MTeacher_5()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_3()
+        public void MTeacher_6()
         {
             try
             {
@@ -87,7 +87,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_4()
+        public void MTeacher_7()
         {
             try
             {
@@ -100,7 +100,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_5()
+        public void MTeacher_8()
         {
             try
             {
@@ -113,7 +113,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_252_6()
+        public void MTeacher_9()
         {
             try
             {

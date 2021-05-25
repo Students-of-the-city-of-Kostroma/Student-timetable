@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses
     {
         RefData refData = new RefData();
         //[TestMethod]
-        //public void Task_427_1()
+        //public void MTrainingProfile_1()
         //{
         //    try
         //    {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
         //    }
         //}
         [TestMethod]
-        public void Task_427_2()
+        public void MTrainingProfile_2()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Task_427_3()
+        public void MTrainingProfile_3()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Task_427_4()
+        public void MTrainingProfile_4()
         {
             try
             {
