@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.MTitle_
 {
     /// <summary>
     ///  класс для тестирования Уч. звания 
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MTitle T_Title = new MTitle("Др", "Доктор");
-                Assert.AreEqual(typeof(String), T_Title.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T_Title.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MTitle T_Title = new MTitle("Др", "Доктор");
-                Assert.AreEqual(typeof(String), T_Title.Reduction.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T_Title.Reduction.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

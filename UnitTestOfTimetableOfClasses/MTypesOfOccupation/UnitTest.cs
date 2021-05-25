@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.MTypesOfOccupation_
 {
     [TestClass]
     public class UT_MTypesOfOccupation
@@ -17,7 +17,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MTypesOfOccupations T = new MTypesOfOccupations("Лекция", "л");
-                Assert.AreEqual(typeof(String), T.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MTypesOfOccupations T = new MTypesOfOccupations("Лекция", "л");
-                Assert.AreEqual(typeof(String), T.ShortName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T.ShortName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

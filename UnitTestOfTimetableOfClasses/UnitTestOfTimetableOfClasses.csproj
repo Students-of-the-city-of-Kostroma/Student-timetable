@@ -80,7 +80,7 @@
     <Compile Include="UT_Update_CGroup.cs" />
     <Compile Include="UT_Update_CTypesOfOccupation.cs" />
     <Compile Include="UT_Update_CAcademicDegree.cs" />
-    <Compile Include="MUniversity\UT_MUniversity.cs" />
+    <Compile Include="MUniversity\UnitTest.cs" />
     <Compile Include="UT_Update_CEnclosurse.cs" />
     <Compile Include="UT_Update_CUniversity.cs" />
   </ItemGroup>

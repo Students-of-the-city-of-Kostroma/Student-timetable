@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.MDiscipline_
 {
     [TestClass]
     public class UT_MDiscipline
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(String), T_Discipline.Fullname.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T_Discipline.Fullname.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(String), T_Discipline.Shortname.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T_Discipline.Shortname.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(String), T_Discipline.CycleofDiscipline.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(string), T_Discipline.CycleofDiscipline.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

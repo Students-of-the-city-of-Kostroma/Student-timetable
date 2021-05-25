@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.MDepartment_
 {
     [TestClass]
     public class UT_MDepartment
@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
-                Assert.AreEqual(typeof(String), D.ShortTitle.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), D.ShortTitle.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
-                Assert.AreEqual(typeof(String), D.FullTitle.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), D.FullTitle.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
-                Assert.AreEqual(typeof(String), D.DepartmentHead.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), D.DepartmentHead.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MDepartment D = new MDepartment("ИД", "Информационные технологии в дизайне", "Киприна Людмила Юрьевна", "Институт автоматизированных систем и техногий");
-                Assert.AreEqual(typeof(String), D.Institute.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), D.Institute.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {

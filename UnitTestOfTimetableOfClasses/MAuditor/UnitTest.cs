@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.MAuditor_
 {
 
     [TestClass]
@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(String), T_Auditor.NameOfAuditor.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), T_Auditor.NameOfAuditor.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(String), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(string), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace UnitTestOfTimetableOfClasses
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(String), T_Auditor.Building.GetType(), "Ожидался тип поля ushort");
+                Assert.AreEqual(typeof(string), T_Auditor.Building.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)
             {
