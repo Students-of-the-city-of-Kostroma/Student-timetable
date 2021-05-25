@@ -1,17 +1,17 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CEnclosures.Delete
 {
     [TestClass]
-    public class UT_Delete_CEnclosures
+    public class UT_DCEnclosures
     {
         readonly RefData refData = new RefData();
         /// <summary>
         /// Попытка удалить корпус из пустой таблицы корпусов
         /// </summary>
         [TestMethod]
-        public void Task_395_1()
+        public void DCEnclosures_1()
         {
             Assert.AreEqual(refData.CEnclosures.Rows.Count == 0, true, "При проверке отсутствия записей в таблице корпусов, она оказалась не пустой");
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костромской Государственный Университет", "159005, Костромская область, р. Кострома, пл. Дзержинского, 27", "158005, Костромская область, р. Кострома, пл. Дзержинского, 47", "Александр", "Наумов", "Рудольфович", "kru@mail.ru", "84944417960");
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Попытка удалить корпус из таблицы корпусов при не совпадающих значениях названий
         /// </summary>
         [TestMethod]
-        public void Task_395_2()
+        public void DCEnclosures_2()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костромской Государственный Университет", "159005, Костромская область, р. Кострома, пл. Дзержинского, 27", "158005, Костромская область, р. Кострома, пл. Дзержинского, 47", "Александр", "Наумов", "Рудольфович", "kru@mail.ru", "84944417960");
             Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Попытка удалить корпус из таблицы корпусов при не совпадающих значениях названий университетов
         /// </summary>
         [TestMethod]
-        public void Task_395_3()
+        public void DCEnclosures_3()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костромской Государственный Университет", "159005, Костромская область, р. Кострома, пл. Дзержинского, 27", "158005, Костромская область, р. Кострома, пл. Дзержинского, 47", "Александр", "Наумов", "Рудольфович", "kru@mail.ru", "84944417960");
             Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");
@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Попытка удалить корпус из таблицы корпусов при всех совпадающих значениях
         /// </summary>
         [TestMethod]
-        public void Task_395_4()
+        public void DCEnclosures_4()
         {
             MUniversity grUni = new MUniversity("4401906286", "ВТБ", "Костромской Государственный Университет", "159005, Костромская область, р. Кострома, пл. Дзержинского, 27", "158005, Костромская область, р. Кострома, пл. Дзержинского, 47", "Александр", "Наумов", "Рудольфович", "kru@mail.ru", "84944417960");
             Assert.AreEqual(refData.CUniversity.Insert(grUni), true, "При попытке добавить университет в таблицу с университетами, он не был добавлен");

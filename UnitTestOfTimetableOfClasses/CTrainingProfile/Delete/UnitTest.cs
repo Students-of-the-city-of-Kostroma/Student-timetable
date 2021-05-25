@@ -1,10 +1,10 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTrainingProfile.Delete
 {
 	[TestClass]
-	public class UT_Delete_CTrainingProfile
+	public class UT_DCTrainingProfile
 	{
         readonly RefData refData = new RefData();
         /// <summary>
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
 		/// Удаление существующих данных выбранной строки из таблицы
 		/// </summary>
 		[TestMethod]
-		public void Task_422_1()
+		public void DCTrainingProfile_1()
 		{
 			Pre_condition_Del();
 			bool ex = true;
@@ -50,7 +50,7 @@ namespace UnitTestOfTimetableOfClasses
 		/// Удаление данных из пустой таблицы
 		/// </summary>
 		[TestMethod]
-		public void Task_422_2()
+		public void DCTrainingProfile_2()
 		{
 			bool ex = false;
 			bool act;

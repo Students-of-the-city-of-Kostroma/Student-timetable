@@ -1,14 +1,14 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTypesOfOccupation.Delete
 {
     [TestClass]
-    public class UT_Delete_CTypesOfOccupations
+    public class UT_DCTypesOfOccupation
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_877_1() //Удаление существующей строки 
+        public void DCTypesOfOccupation_1() //Удаление существующей строки 
         {
             //arrange 
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_877_2() //Удаление не существующей строки 
+        public void DCTypesOfOccupation_2() //Удаление не существующей строки 
         {
             //arrange 
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");

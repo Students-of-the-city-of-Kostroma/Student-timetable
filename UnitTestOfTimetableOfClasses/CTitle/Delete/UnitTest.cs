@@ -2,14 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.CTitle.Delete
 {
     [TestClass]
-    public class UT_Delete_CTitle
+    public class UT_DCTitle
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_362_1()
+        public void DCTitle_1()
         {
             MTitle T_Title = new MTitle("Проф.", "Профессор");
             bool ex = true;
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_362_2()
+        public void DCTitle_2()
         {
             //act
             MTitle T_Title = new MTitle("Проф.", "Профессор");
