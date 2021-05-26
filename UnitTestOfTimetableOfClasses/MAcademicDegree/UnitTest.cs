@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
 {
     [TestClass]
     public class UT_MAcademicDegree
@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка корректного ввода в поле Полная запись уч. степени
         /// </summary>
         [TestMethod]
-        public void Issue_1052_1()
+        public void MAcademicDegree_1()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace UnitTestOfTimetableOfClasses
         /// /// Проверка корректного ввода в поле Сокращённая запись уч. степени
         /// </summary>
         [TestMethod]
-        public void Issue_1052_2()
+        public void MAcademicDegree_2()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка того что при попытке добавления пустой строки отловится исключение
         /// </summary>
         [TestMethod]
-        public void Issue_1052_3()
+        public void MAcademicDegree_3()
         {
             string act = "";
             try

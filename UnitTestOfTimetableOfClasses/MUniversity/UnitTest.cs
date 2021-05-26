@@ -2,14 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_MUniversity
 {
     [TestClass]
     public class UT_MUniversity
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Issue_506_1()
+        public void MUniversity_1()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_2()
+        public void MUniversity_2()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_3()
+        public void MUniversity_3()
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_4()
+        public void MUniversity_4()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_5()
+        public void MUniversity_5()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_6()
+        public void MUniversity_6()
         {
             try
             {
@@ -87,7 +87,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_7()
+        public void MUniversity_7()
         {
             try
             {
@@ -100,7 +100,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_8()
+        public void MUniversity_8()
         {
             try
             {
@@ -113,7 +113,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
         [TestMethod]
-        public void Issue_506_9()
+        public void MUniversity_9()
         {
             try
             {
@@ -125,7 +125,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void Issue_506_10()
+        public void MUniversity_10()
         {
             try
             {

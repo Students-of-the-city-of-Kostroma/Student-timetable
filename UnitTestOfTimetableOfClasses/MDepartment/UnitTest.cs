@@ -2,14 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_MDepartment
 {
     [TestClass]
     public class UT_MDepartment
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_965_1_1()
+        public void MDepartment_1()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
             }
         }
 
-        public void Task_965_1_2()
+        public void MDepartment_2()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void Task_965_1_3()
+        public void MDepartment_3()
         {
             try
             {
@@ -46,7 +46,7 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-        public void Task_965_1_4()
+        public void MDepartment_4()
         {
             try
             {

@@ -3,14 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_MGroup
 {
     [TestClass]
     public class UT_MGroup
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_245_1()
+        public void MGroup_1()
         {
             try
             {
@@ -24,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_2()
+        public void MGroup_2()
         {
             try
             {
@@ -38,7 +38,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_3()
+        public void MGroup_3()
         {
             try
             {
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_4()
+        public void MGroup_4()
         {
             try
             {
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_5()
+        public void MGroup_5()
         {
             try
             {
@@ -80,7 +80,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_6()
+        public void MGroup_6()
         {
             try
             {
@@ -94,7 +94,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_7()
+        public void MGroup_7()
         {
             try
             {
@@ -108,7 +108,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_245_8()
+        public void MGroup_8()
         {
             try
             {

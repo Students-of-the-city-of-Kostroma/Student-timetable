@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
 {
     /// <summary>
     /// Класс для тестирования полей класса MDirectionOfPreparation ("Направление подготовки") (Model)
@@ -15,7 +15,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>
         [TestMethod]
-        public void Task_554_1()
+        public void MDirectionOfPreparation_1()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка поля NameOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>
         [TestMethod]
-        public void Task_554_2()
+        public void MDirectionOfPreparation_2()
         {
             try
             {
@@ -47,7 +47,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка поля PeriodOfStudy экземпляра класса MDirectionOfPreparation на соответствие типу ushort
         /// </summary>
         [TestMethod]
-        public void Task_554_3()
+        public void MDirectionOfPreparation_3()
         {
             try
             {
