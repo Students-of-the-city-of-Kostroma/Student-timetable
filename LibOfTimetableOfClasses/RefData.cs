@@ -10,6 +10,10 @@ namespace LibOfTimetableOfClasses
     public class RefData {
         public DataSet DataSet = new DataSet();
         /// <summary>
+        /// Звонки
+        /// </summary>
+        public CRing CRing = new CRing();
+        /// <summary>
         /// Преподаватели
         /// </summary>
         public CTeacher CTeacher = new CTeacher();
@@ -86,6 +90,9 @@ namespace LibOfTimetableOfClasses
             DataSet.Tables.Add(CTypesOfOccupations);
             DataSet.Tables.Add(CAcademicLoad);
             DataSet.Tables.Add(CCourseSchedule);
+            DataSet.Tables.Add(CRing);
+
+            DataSet.Relations.Add("University-Ring", CUniversity.Columns["FullName"], CRing.Columns["University"]);
 
             DataSet.Relations.Add("Direction_TrainingProfile", CDirectionOfPreparation.Columns["CodeOfDP"], CTrainingProfile.Columns["Shiphr"]);
             DataSet.Relations.Add("Institute-DirectionOfPreparation", CInstitute.Columns["ShortName"], CDirectionOfPreparation.Columns["InstituteShortName"]);
@@ -324,6 +331,27 @@ namespace LibOfTimetableOfClasses
             InitSchedule();
             #endregion
 
+            #region characteristic
+            MRing MRing11 = new MRing("Костромской Государственный Университет", "1", "8:30", "10:00");
+            CRing.Insert(MRing11);
+            MRing MRing12 = new MRing("Костромской Государственный Университет", "2", "10:10", "11:40");
+            CRing.Insert(MRing12);
+            MRing MRing13 = new MRing("Костромской Государственный Университет", "3", "11:50", "13:20");
+            CRing.Insert(MRing13);
+            MRing MRing21 = new MRing("Ярославский Государственный Университет", "1", "8:30", "10:00");
+            CRing.Insert(MRing21);
+            MRing MRing22 = new MRing("Ярославский Государственный Университет", "2", "10:10", "11:40");
+            CRing.Insert(MRing22);
+            MRing MRing23 = new MRing("Ярославский Государственный Университет", "3", "11:50", "13:20");
+            CRing.Insert(MRing23);
+            MRing MRing31 = new MRing("Ярославский Государственный Технический Университет", "1", "8:00", "9:30");
+            CRing.Insert(MRing31);
+            MRing MRing32 = new MRing("Ярославский Государственный Технический Университет", "2", "9:40", "11:10");
+            CRing.Insert(MRing32);
+            MRing MRing33 = new MRing("Ярославский Государственный Технический Университет", "3", "11:20", "12:50");
+            CRing.Insert(MRing33);
+            #endregion
+
         }
 
         /// <summary>
@@ -509,6 +537,7 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public void ClearData()
         {
+            CRing.Clear();
             CCourseSchedule.Clear();
             CAcademicLoad.Clear();
             CGroup.Clear();
