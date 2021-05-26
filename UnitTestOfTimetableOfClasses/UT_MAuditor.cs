@@ -4,7 +4,6 @@ using System;
 
 namespace UnitTestOfTimetableOfClasses
 {
-
     [TestClass]
     public class UT_MAuditor
     {

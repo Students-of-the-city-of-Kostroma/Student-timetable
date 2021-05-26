@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
@@ -25,7 +24,6 @@ namespace UnitTestOfTimetableOfClasses
                 Assert.Fail(ex.Message);
             }
         }
-
 
         /// <summary>
         /// /// Проверка корректного ввода в поле Сокращённая запись уч. степени
