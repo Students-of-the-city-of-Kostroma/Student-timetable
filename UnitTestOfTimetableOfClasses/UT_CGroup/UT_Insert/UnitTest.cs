@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
 {
     [TestClass]
-    public class UT_Insert_CGroup
+    public class UT_ICGroup
     {
         RefData refData = new RefData();
 
@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление новых корректных данных в пустую таблицу.
         /// </summary>
         [TestMethod]
-        public void Task_251_1()
+        public void UT_ICGroup_1()
         {
             //arrange
             bool expected = true;
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Группа добавляемой группы дублирует Группа уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_2()
+        public void UT_ICGroup_2()
         {
             //arrange
             bool expected = true;
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что они не дублируют атрибуты уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_10()
+        public void UT_ICGroup_3()
         {
             //arrange
             bool expected = true;
@@ -82,7 +82,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что они полностью дублируют атрибуты уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_11() //Полное дублирование всех атрибутов.
+        public void UT_ICGroup_4() //Полное дублирование всех атрибутов.
         {
             bool expected = true;
             //arrange
@@ -101,7 +101,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Семестр добавляемой группы дублирует Семестр уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_3()
+        public void UT_ICGroup_5()
         {
             //arrange        
             bool expected = true;
@@ -130,7 +130,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Направление подготовки добавляемой группы дублирует Направление подготовки уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_4()
+        public void UT_ICGroup_6()
         {
             //arrange
             bool expected = true;
@@ -156,7 +156,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Смена добавляемой группы дублирует Смена уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_5()
+        public void UT_ICGroup_7()
         {
             //arrange
             bool expected = true;
@@ -185,7 +185,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Студентов добавляемой группы дублирует Студентов уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_6()
+        public void UT_ICGroup_8()
         {
             //arrange
             bool expected = true;
@@ -214,7 +214,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Пар/день min добавляемой группы дублирует Пар/день min уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_7()
+        public void UT_ICGroup_9()
         {
             //arrange
             bool expected = true;
@@ -243,7 +243,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что Пар/день max добавляемой группы дублирует Пар/день max уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_8()
+        public void UT_ICGroup_10()
         {
             //arrange
             bool expected = true;
@@ -272,7 +272,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавление корректных данных, при условии, что  Выходные добавляемой группы дублирует Выходные уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void Task_251_9()
+        public void UT_ICGroup_11()
         {
             //arrange
             bool expected = true;
