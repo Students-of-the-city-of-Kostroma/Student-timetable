@@ -5,7 +5,7 @@ namespace UnitTestOfTimetableOfClasses
 {
 
     [TestClass]
-    public class UT_Insert_CTitle
+    public class UT_ICTitle
     {
         readonly RefData refData = new RefData();
 
@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         ///  Вставляем в refData ноыве данные
         /// </summary>
         [TestMethod]
-        public void Task_361_1() 
+        public void CTitle_1() 
         {
             //arrange
             MTitle ma = new MTitle("НЕПрофессор", "Проф.");
@@ -27,9 +27,9 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавляем учёное звание с такой сокращённой записью, которая уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void Task_361_2() 
+        public void CTitle_2() 
         {
-            Task_361_1();
+            CTitle_1();
             //arrange
             MTitle ma = new MTitle("НЕДоцент", "Проф.");
             bool expected = false;
@@ -43,9 +43,9 @@ namespace UnitTestOfTimetableOfClasses
         /// Добавляем учёное звание с такой полной записью, которая уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void Task_361_3() 
+        public void CTitle_3() 
         {
-            Task_361_1();
+            CTitle_1();
             //arrange
             MTitle ma = new MTitle("НЕПрофессор", "Доц.");
             bool expected = false;

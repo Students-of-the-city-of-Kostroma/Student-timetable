@@ -56,19 +56,19 @@
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
     <Compile Include="MTitle\UnitTest.cs" />
     <Compile Include="MInstitute\UnitTest.cs" />
-    <Compile Include="UT_Insert_CInstitute.cs" />
+    <Compile Include="UT_CInstitute\UT_Insert\UnitTest.cs.cs" />
     <Compile Include="UT_CInstitute\UT_Update\UnitTest.cs" />
     <Compile Include="UT_CTitle\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_Insert_CTitle.cs" />
+    <Compile Include="UT_CTitle\UT_Insert\UnitTest.cs.cs" />
     <Compile Include="UT_CAcademicDegree\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_Insert_CAcademicDegree.cs" />
-    <Compile Include="UT_Insert_CAuditor.cs" />
+    <Compile Include="UT_CAcademicDegree\UT_Insert\UnitTest.cs.cs" />
+    <Compile Include="UT_CAuditor\UT_Insert\UnitTest.cs.cs" />
     <Compile Include="UT_CGroup\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_Insert_CEnclosurse.cs" />
-    <Compile Include="UT_Insert_CTeacher.cs" />
-    <Compile Include="UT_Insert_CGroup.cs" />
-    <Compile Include="UT_Insert_CTypesOfOccupation.cs" />
-    <Compile Include="UT_Insert_CUniversity.cs" />
+    <Compile Include="UT_CEnclosurse\UT_Insert\UnitTest.cs.cs" />
+    <Compile Include="UT_CTeacher\UT_Insert\UnitTest.cs.cs" />
+    <Compile Include="UT_CGroup\UT_Insert\UnitTest.cs.cs" />
+    <Compile Include="UT_CTypesOfOccupation\UT_Insert\UnitTest.cs.cs" />
+    <Compile Include="UT_CUniversity\UT_Insert\UnitTest.cs" />
     <Compile Include="MDepartment\UnitTest.cs" />
     <Compile Include="MDiscipline\UnitTest.cs" />
     <Compile Include="MAuditor\UnitTest.cs" />
@@ -103,7 +103,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

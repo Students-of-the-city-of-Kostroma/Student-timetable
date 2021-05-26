@@ -4,11 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestOfTimetableOfClasses
 {
     [TestClass]
-    public class UT_Insert_CTypesOfOccupations
+    public class UT_ICTypesOfOccupations
     {
 
         [TestMethod]
-        public void Task_873_1() //пустая таблица
+        public void CTypesOfOccupations_1() //пустая таблица
         {
             //arrange
             bool expected = true;
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
         [TestMethod]
-        public void Task_873_2() //Ввод корректных данных, при условии, что полное название вида занятия совпадает с полным названием уже существующего вида занятия
+        public void CTypesOfOccupations_2() //Ввод корректных данных, при условии, что полное название вида занятия совпадает с полным названием уже существующего вида занятия
         {
             //arrange
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_873_3() //Ввод корректных данных, при условии, что краткое название вида занятия дублирует краткое название уже существующего вида занятия
+        public void CTypesOfOccupations_3() //Ввод корректных данных, при условии, что краткое название вида занятия дублирует краткое название уже существующего вида занятия
         {
             //arrange
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
         [TestMethod]
-        public void Task_873_4() //Ввод корректных данных в таблицу, при условии, что в новой записи ни один атрибут не повторяет атрибуты записей, содержащихся в таблице
+        public void CTypesOfOccupations_4() //Ввод корректных данных в таблицу, при условии, что в новой записи ни один атрибут не повторяет атрибуты записей, содержащихся в таблице
         {
             //arrange
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses
 
 
         [TestMethod]
-        public void Task_873_5() // Ввод корректных данных в таблицу, при условии, что в новой записи все атрибуты повторяют атрибуты записей, содержащихся в таблице
+        public void CTypesOfOccupations_5() // Ввод корректных данных в таблицу, при условии, что в новой записи все атрибуты повторяют атрибуты записей, содержащихся в таблице
         {
             //arrange
             MTypesOfOccupations tp = new MTypesOfOccupations("Лекция", "Л");
