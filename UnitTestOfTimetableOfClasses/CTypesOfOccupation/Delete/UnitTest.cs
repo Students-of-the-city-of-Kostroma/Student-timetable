@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.CTypesOfOccupation.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CTypesOfOccupation.UT_Delete
 {
     [TestClass]
     public class UT_DCTypesOfOccupation

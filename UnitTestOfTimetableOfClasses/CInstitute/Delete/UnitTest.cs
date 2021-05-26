@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 
-namespace UnitTestOfTimetableOfClasses.CInstitute.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Delete
 {
     [TestClass]
     public class UT_DCInstitute

@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.CTrainingProfile.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CTrainingProfile.UT_Delete
 {
 	[TestClass]
 	public class UT_DCTrainingProfile

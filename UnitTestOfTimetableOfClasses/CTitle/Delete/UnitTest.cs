@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses.CTitle.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Delete
 {
     [TestClass]
     public class UT_DCTitle

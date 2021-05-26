@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.CEnclosures.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Delete
 {
     [TestClass]
     public class UT_DCEnclosures

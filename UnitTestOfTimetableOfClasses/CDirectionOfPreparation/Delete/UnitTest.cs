@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.CDirectionOfPreparation.Delete
+namespace UnitTestOfTimetableOfClasses.UT_CDirectionOfPreparation.UT_Delete
 {
     [TestClass]
     public class UT_DCDirectionOfPreparation
