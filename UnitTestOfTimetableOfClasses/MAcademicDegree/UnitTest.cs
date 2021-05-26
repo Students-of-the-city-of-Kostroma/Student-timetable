@@ -18,7 +18,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
             try
             {
                 MAcademicDegree MAcademic = new MAcademicDegree("Кандидат", "Кндт");
-                Assert.AreEqual(typeof(string), MAcademic.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), MAcademic.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
             try
             {
                 MAcademicDegree MAcademic = new MAcademicDegree("Кандидат", "Кндт");
-                Assert.AreEqual(typeof(string), MAcademic.Reduction.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), MAcademic.Reduction.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

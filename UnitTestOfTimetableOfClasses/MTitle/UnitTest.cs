@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTitle
             try
             {
                 MTitle T_Title = new MTitle("Др", "Доктор");
-                Assert.AreEqual(typeof(string), T_Title.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T_Title.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTitle
             try
             {
                 MTitle T_Title = new MTitle("Др", "Доктор");
-                Assert.AreEqual(typeof(string), T_Title.Reduction.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T_Title.Reduction.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

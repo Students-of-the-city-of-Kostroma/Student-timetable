@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
         {
             try
             {
-               MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
+                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
         {
             try
             {
-               MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
+                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.Shiphr.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)

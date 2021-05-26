@@ -17,7 +17,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTypesOfOccupation
             try
             {
                 MTypesOfOccupations T = new MTypesOfOccupations("Лекция", "л");
-                Assert.AreEqual(typeof(string), T.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTypesOfOccupation
             try
             {
                 MTypesOfOccupations T = new MTypesOfOccupations("Лекция", "л");
-                Assert.AreEqual(typeof(string), T.ShortName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.ShortName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

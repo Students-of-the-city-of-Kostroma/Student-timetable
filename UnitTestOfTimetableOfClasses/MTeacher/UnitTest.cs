@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Доцент", "Студент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.FirstName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.FirstName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.SecondName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.SecondName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.Patronymic.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Patronymic.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.AcademicDegree.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.AcademicDegree.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.AcademicTitle.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.AcademicTitle.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.Departament.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Departament.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -92,7 +92,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.MetodicalDays.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.MetodicalDays.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.Windows.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Windows.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTeacher
             try
             {
                 MTeacher T = new MTeacher("Куделин", "Роман", "Олегович", "Студент", "Доцент", "ИАСТ", "Пн", "Вт", "Воскресенье");
-                Assert.AreEqual(typeof(string), T.Weekends.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Weekends.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

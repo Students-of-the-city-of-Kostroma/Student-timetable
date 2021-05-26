@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(string), T_Discipline.Fullname.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T_Discipline.Fullname.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(string), T_Discipline.Shortname.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T_Discipline.Shortname.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
             try
             {
                 MDiscipline T_Discipline = new MDiscipline("", "", "");
-                Assert.AreEqual(typeof(string), T_Discipline.CycleofDiscipline.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T_Discipline.CycleofDiscipline.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {

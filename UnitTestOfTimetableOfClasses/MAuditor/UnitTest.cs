@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(string), T_Auditor.NameOfAuditor.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(String), T_Auditor.NameOfAuditor.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(string), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
+                Assert.AreEqual(typeof(String), T_Auditor.Cafedra.GetType(), "Ожидался тип поля string");
             }
             catch (Exception ex)
             {

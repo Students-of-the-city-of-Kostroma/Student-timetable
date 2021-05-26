@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.INN.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.INN.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.ShortName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.ShortName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.FullName.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.ActualAddress.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.ActualAddress.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.LegalAddress.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.LegalAddress.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.NameRector.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.NameRector.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -92,7 +92,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.SurnameRector.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.SurnameRector.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.MiddleNameRector.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.MiddleNameRector.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.Email.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Email.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
@@ -130,7 +130,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
             try
             {
                 MUniversity T = new MUniversity("1111111111", "КГУ", "Костромской Гос Универ", "Дзержинского", "Дзержинского", "Куделин ", "Роман", "Олегович", "kgu@mail.ru", "89995119864");
-                Assert.AreEqual(typeof(string), T.Phone.GetType(), "Ожидался тип поля String");
+                Assert.AreEqual(typeof(String), T.Phone.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
             {
