@@ -41,29 +41,29 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="UT_CTeacher\Delete\UnitTest.cs" />
-    <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
     <Compile Include="UT_Logs.cs" />
+    <Compile Include="UT_CTeacher\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CDirectionOfPreparation\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CTrainingProfile\UT_Delete\UnitTest.cs" />
+    <Compile Include="MTrainingProfile\UnitTest.cs" />
+    <Compile Include="UT_CEnclosures\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CTypesOfOccupation\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CUniversity\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CTitle\UT_Delete\UnitTest.cs" />
+    <Compile Include="UT_CInstitute\UT_Delete\UnitTest.cs" />
     <Compile Include="MAcademicDegree\UnitTest.cs" />
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
-    <Compile Include="UT_Delete_CDirectionOfPreparation.cs" />
     <Compile Include="MTitle\UnitTest.cs" />
     <Compile Include="MInstitute\UnitTest.cs" />
-    <Compile Include="UT_Delete_CTrainingProfile.cs" />
-    <Compile Include="MTrainingProfile\UnitTest.cs" />
-    <Compile Include="UT_Delete_CEnclosures.cs" />
-    <Compile Include="UT_Delete_CTypesOfOccupation.cs" />
-    <Compile Include="UT_Delete_CUniversity.cs" />
-    <Compile Include="UT_Delete_CTitle.cs" />
-    <Compile Include="UT_Delete_CInstitute.cs" />
     <Compile Include="UT_Insert_CInstitute.cs" />
     <Compile Include="UT_CInstitute\UT_Update\UnitTest.cs" />
     <Compile Include="UT_CTitle\UT_Update\UnitTest.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />
-    <Compile Include="UT_Delete_CAcademicDegree.cs" />
+    <Compile Include="UT_CAcademicDegree\UT_Delete\UnitTest.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAuditor.cs" />
-    <Compile Include="UT_Delete_CGroup.cs" />
+    <Compile Include="UT_CGroup\UT_Delete\UnitTest.cs" />
     <Compile Include="UT_Insert_CEnclosurse.cs" />
     <Compile Include="UT_Insert_CTeacher.cs" />
     <Compile Include="UT_Insert_CGroup.cs" />

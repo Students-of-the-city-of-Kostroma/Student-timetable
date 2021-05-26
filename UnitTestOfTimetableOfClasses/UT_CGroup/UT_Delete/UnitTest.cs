@@ -1,17 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LibOfTimetableOfClasses;
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Delete
 {
     [TestClass]
-    public class UT_Delete_CGroup
+    public class UT_DCGroup
     {
         readonly RefData refData = new RefData();
         /// <summary>
         /// Удаление существующей строки 
         /// </summary>
         [TestMethod]
-        public void Task_249_1()
+        public void DCGroup_1()
         {
             int countRows = refData.CGroup.Rows.Count;
             int i = 0;
@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Удаление не существующей строки 
         /// </summary>
         [TestMethod]
-        public void Task_249_2()
+        public void DCGroup_2()
         {
             //arrange 
             MGroup gr = new MGroup("17-ИСбо-1в", 1, "ИСиТ", 1, 1, 0, 0, "Воскресенье");
