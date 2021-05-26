@@ -2,10 +2,10 @@
 using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
 {
     [TestClass]
-    public class UT_Update_CAcademicLoad
+    public class UT_UCAcademicLoad
     {
         public void setupData()
         {
@@ -50,7 +50,7 @@ namespace UnitTestOfTimetableOfClasses
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
-        [TestMethod]public void Task_1245_1()
+        [TestMethod]public void UCAcademicLoad_1()
         {
             //arrange
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
@@ -66,7 +66,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить несуществующую нагрузку в заполненной таблице
         /// </summary>
         [TestMethod]
-        public void Task_1245_2()
+        public void UCAcademicLoad_2()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
@@ -83,7 +83,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод коректных данных
         /// </summary>
         [TestMethod]
-        public void Task_1245_3()
+        public void UCAcademicLoad_3()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
@@ -101,7 +101,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут Дисциплина
         /// </summary>
         [TestMethod]
-        public void Task_1245_4()
+        public void UCAcademicLoad_4()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
@@ -118,7 +118,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут преподаватель
         /// </summary>
         [TestMethod]
-        public void Task_1245_5()
+        public void UCAcademicLoad_5()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
@@ -135,7 +135,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод не коректных данных в атрибут тип занятия
         /// </summary>
         [TestMethod]
-        public void Task_1245_6()
+        public void UCAcademicLoad_6()
         {
             setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");

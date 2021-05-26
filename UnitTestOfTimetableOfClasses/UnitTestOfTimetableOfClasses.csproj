@@ -41,8 +41,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CTeacher\Delete\UnitTest.cs" />
-    <Compile Include="UT_Update_CAcademicLoad.cs" />
+    <Compile Include="UT_CTeacher\Delete\UnitTest.cs" />
+    <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="MAcademicDegree\UnitTest.cs" />
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
@@ -57,8 +57,8 @@
     <Compile Include="UT_Delete_CTitle.cs" />
     <Compile Include="UT_Delete_CInstitute.cs" />
     <Compile Include="UT_Insert_CInstitute.cs" />
-    <Compile Include="UT_Update_CInstitute.cs" />
-    <Compile Include="UT_Update_CTitle.cs" />
+    <Compile Include="UT_CInstitute\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CTitle\UT_Update\UnitTest.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />
     <Compile Include="UT_Delete_CAcademicDegree.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
@@ -76,13 +76,13 @@
     <Compile Include="MGroup\UnitTest.cs" />
     <Compile Include="MTeacher\UnitTest.cs" />
     <Compile Include="MTypesOfOccupation\UnitTest.cs" />
-    <Compile Include="UT_Update_CTeacher.cs" />
-    <Compile Include="UT_Update_CGroup.cs" />
-    <Compile Include="UT_Update_CTypesOfOccupation.cs" />
-    <Compile Include="UT_Update_CAcademicDegree.cs" />
     <Compile Include="MUniversity\UnitTest.cs" />
-    <Compile Include="UT_Update_CEnclosurse.cs" />
-    <Compile Include="UT_Update_CUniversity.cs" />
+    <Compile Include="UT_CTeacher\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CGroup\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CTypesOfOccupation\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CAcademicDegree\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CEnclosurse\UT_Update\UnitTest.cs" />
+    <Compile Include="UT_CUniversity\UT_Update\UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
