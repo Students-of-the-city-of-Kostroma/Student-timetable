@@ -17,9 +17,24 @@
 * Количество открытых и закрытых `issues` и `pull request`’ов, связанных с вехой
 * Список открытых и закрытых `issues` и `pull request`’ов, связанных с вехой
 
-Больше информации о вехах можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/about-milestones)
+#### Об использовании вех: 
+Вехи можно использовать для обозначения спринтов. Говоря коротко, **спринт** - это короткий временной интервал, в течении которого команда выполняет определенные задачи.
 
-О том как создать веху можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/creating-and-editing-milestones-for-issues-and-pull-requests)
+Для обозначения спринта в заголовке вехи указывается ключевое слово `Sprint`. Далее, через пробел, указывается _номер спринта_. Затем, через символ `-`, указывается _команда_, которая участвует в этом спринте. В общем виде заголовок вехи для спринта выглядит следующим образом: `Sprint <Номер спринта> - <Команда>`.
+
+К вехе подвязываются `issues`, которые необходимо выполнить в указаный для срок. Когда одна из `issues` считается выполненной, ее "закрывают". После "закрытия" процент завершения вехи увеличивается. 
+
+Процент завершения вехи представлен:
+* Графически - в виде `progress bar`'а
+* В текстовом варианте - в виде процентов
+
+Вы можете определять приоритет `issues` внутри вехи, путем ее перемещения. Чем вышел `issues` в списке, тем выше ее приоритет. Или же кликнув на `checkbox` в левой части `issues`. Однако, если в вехе более 500 открытых `issues`, вы не сможете расставлять приоритет!
+
+> О том, как связать веху с `issues` можно узнать [здесь](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/associating-milestones-with-issues-and-pull-requests)
+
+> Больше информации о вехах можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/about-milestones)
+
+> О том как создать веху можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/creating-and-editing-milestones-for-issues-and-pull-requests)
 ### Связанные запросы
 ### Коммантарии
 ### Статусы
