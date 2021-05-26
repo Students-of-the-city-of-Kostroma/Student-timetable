@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 {
     [TestClass]
-    public class UT_Update_CGroup
+    public class UT_UCGroup
     {
         readonly RefData refData = new RefData();
 
@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить сведения в пустой таблице
         /// </summary>
         [TestMethod]
-        public void Task_250_1()
+        public void UCGroup_1()
         {
             //arrange
             refData.CGroup.Clear();
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Изменить несуществующую группу в заполненной таблице
         /// </summary>
         [TestMethod]
-        public void Task_250_2()
+        public void UCGroup_2()
         { 
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
@@ -76,7 +76,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
        [TestMethod]
-        public void Task_250_3() 
+        public void UCGroup_3() 
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
@@ -114,7 +114,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_4() 
+        public void UCGroup_4() 
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
@@ -150,7 +150,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_5()
+        public void UCGroup_5()
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
@@ -188,7 +188,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
         [TestMethod]
-        public void Task_250_6() 
+        public void UCGroup_6() 
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
@@ -228,7 +228,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Ввод  данных при условии что указанная специальность не существует
         /// </summary>
         [TestMethod]
-        public void Task_250_7() 
+        public void UCGroup_7() 
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");

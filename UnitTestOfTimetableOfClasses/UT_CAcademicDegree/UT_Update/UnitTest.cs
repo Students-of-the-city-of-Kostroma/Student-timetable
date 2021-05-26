@@ -1,17 +1,17 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Update
 {
     [TestClass]
-    public class UT_Update_CAcademicDegree
+    public class UT_UCAcademicDegree
     {
         RefData refData = new RefData();
         /// <summary>
         /// Замена корректными данными только в поле атрибута "Сокращённая запись учёной степени"
         /// </summary>
         [TestMethod]
-        public void Task_484_1()
+        public void UCAcademicDegree_1()
         {
             //arrange 
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
@@ -30,7 +30,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Замена корректными данными всех полей таблицы
         /// </summary>
         [TestMethod]
-        public void Task_484_2()
+        public void UCAcademicDegree_2()
         {
             //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
@@ -50,7 +50,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Замена всех полей пустыми строками
         /// </summary>
         [TestMethod]
-        public void Task_484_3()
+        public void UCAcademicDegree_3()
         {
             //arrange
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");

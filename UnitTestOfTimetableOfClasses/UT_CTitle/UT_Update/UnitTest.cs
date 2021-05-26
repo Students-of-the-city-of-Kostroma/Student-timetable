@@ -1,14 +1,14 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Update
 {
     [TestClass]
-    public class UT_Update_CTitle
+    public class UT_UCTitle
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_363_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
+        public void UCTitle_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
         {
 
             MTitle T_Title = new MTitle("Проф.", "Профессор");
@@ -24,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_363_2()
+        public void UCTitle_2()
         {
             MTitle T_Title = new MTitle("Проф.", "Профессор");
 
