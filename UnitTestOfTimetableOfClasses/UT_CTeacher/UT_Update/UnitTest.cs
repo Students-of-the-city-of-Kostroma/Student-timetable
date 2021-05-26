@@ -1,7 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
 namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
 {
     [TestClass]
@@ -40,8 +39,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.IsFalse( actual, " Удалось Изменить сведения в пустой таблице");
-
-      
             
         }
         /// <summary>
@@ -63,7 +60,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             //assert
             Assert.IsFalse(actual, "Удалось Изменить несуществующего преподавателя");
 
-           
         }
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
@@ -94,7 +90,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя"+ tcher.FirstName);
     
         }
-
 
         /// <summary>
         /// Ввод корректных данных, при условии, что вводимая ученая степень преподавателя не существует
