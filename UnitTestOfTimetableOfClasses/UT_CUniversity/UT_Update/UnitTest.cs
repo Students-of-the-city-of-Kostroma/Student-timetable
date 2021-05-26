@@ -1,6 +1,5 @@
-﻿using LibOfTimetableOfClasses;
+using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 
 namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Update
 {
@@ -177,7 +176,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Update
             //assert 
             Assert.AreEqual(expected, actual);
 
-
             result = refData.CUniversity.Delete(gr);
             Assert.IsTrue(result);
 
@@ -206,7 +204,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Update
             bool actual = refData.CUniversity.Update(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
 
             result = refData.CUniversity.Delete(gr);
             Assert.IsTrue(result);
