@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.CTitle.Update
+namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Update
 {
     [TestClass]
     public class UT_UCTitle

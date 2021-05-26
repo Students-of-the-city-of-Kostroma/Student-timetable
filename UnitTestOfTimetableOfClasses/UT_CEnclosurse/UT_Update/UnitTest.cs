@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses.CEnclosurse.Update
+namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
 {
     [TestClass]
     public class UT_UCEnclosurse

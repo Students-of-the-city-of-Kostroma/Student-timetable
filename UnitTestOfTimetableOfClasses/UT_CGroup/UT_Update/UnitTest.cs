@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses.CGroup.Update
+namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 {
     [TestClass]
     public class UT_UCGroup
