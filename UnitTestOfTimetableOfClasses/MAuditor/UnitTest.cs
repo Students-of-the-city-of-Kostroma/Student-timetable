@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MAuditor_
+namespace UnitTestOfTimetableOfClasses.UT_MAuditor
 {
 
     [TestClass]

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MTypesOfOccupation_
+namespace UnitTestOfTimetableOfClasses.UT_MTypesOfOccupation
 {
     [TestClass]
     public class UT_MTypesOfOccupation

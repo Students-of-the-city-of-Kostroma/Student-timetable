@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MTeacher_
+namespace UnitTestOfTimetableOfClasses.UT_MTeacher
 {
     [TestClass]
     public class UT_MTeacher

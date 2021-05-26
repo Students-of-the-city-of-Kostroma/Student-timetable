@@ -3,7 +3,7 @@ using System;
 using LibOfTimetableOfClasses;
 
 
-namespace UnitTestOfTimetableOfClasses.MAcademicDegree_
+namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
 {
     [TestClass]
     public class UT_MAcademicDegree

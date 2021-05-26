@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MDirectionOfPreparation_
+namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
 {
     /// <summary>
     /// Класс для тестирования полей класса MDirectionOfPreparation ("Направление подготовки") (Model)

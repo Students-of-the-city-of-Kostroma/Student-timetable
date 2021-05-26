@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 
-namespace UnitTestOfTimetableOfClasses.MTitle_
+namespace UnitTestOfTimetableOfClasses.UT_MTitle
 {
     /// <summary>
     ///  класс для тестирования Уч. звания 

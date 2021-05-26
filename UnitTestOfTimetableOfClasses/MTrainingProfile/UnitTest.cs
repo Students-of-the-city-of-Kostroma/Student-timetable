@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MTrainingProfile_
+namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
 {
     [TestClass]
     public class UT_MTrainingProfile
@@ -26,7 +26,7 @@ namespace UnitTestOfTimetableOfClasses.MTrainingProfile_
         {
             try
             {
-                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
+               MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.FullName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses.MTrainingProfile_
         {
             try
             {
-                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
+               MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.ShortName.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses.MTrainingProfile_
         {
             try
             {
-                MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
+               MTrainingProfile mTrainingProfile = new MTrainingProfile("Информациооные системы и технологии", "ИС", "40454");
                 Assert.AreEqual(typeof(string), mTrainingProfile.Shiphr.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.MDepartment_
+namespace UnitTestOfTimetableOfClasses.UT_MDepartment
 {
     [TestClass]
     public class UT_MDepartment

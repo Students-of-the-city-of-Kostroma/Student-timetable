@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 
-namespace UnitTestOfTimetableOfClasses.MGroup_
+namespace UnitTestOfTimetableOfClasses.UT_MGroup
 {
     [TestClass]
     public class UT_MGroup
