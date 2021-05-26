@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using LibOfTimetableOfClasses;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using LibOfTimetableOfClasses;
 
 
 namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
@@ -8,7 +8,6 @@ namespace UnitTestOfTimetableOfClasses.UT_MAcademicDegree
     [TestClass]
     public class UT_MAcademicDegree
     {
-
         RefData refData = new RefData();
         /// <summary>
         /// Проверка корректного ввода в поле Полная запись уч. степени

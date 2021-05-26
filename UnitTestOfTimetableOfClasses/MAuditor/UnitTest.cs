@@ -71,7 +71,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
             try
             {
                 MAuditor T_Auditor = new MAuditor("", "", 0, "");
-                Assert.AreEqual(typeof(string), T_Auditor.Building.GetType(), "Ожидался тип поля ushort");
+                Assert.AreEqual(typeof(String), T_Auditor.Building.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)
             {
