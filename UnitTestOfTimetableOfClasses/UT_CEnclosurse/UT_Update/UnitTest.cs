@@ -1,7 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
 namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
 {
     [TestClass]

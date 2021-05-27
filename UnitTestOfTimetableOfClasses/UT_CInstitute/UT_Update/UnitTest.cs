@@ -28,9 +28,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
 
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
-
             refData.CInstitute.Insert(T_Institute);
-
 
             T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
             bool result = refData.CInstitute.Update(T_Institute);
@@ -45,7 +43,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
 
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
-
             refData.CInstitute.Insert(T_Institute);
 
             T_Institute = new MInstitute("Институт дизайна", "ФАСТ", "Киприна Ю.Л.", "Политехнический колледж");
@@ -55,13 +52,11 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
 
         }
 
-
         [TestMethod]
         public void UCInstitute_4() //директор уже есть в таблице
         {
 
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
-
 
             refData.CInstitute.Insert(T_Institute);
 
@@ -77,7 +72,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         {
 
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
-
 
             refData.CInstitute.Insert(T_Institute);
 

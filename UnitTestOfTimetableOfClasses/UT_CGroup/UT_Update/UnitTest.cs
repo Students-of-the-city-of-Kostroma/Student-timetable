@@ -1,7 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
 namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 {
     [TestClass]
@@ -65,12 +64,10 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
 
-         
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
            
         }
-
 
         /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
@@ -109,7 +106,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 
         }
  
-       
         /// <summary>
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
@@ -180,8 +176,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
 
-
-
         }
 
         /// <summary>
@@ -220,8 +214,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
 
-
-
         }
 
         /// <summary>
@@ -251,7 +243,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
-
 
         }
     }
