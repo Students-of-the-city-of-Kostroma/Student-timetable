@@ -1,7 +1,7 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Insert
 {
     [TestClass]
     public class UT_ICAcademicDegree
