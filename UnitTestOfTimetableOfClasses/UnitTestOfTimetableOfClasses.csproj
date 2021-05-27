@@ -41,6 +41,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CDiscipline\UT_CDiscipline_Delete\UT_CDiscipline_Delete.cs" />
+    <Compile Include="CDiscipline\UT_CDiscipline_Insert\UT_CDiscipline_Insert.cs" />
+    <Compile Include="CDiscipline\UT_CDiscipline_Update\UT_CDiscipline_Update.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="UT_CTeacher\UT_Delete\UnitTest.cs" />
     <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
