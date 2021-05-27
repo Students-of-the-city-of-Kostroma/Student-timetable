@@ -30,11 +30,12 @@
 
 Вы можете определять приоритет `issues` внутри вехи, путем ее перемещения. Чем вышел `issues` в списке, тем выше ее приоритет. Или же кликнув на `checkbox` в левой части `issues`. Однако, если в вехе более 500 открытых `issues`, вы не сможете расставлять приоритет!
 
-> О том, как связать веху с `issues` можно узнать [здесь](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/associating-milestones-with-issues-and-pull-requests)
+Полезные ссылки:
+* О том, как связать веху с `issues` можно узнать [здесь](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/associating-milestones-with-issues-and-pull-requests)
 
-> Больше информации о вехах можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/about-milestones)
+* Больше информации о вехах можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/about-milestones)
 
-> О том как создать веху можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/creating-and-editing-milestones-for-issues-and-pull-requests)
+* О том как создать веху можно узнать [здесь](https://docs.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones/creating-and-editing-milestones-for-issues-and-pull-requests)
 ### Связанные запросы
 ### Коммантарии
 ### Статусы
