@@ -9,7 +9,7 @@
 - Visual Studio 2017 Community
    - пакет MSTest.TestAdapter версии 1.4.0
    - пакет MSTest.TestFramework версии 1.4.0
-- Git bush
+- Git bash
 # Этапы работы в проекте для студентов второго семестра обучения
 черновой вариат, будет переделано
 - Настройка CI/CD
