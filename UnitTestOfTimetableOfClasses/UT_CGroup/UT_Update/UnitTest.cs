@@ -1,4 +1,4 @@
-using LibOfTimetableOfClasses;
+﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
