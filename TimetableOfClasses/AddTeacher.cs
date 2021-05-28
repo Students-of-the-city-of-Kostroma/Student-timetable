@@ -223,7 +223,7 @@ namespace TimetableOfClasses
             return "";
         }
 
-        private static string PeriodLetterToUpper(string str)
+        public static string PeriodLetterToUpper(string str)
         {
             if (str.Length > 0)
             {
