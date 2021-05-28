@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_615_1() //замена всех атрибутов
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);
@@ -25,7 +24,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_615_2() //замена атрибутов Полное название
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
@@ -42,7 +40,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_615_3() //краткая запись института уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
@@ -59,7 +56,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_615_4() //директор уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
@@ -75,7 +71,6 @@ namespace UnitTestOfTimetableOfClasses
         [TestMethod]
         public void Task_615_5() //наименование ВУЗа уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
 
