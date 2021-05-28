@@ -46,12 +46,12 @@
     <Compile Include="CTeacher\Delete\UnitTest.cs" />
     <Compile Include="CAcademicLoad\Update\UnitTest.cs" />
     <Compile Include="CDirectionOfPreparation\Delete\UnitTest.cs" />
-    <Compile Include="CTrainingProfile\UT_Delete\UnitTest.cs" />
+    <Compile Include="CTrainingProfile\Delete\UnitTest.cs" />
     <Compile Include="MTrainingProfile\UnitTest.cs" />
     <Compile Include="CEnclosures\Delete\UnitTest.cs" />
-    <Compile Include="CTypesOfOccupation\UT_Delete\UnitTest.cs" />
-    <Compile Include="CUniversity\UT_Delete\UnitTest.cs" />
-    <Compile Include="CTitle\UT_Delete\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Delete\UnitTest.cs" />
+    <Compile Include="CUniversity\Delete\UnitTest.cs" />
+    <Compile Include="CTitle\Delete\UnitTest.cs" />
     <Compile Include="CInstitute\Delete\UnitTest.cs" />
     <Compile Include="MAcademicDegree\UnitTest.cs" />
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="MInstitute\UnitTest.cs" />
     <Compile Include="UT_Insert_CInstitute.cs" />
     <Compile Include="CInstitute\Update\UnitTest.cs" />
-    <Compile Include="CTitle\UT_Update\UnitTest.cs" />
+    <Compile Include="CTitle\Update\UnitTest.cs" />
     <Compile Include="UT_Insert_CTitle.cs" />
     <Compile Include="CAcademicDegree\Delete\UnitTest.cs" />
     <Compile Include="UT_Insert_CAcademicDegree.cs" />
@@ -80,10 +80,10 @@
     <Compile Include="MUniversity\UnitTest.cs" />
     <Compile Include="CTeacher\Update\UnitTest.cs" />
     <Compile Include="CGroup\Update\UnitTest.cs" />
-    <Compile Include="CTypesOfOccupation\UT_Update\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Update\UnitTest.cs" />
     <Compile Include="CAcademicDegree\Update\UnitTest.cs" />
     <Compile Include="CEnclosurse\Update\UnitTest.cs" />
-    <Compile Include="CUniversity\UT_Update\UnitTest.cs" />
+    <Compile Include="CUniversity\Update\UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
