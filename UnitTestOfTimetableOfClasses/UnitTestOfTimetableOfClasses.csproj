@@ -1,4 +1,4 @@
-п»ї<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.props')" />
   <PropertyGroup>
@@ -42,8 +42,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CDiscipline\Update\UnitTest1.cs" />
-    <Compile Include="CDiscipline\UT_CDiscipline_Delete\UT_CDiscipline_Delete.cs" />
-    <Compile Include="CDiscipline\Update\UT_CDiscipline_Update.cs" />
     <Compile Include="UT_Logs.cs" />
     <Compile Include="UT_CTeacher\UT_Delete\UnitTest.cs" />
     <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
@@ -111,7 +109,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Р”Р°РЅРЅС‹Р№ РїСЂРѕРµРєС‚ СЃСЃС‹Р»Р°РµС‚СЃСЏ РЅР° РїР°РєРµС‚С‹ NuGet, РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‰РёРµ РЅР° СЌС‚РѕРј РєРѕРјРїСЊСЋС‚РµСЂРµ. РСЃРїРѕР»СЊР·СѓР№С‚Рµ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°РєРµС‚РѕРІ NuGet, С‡С‚РѕР±С‹ СЃРєР°С‡Р°С‚СЊ РёС….  Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ СЃРј. РїРѕ Р°РґСЂРµСЃСѓ: http://go.microsoft.com/fwlink/?LinkID=322105. РћС‚СЃСѓС‚СЃС‚РІСѓРµС‚ СЃР»РµРґСѓСЋС‰РёР№ С„Р°Р№Р»: {0}.</ErrorText>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.4.0\build\net45\MSTest.TestAdapter.targets'))" />
