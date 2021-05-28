@@ -139,4 +139,3 @@ namespace UnitTestOfTimetableOfClasses.UT_MUniversity
         }
     }
 }
-
