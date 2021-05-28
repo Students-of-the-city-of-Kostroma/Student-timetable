@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestOfTimetableOfClasses.CDiscipline.Update
+namespace UnitTestOfTimetableOfClasses.UT_CDiscipline.UT_Update
 {
 	[TestClass]
 	public class UT_UCDiscipline
