@@ -12,7 +12,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
         [TestMethod]
-        public void CUniversity_1()
+        public void ICUniversity_1()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -29,7 +29,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Краткое название добавляемой группы дублирует Краткое название уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_2()
+        public void ICUniversity_2()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -51,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Полное название добавляемой группы дублирует Полное название уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_3()
+        public void ICUniversity_3()
         {
             // arrange
             MUniversity gr = new MUniversity("4401022286", "КГУ","Костромкой Государственный Технический Университет", "156002, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgb@mail.ru", "84942312960");
@@ -73,7 +73,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Фактический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_4()
+        public void ICUniversity_4()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -95,7 +95,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Юридический адрес добавляемой группы дублирует Фактический адрес уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_5()
+        public void ICUniversity_5()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -117,7 +117,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что ФИО ректора добавляемой группы дублирует ФИО ректора уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_6()
+        public void ICUniversity_6()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -139,7 +139,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Почта добавляемой группы дублирует Почта уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_7()
+        public void ICUniversity_7()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -160,7 +160,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что Телефон добавляемой группы дублирует Телефон уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_8()
+        public void ICUniversity_8()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -181,7 +181,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод корректных данных, при условии, что ИНН добавляемой группы дублирует ИНН уже существующей группы
         /// </summary>
         [TestMethod]
-        public void CUniversity_9()
+        public void ICUniversity_9()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
@@ -203,7 +203,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
         /// Ввод данных аналогичных уже существующим
         /// </summary>
         [TestMethod]
-        public void CUniversity_10()
+        public void ICUniversity_10()
         {
             // arrange
             MUniversity gr = new MUniversity("4401006282", "КГУ", "Канадский Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "wkgu@mail.ru", "82942317960");

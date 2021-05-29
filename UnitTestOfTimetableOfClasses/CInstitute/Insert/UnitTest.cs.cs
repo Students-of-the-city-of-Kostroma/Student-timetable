@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void CInstitute_1() //Добавление в пустую таблицу    
+        public void ICInstitute_1() //Добавление в пустую таблицу    
         {
             //arrange     
             MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
         }
 
         [TestMethod]
-        public void CInstitute_2() //краткое название дублируется
+        public void ICInstitute_2() //краткое название дублируется
         {
             bool ex = false;
             bool act;
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
         }
 
         [TestMethod]
-        public void CInstitute_3() // полное название дублируется
+        public void ICInstitute_3() // полное название дублируется
         {
             bool ex = false;
             bool act;
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
         }
 
         [TestMethod]
-        public void CInstitute_4() // директор дублируется
+        public void ICInstitute_4() // директор дублируется
         {
             bool ex = false;
             bool act;
@@ -61,7 +61,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
         }
 
         [TestMethod]
-        public void CInstitute_5() // наименование ВУЗа дублируется
+        public void ICInstitute_5() // наименование ВУЗа дублируется
         {
             bool ex = false;
             bool act;

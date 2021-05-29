@@ -9,7 +9,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void CAuditor_1() //пустая таблица
+        public void ICAuditor_1() //пустая таблица
         {
             //arrange
             bool expected = true;
@@ -23,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
 
 
         [TestMethod]
-        public void CAuditor_2() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
+        public void ICAuditor_2() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -39,7 +39,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
 
 
         [TestMethod]
-        public void CAuditor_3() //полное дублирование всех атрибутов
+        public void ICAuditor_3() //полное дублирование всех атрибутов
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -55,7 +55,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
 
 
         [TestMethod]
-        public void CAuditor_4() // дбавление записи, которая не дублирует ни один атрибут кроме корпуса
+        public void ICAuditor_4() // дбавление записи, которая не дублирует ни один атрибут кроме корпуса
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void CAuditor_5() // дбавление записи, которая не дублирует ни один атрибут кроме кафедры
+        public void ICAuditor_5() // дбавление записи, которая не дублирует ни один атрибут кроме кафедры
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -83,7 +83,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void CAuditor_6() // дбавление записи, которая не дублирует ни один атрибут кроме числа мест
+        public void ICAuditor_6() // дбавление записи, которая не дублирует ни один атрибут кроме числа мест
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");
@@ -97,7 +97,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void CAuditor_7() // дбавление записи, которая не дублирует ни один атрибут кроме названия
+        public void ICAuditor_7() // дбавление записи, которая не дублирует ни один атрибут кроме названия
         {
             //arrange
             MAuditor aud = new MAuditor("502", "каф. Иностранных языков", 20, "5");

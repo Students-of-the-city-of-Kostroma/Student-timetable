@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление новых корректных данных в пустую таблицу.
         /// </summary>
         [TestMethod]
-        public void CGroup_1()
+        public void ICGroup_1()
         {
             //arrange
             bool expected = true;
@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Группа добавляемой группы дублирует Группа уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_2()
+        public void ICGroup_2()
         {
             //arrange
             bool expected = true;
@@ -53,7 +53,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что они не дублируют атрибуты уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_3()
+        public void ICGroup_3()
         {
             //arrange
             bool expected = true;
@@ -82,7 +82,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что они полностью дублируют атрибуты уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_4() //Полное дублирование всех атрибутов.
+        public void ICGroup_4() //Полное дублирование всех атрибутов.
         {
             bool expected = true;
             //arrange
@@ -101,7 +101,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Семестр добавляемой группы дублирует Семестр уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_5()
+        public void ICGroup_5()
         {
             //arrange        
             bool expected = true;
@@ -130,7 +130,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Направление подготовки добавляемой группы дублирует Направление подготовки уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_6()
+        public void ICGroup_6()
         {
             //arrange
             bool expected = true;
@@ -156,7 +156,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Смена добавляемой группы дублирует Смена уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup1_7()
+        public void ICGroup1_7()
         {
             //arrange
             bool expected = true;
@@ -185,7 +185,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Студентов добавляемой группы дублирует Студентов уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_8()
+        public void ICGroup_8()
         {
             //arrange
             bool expected = true;
@@ -214,7 +214,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Пар/день min добавляемой группы дублирует Пар/день min уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_9()
+        public void ICGroup_9()
         {
             //arrange
             bool expected = true;
@@ -243,7 +243,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что Пар/день max добавляемой группы дублирует Пар/день max уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_10()
+        public void ICGroup_10()
         {
             //arrange
             bool expected = true;
@@ -272,7 +272,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         /// Добавление корректных данных, при условии, что  Выходные добавляемой группы дублирует Выходные уже существующей группы.
         /// </summary>
         [TestMethod]
-        public void CGroup_11()
+        public void ICGroup_11()
         {
             //arrange
             bool expected = true;

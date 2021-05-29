@@ -34,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Добавление в пустую таблицу
         /// </summary>
         [TestMethod]
-        public void CTeacher_1()
+        public void ICTeacher_1()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
@@ -52,7 +52,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Полностью отличные атрибуты
         /// </summary>
         [TestMethod]
-        public void CTeacher_2()
+        public void ICTeacher_2()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
@@ -73,7 +73,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Повторяющийся атрибут "ФИО"
         /// </summary>
         [TestMethod]
-        public void CTeacher_3()
+        public void ICTeacher_3()
         {
             //arrange 
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
@@ -90,7 +90,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Повторяющиеся атрибуты Уч. степень и Уч. звание
         /// </summary>
         [TestMethod]
-        public void CTeacher_4()
+        public void ICTeacher_4()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
@@ -111,7 +111,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Повторяющиеся атрибут Кафедра
         /// </summary>
         [TestMethod]
-        public void CTeacher_5()
+        public void ICTeacher_5()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
@@ -132,7 +132,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Повторяющиеся атрибуты график работы
         /// </summary>
         [TestMethod]
-        public void CTeacher_6()
+        public void ICTeacher_6()
         {
             DataRow[] maTi = Title();
             DataRow[] ma = Degree();
@@ -153,7 +153,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         /// Все атрибуты повторяются
         /// </summary>
         [TestMethod]
-        public void CTeacher_7()
+        public void ICTeacher_7()
         {
             //arrange 
             MTeacher tcher1 = new MTeacher("Киприна", "Людмила", "Юрьевна", "Кандидат наук", "Доцент", "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");

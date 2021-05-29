@@ -13,7 +13,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Insert
         ///  Вставляем в refData ноыве данные
         /// </summary>
         [TestMethod]
-        public void CTitle_1() 
+        public void ICTitle_1() 
         {
             //arrange
             MTitle ma = new MTitle("НЕПрофессор", "Проф.");
@@ -27,9 +27,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Insert
         /// Добавляем учёное звание с такой сокращённой записью, которая уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void CTitle_2() 
+        public void ICTitle_2() 
         {
-            CTitle_1();
+            ICTitle_1();
             //arrange
             MTitle ma = new MTitle("НЕДоцент", "Проф.");
             bool expected = false;
@@ -43,9 +43,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Insert
         /// Добавляем учёное звание с такой полной записью, которая уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void CTitle_3() 
+        public void ICTitle_3() 
         {
-            CTitle_1();
+            ICTitle_1();
             //arrange
             MTitle ma = new MTitle("НЕПрофессор", "Доц.");
             bool expected = false;

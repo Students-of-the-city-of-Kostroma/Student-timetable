@@ -11,7 +11,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Insert
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
         [TestMethod]
-        public void CAcademicDegree_1()
+        public void ICAcademicDegree_1()
         {
             //arrange 
             MAcademicDegree ma = new MAcademicDegree("Магистр", "Маг.");
@@ -26,10 +26,10 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Insert
         /// учёная степень с такой сокращённой записью уже есть в таблице
         /// </summary>
         [TestMethod]
-        public void CAcademicDegree_2()
+        public void ICAcademicDegree_2()
         {
             //arrange
-            CAcademicDegree_1();
+            ICAcademicDegree_1();
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool expected = false;
             //act
