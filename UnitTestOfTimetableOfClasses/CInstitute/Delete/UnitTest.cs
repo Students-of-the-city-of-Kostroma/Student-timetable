@@ -1,8 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-
 namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Delete
 {
     [TestClass]
