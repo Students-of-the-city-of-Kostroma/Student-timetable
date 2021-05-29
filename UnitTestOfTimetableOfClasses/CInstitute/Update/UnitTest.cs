@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         [TestMethod]
         public void UCInstitute_1() //замена всех атрибутов
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);
@@ -25,7 +24,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         [TestMethod]
         public void UCInstitute_2() //замена атрибутов Полное название
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);
@@ -40,7 +38,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         [TestMethod]
         public void UCInstitute_3() //краткая запись института уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);
@@ -55,7 +52,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         [TestMethod]
         public void UCInstitute_4() //директор уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);
@@ -70,7 +66,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
         [TestMethod]
         public void UCInstitute_5() //наименование ВУЗа уже есть в таблице
         {
-
             MInstitute T_Institute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
 
             refData.CInstitute.Insert(T_Institute);

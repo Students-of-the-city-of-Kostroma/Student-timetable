@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Update
         [TestMethod]
         public void UCTitle_1()//изменение когда атрибуты не повторяются и код учебного звания изменить нельзя
         {
-
             MTitle T_Title = new MTitle("Проф.", "Профессор");
 
             refData.CTitle.Insert(T_Title);
