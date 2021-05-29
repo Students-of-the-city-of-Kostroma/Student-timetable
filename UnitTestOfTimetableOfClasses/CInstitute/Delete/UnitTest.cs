@@ -12,13 +12,13 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Delete
         [TestMethod]
         public void DCInstitute_1() //Удалить запись при совпадении всех атрибутов
         {
-
+            refData.InitData();
             MInstitute I_IInstitute = new MInstitute("Институт автоматизированных систем и технологий", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
             bool ex = true;
-            refData.CInstitute.Insert(I_IInstitute);
-            bool act = refData.CInstitute.Delete(I_IInstitute);
-
-            Assert.AreEqual(ex, act);
+            bool act = refData.CInstitute.Insert(I_IInstitute);
+            Assert.AreEqual(ex, act, "Не удалось добавить запись");
+            act = refData.CInstitute.Delete(I_IInstitute);
+            Assert.AreEqual(ex, act, "Не удалось удалить запись");
         }
 
         [TestMethod]
