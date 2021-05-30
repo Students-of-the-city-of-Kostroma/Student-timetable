@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CDiscipline.UT_Update
 	[TestClass]
 	public class UT_UCDiscipline
 	{
-		RefData refData = new RefData();
+        readonly RefData refData = new RefData();
 
 		/// <summary>
 		/// Обновление дисциплины, у котрой название не задано.
