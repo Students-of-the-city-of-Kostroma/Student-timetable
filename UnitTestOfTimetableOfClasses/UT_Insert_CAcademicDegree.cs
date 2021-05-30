@@ -6,7 +6,7 @@ namespace UnitTestOfTimetableOfClasses
     [TestClass]
     public class UT_Insert_CAcademicDegree
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
         /// <summary>
         /// Ввод корректных данных в пустую таблицу
         /// </summary>
