@@ -41,7 +41,6 @@ namespace TimetableOfClasses
             tbINN.Text = model.INN;
         }
 
-
         private void FullTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
             Regex regex = new Regex(@"[а-яА-Я\- ]");
@@ -50,7 +49,6 @@ namespace TimetableOfClasses
                 e.Handled = true;
                 return;
             }
-
         }
 
         private void ShortTitle_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,7 +154,6 @@ namespace TimetableOfClasses
             input = Regex.Replace(input, @"- -", " ");
             if (Regex.IsMatch(input, @"[а-яА-Я]") && input.Length >= 2)
             {
-
                 if (input[0] == ' ' || input[0] == '-')
                     input = input.Substring(1);
                 if (input[input.Length - 1] == ' ' || input[input.Length - 1] == '-')
@@ -254,7 +251,6 @@ namespace TimetableOfClasses
                 cur.Phone = tbPhone.Text;
                 return Program.refData.CUniversity.Update(cur);
             }
-
         }
 
         private void tbINN_Leave(object sender, EventArgs e)
@@ -293,6 +289,5 @@ namespace TimetableOfClasses
         {
             this.Close();
         }
-
     }
 }
