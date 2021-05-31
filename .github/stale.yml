@@ -15,4 +15,4 @@ markComment: >
   for your contributions.
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: true
-limitPerRun : 30
+limitPerRun : 1
