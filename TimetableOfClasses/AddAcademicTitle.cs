@@ -84,7 +84,6 @@ namespace TimetableOfClasses
                         }
                     }
                     else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
@@ -140,7 +139,6 @@ namespace TimetableOfClasses
             if (((TextBox)sender).Text.Length == 1)
                 ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
             ((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
-
         }
 
         private void FullName_TextChanged(object sender, EventArgs e)
