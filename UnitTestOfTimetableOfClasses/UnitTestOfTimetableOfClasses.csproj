@@ -63,7 +63,7 @@
     <Compile Include="CTitle\Insert\UnitTest.cs" />
     <Compile Include="CAcademicDegree\Delete\UnitTest.cs" />
     <Compile Include="CAcademicDegree\Insert\UnitTest.cs" />
-    <Compile Include="Cauditor\Insert\UnitTest.cs" />
+    <Compile Include="CAuditor\Insert\UnitTest.cs" />
     <Compile Include="CGroup\Delete\UnitTest.cs" />
     <Compile Include="CEnclosurse\Insert\UnitTest.cs" />
     <Compile Include="CTeacher\Insert\UnitTest.cs" />
