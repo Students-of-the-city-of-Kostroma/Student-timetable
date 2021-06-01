@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка корректного вывода метода GetInfo в Logs.txt
         /// </summary>
         [TestMethod]
-        public void Task_1018_1()
+        public void Logs_1()
         {
             //arrange
             Logs.GetInfo("Click button Delete in Teacher");
@@ -42,7 +42,7 @@ namespace UnitTestOfTimetableOfClasses
         /// Проверка корректного вывода метода GetError в Logs.txt
         /// </summary>
         [TestMethod]
-        public void Task_1018_2()
+        public void Logs_2()
         {
             //arrange
 
