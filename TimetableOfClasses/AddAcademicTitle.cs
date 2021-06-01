@@ -9,8 +9,6 @@ namespace TimetableOfClasses
 {
     public partial class AddAcademicTitle : Form
     {
-
-
         public AddAcademicTitle()
         {
             InitializeComponent();
@@ -49,7 +47,6 @@ namespace TimetableOfClasses
                         {
                             MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
                         }
-
                         catch (Exception)
                         {
                             MessageBox.Show("Некорректно заполнены поля", "Ошибка");
@@ -96,7 +93,6 @@ namespace TimetableOfClasses
 
         private void btCreateAndClean_Click(object sender, EventArgs e)
         {
-
             if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
             {
                 if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
@@ -112,7 +108,6 @@ namespace TimetableOfClasses
                     {
                         MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
                     }
-
                     catch (Exception)
                     {
                         MessageBox.Show("Некорректно заполнены поля", "Ошибка");
@@ -127,7 +122,6 @@ namespace TimetableOfClasses
         {
             this.Close();
         }
-
 
         static bool isNumberDontContains(string input)
         {
@@ -171,14 +165,13 @@ namespace TimetableOfClasses
 
             if (Reduction.Text.Length <= 1)
                 errorProvider1.SetError(Reduction, "Слишком короткое значение");
-
         }
 
         private void FullName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(FullName.Text))
                 errorProvider1.SetError(FullName, "Пустое поле");
-
+                
             if (!Regex.IsMatch(FullName.Text, @"[А-Яа-я\-\' ']"))
                 errorProvider1.SetError(FullName, "Можно вводить только силволы русского алфавита и тире");
 
@@ -187,7 +180,6 @@ namespace TimetableOfClasses
 
             if (FullName.Text.Length <= 1)
                 errorProvider1.SetError(FullName, "Слишком короткое значение");
-
         }
     }
 }
