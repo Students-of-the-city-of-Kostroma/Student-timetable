@@ -172,7 +172,9 @@ namespace LibOfTimetableOfClasses
             #endregion
 
             #region teacher
-            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher = new MTeacher("Юрий", "Лустгартен", "Леонидович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher);
+            mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher);
             MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher1);

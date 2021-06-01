@@ -9,11 +9,27 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
     public class UT_ICInstitute
     {
         RefData refData = new RefData();
+
+        /// <summary>
+        /// загрузка тестовых данных
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
+        {
+            refData.InitData();
+        }
+
         [TestMethod]
         public void ICInstitute_1() //Добавление в пустую таблицу    
         {
+            refData.CCourseSchedule.Clear();
+            refData.CAcademicLoad.Clear();
+            refData.CGroup.Clear();
+            refData.CTrainingProfile.Clear();
+            refData.CDirectionOfPreparation.Clear();
+            refData.CInstitute.Clear();
             //arrange     
-            MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
+            MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Юрий Леонидович", "Костромской Государственный Университет");
             bool expected = true;
             //act    
             bool actual = refData.CInstitute.Insert(inst);
