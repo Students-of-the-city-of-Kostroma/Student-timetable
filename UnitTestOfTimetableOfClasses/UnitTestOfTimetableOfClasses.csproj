@@ -65,7 +65,7 @@
     <Compile Include="CAcademicDegree\Insert\UnitTest.cs" />
     <Compile Include="CAuditor\Insert\UnitTest.cs" />
     <Compile Include="CGroup\Delete\UnitTest.cs" />
-    <Compile Include="CEnclosurse\Insert\UnitTest.cs" />
+    <Compile Include="CEnclosures\Insert\UnitTest.cs" />
     <Compile Include="CTeacher\Insert\UnitTest.cs" />
     <Compile Include="CGroup\Insert\UnitTest.cs" />
     <Compile Include="CTypesOfOccupation\Insert\UnitTest.cs" />
@@ -82,7 +82,7 @@
     <Compile Include="CGroup\Update\UnitTest.cs" />
     <Compile Include="CTypesOfOccupation\Update\UnitTest.cs" />
     <Compile Include="CAcademicDegree\Update\UnitTest.cs" />
-    <Compile Include="CEnclosurse\Update\UnitTest.cs" />
+    <Compile Include="CEnclosures\Update\UnitTest.cs" />
     <Compile Include="CUniversity\Update\UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
