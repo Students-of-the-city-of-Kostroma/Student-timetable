@@ -60,12 +60,41 @@ namespace TimetableOfClasses
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
-            catch (DeletedRowInaccessibleException)
+            catch (DeletedRowInaccessibleException exp)
             {
-                MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
+                MessageBox.Show(exp.Message, "Ошибка");
             }
         }
+        
+        private void btCreateAndClean_Click(object sender, EventArgs e)
+        {
 
+            if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+            {
+                if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
+                {
+                    try
+                    {
+                        MTitle Title = new MTitle(FullName.Text, Reduction.Text);
+                        Program.refData.CTitle.Insert(Title);
+                        FullName.Text = "";
+                        Reduction.Text = "";
+                    }
+                    catch (DeletedRowInaccessibleException)
+                    {
+                        MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
+                    }
+
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+                    }
+                }
+                else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+            }
+            else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
+        }
+        
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Close();
