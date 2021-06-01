@@ -7,54 +7,63 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
     [TestClass]
     public class UT_UCAcademicLoad
     {
-        public void setupData()
+        readonly RefData refData = new RefData();
+
+        /// <summary>
+        /// Загрузка тестовых данных
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
         {
-            MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "КГУ");
-            bool actualmDirectionOfPreparation = refData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
-                Assert.IsTrue(actualmDirectionOfPreparation, "Не удалось вставить направление подготовки");
-            MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
-            bool actualmTrainingProfile = refData.CTrainingProfile.Insert(mTrainingProfile);
-                Assert.IsTrue(actualmTrainingProfile, "Не удалось вставить профиль подготовки");
-            MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
-            bool actualmGroup = refData.CGroup.Insert(mGroup);
-                Assert.IsTrue(actualmGroup, "Не удалось вставить группу 1");
-            MGroup mGroup2 = new MGroup("17-ИСбо-2б", 3, "ИС", 1, 10, 1, 6, "Суббота");
-            bool actualmGroup2 = refData.CGroup.Insert(mGroup2);
-                Assert.IsTrue(actualmGroup2, "Не удалось вставить группу 2");
+            refData.InitData();
 
-            MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
-            bool actuamDiscipline1 = refData.CDiscipline.Insert(mDiscipline1);
-                Assert.IsTrue(actuamDiscipline1, "Не удалось вставить дисциплину");
+            //MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("09.03.02", "Информационные системы и технологии", 4, "КГУ");
+            //bool actualmDirectionOfPreparation = refData.CDirectionOfPreparation.Insert(mDirectionOfPreparation);
+            //Assert.IsTrue(actualmDirectionOfPreparation, "Не удалось вставить направление подготовки");
+            //MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
+            //bool actualmTrainingProfile = refData.CTrainingProfile.Insert(mTrainingProfile);
+            //Assert.IsTrue(actualmTrainingProfile, "Не удалось вставить профиль подготовки");
+            //MGroup mGroup = new MGroup("17-ИСбо-2а", 4, "ИС", 1, 20, 2, 5, "Суббота");
+            //bool actualmGroup = refData.CGroup.Insert(mGroup);
+            //Assert.IsTrue(actualmGroup, "Не удалось вставить группу 1");
+            //MGroup mGroup2 = new MGroup("17-ИСбо-2б", 3, "ИС", 1, 10, 1, 6, "Суббота");
+            //bool actualmGroup2 = refData.CGroup.Insert(mGroup2);
+            //Assert.IsTrue(actualmGroup2, "Не удалось вставить группу 2");
 
-            MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
-            bool actuamAcademicDegree = refData.CAcademicDegree.Insert(mAcademicDegree);
-                Assert.IsTrue(actuamAcademicDegree, "Не удалось вставить ученую степень");
-            MTitle mTitle = new MTitle("Доцент", "Доц");
-            bool actualmTitle = refData.CTitle.Insert(mTitle);
-                Assert.IsTrue(actualmTitle, "Не удалось вставить ученое звание"); 
-            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
-            bool actualamTeacher = refData.CTeacher.Insert(mTeacher);
-                Assert.IsTrue(actualamTeacher, "Не удалось вставить преподавателя");
+            //MDiscipline mDiscipline1 = new MDiscipline("Правоведение", "Право", "Сентябрь-Декабрь");
+            //bool actuamDiscipline1 = refData.CDiscipline.Insert(mDiscipline1);
+            //Assert.IsTrue(actuamDiscipline1, "Не удалось вставить дисциплину");
 
-            MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
-            bool actualmTypesOfOccupations = refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
-                Assert.IsTrue(actualmTypesOfOccupations, "Не удалось вставить тип занятия");
+            //MAcademicDegree mAcademicDegree = new MAcademicDegree("Кандидат наук", "КН");
+            //bool actuamAcademicDegree = refData.CAcademicDegree.Insert(mAcademicDegree);
+            //Assert.IsTrue(actuamAcademicDegree, "Не удалось вставить ученую степень");
+            //MTitle mTitle = new MTitle("Доцент", "Доц");
+            //bool actualmTitle = refData.CTitle.Insert(mTitle);
+            //Assert.IsTrue(actualmTitle, "Не удалось вставить ученое звание");
+            //MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            //bool actualamTeacher = refData.CTeacher.Insert(mTeacher);
+            //Assert.IsTrue(actualamTeacher, "Не удалось вставить преподавателя");
 
-            MAcademicLoad PreMa = new MAcademicLoad(100, "17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20","к");
-            bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
-            Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
+            //MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations("Лекция", "Лек");
+            //bool actualmTypesOfOccupations = refData.CTypesOfOccupations.Insert(mTypesOfOccupations);
+            //Assert.IsTrue(actualmTypesOfOccupations, "Не удалось вставить тип занятия");
 
+            //MAcademicLoad PreMa = new MAcademicLoad(100, "17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20", "к");
+            //bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
+            //Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
         }
-        RefData refData = new RefData();
 
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
-        [TestMethod]public void UCAcademicLoad_1()
+        [TestMethod]
+        public void UCAcademicLoad_1()
         {
+            refData.CCourseSchedule.Clear();
+            refData.CAcademicLoad.Clear();
             //arrange
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count == 0, "Таблица нагрузки не пуста!");
-            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а","Правоведение", "Иванов Иван Иванович", "Лекция", "20", "к");
+            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "20", "Правоведение", "Иванов Иван Иванович", "Лекция", "1");
             bool expected = false;
             //act
 
@@ -68,10 +77,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
         [TestMethod]
         public void UCAcademicLoad_2()
         {
-            setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa1 = new MAcademicLoad(110,"17-Нбо-1а", "Программирование", "Иванов Иван Иванович", "Лр", "20", "к");
+            MAcademicLoad PreMa1 = new MAcademicLoad(110,"17-Нбо-1а", "20", "Программирование", "Иванов Иван Иванович", "Лр", "1");
             bool expected = false;
             //act
             
@@ -85,10 +93,10 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
         [TestMethod]
         public void UCAcademicLoad_3()
         {
-            setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2б", "Правоведение", "Иванов Иван Иванович", "Лекция", "20", "к");
+            refData.CGroup.Insert(new MGroup("17-ИСбо-2б", 3, "ИС", 1, 10, 1, 6, "Суббота"));
+            MAcademicLoad PreMa = new MAcademicLoad(100, "17-ИСбо-2б", "20", "Правоведение", "Иванов Иван Иванович", "Лекция", "1");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
             bool expected = true;
@@ -103,10 +111,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
         [TestMethod]
         public void UCAcademicLoad_4()
         {
-            setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "История", "Иванова Ивана Ивановича", "Лекция", "20", "к");
+            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "20", "История", "Иванова Ивана Ивановича", "Лекция", "1");
             bool expected = false;
             //act
             PreMa.Discipline = "Цукенгшщзх";
@@ -120,10 +127,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
         [TestMethod]
         public void UCAcademicLoad_5()
         {
-            setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "Правоведение", "Иванова Ивана Ивановича", "Лекция", "20","к");
+            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "20", "Правоведение", "Иванова Ивана Ивановича", "Лекция","1");
             bool expected = false;
             //act
             PreMa.Teacher = "Цукеке Укее Уке";
@@ -137,10 +143,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
         [TestMethod]
         public void UCAcademicLoad_6()
         {
-            setupData();
             Assert.IsTrue(refData.CAcademicLoad.Rows.Count != 0, "Таблица нагрузки пуста!");
             //arrange
-            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20","к");
+            MAcademicLoad PreMa = new MAcademicLoad(100,"17-ИСбо-2а", "20", "Правоведение", "Иванов Иван Иванович", "Лекция","1");
             bool expected = false;
             //act
             PreMa.Occupation = "Фуаываываыв";
