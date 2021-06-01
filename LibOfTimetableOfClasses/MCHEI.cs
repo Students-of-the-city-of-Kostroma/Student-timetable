@@ -11,7 +11,6 @@
         int phone;
         string email;
 
-
         public string FullName
         {
             get
@@ -76,9 +75,7 @@
                 email = value;
             }
         }
-
-
-
+        
         public MCHEI(string fullName, string abbreviatedName, string rector, int phone, string email) : base()
         {
             FullName = fullName;
@@ -87,8 +84,5 @@
             Phone = phone;
             Email = email;
         }
-
-
     }
 }
-
