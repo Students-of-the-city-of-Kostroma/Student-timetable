@@ -9,8 +9,6 @@ namespace TimetableOfClasses
 {
     public partial class AddAcademicTitle : Form
     {
-
-
         public AddAcademicTitle()
         {
             InitializeComponent();
@@ -49,12 +47,10 @@ namespace TimetableOfClasses
                         {
                             MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
                         }
-
                         catch (Exception)
                         {
                             MessageBox.Show("Некорректно заполнены поля", "Ошибка");
                         }
-
                     }
                     else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
                 }
@@ -88,7 +84,6 @@ namespace TimetableOfClasses
                         }
                     }
                     else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
@@ -96,7 +91,6 @@ namespace TimetableOfClasses
 
         private void btCreateAndClean_Click(object sender, EventArgs e)
         {
-
             if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
             {
                 if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
@@ -112,7 +106,6 @@ namespace TimetableOfClasses
                     {
                         MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
                     }
-
                     catch (Exception)
                     {
                         MessageBox.Show("Некорректно заполнены поля", "Ошибка");
@@ -127,7 +120,6 @@ namespace TimetableOfClasses
         {
             this.Close();
         }
-
 
         static bool isNumberDontContains(string input)
         {
@@ -147,7 +139,6 @@ namespace TimetableOfClasses
             if (((TextBox)sender).Text.Length == 1)
                 ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
             ((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
-
         }
 
         private void FullName_TextChanged(object sender, EventArgs e)
@@ -171,7 +162,6 @@ namespace TimetableOfClasses
 
             if (Reduction.Text.Length <= 1)
                 errorProvider1.SetError(Reduction, "Слишком короткое значение");
-
         }
 
         private void FullName_Validating(object sender, CancelEventArgs e)
@@ -187,7 +177,6 @@ namespace TimetableOfClasses
 
             if (FullName.Text.Length <= 1)
                 errorProvider1.SetError(FullName, "Слишком короткое значение");
-
         }
     }
 }
