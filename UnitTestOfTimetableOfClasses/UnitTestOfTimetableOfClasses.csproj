@@ -53,7 +53,7 @@
     <Compile Include="CUniversity\Delete\UnitTest.cs" />
     <Compile Include="CTitle\Delete\UnitTest.cs" />
     <Compile Include="CInstitute\Delete\UnitTest.cs" />
-    <Compile Include="MAcademicDegree\UnitTest.cs" />
+    <Compile Include="MAcademicDegree\UT_MAcademicDegree.cs" />
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
     <Compile Include="MTitle\UnitTest.cs" />
     <Compile Include="MInstitute\UnitTest.cs" />

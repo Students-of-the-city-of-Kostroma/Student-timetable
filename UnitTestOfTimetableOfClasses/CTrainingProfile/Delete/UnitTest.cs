@@ -7,44 +7,28 @@ namespace UnitTestOfTimetableOfClasses.UT_CTrainingProfile.UT_Delete
 	public class UT_DCTrainingProfile
 	{
         readonly RefData refData = new RefData();
-        /// <summary>
-		/// Начальные условия для метода Delete
-		/// </summary>
-		public void Pre_condition_Del()
-		{
-			bool exPrep = true;
-			bool actPrep;
-			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20, "ИАСТ");
-			int DoP1 = refData.CDirectionOfPreparation.Rows.Count;
-			actPrep = refData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
-			int DoP2 = refData.CDirectionOfPreparation.Rows.Count;
-			Assert.AreEqual(exPrep, actPrep);
-			Assert.AreEqual(DoP1 + 1, DoP2);
 
-			bool ex = true;
-			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			int C1 = refData.CTrainingProfile.Rows.Count;
-			act = refData.CTrainingProfile.Insert(T_TrainingProfile);
-			int C2 = refData.CTrainingProfile.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1 + 1, C2);
+		/// <summary>
+		/// загрузка тестовых данных
+		/// </summary>
+		[TestInitialize]
+		public void RefDataInit()
+		{
+			refData.InitData();
 		}
+
 		/// <summary>
 		/// Удаление существующих данных выбранной строки из таблицы
 		/// </summary>
 		[TestMethod]
 		public void DCTrainingProfile_1()
 		{
-			Pre_condition_Del();
-			bool ex = true;
-			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
 			int C1 = refData.CTrainingProfile.Rows.Count;
-			act = refData.CTrainingProfile.Delete(T_TrainingProfile);
+			Assert.IsTrue(C1 > 0, "Таблица должна быть не пустой");
+			Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить существующую запись");
 			int C2 = refData.CTrainingProfile.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1 - 1, C2);
+			Assert.IsTrue(C1 - 1 == C2, "Количество записьей не изменилось");
 		}
 		/// <summary>
 		/// Удаление данных из пустой таблицы
@@ -52,14 +36,14 @@ namespace UnitTestOfTimetableOfClasses.UT_CTrainingProfile.UT_Delete
 		[TestMethod]
 		public void DCTrainingProfile_2()
 		{
-			bool ex = false;
-			bool act;
-			MTrainingProfile T_TrainingProfile = new MTrainingProfile("Институт автоматизированных систем и технологий", "ИАСТ", "01.02.03");
-			int C1 = refData.CTrainingProfile.Rows.Count;
-			act = refData.CTrainingProfile.Delete(T_TrainingProfile);
-			int C2 = refData.CTrainingProfile.Rows.Count;
-			Assert.AreEqual(ex, act);
-			Assert.AreEqual(C1, C2);
+			refData.CCourseSchedule.Clear();
+			refData.CAcademicLoad.Clear();
+			refData.CGroup.Clear();
+			refData.CTrainingProfile.Clear();
+			Assert.IsTrue(refData.CTrainingProfile.Rows.Count == 0, "Таблица должна быть пустой");
+			MTrainingProfile mTrainingProfile = new MTrainingProfile("Информационные системы", "ИС", "09.03.02");
+			Assert.IsFalse(refData.CTrainingProfile.Delete(mTrainingProfile), "Данные из пустой таблицы удалились, чудо");
+			Assert.IsTrue(refData.CTrainingProfile.Rows.Count == 0, "Таблица должна быть пустой");
 		}
 	}
 }

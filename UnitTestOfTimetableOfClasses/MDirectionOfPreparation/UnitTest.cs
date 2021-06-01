@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
     [TestClass]
     public class UT_MDirectionOfPreparation
     {
-        RefData refData = new RefData();
         /// <summary>
         /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>

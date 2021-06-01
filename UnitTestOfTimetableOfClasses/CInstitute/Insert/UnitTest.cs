@@ -8,7 +8,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
     [TestClass]
     public class UT_ICInstitute
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
 
         /// <summary>
         /// загрузка тестовых данных

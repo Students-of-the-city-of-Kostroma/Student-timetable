@@ -7,27 +7,15 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
     [TestClass]
     public class UT_ICTeacher
     {
-        RefData refData = new RefData();
-        /// <summary>
-        /// Выбор данных из таблицы "Учёная степень."
-        /// </summary>
-        /// <returns></returns>
-        private DataRow[] Degree()
-        {
-            DataTable table = refData.DataSet.Tables["Учёная степень"];
-            DataRow[] rows = table.Select();
-            return rows;
-        }
+        readonly RefData refData = new RefData();
 
         /// <summary>
-        /// Выбор данных из таблицы "Учёное звание."
+        /// загрузка тестовых данных
         /// </summary>
-        /// <returns></returns>
-        private DataRow[] Title()
+        [TestInitialize]
+        public void RefDataInit()
         {
-            DataTable table = refData.DataSet.Tables["Уч.Звание"];
-            DataRow[] rows = table.Select();
-            return rows;
+            refData.InitData();
         }
 
         /// <summary>
@@ -36,10 +24,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         [TestMethod]
         public void ICTeacher_1()
         {
-            DataRow[] maTi = Title();
-            DataRow[] ma = Degree();
             //arrange 
-            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Садовская", "Ольга", "Борисовна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act
             bool actual = refData.CTeacher.Insert(tcher);
@@ -54,11 +40,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         [TestMethod]
         public void ICTeacher_2()
         {
-            DataRow[] maTi = Title();
-            DataRow[] ma = Degree();
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна",refData.CAcademicDegree.Rows[1]["Reduction"].ToString(), refData.CTitle.Rows[1]["Reduction"].ToString(), "ИАСТ", "Пт, Ср", "Пн, Вт", "Суббота");
             bool expected = true;
             //act
             refData.CTeacher.Insert(tcher1);
@@ -92,11 +76,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         [TestMethod]
         public void ICTeacher_4()
         {
-            DataRow[] maTi = Title();
-            DataRow[] ma = Degree();
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[0]["Reduction"].ToString(), "ФСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
             bool expected = true;
             //act
             bool actual = refData.CTeacher.Insert(tcher1);
@@ -113,11 +95,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         [TestMethod]
         public void ICTeacher_5()
         {
-            DataRow[] maTi = Title();
-            DataRow[] ma = Degree();
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна",refData.CAcademicDegree.Rows[1]["Reduction"].ToString(), refData.CTitle.Rows[1]["Reduction"].ToString(), "ФАСТ", "Пн, Вт, Ср", "Чт, Пт", "Суббота");
             bool expected = true;
             //act
             refData.CTeacher.Insert(tcher1);
@@ -134,11 +114,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Insert
         [TestMethod]
         public void ICTeacher_6()
         {
-            DataRow[] maTi = Title();
-            DataRow[] ma = Degree();
             //arrange 
-            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна", ma[0]["Reduction"].ToString(), maTi[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
-            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна", ma[1]["Reduction"].ToString(), maTi[1]["Reduction"].ToString(), "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher1 = new MTeacher("Садовская", "Ольга", "Борисовна",refData.CAcademicDegree.Rows[0]["Reduction"].ToString(), refData.CTitle.Rows[0]["Reduction"].ToString(), "ФАСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
+            MTeacher tcher = new MTeacher("Киприна", "Людмила", "Юрьевна",refData.CAcademicDegree.Rows[1]["Reduction"].ToString(), refData.CTitle.Rows[1]["Reduction"].ToString(), "ФСТ", "Пн, Вт", "Ср, Чт, Пт", "Воскресенье");
             bool expected = true;
             //act
             refData.CTeacher.Insert(tcher1);
