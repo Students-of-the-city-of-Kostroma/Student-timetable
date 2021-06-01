@@ -113,7 +113,6 @@ namespace TimetableOfClasses
             if (Reduction.Text.Length <= 1)
                 errorProvider1.SetError(Reduction, "Слишком короткое значение");
         }
-
         private void FullName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(FullName.Text))
