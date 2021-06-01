@@ -14,7 +14,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CTrainingProfile.UT_Delete
 		{
 			bool exPrep = true;
 			bool actPrep;
-			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20, "КГУ");
+			MDirectionOfPreparation T_DirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "ИАСТ", 20, "ИАСТ");
 			int DoP1 = refData.CDirectionOfPreparation.Rows.Count;
 			actPrep = refData.CDirectionOfPreparation.Insert(T_DirectionOfPreparation);
 			int DoP2 = refData.CDirectionOfPreparation.Rows.Count;
