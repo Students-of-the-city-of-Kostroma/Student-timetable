@@ -10,6 +10,15 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
         RefData refData = new RefData();
 
         /// <summary>
+        /// загрузка тестовых данных
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
+        {
+            refData.InitData();
+        }
+
+        /// <summary>
         /// Добавление новых корректных данных в пустую таблицу.
         /// </summary>
         [TestMethod]
