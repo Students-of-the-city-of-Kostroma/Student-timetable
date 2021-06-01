@@ -29,13 +29,13 @@ namespace TimetableOfClasses
 
         private void btCreateAndClose_Click(object sender, EventArgs e)
         {
-            if (update)
+            try
             {
                 if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
                 {
                     if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
                     {
-                        try
+                        if (update)
                         {
                             MTitle Title = new MTitle(FullName.Text, Reduction.Text);
                             Program.refData.CTitle.Update(Title);
@@ -43,26 +43,7 @@ namespace TimetableOfClasses
                             Reduction.Text = "";
                             Close();
                         }
-                        catch (DeletedRowInaccessibleException)
-                        {
-                            MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                        }
-                    }
-                    else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
-                }
-                else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
-            }
-            else
-            {
-                if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
-                {
-                    if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-                    {
-                        try
+                        else
                         {
                             MTitle Title = new MTitle(FullName.Text, Reduction.Text);
                             if (!Program.refData.CTitle.Insert(Title))
@@ -74,46 +55,19 @@ namespace TimetableOfClasses
                             Reduction.Text = "";
                             Close();
                         }
-                        catch (DeletedRowInaccessibleException)
-                        {
-                            MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                        }
                     }
                     else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
                 }
                 else MessageBox.Show("Невозможно добавить это уч. звание", "Попробуйте снова");
             }
-        }
-
-        private void btCreateAndClean_Click(object sender, EventArgs e)
-        {
-            if ((Reduction.Text.Length != 0) && (FullName.Text.Length != 0))
+            catch (DeletedRowInaccessibleException)
             {
-                if (isNumberDontContains(Reduction.Text) && isNumberDontContains(FullName.Text))
-                {
-                    try
-                    {
-                        MTitle Title = new MTitle(FullName.Text, Reduction.Text);
-                        Program.refData.CTitle.Insert(Title);
-                        FullName.Text = "";
-                        Reduction.Text = "";
-                    }
-                    catch (DeletedRowInaccessibleException)
-                    {
-                        MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                    }
-                }
-                else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
+                MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
             }
-            else MessageBox.Show("Невозможно добавить это уч. звание!", "Попробуйте снова", MessageBoxButtons.OK);
+            catch (Exception)
+            {
+                MessageBox.Show("Некорректно заполнены поля", "Ошибка");
+            }
         }
 
         private void btCancel_Click(object sender, EventArgs e)
