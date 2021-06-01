@@ -64,10 +64,6 @@ namespace TimetableOfClasses
             {
                 MessageBox.Show("Невозможно получить доступ к удаленной информации строки через данную строку", "Ошибка");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-            }
         }
 
         private void btCancel_Click(object sender, EventArgs e)
