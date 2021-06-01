@@ -24,6 +24,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         public void UCGroup_1()
         {
             //arrange
+            refData.CCourseSchedule.Clear();
+            refData.CAcademicLoad.Clear();
             refData.CGroup.Clear();
             Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
 
