@@ -19,7 +19,6 @@ namespace TimetableOfClasses
             VUS.DisplayMember = "FullName";
             Director.DataSource = Teacher;
             Director.DisplayMember = "FullName";
-
         }
         bool update = false;
         public AddInstitute(MInstitute mInstitute)
@@ -53,8 +52,6 @@ namespace TimetableOfClasses
         }
         private void btCreateAndClose_Click(object sender, EventArgs e)
         {
-
-
             if (update)
             {
                 try
@@ -75,14 +72,9 @@ namespace TimetableOfClasses
                 {
                     MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
                 }
-
-
-
             }
             else
             {
-
-
                 try
                 {
                     MInstitute Institute = new MInstitute(FullName.Text, ShortName.Text, Director.Text, VUS.Text);
@@ -101,10 +93,8 @@ namespace TimetableOfClasses
                 {
                     MessageBox.Show("Заполенены не все поля или заполнены некорректно!", "Ошибка", MessageBoxButtons.OK);
                 }
-
             }
         }
-
 
         private void btCreateAndClean_Click(object sender, EventArgs e)
         {
@@ -201,6 +191,11 @@ namespace TimetableOfClasses
                 e.Handled = true;
             else
                 return;
+        }
+
+        private void AddInstitute_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
