@@ -9,6 +9,15 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         readonly RefData refData = new RefData();
 
         /// <summary>
+        /// загрузка тестовых данных
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
+        {
+            refData.InitData();
+        }
+
+        /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
         [TestMethod]
@@ -35,7 +44,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_2()
         { 
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
@@ -45,6 +54,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
 
             //arrange
+            refData.CAcademicLoad.Clear();
             refData.CGroup.Clear();
             Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
 
@@ -75,7 +85,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
        [TestMethod]
         public void UCGroup_3() 
         {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
@@ -112,7 +122,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_4() 
         {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
@@ -148,7 +158,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_5()
         {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
@@ -184,7 +194,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_6() 
         {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
@@ -222,7 +232,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_7() 
         {
-            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "КГУ");
+            MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
 
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
