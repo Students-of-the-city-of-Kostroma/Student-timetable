@@ -3,14 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 
-namespace UnitTestOfTimetableOfClasses
+namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
 {
     [TestClass]
-    public class UT_Insert_CInstitute
+    public class UT_ICInstitute
     {
         RefData refData = new RefData();
         [TestMethod]
-        public void Task_616_1() //Добавление в пустую таблицу    
+        public void ICInstitute_1() //Добавление в пустую таблицу    
         {
             //arrange     
             MInstitute inst = new MInstitute("Институт автоматизирован", "ИАСТ", "Лустгартен Ю.Л.", "Костромской Государственный Университет");
@@ -22,7 +22,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_616_2() //краткое название дублируется
+        public void ICInstitute_2() //краткое название дублируется
         {
             bool ex = false;
             bool act;
@@ -35,7 +35,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_616_3() // полное название дублируется
+        public void ICInstitute_3() // полное название дублируется
         {
             bool ex = false;
             bool act;
@@ -48,7 +48,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_616_4() // директор дублируется
+        public void ICInstitute_4() // директор дублируется
         {
             bool ex = false;
             bool act;
@@ -61,7 +61,7 @@ namespace UnitTestOfTimetableOfClasses
         }
 
         [TestMethod]
-        public void Task_616_5() // наименование ВУЗа дублируется
+        public void ICInstitute_5() // наименование ВУЗа дублируется
         {
             bool ex = false;
             bool act;
