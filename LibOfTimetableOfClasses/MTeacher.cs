@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
-
     /// <summary>
     /// Класс со свойствами определяющими преподавателя
     /// </summary>
@@ -43,7 +42,7 @@ namespace LibOfTimetableOfClasses
                 if (!regex.IsMatch(value))
                 {
                     throw new Exception("Имя: Можно использовать только русские буквы, пробел и точку");
-                };
+                }
 
                 if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буквы должна быть заглавной !");
 
@@ -228,7 +227,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         private void CapitalizationCheck(string value)
         {
             if (value[0] < 'А' || value[0] > 'Я') throw new Exception("Первая буква слова должна быть заглавная");
@@ -245,7 +243,6 @@ namespace LibOfTimetableOfClasses
                     if (value[i + 1] < 'А' || value[i + 1] > 'Я') throw new Exception("Названия дней должны начинаться с заглавной буквы");
                 }
             }
-
         }
 
         /// <summary>
@@ -262,7 +259,6 @@ namespace LibOfTimetableOfClasses
             }
             set
             {
-
                 if (value == "" || value == null)
                 {
                     _windows = null;
@@ -275,7 +271,6 @@ namespace LibOfTimetableOfClasses
 
                 CapitalizationCheck(value);
                 _windows = value;
-
             }
         }
 
@@ -328,6 +323,5 @@ namespace LibOfTimetableOfClasses
             Windows = windows;
             Weekends = weekends;
         }
-
     }
 }
