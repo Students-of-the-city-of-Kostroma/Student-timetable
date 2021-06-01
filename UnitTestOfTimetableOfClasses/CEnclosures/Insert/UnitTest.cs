@@ -1,10 +1,10 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
+namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Insert
 {
     [TestClass]
-    public class UT_ICEnclosurse
+    public class UT_ICEnclosures
     {
         readonly RefData refData = new RefData();
         
@@ -21,7 +21,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Ввод в пустую таблицу
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_1()
+        public void ICEnclosures_1()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
@@ -36,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование адреса
         /// </summary>
 		[TestMethod]
-        public void ICEnclosurse_2()
+        public void ICEnclosures_2()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Малышковская", "111111", "1");
@@ -54,7 +54,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование телефона
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_3()
+        public void ICEnclosures_3()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");
@@ -72,7 +72,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование примечания
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_4()
+        public void ICEnclosures_4()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -90,7 +90,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование корпуса и ВУЗа
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_6()
+        public void ICEnclosures_6()
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -108,7 +108,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Полностью отличные атрибуты
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_5()
+        public void ICEnclosures_5()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -126,7 +126,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование Корпуса
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_7()
+        public void ICEnclosures_7()
         {
             //arrange
             MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "111111", "1");
@@ -144,7 +144,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Insert
         /// Дублирование ВУЗа
         /// </summary>
         [TestMethod]
-        public void ICEnclosurse_8()
+        public void ICEnclosures_8()
         {
             //arrange
             MEnclosures gr = new MEnclosures("В", "Ярославский Государственный Университет", "Дзержинского", "111111", "1");

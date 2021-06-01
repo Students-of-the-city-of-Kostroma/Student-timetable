@@ -1,17 +1,17 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
+namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
 {
     [TestClass]
-    public class UT_UCEnclosurse
+    public class UT_UCEnclosures
     {
         RefData refData = new RefData();
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров (кроме основных полей)
         /// </summary>
         [TestMethod]
-        public void UCEnclosurse_1()
+        public void UCEnclosures_1()
         {
             MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
@@ -40,7 +40,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
         /// Ввод корректных данных, при условии, что Адрес дублирует Адрес существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void UCEnclosurse_2()
+        public void UCEnclosures_2()
         {
             MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
@@ -74,7 +74,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
         /// Ввод корректных данных, при условии, что Телефон дублирует Телефон существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void UCEnclosurse_3()
+        public void UCEnclosures_3()
         {
             MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
@@ -107,7 +107,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosurse.UT_Update
         /// Ввод корректных данных, при условии, что Примечание дублирует Примечание существующего экземпляра(не учитывая основные атрибуты)
         /// </summary>
         [TestMethod]
-        public void UCEnclosurse_4()
+        public void UCEnclosures_4()
         {
             MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
