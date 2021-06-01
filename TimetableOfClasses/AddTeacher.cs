@@ -70,7 +70,6 @@ namespace TimetableOfClasses
             weekends.Text = mTeacher.Weekends;
 
             Lehrer = mTeacher;
-
         }
 
         private void createAndClose_Click(object sender, EventArgs e)
@@ -131,7 +130,6 @@ namespace TimetableOfClasses
         /// <param name="e"></param>
         private void AddTeacher_Load(object sender, EventArgs e)
         {
-
         }
 
         private void SelectionOfLetters1(object sender, EventArgs e)
@@ -149,7 +147,6 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = PeriodLetterToUpper(R.Text);
             }
-
         }
 
         private void SelectionOfLetters2(object sender, EventArgs e)
@@ -171,7 +168,6 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = FirstLetterToUpper(R.Text);
             }
-
         }
 
         private void SelectionOfLetters3(object sender, EventArgs e)
@@ -188,7 +184,6 @@ namespace TimetableOfClasses
                     R.Text = R.Text.Remove(R.Text.Length - 1);
                 R.Text = R.Text.ToUpper();
             }
-
         }
 
         private void SelectionOfLetters4(object sender, EventArgs e)
@@ -206,7 +201,6 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = FirstLetterToUpper(R.Text);
             }
-
         }
 
         private static string FirstLetterToUpper(string str)
@@ -304,7 +298,6 @@ namespace TimetableOfClasses
             //    T.BackColor = Color.Red;
             //else
             //    T.BackColor = Color.White;
-
         }
 
         private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
