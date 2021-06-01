@@ -178,7 +178,6 @@ namespace LibOfTimetableOfClasses
         /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Распределено
         /// </summary>
-
         public string Distributed
         {
             get
@@ -215,6 +214,5 @@ namespace LibOfTimetableOfClasses
             Occupation = occupation;
             Distributed = distributed;
         }
-
     }
 }
