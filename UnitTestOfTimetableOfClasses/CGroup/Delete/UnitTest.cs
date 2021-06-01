@@ -7,6 +7,16 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Delete
     public class UT_DCGroup
     {
         readonly RefData refData = new RefData();
+
+        /// <summary>
+        /// загрузка тестовых данных
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
+        {
+            refData.InitData();
+        }
+
         /// <summary>
         /// Удаление существующей строки 
         /// </summary>
