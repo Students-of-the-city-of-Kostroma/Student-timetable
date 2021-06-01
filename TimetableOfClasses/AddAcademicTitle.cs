@@ -51,7 +51,6 @@ namespace TimetableOfClasses
                         {
                             MessageBox.Show("Некорректно заполнены поля", "Ошибка");
                         }
-
                     }
                     else MessageBox.Show("Можно вводить только буквы и знаки: точка и тире", "Попробуйте снова");
                 }
