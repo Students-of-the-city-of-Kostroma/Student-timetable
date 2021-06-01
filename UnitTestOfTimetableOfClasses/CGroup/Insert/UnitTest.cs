@@ -7,7 +7,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
     [TestClass]
     public class UT_ICGroup
     {
-        RefData refData = new RefData();
+        readonly RefData refData = new RefData();
 
         /// <summary>
         /// загрузка тестовых данных
@@ -27,7 +27,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
             //act        
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12а12", "Напр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профиль", "ПРОФ", dp.CodeOfDP);
@@ -67,7 +67,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12б12", "Нбпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12б12", "Нбпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профель", "ПРЕФ", dp.CodeOfDP);
@@ -115,7 +115,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange        
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12в12", "Нвпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12в12", "Нвпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профвль", "ПРОФВ", dp.CodeOfDP);
@@ -144,7 +144,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12г12", "Нгпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12г12", "Нгпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профаль", "ПРОФА", dp.CodeOfDP);
@@ -170,7 +170,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12д12", "Ндпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12д12", "Ндпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профбль", "ПРОФБ", dp.CodeOfDP);
@@ -199,7 +199,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12е12", "Непр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12е12", "Непр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профяль", "ПРОФЯ", dp.CodeOfDP);
@@ -228,7 +228,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ё12", "Нёпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ё12", "Нёпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профгль", "ПРОФГ", dp.CodeOfDP);
@@ -257,7 +257,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ж12", "Нжпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12ж12", "Нжпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профдль", "ПРОФД", dp.CodeOfDP);
@@ -286,7 +286,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Insert
             //arrange
             bool expected = true;
 
-            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12з12", "Нзпр", 1, "КГУ");
+            MDirectionOfPreparation dp = new MDirectionOfPreparation("12а12з12", "Нзпр", 1, "ИАСТ");
             bool actual1 = refData.CDirectionOfPreparation.Insert(dp);
             Assert.AreEqual(expected, actual1);
             MTrainingProfile tp = new MTrainingProfile("Профёль", "ПРОФЁ", dp.CodeOfDP);
