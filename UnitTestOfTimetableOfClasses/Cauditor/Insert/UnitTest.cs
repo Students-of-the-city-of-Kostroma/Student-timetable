@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
+namespace UnitTestOfTimetableOfClasses.UT_CAuditor.ForFix
 {
     [TestClass]
     public class UT_ICAuditor
