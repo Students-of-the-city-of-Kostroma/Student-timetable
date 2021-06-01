@@ -7,6 +7,16 @@ namespace UnitTestOfTimetableOfClasses
     public class UT_Insert_CEnclosurse
     {
         RefData refData = new RefData();
+        
+        /// <summary>
+        /// Подгружает тестовые данные
+        /// </summary>
+        [TestInitialize]
+        public void RefDataInit()
+        {
+            refData.InitData();
+        }
+        
         /// <summary>
         /// Ввод в пустую таблицу
         /// </summary>
@@ -145,22 +155,6 @@ namespace UnitTestOfTimetableOfClasses
             bool actual = refData.CEnclosures.Insert(gr1);
             //assert
             Assert.AreEqual(expected, actual);
-            refData.CEnclosures.Delete(gr);
-            refData.CEnclosures.Delete(gr1);
-        }
-        /// <summary>
-        /// Ввод в поле телефон букв
-        /// </summary>
-        [TestMethod]
-        
-        public void Task_397_9()
-        {
-            //arrange
-            MEnclosures gr = new MEnclosures("А", "Костромской Государственный Университет", "Дзержинского", "аааааа", "1");
-            refData.CEnclosures.Insert(gr);
-            //act
-            MEnclosures gr1 = new MEnclosures("А", "Ярославский Государственный Университет", "Дзержинского", "аааааа", "1");
-            //assert
             refData.CEnclosures.Delete(gr);
             refData.CEnclosures.Delete(gr1);
         }
