@@ -37,6 +37,9 @@
             this.bt_Cr_n_Cl = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.nuPeriod = new System.Windows.Forms.NumericUpDown();
+            this.lInstitute = new System.Windows.Forms.Label();
+            this.tbInstitute = new System.Windows.Forms.TextBox();
+            this.bSelectInstitute = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nuPeriod)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +101,7 @@
             // bt_Cr_n_Close
             // 
             this.bt_Cr_n_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Cr_n_Close.Location = new System.Drawing.Point(191, 177);
+            this.bt_Cr_n_Close.Location = new System.Drawing.Point(191, 241);
             this.bt_Cr_n_Close.Name = "bt_Cr_n_Close";
             this.bt_Cr_n_Close.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bt_Cr_n_Close.Size = new System.Drawing.Size(75, 37);
@@ -110,7 +113,7 @@
             // bt_Cr_n_Cl
             // 
             this.bt_Cr_n_Cl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Cr_n_Cl.Location = new System.Drawing.Point(110, 177);
+            this.bt_Cr_n_Cl.Location = new System.Drawing.Point(110, 241);
             this.bt_Cr_n_Cl.Name = "bt_Cr_n_Cl";
             this.bt_Cr_n_Cl.Size = new System.Drawing.Size(75, 37);
             this.bt_Cr_n_Cl.TabIndex = 12;
@@ -121,7 +124,7 @@
             // btCancel
             // 
             this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancel.Location = new System.Drawing.Point(26, 177);
+            this.btCancel.Location = new System.Drawing.Point(26, 241);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(75, 37);
             this.btCancel.TabIndex = 11;
@@ -153,11 +156,42 @@
             0,
             0});
             // 
+            // lInstitute
+            // 
+            this.lInstitute.AutoSize = true;
+            this.lInstitute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lInstitute.Location = new System.Drawing.Point(13, 179);
+            this.lInstitute.Name = "lInstitute";
+            this.lInstitute.Size = new System.Drawing.Size(70, 16);
+            this.lInstitute.TabIndex = 15;
+            this.lInstitute.Text = "Институт";
+            // 
+            // tbInstitute
+            // 
+            this.tbInstitute.Location = new System.Drawing.Point(12, 199);
+            this.tbInstitute.Name = "tbInstitute";
+            this.tbInstitute.ReadOnly = true;
+            this.tbInstitute.Size = new System.Drawing.Size(195, 20);
+            this.tbInstitute.TabIndex = 16;
+            // 
+            // bSelectInstitute
+            // 
+            this.bSelectInstitute.Location = new System.Drawing.Point(213, 197);
+            this.bSelectInstitute.Name = "bSelectInstitute";
+            this.bSelectInstitute.Size = new System.Drawing.Size(75, 23);
+            this.bSelectInstitute.TabIndex = 17;
+            this.bSelectInstitute.Text = "Выбрать";
+            this.bSelectInstitute.UseVisualStyleBackColor = true;
+            this.bSelectInstitute.Click += new System.EventHandler(this.btSelectInstitute_Click);
+            // 
             // AddDirectionOfPreparation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 226);
+            this.ClientSize = new System.Drawing.Size(295, 290);
+            this.Controls.Add(this.bSelectInstitute);
+            this.Controls.Add(this.tbInstitute);
+            this.Controls.Add(this.lInstitute);
             this.Controls.Add(this.nuPeriod);
             this.Controls.Add(this.bt_Cr_n_Close);
             this.Controls.Add(this.bt_Cr_n_Cl);
@@ -187,5 +221,8 @@
         private System.Windows.Forms.Button bt_Cr_n_Cl;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.NumericUpDown nuPeriod;
+        private System.Windows.Forms.Label lInstitute;
+        private System.Windows.Forms.TextBox tbInstitute;
+        private System.Windows.Forms.Button bSelectInstitute;
     }
 }

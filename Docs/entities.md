@@ -1,0 +1,17 @@
+# Список сущностей
+- `AcademicDegree` - Ученая степень
+- `AcademicLoad` - Академическая нагрузка
+- `Auditor` - Аудитория
+- `DirectionOfPreparation` - Направление подготовки
+- `Discipline` - Дисциплина
+- `Enclosures` - Корпус
+- `Group` - Группа
+- `HEI` - ВУЗ
+- `Institute` - Институт
+- `StudyWeek` - Учебная неделя
+- `Teacher` - Преподаватель
+- `Title` - Ученое звание
+- `TrainingProfiles` - Профиль подготовки
+- `TypesOfOccupations` - Вид занятия
+- `University` - Университет
+- `CourseSchedule` - Расписание

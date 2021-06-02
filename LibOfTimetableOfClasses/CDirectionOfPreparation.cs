@@ -37,6 +37,13 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "PeriodOfStudy"
             };
             Columns.Add(column);
+
+            column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "InstituteShortName"
+            };
+            Columns.Add(column);
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CDirectionOfPreparation.
@@ -54,7 +61,8 @@ namespace LibOfTimetableOfClasses
             {
                 if ((string)Rows[i]["CodeOfDP"] == mDirectionOfPreparation.CodeOfDP
                 && (string)Rows[i]["NameOfDP"] == mDirectionOfPreparation.NameOfDP
-                && (ushort)Rows[i]["PeriodOfStudy"] == mDirectionOfPreparation.PeriodOfStudy)
+                && (ushort)Rows[i]["PeriodOfStudy"] == mDirectionOfPreparation.PeriodOfStudy
+                && (string)Rows[i]["InstituteShortName"] == mDirectionOfPreparation.InstituteShortName)
                 {
                     Rows.Remove(Rows[i]);
                     return true;
@@ -81,12 +89,13 @@ namespace LibOfTimetableOfClasses
                 newRow["CodeOfDP"] = mDirectionOfPreparation.CodeOfDP;
                 newRow["NameOfDP"] = mDirectionOfPreparation.NameOfDP;
                 newRow["PeriodOfStudy"] = mDirectionOfPreparation.PeriodOfStudy;
+                newRow["InstituteShortName"] = mDirectionOfPreparation.InstituteShortName;
                 Rows.Add(newRow);
                 return true;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Source);
+                Debug.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -112,13 +121,14 @@ namespace LibOfTimetableOfClasses
                         Rows[i].BeginEdit();
                         Rows[i]["NameOfDP"] = mDirectionOfPreparation.NameOfDP;
                         Rows[i]["PeriodOfStudy"] = mDirectionOfPreparation.PeriodOfStudy;
+                        Rows[i]["InstituteShortName"] = mDirectionOfPreparation.InstituteShortName;
                         Rows[i].EndEdit();
                         Rows[i].AcceptChanges();
                         return true;
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(ex.Source);
+                        Debug.WriteLine(ex.Message);
                         return false;
                     }
                 }
