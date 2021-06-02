@@ -3,8 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
-
-
     /// <summary>
     /// ВУЗ
     /// </summary>
@@ -292,7 +290,6 @@ namespace LibOfTimetableOfClasses
             Phone = phone;
 
         }
-
         private bool isLetterСaseNormal(string input)
         {
             input = Regex.Replace(input, @"\s+", " ");
@@ -316,5 +313,4 @@ namespace LibOfTimetableOfClasses
             return true;
         }
     }
-
 }
