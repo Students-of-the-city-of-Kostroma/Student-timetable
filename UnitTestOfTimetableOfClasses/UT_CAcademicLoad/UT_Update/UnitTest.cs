@@ -43,7 +43,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
             MAcademicLoad PreMa = new MAcademicLoad(100, "17-ИСбо-2а", "Правоведение", "Иванов Иван Иванович", "Лекция", "20","к");
             bool actualPreMa = refData.CAcademicLoad.Insert(PreMa);
             Assert.AreEqual(true, actualPreMa, "Не удалось вставить нагрузку для " + PreMa.Group);
-
         }
         RefData refData = new RefData();
 

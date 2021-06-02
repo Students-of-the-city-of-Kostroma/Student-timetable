@@ -20,7 +20,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTitle.UT_Update
             bool result = refData.CTitle.Update(T_Title);
             //assert
             Assert.IsFalse(result, "Ожидаем, что Модель изменится");
-
         }
 
         [TestMethod]

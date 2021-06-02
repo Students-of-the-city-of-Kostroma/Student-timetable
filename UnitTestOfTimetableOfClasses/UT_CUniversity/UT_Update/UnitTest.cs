@@ -63,7 +63,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Update
 
             result = refData.CUniversity.Delete(gr1);
             Assert.IsTrue(result);
-
         }
 
         /// <summary>
