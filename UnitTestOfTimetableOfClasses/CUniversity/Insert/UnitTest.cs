@@ -1,7 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
 namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
 {
     [TestClass]
@@ -18,7 +17,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             MUniversity gr = new MUniversity("4401006286", "КГУ", "Костромкой Государственный Университет", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "156005, Костромская область, г. Кострома, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "kgu@mail.ru", "84942317960");
             bool expected = true;
             //act 
-
             bool actual = refData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
@@ -41,8 +39,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -63,10 +59,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-           
-            Assert.AreEqual(true, refData.CUniversity.Delete(gr));
-            
+            Assert.AreEqual(true, refData.CUniversity.Delete(gr));  
         }
 
         /// <summary>
@@ -85,8 +78,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-          
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -107,8 +98,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -129,8 +118,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -151,8 +138,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-
-           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
            }
 
@@ -171,10 +156,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             MUniversity gr1 = new MUniversity("4401015275", "КГТУ", "Костромкой Государственный Тех Университет", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "156005, Костромская область, г. Кострома, ул. Ивановская, 17", "Петр", "Наумов", "Рудольфович", "kgtu@mail.ru", "84942317960");
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
-            Assert.AreEqual(expected, actual);
-            
-            Assert.AreEqual(true, refData.CUniversity.Delete(gr));
-            
+            Assert.AreEqual(expected, actual); 
+            Assert.AreEqual(true, refData.CUniversity.Delete(gr));  
         }
 
         /// <summary>
@@ -193,10 +176,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             bool actual = refData.CUniversity.Insert(gr1);
             //assert 
             Assert.AreEqual(expected, actual);
-            
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
-            
-
         }
 
         /// <summary>
@@ -211,14 +191,10 @@ namespace UnitTestOfTimetableOfClasses.UT_CUniversity.UT_Insert
             Assert.IsTrue(result);
             bool expected = false;
             //act 
-           
             bool actual = refData.CUniversity.Insert(gr);
             //assert 
             Assert.AreEqual(expected, actual);
-           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
-            
-
         }
     }
 }
