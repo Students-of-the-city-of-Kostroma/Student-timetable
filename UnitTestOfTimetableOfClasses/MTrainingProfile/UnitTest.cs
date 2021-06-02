@@ -8,21 +8,9 @@ namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
     public class UT_MTrainingProfile
     {
         RefData refData = new RefData();
-        //[TestMethod]
-        //public void MTrainingProfile_1()
-        //{
-        //    try
-        //    {
-        //        MTrainingProfile mTrainingProfile = new MTrainingProfile("", "");
-        //        Assert.AreEqual(typeof(Guid), mTrainingProfile.ID.GetType(), "Ожидался тип поля Guid");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Assert.Fail(ex.Message);
-        //    }
-        //}
+
         [TestMethod]
-        public void MTrainingProfile_2()
+        public void MTrainingProfile_1()
         {
             try
             {
@@ -35,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
             }
         }
         [TestMethod]
-        public void MTrainingProfile_3()
+        public void MTrainingProfile_2()
         {
             try
             {
@@ -48,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MTrainingProfile
             }
         }
         [TestMethod]
-        public void MTrainingProfile_4()
+        public void MTrainingProfile_3()
         {
             try
             {
