@@ -242,8 +242,6 @@ namespace TimetableOfClasses
             return "";
         }
 
-
-
         private void KeyPress1(object sender, KeyPressEventArgs e)
         {
             char l = e.KeyChar;
