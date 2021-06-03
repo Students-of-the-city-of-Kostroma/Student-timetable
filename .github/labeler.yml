@@ -4,5 +4,5 @@ TimetableOfClasses:
   - TimetableOfClasses/**/*
 UnitTestOfTimetableOfClasses:
   - UnitTestOfTimetableOfClasses/**/*
- ALARM:
+ALARM:
   - any: [*.sln, *.csproj]
