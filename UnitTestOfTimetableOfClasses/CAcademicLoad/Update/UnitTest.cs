@@ -117,6 +117,5 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicLoad.UT_Update
             bool actual = refData.CAcademicLoad.Update(PreMa);
             Assert.AreEqual(expected, actual, " Произошел ввод некорректных данных в атрибут тип занятия ");
         }
-
     }
 }

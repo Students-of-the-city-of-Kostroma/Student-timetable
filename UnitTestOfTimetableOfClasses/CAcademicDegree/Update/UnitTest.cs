@@ -44,7 +44,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Update
 
             //assert
             Assert.AreEqual(ex, act);
-
         }
         /// <summary>
         /// Замена всех полей пустыми строками
@@ -64,7 +63,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Update
 
             //assert
             Assert.AreEqual(ex, act);
-
         }
     }
 }

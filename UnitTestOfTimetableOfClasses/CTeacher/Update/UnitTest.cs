@@ -39,7 +39,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.IsFalse( actual, " Удалось Изменить сведения в пустой таблице");
-            
         }
         /// <summary>
         /// Изменить несуществующего преподавателя
@@ -59,7 +58,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             bool actual = refData.CTeacher.Update(tcher1);
             //assert
             Assert.IsFalse(actual, "Удалось Изменить несуществующего преподавателя");
-
         }
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров
@@ -88,7 +86,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CTeacher.UT_Update
             Assert.AreEqual(expected, actual, "Ввод коректных данных, при условии, что они не дублируют данные других экземпляров не произошел");
             //clear data
             Assert.IsTrue(refData.CTeacher.Delete(tcher), "Не удалось удалить преподавателя"+ tcher.FirstName);
-    
         }
 
         /// <summary>
