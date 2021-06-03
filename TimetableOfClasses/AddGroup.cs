@@ -194,6 +194,7 @@ namespace TimetableOfClasses
                     R.Text = R.Text.Remove(R.Text.Length - 1);
                 while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
                     R.Text = R.Text.Remove(R.Text.Length - 1);
+                    
             }
             R.Text = R.Text.ToLower();
             R.Text = FirstLetterToUpper(R.Text);
