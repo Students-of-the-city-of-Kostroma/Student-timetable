@@ -6,4 +6,4 @@ UnitTestOfTimetableOfClasses:
   - UnitTestOfTimetableOfClasses/**/*
 ALARM:
   - TimetableOfClasses.sln
-  - */*.csproj
+  - */*.csproj*
