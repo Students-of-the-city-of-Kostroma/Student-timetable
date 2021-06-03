@@ -36,9 +36,9 @@ namespace LibOfTimetableOfClasses
                     if ((value[i] < 'А' || value[i] > 'я') && value[i] != ' ' && value[i] != '.') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
 
                     if ((value[i] >= 'А' && value[i] <= 'Я') && value[i - 1] != ' ') throw new Exception("Заглавные буквы разрешены только в начале слова !");
+                    
+                    if ((value[i] >= 'А' && value[i] <= 'я') && (value[value.Length - 1] != '.')) throw new Exception("Точка разрешена тольео в конце слова !");
                 }
-                for (int i = 1; i < value.Length-1; i++)
-                    if ((value[i-1] >= 'А' && value[i-1] <= 'я') && (value[i]=='.' && value[i+1] !=' ')  ) throw new Exception("Точка разрешена тольео в конце слова !");
                 
                 _fullname = value;
             }
