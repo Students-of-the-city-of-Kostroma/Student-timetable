@@ -134,13 +134,13 @@ namespace TimetableOfClasses
 
         private void SelectionOfLetters1(object sender, EventArgs e)
         {
-            SelectionOfLetters(sender, e);
+            TextBox R = (TextBox)SelectionOfLetters(sender, e);
             if (R.Text.Length > 2)
             {
                 R.Text = PeriodLetterToUpper(R.Text);
             }
         }
-        private void SelectionOfLetters(object sender, EventArgs e)
+        private static object SelectionOfLetters(object sender, EventArgs e)
         {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
@@ -154,10 +154,11 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = PeriodLetterToUpper(R.Text);
             }
+            return R;
         }
         private void SelectionOfLetters2(object sender, EventArgs e)
         {
-            SelectionOfLetters(sender, e);
+            TextBox R = (TextBox)SelectionOfLetters(sender, e);
             if (R.Text.Length > 2)
             {
                 R.Text = FirstLetterToUpper(R.Text);
