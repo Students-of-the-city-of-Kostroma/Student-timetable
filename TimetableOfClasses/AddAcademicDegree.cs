@@ -188,7 +188,7 @@ namespace TimetableOfClasses
         }
         private void Reduction_Leave(object sender, EventArgs e)
         {
-            Leave();
+            Leave(sender, e);
         }
         private void Leave(object sender, EventArgs e)
         {
@@ -208,7 +208,7 @@ namespace TimetableOfClasses
         }
         private void FullName_Leave(object sender, EventArgs e)
         {
-            Leave();
+            Leave(sender, e);
         }
     }
 }
