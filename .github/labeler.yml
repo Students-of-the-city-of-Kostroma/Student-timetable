@@ -5,4 +5,4 @@ TimetableOfClasses:
 UnitTestOfTimetableOfClasses:
   - UnitTestOfTimetableOfClasses/**/*
 ALARM:
-  - any: ['*.sln', '*.csproj']
+  - any: ["*.sln", "*.csproj"]
