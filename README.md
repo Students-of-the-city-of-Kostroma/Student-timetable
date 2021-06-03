@@ -1,3 +1,4 @@
+[![Labeler](https://github.com/Students-of-the-city-of-Kostroma/Student-timetable/actions/workflows/label.yml/badge.svg)](https://github.com/Students-of-the-city-of-Kostroma/Student-timetable/actions/workflows/label.yml)
 # Цели проекта
 - Научить студентов командной работе 
 - Дать практический опыт работы с репозиторием.
