@@ -70,7 +70,6 @@ namespace TimetableOfClasses
             weekends.Text = mTeacher.Weekends;
 
             Lehrer = mTeacher;
-
         }
 
         private void createAndClose_Click(object sender, EventArgs e)
@@ -131,15 +130,21 @@ namespace TimetableOfClasses
         /// <param name="e"></param>
         private void AddTeacher_Load(object sender, EventArgs e)
         {
-
         }
 
         private void SelectionOfLetters1(object sender, EventArgs e)
         {
+            SelectionOfLetters();
+            if (R.Text.Length > 2)
+            {
+                R.Text = PeriodLetterToUpper(R.Text);
+            }
+        }
+        private void SelectionOfLetters(object sender, EventArgs e)
+        {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
             R.Text = Regex.Replace(R.Text, "[, ]+", ", ");
-
             if (R.Text.Length > 2)
             {
                 if (R.Text.IndexOf(", ") == 0)
@@ -149,21 +154,12 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = PeriodLetterToUpper(R.Text);
             }
-
         }
-
         private void SelectionOfLetters2(object sender, EventArgs e)
         {
-            TextBox R = sender as TextBox;
-            R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
-            R.Text = Regex.Replace(R.Text, "[ ]+", " ");
+            SelectionOfLetters();
             if (R.Text.Length > 2)
             {
-                if (R.Text.IndexOf(" ") == 0)
-                    R.Text = R.Text.Substring(1);
-                if (R.Text.LastIndexOf(" ") == R.Text.Length - 1)
-                    R.Text = R.Text.Remove(R.Text.Length - 1);
-                R.Text = R.Text.ToLower();
                 R.Text = FirstLetterToUpper(R.Text);
             }
             if (R.Text.Length == 1)
@@ -171,7 +167,6 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = FirstLetterToUpper(R.Text);
             }
-
         }
 
         private void SelectionOfLetters3(object sender, EventArgs e)
@@ -188,7 +183,6 @@ namespace TimetableOfClasses
                     R.Text = R.Text.Remove(R.Text.Length - 1);
                 R.Text = R.Text.ToUpper();
             }
-
         }
 
         private void SelectionOfLetters4(object sender, EventArgs e)
@@ -206,7 +200,6 @@ namespace TimetableOfClasses
                 R.Text = R.Text.ToLower();
                 R.Text = FirstLetterToUpper(R.Text);
             }
-
         }
 
         private static string FirstLetterToUpper(string str)
@@ -247,8 +240,6 @@ namespace TimetableOfClasses
             }
             return "";
         }
-
-
 
         private void KeyPress1(object sender, KeyPressEventArgs e)
         {
@@ -304,7 +295,6 @@ namespace TimetableOfClasses
             //    T.BackColor = Color.Red;
             //else
             //    T.BackColor = Color.White;
-
         }
 
         private void checkPatronymic_CheckedChanged(object sender, EventArgs e)
