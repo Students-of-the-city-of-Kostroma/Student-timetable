@@ -7,9 +7,6 @@
 
 name: Labeler
 on: [pull_request]
-
-LibOfTimetableOfClasses:
-- LibOfTimetableOfClasses/**/*
   
 jobs:
   label:
