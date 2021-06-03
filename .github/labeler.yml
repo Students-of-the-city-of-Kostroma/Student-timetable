@@ -1,2 +1,6 @@
 LibOfTimetableOfClasses:
   - LibOfTimetableOfClasses/**/*
+TimetableOfClasses:
+  - TimetableOfClasses/**/*
+UnitTestOfTimetableOfClasses:
+  - UnitTestOfTimetableOfClasses/**/*
