@@ -134,7 +134,7 @@ namespace TimetableOfClasses
 
         private void SelectionOfLetters1(object sender, EventArgs e)
         {
-            SelectionOfLetters(object sender, EventArgs e);
+            SelectionOfLetters(sender, e);
             if (R.Text.Length > 2)
             {
                 R.Text = PeriodLetterToUpper(R.Text);
@@ -157,7 +157,7 @@ namespace TimetableOfClasses
         }
         private void SelectionOfLetters2(object sender, EventArgs e)
         {
-            SelectionOfLetters(object sender, EventArgs e);
+            SelectionOfLetters(sender, e);
             if (R.Text.Length > 2)
             {
                 R.Text = FirstLetterToUpper(R.Text);
