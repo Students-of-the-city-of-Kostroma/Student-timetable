@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddGroup : Form
+    public partial class AddGroup : ParentSelectionOfLetters
     {
         private MGroup group;
         public string shortNameSpec;
@@ -65,7 +65,6 @@ namespace TimetableOfClasses
             Close();
         }
 
-
         private void createAndClose_Click(object sender, EventArgs e)
         {
             string[] args = new string[] { tbNameGroup.Text, tbVixodnie.Text };
@@ -86,7 +85,6 @@ namespace TimetableOfClasses
             {
                 errors = "Выберите направление подготовки";
             }
-
 
             ushort semest, smena, countStudents, minPar, maxPar;
             if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
@@ -172,57 +170,16 @@ namespace TimetableOfClasses
             {
                 R.Text = "00-ААаа-0а";
             }
-
         }
 
-        private void SelectionOfLetters2(object sender, EventArgs e)
-        {
-            TextBox R = sender as TextBox;
-            R.Text = Regex.Replace(R.Text, "[^а-яА-Я-, ]", "");
+     
 
-            while (R.Text.IndexOf("-") == 0)
-                R.Text = R.Text.Substring(1);
-            while (R.Text.IndexOf(" ") == 0)
-                R.Text = R.Text.Substring(1);
-            while (R.Text.IndexOf(",") == 0)
-                R.Text = R.Text.Substring(1);
-            if (R.Text.Length != 0)
-            {
-                while (R.Text.LastIndexOf(" ") == R.Text.Length - 1 && R.Text.Length != 0)
-                    R.Text = R.Text.Remove(R.Text.Length - 1);
-                while (R.Text.LastIndexOf("-") == R.Text.Length - 1 && R.Text.Length != 0)
-                    R.Text = R.Text.Remove(R.Text.Length - 1);
-                while (R.Text.LastIndexOf(",") == R.Text.Length - 1 && R.Text.Length != 0)
-                    R.Text = R.Text.Remove(R.Text.Length - 1);
-                    
-            }
-            R.Text = R.Text.ToLower();
-            R.Text = FirstLetterToUpper(R.Text);
 
-        }
 
-        private static string FirstLetterToUpper(string str)
-        {
-            if (str.Length > 0)
-            {
-                int index = 0;
-                string text = Char.ToUpper(str[0]) + str.Substring(1);
-                while (str.IndexOf(",", index + 1) > index)
-                {
-                    index = str.IndexOf(",", index + 1);
-                    for (int i = index + 1; i < text.Length; i++)
-                    {
-                        if (text[i] >= 'А' && text[i] <= 'я')
-                        {
-                            text = text.Substring(0, i) + Char.ToUpper(text[i]) + text.Substring(i + 1);
-                            break;
-                        }
-                    }
-                }
-                return text;
-            }
-            return "";
-        }
+
+
+
+
 
         private void fieldChanged(object sender, EventArgs e)
         {
