@@ -16,21 +16,27 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CTrainingProfile() : base("Профиль подготовки")
         {
-            DataColumn column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Fullname";
-            column.Unique = true;
+            DataColumn column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "Fullname",
+                Unique = true
+            };
             Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Shortname";
+            column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "Shortname"
+            };
             Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = typeof(string);
-            column.ColumnName = "Shiphr";
-            column.Unique = true;
+            column = new DataColumn
+            {
+                DataType = typeof(string),
+                ColumnName = "Shiphr"
+            };
+
             Columns.Add(column);
         }
         /// <summary>

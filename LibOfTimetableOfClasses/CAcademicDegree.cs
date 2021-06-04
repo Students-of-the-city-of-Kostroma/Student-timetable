@@ -16,7 +16,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CAcademicDegree() : base("Учёная степень")
         {
-
             DataColumn column = new DataColumn
             {
                 DataType = typeof(string),
@@ -25,7 +24,6 @@ namespace LibOfTimetableOfClasses
             };
             this.Columns.Add(column);
 
-
             column = new DataColumn
             {
                 DataType = typeof(string),
@@ -33,7 +31,6 @@ namespace LibOfTimetableOfClasses
                 Unique = true
             };
             this.Columns.Add(column);
-
         }
 
         /// <summary>
@@ -66,7 +63,6 @@ namespace LibOfTimetableOfClasses
 
             try
             {
-
                 DataRow newRow = this.NewRow();
                 newRow["FullName"] = mAcademicDegree.FullName;
                 newRow["Reduction"] = mAcademicDegree.Reduction;
@@ -114,4 +110,3 @@ namespace LibOfTimetableOfClasses
         }
     }
 }
-

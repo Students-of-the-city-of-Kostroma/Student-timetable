@@ -16,19 +16,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CAcademicLoad() : base("Нагрузка")
         {
-            var keys = new DataColumn[1];
-
-            DataColumn idColumn = new DataColumn
-            {
-                DataType = typeof(int),
-                ColumnName = "ID",
-            };
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
-            Columns.Add(idColumn);
-            keys[0] = idColumn;
 
             DataColumn column = new DataColumn
             {
@@ -71,8 +58,6 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "KindOfLesson"
             };
             this.Columns.Add(column);
-
-            PrimaryKey = keys;
         }
         /// <summary>
         /// Удаляет запись из таблицы данных об академической нагрузке
@@ -97,7 +82,6 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
-
         /// <summary>
         ///  Метод вставки переданной модели MAcademicLoad в таблицу
         /// </summary>
