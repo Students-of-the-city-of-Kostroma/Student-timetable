@@ -20,6 +20,20 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CCourseSchedule() : base("Расписание")
         {
+            var keys = new DataColumn[1];
+
+            DataColumn idColumn = new DataColumn
+            {
+                DataType = typeof(int),
+                ColumnName = "ID",
+            };
+            idColumn.Unique = true;
+            idColumn.AutoIncrement = true;
+            idColumn.AutoIncrementSeed = 1;
+            idColumn.AutoIncrementStep = 1;
+            Columns.Add(idColumn);
+            keys[0] = idColumn;
+
             DataColumn column = new DataColumn
             {
                 DataType = typeof(int),
@@ -61,6 +75,8 @@ namespace LibOfTimetableOfClasses
                 ColumnName = "EndTime"
             };
             Columns.Add(column);
+
+            PrimaryKey = keys;
         }
 
         /// <summary>
