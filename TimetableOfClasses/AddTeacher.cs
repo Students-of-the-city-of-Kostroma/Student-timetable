@@ -128,10 +128,6 @@ namespace TimetableOfClasses
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddTeacher_Load(object sender, EventArgs e)
-        {
-        }
-
         private void SelectionOfLetters1(object sender, EventArgs e)
         {
             TextBox R = (TextBox)SelectionOfLetters(sender, e);
@@ -140,7 +136,7 @@ namespace TimetableOfClasses
                 R.Text = PeriodLetterToUpper(R.Text);
             }
         }
-        private static object SelectionOfLetters(object sender, EventArgs e)
+        private static TextBox SelectionOfLetters(object sender, EventArgs e)
         {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
@@ -158,7 +154,7 @@ namespace TimetableOfClasses
         }
         private void SelectionOfLetters2(object sender, EventArgs e)
         {
-            TextBox R = (TextBox)SelectionOfLetters(sender, e);
+            TextBox R = SelectionOfLetters(sender, e);
             if (R.Text.Length > 2)
             {
                 R.Text = FirstLetterToUpper(R.Text);
