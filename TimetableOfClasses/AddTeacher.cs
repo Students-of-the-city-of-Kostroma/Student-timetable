@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddTeacher : Form
+    public partial class AddTeacher : ParentLettersToUpper
     {
         private MTeacher Lehrer;
 
@@ -215,32 +215,7 @@ namespace TimetableOfClasses
                     return Char.ToUpper(str[0]) + str.Substring(1);
             }
             return "";
-        }
-
-        private static string PeriodLetterToUpper(string str)
-        {
-            if (str.Length > 0)
-            {
-                if (str.IndexOf(",") > 0)
-                {
-                    char p;
-                    str = Char.ToUpper(str[0]) + str.Substring(1);
-                    for (int i = 0; i < str.Length; i++)
-                    {
-                        if (str[i] == ',')
-                        {
-                            p = Char.ToUpper(str[i + 2]);
-                            str = str.Remove(i + 2, 1);
-                            str = str.Insert(i + 2, "" + p);
-                        }
-                    }
-                    return str;
-                }
-                else
-                    return Char.ToUpper(str[0]) + str.Substring(1);
-            }
-            return "";
-        }
+        }              
 
         private void KeyPress1(object sender, KeyPressEventArgs e)
         {
