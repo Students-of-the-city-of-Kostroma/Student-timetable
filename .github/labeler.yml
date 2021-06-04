@@ -5,10 +5,8 @@ TimetableOfClasses:
 UnitTestOfTimetableOfClasses:
   - UnitTestOfTimetableOfClasses/**/*
 ALARM:
-  - TimetableOfClasses.sln
-  - LibOfTimetableOfClasses/LibOfTimetableOfClasses.csproj
-  - TimetableOfClasses/TimetableOfClasses.csproj
-  - UnitTestOfTimetableOfClasses/UnitTestOfTimetableOfClasses.csproj
+  - **.sln
+  - **.csproj
 Documentation:
   - **.md
   - **.MD
