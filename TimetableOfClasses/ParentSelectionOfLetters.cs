@@ -30,7 +30,6 @@ namespace TimetableOfClasses
             }
             R.Text = R.Text.ToLower();
             R.Text = FirstLetterToUpper(R.Text);
-
         }
 
         private static string FirstLetterToUpper(string str)
