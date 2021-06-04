@@ -172,7 +172,6 @@ namespace TimetableOfClasses
             }
         }
 
-
         private void fieldChanged(object sender, EventArgs e)
         {
             TextBox R = sender as TextBox;
