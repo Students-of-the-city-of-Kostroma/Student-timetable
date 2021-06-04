@@ -42,6 +42,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
+           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -63,7 +64,9 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
-            Assert.AreEqual(true, refData.CUniversity.Delete(gr));   
+           
+            Assert.AreEqual(true, refData.CUniversity.Delete(gr));
+            
         }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
+          
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -104,6 +108,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
+           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -125,6 +130,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
+           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
             Assert.AreEqual(true, refData.CUniversity.Delete(gr1));
         }
@@ -146,6 +152,7 @@ namespace UnitTestOfTimetableOfClasses
             //assert 
             Assert.AreEqual(expected, actual);
 
+           
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
            }
 
@@ -167,6 +174,7 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
+            
         }
 
         /// <summary>
@@ -187,6 +195,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
             
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
+            
+
         }
 
         /// <summary>
@@ -207,6 +217,8 @@ namespace UnitTestOfTimetableOfClasses
             Assert.AreEqual(expected, actual);
            
             Assert.AreEqual(true, refData.CUniversity.Delete(gr));
+            
+
         }
     }
 }
