@@ -142,6 +142,12 @@
     <Compile Include="AddTeacher.Designer.cs">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTypesOfOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTypesOfOccupation.Designer.cs">
+      <DependentUpon>AddTypesOfOccupation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Departments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </Compile>
     <Compile Include="Ministry.Designer.cs">
       <DependentUpon>Ministry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentSelectionOfLetters.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
@@ -305,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrEditDirectory.resx">
       <DependentUpon>AddOrEditDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTypesOfOccupation.resx">
+      <DependentUpon>AddTypesOfOccupation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Departments.resx">
       <DependentUpon>Departments.cs</DependentUpon>
