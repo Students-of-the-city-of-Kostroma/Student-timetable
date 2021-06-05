@@ -97,7 +97,6 @@ namespace LibOfTimetableOfClasses
             }
             return false;
         }
-
         /// <summary>
         ///  Метод вставки переданной модели MAcademicLoad в таблицу
         /// </summary>
