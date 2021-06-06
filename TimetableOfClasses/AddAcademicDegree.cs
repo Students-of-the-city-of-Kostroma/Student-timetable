@@ -188,9 +188,9 @@ namespace TimetableOfClasses
         }
         private void Reduction_Leave(object sender, EventArgs e)
         {
-            Leave(sender, e);
+            TerxtBox_Leave(sender, e);
         }
-        private void Leave(object sender, EventArgs e)
+        private void TerxtBox_Leave(object sender, EventArgs e)
         {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
@@ -208,7 +208,7 @@ namespace TimetableOfClasses
         }
         private void FullName_Leave(object sender, EventArgs e)
         {
-            Leave(sender, e);
+            TerxtBox_Leave(sender, e);
         }
     }
 }
