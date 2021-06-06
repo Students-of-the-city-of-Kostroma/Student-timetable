@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddAcademicDegree : ParentLettersToUpper
+    public partial class AddAcademicDegree : AddInstance
     {
         public AddAcademicDegree()
         {

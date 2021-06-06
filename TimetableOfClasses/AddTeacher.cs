@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddTeacher : ParentLettersToUpper
+    public partial class AddTeacher : AddInstance
     {
         private MTeacher Lehrer;
 
