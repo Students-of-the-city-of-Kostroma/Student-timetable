@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Класс со свойствами определяющими запись о корпусе в справочнике Корпуса
     /// </summary>
-    public class MEnclosures : Model
+    public class MEnclosures : LetterCaseNormal
     {
         string _name;
         string _university;
