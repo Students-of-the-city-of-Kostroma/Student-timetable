@@ -211,7 +211,6 @@ namespace TimetableOfClasses
                     return Char.ToUpper(str[0]) + str.Substring(1);
             }
             return "";
-
         }              
 
         private void KeyPress1(object sender, KeyPressEventArgs e)
