@@ -54,7 +54,7 @@ namespace TimetableOfClasses
 
         private void BtAdd_Click(object sender, EventArgs e)
         {
-            AddTypesOfOccupations addTypesOfOccupations = new AddTypesOfOccupations();
+            AddTypesOfOccupation addTypesOfOccupations = new AddTypesOfOccupation();
             addTypesOfOccupations.ShowDialog();
         }
 
@@ -64,7 +64,7 @@ namespace TimetableOfClasses
             {
                 DataRow Row = ((DataRowView)DG_TypesOfOccupations.SelectedRows[0].DataBoundItem).Row;
                 MTypesOfOccupations mTypesOfOccupations = new MTypesOfOccupations((string)Row["Fullname"], (string)Row["Shortname"]);
-                AddTypesOfOccupations add = new AddTypesOfOccupations(mTypesOfOccupations)
+                AddTypesOfOccupation add = new AddTypesOfOccupation(mTypesOfOccupations)
                 {
                     Owner = this
                 };
