@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public class ParentLettersToUpper:Form
+    /// <summary>
+    /// Родительский класс для форм по добавлению сущностей
+    /// </summary>
+    public class AddInstance:Form
     {
+    /// <summary>
+    /// Заменить первые буквы слов в строке на заглавные (слова указываются через запятую)
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
         public static string PeriodLetterToUpper(string str)
         {
             if (str.Length > 0)
