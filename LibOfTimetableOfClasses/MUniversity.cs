@@ -6,7 +6,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// ВУЗ
     /// </summary>
-    public class MUniversity : Model
+    public class MUniversity : LetterCaseNormal
     {
         /// <summary>
         /// ИНН
