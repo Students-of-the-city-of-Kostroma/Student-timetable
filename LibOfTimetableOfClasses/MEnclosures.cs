@@ -63,7 +63,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
                 if (!Regex.IsMatch(value, @"[А-Яа-я\- ]"))
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка содержащая недопустимые символы");
-                if (!IsLetterСaseNormal(value))
+                if (!isLetterСaseNormal(value))
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка неверного формата");
                 _university = value;
             }
