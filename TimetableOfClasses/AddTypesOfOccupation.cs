@@ -5,16 +5,16 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddTypesOfOccupations : Form
+    public partial class AddTypesOfOccupation : Form
     {
-        public AddTypesOfOccupations()
+        public AddTypesOfOccupation()
         {
             InitializeComponent();
             itsupdate = false;
         }
 
         private readonly bool itsupdate;
-        public AddTypesOfOccupations(MTypesOfOccupations mTypesOfOccupations)
+        public AddTypesOfOccupation(MTypesOfOccupations mTypesOfOccupations)
         {
             InitializeComponent();
             Text = "Изменение вида занятия";

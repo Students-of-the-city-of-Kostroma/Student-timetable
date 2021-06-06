@@ -1,6 +1,6 @@
 ﻿namespace TimetableOfClasses
 {
-    partial class AddTypesOfOccupations
+    partial class AddTypesOfOccupation
     {
         /// <summary>
         /// Required designer variable.
