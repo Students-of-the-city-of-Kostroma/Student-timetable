@@ -18,7 +18,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
             bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-
         }
 
         [TestMethod]
@@ -32,7 +31,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
             bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-
         }
 
         [TestMethod]
@@ -46,7 +44,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
             bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-
         }
 
         [TestMethod]
@@ -60,7 +57,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
             bool result = refData.CInstitute.Update(T_Institute);
 
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-
         }
 
         [TestMethod]
@@ -74,7 +70,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Update
 
             bool result = refData.CInstitute.Update(T_Institute);
             Assert.IsFalse(result, "Ожидаем, что Модель не изменяется");
-
         }
     }
 }
