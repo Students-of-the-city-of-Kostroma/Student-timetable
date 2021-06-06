@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRing.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CAcademicLoad.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -81,8 +84,10 @@
     <Compile Include="CTypesOfOccupations.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="LetterCaseNormal.cs" />
     <Compile Include="Logs.cs" />
     <Compile Include="MAcademicLoad.cs" />
+    <Compile Include="MRing.cs" />
     <Compile Include="MCourseSchedule.cs" />
     <Compile Include="RefData.cs" />
     <Compile Include="CTeacher.cs">
