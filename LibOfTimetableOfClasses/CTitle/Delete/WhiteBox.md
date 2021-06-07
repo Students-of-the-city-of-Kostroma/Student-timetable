@@ -1,8 +1,7 @@
 # **Тестируемый метод**  
 ![image](https://user-images.githubusercontent.com/81414510/120844555-3de38380-c578-11eb-8b25-844993f99157.png)
 # **Управляющий граф**  
-![image](https://user-images.githubusercontent.com/81414510/120842792-d9272980-c575-11eb-960c-ea0fdd92de01.png)
-
+![image](https://user-images.githubusercontent.com/81414510/121014604-d5c4b580-c7a2-11eb-8027-8b99eaf569f0.png)
 
 # **Маршруты на основании управляющего графа**  
 R1:0-1-2-11-12 
