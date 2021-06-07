@@ -25,10 +25,9 @@ namespace TimetableOfClasses
             Reduction.Text = mAcademicDegree.Reduction;
             update = true;
         }
-
-        private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
+        public void CreateDegree()
         {
-            if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))//ну и накодили тут =)
+            if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
             {
                 if (Reduction.Text.Length != 0)
                 {
@@ -39,7 +38,14 @@ namespace TimetableOfClasses
                             try
                             {
                                 MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                Program.refData.CAcademicDegree.Insert(AcademicDegree);
+                                if (update)
+                                {
+                                    Program.refData.CAcademicDegree.Update(AcademicDegree);
+                                }
+                                else 
+                                {
+                                    Program.refData.CAcademicDegree.Insert(AcademicDegree);
+                                }
                                 FullName.Text = "";
                                 Reduction.Text = "";
                             }
@@ -57,72 +63,14 @@ namespace TimetableOfClasses
             }
             else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
         }
+        private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
+        {
+            CreateDegree();
+        }
         private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
         {
-            if (update)
-            {
-                if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
-                {
-                    if (Reduction.Text.Length != 0)
-                    {
-                        if (FullName.Text.Length != 0)
-                        {
-                            if (FullName.Text.Length >= Reduction.Text.Length)
-                            {
-                                try
-                                {
-                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                    Program.refData.CAcademicDegree.Update(AcademicDegree);
-                                    FullName.Text = "";
-                                    Reduction.Text = "";
-                                    Close();
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                                }
-                            }
-                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
-                                "Попробуйте снова", MessageBoxButtons.OK);
-                        }
-                        else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                    }
-                    else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                }
-                else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
-            }
-            else
-            {
-                if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
-                {
-                    if (Reduction.Text.Length != 0)
-                    {
-                        if (FullName.Text.Length != 0)
-                        {
-                            if (FullName.Text.Length >= Reduction.Text.Length)
-                            {
-                                try
-                                {
-                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                    Program.refData.CAcademicDegree.Insert(AcademicDegree);
-                                    FullName.Text = "";
-                                    Reduction.Text = "";
-                                    Close();
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                                }
-                            }
-                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
-                                "Попробуйте снова", MessageBoxButtons.OK);
-                        }
-                        else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                    }
-                    else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                }
-                else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
-            }
+                CreateDegree();
+                Close();
         }
 
         private void Button3_Click(object sender, EventArgs e) //Отмена
