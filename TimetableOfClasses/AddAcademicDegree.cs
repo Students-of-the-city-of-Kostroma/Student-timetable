@@ -25,7 +25,7 @@ namespace TimetableOfClasses
             Reduction.Text = mAcademicDegree.Reduction;
             update = true;
         }
-        public void Button()
+        public void Method1()
         {
             if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
             {
@@ -58,18 +58,18 @@ namespace TimetableOfClasses
         }
         private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
         {
-            Button();
+            Method1();
         }
         private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
         {
             if (update)
             {
-                Button();
+                Method1();
                 Close();
             }
             else
             {
-                Button();
+                Method1();
                 Close();
             }
         }
