@@ -1,7 +1,7 @@
 # **Тестируемый метод**  
-![image](https://user-images.githubusercontent.com/81414510/121029006-eb40dc00-c7b0-11eb-8691-83b830390191.png)
+https://github.com/DaryaDobroserdova/Student-timetable/blob/dev/LibOfTimetableOfClasses/CTitle/Delete/code.png
 # **Управляющий граф**  
-![image](https://user-images.githubusercontent.com/81414510/121028237-5211c580-c7b0-11eb-8d37-7f687c784f46.png)
+https://github.com/DaryaDobroserdova/Student-timetable/blob/dev/LibOfTimetableOfClasses/CTitle/Delete/graph.png
 
 # **Маршруты на основании управляющего графа**  
 R1:0-1-2-11-12 
