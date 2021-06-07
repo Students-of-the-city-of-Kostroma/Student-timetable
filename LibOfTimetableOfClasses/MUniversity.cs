@@ -3,12 +3,10 @@ using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
-
-
     /// <summary>
     /// ВУЗ
     /// </summary>
-    public class MUniversity : Model
+    public class MUniversity : LetterCaseNormal
     {
         /// <summary>
         /// ИНН
@@ -290,31 +288,6 @@ namespace LibOfTimetableOfClasses
             MiddleNameRector = middleNameRector;
             Email = email;
             Phone = phone;
-
-        }
-
-        private bool isLetterСaseNormal(string input)
-        {
-            input = Regex.Replace(input, @"\s+", " ");
-            input = Regex.Replace(input, @"-+", "-");
-            input = Regex.Replace(input, @" - ", "-");
-            input = Regex.Replace(input, @"- -", " ");
-            bool isSpacePressed = true;
-            foreach (var ch in input)
-            {
-                if (isSpacePressed)
-                {
-                    if (Char.IsLower(ch))
-                        return false;
-                    isSpacePressed = false;
-                }
-                else if (Char.IsUpper(ch))
-                    return false;
-                if (ch == ' ' || ch == '-')
-                    isSpacePressed = true;
-            }
-            return true;
-        }
+        }        
     }
-
 }

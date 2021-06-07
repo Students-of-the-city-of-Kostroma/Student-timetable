@@ -214,6 +214,9 @@
     <Compile Include="Ministry.Designer.cs">
       <DependentUpon>Ministry.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddInstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
