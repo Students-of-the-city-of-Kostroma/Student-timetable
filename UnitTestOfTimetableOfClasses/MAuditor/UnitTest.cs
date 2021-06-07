@@ -4,28 +4,13 @@ using System;
 
 namespace UnitTestOfTimetableOfClasses.UT_MAuditor
 {
-
     [TestClass]
     public class UT_MAuditor
     {
         RefData refData = new RefData();
-        //[TestMethod]
-        //public void MAuditor_1()
-
-        //{
-        //    try
-        //    {
-        //        MAuditor T_Auditor = new MAuditor("", "", 0, 0);
-        //        Assert.AreEqual(typeof(Guid), T_Auditor.Id.GetType(), "Ожидался тип поля Guid");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Assert.Fail(ex.Message);
-        //    }
-        //}
 
         [TestMethod]
-        public void MAuditor_2()
+        public void MAuditor_1()
         {
             try
             {
@@ -39,7 +24,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
         }
 
         [TestMethod]
-        public void MAuditor_3()
+        public void MAuditor_2()
         {
             try
             {
@@ -52,7 +37,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
             }
         }
         [TestMethod]
-        public void MAuditor_4()
+        public void MAuditor_3()
         {
             try
             {
@@ -66,7 +51,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MAuditor
         }
 
         [TestMethod]
-        public void MAuditor_5()
+        public void MAuditor_4()
         {
             try
             {

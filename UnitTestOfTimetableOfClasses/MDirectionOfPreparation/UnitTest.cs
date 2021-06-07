@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
     [TestClass]
     public class UT_MDirectionOfPreparation
     {
-        RefData refData = new RefData();
         /// <summary>
         /// Проверка поля CodeOfDP экземпляра класса MDirectionOfPreparation на соответствие типу string
         /// </summary>
@@ -19,7 +18,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "ИАСТ");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.CodeOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -35,7 +34,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "ИАСТ");
                 Assert.AreEqual(typeof(string), mDirectionOfPreparation.NameOfDP.GetType(), "Ожидался тип поля String");
             }
             catch (Exception ex)
@@ -51,7 +50,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDirectionOfPreparation
         {
             try
             {
-                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "КГУ");
+                MDirectionOfPreparation mDirectionOfPreparation = new MDirectionOfPreparation("01.02.03", "", 1, "ИАСТ");
                 Assert.AreEqual(typeof(ushort), mDirectionOfPreparation.PeriodOfStudy.GetType(), "Ожидался тип поля ushort");
             }
             catch (Exception ex)

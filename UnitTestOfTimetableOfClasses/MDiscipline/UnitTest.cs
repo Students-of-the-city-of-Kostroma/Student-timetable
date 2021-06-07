@@ -8,21 +8,9 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
     public class UT_MDiscipline
     {
         RefData refData = new RefData();
-        //[TestMethod]
-        //public void MDiscipline_1()
-        //{
-        //    try
-        //    {
-        //        MDiscipline T_Discipline = new MDiscipline("", "", "");
-        //        Assert.AreEqual(typeof(Guid), T_Discipline.Id.GetType(), "Ожидался тип поля Guid");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Assert.Fail(ex.Message);
-        //    }
-        //}
+
         [TestMethod]
-        public void MDiscipline_2()
+        public void MDiscipline_1()
         {
             try
             {
@@ -35,7 +23,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
             }
         }
         [TestMethod]
-        public void MDiscipline_3()
+        public void MDiscipline_2()
         {
             try
             {
@@ -48,7 +36,7 @@ namespace UnitTestOfTimetableOfClasses.UT_MDiscipline
             }
         }
         [TestMethod]
-        public void MDiscipline_4()
+        public void MDiscipline_3()
         {
             try
             {

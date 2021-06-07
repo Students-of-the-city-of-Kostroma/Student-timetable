@@ -45,7 +45,6 @@ namespace LibOfTimetableOfClasses
             };
             this.Columns.Add(column);
             keys[3] = column;
-
         }
 
         public bool Delete(Model model)

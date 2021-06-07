@@ -41,34 +41,35 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CDiscipline\Update\UnitTest.cs" />
     <Compile Include="UT_Logs.cs" />
-    <Compile Include="UT_CTeacher\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CAcademicLoad\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CDirectionOfPreparation\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CTrainingProfile\UT_Delete\UnitTest.cs" />
+    <Compile Include="CTeacher\Delete\UnitTest.cs" />
+    <Compile Include="CAcademicLoad\Update\UnitTest.cs" />
+    <Compile Include="CDirectionOfPreparation\Delete\UnitTest.cs" />
+    <Compile Include="CTrainingProfile\Delete\UnitTest.cs" />
     <Compile Include="MTrainingProfile\UnitTest.cs" />
-    <Compile Include="UT_CEnclosures\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CTypesOfOccupation\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CUniversity\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CTitle\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_CInstitute\UT_Delete\UnitTest.cs" />
-    <Compile Include="MAcademicDegree\UnitTest.cs" />
+    <Compile Include="CEnclosures\Delete\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Delete\UnitTest.cs" />
+    <Compile Include="CUniversity\Delete\UnitTest.cs" />
+    <Compile Include="CTitle\Delete\UnitTest.cs" />
+    <Compile Include="CInstitute\Delete\UnitTest.cs" />
+    <Compile Include="MAcademicDegree\UT_MAcademicDegree.cs" />
     <Compile Include="MDirectionOfPreparation\UnitTest.cs" />
     <Compile Include="MTitle\UnitTest.cs" />
     <Compile Include="MInstitute\UnitTest.cs" />
-    <Compile Include="UT_Insert_CInstitute.cs" />
-    <Compile Include="UT_CInstitute\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CTitle\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_Insert_CTitle.cs" />
-    <Compile Include="UT_CAcademicDegree\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_Insert_CAcademicDegree.cs" />
-    <Compile Include="UT_Insert_CAuditor.cs" />
-    <Compile Include="UT_CGroup\UT_Delete\UnitTest.cs" />
-    <Compile Include="UT_Insert_CEnclosurse.cs" />
-    <Compile Include="UT_Insert_CTeacher.cs" />
-    <Compile Include="UT_Insert_CGroup.cs" />
-    <Compile Include="UT_Insert_CTypesOfOccupation.cs" />
-    <Compile Include="UT_Insert_CUniversity.cs" />
+    <Compile Include="CInstitute\Insert\UnitTest.cs" />
+    <Compile Include="CInstitute\Update\UnitTest.cs" />
+    <Compile Include="CTitle\Update\UnitTest.cs" />
+    <Compile Include="CTitle\Insert\UnitTest.cs" />
+    <Compile Include="CAcademicDegree\Delete\UnitTest.cs" />
+    <Compile Include="CAcademicDegree\Insert\UnitTest.cs" />
+    <Compile Include="CAuditor\Insert\UnitTest.cs" />
+    <Compile Include="CGroup\Delete\UnitTest.cs" />
+    <Compile Include="CEnclosures\Insert\UnitTest.cs" />
+    <Compile Include="CTeacher\Insert\UnitTest.cs" />
+    <Compile Include="CGroup\Insert\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Insert\UnitTest.cs" />
+    <Compile Include="CUniversity\Insert\UnitTest.cs" />
     <Compile Include="MDepartment\UnitTest.cs" />
     <Compile Include="MDiscipline\UnitTest.cs" />
     <Compile Include="MAuditor\UnitTest.cs" />
@@ -77,12 +78,12 @@
     <Compile Include="MTeacher\UnitTest.cs" />
     <Compile Include="MTypesOfOccupation\UnitTest.cs" />
     <Compile Include="MUniversity\UnitTest.cs" />
-    <Compile Include="UT_CTeacher\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CGroup\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CTypesOfOccupation\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CAcademicDegree\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CEnclosurse\UT_Update\UnitTest.cs" />
-    <Compile Include="UT_CUniversity\UT_Update\UnitTest.cs" />
+    <Compile Include="CTeacher\Update\UnitTest.cs" />
+    <Compile Include="CGroup\Update\UnitTest.cs" />
+    <Compile Include="CTypesOfOccupation\Update\UnitTest.cs" />
+    <Compile Include="CAcademicDegree\Update\UnitTest.cs" />
+    <Compile Include="CEnclosures\Update\UnitTest.cs" />
+    <Compile Include="CUniversity\Update\UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibOfTimetableOfClasses\LibOfTimetableOfClasses.csproj">
@@ -103,7 +104,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

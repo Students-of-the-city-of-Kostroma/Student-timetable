@@ -172,7 +172,9 @@ namespace LibOfTimetableOfClasses
             #endregion
 
             #region teacher
-            MTeacher mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            MTeacher mTeacher = new MTeacher("Юрий", "Лустгартен", "Леонидович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
+            CTeacher.Insert(mTeacher);
+            mTeacher = new MTeacher("Иван", "Иванов", "Иванович", "КН", "Доц", "ИАСТ", "Пн, Чт", "ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher);
             MTeacher mTeacher1 = new MTeacher("Василий", "Михайлов", "Александрович", "ДН", "Проф", "ИФМЕН", "Вт, Чт", "ПН, ПТ", "СБ, ВС");
             CTeacher.Insert(mTeacher1);
@@ -351,7 +353,6 @@ namespace LibOfTimetableOfClasses
             MRing MRing33 = new MRing("Ярославский Государственный Технический Университет", "3", "11:20", "12:50");
             CRing.Insert(MRing33);
             #endregion
-
         }
 
         /// <summary>
@@ -417,7 +418,6 @@ namespace LibOfTimetableOfClasses
             CCourseSchedule.Insert(new MCourseSchedule(null, 12, "Е", "222", days[3], new TimeSpan(10, 10, 0), new TimeSpan(11, 40, 0)));
             CCourseSchedule.Insert(new MCourseSchedule(null, 11, "Е", "520", days[3], new TimeSpan(15, 40, 0), new TimeSpan(17, 10, 0)));
         }
-
 
         /// <summary>
         /// Создаёт список аудиторий для Е-корпуса
@@ -528,7 +528,6 @@ namespace LibOfTimetableOfClasses
             CAuditor.Insert(new MAuditor("305", "Технология машиностроения", 0, "А"));
             CAuditor.Insert(new MAuditor("309", "Технология машиностроения", 0, "А"));
             CAuditor.Insert(new MAuditor("311", "Технология машиностроения", 0, "А"));
-
         }
 
         /// <summary>
@@ -552,8 +551,7 @@ namespace LibOfTimetableOfClasses
             CUniversity.Clear();
             CStudyWeek.Clear();
             CAcademicDegree.Clear();
-            CTypesOfOccupations.Clear();
-            
+            CTypesOfOccupations.Clear();     
         }
     }
 }

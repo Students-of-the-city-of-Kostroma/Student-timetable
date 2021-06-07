@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-
 namespace LibOfTimetableOfClasses
 {
-
     /// <summary>
     /// Уч. звание
     /// </summary>
     public class MTitle : Model
     {
-
         /// <summary>
         /// Полная запись ученого звания
         /// </summary>
@@ -21,7 +18,6 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         string _reduction;
 
-
         public string FullName
         {
             get
@@ -30,7 +26,6 @@ namespace LibOfTimetableOfClasses
             }
             set
             {
-
                 if (value[0] == '.')
                     throw new Exception("Точка ставится после слова");
                 if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
@@ -52,7 +47,6 @@ namespace LibOfTimetableOfClasses
             }
             set
             {
-
                 if (value[0] == '.')
                     throw new Exception("Точка ставится после слова");
                 if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
