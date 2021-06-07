@@ -40,11 +40,11 @@ namespace TimetableOfClasses
                                 MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
                                 if (update)
                                 {
-                                Program.refData.CAcademicDegree.Update(AcademicDegree);
+                                    Program.refData.CAcademicDegree.Update(AcademicDegree);
                                 }
                                 else 
                                 {
-                                Program.refData.CAcademicDegree.Insert(AcademicDegree);
+                                    Program.refData.CAcademicDegree.Insert(AcademicDegree);
                                 }
                                 FullName.Text = "";
                                 Reduction.Text = "";
