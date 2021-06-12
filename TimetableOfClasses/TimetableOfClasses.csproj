@@ -160,6 +160,8 @@
     <Compile Include="Characteristic.Designer.cs">
       <DependentUpon>Characteristic.cs</DependentUpon>
     </Compile>
+    <Compile Include="DG_ColumnHeaderMouseClick.cs" />
+    <Compile Include="DG_ColumnHeaderMouseClick1.cs" />
     <Compile Include="DirectionOfPreparation.cs">
       <SubType>Form</SubType>
     </Compile>
