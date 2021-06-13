@@ -7,21 +7,32 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
     public class UT_UCEnclosures
     {
         RefData refData = new RefData();
+        bool expected;
+        public void UCEnclosuresAct()
+        {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            bool actualUni = refData.CUniversity.Insert(university);
+            Assert.AreEqual(true, actualUni);
+            //arrange
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
+            Assert.IsTrue(result);
+            if (expected == false)
+            {
+                //act
+                MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
+                result = refData.CEnclosures.Insert(gr1);
+                Assert.IsTrue(result);
+            }
+        }
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров (кроме основных полей)
         /// </summary>
         [TestMethod]
         public void UCEnclosures_1()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
-            bool actualUni = refData.CUniversity.Insert(university);
-            Assert.AreEqual(true, actualUni);
-
-            //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
-            bool result = refData.CEnclosures.Insert(gr);
-            Assert.IsTrue(result);
-            bool expected = true;
+            expected = true;
+            UCEnclosuresAct();
             //act
             gr.Address = "Ивановская";
             gr.Phone = "222222";
@@ -42,19 +53,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
-            bool actualUni = refData.CUniversity.Insert(university);
-            Assert.AreEqual(true, actualUni);
-            //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
-            bool result = refData.CEnclosures.Insert(gr);
-            Assert.IsTrue(result);
-            bool expected = false;
-            //act
-            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
-            result = refData.CEnclosures.Insert(gr1);
-            Assert.IsTrue(result);
-
+            expected = false;
+            UCEnclosuresAct();
             gr.Address = "Ивановская";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
@@ -76,19 +76,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
-            bool actualUni = refData.CUniversity.Insert(university);
-            Assert.AreEqual(true, actualUni);
-            //arrange
-            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
-            bool result = refData.CEnclosures.Insert(gr);
-            Assert.IsTrue(result);
-            bool expected = false;
-            //act
-            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
-            result = refData.CEnclosures.Insert(gr1);
-            Assert.IsTrue(result);
-
+            expected = false;
+            UCEnclosuresAct();
             gr.Phone = "222222";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
