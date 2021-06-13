@@ -33,6 +33,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         {
             expected = true;
             UCEnclosuresAct();
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
             //act
             gr.Address = "Ивановская";
             gr.Phone = "222222";
@@ -55,6 +57,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         {
             expected = false;
             UCEnclosuresAct();
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
             gr.Address = "Ивановская";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
@@ -78,6 +82,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         {
             expected = false;
             UCEnclosuresAct();
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
             gr.Phone = "222222";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
