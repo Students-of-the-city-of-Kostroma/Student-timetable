@@ -31,6 +31,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_1()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             expected = true;
             UCEnclosuresAct();
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
@@ -55,10 +56,12 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             expected = false;
             UCEnclosuresAct();
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = refData.CEnclosures.Insert(gr);
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             gr.Address = "Ивановская";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
@@ -80,9 +83,11 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             expected = false;
             UCEnclosuresAct();
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             bool result = refData.CEnclosures.Insert(gr);
             gr.Phone = "222222";
             bool actual = refData.CEnclosures.Update(gr);
