@@ -17,7 +17,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = refData.CEnclosures.Insert(gr);
             Assert.IsTrue(result);
-            bool expected = false;
             //act
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = refData.CEnclosures.Insert(gr1);
@@ -62,6 +61,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = refData.CEnclosures.Insert(gr);
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
+            bool expected = false;
             gr.Address = "Ивановская";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
@@ -87,6 +87,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             UCEnclosuresAct();
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
+            bool expected = false;
             bool result = refData.CEnclosures.Insert(gr);
             gr.Phone = "222222";
             bool actual = refData.CEnclosures.Update(gr);
