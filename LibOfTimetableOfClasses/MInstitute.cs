@@ -27,7 +27,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Некорректная запись поля");
                 for (int i = 1; i < value.Length; i++)
                 {
-                    if (((value[i] < 'А' || value[i] > 'я')) || (value[i] >= 'А' && value[i] <= 'Я') && value[i] != ' ' && value[i] != '.') 
+                    if (((value[i] < 'А' || value[i] > 'я') || (value[i] >= 'А' && value[i] <= 'Я')) && value[i] != ' ' && value[i] != '.')
                         throw new Exception("Заглавные буквы разрешены только в начале слова!");
                 }
                 for (int i = 1; i < value.Length-1; i++)
