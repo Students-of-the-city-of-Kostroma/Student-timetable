@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
         string _VUS;
 
 
-        public string FullName
+         public string FullName
         {
             get
             {
@@ -23,22 +23,16 @@ namespace LibOfTimetableOfClasses
             }
             set
             {
-                if (value == null)
-                    throw new Exception("Поле Полное название института пустое");
-                if (!Regex.IsMatch(value, @"[А-Яа-я\-\' ']"))
-                    throw new Exception("Поле Полное название института содержит недопустимые символы");
-                if (value.Length > 60)
-                    throw new Exception("Слишком длинное значение (не более 60)");
-                if (value.Length <= 1)
-                    throw new Exception("Слишком короткое значение");
+                if (value == null || !Regex.IsMatch(value, @"[А-Яа-я\-\' ']") || value.Length > 60 || value.Length <= 1)
+                    throw new Exception("Некорректная запись поля");
                 for (int i = 1; i < value.Length; i++)
                 {
-                    if ((value[i] < 'А' || value[i] > 'я') && value[i] != ' ' && value[i] != '.') throw new Exception("Все буквы, кроме первой, не могут быть заглавными !");
-
-                    if ((value[i] >= 'А' && value[i] <= 'Я') && value[i - 1] != ' ') throw new Exception("Заглавные буквы разрешены только в начале слова !");
+                    if (((value[i] < 'А' || value[i] > 'я')) || (value[i] >= 'А' && value[i] <= 'Я') && value[i] != ' ' && value[i] != '.') 
+                        throw new Exception("Заглавные буквы разрешены только в начале слова!");
                 }
                 for (int i = 1; i < value.Length-1; i++)
-                    if ((value[i-1] >= 'А' && value[i-1] <= 'я') && (value[i]=='.' && value[i+1] !=' ')  ) throw new Exception("Точка разрешена тольео в конце слова !");
+                    if ((value[i-1] >= 'А' && value[i-1] <= 'я') && (value[i]=='.' && value[i+1] !=' ')) 
+                        throw new Exception("Точка разрешена тольео в конце слова !");
                 
                 _fullname = value;
             }
