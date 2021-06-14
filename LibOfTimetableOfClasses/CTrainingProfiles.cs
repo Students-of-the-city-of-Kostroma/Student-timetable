@@ -18,10 +18,9 @@ namespace LibOfTimetableOfClasses
         {
             string[] names = new string[3] { "Fullname", "Shortname", "Shiphr" };
             bool[] uniques = new bool[3] { true, false, false };
-            DataColumn column = new DataColumn { };
             for (int i = 0; i < 2; i++)
             {
-                column = new DataColumn
+                DataColumn column = new DataColumn
                 {
                     DataType = typeof(string),
                     ColumnName = names[i],
