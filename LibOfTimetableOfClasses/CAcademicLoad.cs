@@ -18,11 +18,7 @@ namespace LibOfTimetableOfClasses
         {
             var keys = new DataColumn[1];
 
-            DataColumn idColumn = new DataColumn
-            {
-                DataType = typeof(int),
-                ColumnName = "ID",
-            };
+            DataColumn idColumn = new DataColumn("ID", Type.GetType("System.Int32"));
             idColumn.Unique = true;
             idColumn.AutoIncrement = true;
             idColumn.AutoIncrementSeed = 1;
@@ -30,11 +26,7 @@ namespace LibOfTimetableOfClasses
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
-            DataColumn column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Group",
-            };
+            DataColumn column = new DataColumn("Group", Type.GetType("System.String"));
             this.Columns.Add(column);
 
             column = new DataColumn
