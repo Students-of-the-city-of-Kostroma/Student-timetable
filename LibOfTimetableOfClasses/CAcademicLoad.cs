@@ -10,6 +10,20 @@ namespace LibOfTimetableOfClasses
     public class CAcademicLoad : DataTable, IController
     {
         /// <summary>
+        /// Добавление 
+        /// </summary>
+        /// <param name="column"></param>
+        /// <returns></returns>
+        public static DataColumn InpId(DataColumn column)
+        {
+            column.Unique = true;
+            column.AutoIncrement = true;
+            column.AutoIncrementSeed = 1;
+            column.AutoIncrementStep = 1;
+            return column;
+        }
+
+        /// <summary>
         /// Конструктор таблицы.
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальное значение - ID
@@ -18,11 +32,12 @@ namespace LibOfTimetableOfClasses
         {
             var keys = new DataColumn[1];
 
-            DataColumn idColumn = new DataColumn("ID", Type.GetType("System.Int32"));
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
+            DataColumn idColumn = new DataColumn
+            {
+                DataType = typeof(int),
+                ColumnName = "ID",
+            };
+            idColumn = InpId(idColumn);
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
