@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-	public class DG_ColumnHeaderMouseClick1
+	public class DG_ColumnHeader
 	{
-        public static void DG_Click1(object sender, DataGridViewCellMouseEventArgs e,DataGridView DG)
+        public static void DG_Click(object sender, DataGridViewCellMouseEventArgs e,DataGridView DG)
         {
             DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
             DataGridViewColumn oldColumn = DG.SortedColumn;

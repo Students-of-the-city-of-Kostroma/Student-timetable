@@ -62,7 +62,7 @@ namespace TimetableOfClasses
 
         private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DG_ColumnHeaderMouseClick1.DG_Click1(sender, e, DG);
+            DG_ColumnHeader.DG_Click(sender, e, DG);
         }
 
         private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
