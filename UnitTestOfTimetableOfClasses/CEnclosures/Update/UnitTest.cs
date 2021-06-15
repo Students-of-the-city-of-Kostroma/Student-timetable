@@ -22,7 +22,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = refData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
-            
             bool actual = refData.CEnclosures.Update(gr);
             //assert
             Assert.AreEqual(expected, actual);
