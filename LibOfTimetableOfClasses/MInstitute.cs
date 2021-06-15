@@ -15,7 +15,7 @@ namespace LibOfTimetableOfClasses
         string _VUS;
 
 
-         public string FullName
+        public string FullName
         {
             get
             {
