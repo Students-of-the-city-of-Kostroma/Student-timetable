@@ -20,7 +20,7 @@ namespace LibOfTimetableOfClasses
                 DataType = typeof(int),
                 ColumnName = "ID",
             };
-            idColumn = LibOfTimetableOfClasses.CAcademicLoad.InpId(idColumn);
+            idColumn = CAcademicLoad.InpId(idColumn);
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
