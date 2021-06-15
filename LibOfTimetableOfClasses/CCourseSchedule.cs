@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -11,7 +11,14 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица, хранящая расписание занятий
     /// </summary>
-    public CCourseSchedule() : base("Расписание")
+    public class CCourseSchedule : DataTable, IController
+    {
+        /// <summary>
+        /// Конструктор таблицы
+        /// Формируются поля таблицы
+        /// Уникальность строки в таблице определяется уникальностью поля ID
+        /// </summary>
+        public CCourseSchedule() : base("Расписание")
         {
             var keys = new DataColumn[1];
 
@@ -24,7 +31,11 @@ namespace LibOfTimetableOfClasses
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
-            DataColumn column = new DataColumn("AcademicId", Type.GetType("System.Int32"));
+            DataColumn column = new DataColumn
+            {
+                DataType = typeof(int),
+                ColumnName = "AcademicId",
+            };
             Columns.Add(column);
 
             column = new DataColumn
