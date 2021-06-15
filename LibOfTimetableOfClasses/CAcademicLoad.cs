@@ -8,21 +8,7 @@ namespace LibOfTimetableOfClasses
     /// Таблица со строками, хранящими данные об Академической нагрузке
     /// </summary>
     public class CAcademicLoad : DataTable, IController
-    {
-        /// <summary>
-        /// Добавление 
-        /// </summary>
-        /// <param name="column"></param>
-        /// <returns></returns>
-        public static DataColumn InpId(DataColumn column)
-        {
-            column.Unique = true;
-            column.AutoIncrement = true;
-            column.AutoIncrementSeed = 1;
-            column.AutoIncrementStep = 1;
-            return column;
-        }
-
+    { 
         /// <summary>
         /// Конструктор таблицы.
         /// Формируются поля таблицы типа DataTable и их свойства.
@@ -37,7 +23,7 @@ namespace LibOfTimetableOfClasses
                 DataType = typeof(int),
                 ColumnName = "ID",
             };
-            idColumn = InpId(idColumn);
+            idColumn = ColumnGenerator.AddColumnsID(idColumn);
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
