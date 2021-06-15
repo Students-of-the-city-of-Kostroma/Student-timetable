@@ -67,7 +67,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             UCEnclosuresAct();   
+            gr.Address = "Ивановская";
         }
 
         /// <summary>
@@ -76,7 +78,9 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             UCEnclosuresAct();
+            gr.Phone = "222222";
         }
 
         /// <summary>
