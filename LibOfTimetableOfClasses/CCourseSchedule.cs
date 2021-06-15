@@ -11,22 +11,16 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица, хранящая расписание занятий
     /// </summary>
-    public class CCourseSchedule : DataTable, IController
-    {
-        /// <summary>
-        /// Конструктор таблицы
-        /// Формируются поля таблицы
-        /// Уникальность строки в таблице определяется уникальностью поля ID
-        /// </summary>
-        public CCourseSchedule() : base("Расписание")
+    public CCourseSchedule() : base("Расписание")
         {
             var keys = new DataColumn[1];
 
-            DataColumn idColumn = new DataColumn("ID", Type.GetType("System.Int32"));
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
+            DataColumn idColumn = new DataColumn
+            {
+                DataType = typeof(int),
+                ColumnName = "ID",
+            };
+            idColumn = LibOfTimetableOfClasses.CAcademicLoad.InpId(idColumn);
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
