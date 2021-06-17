@@ -74,10 +74,8 @@ namespace TimetableOfClasses
             String[] fullName = ((string)FirstRow["FullNameRector"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             if (dr == DialogResult.Yes)
             {
-
                 foreach (DataGridViewRow row in DG.SelectedRows)
                 {
-
                     DataRow Row = ((DataRowView)row.DataBoundItem).Row;
                     mUniversity = new MUniversity((string)Row["INN"],
                                                     (string)Row["ShortName"],
@@ -91,54 +89,18 @@ namespace TimetableOfClasses
                     Program.refData.CUniversity.Delete(mUniversity);
                 }
             }
-
         }
-
+        Enclosures form = new Enclosures();
+        /// <summary>
+        /// Создаем объект form класса Enclosures для получения доступа к методу OurDG_ColumnHeaderMouseClick
+        /// </summary>
         private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
-            DataGridViewColumn oldColumn = DG.SortedColumn;
-            ListSortDirection direction;
-
-            if (DG.SelectedRows.Count == 0) return;
-            DataRow Row = ((DataRowView)DG.SelectedRows[0]?.DataBoundItem)?.Row;
-            if (Row == null) return;
-
-            if (oldColumn != null)
-            {
-                if (oldColumn == newColumn &&
-                    DG.SortOrder == SortOrder.Ascending)
-                {
-                    direction = ListSortDirection.Descending;
-                }
-                else
-                {
-                    direction = ListSortDirection.Ascending;
-                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-                }
-            }
-            else
-            {
-                direction = ListSortDirection.Ascending;
-            }
-
-            //сохраняем номер выделенной строки
-            List<object> arraySelectedRows = new List<object>();
-            foreach (DataGridViewRow item in DG.SelectedRows)
-            {
-                arraySelectedRows.Add(item.DataBoundItem);
-            }
-
-            DG.Sort(newColumn, direction);
-
-            foreach (DataGridViewRow item in DG.Rows)
-            {
-                if (arraySelectedRows.Contains(item.DataBoundItem))
-                {
-                    item.Selected = true;
-                }
-            }
+            form.OurDG_ColumnHeaderMouseClick(e);
         }
+        /// <summary>
+        /// Используем метод из класса Enclosures
+        /// </summary>
 
         private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -162,7 +124,6 @@ namespace TimetableOfClasses
             AddUniversity a = new AddUniversity();
             a.Show();
         }
-
 
         private void DG_DoubleClick(object sender, EventArgs e)
         {

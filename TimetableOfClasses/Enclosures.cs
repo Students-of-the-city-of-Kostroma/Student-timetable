@@ -21,8 +21,7 @@ namespace TimetableOfClasses
                 Name = "Выбор корпуса";
             }
         }
-
-        private void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        public void OurDG_ColumnHeaderMouseClick(DataGridViewCellMouseEventArgs e) 
         {
             DataGridViewColumn newColumn = DG.Columns[e.ColumnIndex];
             DataGridViewColumn oldColumn = DG.SortedColumn;
@@ -67,6 +66,16 @@ namespace TimetableOfClasses
                 }
             }
         }
+        /// <summary>
+        /// Метод, содержащий общий для Enclosures, University, Teachers и StudyWeek обработчик события DG_ColumnHeaderMouseClick
+        /// </summary>
+        internal void DG_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            OurDG_ColumnHeaderMouseClick(e);
+        }
+        /// <summary>
+        /// Использование общего метода OurDG_ColumnHeaderMouseClick
+        /// </summary>
 
         private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
@@ -83,7 +92,6 @@ namespace TimetableOfClasses
             {
                 column.SortMode = DataGridViewColumnSortMode.Programmatic;
             }
-
         }
 
         private void Deletet(object sender, EventArgs e)
