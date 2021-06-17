@@ -62,18 +62,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
-        public void istrue()
-        {
-            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
-            mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
-            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
-            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
-        }
-        /// <summary>
-        /// Проверяет, удалось ли вставить названия переменных в таблицу
-        /// </summary>
         /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
@@ -146,7 +134,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         /// </summary>
         [TestMethod]
         public void UCGroup_7() 
-        {       
+        {
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
@@ -162,5 +150,17 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+        public void istrue()
+        {
+            Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
+            mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
+            Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
+            Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу" + gr.Group);
+            Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
+        }
+        /// <summary>
+        /// Проверяет, удалось ли вставить названия переменных в таблицу
+        /// </summary>
     }
 }
