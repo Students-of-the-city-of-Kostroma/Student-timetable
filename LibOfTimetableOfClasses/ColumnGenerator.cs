@@ -6,7 +6,7 @@ namespace LibOfTimetableOfClasses
 {
     class ColumnGenerator: DataTable
     {
-        public static DataColumn AddColumnsID(DataColumn column)
+        public DataColumn CreatingAPrimaryKey(DataColumn column)
         {
             column.Unique = true;
             column.AutoIncrement = true;
