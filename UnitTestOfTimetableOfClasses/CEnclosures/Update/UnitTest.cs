@@ -7,8 +7,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
     public class UT_UCEnclosures
     {
         RefData refData = new RefData();
-        bool AddressDouble = false;
-        bool PhoneDouble = false;
+        bool AddressDouble;
+        bool PhoneDouble;
 
         public void UCEnclosuresAct()
         {
