@@ -20,6 +20,13 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
+        /// 
+
+        MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
+        MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
+        MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
+        MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
+
         [TestMethod]
 
         public void UCGroup_1()
@@ -41,10 +48,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         { 
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
-
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
-
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
 
@@ -53,13 +58,11 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             refData.CAcademicLoad.Clear();
             refData.CGroup.Clear();
             Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
-
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsTrue(refData.CGroup.Insert(gr), "Не удалось вставить группу " +gr.Group );
             //act
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Понедельник");
             Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу " + gr1.Group);
-
             MGroup gr2 = new MGroup("17-ММЭбо-2в", 2, "ММЭ", 1, 2, 1, 1, "Вторник");
 
             //act
@@ -69,16 +72,10 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsFalse(actual, "Удалось изменить несуществующую группу в заполненной таблице");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
-        MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
-        MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
-        MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
-        MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-        bool expected = true;
-        public void ISTRUE()
+        public void istrue()
         {
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
@@ -88,20 +85,21 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу" + gr1.Group);
         }
         /// <summary>
+        /// Проверяет, удалось ли вставить названия переменных в таблицу
+        /// </summary>
+        /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
         [TestMethod]
         public void UCGroup_3() 
         {
-            ISTRUE();
+            istrue();
             gr1.Semester = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующим семестром не произошел");
-
+            Assert.IsTrue(actual, "Ввод корректных данных с дублирующим семестром не произошел");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
@@ -112,15 +110,13 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_4() 
         {
-            ISTRUE();
+            istrue();
             gr1.Shift = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующей сменой не произошел");
-
+            Assert.IsTrue(actual, "Ввод корректных данных с дублирующим семестром не произошел");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
@@ -131,15 +127,13 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_5()
         {
-            ISTRUE();
+            istrue();
             gr1.Students = 1;
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующимися студентами не произошел");
-
+            Assert.IsTrue(actual, "Ввод корректных данных с дублирующим семестром не произошел");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
@@ -150,17 +144,15 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         [TestMethod]
         public void UCGroup_6() 
         {
-            ISTRUE();
+            istrue();
             gr1.MaxNumberOfClass = 0;
             gr1.MinNumberOfClass = 0;
             gr1.Weekends = "Воскресенье";
             bool actual = refData.CGroup.Update(gr1);
             //assert
-            Assert.AreEqual(expected, actual, "Ввод корректных данных с дублирующим графиком не произошел");
-
+            Assert.IsTrue(actual, "Ввод корректных данных с дублирующим семестром не произошел");
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
             Assert.IsTrue(refData.CGroup.Delete(gr1), "Не удалось удалить группу" + gr1.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
@@ -173,10 +165,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         {
             MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
             Assert.IsTrue(refData.CDirectionOfPreparation.Insert(mDirection), "Не удалось вставить профиль обучения");
-
             MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
-
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
             //arrange
@@ -187,9 +177,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             bool actual = refData.CGroup.Update(gr);
             //assert
             Assert.IsFalse(actual, "Произошло обновление некорректной специальности");
-
             Assert.IsTrue(refData.CGroup.Delete(gr), "Не удалось удалить группу" + gr.Group);
-
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
