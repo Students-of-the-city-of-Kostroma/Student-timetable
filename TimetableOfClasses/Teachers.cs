@@ -106,7 +106,6 @@ namespace TimetableOfClasses
         /// <summary>
         /// Используем метод из класса Enclosures
         /// </summary>
-
         private void DG_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewColumn column in DG.Columns)

@@ -76,7 +76,6 @@ namespace TimetableOfClasses
         /// <summary>
         /// Использование общего метода OurDG_ColumnHeaderMouseClick
         /// </summary>
-
         private void DG_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             int index = e.RowIndex;
