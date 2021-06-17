@@ -10,7 +10,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
 
         public void UCEnclosuresAct()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
             Assert.AreEqual(true, actualUni);
             //arrange
