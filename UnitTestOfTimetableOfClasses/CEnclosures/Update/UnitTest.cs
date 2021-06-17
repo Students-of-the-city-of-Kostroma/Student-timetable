@@ -22,18 +22,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = refData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
-            gr.Address = "Ивановская";
-            gr.Phone = "222222";
-            bool actual = refData.CEnclosures.Update(gr);
-            //assert
-            Assert.AreEqual(expected, actual);
-            //cleare data
-            result = refData.CEnclosures.Delete(gr);
-            Assert.IsTrue(result);
-            result = refData.CEnclosures.Delete(gr1);
-            Assert.IsTrue(result);
-            result = refData.CUniversity.Delete(university);
-            Assert.IsTrue(result);
         }
         /// <summary>
         /// Ввод коректных данных, при условии, что они не дублируют данные других экземпляров (кроме основных полей)
@@ -69,7 +57,25 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
             UCEnclosuresAct();   
+            gr.Address = "Ивановская";
+            bool actual = refData.CEnclosures.Update(gr);
+            bool expected = false;
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
+            //assert
+            Assert.AreEqual(expected, actual);
+
+            //cleare data
+            result = refData.CEnclosures.Delete(gr);
+            Assert.IsTrue(result);
+
+            result = refData.CEnclosures.Delete(gr1);
+            Assert.IsTrue(result);
+            result = refData.CUniversity.Delete(university);
+            Assert.IsTrue(result);
         }
 
         /// <summary>
@@ -78,7 +84,24 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
+            MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
+            bool result = refData.CEnclosures.Insert(gr);
             UCEnclosuresAct();
+            gr.Phone = "222222";
+            bool actual = refData.CEnclosures.Update(gr);
+            bool expected = false;
+            MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
+            //assert
+            Assert.AreEqual(expected, actual);
+            //cleare data
+            result = refData.CEnclosures.Delete(gr);
+            Assert.IsTrue(result);
+
+            result = refData.CEnclosures.Delete(gr1);
+            Assert.IsTrue(result);
+            result = refData.CUniversity.Delete(university);
+            Assert.IsTrue(result);
         }
 
         /// <summary>
