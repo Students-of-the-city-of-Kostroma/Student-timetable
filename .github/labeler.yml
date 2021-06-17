@@ -1,0 +1,12 @@
+LibOfTimetableOfClasses:
+  - LibOfTimetableOfClasses/**/*
+TimetableOfClasses:
+  - TimetableOfClasses/**/*
+UnitTestOfTimetableOfClasses:
+  - UnitTestOfTimetableOfClasses/**/*
+ALARM:
+  - **.sln
+  - **.csproj
+Documentation:
+  - **.md
+  - **.MD

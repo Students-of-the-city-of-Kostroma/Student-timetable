@@ -1,0 +1,26 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '00 5 * * *'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'В этой задаче нет активности 7 дней. Это значит что задачу не успевают сделать в срок или ее ни кто не хочет делать. Любой желающий может оставить комментарий ниже с предложением выполнить эту задачу. Предложение будет рассмотрено и если задача может быть передана Вам для реализации, то она будет назначена на Вас. Кроме этого, метка `no-issue-activity` означает что задача помечена как неактивная и через еще 7 дней бездействия в этой задаче, она будет закрыта.'
+        stale-pr-message: 'В этом запросе на слияние нет активности 1 день. Это значит что в запросе автиность не ведется и запрос будет закрыт еще через 1 день бездействия. Запросы помеченные меткой `no-pr-activity` являются неактивными.'
+        stale-issue-label: 'no-issue-activity'
+        stale-pr-label: 'no-pr-activity'
+        days-before-issue-stale: 7
+        days-before-pr-stale: 1
+        days-before-issue-close: 7
+        days-before-pr-close: 1
