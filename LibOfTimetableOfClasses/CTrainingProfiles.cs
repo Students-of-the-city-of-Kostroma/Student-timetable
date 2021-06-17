@@ -16,8 +16,9 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CTrainingProfile() : base("Профиль подготовки")
         {
-            ColumnGenerator NewColumns = new ColumnGenerator("Профиль подготовки" );
-            NewColumns.AddColumns("Shiphr", typeof(string), true);
+            AddColumns("Fullname", typeof(string), true);
+            AddColumns("Shortname", typeof(string), false);
+            AddColumns("Shiphr", typeof(string), false);
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CTrainingProfile.

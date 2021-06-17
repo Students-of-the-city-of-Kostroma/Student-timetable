@@ -12,29 +12,18 @@ namespace LibOfTimetableOfClasses
         public ColumnGenerator(string TableName) { }
         /// <summary>
         /// Формируются поля таблицы типа DataTable и их свойства.
-        /// Уникальность строки в таблице определяется уникальностью полей Fullname и Shortname
+        /// Уникальность строки в таблице определяется уникальностью полей Fullname и Shortname.
         /// </summary>
-        public void AddColumns(string ColumnName, Type type, bool unique )
+        /// <param name="columnName">Имя столбца</param>
+        /// <param name="type">Тип</param>
+        /// <param name="unique">Уникальность столбца</param>
+        public void AddColumns(string columnName, Type type, bool unique )
         {
             DataColumn column = new DataColumn
             {
-                DataType = typeof(string),
-                ColumnName = "Fullname",
-                Unique = true
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Shortname"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = ColumnName
+                DataType = type,
+                ColumnName = columnName,
+                Unique = unique
             };
 
             Columns.Add(column);

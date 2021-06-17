@@ -16,8 +16,10 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CDiscipline() : base("Дисциплина")
         {
-            ColumnGenerator NewColumns = new ColumnGenerator("Дисциплина");
-            NewColumns.AddColumns("CycleofDiscipline", typeof(string), true);
+            //ColumnGenerator NewColumns = new ColumnGenerator("Дисциплина");
+            AddColumns("Fullname", typeof(string), true);
+            AddColumns("Shortname", typeof(string), false);
+            AddColumns("CycleofDiscipline", typeof(string), false);
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CDiscipline.
