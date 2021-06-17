@@ -16,19 +16,15 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         {
             refData.InitData();
         }
-
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
         /// 
-
         MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
         MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
         MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
         MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-
         [TestMethod]
-
         public void UCGroup_1()
         {
             //arrange
@@ -39,7 +35,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
             Assert.IsFalse(refData.CGroup.Update(gr), "Произошли изменения сведений в пустой таблице");
         }
-
         /// <summary>
         /// Изменить несуществующую группу в заполненной таблице
         /// </summary>
@@ -52,7 +47,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить профиль обучения");
             mTrainingProfile = new MTrainingProfile("Математические методы в экономике", "ММЭ", "01.03.04");
             Assert.IsTrue(refData.CTrainingProfile.Insert(mTrainingProfile), "Не удалось вставить направление подготовки");
-
             //arrange
             refData.CCourseSchedule.Clear();
             refData.CAcademicLoad.Clear();
@@ -64,9 +58,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Понедельник");
             Assert.IsTrue(refData.CGroup.Insert(gr1), "Не удалось вставить группу " + gr1.Group);
             MGroup gr2 = new MGroup("17-ММЭбо-2в", 2, "ММЭ", 1, 2, 1, 1, "Вторник");
-
             //act
-
             bool actual = refData.CGroup.Update(gr2);
             //assert
             Assert.IsFalse(actual, "Удалось изменить несуществующую группу в заполненной таблице");
@@ -120,7 +112,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
- 
         /// <summary>
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
@@ -137,7 +128,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
-
         /// <summary>
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
@@ -156,7 +146,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
-
         /// <summary>
         /// Ввод  данных при условии что указанная специальность не существует
         /// </summary>
