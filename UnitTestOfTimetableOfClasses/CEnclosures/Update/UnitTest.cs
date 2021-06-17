@@ -7,8 +7,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
     public class UT_UCEnclosures
     {
         RefData refData = new RefData();
-        bool AddressDouble;
-        bool PhoneDouble;
 
         public void UCEnclosuresAct()
         {
@@ -24,14 +22,8 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
             MEnclosures gr1 = new MEnclosures("И", "Московский Государственный Университет", "Ивановская", "222222", "2");
             result = refData.CEnclosures.Insert(gr1);
             Assert.IsTrue(result);
-            if (AddressDouble)
-            {
-                gr.Address = "Ивановская";
-            }
-            if (PhoneDouble)
-            {
-                gr.Phone = "222222";
-            }
+            gr.Address = "Ивановская";
+            gr.Phone = "222222";
             bool actual = refData.CEnclosures.Update(gr);
             //assert
             Assert.AreEqual(expected, actual);
@@ -77,7 +69,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
-            AddressDouble = true;
             UCEnclosuresAct();   
         }
 
@@ -87,7 +78,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
-            PhoneDouble = true;
             UCEnclosuresAct();
         }
 
