@@ -59,7 +59,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// R/W свойства Specialty модели MGroup. 
         /// Специальность текущей группы(Семантически)
@@ -110,7 +109,6 @@ namespace LibOfTimetableOfClasses
                 if (value < 1 && value > 50) throw new Exception("Кол-во судентов не в диапазоне от 1 до 50");
                 _students = value;
             }
-
         }
 
         /// <summary>
@@ -131,7 +129,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// R/W свойства MaxNumberOfClass модели MGroup. 
         /// Число должно быть в пределах от 1 до 6
@@ -149,7 +146,6 @@ namespace LibOfTimetableOfClasses
                 _maxNumberOfClass = value;
             }
         }
-
 
         /// <summary>
         /// R/W свойства Weekends модели MGroup. 
@@ -180,7 +176,6 @@ namespace LibOfTimetableOfClasses
                 _weekends = value;
             }
         }
-
 
         /// <summary>
         /// Конструктор класса MGroup.
