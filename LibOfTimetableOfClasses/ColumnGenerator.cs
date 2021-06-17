@@ -4,9 +4,9 @@ using System.Data;
 
 namespace LibOfTimetableOfClasses
 {
-    class ColumnGenerator: DataTable
+    class ColumnGenerator : DataTable
     {
-        public static DataColumn AddColumnsID(DataColumn column)
+        public DataColumn CreateAPrimaryKey(DataColumn column)
         {
             column.Unique = true;
             column.AutoIncrement = true;
