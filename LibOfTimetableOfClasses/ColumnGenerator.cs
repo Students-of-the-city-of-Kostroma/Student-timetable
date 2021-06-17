@@ -7,13 +7,14 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Генератор таблиц со строками, хранящими данные о профилях или дисциплинах.
     /// </summary>
-    class ColumnGenerator: DataTable
+    public class ColumnGenerator: DataTable
     {
+        public ColumnGenerator(string TableName) { }
         /// <summary>
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальность строки в таблице определяется уникальностью полей Fullname и Shortname
         /// </summary>
-        public void AddColumns(string ColName)
+        public void AddColumns(string ColumnName, Type type, bool unique )
         {
             DataColumn column = new DataColumn
             {
@@ -33,7 +34,7 @@ namespace LibOfTimetableOfClasses
             column = new DataColumn
             {
                 DataType = typeof(string),
-                ColumnName = ColName
+                ColumnName = ColumnName
             };
 
             Columns.Add(column);

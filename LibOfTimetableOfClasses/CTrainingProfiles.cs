@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица со строками, хранящими данные о разных профилях подготовки Университета.
     /// </summary>
-    public class CTrainingProfile : DataTable, IController
+    public class CTrainingProfile : ColumnGenerator, IController
     {
         /// <summary>
         /// Конструктор таблицы
@@ -16,8 +16,8 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CTrainingProfile() : base("Профиль подготовки")
         {
-            ColumnGenerator NewColumns = new ColumnGenerator();
-            NewColumns.AddColumns("Shiphr");
+            ColumnGenerator NewColumns = new ColumnGenerator("Профиль подготовки" );
+            NewColumns.AddColumns("Shiphr", typeof(string), true);
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CTrainingProfile.
