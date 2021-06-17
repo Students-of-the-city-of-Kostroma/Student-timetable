@@ -9,6 +9,10 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class ColumnGenerator: DataTable
     {
+        /// <summary>
+        /// Конструктор, передающий имя таблицы в родительский класс.
+        /// </summary>
+        /// <param name="TableName"></param>
         public ColumnGenerator(string TableName): base(TableName) { }
         /// <summary>
         /// Формируются поля таблицы типа DataTable и их свойства.
