@@ -27,8 +27,7 @@ namespace LibOfTimetableOfClasses
                 DataType = typeof(int),
                 ColumnName = "ID",
             };
-            ColumnGenerator newID = new ColumnGenerator();
-            idColumn = newID.CreateAPrimaryKey(idColumn);
+            idColumn = ColumnGenerator.AddColumnsID(idColumn);
             Columns.Add(idColumn);
             keys[0] = idColumn;
 
