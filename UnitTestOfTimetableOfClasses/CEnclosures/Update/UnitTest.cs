@@ -10,6 +10,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
 
         public void UCEnclosuresAct()
         {
+            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             bool actualUni = refData.CUniversity.Insert(university);
             Assert.AreEqual(true, actualUni);
             //arrange
@@ -56,7 +57,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_2()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = refData.CEnclosures.Insert(gr);
             UCEnclosuresAct();   
@@ -83,7 +83,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Update
         [TestMethod]
         public void UCEnclosures_3()
         {
-            MUniversity university = new MUniversity("4401026216", "МГУ", "Московский Государственный Университет", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "156005, Московская область, г. Москва, ул. Дзержинского, 17", "Александр", "Наумов", "Рудольфович", "mgu@mail.ru", "84942217960");
             MEnclosures gr = new MEnclosures("Ж", "Московский Государственный Университет", "Дзержинского", "111111", "1");
             bool result = refData.CEnclosures.Insert(gr);
             UCEnclosuresAct();
