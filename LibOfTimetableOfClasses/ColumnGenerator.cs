@@ -9,7 +9,7 @@ namespace LibOfTimetableOfClasses
     /// </summary>
     public class ColumnGenerator: DataTable
     {
-        public ColumnGenerator(string TableName) { }
+        public ColumnGenerator(string TableName): base(TableName) { }
         /// <summary>
         /// Формируются поля таблицы типа DataTable и их свойства.
         /// Уникальность строки в таблице определяется уникальностью полей Fullname и Shortname.
@@ -17,7 +17,7 @@ namespace LibOfTimetableOfClasses
         /// <param name="columnName">Имя столбца</param>
         /// <param name="type">Тип</param>
         /// <param name="unique">Уникальность столбца</param>
-        public void AddColumns(string columnName, Type type, bool unique )
+        public void AddColumns(string columnName, Type type, bool unique = false)
         {
             DataColumn column = new DataColumn
             {

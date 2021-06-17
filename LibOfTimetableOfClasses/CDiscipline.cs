@@ -18,8 +18,8 @@ namespace LibOfTimetableOfClasses
         {
             //ColumnGenerator NewColumns = new ColumnGenerator("Дисциплина");
             AddColumns("Fullname", typeof(string), true);
-            AddColumns("Shortname", typeof(string), false);
-            AddColumns("CycleofDiscipline", typeof(string), false);
+            AddColumns("Shortname", typeof(string));
+            AddColumns("CycleofDiscipline", typeof(string));
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CDiscipline.
