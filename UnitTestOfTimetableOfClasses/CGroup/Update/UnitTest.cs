@@ -20,13 +20,14 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         /// Изменить сведения в пустой таблице
         /// </summary>
         /// 
+       
+        /// <summary>
+        /// Инициализация данных
+        /// </summary>
         MDirectionOfPreparation mDirection = new MDirectionOfPreparation("01.03.04", "Прикладная математика", 4, "ИАСТ");
         MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
         MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
         MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
-        /// <summary>
-        /// Инициализация данных
-        /// </summary>
         [TestMethod]
         public void UCGroup_1()
         {
