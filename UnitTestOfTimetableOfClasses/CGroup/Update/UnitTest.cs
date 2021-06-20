@@ -7,14 +7,16 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
     public class UT_UCGroup
     {
         readonly RefData refData = new RefData();
+
         /// <summary>
         /// загрузка тестовых данных
-        /// </summary>
+        /// </summary>     
         [TestInitialize]
         public void RefDataInit()
         {
             refData.InitData();
         }
+
         /// <summary>
         /// Инициализация данных
         /// </summary>
@@ -22,6 +24,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
         MTrainingProfile mTrainingProfile = new MTrainingProfile("Математическое моделирование в экономике и технике", "ММЭТ", "01.03.04");
         MGroup gr = new MGroup("17-ММбо-2а", 1, "ММЭТ", 1, 1, 0, 0, "Воскресенье");
         MGroup gr1 = new MGroup("17-ММЭбо-2б", 2, "ММЭ", 2, 2, 1, 1, "Воскресенье");
+
         /// <summary>
         /// Изменить сведения в пустой таблице
         /// </summary>
@@ -35,6 +38,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CGroup.Rows.Count == 0, "Не удалось очистить таблицу группа");
             Assert.IsFalse(refData.CGroup.Update(gr), "Произошли изменения сведений в пустой таблице");
         }
+
         /// <summary>
         /// Изменить несуществующую группу в заполненной таблице
         /// </summary>
@@ -64,6 +68,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+
         /// </summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
@@ -85,6 +90,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+
         /// <summary>
         /// Ввод корректных данных, при условии, что Смена дублирует Смена существующего экземпляра
         /// </summary>
@@ -106,6 +112,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+
         /// <summary>
         /// Ввод корректных данных, при условии, что Студентов дублирует Студентов существующего экземпляра
         /// </summary>
@@ -127,6 +134,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+
         /// <summary>
         /// Ввод корректных данных, при условии, что График работы дублирует График работы существующего экземпляра
         /// </summary>
@@ -150,6 +158,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CTrainingProfile.Delete(mTrainingProfile), "Не удалось удалить профиль обучения");
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
+
         /// <summary>
         /// Ввод  данных при условии что указанная специальность не существует
         /// </summary>
