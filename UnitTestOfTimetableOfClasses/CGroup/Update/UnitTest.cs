@@ -10,7 +10,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
 
         /// <summary>
         /// загрузка тестовых данных
-        /// </summary>     
+        /// </summary>
         [TestInitialize]
         public void RefDataInit()
         {
@@ -69,7 +69,7 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Update
             Assert.IsTrue(refData.CDirectionOfPreparation.Delete(mDirection), "Не удалось удалить направление подготовки");
         }
 
-        /// </summary>
+        /// <summary>
         /// Ввод корректных данных, при условии, что Семестр дублирует Семестр группы  существующего экземпляра
         /// </summary>
         [TestMethod]
