@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица, хранящая расписание занятий
     /// </summary>
-    public class CCourseSchedule : DataTable, IController
+    public class CCourseSchedule : ColumnGenerator_Schedule_, IController
     {
         /// <summary>
         /// Конструктор таблицы
@@ -20,63 +20,13 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CCourseSchedule() : base("Расписание")
         {
-            var keys = new DataColumn[1];
-
-            DataColumn idColumn = new DataColumn
-            {
-                DataType = typeof(int),
-                ColumnName = "ID",
-            };
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
-            Columns.Add(idColumn);
-            keys[0] = idColumn;
-
-            DataColumn column = new DataColumn
-            {
-                DataType = typeof(int),
-                ColumnName = "AcademicId",
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Building"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Classroom"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "DayOfWeek"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(TimeSpan),
-                ColumnName = "StartTime"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(TimeSpan),
-                ColumnName = "EndTime"
-            };
-            Columns.Add(column);
-
-            PrimaryKey = keys;
+            AddColumns("ID", typeof(int), true);
+            AddColumns("AcademicId", typeof(int), false);
+            AddColumns("Building", typeof(string), false);
+            AddColumns("Classroom", typeof(string), false);
+            AddColumns("DayOfWeek", typeof(string), false);
+            AddColumns("StartTime", typeof(TimeSpan), false);
+            AddColumns("EndTime", typeof(TimeSpan), false);
         }
 
         /// <summary>

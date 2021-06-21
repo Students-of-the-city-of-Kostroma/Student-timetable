@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица со строками, хранящими данные об Академической нагрузке
     /// </summary>
-    public class CAcademicLoad : DataTable, IController
+    public class CAcademicLoad : ColumnGenerator_Schedule_, IController
     {
         /// <summary>
         /// Конструктор таблицы.
@@ -16,63 +16,13 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CAcademicLoad() : base("Нагрузка")
         {
-            var keys = new DataColumn[1];
-
-            DataColumn idColumn = new DataColumn
-            {
-                DataType = typeof(int),
-                ColumnName = "ID",
-            };
-            idColumn.Unique = true;
-            idColumn.AutoIncrement = true;
-            idColumn.AutoIncrementSeed = 1;
-            idColumn.AutoIncrementStep = 1;
-            Columns.Add(idColumn);
-            keys[0] = idColumn;
-
-            DataColumn column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Group",
-            };
-            this.Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "HoursAll"
-            };
-            this.Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "DistributedHours"
-            };
-            this.Columns.Add(column);
-                       
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Discipline"
-            };
-            this.Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Professor"
-            };
-            this.Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "KindOfLesson"
-            };
-            this.Columns.Add(column);
-
-            PrimaryKey = keys;
+            AddColumns("ID", typeof(int), true);
+            AddColumns("Group", typeof(string));
+            AddColumns("HoursAll", typeof(string));
+            AddColumns("DistributedHours", typeof(string));
+            AddColumns("Discipline", typeof(string));
+            AddColumns("Professor", typeof(string));
+            AddColumns("KindOfLesson", typeof(string));
         }
         /// <summary>
         /// Удаляет запись из таблицы данных об академической нагрузке

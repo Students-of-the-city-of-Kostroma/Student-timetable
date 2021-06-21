@@ -75,6 +75,9 @@
     <Compile Include="CInstitute.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ColumnGenerator_Schedule_.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CStudyWeek.cs">
       <SubType>Component</SubType>
     </Compile>
