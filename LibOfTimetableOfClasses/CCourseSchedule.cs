@@ -11,7 +11,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица, хранящая расписание занятий
     /// </summary>
-    public class CCourseSchedule : ColumnGenerator_Schedule_, IController
+    public class CCourseSchedule : ColumnGenerator, IController
     {
         /// <summary>
         /// Конструктор таблицы
