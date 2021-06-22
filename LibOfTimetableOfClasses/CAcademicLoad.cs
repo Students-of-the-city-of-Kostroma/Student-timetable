@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица со строками, хранящими данные об Академической нагрузке
     /// </summary>
-    public class CAcademicLoad : ColumnGenerator_Schedule_, IController
+    public class CAcademicLoad : ColumnGenerator, IController
     {
         /// <summary>
         /// Конструктор таблицы.
