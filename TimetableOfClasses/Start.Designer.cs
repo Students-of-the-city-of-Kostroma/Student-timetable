@@ -243,11 +243,12 @@
             this.SettingStripMenuItem1.Name = "SettingStripMenuItem1";
             this.SettingStripMenuItem1.Size = new System.Drawing.Size(79, 20);
             this.SettingStripMenuItem1.Text = "Настройки";
+            this.SettingStripMenuItem1.Visible = false;
             // 
             // CharacteristicStripMenuItem1
             // 
             this.CharacteristicStripMenuItem1.Name = "CharacteristicStripMenuItem1";
-            this.CharacteristicStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.CharacteristicStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.CharacteristicStripMenuItem1.Text = "Параметры";
             this.CharacteristicStripMenuItem1.Click += new System.EventHandler(this.CharacteristicStripMenuItem1_Click);
             // 

@@ -24,7 +24,6 @@ namespace LibOfTimetableOfClasses
         string _occupation;
         string _distributed;
 
-
         /// <summary>
         /// Уникальный идентификатор записи.
         /// Может принимать значение null для новой модели
@@ -145,8 +144,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
-
         /// <summary>
         /// свойства occupation модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
@@ -175,16 +172,12 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
-
-
         /// <summary>
         /// свойства distributed модели AcademicLoad
         /// В случае записи свойства проводятся проверки переданнаго значения:
         /// Строка должна быть: не-null, не более 25 символов, содержать только А-Я,а-я, не пустой, начинаться с заглавной
         /// Распределено
         /// </summary>
-
         public string Distributed
         {
             get
@@ -200,7 +193,6 @@ namespace LibOfTimetableOfClasses
                 _distributed = value;
             }
         }
-
 
         /// <summary>
         /// Конструктор класса MAcademicLoad.
@@ -222,6 +214,5 @@ namespace LibOfTimetableOfClasses
             Occupation = occupation;
             Distributed = distributed;
         }
-
     }
 }

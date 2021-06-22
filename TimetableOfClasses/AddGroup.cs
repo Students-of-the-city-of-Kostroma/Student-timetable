@@ -65,7 +65,6 @@ namespace TimetableOfClasses
             Close();
         }
 
-
         private void createAndClose_Click(object sender, EventArgs e)
         {
             string[] args = new string[] { tbNameGroup.Text, tbVixodnie.Text };
@@ -86,7 +85,6 @@ namespace TimetableOfClasses
             {
                 errors = "Выберите направление подготовки";
             }
-
 
             ushort semest, smena, countStudents, minPar, maxPar;
             if (ushort.TryParse(nudSemest.Value.ToString(), out semest) && semest <= 10 && semest > 0)
@@ -172,7 +170,6 @@ namespace TimetableOfClasses
             {
                 R.Text = "00-ААаа-0а";
             }
-
         }
 
         private void SelectionOfLetters2(object sender, EventArgs e)
@@ -197,7 +194,6 @@ namespace TimetableOfClasses
             }
             R.Text = R.Text.ToLower();
             R.Text = FirstLetterToUpper(R.Text);
-
         }
 
         private static string FirstLetterToUpper(string str)

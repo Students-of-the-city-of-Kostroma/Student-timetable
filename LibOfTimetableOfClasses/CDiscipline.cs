@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Таблица со строками, хранящими данные о разных дисциплинах Университета.
     /// </summary>
-    public class CDiscipline : DataTable, IController
+    public class CDiscipline : ColumnGenerator, IController
     {
         /// <summary>
         /// Конструктор таблицы
@@ -16,27 +16,10 @@ namespace LibOfTimetableOfClasses
         /// </summary>
         public CDiscipline() : base("Дисциплина")
         {
-            DataColumn column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Fullname",
-                Unique = true
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "Shortname"
-            };
-            Columns.Add(column);
-
-            column = new DataColumn
-            {
-                DataType = typeof(string),
-                ColumnName = "CycleofDiscipline"
-            };
-            Columns.Add(column);
+            //ColumnGenerator NewColumns = new ColumnGenerator("Дисциплина");
+            AddColumns("Fullname", typeof(string), true);
+            AddColumns("Shortname", typeof(string));
+            AddColumns("CycleofDiscipline", typeof(string));
         }
         /// <summary>
         /// Метод удаления строки соответствующей переданной модели из таблицы CDiscipline.

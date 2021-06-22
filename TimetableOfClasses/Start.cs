@@ -6,7 +6,7 @@ namespace TimetableOfClasses
     public partial class Start : Form
     {
         private bool isRefDataLoaded = false;
-        private LibOfTimetableOfClasses.RefData refData = new LibOfTimetableOfClasses.RefData();
+        private LibOfTimetableOfClasses.RefData refData = Program.refData;
 
         public Start()
         {
@@ -70,7 +70,6 @@ namespace TimetableOfClasses
             addOrEditDirectory.Show();
         }
 
-
         private void ученыеЗванияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AcademicTitle academicTitle = new AcademicTitle();
@@ -85,7 +84,6 @@ namespace TimetableOfClasses
 
         private void корпусаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             Enclosures enclosures = new Enclosures();
             enclosures.Show();
         }
@@ -161,8 +159,6 @@ namespace TimetableOfClasses
             {
                 MessageBox.Show(msg, isRefDataLoaded ? "Сообщение" : "Ошибка", MessageBoxButtons.OK, isRefDataLoaded ? MessageBoxIcon.Information : MessageBoxIcon.Error);
             }
-            
         }
-
     }
 }

@@ -3,12 +3,10 @@ using System.Text.RegularExpressions;
 
 namespace LibOfTimetableOfClasses
 {
-
-
     /// <summary>
     /// ВУЗ
     /// </summary>
-    public class MUniversity : Model
+    public class MUniversity : LetterCaseNormal
     {
         /// <summary>
         /// ИНН
@@ -95,7 +93,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Ошибка создания модели. В свойство ShortName получен null-объект");
                 if (value.Length < 1 || value.Length > 10)
                     throw new Exception("Ошибка создания модели. В свойство ShortName получена строка недопустимой длины");
-                if (!Regex.IsMatch(value, @"[А-Я]"))
+                if (!Regex.IsMatch(value, @"[А-Я]+"))
                     throw new Exception("Ошибка создания модели. В свойство ShortName получена строка содержащая недопустимые символы");
                 _shortName = value;
             }
@@ -290,31 +288,6 @@ namespace LibOfTimetableOfClasses
             MiddleNameRector = middleNameRector;
             Email = email;
             Phone = phone;
-
-        }
-
-        private bool isLetterСaseNormal(string input)
-        {
-            input = Regex.Replace(input, @"\s+", " ");
-            input = Regex.Replace(input, @"-+", "-");
-            input = Regex.Replace(input, @" - ", "-");
-            input = Regex.Replace(input, @"- -", " ");
-            bool isSpacePressed = true;
-            foreach (var ch in input)
-            {
-                if (isSpacePressed)
-                {
-                    if (Char.IsLower(ch))
-                        return false;
-                    isSpacePressed = false;
-                }
-                else if (Char.IsUpper(ch))
-                    return false;
-                if (ch == ' ' || ch == '-')
-                    isSpacePressed = true;
-            }
-            return true;
-        }
+        }        
     }
-
 }

@@ -7,7 +7,7 @@ namespace LibOfTimetableOfClasses
     /// <summary>
     /// Класс со свойствами определяющими запись о корпусе в справочнике Корпуса
     /// </summary>
-    public class MEnclosures : Model
+    public class MEnclosures : LetterCaseNormal
     {
         string _name;
         string _university;
@@ -63,7 +63,7 @@ namespace LibOfTimetableOfClasses
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка недопустимой длины");
                 if (!Regex.IsMatch(value, @"[А-Яа-я\- ]"))
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка содержащая недопустимые символы");
-                if (!IsLetterСaseNormal(value))
+                if (!isLetterСaseNormal(value))
                     throw new Exception("Ошибка создания модели. В свойство FullName получена строка неверного формата");
                 _university = value;
             }
@@ -174,30 +174,7 @@ namespace LibOfTimetableOfClasses
             Address = address;
             Phone = phone;
             Comment = comment;
-        }
-
-        private bool IsLetterСaseNormal(string input)
-        {
-            input = Regex.Replace(input, @"\s+", " ");
-            input = Regex.Replace(input, @"-+", "-");
-            input = Regex.Replace(input, @" - ", "-");
-            input = Regex.Replace(input, @"- -", " ");
-            bool isSpacePressed = true;
-            foreach (var ch in input)
-            {
-                if (isSpacePressed)
-                {
-                    if (Char.IsLower(ch))
-                        return false;
-                    isSpacePressed = false;
-                }
-                else if (Char.IsUpper(ch))
-                    return false;
-                if (ch == ' ' || ch == '-')
-                    isSpacePressed = true;
-            }
-            return true;
-        }
+        }       
     }
 }
 
