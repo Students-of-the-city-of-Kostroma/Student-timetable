@@ -7,5 +7,4 @@ UnitTestOfTimetableOfClasses:
 ALARM:
   - any: ['*sln', '*csproj']
 Documentation:
-  - *.md
-  - *.MD
+  - any: ['*md', '*MD']
