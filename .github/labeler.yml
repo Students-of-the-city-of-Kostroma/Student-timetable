@@ -5,8 +5,8 @@ TimetableOfClasses:
 UnitTestOfTimetableOfClasses:
   - UnitTestOfTimetableOfClasses/**/*
 ALARM:
-  - **.sln
-  - **.csproj
+  - *.sln
+  - *.csproj
 Documentation:
-  - **.md
-  - **.MD
+  - *.md
+  - *.MD
