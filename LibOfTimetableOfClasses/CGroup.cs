@@ -83,14 +83,12 @@ namespace LibOfTimetableOfClasses
         /// <param name="model">Модель, выбранной строки в таблице</param>
         /// <returns>Результат удаления переданной строки из CGroup</returns>
         public bool Delete(Model model)
-
         {
             MGroup mGroup = (MGroup)model;
             for (int i = 0; i < this.Rows.Count; i++)
             {
                 if ((string)this.Rows[i]["Group"] == mGroup.Group)
                 {
-
                     this.Rows[i].Delete();
 
                     return true;
@@ -111,7 +109,6 @@ namespace LibOfTimetableOfClasses
 
             try
             {
-
                 DataRow newRow = this.NewRow();
                 newRow["Group"] = mGroup.Group;
                 newRow["Semestr"] = mGroup.Semester;
@@ -131,7 +128,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Обновление свойств строки в таблице CGroup из переданной модели MGroup
         /// Поиск изменяемой строки CGroup осуществляется по полю "Group"
@@ -144,7 +140,6 @@ namespace LibOfTimetableOfClasses
 
             for (int i = 0; i < this.Rows.Count; i++)
             {
-
                 if (mGroup.Group == (string)this.Rows[i]["Group"])
                 {
                     try
