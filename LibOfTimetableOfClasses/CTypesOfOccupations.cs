@@ -23,8 +23,6 @@ namespace LibOfTimetableOfClasses
             Columns.Add(column);
         }
 
-
-
         public bool Delete(Model model)
         {
             MTypesOfOccupations mTypesofOccupations = (MTypesOfOccupations)model;

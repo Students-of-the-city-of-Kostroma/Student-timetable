@@ -163,7 +163,6 @@ namespace TimetableOfClasses
             a.Show();
         }
 
-
         private void DG_DoubleClick(object sender, EventArgs e)
         {
             if (DG.SelectedRows.Count == 1 && IsPicking)

@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 
-
 namespace TimetableOfClasses
 {
     public partial class AddTypesOfOccupation : Form
@@ -73,4 +72,3 @@ namespace TimetableOfClasses
         }
     }
 }
-

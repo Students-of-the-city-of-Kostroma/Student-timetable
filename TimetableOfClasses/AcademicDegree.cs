@@ -22,7 +22,6 @@ namespace TimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Кнопка изменения ученой степени
         /// </summary>
@@ -126,7 +125,6 @@ namespace TimetableOfClasses
             {
                 direction = ListSortDirection.Ascending;
             }
-
 
             List<object> arraySelectedRows = new List<object>();
             foreach (DataGridViewRow item in DG_AcademicDegree.SelectedRows)

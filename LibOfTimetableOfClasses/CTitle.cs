@@ -67,7 +67,6 @@ namespace LibOfTimetableOfClasses
             if ((mTitle.FullName == null && mTitle.Reduction == null))
                 return false;
 
-
             for (int i = 0; i < this.Rows.Count; i++)
             {
                 if ((string)this.Rows[i]["Reduction"] == mTitle.Reduction)

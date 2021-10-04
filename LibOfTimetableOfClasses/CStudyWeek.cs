@@ -64,7 +64,6 @@ namespace LibOfTimetableOfClasses
             return false;
         }
 
-
         public bool Delete(Model model)
         {
             MStudyWeek mStudyWeek = (MStudyWeek)model;

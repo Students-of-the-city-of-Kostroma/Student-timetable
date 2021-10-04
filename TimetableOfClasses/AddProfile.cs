@@ -97,7 +97,6 @@ namespace TimetableOfClasses
             }
         }
 
-
         private void btCodeSpec_Click(object sender, EventArgs e)
         {
             DirectionOfPreparation selectCode = new DirectionOfPreparation(true);
