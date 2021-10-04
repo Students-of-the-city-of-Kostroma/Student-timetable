@@ -1,7 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
 namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
 {
     [TestClass]
@@ -21,7 +20,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void ICAuditor_6() //добавление записи ктороая не дублирует ни один атрибут уже имеющейся записи 
         {
@@ -37,7 +35,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             Assert.AreEqual(expected, actual);
         }
 
-
         [TestMethod]
         public void ICAuditor_7() //полное дублирование всех атрибутов
         {
@@ -52,7 +49,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAuditor.UT_Insert
             //assert
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void ICAuditor_2() // дбавление записи, которая не дублирует ни один атрибут кроме корпуса

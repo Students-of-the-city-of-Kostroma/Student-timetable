@@ -18,7 +18,6 @@ namespace UnitTestOfTimetableOfClasses.UT_CAcademicDegree.UT_Delete
             MAcademicDegree MAcademic = new MAcademicDegree("Магистр", "Маг.");
             bool ex = true;
 
-
             //act
             refData.CAcademicDegree.Insert(MAcademic);
             bool act = refData.CAcademicDegree.Delete(MAcademic);

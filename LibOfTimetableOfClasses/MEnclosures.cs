@@ -69,7 +69,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Адрес корпуса
         /// В случае записи свойства проводятся проверки переданнаго значения:
@@ -158,7 +157,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Конструктор класса MEnclosures.
         /// </summary>
@@ -177,4 +175,3 @@ namespace LibOfTimetableOfClasses
         }       
     }
 }
-

@@ -23,7 +23,6 @@ namespace LibOfTimetableOfClasses
             return false;
         }
 
-
         /// <summary>
         /// Проверка наличия печатных символов в строке
         /// </summary>
