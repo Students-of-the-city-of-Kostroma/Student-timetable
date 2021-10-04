@@ -9,7 +9,6 @@ namespace TimetableOfClasses
 {
     public partial class Teachers : Form
     {
-
         public Teachers()
         {
             InitializeComponent();
@@ -68,7 +67,6 @@ namespace TimetableOfClasses
                 Logs.GetInfo("Click button Change is Teacher");
                 if (DG.SelectedRows.Count == 1)
                 {
-
                     DataRow Row = ((DataRowView)DG.SelectedRows[0].DataBoundItem).Row;
                     String[] fullName = ((string)Row["FullName"]).Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     MTeacher mTeacher;

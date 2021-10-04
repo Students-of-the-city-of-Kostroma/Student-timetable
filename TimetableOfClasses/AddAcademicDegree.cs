@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace TimetableOfClasses
 {
-    public partial class AddAcademicDegree : Form
+    public partial class AddAcademicDegree : AddInstance
     {
         public AddAcademicDegree()
         {
@@ -25,10 +25,9 @@ namespace TimetableOfClasses
             Reduction.Text = mAcademicDegree.Reduction;
             update = true;
         }
-
-        private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
+        public void CreateDegree()
         {
-            if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))//ну и накодили тут =)
+            if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
             {
                 if (Reduction.Text.Length != 0)
                 {
@@ -39,7 +38,14 @@ namespace TimetableOfClasses
                             try
                             {
                                 MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                Program.refData.CAcademicDegree.Insert(AcademicDegree);
+                                if (update)
+                                {
+                                    Program.refData.CAcademicDegree.Update(AcademicDegree);
+                                }
+                                else 
+                                {
+                                    Program.refData.CAcademicDegree.Insert(AcademicDegree);
+                                }
                                 FullName.Text = "";
                                 Reduction.Text = "";
                             }
@@ -57,73 +63,14 @@ namespace TimetableOfClasses
             }
             else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
         }
+        private void Button1_Click(object sender, EventArgs e)  // Создать и очистить
+        {
+            CreateDegree();
+        }
         private void Button2_Click(object sender, EventArgs e) //Создать и закрыть
         {
-            if (update)
-            {
-                if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
-                {
-                    if (Reduction.Text.Length != 0)
-                    {
-                        if (FullName.Text.Length != 0)
-                        {
-                            if (FullName.Text.Length >= Reduction.Text.Length)
-                            {
-                                try
-                                {
-                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                    Program.refData.CAcademicDegree.Update(AcademicDegree);
-                                    FullName.Text = "";
-                                    Reduction.Text = "";
-                                    Close();
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                                }
-                            }
-                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
-                                "Попробуйте снова", MessageBoxButtons.OK);
-                        }
-                        else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                    }
-                    else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                }
-                else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
-            }
-            else
-            {
-
-                if ((Reduction.Text.Length != 0) || (FullName.Text.Length != 0))
-                {
-                    if (Reduction.Text.Length != 0)
-                    {
-                        if (FullName.Text.Length != 0)
-                        {
-                            if (FullName.Text.Length >= Reduction.Text.Length)
-                            {
-                                try
-                                {
-                                    MAcademicDegree AcademicDegree = new MAcademicDegree(FullName.Text, Reduction.Text);
-                                    Program.refData.CAcademicDegree.Insert(AcademicDegree);
-                                    FullName.Text = "";
-                                    Reduction.Text = "";
-                                    Close();
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Некорректно заполнены поля", "Ошибка");
-                                }
-                            }
-                            else MessageBox.Show("Полe 'Полная запись учёной степени' должно быть больше или равно полю 'Сокращённая запись учёной степени'",
-                                "Попробуйте снова", MessageBoxButtons.OK);
-                        }
-                        else MessageBox.Show("Заполните полe 'Полная запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                    }
-                    else MessageBox.Show("Заполните полe 'Сокращённая запись учёной степени'", "Попробуйте снова", MessageBoxButtons.OK);
-                }
-                else MessageBox.Show("Заполните поля", "Попробуйте снова", MessageBoxButtons.OK);
-            }
+                CreateDegree();
+                Close();
         }
 
         private void Button3_Click(object sender, EventArgs e) //Отмена
@@ -162,35 +109,12 @@ namespace TimetableOfClasses
                 ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
             ((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
         }
-        private static string PeriodLetterToUpper(string str)
-        {
-            if (str.Length > 0)
-            {
-                if (str.IndexOf(",") > 0)
-                {
-                    char p;
-                    str = Char.ToUpper(str[0]) + str.Substring(1);
-                    for (int i = 0; i < str.Length; i++)
-                    {
-                        if (str[i] == ',')
-                        {
-                            p = Char.ToUpper(str[i + 2]);
-                            str = str.Remove(i + 2, 1);
-                            str = str.Insert(i + 2, "" + p);
-                        }
-                    }
-                    return str;
-                }
-                else
-                    return Char.ToUpper(str[0]) + str.Substring(1);
-            }
-            return "";
-        }
+        
         private void Reduction_Leave(object sender, EventArgs e)
         {
-            Leave(sender, e);
+            TerxtBox_Leave(sender, e);
         }
-        private void Leave(object sender, EventArgs e)
+        private void TerxtBox_Leave(object sender, EventArgs e)
         {
             TextBox R = sender as TextBox;
             R.Text = Regex.Replace(R.Text, "[^а-яА-Я ]", "");
@@ -208,7 +132,7 @@ namespace TimetableOfClasses
         }
         private void FullName_Leave(object sender, EventArgs e)
         {
-            Leave(sender, e);
+            TerxtBox_Leave(sender, e);
         }
     }
 }

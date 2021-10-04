@@ -1,8 +1,6 @@
 ﻿using LibOfTimetableOfClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-
-
 namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
 {
     [TestClass]
@@ -89,8 +87,4 @@ namespace UnitTestOfTimetableOfClasses.UT_CInstitute.UT_Insert
             Assert.AreEqual(C1, C2);
         }
     }
-
 }
-
-
-

@@ -159,8 +159,3 @@ namespace TimetableOfClasses
         }
     }
 }
-
-
-
-
-
