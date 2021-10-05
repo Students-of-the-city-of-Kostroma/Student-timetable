@@ -86,7 +86,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Аудитория
         /// </summary>

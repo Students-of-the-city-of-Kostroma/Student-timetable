@@ -52,4 +52,3 @@ namespace UnitTestOfTimetableOfClasses.UT_CGroup.UT_Delete
         }
     }
 }
-

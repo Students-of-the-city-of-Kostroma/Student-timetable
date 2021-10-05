@@ -131,7 +131,6 @@ namespace LibOfTimetableOfClasses
             }
         }
 
-
         /// <summary>
         /// Обновление свойств строки в таблице CGroup из переданной модели MGroup
         /// Поиск изменяемой строки CGroup осуществляется по полю "Group"

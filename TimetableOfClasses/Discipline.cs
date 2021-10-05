@@ -14,7 +14,6 @@ namespace TimetableOfClasses
             DG_Disc.DataSource = Program.refData.CDiscipline;
         }
 
-
         private void DG_Disc_SelectionChanged(object sender, EventArgs e)
         {
             if (DG_Disc.SelectedCells.Count > 0)
@@ -85,4 +84,3 @@ namespace TimetableOfClasses
         }
     }
 }
-

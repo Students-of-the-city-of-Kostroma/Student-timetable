@@ -91,7 +91,6 @@ namespace LibOfTimetableOfClasses
         {
             MEnclosures mEnclosures = (MEnclosures)model;
 
-
             try
             {
 

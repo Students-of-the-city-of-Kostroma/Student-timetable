@@ -160,4 +160,3 @@ namespace UnitTestOfTimetableOfClasses.UT_CEnclosures.UT_Insert
         }
     }
 }
-            
